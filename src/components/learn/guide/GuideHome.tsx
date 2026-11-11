@@ -17,6 +17,8 @@ import { portalAreaFor, type PortalArea } from "@/lib/learn/nav";
 import { dashboardPathForRole, useLearnSession, type LearnRole } from "@/lib/learn/session";
 import { resetGuideProgress, usePortalPrefs } from "@/lib/learn/portalPrefs";
 import { askConfirm } from "@/components/learn/kit";
+import { ui } from "@/components/learn/ui";
+import { startTour, tourFor } from "@/lib/learn/tours";
 import { GuideJourneys } from "./GuideJourneys";
 import { useGuideContent } from "./useGuideContent";
 
@@ -83,8 +85,64 @@ export function GuideHome({ userId, journeys }: { userId: string; journeys?: Rea
       <PageHeader
         crumbs={[{ label: "Today", href: area ? `/${area}/dashboard` : "/" }, { label: "Portal guide" }]}
         title="Portal guide"
-        subtitle={`Every page you can open, A to Z: what it is for, how to use it and who else sees it. Written for ${content.GUIDE_ROLE_LABEL[role].toLowerCase()}.`}
+        subtitle={`Everything about using the portal in one place: a quick tour to start, a day in the life, then every page you can open, A to Z. Written for ${content.GUIDE_ROLE_LABEL[role].toLowerCase()}.`}
       />
+
+      {/* One guide in three parts (owner, 11 Nov 2026: "portal guide and tour together and structured"). */}
+      <nav aria-label="Parts of the Portal guide">
+        <ol className="grid gap-px overflow-hidden rounded-[10px] border border-gold-light bg-gold-light sm:grid-cols-3">
+          {[
+            {
+              n: 1,
+              title: "Quick tour",
+              body: "About two minutes on the real menu: where things are and how to find them.",
+              done: area ? prefs.tours.includes(tourFor(area, roleNames).key) : false,
+              action: (
+                <button type="button" onClick={() => startTour()} className={`${ui.btnPrimary} ${ui.sm}`}>
+                  <Icon name="compass" size="sm" />
+                  Take the tour
+                </button>
+              ),
+            },
+            {
+              n: 2,
+              title: "A day in the life",
+              body: "Walk through the pages you use together, in the order you use them.",
+              done: content.JOURNEYS[role].length > 0 && content.JOURNEYS[role].every((j) => prefs.guide.journeys[j.id] === -1),
+              action: (
+                <a href="#journeys-title" className={`${ui.btnSecondary} ${ui.sm}`}>
+                  See the journeys
+                </a>
+              ),
+            },
+            {
+              n: 3,
+              title: "Every page, A to Z",
+              body: "What each page is for and how to use it. Press Guide me (or ?) on any page for its part of the guide.",
+              done: entries.length > 0 && done === entries.length,
+              action: (
+                <a href="#guide-progress" className={`${ui.btnSecondary} ${ui.sm}`}>
+                  {done} of {entries.length} learned
+                </a>
+              ),
+            },
+          ].map((p) => (
+            <li key={p.n} className="flex flex-col gap-2 bg-[var(--portal-surface)] p-4">
+              <p className="flex items-center gap-2">
+                <span aria-hidden="true" className={`flex h-6 w-6 shrink-0 items-center justify-center rounded-full text-xs font-semibold ${p.done ? "bg-forest-700 text-white" : "border border-gold-light text-ink-700"}`}>
+                  {p.done ? <Icon name="check" className="h-3.5 w-3.5" /> : p.n}
+                </span>
+                <span className="t-section">{p.title}</span>
+                {p.done && <span className="sr-only">(done)</span>}
+              </p>
+              <p className="flex-1 text-sm text-ink-500">{p.body}</p>
+              <div>{p.action}</div>
+            </li>
+          ))}
+        </ol>
+      </nav>
+
+      {journeys ?? <GuideJourneys journeys={content.JOURNEYS[role]} progress={prefs.guide.journeys} />}
 
       <section aria-labelledby="guide-progress" className="guide-progress rounded-2xl border border-gold-light bg-white p-5 sm:p-6">
         <div className="flex flex-wrap items-center gap-5">
@@ -121,7 +179,6 @@ export function GuideHome({ userId, journeys }: { userId: string; journeys?: Rea
         </div>
       </section>
 
-      {journeys ?? <GuideJourneys journeys={content.JOURNEYS[role]} progress={prefs.guide.journeys} />}
 
       <Tabs
         variant="switch"

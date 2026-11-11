@@ -263,9 +263,9 @@ export function CommandPalette({ area, roles }: { area: PortalArea; roles: strin
         ? [{ id: "action:pin", group: "Actions", label: herePinned ? `Unpin "${here.label}"` : `Pin "${here.label}" to the menu`, keywords: "pin favourite bookmark star shortcut unpin", icon: herePinned ? "pinOff" : "pin", run: () => togglePin(here.href) } as Item]
         : []),
       ...COMMON_ACTIONS.map((a): Item => ({ id: `action:${a.label}`, group: "Actions", label: a.label, href: a.href, keywords: a.keywords, icon: a.icon })),
-      { id: "action:tour", group: "Actions", label: "Take the tour", keywords: "help guide how to use where is show me around getting started", icon: "compass", run: () => startTour() },
-      { id: "action:guide", group: "Actions", label: "Open the Portal guide", href: `/guide?area=${area}`, keywords: "help guide manual a to z every page how do i explain instructions journey day in the life", icon: "bookOpenCheck" },
-      { id: "action:guide-page", group: "Actions", label: "Guide me on this page", keywords: "help how does this page work explain show me what is this question mark", icon: "circleHelp", run: () => openGuidePanel() },
+      { id: "action:tour", group: "Actions", label: "Portal guide: take the quick tour", keywords: "help guide tour how to use where is show me around getting started", icon: "compass", run: () => startTour() },
+      { id: "action:guide", group: "Actions", label: "Portal guide: every page A to Z", href: `/guide?area=${area}`, keywords: "help guide manual a to z every page how do i explain instructions journey day in the life", icon: "bookOpenCheck" },
+      { id: "action:guide-page", group: "Actions", label: "Portal guide: this page (Guide me)", keywords: "help how does this page work explain show me what is this question mark", icon: "circleHelp", run: () => openGuidePanel() },
     ];
     const pinned: Item[] = grouped ? prefs.pinned.flatMap((h) => pages.filter((p) => p.href === h).map((p) => ({ ...p, id: `pinned:${h}`, group: "Pinned" as const, icon: "pin" as IconName }))) : [];
     const cls: Item[] = (classes || []).map((c) => ({
