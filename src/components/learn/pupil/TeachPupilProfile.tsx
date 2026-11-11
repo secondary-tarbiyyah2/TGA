@@ -132,7 +132,7 @@ export function TeachPupilProfile({ id }: { id: string }) {
           </span>
         }
         action={
-          <ButtonLink href={`/teach/messages?compose=1`} variant="primary" icon="messageSquare">
+          <ButtonLink href={`/teach/messages?family=${id}`} variant="primary" icon="messageSquare">
             Message family
           </ButtonLink>
         }

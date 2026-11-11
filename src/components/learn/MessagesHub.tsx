@@ -10,7 +10,8 @@ import { AiSpark } from "@/components/learn/AiBits";
 import { TRIAGE_CATEGORY_LABEL, aiAssist, aiErrorMessage, useAiStatus } from "@/lib/learn/aiAssist";
 import { Icon } from "@/components/learn/Icon";
 import { ActionsMenu, type MenuAction } from "@/components/learn/kit";
-import { EmptyState, LoadingState, ui } from "@/components/learn/ui";
+import { EmptyState, LoadingState, Notice, ui } from "@/components/learn/ui";
+import { FamilyContextStrip, familyOpeners, useFamilyContext } from "@/components/learn/messages/FamilyContext";
 import { NewConversation } from "@/components/learn/messages/NewConversation";
 import { GroupInfo } from "@/components/learn/messages/GroupInfo";
 import { STAFF_ROLE_IDS, ago, initials, type InboxRow, type Person } from "@/components/learn/messages/messagesShared";
@@ -48,6 +49,11 @@ export function MessagesHub({ canAddPeople = false, subtitle, readOnly = false }
   const [triageBy, setTriageBy] = useState<Record<string, TriageRow>>({});
   const [sorting, setSorting] = useState(false);
   const [sortNote, setSortNote] = useState<string | null>(null);
+  // "Message family" (pupil record, pupils list, class insights, absences): ?family=<pupil id>
+  // opens the conversation with that pupil's parent, starting one if there isn't one yet.
+  const [familyFor, setFamilyFor] = useState<string | null>(null);
+  const [aboutChild, setAboutChild] = useState<string | null>(null);
+  const [notice, setNotice] = useState<string | null>(null);
 
   // ?compose=1 (Today's "Send a message") opens New message; ?thread= (emails and phone notifications) opens a conversation.
   useEffect(() => {
@@ -56,6 +62,8 @@ export function MessagesHub({ canAddPeople = false, subtitle, readOnly = false }
     if (sp.get("compose") === "1" && !readOnly) setPicking(true);
     const t = sp.get("thread");
     if (t) setActive(t);
+    const fam = sp.get("family");
+    if (fam && !readOnly) setFamilyFor(fam);
   }, [readOnly]);
 
   const load = useCallback(async () => {
@@ -170,6 +178,43 @@ export function MessagesHub({ canAddPeople = false, subtitle, readOnly = false }
     setPicking(false);
   };
 
+  /** Open (or start) the 1:1 conversation with a pupil's parent. The directory (0085) and the insert policy decide who may message whom. */
+  const openFamily = useCallback(
+    async (childId: string) => {
+      const supabase = getSupabaseClient();
+      if (!supabase || !me || rows === null || people === null) return;
+      setFamilyFor(null);
+      // Leave the address tidy, so a refresh doesn't open it again.
+      const url = new URL(window.location.href);
+      url.searchParams.delete("family");
+      window.history.replaceState(null, "", url.toString());
+      const { data: child } = await supabase.from("children").select("id, name, parent_user_id").eq("id", childId).maybeSingle();
+      const c = child as { id: string; name: string; parent_user_id: string | null } | null;
+      if (!c) return setNotice("That pupil's family isn't one you can message from your account. Use New message to find who you can write to.");
+      if (!c.parent_user_id) return setNotice(`${c.name}'s family doesn't have a portal account yet, so they can't be messaged here. Their contacts are on the pupil's record.`);
+      const parent = people.find((p) => p.user_id === c.parent_user_id);
+      if (!parent) return setNotice(`You can't message ${c.name}'s family from your account. The office can.`);
+      setAboutChild(c.id);
+      setNotice(null);
+      const mine = rows.filter((t) => t.kind !== "group" && t.other_user_id === parent.user_id);
+      const existing = mine.find((t) => t.kind === "direct") || mine.find((t) => t.kind === "parent_teacher");
+      if (existing) {
+        setActive(existing.thread_id);
+        return;
+      }
+      const { data, error: err } = await supabase.from("message_threads").insert({ kind: "direct", staff_a_id: me, staff_b_id: parent.user_id }).select("id").single();
+      if (err || !data) return setError("Couldn't start that conversation. Please try again in a moment.");
+      await load();
+      setActive((data as { id: string }).id);
+    },
+    [me, rows, people, load],
+  );
+
+  useEffect(() => {
+    // eslint-disable-next-line react-hooks/set-state-in-effect -- runs once the inbox and directory have loaded
+    if (familyFor && me && rows !== null && people !== null) void openFamily(familyFor);
+  }, [familyFor, me, rows, people, openFamily]);
+
   const toggleMute = async (tid: string) => {
     const supabase = getSupabaseClient();
     if (!supabase || !me) return;
@@ -186,6 +231,8 @@ export function MessagesHub({ canAddPeople = false, subtitle, readOnly = false }
 
   const activeRow = all.find((r) => r.thread_id === active) || null;
   const activeOther = activeRow?.other_user_id ? byPerson.get(activeRow.other_user_id) : undefined;
+  const otherIsParent = !!activeRow && activeRow.kind !== "group" && isParentId(activeRow.other_user_id);
+  const familyKids = useFamilyContext(otherIsParent ? activeRow?.other_user_id : null, isStaff && otherIsParent);
   const loading = rows === null || people === null;
   const nobodyToMessage = !readOnly && people !== null && people.length === 0 && !isStaff;
 
@@ -207,7 +254,7 @@ export function MessagesHub({ canAddPeople = false, subtitle, readOnly = false }
     <>
       <PageHeader
         title="Messages"
-        subtitle={subtitle ?? (readOnly ? "Messages from your teachers and the school. Staff review messages for safeguarding as part of normal practice." : "Message the teachers, office and families you work with, one to one or in groups. Staff review messages for safeguarding as part of normal practice.")}
+        subtitle={subtitle ?? (readOnly ? "Messages from your teachers and the school. Staff review messages for safeguarding." : "One to one or in groups, with the families, teachers and office you work with. Staff review messages for safeguarding.")}
         action={
           readOnly ? undefined : (
             <button type="button" data-guide="messages-new" onClick={() => setPicking(true)} disabled={loading || nobodyToMessage} className={ui.btnPrimary}>
@@ -219,6 +266,16 @@ export function MessagesHub({ canAddPeople = false, subtitle, readOnly = false }
       />
 
       {error && <p role="alert" className="mb-4 rounded-lg border border-red-200 bg-red-50 px-4 py-2 text-sm text-red-800">{error}</p>}
+      {notice && (
+        <div className="mb-4">
+          <Notice tone="warn">
+            {notice}{" "}
+            <button type="button" onClick={() => setNotice(null)} className={`${ui.btnLink} ml-1`}>
+              Dismiss
+            </button>
+          </Notice>
+        </div>
+      )}
 
       {loading ? (
         <LoadingState label="Loading your conversations" />
@@ -227,8 +284,12 @@ export function MessagesHub({ canAddPeople = false, subtitle, readOnly = false }
           As soon as teachers, the office or families have accounts, they appear here and you can message them.
         </EmptyState>
       ) : (
-        <div className="grid overflow-hidden rounded-[10px] border border-gold-light bg-[var(--portal-surface)] md:grid-cols-[minmax(280px,340px)_minmax(0,1fr)]">
-          <div className={`min-w-0 border-gold-light md:border-r ${active ? "hidden md:block" : ""}`}>
+        <div className="@container min-w-0">
+        {/* One fixed-height workspace: on a wide enough page the list and the open conversation sit side by side
+            (sized by the space the page has, not the screen, so the menu being open never squeezes it into one
+            column); the reply box is always at the foot of the conversation. */}
+        <div className="grid h-[max(30rem,calc(100dvh_-_13rem))] min-w-0 grid-rows-[minmax(0,1fr)] overflow-hidden rounded-[10px] border border-gold-light bg-[var(--portal-surface)] @2xl:grid-cols-[minmax(15rem,20rem)_minmax(0,1fr)]">
+          <div className={`flex min-h-0 min-w-0 flex-col border-gold-light @2xl:border-r ${active ? "hidden @2xl:flex" : ""}`}>
             <div className="space-y-2 border-b border-gold-light p-3">
               <label htmlFor="msg-search" className="sr-only">
                 Search conversations and messages
@@ -254,7 +315,7 @@ export function MessagesHub({ canAddPeople = false, subtitle, readOnly = false }
               {sortNote && <p className="text-xs text-ink-500">{sortNote}</p>}
             </div>
 
-            <div className="max-h-[min(64vh,640px)] overflow-y-auto">
+            <div className="min-h-0 flex-1 overflow-y-auto">
               <ul data-guide="messages-list" aria-label="Conversations" className="divide-y divide-gold-light">
                 {listed.length === 0 && !(q && hits && hits.length) && (
                   <li className="px-5 py-10 text-center text-sm text-ink-500">
@@ -336,11 +397,11 @@ export function MessagesHub({ canAddPeople = false, subtitle, readOnly = false }
             </div>
           </div>
 
-          <div className={`min-w-0 ${active ? "" : "hidden md:block"}`}>
+          <div className={`min-h-0 min-w-0 ${active ? "flex flex-col" : "hidden @2xl:flex @2xl:flex-col"}`}>
             {activeRow && me ? (
-              <div>
+              <div className="flex min-h-0 flex-1 flex-col">
                 <div className="flex items-center gap-3 border-b border-gold-light px-3 py-2.5 sm:px-4">
-                  <button type="button" onClick={() => setActive(null)} aria-label="Back to conversations" className={`${ui.btnIcon} md:hidden`}>
+                  <button type="button" onClick={() => setActive(null)} aria-label="Back to conversations" className={`${ui.btnIcon} @2xl:hidden`}>
                     <Icon name="arrowLeft" />
                   </button>
                   <span className={`flex h-9 w-9 shrink-0 items-center justify-center rounded-full text-xs font-semibold ${activeRow.kind === "group" ? "bg-[var(--portal-sunken)] text-ink-700" : "bg-forest-100 text-forest-900"}`}>
@@ -354,12 +415,18 @@ export function MessagesHub({ canAddPeople = false, subtitle, readOnly = false }
                         {activeRow.member_count} members{activeRow.members_can_reply ? "" : " · staff write"}
                       </button>
                     ) : (
-                      <p className="truncate text-xs text-ink-500">{[activeRow.subtitle, activeOther?.detail].filter(Boolean).join(" · ")}</p>
+                      <p className="truncate text-xs text-ink-500">
+                        {otherIsParent && isStaff
+                          ? [activeRow.subtitle, activeOther?.detail ? `Parent of ${activeOther.detail}` : "Parent"].filter(Boolean).join(" · ")
+                          : [activeRow.subtitle, activeOther?.detail].filter(Boolean).join(" · ")}
+                      </p>
                     )}
                   </div>
                   {muted.has(activeRow.thread_id) && <Icon name="bellOff" size="sm" className="h-4 w-4 text-ink-500" />}
                   <ActionsMenu items={headMenu} label="Conversation options" />
                 </div>
+                {familyKids && familyKids.length > 0 && <FamilyContextStrip kids={familyKids} />}
+                <div className="min-h-0 flex-1">
                 <MessageThread
                   key={activeRow.thread_id}
                   thread={activeRow}
@@ -370,16 +437,20 @@ export function MessagesHub({ canAddPeople = false, subtitle, readOnly = false }
                   onRead={load}
                   aiTriage={aiOn && activeRow.kind !== "group" && isParentId(activeRow.other_user_id)}
                   onTriaged={load}
+                  emptyTitle={activeRow.kind === "group" ? `A new group: ${activeRow.title}` : `Start your conversation with ${activeRow.title}`}
+                  starters={isStaff && otherIsParent && familyKids ? familyOpeners(activeRow.title, familyKids, aboutChild) : undefined}
                 />
+                </div>
               </div>
             ) : (
-              <div className="flex h-full min-h-[360px] flex-col items-center justify-center px-6 py-16 text-center">
+              <div className="flex h-full flex-col items-center justify-center px-6 py-16 text-center">
                 <Icon name="messageSquare" className="h-6 w-6 text-ink-500" />
                 <p className="mt-2 text-sm font-medium text-ink">{active ? "This conversation is not available" : "Pick a conversation"}</p>
                 <p className="mt-1 text-sm text-ink-500">{readOnly ? "Messages from your teachers appear on the left." : "or press New message to start one."}</p>
               </div>
             )}
           </div>
+        </div>
         </div>
       )}
 

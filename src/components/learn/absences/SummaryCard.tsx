@@ -15,9 +15,9 @@ const KIND_CHIP: Record<Absence["kind"], string> = {
   unexplained: "bg-amber-50 text-amber-900",
 };
 const KIND_LABEL: Record<Absence["kind"], string> = {
-  authorised: "Authorised",
-  unauthorised: "Not authorised",
-  unexplained: "Unexplained",
+  authorised: "Authorised absence",
+  unauthorised: "Unauthorised absence",
+  unexplained: "No reason yet",
 };
 
 function add(t: Tally, a: Absence) {
@@ -86,9 +86,9 @@ export function SummaryCard({ title, absences, periodLabel }: { title: string; a
                 <th className={`${th} text-right`} title="One per lesson missed">
                   Lessons missed
                 </th>
-                <th className={`${th} text-right`}>Authorised</th>
-                <th className={`${th} text-right`}>Not authorised</th>
-                <th className={`${th} text-right`}>Unexplained</th>
+                <th className={`${th} text-right`} title="Illness, a medical appointment, religious observance, or exceptional circumstances approved by the Headteacher">Authorised</th>
+                <th className={`${th} text-right`} title="No reason given, or a reason not accepted, including holidays in term time">Unauthorised</th>
+                <th className={`${th} text-right`} title="Counted as unauthorised until a reason is given and accepted">No reason yet</th>
               </tr>
             </thead>
             <tbody>
