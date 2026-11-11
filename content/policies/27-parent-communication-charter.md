@@ -7,7 +7,7 @@ appliesTo: All pupils, parents, staff, trustees and volunteers of Tarbiyyah Glob
 owner: Headteacher
 approvedBy: Ustadh Abu Zayn Haneef Sandhar, Headteacher
 agreedWith: The Chair of Trustees, Tarbiyyah Education Trust
-dateOfIssue: 1 September 2026 (version 1.1, updated 28 October 2026 for the January 2027 launch)
+dateOfIssue: 1 September 2026 (version 1.1)
 nextReview: 31 August 2027
 basis: New policy for online provision (combines the planned Parent Communication Charter and Feedback Mechanisms)
 readAlongside: Concerns and Complaints Policy; Online Safety and Acceptable Use Policy; Data Protection Policy; Attendance, Punctuality and Children Missing Education Policy

@@ -7,7 +7,7 @@ appliesTo: All pupils, parents, staff, trustees and volunteers of Tarbiyyah Glob
 owner: Deputy Headteacher (Teaching and Learning)
 approvedBy: Ustadh Abu Zayn Haneef Sandhar, Headteacher
 agreedWith: The Chair of Trustees, Tarbiyyah Education Trust
-dateOfIssue: 1 September 2026 (version 1.2, updated 9 November 2026: a tablet with a stylus is recommended for every pupil, and a printer at home is required without one)
+dateOfIssue: 1 September 2026 (version 1.3)
 nextReview: 31 August 2027
 basis: New policy for online provision
 readAlongside: Behaviour and Online Conduct Policy; Online Safety and Acceptable Use Policy; Recording of Live Lessons and Use of Images Policy
@@ -30,6 +30,8 @@ Live lessons are the heart of Tarbiyyah Global Academy. These protocols set out 
 | Platform | The Academy's live-lesson platform (currently Microsoft Teams), joined from the Student Portal |
 
 ### Model day (Years 7–11, UK time)
+
+The model day below is an example only and is subject to change. Each pupil's own timetable, published in the Student Portal, is the one to follow.
 
 | Time | Session |
 | --- | --- |
