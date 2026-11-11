@@ -14,22 +14,31 @@ import { SiteSearch } from "@/components/SiteSearch";
 // renders this Header/Footer. The group segment `(marketing)` doesn't affect
 // any URL, `/about` still builds to `/about/`, exactly as before this file
 // existed.
-export default function MarketingLayout({ children }: { children: React.ReactNode }) {
+export default function MarketingLayout({
+  children,
+}: {
+  children: React.ReactNode;
+}) {
   return (
+    // site-type: the public site's larger reading sizes (globals.css). `contents`
+    // keeps the body's flex column layout exactly as before.
+    // The header keeps its own sizes so the navigation still fits on one line.
     <>
       <Header />
-      <main id="main" className="flex-1">
-        <Breadcrumbs />
-        <JourneyBar />
-        {children}
-        <JourneyNext />
-        <RelatedLinks />
-      </main>
-      <Footer />
-      <MobileCtaBar />
-      <BreadcrumbSchema />
-      <StaffPreviewBadge />
-      <SiteSearch />
+      <div className="site-type contents">
+        <main id="main" className="flex-1" data-site="public">
+          <Breadcrumbs />
+          <JourneyBar />
+          {children}
+          <JourneyNext />
+          <RelatedLinks />
+        </main>
+        <Footer />
+        <MobileCtaBar />
+        <BreadcrumbSchema />
+        <StaffPreviewBadge />
+        <SiteSearch />
+      </div>
     </>
   );
 }

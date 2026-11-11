@@ -3,7 +3,6 @@ import type { Metadata } from "next";
 import { pageMetadata } from "@/lib/seo";
 import { Container } from "@/components/Container";
 import { Kicker } from "@/components/Section";
-import { StarMark } from "@/components/StarMark";
 import { KEY_DATES } from "@/content/keyDates";
 import { Button } from "@/components/Button";
 import { CtaBand } from "@/components/CtaBand";
@@ -30,13 +29,15 @@ const defaultPillars = [
 
 const PILLAR_ICONS: IconName[] = ["bookOpenCheck", "users", "award", "heartHandshake"];
 
-// Plain facts already stated on the site (never invented figures), shown as a band under the hero.
-const FACTS: { icon: IconName; label: string }[] = [
-  { icon: "graduationCap", label: "Year 1 to Year 11" },
-  { icon: "users", label: "Classes of up to 15" },
-  { icon: "monitor", label: "Live, timetabled lessons" },
-  { icon: "bookOpen", label: "Qur'an, Arabic and Islamic Studies" },
-  { icon: "globe", label: "Wherever home is" },
+// The school day, as published in the FAQs and the Curriculum Policy (never invented).
+// Shown under the hero instead of a row of feature chips: it is what makes TGA a
+// school rather than a course, and it shows the day built around prayer.
+const SCHOOL_DAY: { time: string; label: string; note: string }[] = [
+  { time: "09:00", label: "Form time", note: "The day opens together, with the form tutor" },
+  { time: "09:10", label: "Live lessons", note: "Qur'an, Arabic and Islamic Studies alongside every national curriculum subject" },
+  { time: "Midday", label: "Dhuhr", note: "Prayer is built into the timetable" },
+  { time: "15:00", label: "Home time", note: "With movement breaks between lessons" },
+  { time: "Friday", label: "Jumu'ah", note: "Lessons finish at 12:00 so families can prepare" },
 ];
 
 const NUMBER_WORDS = ["zero", "one", "two", "three", "four", "five", "six", "seven", "eight", "nine", "ten"];
@@ -62,13 +63,11 @@ export default async function HomePage() {
     <>
       {/* HERO */}
       <section className="geo-texture relative overflow-hidden bg-cream">
-        {/* Large, very faint brand star behind the hero (decorative). */}
-        <StarMark className="hero-star pointer-events-none absolute -right-24 -top-24 h-[34rem] w-[34rem] text-gold-300/40 sm:-right-16" />
         <span aria-hidden="true" className="pointer-events-none absolute -left-40 bottom-0 h-80 w-80 rounded-full bg-gold-100/70 blur-3xl" />
         <span aria-hidden="true" className="tech-grid pointer-events-none absolute inset-0" />
-        <Container className="relative grid gap-12 py-14 lg:grid-cols-[1.15fr_1fr] lg:items-center lg:gap-16 lg:py-20">
+        <Container className="relative grid gap-12 py-14 lg:grid-cols-[1.35fr_1fr] lg:items-center lg:gap-14 lg:py-20">
           <div>
-            <Kicker>{content.heroKicker || "An online school for homeschooling families"}</Kicker>
+            <Kicker>{content.heroKicker || "From the Tarbiyyah family of schools"}</Kicker>
             {content.heroHeading ? (
               <h1 className="text-display font-serif font-semibold text-ink">{content.heroHeading}</h1>
             ) : (
@@ -110,7 +109,6 @@ export default async function HomePage() {
           <aside aria-labelledby="key-dates-heading" className="relative mx-auto w-full max-w-md lg:mr-0">
             <div className="glow-border relative rounded-3xl border border-gold-light/70 bg-white p-6 shadow-warm sm:p-8">
               <div className="flex items-center gap-2 text-xs font-semibold uppercase tracking-[0.2em] text-gold-700">
-                <StarMark className="h-3.5 w-3.5" />
                 <h2 id="key-dates-heading">Key dates</h2>
               </div>
               <p className="mt-1 text-sm text-ink/65">For the founding cohort. All times UK.</p>
@@ -130,17 +128,28 @@ export default async function HomePage() {
         </Container>
       </section>
 
-      {/* FACTS BAND */}
-      <section aria-label="At a glance" className="border-y border-gold-light/50 bg-gold-50">
-        <Container>
-          <ul className="flex flex-wrap items-center justify-center gap-x-8 gap-y-3 py-5 text-sm font-semibold text-ink/80">
-            {FACTS.map((f) => (
-              <li key={f.label} className="flex items-center gap-2">
-                <Icon name={f.icon} size="sm" className="h-4 w-4 text-gold-700" />
-                {f.label}
+      {/* THE SCHOOL DAY (UK time), a timeline rather than feature chips. */}
+      <section aria-labelledby="school-day-heading" className="border-y border-gold-light/50 bg-gold-50">
+        <Container className="py-8 sm:py-10">
+          <div className="flex flex-wrap items-baseline justify-between gap-x-6 gap-y-2">
+            <h2 id="school-day-heading" className="font-serif text-xl font-semibold text-ink">
+              A school day, Monday to Thursday <span className="font-sans text-base font-normal text-ink/65">(UK time)</span>
+            </h2>
+            <Link href="/eligibility" className="inline-flex items-center gap-1 text-sm font-semibold text-gold-700 hover:text-gold-900">
+              See it in your own time zone <Icon name="arrowRight" size="sm" className="h-4 w-4" />
+            </Link>
+          </div>
+          <ol className="relative mt-6 grid gap-5 sm:grid-cols-2 lg:grid-cols-5 lg:gap-0">
+            <span aria-hidden="true" className="absolute left-0 right-0 top-[0.6rem] hidden h-px bg-gold-300 lg:block" />
+            {SCHOOL_DAY.map((d, i) => (
+              <li key={d.label} className={`relative lg:pr-6 ${i === SCHOOL_DAY.length - 1 ? "lg:border-l lg:border-dashed lg:border-gold-300 lg:pl-6" : ""}`}>
+                <span aria-hidden="true" className={`relative z-10 block h-5 w-5 rounded-full border-2 ${i === SCHOOL_DAY.length - 1 ? "border-gold-500 bg-gold-50" : "border-gold-500 bg-gold-500"}`} />
+                <p className="mt-3 font-mono text-sm font-semibold uppercase tracking-wide text-gold-700">{d.time}</p>
+                <p className="font-serif text-lg font-semibold text-ink">{d.label}</p>
+                <p className="mt-1 text-sm text-ink/70">{d.note}</p>
               </li>
             ))}
-          </ul>
+          </ol>
         </Container>
       </section>
 
@@ -148,7 +157,7 @@ export default async function HomePage() {
       <section className="geo-texture-dark relative overflow-hidden bg-ink-900 section-pad text-cream">
         <Container>
           <Kicker tone="light">Why Tarbiyyah Global Academy</Kicker>
-          <h2 className="reveal text-h2 max-w-2xl font-serif font-semibold text-white">A real school day, built around faith and character.</h2>
+          <h2 className="reveal text-h2 max-w-2xl font-serif font-semibold text-white">Faith, small classes and character, together.</h2>
           <div className="mt-10 grid gap-5 md:grid-cols-3">
             {pillars.map((p, i) => (
               <div key={p.title} className="reveal group relative rounded-2xl border border-white/10 bg-white/[0.04] p-6 transition-colors hover:border-gold-300/50 hover:bg-white/[0.07]">
@@ -166,6 +175,34 @@ export default async function HomePage() {
         </Container>
       </section>
 
+      {/* THE TARBIYYAH FAMILY: what no new online school can claim, so it leads before the curriculum. */}
+      <section className="section-pad">
+        <Container className="grid gap-10 lg:grid-cols-[1.1fr_1fr] lg:items-center">
+          <div>
+            <Kicker>The Tarbiyyah family</Kicker>
+            <h2 className="text-h2 font-serif font-semibold text-ink">Not a start-up. The online school of three established schools.</h2>
+            <p className="mt-4 max-w-2xl text-ink/75">
+              Tarbiyyah Global Academy is part of the Tarbiyyah family of schools, which has run Tarbiyyah Primary, Tarbiyyah Secondary School for Boys and Tarbiyyah Al-Banaat for over ten years. The Academy brings the same ethos, curriculum and standard of care online.
+            </p>
+            <Button href="/about" variant="secondary" className="mt-6">
+              About the Academy
+            </Button>
+          </div>
+          <ul className="grid gap-3">
+            {["Tarbiyyah Primary", "Tarbiyyah Secondary School for Boys", "Tarbiyyah Al-Banaat", "Tarbiyyah Global Academy"].map((name, i, all) => (
+              <li
+                key={name}
+                className={`flex items-center gap-4 rounded-2xl border p-4 ${i === all.length - 1 ? "border-gold-500 bg-ink-900 text-white" : "border-gold-light/60 bg-white text-ink"}`}
+              >
+                <span aria-hidden="true" className={`h-2.5 w-2.5 shrink-0 rounded-full ${i === all.length - 1 ? "bg-gold-300" : "bg-gold-500"}`} />
+                <span className="font-serif text-lg font-semibold">{name}</span>
+                <span className={`ml-auto text-sm ${i === all.length - 1 ? "text-gold-300" : "text-ink/60"}`}>{i === all.length - 1 ? "Online, from January 2027" : "Over ten years"}</span>
+              </li>
+            ))}
+          </ul>
+        </Container>
+      </section>
+
       {/* STAGES OF SCHOOL */}
       <section className="section-pad">
         <Container className="grid gap-10 lg:grid-cols-[1fr_1.2fr] lg:items-center">
@@ -180,16 +217,23 @@ export default async function HomePage() {
               Explore the curriculum
             </Button>
           </div>
-          <div className="grid gap-4 sm:grid-cols-2">
+          {/* One continuous route from Year 1 to GCSE, rather than separate "pathway" cards. */}
+          <ol className="relative space-y-3 border-l-2 border-gold-300 pl-6">
             {keyStages.map((ks) => (
-              <Link key={ks.slug} href={`/curriculum/${ks.slug}`} className="card-lift reveal group relative rounded-2xl border border-gold-light/50 bg-white p-5">
-                <p className="text-xs font-semibold uppercase tracking-wide text-ink/60">{ks.title}</p>
-                <p className="mt-1 font-serif text-lg font-semibold text-gold-700">{ks.range}</p>
-                <p className="mt-1.5 text-sm text-ink/70">{lessonsAWeek(ks)}</p>
-                <Icon name="arrowRight" size="sm" className="absolute right-5 top-5 h-4 w-4 text-gold-500 transition-transform group-hover:translate-x-1" />
-              </Link>
+              <li key={ks.slug} className="reveal relative">
+                <span aria-hidden="true" className="absolute -left-[2.05rem] top-5 h-4 w-4 rounded-full border-2 border-gold-500 bg-cream" />
+                <Link href={`/curriculum/${ks.slug}`} className="card-lift group flex items-center justify-between gap-4 rounded-2xl border border-gold-light/50 bg-white px-5 py-4">
+                  <span>
+                    <span className="block font-serif text-lg font-semibold text-gold-700">{ks.range}</span>
+                    <span className="block text-sm text-ink/70">
+                      {ks.title} · {lessonsAWeek(ks)}
+                    </span>
+                  </span>
+                  <Icon name="arrowRight" size="sm" className="h-4 w-4 shrink-0 text-gold-500 transition-transform group-hover:translate-x-1" />
+                </Link>
+              </li>
             ))}
-          </div>
+          </ol>
         </Container>
       </section>
 

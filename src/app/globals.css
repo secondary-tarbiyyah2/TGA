@@ -110,6 +110,31 @@ body {
   line-height: 1.65;
 }
 
+/* Public website reading sizes (owner, 11 Nov 2026: "fonts a bit too small").
+   The marketing layout wraps every public page in .site-type; the portal
+   (/learn) keeps its own denser scale. Unlayered, so these win over
+   Tailwind's text-* utilities on the public site only. */
+.site-type {
+  font-size: 18px;
+}
+.site-type .text-xs {
+  font-size: 0.84375rem; /* 13.5px */
+  line-height: 1.45;
+}
+.site-type .text-sm {
+  font-size: 1rem; /* 16px */
+  line-height: 1.6;
+}
+.site-type .text-base {
+  font-size: 1.125rem; /* 18px */
+}
+.site-type .text-lg {
+  font-size: 1.25rem; /* 20px */
+}
+.site-type .text-xl {
+  font-size: 1.375rem; /* 22px */
+}
+
 /* Tailwind's preflight resets <button> to `cursor: default` (matching the
    native OS default) rather than `pointer`– every clickable button on
    this site (option cards, CTAs, admin controls) needs the hand cursor
@@ -1146,8 +1171,7 @@ a.portal-card:hover, .portal a.rounded-2xl.border.bg-white:hover {
   background-size: 22px 22px, auto, auto, auto, auto;
 }
 
-/* Thin gold "foil" divider: a hairline rule with a small 8-point star at its
-   centre. Use sparingly, see DESIGN.md brand direction. */
+/* Thin gold "foil" divider: a hairline rule either side of its content. Use sparingly, see DESIGN.md brand direction. */
 .foil-divider {
   display: flex;
   align-items: center;
@@ -1679,10 +1703,6 @@ body:not(:has(.portal)) input[type="file"]::file-selector-button:hover {
 }
 
 @media (prefers-reduced-motion: no-preference) {
-  /* The big background star turns very slowly. */
-  .hero-star {
-    animation: starTurn 90s linear infinite;
-  }
   /* Sections ease in as they scroll into view (browsers with scroll-driven
      animations; everywhere else they are simply shown). */
   @supports (animation-timeline: view()) {
@@ -1692,9 +1712,6 @@ body:not(:has(.portal)) input[type="file"]::file-selector-button:hover {
       animation-range: entry 0% entry 60%;
     }
   }
-}
-@keyframes starTurn {
-  to { transform: rotate(360deg); }
 }
 @keyframes revealUp {
   from { opacity: 0; transform: translateY(18px); }
@@ -1798,8 +1815,8 @@ html[data-big-cursor] :is(a, button, [role="button"], [role="radio"], [role="swi
 html[data-big-cursor] :is(a, button, [role="button"], [role="radio"], [role="switch"], summary, label, select) * {
   cursor: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='44' height='48' viewBox='0 0 44 48'%3E%3Cpath d='M14 4a4 4 0 0 1 8 0v14l3-1a4 4 0 0 1 5 3l1-1a4 4 0 0 1 6 3v12c0 7-5 13-12 13h-5c-5 0-8-2-11-6L3 31a4 4 0 0 1 6-5l5 5z' fill='%23111' stroke='%23fff' stroke-width='2.5' stroke-linejoin='round'/%3E%3C/svg%3E") 16 2, pointer !important;
 }
-/* Reduce motion also stops the scroll-driven reveals, the turning star and the glow. */
-html[data-reduce-motion] :is(.reveal, .hero-star, .scroll-progress, .menu-panel, .search-panel) {
+/* Reduce motion also stops the scroll-driven reveals and the glow. */
+html[data-reduce-motion] :is(.reveal, .scroll-progress, .menu-panel, .search-panel) {
   animation: none !important;
 }
 html[data-reduce-motion] .glow-border::before {
@@ -1808,3 +1825,85 @@ html[data-reduce-motion] .glow-border::before {
 html[data-reduce-motion] .scroll-progress {
   display: none;
 }
+
+/* ── Public website text size (owner, 11 Nov 2026: "the main website text is too small").
+   Inside the public site's <main> (not the header, not the portal) body copy and small print
+   read one step larger: Tailwind v4 reads these variables, so text-xs / text-sm / text-base /
+   text-lg grow without touching headings or the header's fit. The visitor's own text-size
+   setting still scales everything on top. */
+main[data-site="public"] {
+  font-size: 1.125rem; /* 18px running text */
+  --text-xs: 0.875rem; /* 12 -> 14px */
+  --text-xs--line-height: 1.375rem;
+  --text-sm: 1rem; /* 14 -> 16px */
+  --text-sm--line-height: 1.6rem;
+  --text-base: 1.125rem; /* 16 -> 18px */
+  --text-base--line-height: 1.75rem;
+  --text-lg: 1.25rem; /* 18 -> 20px */
+  --text-lg--line-height: 1.85rem;
+}
+
+/* ── The digital mushaf used to hear a recitation (src/components/learn/quran/RecitationWorkspace.tsx).
+   The King Fahd Complex's Uthmanic Hafs font v18, served unmodified as published (docs/mushaf.md). */
+@font-face {
+  font-family: "UthmanicHafs";
+  src: url("/fonts/uthmanic-hafs-v18.woff2") format("woff2");
+  font-display: swap;
+}
+.mushaf-text {
+  font-family: "UthmanicHafs", var(--font-arabic), "Noto Naskh Arabic", serif;
+  font-size: 1.75rem;
+  line-height: 2.6;
+  color: var(--color-ink-900);
+  text-align: justify;
+  text-align-last: right;
+}
+@media (min-width: 1024px) {
+  .mushaf-text { font-size: 2rem; }
+}
+.mushaf-word {
+  border-radius: 6px;
+  padding: 0 0.08em;
+  cursor: pointer;
+  transition: background-color 120ms ease;
+}
+.mushaf-word:hover { background: var(--color-gold-50); }
+.mushaf-word:focus-visible, .mushaf-gap:focus-visible, .mushaf-ayah-no:focus-visible { outline: 2px solid var(--color-forest-700); outline-offset: 2px; }
+.mushaf-word[data-mark="prompt"] { background: var(--color-red-50); color: var(--color-red-800); text-decoration: underline 2px var(--color-red-600); text-underline-offset: 0.35em; }
+.mushaf-word[data-mark="slip"] { background: var(--color-amber-50); color: var(--color-amber-900); text-decoration: underline wavy 1.5px var(--color-amber-600); text-underline-offset: 0.35em; }
+.mushaf-word[data-mark="tajweed"] { background: var(--color-sky-50); color: var(--color-sky-800); text-decoration: underline dotted 2px var(--color-sky-600); text-underline-offset: 0.35em; }
+/* The join between two words: a narrow tap target (tajweed across the join). */
+.mushaf-gap {
+  display: inline-block;
+  width: 0.55em;
+  height: 1.3em;
+  vertical-align: middle;
+  border-radius: 4px;
+  cursor: pointer;
+}
+.mushaf-gap:hover { background: var(--color-sky-50); }
+.mushaf-gap[data-mark="tajweed"] { background: transparent; border-bottom: 3px solid var(--color-sky-600); }
+.mushaf-ayah-no {
+  display: inline-flex;
+  min-width: 1.6em;
+  height: 1.6em;
+  align-items: center;
+  justify-content: center;
+  margin: 0 0.2em;
+  border: 1.5px solid var(--color-gold-500);
+  border-radius: 999px;
+  font-family: var(--font-inter), sans-serif;
+  font-size: 0.45em;
+  font-weight: 600;
+  vertical-align: middle;
+  color: var(--color-gold-900);
+  cursor: pointer;
+}
+.mushaf-ayah[data-skipped="true"] .mushaf-word { opacity: 0.35; text-decoration: line-through; cursor: not-allowed; background: none; }
+.mushaf-ayah[data-skipped="true"] .mushaf-ayah-no { border-style: dashed; color: var(--color-ink-500); }
+html[data-reduce-motion] .mushaf-word { transition: none; }
+.mushaf-text--read .mushaf-word, .mushaf-text--read .mushaf-gap, .mushaf-text--read .mushaf-ayah-no { cursor: default; }
+.mushaf-text--read .mushaf-word:hover { background: none; }
+.mushaf-text--read .mushaf-word[data-mark="prompt"]:hover { background: var(--color-red-50); }
+.mushaf-text--read .mushaf-word[data-mark="slip"]:hover { background: var(--color-amber-50); }
+.mushaf-text--read .mushaf-word[data-mark="tajweed"]:hover { background: var(--color-sky-50); }

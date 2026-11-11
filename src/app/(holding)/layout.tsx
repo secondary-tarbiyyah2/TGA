@@ -6,10 +6,13 @@ export default function HoldingLayout({ children }: { children: React.ReactNode 
   return (
     <>
       <PrelaunchHeader />
-      <main id="main" className="flex-1">
-        {children}
-      </main>
-      <PrelaunchFooter />
+      {/* The same larger public reading sizes as the full site (globals.css .site-type). */}
+      <div className="site-type contents">
+        <main id="main" className="flex-1" data-site="public">
+          {children}
+        </main>
+        <PrelaunchFooter />
+      </div>
     </>
   );
 }

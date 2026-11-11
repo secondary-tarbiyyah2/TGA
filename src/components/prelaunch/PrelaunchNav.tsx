@@ -11,6 +11,7 @@ export const PRELAUNCH_LINKS = [
   { href: "/term-dates/", label: "Term dates" },
   { href: "/fees/", label: "Fees" },
   { href: "/curriculum/", label: "Subjects" },
+  { href: "/careers/", label: "Careers" },
 ];
 
 const noSubscribe = () => () => {};

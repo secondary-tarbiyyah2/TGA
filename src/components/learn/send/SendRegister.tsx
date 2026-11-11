@@ -7,7 +7,9 @@ import { getSupabaseClient } from "@/lib/supabase/client";
 import { PageHeader } from "@/components/learn/PageHeader";
 import { Tabs } from "@/components/learn/Tabs";
 import { EmptyState, Notice, ui } from "@/components/learn/ui";
-import { PLAN_COLUMNS, PLAN_STATUS, reviewState, useCanManageSend, type RegisterRow, type SupportPlan } from "@/lib/learn/send";
+import { PLAN_COLUMNS, PLAN_STATUS, PRIMARY_NEED, SUPPORT_LEVEL, reviewState, useCanManageSend, type PrimaryNeed, type RegisterRow, type SupportLevel, type SupportPlan } from "@/lib/learn/send";
+import { Select } from "@/components/learn/Select";
+import { PupilLink } from "@/components/learn/pupil/PupilLink";
 import { SupportPlanEditor } from "./SupportPlanEditor";
 import { PupilSupportCard } from "./SupportAtAGlance";
 import { AddPupilPicker, ChangeLog, RegisterTable } from "./SendExtras";
@@ -33,6 +35,9 @@ function SendRegister({ area }: { area: "admin" | "teach" }) {
   const [error, setError] = useState<string | null>(null);
   const [filter, setFilter] = useState<Filter>("plans");
   const [q, setQ] = useState("");
+  const [need, setNeed] = useState<"" | PrimaryNeed>("");
+  const [level, setLevel] = useState<"" | SupportLevel>("");
+  const [year, setYear] = useState("");
   const [picked, setPicked] = useState<Record<string, string>>({});
   const base = `/${area}/send`;
 
@@ -60,10 +65,26 @@ function SendRegister({ area }: { area: "admin" | "teach" }) {
     };
   }, [rows]);
 
+  // The register's figures (owner feedback 3: total on the register, EHC plans, SEN support, reviews due).
+  const figures = useMemo(() => {
+    const on = (rows || []).filter((x) => x.status === "active" || x.status === "draft");
+    const due = on.filter((x) => x.status === "active" && ["overdue", "soon", "none"].includes(reviewState(x.next_review_due).state));
+    return {
+      on: on.length,
+      ehcp: on.filter((x) => x.support_level === "ehcp").length,
+      sen: on.filter((x) => x.support_level === "sen_support").length,
+      monitoring: on.filter((x) => x.support_level === "monitoring").length,
+      due: due.length,
+      overdue: due.filter((x) => reviewState(x.next_review_due).state === "overdue").length,
+    };
+  }, [rows]);
+  const years = useMemo(() => [...new Set((rows || []).map((r) => r.year_group).filter(Boolean) as string[])].sort((a, b) => a.localeCompare(b, "en-GB", { numeric: true })), [rows]);
+
   const shown = useMemo(() => {
     const needle = q.trim().toLowerCase();
     return (rows || [])
       .filter((x) => !needle || x.child_name.toLowerCase().includes(needle))
+      .filter((x) => (!need || x.primary_need === need) && (!level || x.support_level === level) && (!year || x.year_group === year))
       .filter((x) => {
         if (filter === "plans") return x.status === "active" || x.status === "draft";
         if (filter === "due") return x.status === "active" && ["overdue", "soon", "none"].includes(reviewState(x.next_review_due).state);
@@ -72,7 +93,7 @@ function SendRegister({ area }: { area: "admin" | "teach" }) {
         return x.status === "closed";
       })
       .sort((a, b) => (filter === "due" ? (a.next_review_due || "").localeCompare(b.next_review_due || "") : a.child_name.localeCompare(b.child_name)));
-  }, [rows, filter, q]);
+  }, [rows, filter, q, need, level, year]);
 
   const open = openId ? (rows || []).find((r) => r.child_id === openId) : null;
   const go = (id: string | null) => router.replace(id ? `${base}?pupil=${id}` : base, { scroll: true });
@@ -111,8 +132,48 @@ function SendRegister({ area }: { area: "admin" | "teach" }) {
       />
       {error && <Notice tone="bad">Couldn&apos;t load the register: {error}</Notice>}
       <div className="space-y-4">
+        <dl className="grid grid-cols-2 border-y border-gold-light lg:grid-cols-4" data-guide="send-figures">
+          {[
+            { label: "On the register", value: figures.on, note: `${figures.monitoring} monitoring`, go: () => { setFilter("plans"); setLevel(""); } },
+            { label: "EHC plans", value: figures.ehcp, note: "Education, health and care plans", go: () => { setFilter("plans"); setLevel("ehcp"); } },
+            { label: "SEN support", value: figures.sen, note: "Support from the school", go: () => { setFilter("plans"); setLevel("sen_support"); } },
+            { label: "Reviews due", value: figures.due, note: figures.overdue ? `${figures.overdue} overdue` : "None overdue", bad: figures.overdue > 0, go: () => { setFilter("due"); setLevel(""); } },
+          ].map((f, i) => (
+            <div key={f.label} className={`${i % 2 === 1 ? "border-l border-gold-light" : ""} ${i >= 2 ? "border-t border-gold-light lg:border-t-0" : ""} ${i === 2 ? "lg:border-l" : ""}`}>
+              <button type="button" onClick={f.go} className="block w-full px-4 py-4 text-left hover:bg-cream/50">
+                <dt className="t-eyebrow">{f.label}</dt>
+                <dd className="mt-1 text-2xl font-semibold tabular-nums text-ink">{rows === null ? "…" : f.value}</dd>
+                <dd className={`t-meta mt-0.5 ${f.bad ? "font-medium !text-red-700" : ""}`}>{f.note}</dd>
+              </button>
+            </div>
+          ))}
+        </dl>
         <div className={ui.toolbar}>
           <input type="search" value={q} onChange={(e) => setQ(e.target.value)} placeholder="Search by name" aria-label="Search by name" className={`${ui.input} !w-auto min-w-[12rem] flex-1`} />
+          <Select value={need} onChange={(e) => setNeed(e.target.value as "" | PrimaryNeed)} aria-label="Area of need" className={`${ui.select} w-full sm:w-64`}>
+            <option value="">Every area of need</option>
+            {(Object.keys(PRIMARY_NEED) as PrimaryNeed[]).map((k) => (
+              <option key={k} value={k}>
+                {PRIMARY_NEED[k]}
+              </option>
+            ))}
+          </Select>
+          <Select value={level} onChange={(e) => setLevel(e.target.value as "" | SupportLevel)} aria-label="Level of support" className={`${ui.select} w-full sm:w-44`}>
+            <option value="">Every level</option>
+            {(Object.keys(SUPPORT_LEVEL) as SupportLevel[]).map((k) => (
+              <option key={k} value={k}>
+                {SUPPORT_LEVEL[k]}
+              </option>
+            ))}
+          </Select>
+          <Select value={year} onChange={(e) => setYear(e.target.value)} aria-label="Year group" className={`${ui.select} w-full sm:w-40`}>
+            <option value="">Every year</option>
+            {years.map((y) => (
+              <option key={y} value={y}>
+                {y}
+              </option>
+            ))}
+          </Select>
           <AddPupilPicker
             onPick={(id, name) => {
               setPicked((p) => ({ ...p, [id]: name }));
@@ -145,7 +206,7 @@ function SendRegister({ area }: { area: "admin" | "teach" }) {
           </EmptyState>
         ) : (
           <div data-guide="send-list" >
-            <RegisterTable rows={shown} onOpen={(id) => go(id)} onSaved={load} />
+            <RegisterTable rows={shown} onOpen={(id) => go(id)} onSaved={load} nameLink={area === "admin" ? (r) => <PupilLink id={r.child_id} name={r.child_name} className="font-medium text-ink" /> : undefined} />
           </div>
         )}
         <p className={ui.hint}>

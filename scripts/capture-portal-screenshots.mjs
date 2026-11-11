@@ -21,7 +21,7 @@ for (const [k, v] of Object.entries({ SUPABASE_URL, SUPABASE_SERVICE_ROLE_KEY, S
     process.exit(1);
   }
 }
-const OUT = "public/images/portal-preview";
+const OUT = process.env.OUT_DIR || "public/images/portal-preview";
 mkdirSync(OUT, { recursive: true });
 
 const admin = createClient(SUPABASE_URL, SUPABASE_SERVICE_ROLE_KEY, { auth: { persistSession: false } });
@@ -84,7 +84,11 @@ async function sessionFor(email) {
   if (vErr) throw vErr;
   return verified.session;
 }
-const sessions = { parent: await sessionFor(EMAIL), student: await sessionFor("demo-student@tarbiyyah.co.uk").catch(() => null) };
+const sessions = {
+  parent: await sessionFor(EMAIL),
+  student: await sessionFor("demo-student@tarbiyyah.co.uk").catch(() => null),
+  teacher: await sessionFor("demo-teacher@tarbiyyah.co.uk").catch(() => null),
+};
 const storageKey = `sb-${new URL(SUPABASE_URL).hostname.split(".")[0]}-auth-token`;
 
 const tidyFor = (greet) => `(() => {
@@ -123,12 +127,14 @@ const tidyFor = (greet) => `(() => {
 })()`;
 
 const browser = await chromium.launch();
-const shots = [
+const DEFAULT_SHOTS = [
   { name: "family-dashboard-phone", who: "parent", path: "/family/dashboard/", greet: "Umm Yusuf", viewport: { width: 390, height: 844 }, scale: 3, mobile: true, height: 1500 },
   { name: "family-dashboard-desktop", who: "parent", path: "/family/dashboard/", greet: "Umm Yusuf", viewport: { width: 1440, height: 960 }, scale: 2, mobile: false, height: 960 },
   // Used in the prospectus's portal page.
   { name: "student-dashboard-desktop", who: "student", path: "/student/dashboard/", greet: "Yusuf", viewport: { width: 1440, height: 960 }, scale: 2, mobile: false, height: 960 },
 ];
+// SHOTS (JSON) overrides the list, e.g. for the open evening deck (capture-open-evening.yml).
+const shots = process.env.SHOTS ? JSON.parse(process.env.SHOTS) : DEFAULT_SHOTS;
 for (const s of shots) {
   const session = sessions[s.who];
   if (!session) {
@@ -143,6 +149,16 @@ for (const s of shots) {
   await page.evaluate(([k, v]) => localStorage.setItem(k, v), [storageKey, JSON.stringify(session)]);
   await page.goto(`${LEARN_URL}${s.path}`, { waitUntil: "networkidle" });
   await page.waitForTimeout(2500);
+  // Close a first-visit tour or guide if one opens.
+  for (const label of ["Skip tour", "Skip", "Not now", "Close tour"]) {
+    const b = page.getByRole("button", { name: label, exact: true });
+    if (await b.count().catch(() => 0)) await b.first().click().catch(() => {});
+  }
+  await page.waitForTimeout(400);
+  if (s.click) {
+    await page.getByRole("button", { name: s.click }).first().click().catch(() => console.log(`no button ${s.click} on ${s.path}`));
+    await page.waitForTimeout(1200);
+  }
   await page.evaluate(TIDY);
   await page.waitForTimeout(300);
   if (s.mobile) {
