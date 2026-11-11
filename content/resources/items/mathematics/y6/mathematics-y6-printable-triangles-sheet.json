@@ -1,0 +1,117 @@
+{
+ "id": "mathematics-y6-printable-triangles-sheet",
+ "title": "Printable triangles sheet",
+ "type": "worksheet",
+ "subject": "Mathematics",
+ "subjectSlug": "mathematics",
+ "year": "y6",
+ "unit": "Summer 2: Shape; position and direction; consolidation",
+ "lessons": [
+  80
+ ],
+ "source": "Seeded from mathematics/y6 lesson 80 (Printable triangles sheet)",
+ "intro": "Lesson 80: Angles in special triangles. To understand how to use the properties of isosceles, equilateral and right-angled triangles to find angles",
+ "blocks": [
+  {
+   "h": "Worked examples"
+  },
+  {
+   "model": {
+    "title": "Isosceles, top angle 40°. Base angles?",
+    "parts": [
+     {
+      "label": "Step 1",
+      "text": "180 - 40 = 140."
+     },
+     {
+      "label": "Step 2",
+      "text": "140 ÷ 2 = 70."
+     },
+     {
+      "label": "Answer",
+      "text": "70° and 70°"
+     }
+    ]
+   }
+  },
+  {
+   "model": {
+    "title": "Isosceles, base angle 52°. Top angle?",
+    "parts": [
+     {
+      "label": "Step 1",
+      "text": "52 + 52 = 104."
+     },
+     {
+      "label": "Step 2",
+      "text": "180 - 104 = 76."
+     },
+     {
+      "label": "Answer",
+      "text": "76°"
+     }
+    ]
+   }
+  },
+  {
+   "h": "We do"
+  },
+  {
+   "questions": [
+    {
+     "q": "Isosceles, top angle 100°. Base angles?",
+     "a": "40° each",
+     "model": "Teacher: 180 - 100 = 80; 80 ÷ 2 = 40°."
+    },
+    {
+     "q": "Isosceles, base angle 65°. Top?",
+     "a": "50°"
+    },
+    {
+     "q": "Right-angled, one angle 28°. Third?",
+     "a": "62°"
+    }
+   ]
+  },
+  {
+   "h": "You do"
+  },
+  {
+   "questions": [
+    {
+     "q": "(a) isosceles, top 30° (b) isosceles, base 75° (c) right-angled, 41° (d) equilateral",
+     "a": "(a) 75°, 75° (b) 75°, 30° (c) 49° (d) 60°, 60°, 60°",
+     "model": "Teacher does (a): (180 - 30) ÷ 2 = 75°."
+    },
+    {
+     "q": "An isosceles triangle has an angle of 50°. Give both possible sets of angles.",
+     "a": "50°, 65°, 65° or 50°, 50°, 80°"
+    },
+    {
+     "q": "Why can the top angle of an isosceles triangle not be 180°?",
+     "a": "The base angles would be 0°: there would be no triangle"
+    }
+   ]
+  },
+  {
+   "h": "Exit ticket"
+  },
+  {
+   "questions": [
+    {
+     "q": "Each angle of an equilateral triangle:",
+     "a": "A) 60°",
+     "options": [
+      "60°",
+      "90°",
+      "45°"
+     ]
+    },
+    {
+     "q": "Big question: what do we know about isosceles angles?",
+     "a": "The two base angles are equal; use 180° to find the rest."
+    }
+   ]
+  }
+ ]
+}

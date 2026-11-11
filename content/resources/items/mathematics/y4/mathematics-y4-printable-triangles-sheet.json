@@ -1,0 +1,127 @@
+{
+ "id": "mathematics-y4-printable-triangles-sheet",
+ "title": "Printable triangles sheet",
+ "type": "worksheet",
+ "subject": "Mathematics",
+ "subjectSlug": "mathematics",
+ "year": "y4",
+ "unit": "Summer 2: Statistics; geometry; position and direction",
+ "lessons": [
+  95
+ ],
+ "source": "Seeded from mathematics/y4 lesson 95 (Printable triangles sheet)",
+ "intro": "Lesson 95: Triangles. To understand how to classify triangles by their sides and angles",
+ "blocks": [
+  {
+   "h": "Worked example"
+  },
+  {
+   "model": {
+    "title": "Sides 5 cm, 5 cm, 7 cm, one right angle.",
+    "parts": [
+     {
+      "label": "Step 1",
+      "text": "Two equal sides: isosceles."
+     },
+     {
+      "label": "Step 2",
+      "text": "One right angle: right-angled."
+     },
+     {
+      "label": "Answer",
+      "text": "Right-angled isosceles triangle"
+     }
+    ]
+   }
+  },
+  {
+   "h": "By sides"
+  },
+  {
+   "table": {
+    "head": [
+     "Triangle",
+     "Equal sides",
+     "Equal angles"
+    ],
+    "rows": [
+     [
+      "equilateral",
+      "3",
+      "3"
+     ],
+     [
+      "isosceles",
+      "2",
+      "2"
+     ],
+     [
+      "scalene",
+      "0",
+      "0"
+     ]
+    ]
+   }
+  },
+  {
+   "h": "We do"
+  },
+  {
+   "questions": [
+    {
+     "q": "Sides 6, 6, 6 cm?",
+     "a": "equilateral",
+     "model": "Teacher: all three sides equal, so equilateral."
+    },
+    {
+     "q": "Sides 3, 4, 5 cm with a right angle?",
+     "a": "right-angled scalene"
+    },
+    {
+     "q": "Sides 8, 8, 5 cm?",
+     "a": "isosceles"
+    }
+   ]
+  },
+  {
+   "h": "You do"
+  },
+  {
+   "questions": [
+    {
+     "q": "Classify the 6 triangles on the sheet by sides (measure them).",
+     "a": "Answers on the sheet key",
+     "model": "Teacher measures the first triangle."
+    },
+    {
+     "q": "Sort them in a table: right-angled or not.",
+     "a": "Answers on the sheet key"
+    },
+    {
+     "q": "Can a triangle be equilateral and right-angled? Explain.",
+     "a": "No: equilateral angles are all equal and acute; three right angles cannot make a triangle"
+    }
+   ]
+  },
+  {
+   "h": "Exit ticket"
+  },
+  {
+   "questions": [
+    {
+     "q": "2 equal sides:",
+     "a": "A) isosceles",
+     "options": [
+      "isosceles",
+      "scalene",
+      "equilateral"
+     ]
+    },
+    {
+     "q": "Big question: how many kinds?",
+     "a": "By sides: equilateral, isosceles, scalene; and some are right-angled."
+    }
+   ]
+  }
+ ]
+}

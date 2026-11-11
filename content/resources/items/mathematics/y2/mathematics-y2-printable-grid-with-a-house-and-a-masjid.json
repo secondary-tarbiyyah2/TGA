@@ -1,0 +1,143 @@
+{
+ "id": "mathematics-y2-printable-grid-with-a-house-and-a-masjid",
+ "title": "Printable grid with a house and a masjid",
+ "type": "printable graph/grid",
+ "subject": "Mathematics",
+ "subjectSlug": "mathematics",
+ "year": "y2",
+ "unit": "Summer 2: Statistics; position and direction; shape; assessment",
+ "lessons": [
+  72
+ ],
+ "source": "Seeded from mathematics/y2 lesson 72 (Printable grid with a house and a masjid)",
+ "intro": "Lesson 72: Describe position: left, right, up and down. To understand how to describe position and movement on a grid",
+ "blocks": [
+  {
+   "h": "Grid"
+  },
+  {
+   "grid": {
+    "kind": "gridmap",
+    "eastings": [
+     "1",
+     "2",
+     "3",
+     "4",
+     "5"
+    ],
+    "labels": false,
+    "rows": [
+     [
+      "5",
+      "",
+      "",
+      "",
+      "",
+      "Masjid"
+     ],
+     [
+      "4",
+      "",
+      "",
+      "",
+      "",
+      ""
+     ],
+     [
+      "3",
+      "",
+      "",
+      "",
+      "",
+      ""
+     ],
+     [
+      "2",
+      "",
+      "",
+      "",
+      "",
+      ""
+     ],
+     [
+      "1",
+      "House",
+      "",
+      "",
+      "",
+      ""
+     ]
+    ]
+   }
+  },
+  {
+   "questions": [
+    {
+     "q": "Describe a route from the house to the masjid.",
+     "a": "For example: 4 squares right, then 4 squares up",
+     "marks": 1
+    }
+   ]
+  },
+  {
+   "h": "Together"
+  },
+  {
+   "questions": [
+    {
+     "q": "Move 4 left, then 1 down.",
+     "a": "4 squares left, 1 square down",
+     "model": "Teacher moves the counter, counting each square."
+    },
+    {
+     "q": "Opposite of up?",
+     "a": "down"
+    },
+    {
+     "q": "Opposite of left?",
+     "a": "right"
+    }
+   ]
+  },
+  {
+   "h": "My turn"
+  },
+  {
+   "questions": [
+    {
+     "q": "Write the moves from the house to the masjid on the grid sheet.",
+     "a": "For example 3 right, 2 up",
+     "model": "Teacher does the first move."
+    },
+    {
+     "q": "Write the route back.",
+     "a": "2 down, 3 left"
+    },
+    {
+     "q": "Find a different route of the same length.",
+     "a": "For example 2 up, 3 right"
+    }
+   ]
+  },
+  {
+   "h": "Exit ticket"
+  },
+  {
+   "questions": [
+    {
+     "q": "Opposite of right is...",
+     "a": "A) left",
+     "options": [
+      "left",
+      "up",
+      "down"
+     ]
+    },
+    {
+     "q": "Big question: how can we give clear directions?",
+     "a": "Say how many squares and which direction, one step at a time."
+    }
+   ]
+  }
+ ]
+}

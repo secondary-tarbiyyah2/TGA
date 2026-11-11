@@ -1,0 +1,93 @@
+{
+ "id": "mathematics-y9-printable-number-lines",
+ "title": "Printable number lines",
+ "type": "printable graph/grid",
+ "subject": "Mathematics",
+ "subjectSlug": "mathematics",
+ "year": "y9",
+ "unit": "Summer 2: Probability; algebraic representation",
+ "lessons": [
+  83
+ ],
+ "source": "Seeded from mathematics/y9 lesson 83 (Printable number lines)",
+ "intro": "Lesson 83: Inequalities. To understand how to solve linear inequalities and show the solutions on a number line",
+ "blocks": [
+  {
+   "h": "Number lines"
+  },
+  {
+   "grid": {
+    "kind": "numberline",
+    "min": -10,
+    "max": 10,
+    "step": 1,
+    "labelEvery": 1,
+    "count": 3
+   }
+  },
+  {
+   "h": "We do"
+  },
+  {
+   "questions": [
+    {
+     "q": "Solve 4x - 3 ≥ 13.",
+     "a": "x ≥ 4",
+     "model": "Add 3: 4x ≥ 16. Divide by 4: x ≥ 4."
+    },
+    {
+     "q": "Integers for 1 ≤ x < 5?",
+     "a": "1, 2, 3, 4"
+    },
+    {
+     "q": "Solve 10 - x > 6.",
+     "a": "x < 4"
+    }
+   ]
+  },
+  {
+   "h": "You do"
+  },
+  {
+   "questions": [
+    {
+     "q": "Solve and show on a number line: (a) 5x + 2 < 27 (b) 3(x - 1) ≥ 12 (c) -1 ≤ 3x + 2 < 14 (list the integers)",
+     "a": "(a) x < 5 (b) x ≥ 5 (c) -1 ≤ x < 4: -1, 0, 1, 2, 3",
+     "model": "(c) Subtract 2: -3 ≤ 3x < 12. Divide by 3: -1 ≤ x < 4."
+    },
+    {
+     "q": "Solve 7 - 3x ≤ 1.",
+     "a": "-3x ≤ -6, so x ≥ 2"
+    },
+    {
+     "q": "Find the integers that satisfy both 2x + 1 > 3 and 3x - 4 ≤ 11.",
+     "a": "x > 1 and x ≤ 5: 2, 3, 4, 5"
+    }
+   ]
+  },
+  {
+   "h": "Exit ticket"
+  },
+  {
+   "questions": [
+    {
+     "q": "Filled circle means:",
+     "a": "A) ≤ or ≥",
+     "options": [
+      "≤ or ≥",
+      "< or >",
+      "not equal"
+     ]
+    },
+    {
+     "q": "Solve x/2 + 1 < 4",
+     "a": "x < 6"
+    },
+    {
+     "q": "Big question: how can an answer be a range?",
+     "a": "An inequality is true for every value in its solution set, not just one number."
+    }
+   ]
+  }
+ ]
+}

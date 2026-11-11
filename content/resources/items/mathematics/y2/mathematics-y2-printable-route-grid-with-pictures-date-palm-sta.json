@@ -1,0 +1,142 @@
+{
+ "id": "mathematics-y2-printable-route-grid-with-pictures-date-palm-sta",
+ "title": "Printable route grid with pictures (date palm, star, masjid)",
+ "type": "printable graph/grid",
+ "subject": "Mathematics",
+ "subjectSlug": "mathematics",
+ "year": "y2",
+ "unit": "Summer 2: Statistics; position and direction; shape; assessment",
+ "lessons": [
+  74
+ ],
+ "source": "Seeded from mathematics/y2 lesson 74 (Printable route grid with pictures (date palm, star, masjid))",
+ "intro": "Lesson 74: Describe movement and turns. To understand how to give directions that use moves and turns",
+ "blocks": [
+  {
+   "h": "Route grid"
+  },
+  {
+   "grid": {
+    "kind": "gridmap",
+    "eastings": [
+     "1",
+     "2",
+     "3",
+     "4",
+     "5"
+    ],
+    "labels": false,
+    "rows": [
+     [
+      "4",
+      "",
+      "Star",
+      "",
+      "",
+      "Masjid"
+     ],
+     [
+      "3",
+      "",
+      "",
+      "",
+      "",
+      ""
+     ],
+     [
+      "2",
+      "",
+      "",
+      "Date palm",
+      "",
+      ""
+     ],
+     [
+      "1",
+      "Start",
+      "",
+      "",
+      "",
+      ""
+     ]
+    ]
+   }
+  },
+  {
+   "questions": [
+    {
+     "q": "Give directions from Start to the date palm.",
+     "a": "2 right, 1 up",
+     "marks": 1
+    },
+    {
+     "q": "From the date palm to the masjid.",
+     "a": "2 right, 2 up",
+     "marks": 1
+    }
+   ]
+  },
+  {
+   "h": "Together"
+  },
+  {
+   "questions": [
+    {
+     "q": "Facing right: forwards 3, half turn, forwards 1. Where?",
+     "a": "2 squares right of the start",
+     "model": "Teacher: 3 right, turn to face left, back 1: 2 right."
+    },
+    {
+     "q": "Facing up: half turn. Facing?",
+     "a": "down"
+    },
+    {
+     "q": "Which turn takes up to right?",
+     "a": "quarter turn clockwise"
+    }
+   ]
+  },
+  {
+   "h": "My turn"
+  },
+  {
+   "questions": [
+    {
+     "q": "Follow the route on the sheet. Which picture do you reach?",
+     "a": "The date palm (answer on the sheet key)",
+     "model": "Teacher follows the first two instructions."
+    },
+    {
+     "q": "Write a route from the start to the star.",
+     "a": "For example forwards 3, quarter turn clockwise, forwards 2",
+     "lines": 6
+    },
+    {
+     "q": "Write a shorter route to the same star.",
+     "a": "Answers will vary; check by following",
+     "lines": 6
+    }
+   ]
+  },
+  {
+   "h": "Exit ticket"
+  },
+  {
+   "questions": [
+    {
+     "q": "Facing up, which turn faces down?",
+     "a": "A) half turn",
+     "options": [
+      "half turn",
+      "quarter turn",
+      "full turn"
+     ]
+    },
+    {
+     "q": "Big question: can you guide the robot?",
+     "a": "Yes: give moves and turns in order, one step at a time."
+    }
+   ]
+  }
+ ]
+}

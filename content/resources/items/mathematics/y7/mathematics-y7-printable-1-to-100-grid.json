@@ -1,0 +1,111 @@
+{
+ "id": "mathematics-y7-printable-1-to-100-grid",
+ "title": "Printable 1 to 100 grid",
+ "type": "printable graph/grid",
+ "subject": "Mathematics",
+ "subjectSlug": "mathematics",
+ "year": "y7",
+ "unit": "Summer 2: Number sense; sets and probability; primes and proof",
+ "lessons": [
+  15
+ ],
+ "source": "Seeded from mathematics/y7 lesson 15 (Printable 1 to 100 grid)",
+ "intro": "Lesson 15: Factors, multiples and primes. To understand how factors, multiples and primes are related",
+ "blocks": [
+  {
+   "h": "1 to 100 grid"
+  },
+  {
+   "grid": {
+    "kind": "hundred"
+   }
+  },
+  {
+   "h": "Primes"
+  },
+  {
+   "table": {
+    "head": [
+     "1 to 10",
+     "11 to 20",
+     "21 to 30",
+     "31 to 40",
+     "41 to 50"
+    ],
+    "rows": [
+     [
+      "2, 3, 5, 7",
+      "11, 13, 17, 19",
+      "23, 29",
+      "31, 37",
+      "41, 43, 47"
+     ]
+    ]
+   }
+  },
+  {
+   "h": "We do"
+  },
+  {
+   "questions": [
+    {
+     "q": "Factors of 48.",
+     "a": "1, 2, 3, 4, 6, 8, 12, 16, 24, 48",
+     "model": "Pairs: 1 × 48, 2 × 24, 3 × 16, 4 × 12, 6 × 8. 7 is not a factor; next would be 8, already listed."
+    },
+    {
+     "q": "Is 91 prime?",
+     "a": "No: 7 × 13"
+    },
+    {
+     "q": "First three common multiples of 3 and 5.",
+     "a": "15, 30, 45"
+    }
+   ]
+  },
+  {
+   "h": "You do"
+  },
+  {
+   "questions": [
+    {
+     "q": "(a) list the factors of 60 (b) list the common factors of 24 and 36 (c) find the primes between 50 and 70",
+     "a": "(a) 1, 2, 3, 4, 5, 6, 10, 12, 15, 20, 30, 60 (b) 1, 2, 3, 4, 6, 12 (c) 53, 59, 61, 67",
+     "model": "(a) Pairs: 1 × 60, 2 × 30, 3 × 20, 4 × 15, 5 × 12, 6 × 10; 7, 8, 9 do not divide 60."
+    },
+    {
+     "q": "Which numbers under 50 have exactly 3 factors? What do you notice?",
+     "a": "4, 9, 25, 49: squares of primes"
+    },
+    {
+     "q": "Explain why every prime greater than 3 is one more or one less than a multiple of 6.",
+     "a": "Other numbers are 6n, 6n + 2, 6n + 3 or 6n + 4: all divisible by 2 or 3"
+    }
+   ]
+  },
+  {
+   "h": "Exit ticket"
+  },
+  {
+   "questions": [
+    {
+     "q": "A prime number has:",
+     "a": "A) exactly two factors",
+     "options": [
+      "exactly two factors",
+      "no factors",
+      "an odd number of factors"
+     ]
+    },
+    {
+     "q": "Is 57 prime?",
+     "a": "No: 3 × 19"
+    },
+    {
+     "q": "Big question: why is 1 not prime?",
+     "a": "It has only one factor, and a prime needs exactly two."
+    }
+   ]
+  }
+ ]
+}

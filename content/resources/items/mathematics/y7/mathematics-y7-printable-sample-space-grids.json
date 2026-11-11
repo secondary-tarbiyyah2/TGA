@@ -1,0 +1,228 @@
+{
+ "id": "mathematics-y7-printable-sample-space-grids",
+ "title": "Printable sample space grids",
+ "type": "worksheet",
+ "subject": "Mathematics",
+ "subjectSlug": "mathematics",
+ "year": "y7",
+ "unit": "Summer 2: Number sense; sets and probability; primes and proof",
+ "lessons": [
+  80
+ ],
+ "source": "Seeded from mathematics/y7 lesson 80 (Printable sample space grids)",
+ "intro": "Lesson 80: Sample space diagrams. To understand how to list all outcomes of two events systematically and use them to find probabilities",
+ "blocks": [
+  {
+   "h": "Sample space grid: two dice"
+  },
+  {
+   "table": {
+    "head": [
+     "+",
+     "1",
+     "2",
+     "3",
+     "4",
+     "5",
+     "6"
+    ],
+    "rows": [
+     [
+      "1",
+      "",
+      "",
+      "",
+      "",
+      "",
+      ""
+     ],
+     [
+      "2",
+      "",
+      "",
+      "",
+      "",
+      "",
+      ""
+     ],
+     [
+      "3",
+      "",
+      "",
+      "",
+      "",
+      "",
+      ""
+     ],
+     [
+      "4",
+      "",
+      "",
+      "",
+      "",
+      "",
+      ""
+     ],
+     [
+      "5",
+      "",
+      "",
+      "",
+      "",
+      "",
+      ""
+     ],
+     [
+      "6",
+      "",
+      "",
+      "",
+      "",
+      "",
+      ""
+     ]
+    ],
+    "tall": true
+   }
+  },
+  {
+   "answers": "Totals: row r, column c is r + c (2 to 12); P(total 7) = 6/36 = 1/6."
+  },
+  {
+   "h": "Two dice grid"
+  },
+  {
+   "table": {
+    "head": [
+     "+",
+     "1",
+     "2",
+     "3",
+     "4",
+     "5",
+     "6"
+    ],
+    "rows": [
+     [
+      "1",
+      "2",
+      "3",
+      "4",
+      "5",
+      "6",
+      "7"
+     ],
+     [
+      "2",
+      "3",
+      "4",
+      "5",
+      "6",
+      "7",
+      "8"
+     ],
+     [
+      "3",
+      "4",
+      "5",
+      "6",
+      "7",
+      "8",
+      "9"
+     ],
+     [
+      "4",
+      "5",
+      "6",
+      "7",
+      "8",
+      "9",
+      "10"
+     ],
+     [
+      "5",
+      "6",
+      "7",
+      "8",
+      "9",
+      "10",
+      "11"
+     ],
+     [
+      "6",
+      "7",
+      "8",
+      "9",
+      "10",
+      "11",
+      "12"
+     ]
+    ]
+   }
+  },
+  {
+   "h": "We do"
+  },
+  {
+   "questions": [
+    {
+     "q": "P(total of 10)?",
+     "a": "3/36 = 1/12",
+     "model": "Count the 10s in the grid: (4, 6), (5, 5), (6, 4). 3/36 = 1/12."
+    },
+    {
+     "q": "P(a double)?",
+     "a": "6/36 = 1/6"
+    },
+    {
+     "q": "Coin and dice: P(heads and an even number)?",
+     "a": "3/12 = 1/4"
+    }
+   ]
+  },
+  {
+   "h": "You do"
+  },
+  {
+   "questions": [
+    {
+     "q": "From the two-dice grid: P(total 5), P(total more than 9), P(total is even), P(total 1)",
+     "a": "4/36 = 1/9; 6/36 = 1/6; 18/36 = 1/2; 0",
+     "model": "Total 5: (1, 4), (2, 3), (3, 2), (4, 1): 4 cells. 4/36 = 1/9."
+    },
+    {
+     "q": "Draw a sample space for two 4-sided spinners (1 to 4) multiplied. Find P(product is a multiple of 4).",
+     "a": "16 outcomes; multiples of 4: (1, 4), (2, 2), (2, 4), (3, 4), (4, 1), (4, 2), (4, 3), (4, 4): 8/16 = 1/2"
+    },
+    {
+     "q": "Explain why 7 is the most likely total with two dice.",
+     "a": "It lies on the longest diagonal of the grid: 6 pairs make it, more than any other total"
+    }
+   ]
+  },
+  {
+   "h": "Exit ticket"
+  },
+  {
+   "questions": [
+    {
+     "q": "Outcomes for two dice:",
+     "a": "A) 36",
+     "options": [
+      "36",
+      "12",
+      "6"
+     ]
+    },
+    {
+     "q": "P(double six)",
+     "a": "1/36"
+    },
+    {
+     "q": "Big question: which total is most likely?",
+     "a": "7: six of the 36 equally likely outcomes."
+    }
+   ]
+  }
+ ]
+}

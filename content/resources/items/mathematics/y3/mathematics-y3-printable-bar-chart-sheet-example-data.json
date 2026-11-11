@@ -1,0 +1,149 @@
+{
+ "id": "mathematics-y3-printable-bar-chart-sheet-example-data",
+ "title": "Printable bar chart sheet (example data)",
+ "type": "worksheet",
+ "subject": "Mathematics",
+ "subjectSlug": "mathematics",
+ "year": "y3",
+ "unit": "Summer 2: Time; shape; statistics",
+ "lessons": [
+  97
+ ],
+ "source": "Seeded from mathematics/y3 lesson 97 (Printable bar chart sheet (example data))",
+ "intro": "Lesson 97: Interpret bar charts. To understand how to read bar charts with scales of 2, 5 and 10",
+ "blocks": [
+  {
+   "h": "Books read (example data)"
+  },
+  {
+   "grid": {
+    "kind": "barchart",
+    "cats": [
+     "Mon",
+     "Tue",
+     "Wed",
+     "Thu",
+     "Fri"
+    ],
+    "yMax": 20,
+    "yStep": 2,
+    "yLabel": "Books",
+    "values": [
+     8,
+     12,
+     6,
+     14,
+     10
+    ]
+   }
+  },
+  {
+   "questions": [
+    {
+     "q": "On which day were most books read?",
+     "a": "Thursday (14)",
+     "marks": 1
+    },
+    {
+     "q": "How many more on Tuesday than Wednesday?",
+     "a": "6",
+     "marks": 1
+    },
+    {
+     "q": "How many books altogether?",
+     "a": "50",
+     "marks": 1
+    }
+   ]
+  },
+  {
+   "h": "Bar chart"
+  },
+  {
+   "text": "Label both axes, choose a scale, and draw the bars with a ruler, with gaps between them."
+  },
+  {
+   "h": "Worked example"
+  },
+  {
+   "model": {
+    "title": "How many more chose dates than bananas?",
+    "parts": [
+     {
+      "label": "Step 1",
+      "text": "Dates 18, bananas 9."
+     },
+     {
+      "label": "Step 2",
+      "text": "18 - 9 = 9."
+     },
+     {
+      "label": "Answer",
+      "text": "9 more"
+     }
+    ]
+   }
+  },
+  {
+   "h": "We do"
+  },
+  {
+   "questions": [
+    {
+     "q": "How many chose apples?",
+     "a": "14",
+     "model": "Teacher follows the top of the apples bar across to 14."
+    },
+    {
+     "q": "How many children in total?",
+     "a": "53"
+    },
+    {
+     "q": "How many fewer chose grapes than dates?",
+     "a": "6"
+    }
+   ]
+  },
+  {
+   "h": "You do"
+  },
+  {
+   "questions": [
+    {
+     "q": "Read the bar chart on the sheet (scale 5): how many in each bar?",
+     "a": "Answers on the sheet key",
+     "model": "Teacher reads the first bar."
+    },
+    {
+     "q": "Write two 'how many more' questions and answer them.",
+     "a": "Answers will vary",
+     "lines": 6
+    },
+    {
+     "q": "4 more children choose bananas. Which fruit is now second?",
+     "a": "Bananas: 13 > 12"
+    }
+   ]
+  },
+  {
+   "h": "Exit ticket"
+  },
+  {
+   "questions": [
+    {
+     "q": "The scale goes up in 2s. A bar is halfway between 14 and 16. It shows...",
+     "a": "A) 15",
+     "options": [
+      "15",
+      "14",
+      "16"
+     ]
+    },
+    {
+     "q": "Big question: how do we read a bar between lines?",
+     "a": "Work out the step, then find the halfway or part value."
+    }
+   ]
+  }
+ ]
+}

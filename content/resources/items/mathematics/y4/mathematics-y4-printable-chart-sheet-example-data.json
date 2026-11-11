@@ -1,0 +1,311 @@
+{
+ "id": "mathematics-y4-printable-chart-sheet-example-data",
+ "title": "Printable chart sheet (example data)",
+ "type": "worksheet",
+ "subject": "Mathematics",
+ "subjectSlug": "mathematics",
+ "year": "y4",
+ "unit": "Summer 2: Statistics; geometry; position and direction",
+ "lessons": [
+  85,
+  86,
+  89
+ ],
+ "source": "Seeded from mathematics/y4 lessons 85, 86, 89 (Printable chart sheet (example data))",
+ "intro": "To understand how to read pictograms and bar charts with different keys and scales",
+ "blocks": [
+  {
+   "h": "Visitors to the library (example data)"
+  },
+  {
+   "grid": {
+    "kind": "barchart",
+    "cats": [
+     "Mon",
+     "Tue",
+     "Wed",
+     "Thu",
+     "Fri",
+     "Sat"
+    ],
+    "yMax": 60,
+    "yStep": 10,
+    "yLabel": "Visitors",
+    "values": [
+     25,
+     30,
+     20,
+     35,
+     40,
+     55
+    ]
+   }
+  },
+  {
+   "questions": [
+    {
+     "q": "Which day had most visitors?",
+     "a": "Saturday (55)",
+     "marks": 1
+    },
+    {
+     "q": "How many more on Friday than Monday?",
+     "a": "15",
+     "marks": 1
+    },
+    {
+     "q": "What is the total for the week?",
+     "a": "205",
+     "marks": 1
+    },
+    {
+     "q": "How many visitors on Tuesday and Wednesday together?",
+     "a": "50",
+     "marks": 1
+    },
+    {
+     "q": "How many fewer on Wednesday than Thursday?",
+     "a": "15",
+     "marks": 1
+    },
+    {
+     "q": "Find the difference between the busiest and quietest days.",
+     "a": "35",
+     "marks": 1
+    }
+   ]
+  },
+  {
+   "h": "Worked examples"
+  },
+  {
+   "model": {
+    "title": "The scale goes 0, 50, 100, 150. A bar stops a fifth of the way from 100 to 150. Value?",
+    "parts": [
+     {
+      "label": "Step 1",
+      "text": "The step is 50."
+     },
+     {
+      "label": "Step 2",
+      "text": "A fifth of 50 is 10."
+     },
+     {
+      "label": "Step 3",
+      "text": "100 + 10 = 110."
+     },
+     {
+      "label": "Answer",
+      "text": "110"
+     }
+    ]
+   }
+  },
+  {
+   "model": {
+    "title": "Total rain in March and April?",
+    "parts": [
+     {
+      "label": "Step 1",
+      "text": "March 45 mm, April 60 mm."
+     },
+     {
+      "label": "Step 2",
+      "text": "45 + 60 = 105."
+     },
+     {
+      "label": "Answer",
+      "text": "105 mm"
+     }
+    ]
+   }
+  },
+  {
+   "model": {
+    "title": "How much more in April than May?",
+    "parts": [
+     {
+      "label": "Step 1",
+      "text": "April 60, May 35."
+     },
+     {
+      "label": "Step 2",
+      "text": "60 - 35 = 25."
+     },
+     {
+      "label": "Answer",
+      "text": "25 mm"
+     }
+    ]
+   }
+  },
+  {
+   "h": "Big keys"
+  },
+  {
+   "table": {
+    "head": [
+     "Week",
+     "Pictures (1 = 20)",
+     "Bottles"
+    ],
+    "rows": [
+     [
+      "1",
+      "4",
+      "80"
+     ],
+     [
+      "2",
+      "3 and a half",
+      "70"
+     ],
+     [
+      "3",
+      "5 and a quarter",
+      "105"
+     ]
+    ]
+   }
+  },
+  {
+   "h": "We do"
+  },
+  {
+   "questions": [
+    {
+     "q": "Key 1 = 20. 3 and a quarter pictures?",
+     "a": "65",
+     "model": "Teacher: 3 × 20 = 60, a quarter of 20 = 5, so 65."
+    },
+    {
+     "q": "How many pages did 4C read?",
+     "a": "150"
+    },
+    {
+     "q": "Which class read the fewest?",
+     "a": "4B (70)"
+    },
+    {
+     "q": "How much less in May than June?",
+     "a": "15 mm",
+     "model": "Teacher: 50 - 35 = 15."
+    },
+    {
+     "q": "Which two months add to 95 mm?",
+     "a": "March and June"
+    },
+    {
+     "q": "Wettest month?",
+     "a": "April"
+    },
+    {
+     "q": "Mon 34 and Wed 27: total?",
+     "a": "61",
+     "model": "Teacher: 34 + 27 = 30 + 20 + 4 + 7 = 61."
+    },
+    {
+     "q": "Bar chart or line graph: rainfall each month?",
+     "a": "Bar chart (or a line graph to show change); both can work"
+    },
+    {
+     "q": "Difference between 48 and 27?",
+     "a": "21"
+    }
+   ]
+  },
+  {
+   "h": "You do"
+  },
+  {
+   "questions": [
+    {
+     "q": "Key 1 picture = 20. How many for 2, 4 and a half, 6 and a quarter pictures?",
+     "a": "40, 90, 125",
+     "model": "Teacher: 2 × 20 = 40."
+    },
+    {
+     "q": "A bar chart scale goes in 25s. Read bars at 75, halfway between 100 and 125, and 3/5 of the way from 0 to 25.",
+     "a": "75; 112 and a half (112.5); 15"
+    },
+    {
+     "q": "Draw 150 with key 1 = 20.",
+     "a": "7 and a half pictures"
+    },
+    {
+     "q": "From the table (Qur'an pages read: Mon 12, Tue 18, Wed 9, Thu 15, Fri 21, example data): total; Fri - Wed; Tue + Thu.",
+     "a": "75; 12; 33",
+     "model": "Teacher adds the first two: 12 + 18 = 30."
+    },
+    {
+     "q": "How many more pages Mon to Wed than Thu and Fri?",
+     "a": "39 - 36 = 3"
+    },
+    {
+     "q": "The target is 100 pages in 6 days. How many on Saturday?",
+     "a": "100 - 75 = 25"
+    },
+    {
+     "q": "Answer the 6 questions on the chart sheet.",
+     "a": "Answers on the sheet key",
+     "model": "Teacher answers question 1."
+    },
+    {
+     "q": "Times tables retake (portal) or the 12 × 12 challenge sheet.",
+     "a": "Score recorded"
+    },
+    {
+     "q": "Write a question that needs a line graph to answer.",
+     "a": "For example: 'When was the puppy 5 kg?'",
+     "lines": 6
+    }
+   ]
+  },
+  {
+   "h": "Exit ticket"
+  },
+  {
+   "questions": [
+    {
+     "q": "Scale in steps of 20. A bar halfway between 60 and 80 shows...",
+     "a": "A) 70",
+     "options": [
+      "70",
+      "65",
+      "80"
+     ]
+    },
+    {
+     "q": "Big question: how do key and scale change what we see?",
+     "a": "The same height can mean different amounts: read the key or scale first."
+    },
+    {
+     "q": "45 + 60 =",
+     "a": "A) 105",
+     "options": [
+      "105",
+      "95",
+      "115"
+     ]
+    },
+    {
+     "q": "Big question: how can a chart help?",
+     "a": "Read the values, then add or subtract."
+    },
+    {
+     "q": "Data about change over time: use a...",
+     "a": "A) line graph",
+     "options": [
+      "line graph",
+      "pictogram",
+      "tally chart"
+     ]
+    },
+    {
+     "q": "Big question: which chart answers which question?",
+     "a": "Bar charts compare groups; line graphs show change over time."
+    }
+   ]
+  }
+ ]
+}

@@ -1,0 +1,187 @@
+{
+ "id": "mathematics-y3-printable-two-way-table-sheet-example-data",
+ "title": "Printable two-way table sheet (example data)",
+ "type": "worksheet",
+ "subject": "Mathematics",
+ "subjectSlug": "mathematics",
+ "year": "y3",
+ "unit": "Summer 2: Time; shape; statistics",
+ "lessons": [
+  99
+ ],
+ "source": "Seeded from mathematics/y3 lesson 99 (Printable two-way table sheet (example data))",
+ "intro": "Lesson 99: Collect and present data in tables. To understand how to read and make tables, including two-way tables",
+ "blocks": [
+  {
+   "h": "Clubs (example data)"
+  },
+  {
+   "table": {
+    "head": [
+     "",
+     "Football",
+     "Art",
+     "Total"
+    ],
+    "rows": [
+     [
+      "Boys",
+      "9",
+      "5",
+      "14"
+     ],
+     [
+      "Girls",
+      "4",
+      "8",
+      "12"
+     ],
+     [
+      "Total",
+      "13",
+      "13",
+      "26"
+     ]
+    ]
+   }
+  },
+  {
+   "questions": [
+    {
+     "q": "How many girls chose art?",
+     "a": "8",
+     "marks": 1
+    },
+    {
+     "q": "How many children chose football?",
+     "a": "13",
+     "marks": 1
+    },
+    {
+     "q": "How many children altogether?",
+     "a": "26",
+     "marks": 1
+    }
+   ]
+  },
+  {
+   "h": "Worked example"
+  },
+  {
+   "model": {
+    "title": "Check the grand total.",
+    "parts": [
+     {
+      "label": "Step 1",
+      "text": "Rows: 14 + 15 = 29."
+     },
+     {
+      "label": "Step 2",
+      "text": "Columns: 13 + 9 + 7 = 29."
+     },
+     {
+      "label": "Answer",
+      "text": "29 both ways"
+     }
+    ]
+   }
+  },
+  {
+   "h": "Two-way table"
+  },
+  {
+   "table": {
+    "head": [
+     "Class",
+     "Laptop",
+     "Tablet",
+     "Desktop",
+     "Total"
+    ],
+    "rows": [
+     [
+      "3A",
+      "6",
+      "5",
+      "3",
+      "14"
+     ],
+     [
+      "3B",
+      "7",
+      "4",
+      "4",
+      "15"
+     ],
+     [
+      "Total",
+      "13",
+      "9",
+      "7",
+      "29"
+     ]
+    ]
+   }
+  },
+  {
+   "h": "We do"
+  },
+  {
+   "questions": [
+    {
+     "q": "How many use a desktop altogether?",
+     "a": "7",
+     "model": "Teacher reads the Desktop column total: 3 + 4 = 7."
+    },
+    {
+     "q": "How many in 3A use a laptop?",
+     "a": "6"
+    },
+    {
+     "q": "Which device is used most?",
+     "a": "Laptop (13)"
+    }
+   ]
+  },
+  {
+   "h": "You do"
+  },
+  {
+   "questions": [
+    {
+     "q": "Complete the totals in the two-way table on the sheet.",
+     "a": "Answers on the sheet key",
+     "model": "Teacher completes the first row total."
+    },
+    {
+     "q": "How many more laptops than tablets in total?",
+     "a": "13 - 9 = 4"
+    },
+    {
+     "q": "Make your own two-way table: days of the week against the five prayers, ticking each prayer prayed on time.",
+     "a": "Answers will vary"
+    }
+   ]
+  },
+  {
+   "h": "Exit ticket"
+  },
+  {
+   "questions": [
+    {
+     "q": "A two-way table sorts by...",
+     "a": "A) two things",
+     "options": [
+      "two things",
+      "one thing",
+      "colour only"
+     ]
+    },
+    {
+     "q": "Big question: how can a table answer questions quickly?",
+     "a": "Find the row and column; read where they meet."
+    }
+   ]
+  }
+ ]
+}

@@ -1,0 +1,113 @@
+{
+ "id": "mathematics-y7-printable-statements-card-sort",
+ "title": "Printable statements card sort",
+ "type": "worksheet",
+ "subject": "Mathematics",
+ "subjectSlug": "mathematics",
+ "year": "y7",
+ "unit": "Summer 2: Number sense; sets and probability; primes and proof",
+ "lessons": [
+  84
+ ],
+ "source": "Seeded from mathematics/y7 lesson 84 (Printable statements card sort)",
+ "intro": "Lesson 84: Proof by counterexample and year review. To understand how one counterexample disproves a general statement, and how to review a year of learning",
+ "blocks": [
+  {
+   "h": "Always, sometimes or never true?"
+  },
+  {
+   "cards": [
+    "The sum of two odd numbers is even.",
+    "A prime number is odd.",
+    "Multiplying makes a number bigger.",
+    "A square number has an odd number of factors.",
+    "The product of two negative numbers is negative.",
+    "A multiple of 6 is a multiple of 3."
+   ],
+   "cols": 2,
+   "height": 22,
+   "size": 4,
+   "task": "sort into always, sometimes and never true.",
+   "answer": "Always: sum of two odd numbers is even; a square number has an odd number of factors; a multiple of 6 is a multiple of 3. Sometimes: a prime is odd (not 2); multiplying makes bigger (not by numbers below 1). Never: two negatives multiply to a negative."
+  },
+  {
+   "h": "Testing"
+  },
+  {
+   "cards": [
+    "squaring makes a number bigger",
+    "the sum of two odd numbers is even",
+    "all primes are odd",
+    "a multiple of 6 is a multiple of 3"
+   ],
+   "cols": 3,
+   "title": "Sort into: True / False",
+   "task": "sort them into the columns: True, False.",
+   "answer": "True: the sum of two odd numbers is even; a multiple of 6 is a multiple of 3. False: squaring makes a number bigger; all primes are odd"
+  },
+  {
+   "h": "We do"
+  },
+  {
+   "questions": [
+    {
+     "q": "Find a counterexample: 'the difference of two primes is always even'.",
+     "a": "For example 5 - 2 = 3",
+     "model": "2 is the only even prime, so use it. 5 - 2 = 3, which is odd."
+    },
+    {
+     "q": "True or false: 'a number with 3 factors is a square'?",
+     "a": "True (it is the square of a prime)"
+    },
+    {
+     "q": "Counterexample: 'dividing always makes smaller'.",
+     "a": "For example 6 ÷ 0.5 = 12"
+    }
+   ]
+  },
+  {
+   "h": "You do"
+  },
+  {
+   "questions": [
+    {
+     "q": "Decide true or false and give a counterexample or a reason: (a) all even numbers are multiples of 4 (b) the product of two odd numbers is odd (c) a quadrilateral with 4 equal sides is a square (d) n² ≥ n for every whole number n",
+     "a": "(a) false: 6 (b) true: (2a + 1)(2b + 1) = 2(2ab + a + b) + 1 (c) false: a rhombus (d) true for whole numbers (0 and 1 are equal; others bigger)",
+     "model": "(a) Try 6: even but 6 ÷ 4 = 1.5: counterexample. (c) A rhombus has 4 equal sides but no right angles."
+    },
+    {
+     "q": "Show that n² + n + 41 is not prime when n = 41.",
+     "a": "41² + 41 + 41 = 41(41 + 1 + 1) = 41 × 43"
+    },
+    {
+     "q": "Prove that the sum of three consecutive whole numbers is a multiple of 3.",
+     "a": "n + (n + 1) + (n + 2) = 3n + 3 = 3(n + 1)"
+    }
+   ]
+  },
+  {
+   "h": "Exit ticket"
+  },
+  {
+   "questions": [
+    {
+     "q": "To disprove a statement you need:",
+     "a": "A) one counterexample",
+     "options": [
+      "one counterexample",
+      "ten examples",
+      "a calculator"
+     ]
+    },
+    {
+     "q": "Counterexample: 'all quadrilaterals have a right angle'",
+     "a": "A rhombus (non-square) or a parallelogram"
+    },
+    {
+     "q": "Big question: how many examples to prove it wrong?",
+     "a": "Just one counterexample."
+    }
+   ]
+  }
+ ]
+}

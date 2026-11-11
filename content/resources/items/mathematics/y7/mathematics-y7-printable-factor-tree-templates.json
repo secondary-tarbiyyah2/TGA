@@ -1,0 +1,144 @@
+{
+ "id": "mathematics-y7-printable-factor-tree-templates",
+ "title": "Printable factor tree templates",
+ "type": "printable graph/grid",
+ "subject": "Mathematics",
+ "subjectSlug": "mathematics",
+ "year": "y7",
+ "unit": "Summer 2: Number sense; sets and probability; primes and proof",
+ "lessons": [
+  82
+ ],
+ "source": "Seeded from mathematics/y7 lesson 82 (Printable factor tree templates)",
+ "intro": "Lesson 82: Prime factor decomposition. To understand how to write a number as a product of its prime factors",
+ "blocks": [
+  {
+   "h": "Factor trees"
+  },
+  {
+   "grid": {
+    "kind": "schematic",
+    "height": 80,
+    "north": false,
+    "roads": [
+     [
+      45,
+      10,
+      30,
+      35
+     ],
+     [
+      45,
+      10,
+      60,
+      35
+     ],
+     [
+      60,
+      40,
+      48,
+      65
+     ],
+     [
+      60,
+      40,
+      72,
+      65
+     ],
+     [
+      135,
+      10,
+      120,
+      35
+     ],
+     [
+      135,
+      10,
+      150,
+      35
+     ],
+     [
+      150,
+      40,
+      138,
+      65
+     ],
+     [
+      150,
+      40,
+      162,
+      65
+     ]
+    ],
+    "places": []
+   }
+  },
+  {
+   "text": "Write the number at the top. Split it into two factors, circle the primes, and keep going until every branch ends in a prime."
+  },
+  {
+   "h": "We do"
+  },
+  {
+   "questions": [
+    {
+     "q": "Prime factors of 72.",
+     "a": "2³ × 3²",
+     "model": "72 = 8 × 9. 8 = 2³; 9 = 3²: 72 = 2³ × 3²."
+    },
+    {
+     "q": "Prime factors of 45.",
+     "a": "3² × 5"
+    },
+    {
+     "q": "Which number is 2² × 5 × 7?",
+     "a": "140"
+    }
+   ]
+  },
+  {
+   "h": "You do"
+  },
+  {
+   "questions": [
+    {
+     "q": "Write as products of primes in index form: (a) 48 (b) 90 (c) 126 (d) 200",
+     "a": "(a) 2⁴ × 3 (b) 2 × 3² × 5 (c) 2 × 3² × 7 (d) 2³ × 5²",
+     "model": "(a) 48 = 6 × 8 = 2 × 3 × 2³ = 2⁴ × 3. Check: 16 × 3 = 48."
+    },
+    {
+     "q": "Use prime factors to decide whether 1,764 is a square number.",
+     "a": "1,764 = 2² × 3² × 7²: all powers even, so it is 42²"
+    },
+    {
+     "q": "What is the smallest number you could multiply 72 by to make a square number?",
+     "a": "2: 72 × 2 = 144 = 2⁴ × 3²"
+    }
+   ]
+  },
+  {
+   "h": "Exit ticket"
+  },
+  {
+   "questions": [
+    {
+     "q": "Which is a prime factorisation?",
+     "a": "A) 2² × 3²",
+     "options": [
+      "2² × 3²",
+      "4 × 9",
+      "6²"
+     ]
+    },
+    {
+     "q": "2³ × 3 =",
+     "a": "24"
+    },
+    {
+     "q": "Big question: why only one way?",
+     "a": "Every number breaks down into primes, and the set of primes is always the same however you split it."
+    }
+   ]
+  }
+ ]
+}

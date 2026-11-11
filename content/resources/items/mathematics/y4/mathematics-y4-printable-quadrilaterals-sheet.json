@@ -1,0 +1,149 @@
+{
+ "id": "mathematics-y4-printable-quadrilaterals-sheet",
+ "title": "Printable quadrilaterals sheet",
+ "type": "worksheet",
+ "subject": "Mathematics",
+ "subjectSlug": "mathematics",
+ "year": "y4",
+ "unit": "Summer 2: Statistics; geometry; position and direction",
+ "lessons": [
+  96
+ ],
+ "source": "Seeded from mathematics/y4 lesson 96 (Printable quadrilaterals sheet)",
+ "intro": "Lesson 96: Quadrilaterals. To understand how to name and describe quadrilaterals by their properties",
+ "blocks": [
+  {
+   "h": "Worked example"
+  },
+  {
+   "model": {
+    "title": "Is a square a rhombus?",
+    "parts": [
+     {
+      "label": "Step 1",
+      "text": "Rhombus: 4 equal sides, opposite sides parallel."
+     },
+     {
+      "label": "Step 2",
+      "text": "A square has both."
+     },
+     {
+      "label": "Answer",
+      "text": "Yes: a square is a special rhombus"
+     }
+    ]
+   }
+  },
+  {
+   "h": "The family"
+  },
+  {
+   "table": {
+    "head": [
+     "Shape",
+     "Parallel pairs",
+     "Equal sides",
+     "Right angles"
+    ],
+    "rows": [
+     [
+      "square",
+      "2",
+      "all 4",
+      "4"
+     ],
+     [
+      "rectangle",
+      "2",
+      "opposite",
+      "4"
+     ],
+     [
+      "rhombus",
+      "2",
+      "all 4",
+      "0 (unless a square)"
+     ],
+     [
+      "parallelogram",
+      "2",
+      "opposite",
+      "0 (unless a rectangle)"
+     ],
+     [
+      "trapezium",
+      "1",
+      "varies",
+      "varies"
+     ],
+     [
+      "kite",
+      "0",
+      "2 pairs of neighbours",
+      "varies"
+     ]
+    ]
+   }
+  },
+  {
+   "h": "We do"
+  },
+  {
+   "questions": [
+    {
+     "q": "4 equal sides, no right angles?",
+     "a": "rhombus",
+     "model": "Teacher: equal sides but tilted corners: a rhombus."
+    },
+    {
+     "q": "2 pairs of equal neighbouring sides?",
+     "a": "kite"
+    },
+    {
+     "q": "Is a rectangle a parallelogram?",
+     "a": "Yes"
+    }
+   ]
+  },
+  {
+   "h": "You do"
+  },
+  {
+   "questions": [
+    {
+     "q": "Name the 6 quadrilaterals on the sheet and write one property of each.",
+     "a": "Answers on the sheet key",
+     "model": "Teacher names the first shape."
+    },
+    {
+     "q": "Draw a quadrilateral with exactly 1 right angle.",
+     "a": "For example a kite or an irregular quadrilateral"
+    },
+    {
+     "q": "True or false: every rhombus is a parallelogram. Explain.",
+     "a": "True: opposite sides of a rhombus are parallel"
+    }
+   ]
+  },
+  {
+   "h": "Exit ticket"
+  },
+  {
+   "questions": [
+    {
+     "q": "A square is also a...",
+     "a": "A) rectangle",
+     "options": [
+      "rectangle",
+      "trapezium",
+      "kite with no equal sides"
+     ]
+    },
+    {
+     "q": "Big question: is a square a rectangle?",
+     "a": "Yes: it has 4 right angles and opposite sides equal."
+    }
+   ]
+  }
+ ]
+}

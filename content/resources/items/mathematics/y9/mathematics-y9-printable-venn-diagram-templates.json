@@ -1,0 +1,181 @@
+{
+ "id": "mathematics-y9-printable-venn-diagram-templates",
+ "title": "Printable Venn diagram templates",
+ "type": "printable graph/grid",
+ "subject": "Mathematics",
+ "subjectSlug": "mathematics",
+ "year": "y9",
+ "unit": "Summer 2: Probability; algebraic representation",
+ "lessons": [
+  84
+ ],
+ "source": "Seeded from mathematics/y9 lesson 84 (Printable Venn diagram templates)",
+ "intro": "Lesson 84: Venn diagrams and probability. To understand how to use Venn diagrams and set notation to find probabilities, including 'given that' questions",
+ "blocks": [
+  {
+   "h": "Venn diagrams"
+  },
+  {
+   "grid": {
+    "kind": "schematic",
+    "height": 80,
+    "north": false,
+    "areas": [
+     [
+      70,
+      40,
+      32,
+      "A"
+     ],
+     [
+      112,
+      40,
+      32,
+      "B"
+     ]
+    ]
+   }
+  },
+  {
+   "grid": {
+    "kind": "schematic",
+    "height": 80,
+    "north": false,
+    "areas": [
+     [
+      70,
+      40,
+      32,
+      "A"
+     ],
+     [
+      112,
+      40,
+      32,
+      "B"
+     ]
+    ]
+   }
+  },
+  {
+   "text": "Draw a rectangle round both circles for the universal set ξ."
+  },
+  {
+   "h": "Label the diagram"
+  },
+  {
+   "picture": {
+    "find": "venn diagram two circles",
+    "alt": "A Venn diagram",
+    "labels": 4,
+    "draw": "Draw and label: Printable Venn diagram templates"
+   }
+  },
+  {
+   "starters": [
+    "A ∩ B",
+    "A ∪ B",
+    "A′",
+    "given that"
+   ],
+   "title": "Word bank"
+  },
+  {
+   "h": "Fill it from the middle"
+  },
+  {
+   "table": {
+    "head": [
+     "Region",
+     "Number"
+    ],
+    "rows": [
+     [
+      "F ∩ C",
+      "9"
+     ],
+     [
+      "F only",
+      "19"
+     ],
+     [
+      "C only",
+      "11"
+     ],
+     [
+      "neither",
+      "11"
+     ],
+     [
+      "total",
+      "50"
+     ]
+    ]
+   }
+  },
+  {
+   "h": "We do"
+  },
+  {
+   "questions": [
+    {
+     "q": "P(F only)?",
+     "a": "19/50",
+     "model": "The football-only region holds 19. 19 ÷ 50 = 19/50."
+    },
+    {
+     "q": "P(neither)?",
+     "a": "11/50"
+    },
+    {
+     "q": "P(football given cricket)?",
+     "a": "9/20"
+    }
+   ]
+  },
+  {
+   "h": "You do"
+  },
+  {
+   "questions": [
+    {
+     "q": "ξ = 60 pupils. 35 study Arabic (A), 25 study Urdu (U), 12 study both. Draw the diagram; find P(A ∩ U), P(A ∪ U), P(U′), P(A given U).",
+     "a": "A only 23, both 12, U only 13, neither 12; 12/60 = 1/5; 48/60 = 4/5; 35/60 = 7/12; 12/25",
+     "model": "Put 12 in the middle; A only = 35 - 12 = 23; U only = 25 - 12 = 13; neither = 60 - 48 = 12."
+    },
+    {
+     "q": "Show that P(A ∪ U) = P(A) + P(U) - P(A ∩ U) with these numbers.",
+     "a": "35/60 + 25/60 - 12/60 = 48/60"
+    },
+    {
+     "q": "In a 3-set Venn diagram, explain why you fill the centre (all three) first.",
+     "a": "Every other region is found by subtracting from the totals, which include the centre"
+    }
+   ]
+  },
+  {
+   "h": "Exit ticket"
+  },
+  {
+   "questions": [
+    {
+     "q": "A ∪ B means:",
+     "a": "A) in A or B or both",
+     "options": [
+      "in A or B or both",
+      "only in both",
+      "in neither"
+     ]
+    },
+    {
+     "q": "P(A′) if P(A) = 0.35",
+     "a": "0.65"
+    },
+    {
+     "q": "Big question: how do Venn diagrams help?",
+     "a": "Each region is a count; probabilities are regions over the right total."
+    }
+   ]
+  }
+ ]
+}

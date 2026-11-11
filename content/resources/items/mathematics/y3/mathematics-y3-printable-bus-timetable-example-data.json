@@ -1,0 +1,193 @@
+{
+ "id": "mathematics-y3-printable-bus-timetable-example-data",
+ "title": "Printable bus timetable (example data)",
+ "type": "worksheet",
+ "subject": "Mathematics",
+ "subjectSlug": "mathematics",
+ "year": "y3",
+ "unit": "Summer 2: Time; shape; statistics",
+ "lessons": [
+  89
+ ],
+ "source": "Seeded from mathematics/y3 lesson 89 (Printable bus timetable (example data))",
+ "intro": "Lesson 89: Time word problems. To understand how to solve problems about time, durations and timetables",
+ "blocks": [
+  {
+   "h": "Bus timetable (example data)"
+  },
+  {
+   "table": {
+    "head": [
+     "Stop",
+     "Bus 1",
+     "Bus 2",
+     "Bus 3"
+    ],
+    "rows": [
+     [
+      "Station",
+      "8:10",
+      "9:25",
+      "11:40"
+     ],
+     [
+      "High Street",
+      "8:22",
+      "9:37",
+      "11:52"
+     ],
+     [
+      "Masjid",
+      "8:35",
+      "9:50",
+      "12:05"
+     ],
+     [
+      "Park",
+      "8:50",
+      "10:05",
+      "12:20"
+     ]
+    ]
+   }
+  },
+  {
+   "questions": [
+    {
+     "q": "How long does Bus 1 take from the Station to the Park?",
+     "a": "40 minutes",
+     "marks": 1
+    },
+    {
+     "q": "Which bus reaches the Masjid at 9:50?",
+     "a": "Bus 2",
+     "marks": 1
+    },
+    {
+     "q": "You must be at the Park by 11:00. Which bus do you take?",
+     "a": "Bus 2 (arrives 10:05)",
+     "marks": 1
+    }
+   ]
+  },
+  {
+   "h": "Worked example"
+  },
+  {
+   "model": {
+    "title": "Huda reads from 4:15 to 4:40 and then does maths for 25 minutes. When does she finish?",
+    "parts": [
+     {
+      "label": "Step 1",
+      "text": "Reading ends 4:40."
+     },
+     {
+      "label": "Step 2",
+      "text": "4:40 + 25 minutes: 20 to 5:00, then 5."
+     },
+     {
+      "label": "Step 3",
+      "text": "Finish 5:05."
+     },
+     {
+      "label": "Answer",
+      "text": "5:05"
+     }
+    ]
+   }
+  },
+  {
+   "h": "Timetables"
+  },
+  {
+   "table": {
+    "head": [
+     "Stop",
+     "Bus 1",
+     "Bus 2",
+     "Bus 3"
+    ],
+    "rows": [
+     [
+      "Station",
+      "4:05",
+      "4:35",
+      "5:05"
+     ],
+     [
+      "Library",
+      "4:20",
+      "4:50",
+      "5:20"
+     ],
+     [
+      "Masjid",
+      "4:32",
+      "5:02",
+      "5:32"
+     ]
+    ]
+   }
+  },
+  {
+   "h": "We do"
+  },
+  {
+   "questions": [
+    {
+     "q": "Bus 2 leaves the station at 4:35. When does it reach the library?",
+     "a": "4:50",
+     "model": "Teacher reads down the Bus 2 column: 4:50."
+    },
+    {
+     "q": "How long from the library to the masjid?",
+     "a": "12 minutes"
+    },
+    {
+     "q": "To reach the masjid by 5:15, which bus?",
+     "a": "Bus 2 (arrives 5:02)"
+    }
+   ]
+  },
+  {
+   "h": "You do"
+  },
+  {
+   "questions": [
+    {
+     "q": "A cake goes in at 2:45 and bakes for 35 minutes. When does it come out? It cools for 20 minutes: when is it ready?",
+     "a": "3:20; 3:40",
+     "model": "Teacher solves the first step with a time line."
+    },
+    {
+     "q": "Asr is at 6:10 pm. Zayd needs 25 minutes to walk and 10 to make wudu. Latest time to start?",
+     "a": "5:35 pm"
+    },
+    {
+     "q": "A Qur'an class runs 4:30 to 5:15 four days a week. Total time a week?",
+     "a": "4 × 45 = 180 minutes = 3 hours"
+    }
+   ]
+  },
+  {
+   "h": "Exit ticket"
+  },
+  {
+   "questions": [
+    {
+     "q": "Bus 3 reaches the library at...",
+     "a": "A) 5:20",
+     "options": [
+      "5:20",
+      "5:05",
+      "5:32"
+     ]
+    },
+    {
+     "q": "Big question: what do we look for?",
+     "a": "The times given, and whether we need a start, an end or a duration."
+    }
+   ]
+  }
+ ]
+}

@@ -5,10 +5,18 @@ const MARKED = new Set(["revision set", "quiz", "mock paper", "test paper"]);
 const REFLECT = /^(big question|think again|back to our ponder|which question|how confident|rate your|traffic.?light)/i;
 /** A lesson task with sample parts "(a) ... (2) (b) ... (3)" and answers "(a) ... (b) ..." becomes one question per part. */
 export function splitParts(q) {
-  const parts = String(q.q).split(/\s\(([a-h])\)\s/);
+  // "Q1 [2] text Q2 [3] text" with answers "Q1 ... Q2 ...": one question per Qn.
+  if (/\bQ\d+ \[\d+\]/.test(String(q.q)) && /\bQ\d+\s/.test(String(q.a))) {
+    const ans = {};
+    for (const m of String(q.a).matchAll(/\bQ(\d+)\s([^]*?)(?=\s\bQ\d+\s|$)/g)) ans[m[1]] = m[2].trim();
+    const out = [];
+    for (const m of String(q.q).matchAll(/\bQ(\d+) \[(\d+)\]\s([^]*?)(?=\s\bQ\d+ \[\d+\]|$)/g)) out.push({ q: `${m[3].trim().replace(/\s+(When finished|When you finish|Then|Finally)\b[^]*$/, "")} [${m[2]}]`, a: ans[m[1]] || "See the mark scheme", marks: Number(m[2]) });
+    if (out.length) return out;
+  }
+  const parts = String(q.q).split(/\s\(([a-l])\)\s/);
   if (parts.length < 5 || !/\(a\)/.test(String(q.a))) return [q];
   const ans = {};
-  for (const m of String(q.a).matchAll(/\(([a-h])\)\s*([^]*?)(?=\s\([a-h]\)\s|$)/g)) ans[m[1]] = m[2].trim();
+  for (const m of String(q.a).matchAll(/\(([a-l])\)\s*([^]*?)(?=\s\([a-l]\)\s|$)/g)) ans[m[1]] = m[2].trim();
   const lead = parts[0].replace(/^(core|extend|stretch)[^:]*:\s*/i, "").replace(/\s*(sample|own exam-style[^:]*):?\s*$/i, "").trim();
   const out = [];
   for (let i = 1; i < parts.length; i += 2) {

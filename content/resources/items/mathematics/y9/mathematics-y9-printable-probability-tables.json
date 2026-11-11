@@ -1,0 +1,80 @@
+{
+ "id": "mathematics-y9-printable-probability-tables",
+ "title": "Printable probability tables",
+ "type": "worksheet",
+ "subject": "Mathematics",
+ "subjectSlug": "mathematics",
+ "year": "y9",
+ "unit": "Summer 2: Probability; algebraic representation",
+ "lessons": [
+  72
+ ],
+ "source": "Seeded from mathematics/y9 lesson 72 (Printable probability tables)",
+ "intro": "Lesson 72: Mutually exclusive events. To understand how probabilities of mutually exclusive events add, and how all outcomes sum to 1",
+ "blocks": [
+  {
+   "h": "We do"
+  },
+  {
+   "questions": [
+    {
+     "q": "Bag: P(red) = 0.2, P(blue) = 0.45, the rest green. P(green)?",
+     "a": "0.35",
+     "model": "The probabilities sum to 1. 1 - 0.2 - 0.45 = 0.35."
+    },
+    {
+     "q": "P(red or blue)?",
+     "a": "0.65"
+    },
+    {
+     "q": "Are 'even' and 'more than 4' on a dice mutually exclusive?",
+     "a": "No: 6 is both"
+    }
+   ]
+  },
+  {
+   "h": "You do"
+  },
+  {
+   "questions": [
+    {
+     "q": "A spinner lands on A, B, C or D. P(A) = 0.15, P(B) = 0.3, P(C) = P(D). Find P(C), P(A or B), P(not D).",
+     "a": "0.275; 0.45; 0.725",
+     "model": "C + D = 1 - 0.45 = 0.55, so C = D = 0.275. P(not D) = 1 - 0.275 = 0.725."
+    },
+    {
+     "q": "Explain why P(even or a 2) is not 1/2 + 1/6 on a dice.",
+     "a": "They are not mutually exclusive (2 is even): P(even or 2) = P(even) = 1/2"
+    },
+    {
+     "q": "The probability table has red x, blue 2x, green 0.1, yellow 3x. Find x.",
+     "a": "6x + 0.1 = 1: x = 0.15"
+    }
+   ]
+  },
+  {
+   "h": "Exit ticket"
+  },
+  {
+   "questions": [
+    {
+     "q": "Mutually exclusive means:",
+     "a": "A) cannot happen together",
+     "options": [
+      "cannot happen together",
+      "always happen together",
+      "equally likely"
+     ]
+    },
+    {
+     "q": "P(rain) = 0.35. P(no rain)",
+     "a": "0.65"
+    },
+    {
+     "q": "Big question: when can we add probabilities?",
+     "a": "When the events are mutually exclusive."
+    }
+   ]
+  }
+ ]
+}

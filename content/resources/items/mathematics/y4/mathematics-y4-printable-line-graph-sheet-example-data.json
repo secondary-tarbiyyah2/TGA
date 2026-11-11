@@ -1,0 +1,64 @@
+{
+ "id": "mathematics-y4-printable-line-graph-sheet-example-data",
+ "title": "Printable line graph sheet (example data)",
+ "type": "printable graph/grid",
+ "subject": "Mathematics",
+ "subjectSlug": "mathematics",
+ "year": "y4",
+ "unit": "Summer 2: Statistics; geometry; position and direction",
+ "lessons": [
+  87
+ ],
+ "source": "Seeded from mathematics/y4 lesson 87 (Printable line graph sheet (example data))",
+ "intro": "Lesson 87: Interpret line graphs.",
+ "blocks": [
+  {
+   "h": "A puppy's mass (example data)"
+  },
+  {
+   "grid": {
+    "kind": "barchart",
+    "cats": [
+     "Week 0",
+     "Week 2",
+     "Week 4",
+     "Week 6",
+     "Week 8"
+    ],
+    "yMax": 8,
+    "yStep": 1,
+    "yLabel": "Mass (kg)",
+    "values": [
+     1,
+     2,
+     3.5,
+     5,
+     6.5
+    ],
+    "line": true
+   }
+  },
+  {
+   "questions": [
+    {
+     "q": "What was the puppy's mass at week 4?",
+     "a": "3.5 kg",
+     "marks": 1
+    },
+    {
+     "q": "When was the puppy 5 kg?",
+     "a": "Week 6",
+     "marks": 1
+    },
+    {
+     "q": "How much did it gain from week 0 to week 8?",
+     "a": "5.5 kg",
+     "marks": 1
+    }
+   ]
+  },
+  {
+   "h": "Graph"
+  }
+ ]
+}

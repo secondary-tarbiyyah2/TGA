@@ -1,0 +1,143 @@
+{
+ "id": "mathematics-y6-printable-polygons-sheet",
+ "title": "Printable polygons sheet",
+ "type": "worksheet",
+ "subject": "Mathematics",
+ "subjectSlug": "mathematics",
+ "year": "y6",
+ "unit": "Summer 2: Shape; position and direction; consolidation",
+ "lessons": [
+  83
+ ],
+ "source": "Seeded from mathematics/y6 lesson 83 (Printable polygons sheet)",
+ "intro": "Lesson 83: Angles in polygons. To understand how to find the angle sum and the interior angles of regular polygons",
+ "blocks": [
+  {
+   "h": "Worked example"
+  },
+  {
+   "model": {
+    "title": "Each interior angle of a regular octagon?",
+    "parts": [
+     {
+      "label": "Step 1",
+      "text": "Angle sum: 6 × 180 = 1,080."
+     },
+     {
+      "label": "Step 2",
+      "text": "1,080 ÷ 8 = 135."
+     },
+     {
+      "label": "Answer",
+      "text": "135°"
+     }
+    ]
+   }
+  },
+  {
+   "h": "Triangles from one vertex"
+  },
+  {
+   "table": {
+    "head": [
+     "Polygon",
+     "Sides",
+     "Triangles",
+     "Angle sum"
+    ],
+    "rows": [
+     [
+      "triangle",
+      "3",
+      "1",
+      "180°"
+     ],
+     [
+      "quadrilateral",
+      "4",
+      "2",
+      "360°"
+     ],
+     [
+      "pentagon",
+      "5",
+      "3",
+      "540°"
+     ],
+     [
+      "hexagon",
+      "6",
+      "4",
+      "720°"
+     ],
+     [
+      "octagon",
+      "8",
+      "6",
+      "1,080°"
+     ]
+    ]
+   }
+  },
+  {
+   "h": "We do"
+  },
+  {
+   "questions": [
+    {
+     "q": "Angle sum of a heptagon (7 sides)?",
+     "a": "900°",
+     "model": "Teacher: 7 - 2 = 5 triangles; 5 × 180 = 900°."
+    },
+    {
+     "q": "Each angle of a regular pentagon?",
+     "a": "108°"
+    },
+    {
+     "q": "Angle sum of a decagon?",
+     "a": "1,440°"
+    }
+   ]
+  },
+  {
+   "h": "You do"
+  },
+  {
+   "questions": [
+    {
+     "q": "Find the angle sum of a 9-sided polygon and each angle if it is regular.",
+     "a": "1,260°; 140°",
+     "model": "Teacher: 9 - 2 = 7 triangles; 7 × 180 = 1,260; 1,260 ÷ 9 = 140°."
+    },
+    {
+     "q": "Show why regular octagons and squares tile together.",
+     "a": "135 + 135 + 90 = 360°"
+    },
+    {
+     "q": "A pentagon has angles 100°, 120°, 110°, 90° and x. Find x.",
+     "a": "540 - 420 = 120°"
+    }
+   ]
+  },
+  {
+   "h": "Exit ticket"
+  },
+  {
+   "questions": [
+    {
+     "q": "Angle sum of a hexagon:",
+     "a": "A) 720°",
+     "options": [
+      "720°",
+      "540°",
+      "360°"
+     ]
+    },
+    {
+     "q": "Big question: how do star patterns use the angles?",
+     "a": "Angles meeting at each point must add to 360°, so the polygons fit without gaps."
+    }
+   ]
+  }
+ ]
+}

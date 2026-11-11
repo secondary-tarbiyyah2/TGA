@@ -1,0 +1,229 @@
+{
+ "id": "mathematics-y4-printable-coordinate-grid-sheet",
+ "title": "Printable coordinate grid sheet",
+ "type": "printable graph/grid",
+ "subject": "Mathematics",
+ "subjectSlug": "mathematics",
+ "year": "y4",
+ "unit": "Summer 2: Statistics; geometry; position and direction",
+ "lessons": [
+  100,
+  101,
+  102
+ ],
+ "source": "Seeded from mathematics/y4 lessons 100, 101, 102 (Printable coordinate grid sheet)",
+ "intro": "To understand how to read and describe positions using coordinates in the first quadrant",
+ "blocks": [
+  {
+   "h": "Coordinate grid"
+  },
+  {
+   "grid": {
+    "kind": "graph",
+    "xMin": 0,
+    "xMax": 10,
+    "yMin": 0,
+    "yMax": 10,
+    "height": 110
+   }
+  },
+  {
+   "h": "Worked examples"
+  },
+  {
+   "model": {
+    "title": "A point is 4 across and 3 up. Coordinates?",
+    "parts": [
+     {
+      "label": "Step 1",
+      "text": "Across first: 4."
+     },
+     {
+      "label": "Step 2",
+      "text": "Up second: 3."
+     },
+     {
+      "label": "Answer",
+      "text": "(4, 3)"
+     }
+    ]
+   }
+  },
+  {
+   "model": {
+    "title": "Plot (1, 1), (5, 1), (5, 3), (1, 3) and join.",
+    "parts": [
+     {
+      "label": "Step 1",
+      "text": "Plot the four points."
+     },
+     {
+      "label": "Step 2",
+      "text": "Join in order and back to the start."
+     },
+     {
+      "label": "Answer",
+      "text": "A rectangle 4 by 2"
+     }
+    ]
+   }
+  },
+  {
+   "model": {
+    "title": "Square (2, 2), (5, 2), (5, 5). Fourth vertex?",
+    "parts": [
+     {
+      "label": "Step 1",
+      "text": "Sides are 3 long."
+     },
+     {
+      "label": "Step 2",
+      "text": "Go up 3 from (2, 2)."
+     },
+     {
+      "label": "Answer",
+      "text": "(2, 5)"
+     }
+    ]
+   }
+  },
+  {
+   "h": "We do"
+  },
+  {
+   "questions": [
+    {
+     "q": "Point 3 across, 7 up?",
+     "a": "(3, 7)",
+     "model": "Teacher: across first, 3; then up, 7: (3, 7)."
+    },
+    {
+     "q": "What is at (0, 0)?",
+     "a": "the origin"
+    },
+    {
+     "q": "Point on the x-axis 5 across?",
+     "a": "(5, 0)"
+    },
+    {
+     "q": "Plot (4, 0), (4, 4), (0, 4): add the origin. What shape?",
+     "a": "square",
+     "model": "Teacher plots the points: all sides 4, so a square."
+    },
+    {
+     "q": "Triangle (1, 1), (5, 1), (3, 4): what type?",
+     "a": "isosceles"
+    },
+    {
+     "q": "Fourth vertex of square (3, 1), (6, 1), (6, 4)?",
+     "a": "(3, 4)"
+    },
+    {
+     "q": "Translate (1, 2) 3 right.",
+     "a": "(4, 2)",
+     "model": "Teacher: right adds 3 to x: (4, 2)."
+    },
+    {
+     "q": "Translate (6, 4) 2 down.",
+     "a": "(6, 2)"
+    },
+    {
+     "q": "Describe (2, 2) to (5, 6).",
+     "a": "3 right, 4 up"
+    }
+   ]
+  },
+  {
+   "h": "You do"
+  },
+  {
+   "questions": [
+    {
+     "q": "Write the coordinates of the 6 points on the grid sheet.",
+     "a": "Answers on the sheet key",
+     "model": "Teacher writes the first point."
+    },
+    {
+     "q": "Which two points have the same x-coordinate?",
+     "a": "Answers on the sheet key"
+    },
+    {
+     "q": "Write 3 points on the line from (0, 0) to (5, 5).",
+     "a": "For example (1, 1), (2, 2), (3, 3)"
+    },
+    {
+     "q": "Plot and join the 3 shapes on the sheet; name each.",
+     "a": "Answers on the sheet key",
+     "model": "Teacher plots shape 1."
+    },
+    {
+     "q": "Find the missing vertex of each rectangle on the sheet.",
+     "a": "Answers on the sheet key"
+    },
+    {
+     "q": "A kite has vertices (3, 6), (5, 4), (3, 0). Find the fourth.",
+     "a": "(1, 4)"
+    },
+    {
+     "q": "Translate the 3 shapes on the sheet as shown; write the new vertices.",
+     "a": "Answers on the sheet key",
+     "model": "Teacher translates shape 1."
+    },
+    {
+     "q": "Describe the translation from (1, 5) to (4, 2).",
+     "a": "3 right, 3 down"
+    },
+    {
+     "q": "A shape is translated 2 right, 3 up, then 5 left, 1 down. Describe one translation that does the same.",
+     "a": "3 left, 2 up"
+    }
+   ]
+  },
+  {
+   "h": "Exit ticket"
+  },
+  {
+   "questions": [
+    {
+     "q": "(4, 2) means...",
+     "a": "A) 4 across, 2 up",
+     "options": [
+      "4 across, 2 up",
+      "4 up, 2 across",
+      "4 + 2"
+     ]
+    },
+    {
+     "q": "Big question: how can two numbers give a position?",
+     "a": "Across first, then up: (x, y)."
+    },
+    {
+     "q": "Square (1, 1), (3, 1), (3, 3). Fourth?",
+     "a": "A) (1, 3)",
+     "options": [
+      "(1, 3)",
+      "(3, 1)",
+      "(0, 3)"
+     ]
+    },
+    {
+     "q": "Big question: can you draw a shape from coordinates?",
+     "a": "Yes: plot each vertex and join them in order."
+    },
+    {
+     "q": "A translation...",
+     "a": "A) slides a shape",
+     "options": [
+      "slides a shape",
+      "turns a shape",
+      "flips a shape"
+     ]
+    },
+    {
+     "q": "Big question: how can a shape move without turning?",
+     "a": "By a translation: every point slides the same distance and direction."
+    }
+   ]
+  }
+ ]
+}

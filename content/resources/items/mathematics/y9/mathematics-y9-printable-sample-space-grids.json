@@ -1,0 +1,193 @@
+{
+ "id": "mathematics-y9-printable-sample-space-grids",
+ "title": "Printable sample space grids",
+ "type": "worksheet",
+ "subject": "Mathematics",
+ "subjectSlug": "mathematics",
+ "year": "y9",
+ "unit": "Summer 2: Probability; algebraic representation",
+ "lessons": [
+  71
+ ],
+ "source": "Seeded from mathematics/y9 lesson 71 (Printable sample space grids)",
+ "intro": "Lesson 71: Sample space diagrams for two events. To understand how to use a sample space diagram to find probabilities of combined events",
+ "blocks": [
+  {
+   "h": "Sample space grid: two dice"
+  },
+  {
+   "table": {
+    "head": [
+     "+",
+     "1",
+     "2",
+     "3",
+     "4",
+     "5",
+     "6"
+    ],
+    "rows": [
+     [
+      "1",
+      "",
+      "",
+      "",
+      "",
+      "",
+      ""
+     ],
+     [
+      "2",
+      "",
+      "",
+      "",
+      "",
+      "",
+      ""
+     ],
+     [
+      "3",
+      "",
+      "",
+      "",
+      "",
+      "",
+      ""
+     ],
+     [
+      "4",
+      "",
+      "",
+      "",
+      "",
+      "",
+      ""
+     ],
+     [
+      "5",
+      "",
+      "",
+      "",
+      "",
+      "",
+      ""
+     ],
+     [
+      "6",
+      "",
+      "",
+      "",
+      "",
+      "",
+      ""
+     ]
+    ],
+    "tall": true
+   }
+  },
+  {
+   "answers": "P(total 7) = 6/36 = 1/6; P(double) = 6/36 = 1/6."
+  },
+  {
+   "h": "The grid"
+  },
+  {
+   "table": {
+    "head": [
+     "+",
+     "1",
+     "2",
+     "3",
+     "4"
+    ],
+    "rows": [
+     [
+      "1",
+      "2",
+      "3",
+      "4",
+      "5"
+     ],
+     [
+      "2",
+      "3",
+      "4",
+      "5",
+      "6"
+     ],
+     [
+      "3",
+      "4",
+      "5",
+      "6",
+      "7"
+     ]
+    ]
+   }
+  },
+  {
+   "h": "We do"
+  },
+  {
+   "questions": [
+    {
+     "q": "From the grid, P(total is even)?",
+     "a": "6/12 = 1/2",
+     "model": "Even totals: 2, 4, 4, 4, 6, 6: count 6 cells. 6/12 = 1/2."
+    },
+    {
+     "q": "P(total greater than 5)?",
+     "a": "3/12 = 1/4"
+    },
+    {
+     "q": "Two dice: P(product is 12)?",
+     "a": "4/36 = 1/9"
+    }
+   ]
+  },
+  {
+   "h": "You do"
+  },
+  {
+   "questions": [
+    {
+     "q": "Two fair dice. Draw the product grid. Find P(product = 6), P(product is odd), P(product > 20).",
+     "a": "4/36 = 1/9; 9/36 = 1/4; 6/36 = 1/6",
+     "model": "Product 6: (1, 6), (2, 3), (3, 2), (6, 1): 4 cells. Odd needs both odd: 3 × 3 = 9 cells. Over 20: 24, 25, 30, 30, 36, 24: 6 cells."
+    },
+    {
+     "q": "Is the game 'player 1 wins if the total of two dice is 6, 7 or 8' fair? Explain.",
+     "a": "No: P = 16/36 = 4/9, less than 1/2, so player 2 is more likely to win"
+    },
+    {
+     "q": "Spinner A (1 to 3) and spinner B (1 to 4) are spun 120 times. How many times would you expect a total of 5?",
+     "a": "1/4 × 120 = 30"
+    }
+   ]
+  },
+  {
+   "h": "Exit ticket"
+  },
+  {
+   "questions": [
+    {
+     "q": "Outcomes for two dice:",
+     "a": "A) 36",
+     "options": [
+      "36",
+      "12",
+      "6"
+     ]
+    },
+    {
+     "q": "Two dice: P(total 2)",
+     "a": "1/36"
+    },
+    {
+     "q": "Big question: which total is most likely?",
+     "a": "The total made by the most cells in the grid: for spinners A and B, 4 and 5 (3 cells each)."
+    }
+   ]
+  }
+ ]
+}

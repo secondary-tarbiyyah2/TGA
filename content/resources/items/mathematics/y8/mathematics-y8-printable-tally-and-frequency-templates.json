@@ -1,0 +1,213 @@
+{
+ "id": "mathematics-y8-printable-tally-and-frequency-templates",
+ "title": "Printable tally and frequency templates",
+ "type": "printable graph/grid",
+ "subject": "Mathematics",
+ "subjectSlug": "mathematics",
+ "year": "y8",
+ "unit": "Summer 2: Data handling and averages",
+ "lessons": [
+  76
+ ],
+ "source": "Seeded from mathematics/y8 lesson 76 (Printable tally and frequency templates)",
+ "intro": "Lesson 76: Frequency tables and grouped data. To understand how to organise discrete and continuous data in frequency tables, including grouped tables",
+ "blocks": [
+  {
+   "h": "Tally and frequency table"
+  },
+  {
+   "table": {
+    "head": [
+     "Category",
+     "Tally",
+     "Frequency"
+    ],
+    "rows": [],
+    "blankRows": 8
+   }
+  },
+  {
+   "h": "Grouped frequency table"
+  },
+  {
+   "table": {
+    "head": [
+     "Class",
+     "Tally",
+     "Frequency"
+    ],
+    "rows": [
+     [
+      "0 ≤ x < 10",
+      "",
+      ""
+     ],
+     [
+      "10 ≤ x < 20",
+      "",
+      ""
+     ],
+     [
+      "20 ≤ x < 30",
+      "",
+      ""
+     ],
+     [
+      "30 ≤ x < 40",
+      "",
+      ""
+     ],
+     [
+      "40 ≤ x < 50",
+      "",
+      ""
+     ]
+    ]
+   }
+  },
+  {
+   "h": "Discrete data"
+  },
+  {
+   "table": {
+    "head": [
+     "Goals",
+     "Frequency"
+    ],
+    "rows": [
+     [
+      "0",
+      "4"
+     ],
+     [
+      "1",
+      "7"
+     ],
+     [
+      "2",
+      "5"
+     ],
+     [
+      "3",
+      "3"
+     ],
+     [
+      "4",
+      "1"
+     ],
+     [
+      "Total",
+      "20"
+     ]
+    ]
+   }
+  },
+  {
+   "h": "Grouped continuous data"
+  },
+  {
+   "table": {
+    "head": [
+     "Time t (minutes)",
+     "Frequency"
+    ],
+    "rows": [
+     [
+      "0 ≤ t < 10",
+      "3"
+     ],
+     [
+      "10 ≤ t < 20",
+      "8"
+     ],
+     [
+      "20 ≤ t < 30",
+      "6"
+     ],
+     [
+      "30 ≤ t < 40",
+      "3"
+     ]
+    ]
+   }
+  },
+  {
+   "h": "My results"
+  },
+  {
+   "table": {
+    "head": [
+     "Item",
+     "Tally",
+     "Total"
+    ],
+    "rows": [],
+    "blankRows": 8
+   }
+  },
+  {
+   "h": "We do"
+  },
+  {
+   "questions": [
+    {
+     "q": "Make a frequency table: 2, 3, 3, 1, 2, 3, 4, 2, 3, 1.",
+     "a": "1: 2, 2: 3, 3: 4, 4: 1 (total 10)",
+     "model": "Tally each value once: 1 (2), 2 (3), 3 (4), 4 (1). Check the total: 2 + 3 + 4 + 1 = 10."
+    },
+    {
+     "q": "Class for t = 30 in the reading table?",
+     "a": "30 ≤ t < 40"
+    },
+    {
+     "q": "How many read for under 20 minutes?",
+     "a": "11"
+    }
+   ]
+  },
+  {
+   "h": "You do"
+  },
+  {
+   "questions": [
+    {
+     "q": "Group these 16 heights (cm, example data) into classes of width 10 from 130: 134, 141, 156, 149, 138, 152, 145, 160, 147, 139, 155, 143, 151, 136, 148, 158",
+     "a": "130 ≤ h < 140: 4; 140 ≤ h < 150: 6; 150 ≤ h < 160: 5; 160 ≤ h < 170: 1",
+     "model": "Tally 134 in 130 ≤ h < 140, 141 in 140 ≤ h < 150, and so on; 160 goes in 160 ≤ h < 170. Check the total is 16."
+    },
+    {
+     "q": "What information is lost when data is grouped?",
+     "a": "The exact values: we only know which class each is in"
+    },
+    {
+     "q": "Suggest classes for journey times from 3 to 47 minutes and explain your choice.",
+     "a": "For example 0 ≤ t < 10 up to 40 ≤ t < 50: equal widths of 10, five classes cover all values"
+    }
+   ]
+  },
+  {
+   "h": "Exit ticket"
+  },
+  {
+   "questions": [
+    {
+     "q": "Continuous data is:",
+     "a": "A) measured",
+     "options": [
+      "measured",
+      "counted",
+      "always whole numbers"
+     ]
+    },
+    {
+     "q": "Frequency of 20 ≤ t < 30 in the reading table",
+     "a": "6"
+    },
+    {
+     "q": "Big question: when should we group data?",
+     "a": "When there are many different values, especially continuous data."
+    }
+   ]
+  }
+ ]
+}

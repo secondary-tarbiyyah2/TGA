@@ -1,0 +1,319 @@
+{
+ "id": "mathematics-y6-printable-4-quadrant-grid-6-to-6",
+ "title": "Printable 4-quadrant grid (-6 to 6)",
+ "type": "printable graph/grid",
+ "subject": "Mathematics",
+ "subjectSlug": "mathematics",
+ "year": "y6",
+ "unit": "Summer 2: Shape; position and direction; consolidation",
+ "lessons": [
+  84,
+  85,
+  86,
+  87,
+  88
+ ],
+ "source": "Seeded from mathematics/y6 lessons 84, 85, 86, 87, 88 (Printable 4-quadrant grid (-6 to 6))",
+ "intro": "To understand how to read and plot coordinates in all four quadrants",
+ "blocks": [
+  {
+   "h": "Four-quadrant grid (-6 to 6)"
+  },
+  {
+   "grid": {
+    "kind": "graph",
+    "xMin": -6,
+    "xMax": 6,
+    "yMin": -6,
+    "yMax": 6,
+    "height": 110
+   }
+  },
+  {
+   "grid": {
+    "kind": "graph",
+    "xMin": -6,
+    "xMax": 6,
+    "yMin": -6,
+    "yMax": 6,
+    "height": 110
+   }
+  },
+  {
+   "h": "Rules"
+  },
+  {
+   "table": {
+    "head": [
+     "Move",
+     "x",
+     "y"
+    ],
+    "rows": [
+     [
+      "right 4",
+      "+ 4",
+      "same"
+     ],
+     [
+      "left 4",
+      "- 4",
+      "same"
+     ],
+     [
+      "up 3",
+      "same",
+      "+ 3"
+     ],
+     [
+      "down 3",
+      "same",
+      "- 3"
+     ]
+    ]
+   }
+  },
+  {
+   "h": "Translation or reflection?"
+  },
+  {
+   "table": {
+    "head": [
+     "Translation",
+     "Reflection"
+    ],
+    "rows": [
+     [
+      "slides",
+      "flips"
+     ],
+     [
+      "same orientation",
+      "orientation reversed"
+     ],
+     [
+      "describe: units right/left and up/down",
+      "describe: the mirror line"
+     ]
+    ],
+    "blankRows": 2
+   }
+  },
+  {
+   "h": "We do"
+  },
+  {
+   "questions": [
+    {
+     "q": "Read the point 4 right, 3 down.",
+     "a": "(4, -3)",
+     "model": "Teacher: across first, 4 right: x = 4; down 3: y = -3."
+    },
+    {
+     "q": "Where is (-1, -6)?",
+     "a": "1 left, 6 down"
+    },
+    {
+     "q": "Which quadrant has both coordinates negative?",
+     "a": "bottom left (third)"
+    },
+    {
+     "q": "Square (-2, -2), (2, -2), (2, 2). Fourth?",
+     "a": "(-2, 2)",
+     "model": "Teacher: under (-2, -2) on the same x and level with (2, 2): (-2, 2)."
+    },
+    {
+     "q": "Length from (-5, 3) to (1, 3)?",
+     "a": "6"
+    },
+    {
+     "q": "Perimeter of that square?",
+     "a": "16 units"
+    },
+    {
+     "q": "(4, 2) translated 5 left?",
+     "a": "(-1, 2)",
+     "model": "Teacher: 4 - 5 = -1; y stays 2: (-1, 2)."
+    },
+    {
+     "q": "(-3, -3) translated 3 up?",
+     "a": "(-3, 0)"
+    },
+    {
+     "q": "Describe (1, 4) to (-2, 1).",
+     "a": "3 left, 3 down"
+    },
+    {
+     "q": "Reflect (-6, 2) in the y-axis.",
+     "a": "(6, 2)",
+     "model": "Teacher: y-axis: x changes sign: (6, 2)."
+    },
+    {
+     "q": "Reflect (5, 5) in the x-axis.",
+     "a": "(5, -5)"
+    },
+    {
+     "q": "A point on the mirror line?",
+     "a": "stays where it is"
+    },
+    {
+     "q": "(2, 2) to (2, -2): which move?",
+     "a": "Reflection in the x-axis",
+     "model": "Teacher: y changes sign, x stays: reflection in the x-axis."
+    },
+    {
+     "q": "(2, 2) to (-3, 2)?",
+     "a": "Translation 5 left"
+    },
+    {
+     "q": "(-1, 4) to (1, 4)?",
+     "a": "Reflection in the y-axis (or a translation 2 right)"
+    }
+   ]
+  },
+  {
+   "h": "You do"
+  },
+  {
+   "questions": [
+    {
+     "q": "Plot A(3, 2), B(-4, 5), C(-2, -3), D(5, -1) on the grid sheet.",
+     "a": "Points plotted in the right quadrants",
+     "model": "Teacher plots A and B."
+    },
+    {
+     "q": "Write the coordinates of the 6 points on the sheet.",
+     "a": "Answers on the sheet key"
+    },
+    {
+     "q": "Name a point on the x-axis between (-4, 0) and (2, 0).",
+     "a": "For example (-1, 0)"
+    },
+    {
+     "q": "Find the missing vertex of each of the 4 rectangles on the sheet.",
+     "a": "Answers on the sheet key",
+     "model": "Teacher does the first."
+    },
+    {
+     "q": "A square has two corners at (-1, 2) and (3, 2). Give two possible positions of the other corners.",
+     "a": "(-1, 6) and (3, 6), or (-1, -2) and (3, -2)"
+    },
+    {
+     "q": "Points (-4, 1), (0, 1) and (-2, y) make an isosceles triangle with height 5. Find y.",
+     "a": "6 or -4"
+    },
+    {
+     "q": "Translate the 3 shapes on the sheet; write the image vertices.",
+     "a": "Answers on the sheet key",
+     "model": "Teacher translates shape 1."
+    },
+    {
+     "q": "Describe the translation from (-5, 2) to (1, -4).",
+     "a": "6 right, 6 down"
+    },
+    {
+     "q": "A shape is translated 3 right, 4 down, then 7 left, 1 up. Describe one translation that does the same.",
+     "a": "4 left, 3 down"
+    },
+    {
+     "q": "Reflect the 3 shapes on the sheet in the given axis; write the image vertices.",
+     "a": "Answers on the sheet key",
+     "model": "Teacher reflects shape 1."
+    },
+    {
+     "q": "Reflect (2, 3) in the y-axis, then the image in the x-axis.",
+     "a": "(-2, 3) then (-2, -3)"
+    },
+    {
+     "q": "Which single move takes (2, 3) to (-2, -3)?",
+     "a": "A half turn about the origin (rotation 180°)"
+    },
+    {
+     "q": "Describe fully the 4 moves on the sheet.",
+     "a": "Answers on the sheet key",
+     "model": "Teacher describes move 1."
+    },
+    {
+     "q": "Reflect (3, 4) in the x-axis then translate 2 left. Final point?",
+     "a": "(1, -4)"
+    },
+    {
+     "q": "Find a single move from (1, 2) to (-1, -2). Is it a translation or a reflection?",
+     "a": "Neither: a half turn about the origin"
+    }
+   ]
+  },
+  {
+   "h": "Exit ticket"
+  },
+  {
+   "questions": [
+    {
+     "q": "(-2, 3) is in the...",
+     "a": "A) top-left quadrant",
+     "options": [
+      "top-left quadrant",
+      "bottom-left quadrant",
+      "top-right quadrant"
+     ]
+    },
+    {
+     "q": "Big question: what happens when coordinates are negative?",
+     "a": "Negative x goes left and negative y goes down."
+    },
+    {
+     "q": "Rectangle (0, 0), (5, 0), (5, -3). Fourth?",
+     "a": "A) (0, -3)",
+     "options": [
+      "(0, -3)",
+      "(-3, 0)",
+      "(5, 3)"
+     ]
+    },
+    {
+     "q": "Big question: can you find a corner without drawing?",
+     "a": "Yes: use the matching x and y coordinates."
+    },
+    {
+     "q": "A translation...",
+     "a": "A) slides a shape without turning",
+     "options": [
+      "slides a shape without turning",
+      "flips a shape",
+      "turns a shape"
+     ]
+    },
+    {
+     "q": "Big question: how can we describe a slide?",
+     "a": "Units left or right, then units up or down."
+    },
+    {
+     "q": "Reflect (3, 2) in the y-axis:",
+     "a": "A) (-3, 2)",
+     "options": [
+      "(-3, 2)",
+      "(3, -2)",
+      "(2, 3)"
+     ]
+    },
+    {
+     "q": "Big question: how does a mirror line change coordinates?",
+     "a": "Reflecting in an axis changes the sign of the other coordinate."
+    },
+    {
+     "q": "A reflection...",
+     "a": "A) reverses orientation",
+     "options": [
+      "reverses orientation",
+      "keeps orientation",
+      "changes size"
+     ]
+    },
+    {
+     "q": "Big question: which move takes one shape to another?",
+     "a": "Check orientation and coordinates: slide or flip, then give the details."
+    }
+   ]
+  }
+ ]
+}

@@ -1,0 +1,38 @@
+{
+ "id": "mathematics-y5-place-value-chart",
+ "title": "Place value chart",
+ "type": "printable graph/grid",
+ "subject": "Mathematics",
+ "subjectSlug": "mathematics",
+ "year": "y5",
+ "unit": "Summer 2: Decimals; negative numbers; converting units; volume",
+ "lessons": [
+  83,
+  84
+ ],
+ "source": "Seeded from mathematics/y5 lessons 83, 84 (Place value chart (printable))",
+ "intro": "Used in lessons 83, 84.",
+ "blocks": [
+  {
+   "h": "Place value chart"
+  },
+  {
+   "grid": {
+    "kind": "placevalue",
+    "cols": [
+     "M",
+     "HTh",
+     "TTh",
+     "Th",
+     "H",
+     "T",
+     "O"
+    ],
+    "rows": 4
+   }
+  },
+  {
+   "text": "Key: Th = thousands, H = hundreds, T = tens, O = ones."
+  }
+ ]
+}

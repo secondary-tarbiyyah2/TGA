@@ -1,0 +1,241 @@
+{
+ "id": "mathematics-y4-printable-shapes-sheet",
+ "title": "Printable shapes sheet",
+ "type": "worksheet",
+ "subject": "Mathematics",
+ "subjectSlug": "mathematics",
+ "year": "y4",
+ "unit": "Summer 2: Statistics; geometry; position and direction",
+ "lessons": [
+  93,
+  97
+ ],
+ "source": "Seeded from mathematics/y4 lessons 93, 97 (Printable shapes sheet)",
+ "intro": "To understand how to identify and compare angles inside 2-D shapes",
+ "blocks": [
+  {
+   "h": "Worked examples"
+  },
+  {
+   "model": {
+    "title": "A quadrilateral with exactly 2 right angles?",
+    "parts": [
+     {
+      "label": "Step 1",
+      "text": "Sketch a trapezium with one straight side."
+     },
+     {
+      "label": "Step 2",
+      "text": "Two right angles on that side."
+     },
+     {
+      "label": "Answer",
+      "text": "A right-angled trapezium"
+     }
+    ]
+   }
+  },
+  {
+   "model": {
+    "title": "Is a rectangle that is not a square regular?",
+    "parts": [
+     {
+      "label": "Step 1",
+      "text": "Angles all right angles: equal."
+     },
+     {
+      "label": "Step 2",
+      "text": "Sides not all equal."
+     },
+     {
+      "label": "Answer",
+      "text": "Irregular"
+     }
+    ]
+   }
+  },
+  {
+   "h": "Look inside"
+  },
+  {
+   "table": {
+    "head": [
+     "Shape",
+     "Acute",
+     "Right",
+     "Obtuse"
+    ],
+    "rows": [
+     [
+      "square",
+      "0",
+      "4",
+      "0"
+     ],
+     [
+      "equilateral triangle",
+      "3",
+      "0",
+      "0"
+     ],
+     [
+      "regular hexagon",
+      "0",
+      "0",
+      "6"
+     ],
+     [
+      "rhombus (not square)",
+      "2",
+      "0",
+      "2"
+     ]
+    ]
+   }
+  },
+  {
+   "h": "Polygon names"
+  },
+  {
+   "table": {
+    "head": [
+     "Sides",
+     "Name"
+    ],
+    "rows": [
+     [
+      "3",
+      "triangle"
+     ],
+     [
+      "4",
+      "quadrilateral"
+     ],
+     [
+      "5",
+      "pentagon"
+     ],
+     [
+      "6",
+      "hexagon"
+     ],
+     [
+      "7",
+      "heptagon"
+     ],
+     [
+      "8",
+      "octagon"
+     ],
+     [
+      "9",
+      "nonagon"
+     ],
+     [
+      "10",
+      "decagon"
+     ]
+    ]
+   }
+  },
+  {
+   "h": "We do"
+  },
+  {
+   "questions": [
+    {
+     "q": "Angles in an equilateral triangle?",
+     "a": "3 acute",
+     "model": "Teacher checks one corner: inside the checker, so acute, and all three are equal."
+    },
+    {
+     "q": "Right angles in a right-angled triangle?",
+     "a": "1"
+    },
+    {
+     "q": "Can a triangle have 2 obtuse angles?",
+     "a": "No"
+    },
+    {
+     "q": "Name a 7-sided polygon.",
+     "a": "heptagon",
+     "model": "Teacher counts 7 sides: heptagon."
+    },
+    {
+     "q": "Is an equilateral triangle regular?",
+     "a": "Yes"
+    },
+    {
+     "q": "Is a circle a polygon?",
+     "a": "No"
+    }
+   ]
+  },
+  {
+   "h": "You do"
+  },
+  {
+   "questions": [
+    {
+     "q": "Count acute, right and obtuse angles in the 6 shapes on the sheet.",
+     "a": "Answers on the sheet key",
+     "model": "Teacher does the first shape."
+    },
+    {
+     "q": "Draw a pentagon with exactly 2 right angles.",
+     "a": "For example a 'house' shape"
+    },
+    {
+     "q": "Which regular shape has angles that are right angles?",
+     "a": "The square"
+    },
+    {
+     "q": "Name the 8 shapes on the sheet and say regular or irregular.",
+     "a": "Answers on the sheet key",
+     "model": "Teacher does the first two."
+    },
+    {
+     "q": "Draw an irregular hexagon.",
+     "a": "Any 6-sided shape with unequal sides or angles"
+    },
+    {
+     "q": "Explain why a regular polygon with 4 sides must be a square.",
+     "a": "Equal sides and equal angles; 4 equal angles are all right angles"
+    }
+   ]
+  },
+  {
+   "h": "Exit ticket"
+  },
+  {
+   "questions": [
+    {
+     "q": "A square has...",
+     "a": "A) 4 right angles",
+     "options": [
+      "4 right angles",
+      "4 acute angles",
+      "2 obtuse angles"
+     ]
+    },
+    {
+     "q": "Big question: what can angles tell us?",
+     "a": "They help us name and sort shapes."
+    },
+    {
+     "q": "All sides and angles equal:",
+     "a": "A) regular",
+     "options": [
+      "regular",
+      "irregular",
+      "curved"
+     ]
+    },
+    {
+     "q": "Big question: why regular polygons in tile patterns?",
+     "a": "Equal sides and angles let tiles fit together neatly."
+    }
+   ]
+  }
+ ]
+}
