@@ -7,7 +7,7 @@ appliesTo: All applicants for a place at Tarbiyyah Global Academy, and their par
 owner: Admissions Lead
 approvedBy: Ustadh Abu Zayn Haneef Sandhar, Headteacher
 agreedWith: The Chair of Trustees, Tarbiyyah Education Trust
-dateOfIssue: 1 September 2026 (version 1.2, updated 9 November 2026: a tablet with a stylus is recommended for every pupil, and a printer at home is required without one)
+dateOfIssue: 1 September 2026 (version 1.3, updated 11 November 2026: How to Apply matches the website, and the first fee payment is due on acceptance)
 nextReview: 31 August 2027
 basis: Adapted from the Tarbiyyah Secondary Admissions Policy 2026–27 for an online, co-educational Year 1 to Year 11 school
 readAlongside: Fees Policy; SEND and Inclusion Policy; Equality, Diversity and Accessibility Policy; Behaviour and Online Conduct Policy; Attendance, Punctuality and Children Missing Education Policy; Child Protection and Safeguarding Policy; Data Protection Policy
@@ -46,15 +46,16 @@ Because all learning is online, a place is conditional on the family providing:
 
 ## 5. How to Apply
 
+Before applying, families are welcome to come to an online open evening, book an admissions call or use "Is it right for us?" on the Academy website to see the likely year group, live day, timetable and fees. The application itself follows the six steps shown on the website's Admissions page:
+
 | Step | What happens |
 | --- | --- |
-| 1. Enquiry | Families may book an admissions call through the website and use the fit check on the Academy website to see the likely year group, timetable and fees |
-| 2. Application | Complete the online application form and pay the application fee of £150 per child, which is non-refundable (see the Fees Policy) |
-| 3. Documents | Upload the documents listed in Appendix A; the Academy requests a confidential report from the current school |
-| 4. Assessment | The pupil completes the online entry assessment under supervised, camera-on conditions |
-| 5. Family video call | A conversation with a member of the leadership team about learning goals, values and support needs |
-| 6. Decision | Normally within three working days of the family meeting |
-| 7. Offer | A conditional offer is issued with the terms and conditions and Fees Policy |
+| 1. Apply | Complete the online application form (several children can be added to the same form) and upload the documents listed in Appendix A, including photo ID for a parent or guardian, each child's passport or birth certificate, proof of the child's home address and, if available, a recent school report or homeschool record. No payment is taken on the form |
+| 2. We review your application | The admissions team checks the application and documents, requests a confidential report from the current school and tells the family if anything else is needed. The Academy emails the details for paying the application fee of £150 per child, which is non-refundable (see the Fees Policy) and must be paid before a place is confirmed |
+| 3. Remote assessment | The pupil completes an age-appropriate online entry assessment under supervised, camera-on conditions; the date, time and what to prepare are emailed |
+| 4. Family video call | A video call with the Headteacher or a member of the leadership team, the parent or guardian and the child, about learning goals, values and support needs. Offers are made in writing, normally within three working days of the call (and within ten working days of a complete application) |
+| 5. Offer and securing your place | A conditional offer is emailed with the terms and conditions and the Fees Policy. To accept, the family replies within five working days and pays the first fee payment on acceptance, plus the application fee if not already paid |
+| 6. Welcome | The Academy creates the parent and pupil accounts, emails the sign-in details and welcomes the pupil to induction week (4 to 8 January 2027), ahead of the first live lessons on Monday 11 January 2027 |
 
 ## 6. Reasonable Adjustments and SEND
 
@@ -65,7 +66,7 @@ Applications from pupils with SEND are welcomed and assessed on the same terms a
 | Stage | What happens |
 | --- | --- |
 | Conditional offer | Sent by email with the terms and conditions |
-| Acceptance | Families accept within five working days and pay the first fee payment, due no later than Friday 8 January 2027 |
+| Acceptance | Families accept within five working days and pay the first fee payment on acceptance (on admission), and no later than Friday 8 January 2027. The place is held only once this payment has been made; the remaining payments follow the dates in the Fees Policy |
 | Cancellation right | Because enrolment is agreed at a distance, families may cancel within 14 days of accepting, as set out in the Fees Policy |
 | Conditions | The offer depends on accurate information, a satisfactory school report, the required documents, the technical requirements and payment |
 | Onboarding | Families receive Academy accounts, portal access, the timetable, device check and induction details |

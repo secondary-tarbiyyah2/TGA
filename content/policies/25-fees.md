@@ -7,7 +7,7 @@ appliesTo: All parents and fee-payers of pupils at Tarbiyyah Global Academy
 owner: Headteacher, with the finance team
 approvedBy: Ustadh Abu Zayn Haneef Sandhar, Headteacher
 agreedWith: The Chair of Trustees, Tarbiyyah Education Trust
-dateOfIssue: 1 September 2026 (version 1.3, updated 9 November 2026: a tablet with a stylus is recommended for every pupil, and a printer at home is required without one)
+dateOfIssue: 1 September 2026 (version 1.4, updated 11 November 2026: the first payment is due on acceptance of a place, and fees are paid online)
 nextReview: 31 August 2027
 basis: Tarbiyyah Global Academy Fee Policy (September 2026), updated in October 2026 to the founding-cohort fees, charges and payment dates published in the Prospectus 2026–27 (live lessons from 11 January 2027)
 readAlongside: Admissions Policy; Flexible Learning Policy; Examinations and Private Candidates Policy; Concerns and Complaints Policy
@@ -29,14 +29,14 @@ Live lessons begin on Monday 11 January 2027. The annual figure below is the tot
 | Year 7 – Year 9 | £2,796.00 | £2,740.08 | £1,398.00 | £399.43 |
 | Year 10 – Year 11 | £3,000.00 | £2,940.00 | £1,500.00 | £428.57 |
 
-The two payments are due on Friday 8 January 2027 and Sunday 28 March 2027. Monthly instalments are spread across seven payments: the first on Friday 8 January 2027, then the 28th of each month from 28 January to 28 June 2027. Instalments always add up exactly to the annual fee; where rounding makes them uneven, the final instalment absorbs the difference.
+Under every plan, the first payment is due on admission, when the place is accepted (within five working days of the offer, and no later than Friday 8 January 2027). A place is held only once this first payment has been made. The remaining payments then follow: with two payments, the second is due on Sunday 28 March 2027; with monthly instalments, the first of the seven payments is made on acceptance and the remaining six on the 28th of each month from 28 January to 28 June 2027. Instalments always add up exactly to the annual fee; where rounding makes them uneven, the final instalment absorbs the difference.
 
 ## 3. Other Charges
 
 | Charge | Detail |
 | --- | --- |
 | Application fee | £150 per child, non-refundable, payable when applying. It covers the entry assessment and the time spent with each family. There is no registration fee. |
-| Annual payment discount | 2% discount where the annual option is chosen and paid in full by Friday 8 January 2027 |
+| Annual payment discount | 2% discount where the annual option is chosen and paid in full on acceptance of the place (no later than Friday 8 January 2027) |
 | Sibling discount | 5% off tuition for a second child and 10% for the third and later children, applied to the younger sibling's tuition. It can be combined with the annual payment discount |
 | Examination fees | Not included. International GCSE entry fees are billed separately by the examination centre (see the Examinations and Private Candidates Policy) |
 
@@ -44,16 +44,14 @@ The two payments are due on Friday 8 January 2027 and Sunday 28 March 2027. Mont
 
 | Payment | Due date |
 | --- | --- |
-| First payment (to secure a place for January 2027) | On acceptance of the place, and no later than Friday 8 January 2027 |
-| Annual payment | Friday 8 January 2027 |
-| Two payments | Friday 8 January 2027 and Sunday 28 March 2027 |
-| Monthly payments | Friday 8 January 2027, then the 28th of each month from 28 January to 28 June 2027 (seven payments) |
+| First payment, under every plan (secures the place) | On admission: when the place is accepted, within five working days of the offer and no later than Friday 8 January 2027 |
+| Annual payment | One payment, made on acceptance |
+| Two payments | The first on acceptance; the second on Sunday 28 March 2027 |
+| Monthly payments | The first on acceptance; then the 28th of each month from 28 January to 28 June 2027 (seven payments in all) |
 
 ## 5. Ways to Pay
 
-- **Standing order**, preferred for monthly plans (form in Appendix A).
-- **Card payment**, through the Academy finance team or the Parent Portal.
-- **Bank transfer**, to the Academy's account in the name of An Noor Islamic School. The account details are sent with your offer letter. Please use your child's full name as the payment reference.
+Fees are paid online, on the Academy's secure payment page, by debit or credit card or directly from a bank app. The link is sent with your offer and is on the Fees page of the Parent Portal. Please give your child's full name as the payment reference.
 
 ## 6. Late Payment
 
@@ -70,7 +68,7 @@ One half term's written notice is required to withdraw a pupil, and fees remain 
 3. Examination costs are not included. Pupils are entered for International GCSE examinations through Tarbiyyah Secondary School as the examination centre, or through another centre arranged for pupils outside the UK, and the centre's entry fees are billed separately.
 4. Extra-curricular activities or additional support with a charge are agreed with parents in writing in advance. No such charge is applied without prior written agreement.
 5. Each fee-payer is liable for the full fees and any agreed supplementary charges, unless the Academy has agreed otherwise in writing.
-6. Fees fall due on the dates above and are paid in full by standing order, card or bank transfer.
+6. Fees fall due on the dates above and are paid in full online, by card or from a bank app, on the Academy's secure payment page.
 7. Agreed supplementary charges are paid within 14 days of the invoice.
 8. Cancellation: because enrolment is agreed at a distance, families may cancel within 14 days of accepting a place without giving a reason. All sums paid are refunded, except that where the family asked for lessons to start within those 14 days, a proportionate charge for lessons delivered may be kept. The application fee is not refundable.
 9. Outside the cancellation period, one half term's written notice is required to withdraw, and fees are payable for the notice period.
@@ -83,20 +81,3 @@ One half term's written notice is required to withdraw a pupil, and fees remain 
 16. Where a pupil is withdrawn without the required notice, an administration charge of £210 applies, reflecting account closure, transfer of records and loss of the place at short notice. It does not apply within the cancellation period, after a fee increase notice, where proper notice was given, or where the Academy ended the placement.
 17. The application fee of £150 per child is non-refundable.
 18. A pupil joining after Monday 11 January 2027 is charged from the start of the half term in which they join. Where a pupil starts after the start of the second half term, an additional £180 administration charge applies, covering the extra planning and assessment needed.
-
-## Appendix A — Standing Order Form
-
-Please complete this form and give it to your bank, using capital letters. All sections must be completed. The Academy's account details are in your offer letter.
-
-| Detail | Please complete |
-| --- | --- |
-| Name(s) of child/children | |
-| Account holder name(s) | |
-| Your account number | |
-| Your sort code | |
-| Name and full address of your bank | |
-| Pay | An Noor Islamic School (Tarbiyyah Global Academy fees), account details as given in your offer letter |
-| Amount | £ |
-| First payment date | 8 January 2027 (or the date in your offer letter) |
-| Then | The 28th of each month from 28 January 2027 to 28 June 2027 |
-| Signature(s) and date | |
