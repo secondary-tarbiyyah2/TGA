@@ -4,11 +4,11 @@ import { Suspense } from "react";
 import { useSearchParams } from "next/navigation";
 import { LearnGate } from "@/components/learn/LearnGate";
 import { TeachPupils } from "@/components/learn/pupil/TeachPupils";
-import { TeachPupilDetail } from "@/components/learn/pupil/TeachPupilDetail";
+import { TeachPupilProfile } from "@/components/learn/pupil/TeachPupilProfile";
 
 function Content() {
   const id = useSearchParams().get("id");
-  return id ? <TeachPupilDetail id={id} /> : <TeachPupils />;
+  return id ? <TeachPupilProfile id={id} /> : <TeachPupils />;
 }
 
 export default function TeachPupilsPage() {
