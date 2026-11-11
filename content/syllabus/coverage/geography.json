@@ -1,981 +1,669 @@
 {
  "subject": "Geography",
- "board": "Pearson Edexcel",
- "code": "4GE1",
+ "board": "AQA",
+ "code": "8035",
  "lessonCount": 124,
- "points": 80,
- "covered": 58,
+ "points": 53,
+ "covered": 43,
  "units": [
   {
-   "ref": "SK",
-   "title": "Geographical skills (Appendix 4), taught throughout",
+   "ref": "3.4",
+   "title": "Geographical skills, taught throughout",
    "year": "Y10",
-   "paper": "Paper 1 and Paper 2",
-   "status": "partial",
-   "covered": 1,
+   "paper": "Paper 1, Paper 2 and Paper 3",
+   "status": "covered",
+   "covered": 5,
    "total": 5,
    "lessons": [
-    "y10/33"
+    "y10/33",
+    "y10/34",
+    "y10/35",
+    "y10/36",
+    "y10/64"
    ],
    "points": [
     {
      "n": 1,
-     "text": "Recognise and describe patterns of physical and human features on maps and atlases at different scales.",
-     "lessons": []
-    },
-    {
-     "n": 2,
-     "text": "Draw, label and interpret sketch maps, diagrams, graphs and photographs, including satellite images.",
-     "lessons": []
-    },
-    {
-     "n": 3,
-     "text": "Use grid references, scale, symbols and relief on maps, including digital maps and GIS.",
+     "text": "Cartographic skills: atlas and Ordnance Survey maps, maps with photographs.",
      "lessons": [
       "y10/33"
      ]
     },
     {
+     "n": 2,
+     "text": "Graphical skills: construct, choose and interpret graphs, charts and maps.",
+     "lessons": [
+      "y10/34"
+     ]
+    },
+    {
+     "n": 3,
+     "text": "Numerical and statistical skills: scale, ratio, averages, spread, percentage change and trends.",
+     "lessons": [
+      "y10/35"
+     ]
+    },
+    {
      "n": 4,
-     "text": "Use simple statistics: means, medians, modes and lines of best fit.",
-     "lessons": []
+     "text": "Use qualitative and quantitative data, including GIS and satellite images.",
+     "lessons": [
+      "y10/36",
+      "y10/64",
+      "y10/34"
+     ]
     },
     {
      "n": 5,
-     "text": "Integrated skills in each topic: hydrographs, triangular graphs, population pyramids, footprint calculations.",
-     "lessons": []
+     "text": "Build an enquiry and an evidenced argument.",
+     "lessons": [
+      "y10/36"
+     ]
     }
    ]
   },
   {
-   "ref": "3.1",
-   "title": "Hazardous environments: some places are more hazardous than others",
+   "ref": "3.1.1.1-2",
+   "title": "Natural hazards and tectonic hazards",
    "year": "Y10",
    "paper": "Paper 1",
-   "status": "covered",
+   "status": "partial",
    "covered": 3,
-   "total": 3,
+   "total": 4,
    "lessons": [
-    "y10/2",
-    "y10/10",
+    "y10/4",
+    "y10/9",
+    "y10/11",
+    "y10/12"
+   ],
+   "points": [
+    {
+     "n": 1,
+     "text": "Natural hazards pose major risks to people and property; types and factors affecting risk.",
+     "lessons": [
+      "y10/9",
+      "y10/4"
+     ]
+    },
+    {
+     "n": 2,
+     "text": "Earthquakes and volcanoes come from processes at plate margins; their global pattern.",
+     "lessons": []
+    },
+    {
+     "n": 3,
+     "text": "Effects of and responses to a tectonic hazard differ between areas of contrasting wealth (two named examples).",
+     "lessons": [
+      "y10/11",
+      "y10/12"
+     ]
+    },
+    {
+     "n": 4,
+     "text": "Monitoring, prediction, protection and planning reduce the effects; why people live in hazard zones.",
+     "lessons": [
+      "y10/11",
+      "y10/4"
+     ]
+    }
+   ]
+  },
+  {
+   "ref": "3.1.1.3",
+   "title": "Weather hazards: global circulation, tropical storms (Cyclone Idai) and UK weather hazards (Somerset floods, 2014)",
+   "year": "Y10",
+   "paper": "Paper 1",
+   "status": "partial",
+   "covered": 3,
+   "total": 5,
+   "lessons": [
+    "y10/13",
     "y10/46"
    ],
    "points": [
     {
      "n": 1,
-     "text": "Characteristics, distribution and measurement of tropical cyclones, earthquakes and volcanoes.",
-     "lessons": [
-      "y10/2",
-      "y10/10"
-     ]
+     "text": "Global atmospheric circulation shapes patterns of weather and climate.",
+     "lessons": []
     },
     {
      "n": 2,
-     "text": "Causes of tropical cyclones: ocean temperature, air pressure, wind shear and the Coriolis force.",
+     "text": "Tropical storms form under particular physical conditions; distribution, structure and links to climate change.",
      "lessons": [
-      "y10/2",
       "y10/46"
      ]
     },
     {
      "n": 3,
-     "text": "Causes of volcanic and earthquake hazards: plate boundaries and hotspots.",
-     "lessons": [
-      "y10/10"
-     ]
-    }
-   ]
-  },
-  {
-   "ref": "3.2",
-   "title": "Hazardous environments: impacts on people and the environment",
-   "year": "Y10",
-   "paper": "Paper 1",
-   "status": "covered",
-   "covered": 3,
-   "total": 3,
-   "lessons": [
-    "y10/9",
-    "y10/11",
-    "y10/73",
-    "y11/10"
-   ],
-   "points": [
-    {
-     "n": 1,
-     "text": "Why people continue to live in areas at risk from hazards.",
-     "lessons": [
-      "y10/11",
-      "y10/9"
-     ]
-    },
-    {
-     "n": 2,
-     "text": "Why some countries are more physically, socially and economically vulnerable than others.",
-     "lessons": [
-      "y11/10"
-     ]
-    },
-    {
-     "n": 3,
-     "text": "Shorter- and longer-term impacts of one earthquake, one volcano and one tropical cyclone.",
-     "lessons": [
-      "y10/73"
-     ]
-    }
-   ]
-  },
-  {
-   "ref": "3.3",
-   "title": "Hazardous environments: managing earthquakes (case studies)",
-   "year": "Y10",
-   "paper": "Paper 1",
-   "status": "partial",
-   "covered": 1,
-   "total": 4,
-   "lessons": [
-    "y10/73"
-   ],
-   "points": [
-    {
-     "n": 1,
-     "text": "Preparation for earthquakes: warning, evacuation, building design, remote sensing and GIS.",
-     "lessons": []
-    },
-    {
-     "n": 2,
-     "text": "Short-term responses and relief: emergency aid, shelter and supplies.",
-     "lessons": []
-    },
-    {
-     "n": 3,
-     "text": "Longer-term planning: risk assessment, hazard mapping and rebuilding.",
+     "text": "Primary and secondary effects of, and responses to, a named tropical storm (school example: Cyclone Idai).",
      "lessons": []
     },
     {
      "n": 4,
-     "text": "Case studies: earthquake management in a developed and in a developing or emerging country.",
+     "text": "UK weather hazards and a recent extreme event (school example: Somerset Levels floods, 2014).",
      "lessons": [
-      "y10/73"
+      "y10/46",
+      "y10/13"
+     ]
+    },
+    {
+     "n": 5,
+     "text": "Evidence that UK weather is becoming more extreme.",
+     "lessons": [
+      "y10/13"
      ]
     }
    ]
   },
   {
-   "ref": "7.1",
-   "title": "Fragile environments and climate change: environments under threat",
+   "ref": "3.1.1.4",
+   "title": "Climate change",
    "year": "Y10",
-   "paper": "Paper 2",
-   "status": "covered",
-   "covered": 3,
-   "total": 3,
-   "lessons": [
-    "y10/7",
-    "y10/14",
-    "y10/20",
-    "y10/47",
-    "y10/74",
-    "y11/35"
-   ],
-   "points": [
-    {
-     "n": 1,
-     "text": "Distribution and characteristics of the world's fragile environments.",
-     "lessons": [
-      "y10/20",
-      "y10/7",
-      "y10/14"
-     ]
-    },
-    {
-     "n": 2,
-     "text": "Causes of desertification (drought, population, fuel, overgrazing) and of deforestation.",
-     "lessons": [
-      "y10/7",
-      "y10/47",
-      "y11/35"
-     ]
-    },
-    {
-     "n": 3,
-     "text": "Natural causes of climate change and how human activity enhances the greenhouse effect.",
-     "lessons": [
-      "y10/14",
-      "y11/35",
-      "y10/74"
-     ]
-    }
-   ]
-  },
-  {
-   "ref": "7.2",
-   "title": "Fragile environments and climate change: impacts",
-   "year": "Y10",
-   "paper": "Paper 2",
-   "status": "covered",
-   "covered": 3,
-   "total": 3,
-   "lessons": [
-    "y10/14",
-    "y10/15",
-    "y10/18",
-    "y10/32",
-    "y10/47",
-    "y10/74",
-    "y11/1",
-    "y11/35"
-   ],
-   "points": [
-    {
-     "n": 1,
-     "text": "Social, economic and environmental impacts of desertification.",
-     "lessons": [
-      "y11/35",
-      "y10/32",
-      "y11/1"
-     ]
-    },
-    {
-     "n": 2,
-     "text": "Impacts of deforestation: biodiversity loss, climate change, development and soil erosion.",
-     "lessons": [
-      "y10/18",
-      "y10/47",
-      "y11/35"
-     ]
-    },
-    {
-     "n": 3,
-     "text": "Effects of climate change on fragile environments and people, including sea level and food supply.",
-     "lessons": [
-      "y10/15",
-      "y10/14",
-      "y10/74"
-     ]
-    }
-   ]
-  },
-  {
-   "ref": "7.3",
-   "title": "Fragile environments and climate change: responses",
-   "year": "Y10",
-   "paper": "Paper 2",
+   "paper": "Paper 1",
    "status": "partial",
    "covered": 2,
    "total": 3,
    "lessons": [
-    "y10/47",
-    "y11/44"
+    "y10/7",
+    "y10/14",
+    "y10/15",
+    "y10/74",
+    "y11/35"
    ],
    "points": [
     {
      "n": 1,
-     "text": "How technology can resolve water shortages in areas threatened by desertification.",
+     "text": "Evidence for climate change from the Quaternary period to the present.",
+     "lessons": []
+    },
+    {
+     "n": 2,
+     "text": "Natural and human factors causing climate change, and its effects on people and the environment.",
      "lessons": [
+      "y10/14",
+      "y11/35",
+      "y10/15"
+     ]
+    },
+    {
+     "n": 3,
+     "text": "Managing climate change: mitigation and adaptation.",
+     "lessons": [
+      "y10/15",
+      "y10/74",
+      "y10/7"
+     ]
+    }
+   ]
+  },
+  {
+   "ref": "3.1.2.1",
+   "title": "The living world: ecosystems",
+   "year": "Y10",
+   "paper": "Paper 1",
+   "status": "covered",
+   "covered": 3,
+   "total": 3,
+   "lessons": [
+    "y10/16",
+    "y10/59",
+    "y11/17"
+   ],
+   "points": [
+    {
+     "n": 1,
+     "text": "Ecosystems involve interaction between biotic and abiotic parts at a range of scales.",
+     "lessons": [
+      "y10/59",
+      "y10/16"
+     ]
+    },
+    {
+     "n": 2,
+     "text": "A small-scale UK ecosystem: food webs, nutrient cycling and the effect of change.",
+     "lessons": [
+      "y10/16",
+      "y11/17"
+     ]
+    },
+    {
+     "n": 3,
+     "text": "An overview of the distribution and characteristics of large-scale global ecosystems.",
+     "lessons": [
+      "y10/16",
+      "y11/17"
+     ]
+    }
+   ]
+  },
+  {
+   "ref": "3.1.2.2",
+   "title": "Tropical rainforests (case study: deforestation in Malaysia)",
+   "year": "Y10",
+   "paper": "Paper 1",
+   "status": "covered",
+   "covered": 3,
+   "total": 3,
+   "lessons": [
+    "y10/8",
+    "y10/17",
+    "y10/18",
+    "y10/19",
+    "y10/20",
+    "y10/26"
+   ],
+   "points": [
+    {
+     "n": 1,
+     "text": "Distinctive characteristics of tropical rainforests: climate, soils, plants, animals and biodiversity.",
+     "lessons": [
+      "y10/17",
+      "y10/20",
+      "y10/18"
+     ]
+    },
+    {
+     "n": 2,
+     "text": "Causes and economic and environmental impacts of deforestation (school case study: Malaysia).",
+     "lessons": [
+      "y10/18"
+     ]
+    },
+    {
+     "n": 3,
+     "text": "Value of rainforests and strategies for sustainable management.",
+     "lessons": [
+      "y10/19",
+      "y10/8",
+      "y10/26"
+     ]
+    }
+   ]
+  },
+  {
+   "ref": "3.1.2.3",
+   "title": "Hot deserts (school option; cold environments not taught)",
+   "year": "Y10",
+   "paper": "Paper 1",
+   "status": "covered",
+   "covered": 3,
+   "total": 3,
+   "lessons": [
+    "y10/5",
+    "y10/6",
+    "y10/8",
+    "y10/20",
+    "y10/21",
+    "y10/47"
+   ],
+   "points": [
+    {
+     "n": 1,
+     "text": "Distinctive characteristics of hot deserts and how plants and animals adapt.",
+     "lessons": [
+      "y10/20",
+      "y10/5",
       "y10/47"
      ]
     },
     {
      "n": 2,
-     "text": "Approaches to sustainable use and management of a rainforest in a named region.",
-     "lessons": []
+     "text": "Opportunities and challenges of developing a hot desert (case study).",
+     "lessons": [
+      "y10/21",
+      "y10/6"
+     ]
     },
     {
      "n": 3,
-     "text": "Responses to climate change by individuals, organisations and governments in two named countries.",
+     "text": "Desertification on desert fringes: causes and strategies to reduce it.",
      "lessons": [
-      "y11/44"
+      "y10/8",
+      "y10/47"
      ]
     }
    ]
   },
   {
-   "ref": "1.1",
-   "title": "River environments: the hydrological cycle",
+   "ref": "3.1.3.1",
+   "title": "UK physical landscapes",
    "year": "Y10",
    "paper": "Paper 1",
    "status": "covered",
-   "covered": 3,
-   "total": 3,
+   "covered": 2,
+   "total": 2,
    "lessons": [
-    "y10/29",
-    "y10/53"
+    "y10/23",
+    "y10/48"
    ],
    "points": [
     {
      "n": 1,
-     "text": "The hydrological cycle: characteristics, stores and transfers.",
+     "text": "The UK's diverse landscapes: location of upland and lowland areas and main river systems.",
      "lessons": [
-      "y10/53"
+      "y10/23",
+      "y10/48"
      ]
     },
     {
      "n": 2,
-     "text": "Drainage basin features: source, watershed, channel network and mouth.",
+     "text": "How geology and past processes created upland and lowland landscapes.",
      "lessons": [
-      "y10/53"
-     ]
-    },
-    {
-     "n": 3,
-     "text": "Factors affecting river regimes, including storm hydrographs, land use, abstraction and dams.",
-     "lessons": [
-      "y10/29"
+      "y10/48",
+      "y10/23"
      ]
     }
    ]
   },
   {
-   "ref": "1.2",
-   "title": "River environments: processes and landforms",
+   "ref": "3.1.3.2",
+   "title": "Coastal landscapes in the UK (examples: Swanage and Lyme Regis)",
    "year": "Y10",
    "paper": "Paper 1",
    "status": "partial",
    "covered": 1,
    "total": 3,
    "lessons": [
-    "y10/28",
-    "y10/54"
+    "y10/24"
    ],
    "points": [
     {
      "n": 1,
-     "text": "Fluvial erosion, weathering, mass movement, transport and deposition, and factors affecting them.",
-     "lessons": []
-    },
-    {
-     "n": 2,
-     "text": "How channel shape, profiles, gradient, velocity, discharge and sediment change along a named river.",
-     "lessons": []
-    },
-    {
-     "n": 3,
-     "text": "Upland and lowland landforms: valleys, interlocking spurs, waterfalls, meanders, oxbow lakes, flood plains, levees.",
+     "text": "Waves, weathering, mass movement, erosion, transport and deposition shape the coast.",
      "lessons": [
-      "y10/54",
-      "y10/28"
-     ]
-    }
-   ]
-  },
-  {
-   "ref": "1.3",
-   "title": "River environments: importance to people and management (case studies)",
-   "year": "Y10",
-   "paper": "Paper 1",
-   "status": "covered",
-   "covered": 4,
-   "total": 4,
-   "lessons": [
-    "y10/29",
-    "y10/54",
-    "y10/55",
-    "y10/56",
-    "y10/61",
-    "y10/73",
-    "y11/2",
-    "y11/15",
-    "y11/16"
-   ],
-   "points": [
-    {
-     "n": 1,
-     "text": "Uses of water, rising demand and supply; areas of water shortage and surplus.",
-     "lessons": [
-      "y11/2",
-      "y11/15",
-      "y11/16"
+      "y10/24"
      ]
     },
     {
      "n": 2,
-     "text": "Variations in water quality and the storage and supply of clean water.",
-     "lessons": [
-      "y10/55"
-     ]
+     "text": "Erosional and depositional landforms on a named UK coastline (school example: Swanage).",
+     "lessons": []
     },
     {
      "n": 3,
-     "text": "Causes of river flooding and its prediction and prevention.",
-     "lessons": [
-      "y10/56",
-      "y10/29",
-      "y10/54"
-     ]
-    },
-    {
-     "n": 4,
-     "text": "Case studies: river management in a developed and in a developing or emerging country.",
-     "lessons": [
-      "y10/61",
-      "y10/73"
-     ]
+     "text": "Hard engineering, soft engineering and managed retreat; a UK coastal management scheme (school example: Lyme Regis).",
+     "lessons": []
     }
    ]
   },
   {
-   "ref": "2.1",
-   "title": "Coastal environments: processes and landforms",
+   "ref": "3.1.3.3",
+   "title": "River landscapes in the UK (River Tees; flood management at Banbury)",
    "year": "Y10",
    "paper": "Paper 1",
    "status": "partial",
    "covered": 2,
    "total": 3,
    "lessons": [
-    "y10/25",
-    "y10/30",
-    "y10/58",
-    "y10/72",
-    "y11/24"
+    "y10/27"
    ],
    "points": [
     {
      "n": 1,
-     "text": "Marine processes, weathering and mass movement at the coast, including longshore drift.",
+     "text": "Long and cross profiles change downstream through erosion, transport and deposition.",
      "lessons": [
-      "y11/24",
-      "y10/72",
-      "y10/30"
+      "y10/27"
      ]
     },
     {
      "n": 2,
-     "text": "Influence of geology, vegetation, people and sea-level change on coasts.",
+     "text": "Erosional and depositional landforms in a named UK river valley (school example: the River Tees).",
+     "lessons": [
+      "y10/27"
+     ]
+    },
+    {
+     "n": 3,
+     "text": "Flood risk, hydrographs and hard and soft flood management; a UK scheme (school example: Banbury, taught in Summer).",
+     "lessons": []
+    }
+   ]
+  },
+  {
+   "ref": "3.3.1",
+   "title": "Issue evaluation (pre-release resources)",
+   "year": "Y10",
+   "paper": "Paper 3",
+   "status": "partial",
+   "covered": 2,
+   "total": 3,
+   "lessons": [
+    "y11/20",
+    "y11/22"
+   ],
+   "points": [
+    {
+     "n": 1,
+     "text": "A synoptic, critical-thinking section on a contemporary issue drawn from 3.1 and 3.2.",
      "lessons": []
     },
     {
-     "n": 3,
-     "text": "Erosional and depositional landforms: headlands, bays, cliffs, caves, arches, stacks, beaches, spits, bars.",
+     "n": 2,
+     "text": "Use the pre-release resources booklet issued 12 weeks before the exam.",
      "lessons": [
-      "y10/25",
-      "y10/58"
+      "y11/20"
+     ]
+    },
+    {
+     "n": 3,
+     "text": "Weigh stakeholders' views and alternatives; justify a decision.",
+     "lessons": [
+      "y11/22",
+      "y11/20"
      ]
     }
    ]
   },
   {
-   "ref": "2.2",
-   "title": "Coastal environments: coastal ecosystems",
+   "ref": "3.3.2",
+   "title": "Fieldwork: two enquiries",
    "year": "Y10",
-   "paper": "Paper 1",
+   "paper": "Paper 3",
    "status": "covered",
    "covered": 3,
    "total": 3,
    "lessons": [
-    "y10/59",
-    "y11/24"
-   ],
-   "points": [
-    {
-     "n": 1,
-     "text": "Distribution and features of coral reefs, mangroves, sand dunes and salt marshes.",
-     "lessons": [
-      "y10/59",
-      "y11/24"
-     ]
-    },
-    {
-     "n": 2,
-     "text": "Abiotic and biotic characteristics of one named coastal ecosystem.",
-     "lessons": [
-      "y10/59"
-     ]
-    },
-    {
-     "n": 3,
-     "text": "Threats to coastal ecosystems from industry, farming, tourism and deforestation.",
-     "lessons": [
-      "y10/59"
-     ]
-    }
-   ]
-  },
-  {
-   "ref": "2.3",
-   "title": "Coastal environments: conflicts and management (case studies)",
-   "year": "Y10",
-   "paper": "Paper 1",
-   "status": "covered",
-   "covered": 4,
-   "total": 4,
-   "lessons": [
-    "y10/26",
-    "y10/32",
-    "y10/49",
-    "y10/50",
-    "y10/56",
-    "y10/60",
-    "y10/61"
-   ],
-   "points": [
-    {
-     "n": 1,
-     "text": "Conflicts between coastal users over conservation or development.",
-     "lessons": [
-      "y10/60",
-      "y10/32",
-      "y10/49"
-     ]
-    },
-    {
-     "n": 2,
-     "text": "Causes of coastal flooding and its prediction and prevention.",
-     "lessons": [
-      "y10/56",
-      "y10/60",
-      "y10/26"
-     ]
-    },
-    {
-     "n": 3,
-     "text": "Soft and hard engineering and shoreline management plans.",
-     "lessons": [
-      "y10/26"
-     ]
-    },
-    {
-     "n": 4,
-     "text": "Case studies: coastal management in a developed and in a developing or emerging country.",
-     "lessons": [
-      "y10/50",
-      "y10/61",
-      "y10/49"
-     ]
-    }
-   ]
-  },
-  {
-   "ref": "1B",
-   "title": "Paper 1 Section B: physical fieldwork enquiry",
-   "year": "Y10",
-   "paper": "Paper 1",
-   "status": "covered",
-   "covered": 4,
-   "total": 4,
-   "lessons": [
-    "y10/36",
-    "y10/43",
+    "y10/45",
     "y10/51",
-    "y10/52",
-    "y10/64",
-    "y10/65",
-    "y11/34",
-    "y11/39"
+    "y11/26"
    ],
    "points": [
     {
      "n": 1,
-     "text": "One enquiry with fieldwork in one Paper 1 environment (river, coast or hazards), answered in Section B.",
+     "text": "Two enquiries with primary data in contrasting environments, one physical-human.",
      "lessons": [
-      "y11/39",
       "y10/51",
-      "y10/43"
+      "y10/45"
      ]
     },
     {
      "n": 2,
-     "text": "Primary data must include quantitative and qualitative techniques.",
+     "text": "Enquiry stages: question, data collection, presentation, analysis, conclusion and evaluation.",
      "lessons": [
-      "y10/64",
-      "y10/36",
+      "y10/51",
+      "y11/26",
+      "y10/45"
+     ]
+    },
+    {
+     "n": 3,
+     "text": "Questions on unfamiliar fieldwork materials and on the pupil's own enquiries.",
+     "lessons": [
       "y10/51"
      ]
-    },
-    {
-     "n": 3,
-     "text": "Secondary data must use at least two different sources for the chosen environment.",
-     "lessons": [
-      "y10/51",
-      "y10/65"
-     ]
-    },
-    {
-     "n": 4,
-     "text": "Questions cover the pupil's own enquiry and unfamiliar data from the same environment.",
-     "lessons": [
-      "y10/51",
-      "y11/34",
-      "y10/52"
-     ]
     }
    ]
   },
   {
-   "ref": "6.1",
-   "title": "Urban environments: urbanisation",
+   "ref": "3.2.1",
+   "title": "Urban issues and challenges (case studies: Rio de Janeiro and Bristol)",
    "year": "Y11",
    "paper": "Paper 2",
-   "status": "covered",
-   "covered": 3,
-   "total": 3,
+   "status": "partial",
+   "covered": 2,
+   "total": 4,
    "lessons": [
     "y10/37",
+    "y10/38",
+    "y10/41",
+    "y10/42",
     "y11/27"
    ],
    "points": [
     {
      "n": 1,
-     "text": "Contrasting urbanisation trends over 50 years, including suburbanisation and counter-urbanisation.",
-     "lessons": [
-      "y11/27"
-     ]
-    },
-    {
-     "n": 2,
-     "text": "Factors affecting the rate of urbanisation and the growth of megacities.",
+     "text": "Global urbanisation trends, causes and megacities.",
      "lessons": [
       "y10/37",
       "y11/27"
      ]
     },
     {
-     "n": 3,
-     "text": "Problems of rapid urbanisation: congestion, transport, employment, crime and environment.",
-     "lessons": [
-      "y11/27"
-     ]
-    }
-   ]
-  },
-  {
-   "ref": "6.2",
-   "title": "Urban environments: challenges (case studies)",
-   "year": "Y11",
-   "paper": "Paper 2",
-   "status": "partial",
-   "covered": 2,
-   "total": 4,
-   "lessons": [
-    "y10/21",
-    "y10/38",
-    "y10/73",
-    "y11/28",
-    "y11/37"
-   ],
-   "points": [
-    {
-     "n": 1,
-     "text": "Factors affecting urban land use: location, accessibility and land values.",
-     "lessons": []
-    },
-    {
      "n": 2,
-     "text": "Urban challenges in a named developed country: resource demands, waste and segregation.",
+     "text": "Urban growth in an LIC or NEE city (school case study: Rio de Janeiro), with an urban planning example.",
      "lessons": []
     },
     {
      "n": 3,
-     "text": "Urban challenges in a named developing or emerging country: squatter settlements and informal economy.",
+     "text": "Opportunities and challenges in a major UK city (school case study: Bristol), with a regeneration project.",
      "lessons": [
-      "y11/28",
-      "y10/38"
+      "y10/38",
+      "y10/41",
+      "y10/42"
      ]
     },
     {
      "n": 4,
-     "text": "Case studies: urban environments in a developed and in a developing or emerging country.",
-     "lessons": [
-      "y10/73",
-      "y11/37",
-      "y10/21"
-     ]
-    }
-   ]
-  },
-  {
-   "ref": "6.3",
-   "title": "Urban environments: sustainable management",
-   "year": "Y11",
-   "paper": "Paper 2",
-   "status": "partial",
-   "covered": 2,
-   "total": 3,
-   "lessons": [
-    "y10/8",
-    "y10/40",
-    "y10/42",
-    "y11/28"
-   ],
-   "points": [
-    {
-     "n": 1,
-     "text": "Development of the rural-urban fringe; greenfield versus brownfield sites.",
+     "text": "Urban sustainability: resources, green space and transport.",
      "lessons": []
-    },
-    {
-     "n": 2,
-     "text": "Strategies to make urban living more sustainable and improve quality of life.",
-     "lessons": [
-      "y10/40",
-      "y10/42",
-      "y10/8"
-     ]
-    },
-    {
-     "n": 3,
-     "text": "Roles of planners, politicians, developers and industrialists in managing urban challenges.",
-     "lessons": [
-      "y11/28"
-     ]
     }
    ]
   },
   {
-   "ref": "4.1",
-   "title": "Economic activity and energy: economic sectors",
-   "year": "Y11",
-   "paper": "Paper 2",
-   "status": "partial",
-   "covered": 2,
-   "total": 3,
-   "lessons": [
-    "y11/33"
-   ],
-   "points": [
-    {
-     "n": 1,
-     "text": "Classification of employment into four sectors and differences by level of development (Clark Fisher).",
-     "lessons": []
-    },
-    {
-     "n": 2,
-     "text": "Factors affecting the location of economic activity and how they change over time.",
-     "lessons": [
-      "y11/33"
-     ]
-    },
-    {
-     "n": 3,
-     "text": "Reasons for changes in sector employment: raw materials, globalisation, mechanisation, policy.",
-     "lessons": [
-      "y11/33"
-     ]
-    }
-   ]
-  },
-  {
-   "ref": "4.2",
-   "title": "Economic activity and energy: impacts of sector change",
-   "year": "Y11",
-   "paper": "Paper 2",
-   "status": "covered",
-   "covered": 3,
-   "total": 3,
-   "lessons": [
-    "y11/29",
-    "y11/33"
-   ],
-   "points": [
-    {
-     "n": 1,
-     "text": "Impacts of sector shifts in a named developed and a named developing or emerging country.",
-     "lessons": [
-      "y11/29",
-      "y11/33"
-     ]
-    },
-    {
-     "n": 2,
-     "text": "Informal employment in a named megacity: causes and characteristics.",
-     "lessons": [
-      "y11/29"
-     ]
-    },
-    {
-     "n": 3,
-     "text": "Malthus and Boserup on population and resources.",
-     "lessons": [
-      "y11/29"
-     ]
-    }
-   ]
-  },
-  {
-   "ref": "4.3",
-   "title": "Economic activity and energy: energy (case studies)",
+   "ref": "3.2.2",
+   "title": "The changing economic world (case study: Nigeria; the changing UK economy)",
    "year": "Y11",
    "paper": "Paper 2",
    "status": "covered",
    "covered": 4,
    "total": 4,
    "lessons": [
-    "y10/12",
-    "y10/15",
-    "y10/73",
-    "y11/1",
-    "y11/18",
-    "y11/19",
-    "y11/30",
-    "y11/33"
+    "y11/9",
+    "y11/10",
+    "y11/11",
+    "y11/12",
+    "y11/13",
+    "y11/14"
    ],
    "points": [
     {
      "n": 1,
-     "text": "Global variation in energy demand and production and the factors behind it.",
+     "text": "Measuring development, causes of uneven development and the demographic transition model.",
      "lessons": [
-      "y11/1"
+      "y11/9",
+      "y11/10"
      ]
     },
     {
      "n": 2,
-     "text": "Advantages and disadvantages of non-renewable and renewable energy sources.",
+     "text": "Strategies to close the development gap, including a tourism example in an LIC or NEE.",
      "lessons": [
-      "y11/30",
-      "y10/15",
-      "y11/18"
+      "y11/11"
      ]
     },
     {
      "n": 3,
-     "text": "Managing energy sustainably through education, efficiency and conservation.",
+     "text": "Rapid development in an LIC or NEE (school case study: Nigeria, a newly emerging economy), taught in Spring.",
      "lessons": [
-      "y11/19",
-      "y11/1"
+      "y11/12"
      ]
     },
     {
      "n": 4,
-     "text": "Case studies: energy resource management in a developed and in a developing or emerging country.",
+     "text": "Changes in the UK economy: deindustrialisation, services, regional differences and the UK's place in the world.",
      "lessons": [
-      "y10/12",
-      "y10/73",
-      "y11/33"
+      "y11/12",
+      "y11/13",
+      "y11/14"
      ]
     }
    ]
   },
   {
-   "ref": "2B",
-   "title": "Paper 2 Section B: human fieldwork enquiry",
+   "ref": "3.2.3.1",
+   "title": "Resource management: food, water and energy in the UK",
+   "year": "Y11",
+   "paper": "Paper 2",
+   "status": "covered",
+   "covered": 2,
+   "total": 2,
+   "lessons": [
+    "y11/1",
+    "y11/15",
+    "y11/16",
+    "y11/17",
+    "y11/19"
+   ],
+   "points": [
+    {
+     "n": 1,
+     "text": "Food, water and energy are fundamental to human development; global inequalities.",
+     "lessons": [
+      "y11/1",
+      "y11/16",
+      "y11/17"
+     ]
+    },
+    {
+     "n": 2,
+     "text": "Changing demand and provision of food, water and energy in the UK.",
+     "lessons": [
+      "y11/15",
+      "y11/19",
+      "y11/1"
+     ]
+    }
+   ]
+  },
+  {
+   "ref": "3.2.3.2",
+   "title": "Food (school option; water and energy options not taught)",
    "year": "Y11",
    "paper": "Paper 2",
    "status": "covered",
    "covered": 3,
    "total": 3,
    "lessons": [
-    "y10/43",
-    "y10/51",
-    "y10/52",
-    "y10/64",
-    "y10/65",
-    "y11/34",
-    "y11/45"
+    "y11/1",
+    "y11/2",
+    "y11/16",
+    "y11/17",
+    "y11/18"
    ],
    "points": [
     {
      "n": 1,
-     "text": "One enquiry with fieldwork in one Paper 2 environment (economic activity, rural or urban).",
+     "text": "Global food supply: surplus, deficit and food insecurity.",
      "lessons": [
-      "y11/45",
-      "y10/51",
-      "y11/34"
+      "y11/16",
+      "y11/2",
+      "y11/18"
      ]
     },
     {
      "n": 2,
-     "text": "Primary data with quantitative and qualitative techniques; at least two secondary sources.",
+     "text": "Strategies to increase food supply, with a large-scale agricultural example and an LIC or NEE local scheme.",
      "lessons": [
-      "y10/51",
-      "y10/64",
-      "y10/65"
+      "y11/17"
      ]
     },
     {
      "n": 3,
-     "text": "Questions cover the pupil's own enquiry and unfamiliar fieldwork data.",
+     "text": "Sustainable food supply.",
      "lessons": [
-      "y10/51",
-      "y10/52",
-      "y10/43"
+      "y11/17",
+      "y11/1",
+      "y11/16"
      ]
-    }
-   ]
-  },
-  {
-   "ref": "5",
-   "title": "Rural environments (option not taught: school choice)",
-   "year": "Y11",
-   "paper": "Paper 2",
-   "status": "gap",
-   "covered": 0,
-   "total": 3,
-   "lessons": [],
-   "points": [
-    {
-     "n": 1,
-     "text": "Biomes, ecosystem goods and services and farming systems.",
-     "lessons": []
-    },
-    {
-     "n": 2,
-     "text": "Rural change in a named developed and a named developing or emerging country.",
-     "lessons": []
-    },
-    {
-     "n": 3,
-     "text": "Diversification and sustainable rural strategies; roles of different groups.",
-     "lessons": []
-    }
-   ]
-  },
-  {
-   "ref": "8",
-   "title": "Globalisation and migration (option not taught: school choice)",
-   "year": "Y11",
-   "paper": "Paper 2",
-   "status": "partial",
-   "covered": 2,
-   "total": 3,
-   "lessons": [
-    "y10/32",
-    "y10/37"
-   ],
-   "points": [
-    {
-     "n": 1,
-     "text": "Growth of the global economy; WTO, IMF and TNCs; push and pull factors of migration.",
-     "lessons": [
-      "y10/37"
-     ]
-    },
-    {
-     "n": 2,
-     "text": "Impacts of globalisation, migration and tourism on different groups.",
-     "lessons": [
-      "y10/32"
-     ]
-    },
-    {
-     "n": 3,
-     "text": "Managing trade, long-term migration and sustainable tourism.",
-     "lessons": []
-    }
-   ]
-  },
-  {
-   "ref": "9",
-   "title": "Development and human welfare (option not taught: school choice)",
-   "year": "Y11",
-   "paper": "Paper 2",
-   "status": "gap",
-   "covered": 0,
-   "total": 3,
-   "lessons": [],
-   "points": [
-    {
-     "n": 1,
-     "text": "Defining and measuring development: GDP per capita, HDI, inequality and corruption indices.",
-     "lessons": []
-    },
-    {
-     "n": 2,
-     "text": "Uneven development and its impact on welfare in one named country; demographic differences.",
-     "lessons": []
-    },
-    {
-     "n": 3,
-     "text": "Aid, agreements and top-down versus bottom-up projects.",
-     "lessons": []
     }
    ]
   }
