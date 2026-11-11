@@ -29,7 +29,7 @@ type Loaded = { title: string; instructions: string; dueAt: string; audience: st
  * attempts, shuffling, when pupils see answers), "Generate with AI" and an outline to jump about.
  *
  * Saving writes the homework row (kind 'quiz', marks = the total), its settings, any diagram
- * images and the questions (migration 0205). AI-drafted questions must each be ticked as checked
+ * images and the questions (migration 0206). AI-drafted questions must each be ticked as checked
  * before the quiz can be set. "Results" lists pupils' attempts and opens one to mark.
  */
 export function QuizBuilder({

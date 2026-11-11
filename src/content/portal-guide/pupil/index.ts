@@ -35,7 +35,7 @@ export const PUPIL_GUIDE: GuideEntry[] = [
     steps: [
       "Look at Do now first. These are the most important.",
       "Then look at This week and Good to know.",
-      "Press a line to open the work and do it.",
+      "Press the button on a line to open the work and do it.",
       "When it is done, it leaves the list by itself.",
     ],
     tips: ["Homework you miss shows here the day after it was due. You can still hand it in late."],
@@ -43,7 +43,7 @@ export const PUPIL_GUIDE: GuideEntry[] = [
     related: ["/student/dashboard", "/student/todo"],
     showMe: [
       { target: "waiting-categories", label: "Groups", say: "Pick a group to see only those things." },
-      { target: "waiting-list", label: "Your list", say: "Each line is one thing to do. Press it to open it." },
+      { target: "waiting-list", label: "Your list", say: "Each line is one thing to do. Press its button to open it." },
     ],
     tasks: ["see what to do next"],
   },

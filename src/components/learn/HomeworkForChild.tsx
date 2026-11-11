@@ -70,7 +70,7 @@ function HomeworkItem({
   }, [initiallyOpen]);
 
   const hw = row.homework;
-  // A quiz with questions (0205) is sat in the quiz view; an old "quiz" without questions keeps the hand-in form.
+  // A quiz with questions (0206) is sat in the quiz view; an old "quiz" without questions keeps the hand-in form.
   const [noQuestions, setNoQuestions] = useState(false);
   const isQuiz = hw?.kind === "quiz" && !noQuestions;
   const loadDetail = async () => {

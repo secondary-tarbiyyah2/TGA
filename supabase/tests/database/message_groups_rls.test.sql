@@ -8,7 +8,7 @@
 --     each other's (no parent-to-parent or pupil-to-pupil channel);
 --   * the Headteacher (oversight) reads every group and message.
 begin;
-select plan(33);
+select plan(34);
 
 insert into auth.users (id, email) values
   ('e4100000-0000-0000-0000-000000000001', 'ht-grp@example.com'),
@@ -115,9 +115,13 @@ set local "request.jwt.claims" to '{"sub": "e4100000-0000-0000-0000-000000000004
 select is((select count(*)::int from public.message_threads where id = current_setting('test.grp')::uuid), 1, 'a parent in the group can see the group');
 insert into public.message_thread_messages (id, thread_id, sender_id, body, reply_to_id) values ('f4100000-0000-0000-0000-000000000022', current_setting('test.grp')::uuid, 'e4100000-0000-0000-0000-000000000004', 'TEST zebra private reply from parent A', 'f4100000-0000-0000-0000-000000000021');
 select is((select reply_to_id from public.message_thread_messages where id = 'f4100000-0000-0000-0000-000000000022'), 'f4100000-0000-0000-0000-000000000021'::uuid, 'a parent can reply to the teacher''s message');
-insert into public.message_attachments (message_id, thread_id, uploader_id, storage_path, file_name, mime_type, size_bytes) values ('f4100000-0000-0000-0000-000000000022', current_setting('test.grp')::uuid, 'e4100000-0000-0000-0000-000000000004',
-         current_setting('test.grp') || '/e4100000-0000-0000-0000-000000000004/x-form.pdf', 'form.pdf', 'application/pdf', 1000);
-select is((select count(*)::int from public.message_attachments where message_id = 'f4100000-0000-0000-0000-000000000022'), 1, 'the sender can attach a file to their own message');
+-- 0205: only staff attach files (the same rule as the school's other upload buckets).
+select throws_ok(
+  $$insert into public.message_attachments (message_id, thread_id, uploader_id, storage_path, file_name, mime_type, size_bytes) values ('f4100000-0000-0000-0000-000000000022', current_setting('test.grp')::uuid, 'e4100000-0000-0000-0000-000000000004',
+         current_setting('test.grp') || '/e4100000-0000-0000-0000-000000000004/x-form.pdf', 'form.pdf', 'application/pdf', 1000)$$,
+  '42501', null, 'a parent cannot attach a file (staff only)'
+);
+select is((select count(*)::int from public.message_attachments where message_id = 'f4100000-0000-0000-0000-000000000022'), 0, 'so no file is stored on the parent''s reply');
 select is(public.can_post_in_thread(current_setting('test.grp')::uuid), true, 'a parent in a group with replies on can post');
 
 -- Parent B: sees the teacher's message, not parent A's reply, file or name.

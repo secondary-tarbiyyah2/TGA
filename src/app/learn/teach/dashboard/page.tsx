@@ -13,7 +13,6 @@ import { LearnShell } from "@/components/learn/LearnShell";
 import { TeachNow } from "@/components/learn/teach/TeachNow";
 import { EnrichmentSupervisorLink } from "@/components/learn/enrichment/SupervisorLink";
 import { AnnouncementsFeed } from "@/components/learn/AnnouncementsFeed";
-import { SignaturePrompts } from "@/components/learn/SignaturePrompts";
 import { getSupabaseClient } from "@/lib/supabase/client";
 import { RecentLessons } from "@/components/learn/curriculum/RecentLessons";
 import { localDateKey } from "@/lib/learn/calendar";
@@ -68,25 +67,18 @@ function TeachContent() {
     })();
   }, [supabase]);
 
-  // Home answers "what do I need to do today?" and nothing else: the counts,
-  // today's lessons and quick actions (TeachNow), anything to sign, cover,
-  // and the latest few announcements. Timetable, classes and house points
-  // live on their own pages (Calendar, My classes, Houses and stars).
-  // timetable weekday: 1 = Monday ... 7 = Sunday (ISO)
+  // Today answers "what do I need to do today?" and nothing else (owner, 11 Nov 2026): quick
+  // actions at the very top, then the day's lessons, then what is waiting, sorted into
+  // categories (documents to sign included), then cover and the latest announcements.
+  // Registers are left out of Waiting for you here because Your day shows each one.
   return (
     <DashboardWithPanel viewer={{ kind: "teacher", classIds }}>
       <div className="space-y-6">
-        {/* The figures that matter today (registers, marking, homework, pupil records) are in TeachNow below, once. */}
-        <DashboardHero area="teach" subtitle="Here's what needs your attention today." />
+        <DashboardHero area="teach" />
 
-        <ActionCentreWidget role="teach" />
-        <PushOptIn />
+        <TeachNow slots={slots} classIds={classIds} />
 
-        <TeachNow slots={slots} />
-
-        <RecentLessons area="teach" />
-
-        <SignaturePrompts limit={3} />
+        <ActionCentreWidget role="teach" skipAreas={["Registers"]} />
 
         {covers && covers.length > 0 && (
           <section className="rounded-2xl border border-gold-light bg-white px-5 py-4" aria-labelledby="cover-heading">
@@ -100,7 +92,7 @@ function TeachContent() {
                   <span>
                     {c.timetable_slots?.subjects?.name} ({c.timetable_slots?.classes?.name})
                   </span>
-                  <span className="text-ink/65">{c.covering_teacher_user_id === userId ? "you are covering" : "you are being covered"}</span>
+                  <span className="text-ink/65">{c.covering_teacher_user_id === userId ? "You are covering" : "You are being covered"}</span>
                 </li>
               ))}
             </ul>
@@ -116,6 +108,9 @@ function TeachContent() {
 
         {/* Read-only here: posting lives on the Announcements page (and each class's Stream), where you choose the class. */}
         <AnnouncementsFeed classIds={classIds} limit={3} viewAllHref="/teach/announcements" hideWhenEmpty />
+
+        <RecentLessons area="teach" compact />
+        <PushOptIn />
       </div>
     </DashboardWithPanel>
   );

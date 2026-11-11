@@ -57,6 +57,9 @@ verify_jwt = false
 [functions.weekly-digest]
 verify_jwt = false
 
+[functions.message-email]
+verify_jwt = false
+
 [functions.safeguarding-review-check]
 verify_jwt = false
 

@@ -4,6 +4,7 @@ import { useCallback, useEffect, useMemo, useState } from "react";
 import { getSupabaseClient } from "@/lib/supabase/client";
 
 import { askConfirm, Loading } from "@/components/learn/kit";
+import { PupilLink } from "@/components/learn/pupil/PupilLink";
 type Person = { id: string; name: string };
 type Teacher = { user_id: string; full_name: string; role: string };
 type Candidate = { id: string; name: string; year_group_id: string | null };
@@ -215,7 +216,9 @@ export function ParticipantsTab({ classId, onChanged }: { classId: string; onCha
                 <span className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-teal-100 text-xs font-semibold text-teal-900" aria-hidden="true">
                   {initials(p.name)}
                 </span>
-                <span className="min-w-0 flex-1 truncate text-sm font-medium text-ink">{p.name}</span>
+                <span className="min-w-0 flex-1 truncate text-sm font-medium text-ink">
+                  <PupilLink id={p.id} name={p.name} />
+                </span>
                 <button type="button" onClick={() => remove(p)} aria-label={`Remove ${p.name}`} className="rounded-md px-2 py-1 text-base leading-none text-ink/65 hover:bg-red-50 hover:text-red-700">
                   ×
                 </button>

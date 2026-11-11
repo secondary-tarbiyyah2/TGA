@@ -6,34 +6,30 @@ import { getSupabaseClient } from "@/lib/supabase/client";
 import { callEdgeFunction, edgeErrorMessage } from "@/lib/learn/edge";
 import { localDateKey } from "@/lib/learn/calendar";
 import type { TimetableSlot } from "@/lib/learn/timetable";
-import { ackState, usePupils } from "@/components/learn/pupil/usePupils";
-import { type IconName } from "@/components/learn/Icon";
-import { StatStrip, StatTile } from "@/components/learn/kit";
 import { Icon } from "@/components/learn/Icon";
+import { QuickActions, type QuickAction } from "@/components/learn/dashboard/QuickActions";
+import { BehaviourDialog } from "@/components/learn/dashboard/BehaviourDialog";
 import { Status, ui } from "@/components/learn/ui";
 import { RegisterPanel } from "@/components/learn/attendance/RegisterPanel";
 import { SetWorkPanel } from "@/components/learn/class/SetWorkPanel";
 import { MarkingPanel } from "@/components/learn/classwork/MarkingPanel";
 
 type Lesson = { id: string; classId: string; className: string; start: string; end: string; live: boolean; registerTaken: boolean };
-type Counts = { toMark: number; oldestDays: number; unread: number; dueSoon: number };
+type Counts = { toMark: number; unread: number };
 
 const hhmm = (t: string) => t.slice(0, 5);
 
-/** The top of the teacher dashboard: four counts of what needs doing
- * (registers due, work to mark, homework due soon, pupil records to read),
- * today's lessons with Join and register status, and quick actions. Every
- * count comes from the same records as the page it links to, so the
- * numbers always agree. */
-export function TeachNow({ slots }: { slots: (TimetableSlot & { classes?: { name: string } | null })[] | null }) {
+/** The top of the teacher's Today (owner, 11 Nov 2026): a compact row of quick actions, then
+ * today's lessons with Join and register status. What is waiting for the teacher (registers
+ * not taken, work to mark, pupil records to read, documents to sign) is in Waiting for you,
+ * once, below this. */
+export function TeachNow({ slots, classIds }: { slots: (TimetableSlot & { classes?: { name: string } | null })[] | null; classIds: string[] }) {
   const [lessons, setLessons] = useState<Lesson[] | null>(null);
   const [counts, setCounts] = useState<Counts | null>(null);
   const [busy, setBusy] = useState<string | null>(null);
   const [message, setMessage] = useState<string | null>(null);
   // What is open in a panel over Today (owner, 11 Nov 2026: actions open in place).
-  const [panel, setPanel] = useState<{ kind: "register"; lesson: Lesson } | { kind: "setWork" } | { kind: "mark" } | null>(null);
-  // Medical / emergency details the teacher hasn't acknowledged yet (same rule as the Pupils page).
-  const { pupils } = usePupils(true);
+  const [panel, setPanel] = useState<{ kind: "register"; lesson: Lesson } | { kind: "setWork" } | { kind: "mark" } | { kind: "behaviour" } | null>(null);
 
   useEffect(() => {
     const supabase = getSupabaseClient();
@@ -45,8 +41,7 @@ export function TeachNow({ slots }: { slots: (TimetableSlot & { classes?: { name
       const {
         data: { user },
       } = await supabase.auth.getUser();
-      const in7 = new Date(Date.now() + 7 * 86_400_000).toISOString();
-      const [slotLessons, ownLessons, unreadRes, queueRes, dueRes] = await Promise.all([
+      const [slotLessons, ownLessons, unreadRes, queueRes] = await Promise.all([
         slots.length
           ? supabase.from("lesson_instances").select("id, bbb_status, timetable_slot_id").eq("date", today).in("timetable_slot_id", [...bySlot.keys()])
           : Promise.resolve({ data: [] }),
@@ -60,10 +55,7 @@ export function TeachNow({ slots }: { slots: (TimetableSlot & { classes?: { name
           : Promise.resolve({ data: [] }),
         supabase.rpc("thread_unread_counts"),
         // The same list as the To review page, so the two numbers always agree.
-        supabase.from("homework_review_queue").select("submitted_at").order("submitted_at", { ascending: true }).limit(1000),
-        user
-          ? supabase.from("homework").select("id", { count: "exact", head: true }).eq("teacher_id", user.id).is("archived_at", null).gte("due_at", new Date().toISOString()).lte("due_at", in7)
-          : Promise.resolve({ count: 0 }),
+        supabase.from("homework_review_queue").select("submission_id", { count: "exact", head: true }),
       ]);
       type SlotEmbed = { class_id: string; start_time: string; end_time: string; classes?: { name: string } | null } | null;
       const merged = new Map<string, { id: string; bbb_status: string; slot: SlotEmbed }>();
@@ -85,12 +77,9 @@ export function TeachNow({ slots }: { slots: (TimetableSlot & { classes?: { name
           .map((l) => ({ id: l.id, classId: l.slot!.class_id, className: l.slot!.classes?.name || "Class", start: l.slot!.start_time, end: l.slot!.end_time, live: l.bbb_status === "live", registerTaken: taken.has(l.id) }))
           .sort((a, b) => a.start.localeCompare(b.start)),
       );
-      const queue = (queueRes.data as { submitted_at: string }[] | null) || [];
       setCounts({
-        toMark: queue.length,
-        oldestDays: queue.length ? Math.floor((Date.now() - new Date(queue[0].submitted_at).getTime()) / 86_400_000) : 0,
+        toMark: queueRes.count || 0,
         unread: ((unreadRes.data as { unread: number }[] | null) || []).reduce((n, r) => n + r.unread, 0),
-        dueSoon: (dueRes as { count: number | null }).count || 0,
       });
     })();
     return () => {
@@ -116,46 +105,26 @@ export function TeachNow({ slots }: { slots: (TimetableSlot & { classes?: { name
   };
 
   const now = new Date().toTimeString().slice(0, 5);
-  const missingRegisters = (lessons || []).filter((l) => !l.registerTaken && now >= hhmm(l.start)).length;
-  const toRead = pupils === null ? null : pupils.filter((p) => p.classes.length > 0 && ackState(p) !== "current").length;
-
-  const stats: { label: string; n: number | null; note: string; href: string; urgent: boolean; icon: IconName; tile: string }[] = [
-    { label: "Registers due", n: counts ? missingRegisters : null, note: missingRegisters ? "Lessons started without a register" : "All taken so far today", href: "/teach/today", urgent: missingRegisters > 0, icon: "clipboardCheck", tile: "tile-teal" },
-    {
-      label: "To mark",
-      n: counts?.toMark ?? null,
-      note: counts?.toMark ? (counts.oldestDays >= 1 ? `Oldest waiting ${counts.oldestDays} day${counts.oldestDays === 1 ? "" : "s"}` : "Handed in today") : "All caught up",
-      href: "/teach/review",
-      urgent: !!counts && counts.oldestDays >= 7,
-      icon: "notebookPen",
-      tile: "tile-violet",
-    },
-    { label: "Homework due soon", n: counts?.dueSoon ?? null, note: "Set by you, due in the next 7 days", href: "/teach/calendar", urgent: false, icon: "listChecks", tile: "tile-blue" },
-    { label: "Pupil records to read", n: toRead, note: toRead ? "Medical and emergency details" : "All read", href: "/teach/pupils", urgent: !!toRead, icon: "idCard", tile: "tile-rose" },
-  ];
   const firstDue = (lessons || []).find((l) => !l.registerTaken && now >= hhmm(l.start)) || null;
   // Quick actions open over Today; only things that are whole pages of their own go to them.
-  const actions: { label: string; hint: string; icon: IconName; onSelect?: () => void; href?: string }[] = [
+  const actions: QuickAction[] = [
     firstDue
-      ? { label: "Take a register", hint: `${firstDue.className}, ${hhmm(firstDue.start)}`, icon: "userCheck", onSelect: () => setPanel({ kind: "register", lesson: firstDue }) }
-      : { label: "Take a register", hint: "Today's registers", icon: "userCheck", href: "/teach/today" },
+      ? { label: "Take register", hint: `${firstDue.className}, ${hhmm(firstDue.start)}`, icon: "userCheck", alert: true, onSelect: () => setPanel({ kind: "register", lesson: firstDue }) }
+      : { label: "Take register", hint: "Today's registers", icon: "userCheck", href: "/teach/today" },
     { label: "Set work", hint: "For one of your classes", icon: "notebookPen", onSelect: () => setPanel({ kind: "setWork" }) },
-    { label: "Mark work", hint: counts?.toMark ? `${counts.toMark} waiting` : "Nothing waiting", icon: "clipboardCheck", onSelect: () => setPanel({ kind: "mark" }) },
-    { label: "Enter results", hint: "Assessments and grades", icon: "chartColumnIncreasing", href: "/teach/assessment" },
-    { label: "Send a message", hint: "To a family or colleague", icon: "messageSquare", href: "/teach/messages?compose=1" },
-    { label: "My classes", hint: "Classwork, registers and grades", icon: "layoutGrid", href: "/teach/classes" },
+    { label: "Mark work", hint: counts ? (counts.toMark ? `${counts.toMark} waiting` : "Nothing waiting") : "…", alert: !!counts?.toMark, icon: "clipboardCheck", onSelect: () => setPanel({ kind: "mark" }) },
+    { label: "Log behaviour", hint: "Praise or a concern", icon: "heartHandshake", onSelect: () => setPanel({ kind: "behaviour" }) },
+    { label: "Message", hint: counts?.unread ? `${counts.unread} unread` : "A family or colleague", alert: !!counts?.unread, icon: "messageSquare", href: "/teach/messages?compose=1" },
+    { label: "Qur'an", hint: "Recitation and mistakes", icon: "bookMarked", href: "/teach/quran" },
+    { label: "Enter results", hint: "Gradebook", icon: "award", href: "/teach/assessment" },
+    { label: "Pupil absences", hint: "Who is away", icon: "calendarX", href: "/teach/absences" },
   ];
 
   return (
     <div className="space-y-6">
-      <StatStrip>
-        {stats.map((st) => (
-          <StatTile key={st.label} value={st.n === null ? "…" : st.n} label={st.label} hint={st.note} href={st.href} tone={st.urgent ? "warn" : "neutral"} />
-        ))}
-      </StatStrip>
+      <QuickActions actions={actions} guide="teach-quick-actions" />
 
-      <div className="grid gap-6 2xl:grid-cols-[minmax(0,1fr)_17rem]">
-        <section aria-labelledby="today-heading">
+        <section data-guide="teach-your-day" aria-labelledby="today-heading">
           <div className="mb-2 flex items-baseline justify-between gap-3">
             <h2 id="today-heading" className="t-section">
               Your day
@@ -169,7 +138,7 @@ export function TeachNow({ slots }: { slots: (TimetableSlot & { classes?: { name
           ) : lessons.length === 0 ? (
             <p className="rounded-[10px] border border-gold-light bg-white px-4 py-5 text-sm text-ink-500">No lessons today.</p>
           ) : (
-            <ul data-guide="teach-your-day" className="divide-y divide-gold-light overflow-hidden rounded-[10px] border border-gold-light bg-white" aria-label="Your day">
+            <ul className="divide-y divide-gold-light overflow-hidden rounded-[10px] border border-gold-light bg-white" aria-label="Your day">
               {lessons.map((l) => {
                 const done = now > hhmm(l.end);
                 const due = !l.registerTaken && now >= hhmm(l.start);
@@ -211,50 +180,7 @@ export function TeachNow({ slots }: { slots: (TimetableSlot & { classes?: { name
             </ul>
           )}
           {message && <p className="mt-2 rounded-lg bg-red-50 px-3 py-2 text-sm text-red-800">{message}</p>}
-          {/* Documents to sign already have the banner above and their own list below, so only unread messages are flagged here. */}
-          {counts && counts.unread > 0 && (
-            <p className="mt-3 text-sm">
-              <Link href="/teach/messages" className="font-medium text-forest-700 hover:underline">
-                {counts.unread} unread message{counts.unread === 1 ? "" : "s"}
-              </Link>
-            </p>
-          )}
         </section>
-
-        <nav data-guide="teach-quick-actions" aria-label="Quick actions">
-          <h2 className="t-section mb-2">Quick actions</h2>
-          <ul className="grid gap-px overflow-hidden rounded-[10px] border border-gold-light bg-gold-light sm:grid-cols-2 lg:grid-cols-3 2xl:grid-cols-1 [&>li]:bg-white">
-            {actions.map((a) => {
-              const inner = (
-                <>
-                  <span className="portal-nav-icon" aria-hidden="true">
-                    <Icon name={a.icon} />
-                  </span>
-                  <span className="min-w-0 flex-1">
-                    <span className="block text-sm font-medium text-ink">{a.label}</span>
-                    <span className="block truncate text-xs text-ink-500">{a.hint}</span>
-                  </span>
-                  <Icon name={a.href ? "chevronRight" : "plus"} className="h-4 w-4 shrink-0 text-ink-500" />
-                </>
-              );
-              const cls = "flex w-full min-h-12 items-center gap-3 px-3.5 py-2 text-left transition-colors hover:bg-[var(--portal-hover)]";
-              return (
-                <li key={a.label}>
-                  {a.href ? (
-                    <Link href={a.href} className={cls}>
-                      {inner}
-                    </Link>
-                  ) : (
-                    <button type="button" onClick={a.onSelect} className={cls}>
-                      {inner}
-                    </button>
-                  )}
-                </li>
-              );
-            })}
-          </ul>
-        </nav>
-      </div>
 
       {panel?.kind === "register" && (
         <RegisterPanel
@@ -270,6 +196,7 @@ export function TeachNow({ slots }: { slots: (TimetableSlot & { classes?: { name
           }}
         />
       )}
+      {panel?.kind === "behaviour" && <BehaviourDialog classIds={classIds} onClose={() => setPanel(null)} />}
       {panel?.kind === "setWork" && <SetWorkPanel scope="mine" onClose={() => setPanel(null)} />}
       {panel?.kind === "mark" && (
         <MarkingPanel

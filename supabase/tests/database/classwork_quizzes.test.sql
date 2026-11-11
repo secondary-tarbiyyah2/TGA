@@ -1,4 +1,4 @@
--- Run via `supabase test db`. Covers 0205 (classwork quizzes): only the class's staff build a
+-- Run via `supabase test db`. Covers 0206 (classwork quizzes): only the class's staff build a
 -- quiz; pupils never read the questions (answers); pupils start, save and submit through the
 -- functions, which mark on the server, hand the quiz in and return the mark; the clock and the
 -- attempt limit are enforced; teachers mark long answers.

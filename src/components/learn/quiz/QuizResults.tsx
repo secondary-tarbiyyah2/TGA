@@ -13,7 +13,7 @@ type Attempt = { id: string; child_id: string; attempt_no: number; started_at: s
 /**
  * A quiz's results for the teacher: every pupil it was set for, their best attempt and whether
  * anything needs marking. Pressing a pupil opens their answers beside the list, with marks boxes
- * for long answers; saving updates the pupil's mark straight away (quiz_mark, migration 0205).
+ * for long answers; saving updates the pupil's mark straight away (quiz_mark, migration 0206).
  */
 export function QuizResults({ homeworkId, classId }: { homeworkId: string; classId: string }) {
   const roster = useClassRoster(classId);

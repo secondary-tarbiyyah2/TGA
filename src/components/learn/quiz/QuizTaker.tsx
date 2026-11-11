@@ -144,7 +144,7 @@ function Answer({ q, value, onChange }: { q: PupilQuestion; value: unknown; onCh
  * A pupil sitting a quiz (owner, 11 Nov 2026, item 17): full screen, one question at a time with
  * a numbered navigator, the server's clock when it is timed, answers saved as they go (and kept
  * in the browser if the connection drops), a check before handing in, then the result. The
- * questions arrive without their answers and are marked on the server (migration 0205).
+ * questions arrive without their answers and are marked on the server (migration 0206).
  */
 export function QuizTaker({ homeworkId, title, onClose, onFinished }: { homeworkId: string; title: string; onClose: () => void; onFinished?: () => void }) {
   const [start, setStart] = useState<StartPayload | null>(null);

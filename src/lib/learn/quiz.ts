@@ -1,6 +1,6 @@
 import type { IconName } from "@/components/learn/Icon";
 
-// Classwork quizzes (migration 0205): question types, the editor's shape of a question, checks
+// Classwork quizzes (migration 0206): question types, the editor's shape of a question, checks
 // before saving, and the pupil-side shapes the quiz_* functions return. Pure: no Supabase here.
 
 export type QType = "single" | "multiple" | "true_false" | "short" | "long" | "matching" | "ordering" | "numeric" | "label";

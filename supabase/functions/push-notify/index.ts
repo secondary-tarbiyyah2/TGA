@@ -52,6 +52,7 @@ async function inboxFor(userId: string, isParentInThread: boolean): Promise<stri
   if (isParentInThread) return "/family/messages";
   const { data } = await serviceClient.from("user_roles").select("role").eq("user_id", userId);
   const roles = ((data as { role: string }[] | null) || []).map((r) => r.role);
+  if (roles.includes("student")) return "/student/messages";
   if (roles.includes("teacher") || roles.includes("teaching_assistant_cover")) return "/teach/messages";
   if (roles.some((r) => r === "head_teacher" || r === "admin" || r === "admissions")) return "/admin/messages";
   return "/family/messages";
@@ -92,7 +93,18 @@ Deno.serve(async (req) => {
     // Only the sender can trigger the notification for their own message.
     if (!m || m.sender_id !== me || !m.message_threads) return jsonResponse({ ok: false, error: "not_found" }, 404);
     const t = m.message_threads;
-    const others = [t.parent_id, t.teacher_id, t.staff_a_id, t.staff_b_id].filter((x): x is string => !!x && x !== me);
+    const ids = new Set([t.parent_id, t.teacher_id, t.staff_a_id, t.staff_b_id].filter((x): x is string => !!x));
+    // Groups (0204): everyone who can read the message (a parent's or pupil's
+    // message reaches only the staff in the group).
+    const { data: mem } = await serviceClient.from("message_thread_members").select("user_id, member_role").eq("thread_id", m.thread_id);
+    const members = (mem as { user_id: string; member_role: string }[] | null) || [];
+    const senderIsStaff = members.find((x) => x.user_id === me)?.member_role === "staff";
+    members.filter((x) => senderIsStaff || x.member_role === "staff").forEach((x) => ids.add(x.user_id));
+    ids.delete(me);
+    // Muted conversations (0205) are never pushed.
+    const { data: mutes } = await serviceClient.from("message_thread_mutes").select("user_id").eq("thread_id", m.thread_id);
+    ((mutes as { user_id: string }[] | null) || []).forEach((x) => ids.delete(x.user_id));
+    const others = [...ids];
     const { data: sender } = await serviceClient.from("profiles").select("full_name").eq("id", me).maybeSingle();
     const from = ((sender as { full_name?: string } | null)?.full_name || "the school").trim();
     const sent = await sendTo([...new Set(others)], async (uid) => ({
