@@ -6,7 +6,8 @@ import { useRouter, useSearchParams } from "next/navigation";
 import { BaselineAssessments } from "./BaselineAssessments";
 import { PageHeader } from "@/components/learn/PageHeader";
 import { PrintScope, findPrintScope, printElement } from "@/components/learn/printScope";
-import { Tabs } from "@/components/learn/Tabs";
+import { SectionLayout, SectionNav } from "@/components/learn/SectionNav";
+import { PupilDocumentsTab, PupilQuranTab, PupilWorkTab } from "./ProfileSections";
 import { Button, Notice, StatusChip, ui } from "@/components/learn/ui";
 import { getSupabaseClient } from "@/lib/supabase/client";
 import { ukDaysAgo } from "@/lib/learn/ukTime";
@@ -25,8 +26,8 @@ type ChildRaw = { id: string; name: string; dob: string | null; parent_user_id: 
 type EnrolRaw = { classes?: { name: string } | null };
 type Parent = { full_name: string | null; email: string | null };
 
-type Tab = "overview" | "details" | "medical" | "send" | "attendance" | "behaviour" | "reports" | "assessment";
-const TABS: Tab[] = ["overview", "details", "medical", "send", "attendance", "behaviour", "reports", "assessment"];
+type Tab = "overview" | "details" | "medical" | "send" | "attendance" | "behaviour" | "work" | "quran" | "reports" | "documents" | "assessment";
+const TABS: Tab[] = ["overview", "details", "medical", "send", "attendance", "behaviour", "work", "quran", "reports", "documents", "assessment"];
 
 /**
  * A pupil's profile: the one place for everything about a child. Overview,
@@ -185,12 +186,15 @@ function PupilProfile({ id, onEdited }: { id: string; onEdited: () => void }) {
   const age = child ? ageFromDob(child.dob) : null;
   const items: { key: Tab; label: string; count?: number; countAlert?: boolean }[] = [
     { key: "overview", label: "Overview" },
-    { key: "details", label: "Details & contacts", count: missing.length || undefined, countAlert: true },
-    { key: "medical", label: "Medical & consents", count: alerts.length || undefined, countAlert: true },
-    { key: "send", label: "Support plan" },
     { key: "attendance", label: "Attendance" },
-    { key: "behaviour", label: "Behaviour & rewards" },
+    { key: "behaviour", label: "Behaviour and house points" },
+    { key: "work", label: "Classwork and grades" },
+    { key: "quran", label: "Qur'an" },
+    { key: "medical", label: "Medical and consents", count: alerts.length || undefined, countAlert: true },
+    { key: "send", label: "Support plan" },
+    { key: "details", label: "Details and contacts", count: missing.length || undefined, countAlert: true },
     { key: "reports", label: "Reports" },
+    { key: "documents", label: "Documents" },
     { key: "assessment", label: "Entry assessment" },
   ];
 
@@ -268,8 +272,7 @@ function PupilProfile({ id, onEdited }: { id: string; onEdited: () => void }) {
             )}
           </section>
 
-          <Tabs items={items} value={tab} onChange={setTab} label="Pupil profile sections" className="print:hidden" />
-
+          <SectionLayout nav={<SectionNav items={items} value={tab} onChange={setTab} label="Pupil profile sections" guide="pupil-sections" id="pupil-section" />}>
           {record.error && <Notice tone="bad">{record.error}</Notice>}
 
           <div className="print:hidden">
@@ -295,7 +298,10 @@ function PupilProfile({ id, onEdited }: { id: string; onEdited: () => void }) {
             {tab === "send" && <SupportPlanEditor childId={child.id} childName={child.name} />}
             {tab === "attendance" && <PupilAttendanceTab childId={child.id} />}
             {tab === "behaviour" && <PupilBehaviourTab childId={child.id} extra={<LeaderboardPrivacy kids={[{ id: child.id, name: child.name }]} />} />}
+            {tab === "work" && <PupilWorkTab childId={child.id} />}
+            {tab === "quran" && <PupilQuranTab childId={child.id} name={child.name} area="admin" />}
             {tab === "reports" && <PupilReportsTab childId={child.id} childName={child.name} />}
+            {tab === "documents" && <PupilDocumentsTab childId={child.id} onOpenReports={() => setTab("reports")} />}
             {tab === "assessment" && (
               <div className="space-y-3">
                 <BaselineAssessments childId={child.id} canEdit />
@@ -309,6 +315,8 @@ function PupilProfile({ id, onEdited }: { id: string; onEdited: () => void }) {
               </div>
             )}
           </div>
+
+          </SectionLayout>
 
           {/* Printed: the whole record, whichever tab is open. */}
           <div ref={printRef} className="hidden print:block">
