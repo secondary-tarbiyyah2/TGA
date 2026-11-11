@@ -104,10 +104,14 @@ export const PARENT_GUIDE: GuideEntry[] = [
     steps: [
       "Press New message.",
       "Search by name or child and choose who to write to.",
-      "Write your message and send it.",
-      "Open a conversation on the left to read replies.",
+      "Write your message and send it. Press Reply beside a message to answer that one.",
+      "Open a conversation on the left to read replies. Your class's groups are here too.",
     ],
-    tips: ["Worried about a child's safety? Use Report a concern instead, so it goes straight to the safeguarding team."],
+    tips: [
+      "Worried about a child's safety? Use Report a concern instead, so it goes straight to the safeguarding team.",
+      "In a class group you see the staff's messages; your replies go to the staff only, never to other families.",
+      "Choose in Account whether we email you about new messages as they arrive, once a day or never.",
+    ],
     privacy: `The people in the conversation read it. ${OVERSIGHT}`,
     related: ["/family/teachers", "/family/announcements", "/report-concern"],
     showMe: [
@@ -322,12 +326,12 @@ export const PARENT_GUIDE: GuideEntry[] = [
     category: "Calendar",
     purpose: "Term dates, holidays, lessons and homework due dates.",
     when: "When planning holidays or the week ahead.",
-    steps: ["Choose Month, Week or Day agenda.", "Press a day for its details.", "Press Add to my calendar to put it on your phone's calendar."],
+    steps: ["Choose Month, Week or Agenda (the next six weeks).", "Press a category to hide or show it; each colour is one kind of date.", "Press a day for its details.", "Press Add to my calendar to put it on your phone's calendar."],
     tips: ["The calendar link keeps itself up to date; Stop sharing turns it off."],
     privacy: "The calendar link shows your children's lessons and homework to anyone who has it, so keep it private.",
     related: ["/family/parent-evenings", "/family/announcements"],
     showMe: [
-      { target: "calendar-views", label: "Calendar view", say: "Month, week or day." },
+      { target: "calendar-views", label: "Calendar view", say: "Month, week or agenda." },
       { target: "calendar-subscribe", label: "Add to my calendar", say: "Put school dates on your phone." },
     ],
     tasks: ["see term dates", "add school dates to my phone"],

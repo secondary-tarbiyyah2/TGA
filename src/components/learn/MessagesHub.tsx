@@ -5,76 +5,58 @@ import { useCallback, useEffect, useMemo, useState } from "react";
 import { MessageThread } from "@/components/learn/MessageThread";
 import { PageHeader } from "@/components/learn/PageHeader";
 import { getSupabaseClient } from "@/lib/supabase/client";
-import { learnRoleLabel, type LearnRole } from "@/lib/learn/session";
+import { useLearnSession } from "@/lib/learn/session";
 import { AiSpark } from "@/components/learn/AiBits";
 import { TRIAGE_CATEGORY_LABEL, aiAssist, aiErrorMessage, useAiStatus } from "@/lib/learn/aiAssist";
-import { ScrollArea } from "@/components/learn/ScrollArea";
+import { Icon } from "@/components/learn/Icon";
+import { ActionsMenu, type MenuAction } from "@/components/learn/kit";
+import { EmptyState, LoadingState, ui } from "@/components/learn/ui";
+import { NewConversation } from "@/components/learn/messages/NewConversation";
+import { GroupInfo } from "@/components/learn/messages/GroupInfo";
+import { STAFF_ROLE_IDS, ago, initials, type InboxRow, type Person } from "@/components/learn/messages/messagesShared";
 
-type Person = { user_id: string; full_name: string; roles: string[]; detail: string | null };
-type ThreadRow = {
-  id: string;
-  kind: string;
-  child_id: string | null;
-  parent_id: string | null;
-  teacher_id: string | null;
-  staff_a_id: string | null;
-  staff_b_id: string | null;
-  created_at: string;
-  children?: { name: string } | null;
-};
-type Last = { id: string; thread_id: string; body: string; created_at: string; sender_id: string };
 type TriageRow = { thread_id: string; message_id: string; category: string; urgency: string };
-
-const STAFF_ROLES = ["head_teacher", "admin", "admissions", "teacher", "teaching_assistant_cover", "senco"];
-
-function initials(name: string): string {
-  const p = name.split(/\s+/).filter(Boolean);
-  return ((p[0]?.[0] || "") + (p.length > 1 ? p[p.length - 1][0] : "")).toUpperCase() || "?";
-}
-
-function roleText(roles: string[]): string {
-  const staff = roles.filter((r) => STAFF_ROLES.includes(r));
-  return (staff.length ? staff : roles).map((r) => learnRoleLabel(r as LearnRole) || r).join(" · ");
-}
-
-function ago(iso: string): string {
-  const d = new Date(iso);
-  const diff = Date.now() - d.getTime();
-  if (diff < 60_000) return "now";
-  if (diff < 3_600_000) return `${Math.floor(diff / 60_000)}m`;
-  if (diff < 86_400_000) return d.toLocaleTimeString("en-GB", { hour: "2-digit", minute: "2-digit" });
-  return d.toLocaleDateString("en-GB", { day: "numeric", month: "short" });
-}
+type Hit = { message_id: string; thread_id: string; sender_id: string; sender_name: string; body: string; created_at: string };
+type Filter = "all" | "unread" | "groups" | "urgent";
 
 /**
- * One inbox for everyone who may message (staff and parents): your
- * conversations on the left with the latest message, a "New message"
- * picker that lists everyone you're allowed to write to, and the open
- * thread on the right. Students have no 1:1 messaging at all (that is
- * enforced in the database, not just here).
+ * Messages: every conversation you are in (people and groups) on the left,
+ * the open one on the right (one column on phones). Search finds people,
+ * groups and words in messages. New message opens one dialog for a person or,
+ * for staff, a group. Unread counts, mute, group details, read receipts,
+ * replies and files live in the conversation itself. Pupils see the groups
+ * staff put them in (0204); they never have 1:1 conversations.
+ * Updates by polling every 30 seconds (and every 8 in an open conversation).
  */
-export function MessagesHub({ canAddPeople = false, subtitle }: { canAddPeople?: boolean; /** Overrides the staff-worded subtitle (e.g. for parents). */ subtitle?: string }) {
+export function MessagesHub({ canAddPeople = false, subtitle, readOnly = false }: { canAddPeople?: boolean; /** Overrides the staff-worded subtitle (e.g. for parents). */ subtitle?: string; /** Pupils: no New message. */ readOnly?: boolean }) {
+  const { roles } = useLearnSession();
+  const isStaff = roles.some((r) => STAFF_ROLE_IDS.includes(r.role));
   const [me, setMe] = useState<string | null>(null);
-  const [people, setPeople] = useState<Person[] | null>(null);
-  const [threads, setThreads] = useState<ThreadRow[] | null>(null);
-  const [lasts, setLasts] = useState<Record<string, Last>>({});
+  const [people, setPeople] = useState<Person[] | null>(readOnly ? [] : null);
+  const [rows, setRows] = useState<InboxRow[] | null>(null);
+  const [muted, setMuted] = useState<Set<string>>(new Set());
   const [active, setActive] = useState<string | null>(null);
-  // ?compose=1 (Today's "Send a message") opens New message straight away, over the inbox.
+  const [focusMsg, setFocusMsg] = useState<string | null>(null);
   const [picking, setPicking] = useState(false);
-  useEffect(() => {
-    // eslint-disable-next-line react-hooks/set-state-in-effect -- reads the address once after hydration
-    if (new URLSearchParams(window.location.search).get("compose") === "1") setPicking(true);
-  }, []);
+  const [info, setInfo] = useState(false);
+  const [filter, setFilter] = useState<Filter>("all");
   const [query, setQuery] = useState("");
+  const [hits, setHits] = useState<Hit[] | null>(null);
   const [error, setError] = useState<string | null>(null);
-  const [directoryFailed, setDirectoryFailed] = useState(false);
-  const [unread, setUnread] = useState<Record<string, number>>({});
   const ai = useAiStatus();
-  const aiOn = !!ai?.configured && ai.can.message_triage;
+  const aiOn = !readOnly && !!ai?.configured && ai.can.message_triage;
   const [triageBy, setTriageBy] = useState<Record<string, TriageRow>>({});
-  const [urgentOnly, setUrgentOnly] = useState(false);
   const [sorting, setSorting] = useState(false);
   const [sortNote, setSortNote] = useState<string | null>(null);
+
+  // ?compose=1 (Today's "Send a message") opens New message; ?thread= (emails and phone notifications) opens a conversation.
+  useEffect(() => {
+    const sp = new URLSearchParams(window.location.search);
+    // eslint-disable-next-line react-hooks/set-state-in-effect -- reads the address once after hydration
+    if (sp.get("compose") === "1" && !readOnly) setPicking(true);
+    const t = sp.get("thread");
+    if (t) setActive(t);
+  }, [readOnly]);
 
   const load = useCallback(async () => {
     const supabase = getSupabaseClient();
@@ -85,107 +67,81 @@ export function MessagesHub({ canAddPeople = false, subtitle }: { canAddPeople?:
     if (!user) return;
     setMe(user.id);
 
-    // The directory is a SECURITY DEFINER RPC (0085) that applies the
-    // safeguarding rules server-side: staff see staff and the families of their
-    // classes, parents see their children's teachers and the office. There is
-    // deliberately no client-side fallback onto user_roles/profiles: RLS hides
-    // other people there, which is what produced the empty list before.
-    const dir = await supabase.rpc("message_directory");
-    if (dir.error) {
-      setPeople([]);
-      setDirectoryFailed(true);
-      setError(`Couldn't load the list of people to message: ${dir.error.message}`);
+    // Tell senders their messages have reached this portal ("delivered", 0205).
+    void supabase.rpc("mark_messages_delivered");
+
+    const { data, error: err } = await supabase.rpc("my_message_threads");
+    if (err) {
+      setError("Couldn't load your conversations. Please try again in a moment.");
+      setRows((r) => r || []);
     } else {
-      setDirectoryFailed(false);
       setError(null);
-      setPeople((dir.data as Person[]) || []);
+      setRows((data as InboxRow[]) || []);
+    }
+    const { data: mu } = await supabase.from("message_thread_mutes").select("thread_id");
+    setMuted(new Set(((mu as { thread_id: string }[] | null) || []).map((m) => m.thread_id)));
+
+    if (!readOnly) {
+      // The directory applies the safeguarding rules server-side (0085).
+      const dir = await supabase.rpc("message_directory");
+      setPeople(dir.error ? [] : (dir.data as Person[]) || []);
     }
 
-    const { data: rows } = await supabase
-      .from("message_threads")
-      .select("id, kind, child_id, parent_id, teacher_id, staff_a_id, staff_b_id, created_at, children(name)")
-      .order("created_at", { ascending: false });
-    // Headteachers can read every thread for safeguarding; this inbox only
-    // shows the ones you're actually part of.
-    const mine = ((rows as unknown as ThreadRow[]) || []).filter(
-      (t) => t.parent_id === user.id || t.teacher_id === user.id || t.staff_a_id === user.id || t.staff_b_id === user.id,
-    );
-    setThreads(mine);
-
-    if (mine.length > 0) {
-      const { data: msgs } = await supabase
-        .from("message_thread_messages")
-        .select("id, thread_id, body, created_at, sender_id")
-        .in(
-          "thread_id",
-          mine.map((t) => t.id),
-        )
-        .order("created_at", { ascending: false })
-        .limit(400);
-      const map: Record<string, Last> = {};
-      for (const m of (msgs as Last[]) || []) if (!map[m.thread_id]) map[m.thread_id] = m;
-      setLasts(map);
-
-      // AI triage results (0173). RLS returns rows only to staff who can see the thread; parents get none.
-      const { data: tri } = await supabase
-        .from("ai_message_triage")
-        .select("thread_id, message_id, category, urgency, created_at")
-        .in(
-          "thread_id",
-          mine.map((t) => t.id),
-        )
-        .order("created_at", { ascending: false })
-        .limit(400);
+    const ids = ((data as InboxRow[]) || []).map((r) => r.thread_id);
+    if (aiOn && ids.length) {
+      const { data: tri } = await supabase.from("ai_message_triage").select("thread_id, message_id, category, urgency, created_at").in("thread_id", ids).order("created_at", { ascending: false }).limit(400);
       const tmap: Record<string, TriageRow> = {};
       for (const r of (tri as TriageRow[] | null) || []) if (!tmap[r.thread_id]) tmap[r.thread_id] = r;
       setTriageBy(tmap);
     }
-  }, []);
-
-  const loadUnread = useCallback(async () => {
-    const supabase = getSupabaseClient();
-    if (!supabase) return;
-    const { data } = await supabase.rpc("thread_unread_counts");
-    setUnread(Object.fromEntries(((data as { thread_id: string; unread: number }[]) || []).map((r) => [r.thread_id, r.unread])));
-  }, []);
+  }, [readOnly, aiOn]);
 
   useEffect(() => {
     // eslint-disable-next-line react-hooks/set-state-in-effect -- initial data load
     load();
-    loadUnread();
-    const id = window.setInterval(() => {
-      load();
-      loadUnread();
-    }, 30000);
+    const id = window.setInterval(load, 30000);
     return () => window.clearInterval(id);
-  }, [load, loadUnread]);
+  }, [load]);
 
-  const byId = useMemo(() => new Map((people || []).map((p) => [p.user_id, p])), [people]);
+  // Search words in messages (0204 search_messages), after a short pause.
+  const q = query.trim();
+  useEffect(() => {
+    if (q.length < 2) {
+      // eslint-disable-next-line react-hooks/set-state-in-effect -- clearing results when the search is cleared
+      setHits(null);
+      return;
+    }
+    const t = window.setTimeout(async () => {
+      const supabase = getSupabaseClient();
+      const { data } = (await supabase?.rpc("search_messages", { p_query: q })) || { data: [] };
+      setHits((data as Hit[] | null) || []);
+    }, 300);
+    return () => window.clearTimeout(t);
+  }, [q]);
 
-  const otherOf = (t: ThreadRow): string | null => {
-    if (!me) return null;
-    if (t.kind === "parent_teacher") return t.parent_id === me ? t.teacher_id : t.parent_id;
-    return t.staff_a_id === me ? t.staff_b_id : t.staff_a_id;
-  };
-
-  const sortedAll = useMemo(() => {
-    return [...(threads || [])].sort((a, b) => (lasts[b.id]?.created_at || b.created_at).localeCompare(lasts[a.id]?.created_at || a.created_at));
-  }, [threads, lasts]);
-  const sorted = urgentOnly ? sortedAll.filter((t) => triageBy[t.id]?.urgency === "urgent") : sortedAll;
-  const urgentCount = sortedAll.filter((t) => triageBy[t.id]?.urgency === "urgent").length;
-
+  const byPerson = useMemo(() => new Map((people || []).map((p) => [p.user_id, p])), [people]);
   const isParentId = (uid: string | null | undefined) => {
-    const p = uid ? byId.get(uid) : undefined;
-    return !!p && p.roles.includes("parent") && !p.roles.some((r) => STAFF_ROLES.includes(r));
+    const p = uid ? byPerson.get(uid) : undefined;
+    return !!p && p.roles.includes("parent") && !p.roles.some((r) => STAFF_ROLE_IDS.includes(r));
   };
-  /** Conversations whose newest message is from a parent and hasn't been sorted yet. */
-  const unsorted = sortedAll.filter((t) => {
-    const last = lasts[t.id];
-    return !!last && last.sender_id !== me && (isParentId(last.sender_id) || (t.kind === "parent_teacher" && last.sender_id === t.parent_id)) && triageBy[t.id]?.message_id !== last.id;
-  });
 
+  const all = rows || [];
+  const unreadTotal = all.filter((r) => r.unread > 0 && r.thread_id !== active).length;
+  const urgentCount = all.filter((r) => triageBy[r.thread_id]?.urgency === "urgent").length;
+  const ql = q.toLowerCase();
+  const listed = all.filter((r) => {
+    if (filter === "unread" && !(r.unread > 0)) return false;
+    if (filter === "groups" && r.kind !== "group") return false;
+    if (filter === "urgent" && triageBy[r.thread_id]?.urgency !== "urgent") return false;
+    if (ql && !(`${r.title} ${r.subtitle || ""}`.toLowerCase().includes(ql) || (byPerson.get(r.other_user_id || "")?.detail || "").toLowerCase().includes(ql))) return false;
+    return true;
+  });
+  const titleOf = (tid: string) => all.find((r) => r.thread_id === tid)?.title || "Conversation";
+
+  /** Conversations whose newest message is from a parent and hasn't been sorted yet. */
+  const unsorted = all.filter((r) => !!r.last_sender_id && r.last_sender_id !== me && isParentId(r.last_sender_id) && !triageBy[r.thread_id]);
   const sortInbox = async () => {
-    const ids = unsorted.slice(0, 10).map((t) => t.id);
+    const ids = unsorted.slice(0, 10).map((t) => t.thread_id);
     if (!ids.length) return;
     setSorting(true);
     setSortNote(null);
@@ -197,219 +153,274 @@ export function MessagesHub({ canAddPeople = false, subtitle }: { canAddPeople?:
     setSortNote(r.stopped === "ai_daily_limit" ? "Stopped: the school's AI limit for today has been reached." : `Sorted ${ids.length} conversation${ids.length === 1 ? "" : "s"}.${left > 0 ? ` ${left} more to go.` : ""}`);
   };
 
-  const start = async (other: Person) => {
+  const startWith = async (other: Person) => {
     const supabase = getSupabaseClient();
     if (!supabase || !me) return;
     setError(null);
-    const existing = (threads || []).find((t) => (t.kind === "direct" || t.kind === "staff") && (t.staff_a_id === other.user_id || t.staff_b_id === other.user_id));
+    const existing = all.find((t) => t.kind !== "group" && t.other_user_id === other.user_id && t.kind !== "parent_teacher");
     if (existing) {
-      setActive(existing.id);
+      setActive(existing.thread_id);
       setPicking(false);
       return;
     }
     const { data, error: err } = await supabase.from("message_threads").insert({ kind: "direct", staff_a_id: me, staff_b_id: other.user_id }).select("id").single();
-    if (err || !data) {
-      setError("Couldn't start that conversation. Please try again in a moment.");
-      return;
-    }
+    if (err || !data) return setError("Couldn't start that conversation. Please try again in a moment.");
     await load();
     setActive((data as { id: string }).id);
     setPicking(false);
   };
 
-  const q = query.trim().toLowerCase();
-  const filtered = (people || []).filter((p) => !q || p.full_name.toLowerCase().includes(q) || (p.detail || "").toLowerCase().includes(q));
-  const staffList = filtered.filter((p) => p.roles.some((r) => STAFF_ROLES.includes(r)));
-  const parentList = filtered.filter((p) => !p.roles.some((r) => STAFF_ROLES.includes(r)));
+  const toggleMute = async (tid: string) => {
+    const supabase = getSupabaseClient();
+    if (!supabase || !me) return;
+    if (muted.has(tid)) await supabase.from("message_thread_mutes").delete().eq("thread_id", tid).eq("user_id", me);
+    else await supabase.from("message_thread_mutes").insert({ thread_id: tid });
+    await load();
+  };
 
-  const activeThread = (threads || []).find((t) => t.id === active) || null;
-  const activeOther = activeThread ? byId.get(otherOf(activeThread) || "") : undefined;
+  const open = (tid: string, msg: string | null = null) => {
+    setFocusMsg(msg);
+    setActive(tid);
+    setInfo(false);
+  };
 
-  const loading = people === null || threads === null;
-  const nobodyToMessage = people !== null && people.length === 0 && !directoryFailed;
+  const activeRow = all.find((r) => r.thread_id === active) || null;
+  const activeOther = activeRow?.other_user_id ? byPerson.get(activeRow.other_user_id) : undefined;
+  const loading = rows === null || people === null;
+  const nobodyToMessage = !readOnly && people !== null && people.length === 0 && !isStaff;
+
+  const headMenu: MenuAction[] = activeRow
+    ? [
+        ...(activeRow.kind === "group" ? [{ label: "Group details", icon: "users" as const, onSelect: () => setInfo(true) }] : []),
+        { label: muted.has(activeRow.thread_id) ? "Unmute" : "Mute", icon: muted.has(activeRow.thread_id) ? ("bell" as const) : ("bellOff" as const), hint: muted.has(activeRow.thread_id) ? "Emails and phone notifications on again" : "No emails or phone notifications", onSelect: () => toggleMute(activeRow.thread_id) },
+      ]
+    : [];
+
+  const filters: { key: Filter; label: string; n?: number }[] = [
+    { key: "all", label: "All" },
+    { key: "unread", label: "Unread", n: unreadTotal },
+    ...(all.some((r) => r.kind === "group") ? [{ key: "groups" as Filter, label: "Groups" }] : []),
+    ...(aiOn || urgentCount ? [{ key: "urgent" as Filter, label: "Urgent", n: urgentCount }] : []),
+  ];
 
   return (
     <>
       <PageHeader
         title="Messages"
-        subtitle={subtitle ?? "Message the teachers, office and families you work with. Staff review messages for safeguarding as part of normal practice."}
-        actions={
-          <button
-            type="button"
-            data-guide="messages-new"
-            onClick={() => setPicking(true)}
-            disabled={loading || nobodyToMessage || directoryFailed}
-            className="rounded-lg bg-gold-700 px-4 py-2 text-sm font-semibold text-white hover:bg-gold-900 disabled:opacity-50"
-          >
-            + New message
-          </button>
+        subtitle={subtitle ?? (readOnly ? "Messages from your teachers and the school. Staff review messages for safeguarding as part of normal practice." : "Message the teachers, office and families you work with, one to one or in groups. Staff review messages for safeguarding as part of normal practice.")}
+        action={
+          readOnly ? undefined : (
+            <button type="button" data-guide="messages-new" onClick={() => setPicking(true)} disabled={loading || nobodyToMessage} className={ui.btnPrimary}>
+              <Icon name="messageSquarePlus" size="sm" />
+              New message
+            </button>
+          )
         }
       />
 
-      {error && <p className="mb-4 rounded-lg bg-red-50 px-4 py-2 text-sm text-red-800">{error}</p>}
+      {error && <p role="alert" className="mb-4 rounded-lg border border-red-200 bg-red-50 px-4 py-2 text-sm text-red-800">{error}</p>}
 
       {loading ? (
-        <div className="h-72 motion-safe:animate-pulse rounded-2xl bg-white" />
-      ) : nobodyToMessage && (threads || []).length === 0 ? (
-        <div className="rounded-2xl border border-dashed border-gold-light bg-white p-10 text-center">
-          <p className="text-base font-semibold text-ink">No one else is set up yet</p>
-          <p className="mx-auto mt-1 max-w-md text-sm text-ink/65">
-            As soon as other teachers, admins or parents have accounts, they&apos;ll appear here and you can message them in one click.
-          </p>
-          {canAddPeople && (
-            <Link href="/admin/people" className="mt-4 inline-block rounded-lg bg-gold-700 px-4 py-2 text-sm font-semibold text-white hover:bg-gold-900">
-              Add people
-            </Link>
-          )}
-        </div>
+        <LoadingState label="Loading your conversations" />
+      ) : all.length === 0 && nobodyToMessage ? (
+        <EmptyState title="No one is set up yet" action={canAddPeople ? <Link href="/admin/people" className={ui.btnPrimary}>Add people</Link> : undefined}>
+          As soon as teachers, the office or families have accounts, they appear here and you can message them.
+        </EmptyState>
       ) : (
-        <div className="grid overflow-hidden rounded-2xl border border-gold-light bg-white md:grid-cols-[320px_minmax(0,1fr)]">
-          <div className={`border-gold-light md:border-r ${active ? "hidden md:block" : ""}`}>
-            {(aiOn || urgentCount > 0) && (
-              <div className="flex flex-wrap items-center gap-2 border-b border-gold-light px-3 py-2">
-                <button type="button" aria-pressed={urgentOnly} onClick={() => setUrgentOnly((v) => !v)} className={`rounded-full border px-3 py-1 text-xs font-medium ${urgentOnly ? "border-red-700 bg-red-700 text-white" : "border-gold-light bg-white text-ink/75 hover:bg-cream"}`}>
-                  Urgent{urgentCount ? ` (${urgentCount})` : ""}
-                </button>
+        <div className="grid overflow-hidden rounded-[10px] border border-gold-light bg-[var(--portal-surface)] md:grid-cols-[minmax(280px,340px)_minmax(0,1fr)]">
+          <div className={`min-w-0 border-gold-light md:border-r ${active ? "hidden md:block" : ""}`}>
+            <div className="space-y-2 border-b border-gold-light p-3">
+              <label htmlFor="msg-search" className="sr-only">
+                Search conversations and messages
+              </label>
+              <div className="relative">
+                <Icon name="search" size="sm" className="h-4 w-4 pointer-events-none absolute left-3 top-1/2 -translate-y-1/2 text-ink-500" />
+                <input id="msg-search" data-guide="messages-search" type="search" value={query} onChange={(e) => setQuery(e.target.value)} placeholder="Search people, groups and messages" className={`${ui.input} pl-9`} />
+              </div>
+              <div role="group" aria-label="Show" className="flex flex-wrap gap-1.5">
+                {filters.map((f) => (
+                  <button key={f.key} type="button" aria-pressed={filter === f.key} onClick={() => setFilter(f.key)} className={`${filter === f.key ? ui.chipOn : ui.chip} min-h-9 sm:min-h-7`}>
+                    {f.label}
+                    {f.n ? <span className="tabular-nums text-ink-500">{f.n}</span> : null}
+                  </button>
+                ))}
                 {aiOn && (
-                  <button type="button" disabled={sorting || unsorted.length === 0} onClick={sortInbox} title="Ask AI to sort the newest parent messages (up to 10 at a time)" className="inline-flex items-center gap-1 rounded-full border border-gold-light bg-white px-3 py-1 text-xs font-medium text-ink/75 hover:bg-cream disabled:opacity-50">
+                  <button type="button" disabled={sorting || unsorted.length === 0} onClick={sortInbox} title="Ask AI to sort the newest parent messages (up to 10 at a time)" className={`${ui.chip} min-h-9 sm:min-h-7`}>
                     <AiSpark className="h-3.5 w-3.5 text-teal-700" />
-                    {sorting ? "Sorting…" : unsorted.length ? `Sort my inbox (${Math.min(unsorted.length, 10)})` : "Inbox sorted"}
+                    {sorting ? "Sorting" : unsorted.length ? `Sort (${Math.min(unsorted.length, 10)})` : "Sorted"}
                   </button>
                 )}
-                {sortNote && <span className="w-full text-xs text-ink/65">{sortNote}</span>}
               </div>
-            )}
-            <ScrollArea label="Conversations" className="max-h-[70vh]">
-            <ul data-guide="messages-list" className="divide-y divide-gold-light/70">
-              {sorted.length === 0 && urgentOnly && (
-                <li className="px-5 py-10 text-center text-sm text-ink/65">No urgent conversations.</li>
-              )}
-              {sorted.length === 0 && !urgentOnly && (
-                <li className="px-5 py-10 text-center">
-                  <p className="text-sm font-semibold text-ink">No conversations yet</p>
-                  <p className="mt-1 text-sm text-ink/65">Press “New message” to start one.</p>
-                </li>
-              )}
-              {sorted.map((t) => {
-                const other = byId.get(otherOf(t) || "");
-                const last = lasts[t.id];
-                const name = other?.full_name || "Conversation";
-                const unreadN = active === t.id ? 0 : unread[t.id] || 0;
-                const context = t.kind === "parent_teacher" && t.children?.name ? `About ${t.children.name}` : other ? [roleText(other.roles), other.detail].filter(Boolean).join(" · ") : "";
-                return (
-                  <li key={t.id}>
-                    <button
-                      type="button"
-                      onClick={() => setActive(t.id)}
-                      className={`flex w-full items-center gap-3 px-4 py-3 text-left hover:bg-cream ${active === t.id ? "bg-teal-50" : ""}`}
-                    >
-                      <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-teal-100 text-sm font-semibold text-teal-900">{initials(name)}</span>
-                      <span className="min-w-0 flex-1">
-                        <span className="flex items-baseline justify-between gap-2">
-                          <span className={`truncate text-sm text-ink ${unreadN ? "font-bold" : "font-semibold"}`}>{name}</span>
-                          {last && <span className="shrink-0 text-xs text-ink/65">{ago(last.created_at)}</span>}
+              {sortNote && <p className="text-xs text-ink-500">{sortNote}</p>}
+            </div>
+
+            <div className="max-h-[min(64vh,640px)] overflow-y-auto">
+              <ul data-guide="messages-list" aria-label="Conversations" className="divide-y divide-gold-light">
+                {listed.length === 0 && !(q && hits && hits.length) && (
+                  <li className="px-5 py-10 text-center text-sm text-ink-500">
+                    {all.length === 0 ? (readOnly ? "No messages yet. When a teacher writes to your class, it appears here." : "No conversations yet. Press New message to start one.") : q ? "No conversations match." : "Nothing here."}
+                  </li>
+                )}
+                {listed.map((r) => {
+                  const unread = active === r.thread_id ? 0 : r.unread;
+                  const group = r.kind === "group";
+                  const other = r.other_user_id ? byPerson.get(r.other_user_id) : undefined;
+                  const context = group ? `${r.subtitle || "Group"} · ${r.member_count} members` : r.subtitle || (other ? [other.detail].filter(Boolean).join("") : "");
+                  const preview = r.last_preview ? `${r.last_sender_id === me ? "You: " : group && r.last_sender_name ? `${r.last_sender_name.split(" ")[0]}: ` : ""}${r.last_preview}` : "No messages yet";
+                  const tri = triageBy[r.thread_id];
+                  return (
+                    <li key={r.thread_id}>
+                      <button
+                        type="button"
+                        onClick={() => open(r.thread_id)}
+                        aria-current={active === r.thread_id ? "true" : undefined}
+                        className={`flex w-full items-start gap-3 px-3 py-3 text-left transition-colors hover:bg-[var(--portal-hover)] ${active === r.thread_id ? "bg-forest-50 shadow-[inset_3px_0_0_var(--color-forest-700)]" : ""}`}
+                      >
+                        <span className={`flex h-9 w-9 shrink-0 items-center justify-center rounded-full text-xs font-semibold ${group ? "bg-[var(--portal-sunken)] text-ink-700" : "bg-forest-100 text-forest-900"}`}>
+                          {group ? <Icon name="users" size="sm" /> : initials(r.title)}
                         </span>
-                        <span className="block truncate text-xs text-ink/65">{context}</span>
-                        {triageBy[t.id] && (
-                          <span className="mt-0.5 flex flex-wrap gap-1">
-                            <span className={`rounded-full px-2 py-0.5 text-[10px] font-medium ${triageBy[t.id].category === "safeguarding concern" ? "bg-red-50 text-red-800" : "bg-teal-100 text-teal-900"}`}>{TRIAGE_CATEGORY_LABEL[triageBy[t.id].category] || triageBy[t.id].category}</span>
-                            {triageBy[t.id].urgency === "urgent" && <span className="rounded-full bg-red-700 px-2 py-0.5 text-[10px] font-semibold text-white">Urgent</span>}
+                        <span className="min-w-0 flex-1">
+                          <span className="flex items-baseline justify-between gap-2">
+                            <span className={`truncate text-sm text-ink ${unread ? "font-semibold" : "font-medium"}`}>{r.title}</span>
+                            <span className="flex shrink-0 items-center gap-1 text-xs text-ink-500">
+                              {muted.has(r.thread_id) && <Icon name="bellOff" size="sm" className="h-3.5 w-3.5" />}
+                              {ago(r.last_at || r.created_at)}
+                            </span>
                           </span>
-                        )}
-                        <span className="flex items-center gap-2">
-                          <span className={`block min-w-0 flex-1 truncate text-sm ${unreadN ? "font-semibold text-ink" : "text-ink/65"}`}>{last ? `${last.sender_id === me ? "You: " : ""}${last.body}` : "No messages yet"}</span>
-                          {unreadN > 0 && (
-                            <span aria-label={`${unreadN} unread`} className="flex h-5 min-w-5 shrink-0 items-center justify-center rounded-full bg-teal-600 px-1.5 text-[11px] font-semibold text-white">
-                              {unreadN > 99 ? "99+" : unreadN}
+                          {context && <span className="block truncate text-xs text-ink-500">{context}</span>}
+                          {tri && (
+                            <span className="mt-0.5 flex flex-wrap gap-1 text-[11px]">
+                              <span className={tri.category === "safeguarding concern" ? "font-medium text-red-800" : "text-forest-700"}>{TRIAGE_CATEGORY_LABEL[tri.category] || tri.category}</span>
+                              {tri.urgency === "urgent" && <span className="font-semibold text-red-700">· Urgent</span>}
                             </span>
                           )}
+                          <span className="mt-0.5 flex items-center gap-2">
+                            <span className={`block min-w-0 flex-1 truncate text-[13px] ${unread ? "font-medium text-ink" : "text-ink-500"}`}>{preview}</span>
+                            {unread > 0 && (
+                              <span aria-label={`${unread} unread`} className={`flex h-5 min-w-5 shrink-0 items-center justify-center rounded-full px-1.5 text-[11px] font-semibold ${muted.has(r.thread_id) ? "bg-[var(--portal-sunken)] text-ink-700" : "bg-forest-700 text-white"}`}>
+                                {unread > 99 ? "99+" : unread}
+                              </span>
+                            )}
+                          </span>
                         </span>
-                      </span>
-                    </button>
-                  </li>
-                );
-              })}
-            </ul>
-            </ScrollArea>
+                      </button>
+                    </li>
+                  );
+                })}
+              </ul>
+
+              {hits && (
+                <section aria-label="Messages found" className="border-t border-gold-light">
+                  <p className="t-eyebrow px-3 pb-1 pt-3">In messages</p>
+                  {hits.length === 0 ? (
+                    <p className="px-3 pb-4 text-sm text-ink-500">No messages contain &ldquo;{q}&rdquo;.</p>
+                  ) : (
+                    <ul className="divide-y divide-gold-light">
+                      {hits.map((h) => (
+                        <li key={h.message_id}>
+                          <button type="button" onClick={() => open(h.thread_id, h.message_id)} className="block w-full px-3 py-2.5 text-left hover:bg-[var(--portal-hover)]">
+                            <span className="flex justify-between gap-2 text-xs text-ink-500">
+                              <span className="truncate font-medium text-ink">{titleOf(h.thread_id)}</span>
+                              <span className="shrink-0">{ago(h.created_at)}</span>
+                            </span>
+                            <span className="line-clamp-2 text-[13px] text-ink-700">
+                              {h.sender_id === me ? "You" : h.sender_name}: <Highlight text={h.body} q={q} />
+                            </span>
+                          </button>
+                        </li>
+                      ))}
+                    </ul>
+                  )}
+                </section>
+              )}
+            </div>
           </div>
 
           <div className={`min-w-0 ${active ? "" : "hidden md:block"}`}>
-            {activeThread ? (
+            {activeRow && me ? (
               <div>
-                <div className="flex items-center gap-3 border-b border-gold-light px-4 py-3">
-                  <button type="button" onClick={() => setActive(null)} aria-label="Back to conversations" className="rounded-lg px-2 py-1 text-ink/65 hover:bg-cream md:hidden">
-                    ‹
+                <div className="flex items-center gap-3 border-b border-gold-light px-3 py-2.5 sm:px-4">
+                  <button type="button" onClick={() => setActive(null)} aria-label="Back to conversations" className={`${ui.btnIcon} md:hidden`}>
+                    <Icon name="arrowLeft" />
                   </button>
-                  <span className="flex h-9 w-9 items-center justify-center rounded-full bg-teal-100 text-sm font-semibold text-teal-900">{initials(activeOther?.full_name || "?")}</span>
-                  <div className="min-w-0">
-                    <p className="truncate text-sm font-semibold text-ink">{activeOther?.full_name || "Conversation"}</p>
-                    <p className="truncate text-xs text-ink/65">
-                      {activeOther ? roleText(activeOther.roles) : ""}
-                      {activeOther?.detail ? ` · ${activeOther.detail}` : ""}
-                    </p>
+                  <span className={`flex h-9 w-9 shrink-0 items-center justify-center rounded-full text-xs font-semibold ${activeRow.kind === "group" ? "bg-[var(--portal-sunken)] text-ink-700" : "bg-forest-100 text-forest-900"}`}>
+                    {activeRow.kind === "group" ? <Icon name="users" size="sm" /> : initials(activeRow.title)}
+                  </span>
+                  <div className="min-w-0 flex-1">
+                    <p className="truncate text-sm font-semibold text-ink">{activeRow.title}</p>
+                    {activeRow.kind === "group" ? (
+                      <button type="button" onClick={() => setInfo(true)} className="block max-w-full truncate text-left text-xs text-ink-500 underline-offset-2 hover:text-forest-700 hover:underline">
+                        {activeRow.subtitle ? `${activeRow.subtitle} · ` : ""}
+                        {activeRow.member_count} members{activeRow.members_can_reply ? "" : " · staff write"}
+                      </button>
+                    ) : (
+                      <p className="truncate text-xs text-ink-500">{[activeRow.subtitle, activeOther?.detail].filter(Boolean).join(" · ")}</p>
+                    )}
                   </div>
+                  {muted.has(activeRow.thread_id) && <Icon name="bellOff" size="sm" className="h-4 w-4 text-ink-500" />}
+                  <ActionsMenu items={headMenu} label="Conversation options" />
                 </div>
-                <MessageThread key={activeThread.id} threadId={activeThread.id} onSent={load} onRead={loadUnread} aiTriage={aiOn && (isParentId(otherOf(activeThread)) || (activeThread.kind === "parent_teacher" && activeThread.parent_id !== me))} onTriaged={load} />
+                <MessageThread
+                  key={activeRow.thread_id}
+                  thread={activeRow}
+                  me={me}
+                  isStaff={isStaff}
+                  focusMessageId={focusMsg}
+                  onSent={load}
+                  onRead={load}
+                  aiTriage={aiOn && activeRow.kind !== "group" && isParentId(activeRow.other_user_id)}
+                  onTriaged={load}
+                />
               </div>
             ) : (
-              <div className="flex h-full min-h-[320px] flex-col items-center justify-center px-6 py-16 text-center">
-                <p className="text-base font-semibold text-ink">Pick a conversation</p>
-                <p className="mt-1 text-sm text-ink/65">or start a new one with the button above.</p>
+              <div className="flex h-full min-h-[360px] flex-col items-center justify-center px-6 py-16 text-center">
+                <Icon name="messageSquare" className="h-6 w-6 text-ink-500" />
+                <p className="mt-2 text-sm font-medium text-ink">{active ? "This conversation is not available" : "Pick a conversation"}</p>
+                <p className="mt-1 text-sm text-ink-500">{readOnly ? "Messages from your teachers appear on the left." : "or press New message to start one."}</p>
               </div>
             )}
           </div>
         </div>
       )}
 
-      {picking && (
-        <div className="fixed inset-0 z-[100] flex items-end justify-center bg-black/40 p-0 sm:items-center sm:p-4" role="dialog" aria-modal="true" aria-label="New message">
-          <div className="flex max-h-[85vh] w-full max-w-lg flex-col overflow-hidden rounded-t-2xl bg-white shadow-xl sm:rounded-2xl">
-            <div className="flex items-center justify-between border-b border-gold-light px-5 py-4">
-              <h2 className="text-lg font-semibold text-ink">New message</h2>
-              <button
-                type="button"
-                onClick={() => {
-                  setPicking(false);
-                  setQuery("");
-                }}
-                aria-label="Close"
-                className="rounded-lg px-2 py-1 text-xl leading-none text-ink/65 hover:bg-cream"
-              >
-                ×
-              </button>
-            </div>
-            <div className="border-b border-gold-light px-5 py-3">
-              <input autoFocus type="search" value={query} onChange={(e) => setQuery(e.target.value)} placeholder="Search by name or child…" className="w-full rounded-lg border border-gold-light px-3 py-2 text-sm" />
-            </div>
-            <ScrollArea label="People you can message" itemSelector="button" noun="more people" className="px-2 py-2">
-              {[
-                { label: "Staff", list: staffList },
-                { label: "Parents", list: parentList },
-              ].map(
-                (g) =>
-                  g.list.length > 0 && (
-                    <div key={g.label} className="mb-2">
-                      <p className="px-3 pb-1 pt-2 text-[11px] font-semibold uppercase tracking-wider text-ink/65">{g.label}</p>
-                      {g.list.map((p) => (
-                        <button key={p.user_id} type="button" onClick={() => start(p)} className="flex w-full items-center gap-3 rounded-lg px-3 py-2 text-left hover:bg-cream">
-                          <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-teal-100 text-sm font-semibold text-teal-900">{initials(p.full_name)}</span>
-                          <span className="min-w-0">
-                            <span className="block truncate text-sm font-medium text-ink">{p.full_name}</span>
-                            <span className="block truncate text-xs text-ink/65">
-                              {roleText(p.roles)}
-                              {p.detail ? ` · ${p.detail}` : ""}
-                            </span>
-                          </span>
-                        </button>
-                      ))}
-                    </div>
-                  ),
-              )}
-              {filtered.length === 0 && <p className="px-4 py-8 text-center text-sm text-ink/65">No one matches “{query}”.</p>}
-            </ScrollArea>
-          </div>
-        </div>
+      {picking && people && (
+        <NewConversation
+          people={people}
+          isStaff={isStaff}
+          onClose={() => setPicking(false)}
+          onPickPerson={startWith}
+          onCreated={async (id) => {
+            setPicking(false);
+            await load();
+            open(id);
+          }}
+        />
       )}
+      {info && activeRow && activeRow.kind === "group" && me && (
+        <GroupInfo
+          thread={activeRow}
+          me={me}
+          onClose={() => setInfo(false)}
+          onChanged={load}
+          onLeft={async () => {
+            setInfo(false);
+            setActive(null);
+            await load();
+          }}
+        />
+      )}
+    </>
+  );
+}
+
+function Highlight({ text, q }: { text: string; q: string }) {
+  const i = text.toLowerCase().indexOf(q.toLowerCase());
+  if (i < 0 || !q) return <>{text}</>;
+  return (
+    <>
+      {text.slice(0, i)}
+      <mark className="rounded bg-amber-100 px-0.5 text-ink">{text.slice(i, i + q.length)}</mark>
+      {text.slice(i + q.length)}
     </>
   );
 }

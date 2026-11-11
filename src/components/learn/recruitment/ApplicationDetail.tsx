@@ -23,7 +23,7 @@ import { FilePreview } from "@/components/learn/admissions/FilePreview";
 import { RECRUITMENT_BUCKET, ukDate, ukDateTime, type ApplicationEvent, type JobApplication } from "./types";
 import { Select } from "@/components/learn/Select";
 
-import { askConfirm } from "@/components/learn/kit";
+import { Dialog, askConfirm } from "@/components/learn/kit";
 function Row({ label, children }: { label: string; children: ReactNode }) {
   const empty = children === null || children === undefined || children === "" || (Array.isArray(children) && children.length === 0);
   return (
@@ -66,6 +66,10 @@ export function ApplicationDetail({
   const [message, setMessage] = useState<{ text: string; error?: boolean } | null>(null);
   const [interview, setInterview] = useState(app.interview_at ? isoToUkLocal(app.interview_at) : "");
   const [preview, setPreview] = useState<{ url: string; type: string; name: string } | null>(null);
+  // The email composer: "Email candidate", or choosing Unsuccessful (which then marks and emails in one go).
+  const [compose, setCompose] = useState<{ subject: string; message: string; status?: ApplicationStatus } | null>(null);
+  const [sending, setSending] = useState(false);
+  const [composeError, setComposeError] = useState("");
 
   const loadEvents = useCallback(async () => {
     if (!supabase) return;
@@ -136,11 +140,90 @@ export function ApplicationDetail({
   const cvType = cvExt === "pdf" ? "application/pdf" : "";
   const fullName = `${app.first_name} ${app.last_name}`;
   const callName = app.preferred_name || app.first_name;
-  const mailto = (subject: string, body = "") => `mailto:${app.email}?subject=${encodeURIComponent(subject)}${body ? `&body=${encodeURIComponent(body)}` : ""}`;
+  const emailSubject = `Your application for ${app.vacancy_title} (${app.reference})`;
+  const signOff = "JazakAllahu khayran,\nTarbiyyah Global Academy";
+  const rejectionMessage =
+    `Assalamu alaikum ${callName},\n\n` +
+    `Thank you for applying for ${app.vacancy_title} at Tarbiyyah Global Academy, and for the time you put into your application.\n\n` +
+    `We received many strong applications, and after careful consideration we have decided not to take your application further on this occasion.\n\n` +
+    `We are grateful for your interest in the Academy and wish you every success. You are welcome to apply again for future roles, which we advertise on our Careers page.\n\n` +
+    signOff;
+
+  async function sendCompose() {
+    if (!compose) return;
+    if (!compose.subject.trim() || !compose.message.trim()) return setComposeError("Add a subject and a message.");
+    setSending(true);
+    setComposeError("");
+    const res = await callEdgeFunction("recruitment-screen", { action: "email", id: app.id, subject: compose.subject, message: compose.message });
+    setSending(false);
+    if (!res.ok) {
+      return setComposeError(res.error === "send_failed" ? "The email couldn't be sent just now. Nothing has changed; please try again." : edgeErrorMessage(res));
+    }
+    const status = compose.status;
+    setCompose(null);
+    if (status) await update({ status }, `Moved to ${statusLabel(status)} and emailed ${callName}.`);
+    else {
+      setMessage({ text: `Email sent to ${app.email}.` });
+      await loadEvents();
+    }
+  }
   const statusTone = APPLICATION_STATUSES.find((s) => s.value === app.status)?.tone || "neutral";
 
   return (
     <div className="space-y-5">
+      {compose && (
+        <Dialog
+          title={compose.status ? `Mark ${fullName} as unsuccessful` : `Email ${fullName}`}
+          description={
+            compose.status
+              ? "Pressing Send emails this message to the candidate and marks the application Unsuccessful. The application, its notes and files are deleted automatically 6 months after this decision."
+              : `Sent to ${app.email} from the school's email. Replies come to the recruitment inbox.`
+          }
+          size="lg"
+          onClose={() => !sending && setCompose(null)}
+          footer={
+            <>
+              {composeError && (
+                <p role="alert" className="mr-auto text-sm font-medium text-red-700">
+                  {composeError}
+                </p>
+              )}
+              <Button variant="ghost" onClick={() => setCompose(null)} disabled={sending}>
+                Cancel
+              </Button>
+              {compose.status && (
+                <Button
+                  onClick={() => {
+                    const status = compose.status!;
+                    setCompose(null);
+                    void update({ status }, `Moved to ${statusLabel(status)}. No email was sent.`);
+                  }}
+                  disabled={sending}
+                >
+                  Mark without emailing
+                </Button>
+              )}
+              <Button variant="primary" icon="send" onClick={() => void sendCompose()} disabled={sending}>
+                {sending ? "Sending…" : "Send"}
+              </Button>
+            </>
+          }
+        >
+          <div className="space-y-3 pb-1">
+            <p className="text-sm text-ink/75">
+              To: <span className="font-medium text-ink">{fullName}</span> &lt;{app.email}&gt;
+            </p>
+            <div>
+              <label htmlFor="rec-email-subject" className={ui.label}>Subject</label>
+              <input id="rec-email-subject" className={ui.input} value={compose.subject} onChange={(e) => setCompose({ ...compose, subject: e.target.value })} maxLength={200} />
+            </div>
+            <div>
+              <label htmlFor="rec-email-message" className={ui.label}>Message</label>
+              <textarea id="rec-email-message" className={`${ui.input} min-h-[16rem]`} value={compose.message} onChange={(e) => setCompose({ ...compose, message: e.target.value })} maxLength={8000} />
+            </div>
+          </div>
+        </Dialog>
+      )}
       <button type="button" onClick={onBack} className={ui.btnLink}>
         ← All applications
       </button>
@@ -160,7 +243,7 @@ export function ApplicationDetail({
             </p>
           </div>
           <div className="flex flex-wrap gap-2">
-            <a href={mailto(`Your application for ${app.vacancy_title} (${app.reference})`, `Assalamu alaikum ${callName},\n\n`)} className={btn("secondary", "sm")}>Email candidate</a>
+            <Button size="sm" onClick={() => { setComposeError(""); setCompose({ subject: emailSubject, message: `Assalamu alaikum ${callName},\n\n\n\n${signOff}` }); }}>Email candidate</Button>
             {app.cv_path && (
               <>
                 {cvType && <Button size="sm" onClick={() => openFile(app.cv_path!, app.cv_filename || "CV.pdf", cvType, false)}>View CV</Button>}
@@ -179,7 +262,12 @@ export function ApplicationDetail({
               disabled={busy}
               onChange={async (e) => {
                 const next = e.target.value as ApplicationStatus;
-                if ((next === "unsuccessful" || next === "withdrawn") && !(await askConfirm(`Mark ${fullName} as ${statusLabel(next)}? The application, its notes and files are deleted automatically 6 months after this decision. The candidate is not emailed automatically.`))) return;
+                if (next === "unsuccessful") {
+                  setComposeError("");
+                  setCompose({ subject: emailSubject, message: rejectionMessage, status: "unsuccessful" });
+                  return;
+                }
+                if (next === "withdrawn" && !(await askConfirm(`Mark ${fullName} as Withdrawn? The application, its notes and files are deleted automatically 6 months after this decision. The candidate is not emailed.`))) return;
                 void update({ status: next }, `Moved to ${statusLabel(next)}.`);
               }}
             >

@@ -2,20 +2,19 @@
  "subject": "Science",
  "board": "Pearson Edexcel",
  "code": "Biology 4BI1; Chemistry 4CH1; Physics 4PH1; Science (Double Award) 4SD0 (linear). No 4SD1 code was found.",
- "lessonCount": 187,
+ "lessonCount": 284,
  "points": 553,
- "covered": 553,
+ "covered": 517,
  "units": [
   {
    "ref": "Biology 1",
    "title": "The nature and variety of living organisms",
    "year": "Y10",
    "paper": "Biology Paper 1 and Paper 2; Science (Double Award) Biology Paper 1",
-   "status": "covered",
-   "covered": 4,
+   "status": "partial",
+   "covered": 1,
    "total": 4,
    "lessons": [
-    "y10/21",
     "y10/22",
     "y11/67"
    ],
@@ -23,31 +22,23 @@
     {
      "n": 1,
      "text": "1.1 Living organisms share eight characteristics: nutrition, respiration, excretion, response, movement, internal control, reproduction, growth.",
-     "lessons": [
-      "y10/21"
-     ]
+     "lessons": []
     },
     {
      "n": 2,
      "text": "1.2 Common features of eukaryotes: plants, animals, fungi, protoctists, with the named examples.",
-     "lessons": [
-      "y10/21"
-     ]
+     "lessons": []
     },
     {
      "n": 3,
      "text": "1.3 Prokaryote features: bacteria have cell wall, membrane, plasmids, circular DNA, no nucleus; Lactobacillus and Pneumococcus.",
-     "lessons": [
-      "y10/22",
-      "y10/21"
-     ]
+     "lessons": []
     },
     {
      "n": 4,
      "text": "1.4 Pathogens include fungi, bacteria, protoctists and viruses; viruses are non-living, with a protein coat.",
      "lessons": [
       "y10/22",
-      "y10/21",
       "y11/67"
      ]
     }
@@ -58,8 +49,8 @@
    "title": "Structure and functions in living organisms",
    "year": "Y10",
    "paper": "Biology Paper 1 and Paper 2; Science (Double Award) Biology Paper 1",
-   "status": "covered",
-   "covered": 95,
+   "status": "partial",
+   "covered": 77,
    "total": 95,
    "lessons": [
     "y10/1",
@@ -78,11 +69,7 @@
     "y10/30",
     "y10/31",
     "y10/32",
-    "y10/33",
     "y10/34",
-    "y10/36",
-    "y10/43",
-    "y10/73",
     "y10/74",
     "y10/75",
     "y10/76",
@@ -93,21 +80,39 @@
     "y10/81",
     "y10/82",
     "y10/83",
-    "y10/84",
+    "y10/105",
+    "y10/106",
+    "y10/109",
+    "y10/111",
+    "y10/112",
+    "y10/114",
+    "y10/116",
+    "y10/118",
+    "y10/121",
+    "y10/124",
+    "y10/128",
+    "y10/129",
+    "y10/145",
     "y11/3",
     "y11/29",
+    "y11/31",
     "y11/35",
+    "y11/47",
     "y11/69",
-    "y11/71"
+    "y11/87",
+    "y11/92",
+    "y11/96",
+    "y11/97",
+    "y11/112",
+    "y11/123"
    ],
    "points": [
     {
      "n": 1,
      "text": "2.1 Levels of organisation: organelles, cells, tissues, organs and systems.",
      "lessons": [
-      "y10/1",
       "y10/83",
-      "y10/29"
+      "y10/81"
      ]
     },
     {
@@ -123,7 +128,7 @@
      "lessons": [
       "y10/1",
       "y10/2",
-      "y10/7"
+      "y10/6"
      ]
     },
     {
@@ -140,8 +145,8 @@
      "text": "2.5B Importance of cell differentiation in forming specialised cells.",
      "lessons": [
       "y10/7",
-      "y10/1",
-      "y10/2"
+      "y10/2",
+      "y10/6"
      ]
     },
     {
@@ -162,24 +167,22 @@
      "n": 8,
      "text": "2.8 Large molecules built from basic units: sugars, amino acids, fatty acids and glycerol.",
      "lessons": [
-      "y10/5",
-      "y10/75"
+      "y10/5"
      ]
     },
     {
      "n": 9,
      "text": "2.9 Practical: test food samples for glucose, starch, protein and fat.",
      "lessons": [
-      "y10/73",
-      "y10/5",
-      "y10/75"
+      "y10/5"
      ]
     },
     {
      "n": 10,
      "text": "2.10 Enzymes are biological catalysts in metabolic reactions.",
      "lessons": [
-      "y10/4"
+      "y10/4",
+      "y10/31"
      ]
     },
     {
@@ -187,16 +190,16 @@
      "text": "2.11 Temperature affects enzyme function, including changes to active site shape.",
      "lessons": [
       "y10/4",
-      "y10/76",
-      "y10/34"
+      "y10/116",
+      "y10/128"
      ]
     },
     {
      "n": 12,
      "text": "2.12 Practical: effect of temperature on enzyme activity.",
      "lessons": [
+      "y11/123",
       "y10/4",
-      "y10/73",
       "y10/78"
      ]
     },
@@ -205,13 +208,15 @@
      "text": "2.13 pH changes alter the active site and so enzyme function.",
      "lessons": [
       "y10/4",
-      "y10/84"
+      "y10/116",
+      "y10/121"
      ]
     },
     {
      "n": 14,
      "text": "2.14B Practical: effect of pH on enzyme activity.",
      "lessons": [
+      "y11/123",
       "y10/4"
      ]
     },
@@ -219,16 +224,16 @@
      "n": 15,
      "text": "2.15 Diffusion, osmosis and active transport move substances into and out of cells.",
      "lessons": [
-      "y10/76",
       "y10/6",
-      "y10/2"
+      "y10/112",
+      "y11/87"
      ]
     },
     {
      "n": 16,
      "text": "2.16 Rate of movement depends on surface area to volume ratio, distance, temperature, concentration gradient.",
      "lessons": [
-      "y10/76"
+      "y10/6"
      ]
     },
     {
@@ -236,40 +241,39 @@
      "text": "2.17 Practical: diffusion and osmosis in living and non-living systems.",
      "lessons": [
       "y10/6",
-      "y10/76",
-      "y10/4"
+      "y10/112",
+      "y11/87"
      ]
     },
     {
      "n": 18,
      "text": "2.18 Photosynthesis converts light energy to chemical energy and why it matters.",
      "lessons": [
-      "y10/23"
+      "y10/23",
+      "y10/124"
      ]
     },
     {
      "n": 19,
      "text": "2.19 Word and balanced symbol equations for photosynthesis.",
      "lessons": [
-      "y10/23",
-      "y10/36"
+      "y10/105"
      ]
     },
     {
      "n": 20,
      "text": "2.20 Carbon dioxide concentration, light intensity and temperature affect photosynthesis rate.",
      "lessons": [
-      "y10/77",
-      "y10/23",
-      "y10/76"
+      "y10/116",
+      "y10/78"
      ]
     },
     {
      "n": 21,
      "text": "2.21 Leaf structure and how it is adapted for photosynthesis.",
      "lessons": [
+      "y10/24",
       "y10/1",
-      "y10/77",
       "y10/2"
      ]
     },
@@ -277,8 +281,7 @@
      "n": 22,
      "text": "2.22 Mineral ions: magnesium for chlorophyll, nitrate for amino acids.",
      "lessons": [
-      "y10/24",
-      "y10/25"
+      "y10/24"
      ]
     },
     {
@@ -313,17 +316,13 @@
     {
      "n": 27,
      "text": "2.27 Structure and function of the human alimentary canal and pancreas.",
-     "lessons": [
-      "y10/26",
-      "y10/28"
-     ]
+     "lessons": []
     },
     {
      "n": 28,
      "text": "2.28 Peristalsis moves food through the gut.",
      "lessons": [
-      "y10/26",
-      "y10/74"
+      "y10/26"
      ]
     },
     {
@@ -337,30 +336,33 @@
      "n": 30,
      "text": "2.30 Bile is made in the liver and stored in the gall bladder.",
      "lessons": [
-      "y10/75"
+      "y10/75",
+      "y10/118"
      ]
     },
     {
      "n": 31,
      "text": "2.31 Bile neutralises stomach acid and emulsifies lipids.",
      "lessons": [
-      "y10/75"
+      "y10/75",
+      "y10/118"
      ]
     },
     {
      "n": 32,
      "text": "2.32 Small intestine adaptations for absorption, including villus structure.",
      "lessons": [
-      "y10/26"
+      "y10/26",
+      "y10/118"
      ]
     },
     {
      "n": 33,
      "text": "2.33B Practical: energy content of a food sample.",
      "lessons": [
-      "y10/73",
-      "y10/5",
-      "y10/6"
+      "y10/145",
+      "y11/112",
+      "y10/5"
      ]
     },
     {
@@ -369,98 +371,81 @@
      "lessons": [
       "y10/1",
       "y10/6",
-      "y10/27"
+      "y11/31"
      ]
     },
     {
      "n": 35,
      "text": "2.35 ATP provides energy for cells.",
      "lessons": [
-      "y10/27"
+      "y11/92",
+      "y10/6"
      ]
     },
     {
      "n": 36,
      "text": "2.36 Differences between aerobic and anaerobic respiration.",
      "lessons": [
+      "y11/92",
       "y10/27",
-      "y11/71",
-      "y10/1"
+      "y10/129"
      ]
     },
     {
      "n": 37,
      "text": "2.37 Word and balanced symbol equations for aerobic respiration.",
      "lessons": [
-      "y10/23",
-      "y10/27"
+      "y10/105"
      ]
     },
     {
      "n": 38,
      "text": "2.38 Word equations for anaerobic respiration in plants and in animals.",
      "lessons": [
-      "y10/1",
-      "y10/23",
-      "y10/27"
+      "y10/1"
      ]
     },
     {
      "n": 39,
      "text": "2.39 Practical: carbon dioxide and heat released by respiring seeds or organisms.",
      "lessons": [
-      "y10/73",
-      "y10/77",
-      "y10/27"
+      "y10/106"
      ]
     },
     {
      "n": 40,
      "text": "2.40B Role of diffusion in plant gas exchange.",
      "lessons": [
-      "y10/24",
-      "y10/77",
       "y10/78"
      ]
     },
     {
      "n": 41,
      "text": "2.41B Gas exchange of carbon dioxide and oxygen linked to respiration and photosynthesis.",
-     "lessons": [
-      "y10/77",
-      "y10/27"
-     ]
+     "lessons": []
     },
     {
      "n": 42,
      "text": "2.42B Leaf structure adaptations for gas exchange.",
      "lessons": [
-      "y10/24",
-      "y10/77",
-      "y10/1"
+      "y10/2",
+      "y10/78"
      ]
     },
     {
      "n": 43,
      "text": "2.43B Role of stomata in gas exchange.",
-     "lessons": [
-      "y10/24"
-     ]
+     "lessons": []
     },
     {
      "n": 44,
      "text": "2.44B Respiration continues day and night; net gas exchange depends on light intensity.",
-     "lessons": [
-      "y10/77"
-     ]
+     "lessons": []
     },
     {
      "n": 45,
      "text": "2.45B Practical: light and net gas exchange from a leaf using hydrogen-carbonate indicator.",
-     "lessons": [
-      "y10/77",
-      "y10/24"
-     ]
+     "lessons": []
     },
     {
      "n": 46,
@@ -479,63 +464,62 @@
     {
      "n": 48,
      "text": "2.48 Alveoli adaptations for gas exchange by diffusion with blood capillaries.",
-     "lessons": [
-      "y10/28"
-     ]
+     "lessons": []
     },
     {
      "n": 49,
      "text": "2.49 Biological effects of smoking on lungs and circulation, including coronary heart disease.",
      "lessons": [
+      "y10/109",
       "y10/30"
      ]
     },
     {
      "n": 50,
      "text": "2.50 Practical: human breathing, carbon dioxide release and effect of exercise.",
-     "lessons": [
-      "y10/27",
-      "y10/77"
-     ]
+     "lessons": []
     },
     {
      "n": 51,
      "text": "2.51 Unicellular organisms can rely on diffusion for exchanging substances.",
      "lessons": [
-      "y10/76"
+      "y10/76",
+      "y10/6"
      ]
     },
     {
      "n": 52,
      "text": "2.52 Multicellular organisms need a transport system.",
      "lessons": [
-      "y10/6",
-      "y10/25",
-      "y10/29"
+      "y10/76",
+      "y11/87",
+      "y10/1"
      ]
     },
     {
      "n": 53,
      "text": "2.53 Phloem carries sucrose and amino acids between leaves and other parts.",
      "lessons": [
-      "y10/25"
+      "y10/114",
+      "y11/87"
      ]
     },
     {
      "n": 54,
      "text": "2.54 Xylem carries water and mineral ions from roots to the rest of the plant.",
      "lessons": [
+      "y11/87",
       "y10/25",
-      "y10/24"
+      "y10/114"
      ]
     },
     {
      "n": 55,
      "text": "2.55B How root hair cells absorb water.",
      "lessons": [
+      "y11/87",
       "y10/2",
-      "y10/7",
-      "y10/23"
+      "y10/6"
      ]
     },
     {
@@ -544,7 +528,7 @@
      "lessons": [
       "y10/78",
       "y11/69",
-      "y10/25"
+      "y11/47"
      ]
     },
     {
@@ -558,7 +542,6 @@
      "n": 58,
      "text": "2.58B Practical: environmental factors and transpiration from a leafy shoot.",
      "lessons": [
-      "y10/25",
       "y10/78"
      ]
     },
@@ -581,7 +564,9 @@
      "n": 61,
      "text": "2.61 Red blood cell adaptations for oxygen transport: shape, no nucleus, haemoglobin.",
      "lessons": [
-      "y10/79"
+      "y10/79",
+      "y10/29",
+      "y11/87"
      ]
     },
     {
@@ -594,9 +579,7 @@
     {
      "n": 63,
      "text": "2.63B Vaccination produces memory cells for faster, greater antibody production later.",
-     "lessons": [
-      "y10/29"
-     ]
+     "lessons": []
     },
     {
      "n": 64,
@@ -633,7 +616,6 @@
      "text": "2.68 Structure of arteries, veins and capillaries related to function.",
      "lessons": [
       "y10/30",
-      "y10/34",
       "y10/81"
      ]
     },
@@ -641,31 +623,23 @@
      "n": 69,
      "text": "2.69 General circulation layout, including vessels to heart, lungs, liver and kidneys.",
      "lessons": [
-      "y10/30",
-      "y10/31"
+      "y10/30"
      ]
     },
     {
      "n": 70,
      "text": "2.70 Carbon dioxide and oxygen as plant waste products, lost through stomata.",
-     "lessons": [
-      "y10/77",
-      "y10/27"
-     ]
+     "lessons": []
     },
     {
      "n": 71,
      "text": "2.71 Excretory products of lungs, kidneys and skin.",
-     "lessons": [
-      "y10/31"
-     ]
+     "lessons": []
     },
     {
      "n": 72,
      "text": "2.72B How the kidney excretes waste and regulates water (osmoregulation).",
-     "lessons": [
-      "y10/31"
-     ]
+     "lessons": []
     },
     {
      "n": 73,
@@ -694,7 +668,6 @@
      "n": 76,
      "text": "2.76B Water reabsorption into blood from the collecting duct.",
      "lessons": [
-      "y10/31",
       "y10/82"
      ]
     },
@@ -708,71 +681,65 @@
     {
      "n": 78,
      "text": "2.78B ADH regulates the water content of the blood.",
-     "lessons": [
-      "y10/31",
-      "y10/73"
-     ]
+     "lessons": []
     },
     {
      "n": 79,
      "text": "2.79B Urine contains water, urea and ions.",
      "lessons": [
-      "y10/31",
-      "y10/43",
-      "y10/25"
+      "y10/82"
      ]
     },
     {
      "n": 80,
      "text": "2.80 Organisms respond to changes in their environment.",
      "lessons": [
-      "y10/34",
       "y11/3",
-      "y11/29"
+      "y11/29",
+      "y10/4"
      ]
     },
     {
      "n": 81,
      "text": "2.81 Homeostasis keeps internal conditions constant; water content and temperature are examples.",
      "lessons": [
-      "y10/34"
+      "y10/34",
+      "y10/114",
+      "y11/97"
      ]
     },
     {
      "n": 82,
      "text": "2.82 A co-ordinated response needs a stimulus, receptor and effector.",
      "lessons": [
-      "y10/32"
+      "y10/32",
+      "y11/96"
      ]
     },
     {
      "n": 83,
      "text": "2.83 Plants respond to stimuli.",
-     "lessons": [
-      "y10/33"
-     ]
+     "lessons": []
     },
     {
      "n": 84,
      "text": "2.84 Geotropic and phototropic responses of roots and stems.",
      "lessons": [
-      "y10/7",
-      "y10/33"
+      "y10/111",
+      "y10/7"
      ]
     },
     {
      "n": 85,
      "text": "2.85 Auxin's role in the phototropic response of stems.",
      "lessons": [
-      "y10/33"
+      "y10/111"
      ]
     },
     {
      "n": 86,
      "text": "2.86 Nervous and hormonal communication compared.",
-     "lessons": [
-      "y10/33"
-     ]
+     "lessons": []
     },
     {
      "n": 87,
@@ -798,48 +765,39 @@
     {
      "n": 90,
      "text": "2.90 Reflex arc structure and function, illustrated by withdrawing a finger from heat.",
-     "lessons": [
-      "y10/26",
-      "y10/32",
-      "y10/34"
-     ]
+     "lessons": []
     },
     {
      "n": 91,
      "text": "2.91 Structure and function of the eye as a receptor.",
      "lessons": [
-      "y10/32",
       "y10/83",
-      "y10/1"
+      "y10/1",
+      "y10/2"
      ]
     },
     {
      "n": 92,
      "text": "2.92 The eye focusing on near and distant objects and responding to light intensity.",
-     "lessons": [
-      "y10/84"
-     ]
+     "lessons": []
     },
     {
      "n": 93,
      "text": "2.93 Skin and temperature regulation: sweating, vasoconstriction, vasodilation.",
      "lessons": [
-      "y10/34"
+      "y10/34",
+      "y11/97"
      ]
     },
     {
      "n": 94,
      "text": "2.94 Sources, roles and effects of adrenaline, insulin, testosterone, progesterone and oestrogen.",
-     "lessons": [
-      "y10/33"
-     ]
+     "lessons": []
     },
     {
      "n": 95,
      "text": "2.95B Sources, roles and effects of ADH, FSH and LH.",
-     "lessons": [
-      "y10/24"
-     ]
+     "lessons": []
     }
    ]
   },
@@ -852,6 +810,7 @@
    "covered": 39,
    "total": 39,
    "lessons": [
+    "y10/106",
     "y11/21",
     "y11/22",
     "y11/23",
@@ -863,7 +822,11 @@
     "y11/29",
     "y11/64",
     "y11/65",
-    "y11/66"
+    "y11/66",
+    "y11/107",
+    "y11/108",
+    "y11/111",
+    "y11/133"
    ],
    "points": [
     {
@@ -878,6 +841,7 @@
      "n": 2,
      "text": "3.2 Fertilisation fuses male and female gametes to form a zygote that develops into an embryo.",
      "lessons": [
+      "y11/107",
       "y11/22",
       "y11/23"
      ]
@@ -901,6 +865,7 @@
      "text": "3.5 Practical: conditions needed for seed germination.",
      "lessons": [
       "y11/22",
+      "y10/106",
       "y11/64"
      ]
     },
@@ -1003,8 +968,8 @@
      "text": "3.19 Alleles are alternative forms of a gene causing inherited differences.",
      "lessons": [
       "y11/66",
-      "y11/25",
-      "y11/28"
+      "y11/108",
+      "y11/133"
      ]
     },
     {
@@ -1036,8 +1001,8 @@
      "text": "3.23 Monohybrid inheritance shown with genetic diagrams.",
      "lessons": [
       "y11/66",
-      "y11/21",
-      "y11/24"
+      "y11/108",
+      "y11/21"
      ]
     },
     {
@@ -1067,9 +1032,9 @@
      "n": 27,
      "text": "3.27 Sex of offspring at fertilisation shown with a genetic diagram.",
      "lessons": [
+      "y11/107",
       "y11/21",
-      "y11/28",
-      "y11/66"
+      "y11/28"
      ]
     },
     {
@@ -1077,6 +1042,7 @@
      "text": "3.28 Mitosis of a diploid cell gives two cells with identical chromosome sets.",
      "lessons": [
       "y11/27",
+      "y11/111",
       "y11/21"
      ]
     },
@@ -1091,7 +1057,8 @@
      "n": 30,
      "text": "3.30 Meiosis gives four genetically different haploid gametes with half the chromosomes.",
      "lessons": [
-      "y11/27"
+      "y11/27",
+      "y11/111"
      ]
     },
     {
@@ -1099,30 +1066,33 @@
      "text": "3.31 Random fertilisation produces genetic variation in offspring.",
      "lessons": [
       "y11/28",
-      "y11/21"
+      "y11/21",
+      "y11/111"
      ]
     },
     {
      "n": 32,
      "text": "3.32 Human diploid number is 46 and haploid number is 23.",
      "lessons": [
-      "y11/27"
+      "y11/27",
+      "y11/111"
      ]
     },
     {
      "n": 33,
      "text": "3.33 Variation can be genetic, environmental or both.",
      "lessons": [
-      "y11/28"
+      "y11/28",
+      "y11/111"
      ]
     },
     {
      "n": 34,
      "text": "3.34 Mutation is a rare, random, inheritable change in genetic material.",
      "lessons": [
+      "y11/111",
       "y11/28",
-      "y11/24",
-      "y11/65"
+      "y11/24"
      ]
     },
     {
@@ -1137,7 +1107,8 @@
      "text": "3.36B Most mutations have no effect, some small, rarely a significant effect.",
      "lessons": [
       "y11/28",
-      "y11/65"
+      "y11/65",
+      "y11/111"
      ]
     },
     {
@@ -1158,7 +1129,8 @@
      "n": 39,
      "text": "3.39 How antibiotic resistance increases in bacteria and makes infections hard to control.",
      "lessons": [
-      "y11/29"
+      "y11/29",
+      "y11/111"
      ]
     }
    ]
@@ -1172,6 +1144,7 @@
    "covered": 18,
    "total": 18,
    "lessons": [
+    "y10/145",
     "y11/1",
     "y11/2",
     "y11/3",
@@ -1183,7 +1156,10 @@
     "y11/67",
     "y11/68",
     "y11/69",
-    "y11/70"
+    "y11/70",
+    "y11/112",
+    "y11/118",
+    "y11/134"
    ],
    "points": [
     {
@@ -1191,7 +1167,8 @@
      "text": "4.1 Meaning of population, community, habitat and ecosystem.",
      "lessons": [
       "y11/1",
-      "y11/30"
+      "y10/145",
+      "y11/112"
      ]
     },
     {
@@ -1199,8 +1176,8 @@
      "text": "4.2 Practical: compare population size of an organism in two areas using quadrats.",
      "lessons": [
       "y11/1",
-      "y11/30",
-      "y11/2"
+      "y10/145",
+      "y11/30"
      ]
     },
     {
@@ -1238,7 +1215,8 @@
      "text": "4.7 Food chains, food webs, and pyramids of number, biomass and energy transfer.",
      "lessons": [
       "y11/3",
-      "y11/4"
+      "y11/4",
+      "y11/112"
      ]
     },
     {
@@ -1246,7 +1224,8 @@
      "text": "4.8 Transfer of substances and energy along a food chain.",
      "lessons": [
       "y11/4",
-      "y11/3"
+      "y11/112",
+      "y10/145"
      ]
     },
     {
@@ -1254,8 +1233,8 @@
      "text": "4.9 Why only about 10% of energy passes to the next trophic level.",
      "lessons": [
       "y11/4",
-      "y11/3",
-      "y11/67"
+      "y11/134",
+      "y10/145"
      ]
     },
     {
@@ -1286,6 +1265,7 @@
      "text": "4.13 Greenhouse gases: water vapour, carbon dioxide, nitrous oxide, methane and CFCs.",
      "lessons": [
       "y11/68",
+      "y11/118",
       "y11/69"
      ]
     },
@@ -1302,7 +1282,8 @@
      "n": 15,
      "text": "4.15 Enhanced greenhouse effect, global warming and its consequences.",
      "lessons": [
-      "y11/69"
+      "y11/69",
+      "y11/118"
      ]
     },
     {
@@ -1346,7 +1327,9 @@
     "y11/33",
     "y11/34",
     "y11/35",
-    "y11/71"
+    "y11/71",
+    "y11/115",
+    "y11/134"
    ],
    "points": [
     {
@@ -1368,14 +1351,16 @@
      "n": 3,
      "text": "5.3 Fertiliser use can increase crop yield.",
      "lessons": [
-      "y11/31"
+      "y11/31",
+      "y11/115"
      ]
     },
     {
      "n": 4,
      "text": "5.4 Reasons for pest control; pesticides versus biological control, with advantages and disadvantages.",
      "lessons": [
-      "y11/31"
+      "y11/31",
+      "y11/115"
      ]
     },
     {
@@ -1383,7 +1368,8 @@
      "text": "5.5 Yeast in food production, including bread.",
      "lessons": [
       "y11/32",
-      "y11/35"
+      "y11/35",
+      "y11/134"
      ]
     },
     {
@@ -1404,7 +1390,8 @@
      "n": 8,
      "text": "5.8 Industrial fermenter and the conditions needed: aseptic, nutrients, temperature, pH, oxygen, agitation.",
      "lessons": [
-      "y11/32"
+      "y11/32",
+      "y11/134"
      ]
     },
     {
@@ -1418,14 +1405,16 @@
      "n": 10,
      "text": "5.10 Selective breeding develops plants with desired characteristics.",
      "lessons": [
-      "y11/33"
+      "y11/33",
+      "y11/115"
      ]
     },
     {
      "n": 11,
      "text": "5.11 Selective breeding develops animals with desired characteristics.",
      "lessons": [
-      "y11/33"
+      "y11/33",
+      "y11/115"
      ]
     },
     {
@@ -1446,6 +1435,7 @@
      "n": 14,
      "text": "5.14 Human insulin made by genetically modified bacteria in a fermenter.",
      "lessons": [
+      "y11/115",
       "y11/34"
      ]
     },
@@ -1453,14 +1443,17 @@
      "n": 15,
      "text": "5.15 Genetically modified plants can improve food production.",
      "lessons": [
-      "y11/35"
+      "y11/35",
+      "y11/134",
+      "y11/115"
      ]
     },
     {
      "n": 16,
      "text": "5.16 Transgenic means transferring genetic material between species.",
      "lessons": [
-      "y11/35"
+      "y11/35",
+      "y11/115"
      ]
     },
     {
@@ -1488,6 +1481,7 @@
      "n": 20,
      "text": "5.20B Cloned transgenic animals can produce human proteins.",
      "lessons": [
+      "y11/115",
       "y11/35"
      ]
     }
@@ -1498,11 +1492,10 @@
    "title": "Principles of chemistry",
    "year": "Y10",
    "paper": "Chemistry Paper 1 and Paper 2; Science (Double Award) Chemistry Paper 1",
-   "status": "covered",
-   "covered": 60,
+   "status": "partial",
+   "covered": 59,
    "total": 60,
    "lessons": [
-    "y10/6",
     "y10/8",
     "y10/9",
     "y10/10",
@@ -1519,22 +1512,31 @@
     "y10/41",
     "y10/42",
     "y10/43",
-    "y10/46",
     "y10/47",
-    "y10/48",
-    "y10/50",
-    "y10/73",
+    "y10/49",
     "y10/85",
     "y10/86",
     "y10/87",
     "y10/88",
-    "y10/89",
-    "y10/92",
+    "y10/91",
+    "y10/105",
+    "y10/119",
+    "y10/124",
+    "y10/125",
+    "y10/131",
+    "y10/132",
+    "y10/133",
+    "y10/142",
     "y11/8",
-    "y11/31",
     "y11/47",
     "y11/74",
-    "y11/76"
+    "y11/76",
+    "y11/88",
+    "y11/98",
+    "y11/110",
+    "y11/125",
+    "y11/128",
+    "y11/137"
    ],
    "points": [
     {
@@ -1566,8 +1568,8 @@
      "text": "1.4 Meaning of solvent, solute, solution and saturated solution.",
      "lessons": [
       "y10/35",
-      "y10/86",
-      "y10/92"
+      "y10/131",
+      "y10/86"
      ]
     },
     {
@@ -1589,9 +1591,9 @@
      "n": 7,
      "text": "1.7C Practical: solubility of a solid in water at a set temperature.",
      "lessons": [
-      "y10/92",
       "y10/8",
-      "y10/73"
+      "y10/91",
+      "y10/125"
      ]
     },
     {
@@ -1607,9 +1609,9 @@
      "n": 9,
      "text": "1.9 Pure substances have fixed melting and boiling points; mixtures melt or boil over a range.",
      "lessons": [
+      "y10/131",
       "y10/9",
-      "y10/10",
-      "y10/89"
+      "y10/10"
      ]
     },
     {
@@ -1648,17 +1650,17 @@
      "text": "1.14 Meaning of atom and molecule.",
      "lessons": [
       "y10/13",
-      "y10/37",
-      "y10/40"
+      "y10/40",
+      "y11/88"
      ]
     },
     {
      "n": 15,
      "text": "1.15 Atom structure: positions, relative masses and charges of sub-atomic particles.",
      "lessons": [
+      "y10/132",
       "y10/12",
-      "y10/36",
-      "y10/13"
+      "y10/133"
      ]
     },
     {
@@ -1667,7 +1669,7 @@
      "lessons": [
       "y10/12",
       "y10/13",
-      "y10/36"
+      "y10/124"
      ]
     },
     {
@@ -1676,15 +1678,14 @@
      "lessons": [
       "y10/13",
       "y10/36",
-      "y10/12"
+      "y10/124"
      ]
     },
     {
      "n": 18,
      "text": "1.18 Periodic Table arrangement by atomic number, in groups and periods.",
      "lessons": [
-      "y10/14",
-      "y10/39"
+      "y10/14"
      ]
     },
     {
@@ -1740,7 +1741,7 @@
      "n": 25,
      "text": "1.25 Word and balanced equations with state symbols, including for unfamiliar reactions.",
      "lessons": [
-      "y10/36"
+      "y10/105"
      ]
     },
     {
@@ -1748,35 +1749,35 @@
      "text": "1.26 Calculating relative formula mass (Mr) from Ar values.",
      "lessons": [
       "y10/36",
-      "y10/13",
-      "y10/37"
+      "y10/142",
+      "y10/124"
      ]
     },
     {
      "n": 27,
      "text": "1.27 The mole is the unit for amount of substance.",
      "lessons": [
-      "y10/36",
-      "y11/31",
-      "y10/38"
+      "y11/125",
+      "y11/137",
+      "y10/36"
      ]
     },
     {
      "n": 28,
      "text": "1.28 Calculations using amount of substance, Ar and Mr.",
      "lessons": [
+      "y11/137",
       "y10/36",
-      "y10/11",
-      "y10/38"
+      "y10/124"
      ]
     },
     {
      "n": 29,
      "text": "1.29 Reacting masses from experimental data and equations.",
      "lessons": [
-      "y10/36",
       "y10/37",
-      "y10/88"
+      "y10/133",
+      "y11/125"
      ]
     },
     {
@@ -1784,15 +1785,14 @@
      "text": "1.30 Calculating percentage yield.",
      "lessons": [
       "y10/37",
-      "y10/92",
-      "y10/13"
+      "y10/124",
+      "y10/133"
      ]
     },
     {
      "n": 31,
      "text": "1.31 Obtaining formulae experimentally: metal oxides, water, water of crystallisation.",
      "lessons": [
-      "y10/37",
       "y10/86",
       "y10/88"
      ]
@@ -1801,14 +1801,14 @@
      "n": 32,
      "text": "1.32 Meaning of empirical formula and molecular formula.",
      "lessons": [
-      "y10/37"
+      "y11/98"
      ]
     },
     {
      "n": 33,
      "text": "1.33 Calculating empirical and molecular formulae from experimental data.",
      "lessons": [
-      "y10/37"
+      "y11/98"
      ]
     },
     {
@@ -1816,37 +1816,36 @@
      "text": "1.34C Calculations with amount, volume and concentration (mol/dm3) of solution.",
      "lessons": [
       "y10/38",
-      "y10/48",
-      "y10/6"
+      "y11/137"
      ]
     },
     {
      "n": 35,
      "text": "1.35C Gas volume calculations using molar volume at room temperature and pressure.",
      "lessons": [
-      "y10/38"
+      "y10/38",
+      "y11/110"
      ]
     },
     {
      "n": 36,
      "text": "1.36 Practical: formula of a metal oxide by combustion or reduction.",
-     "lessons": [
-      "y10/37"
-     ]
+     "lessons": []
     },
     {
      "n": 37,
      "text": "1.37 Ions form by electron loss or gain.",
      "lessons": [
       "y10/39",
-      "y10/41",
-      "y10/46"
+      "y10/132",
+      "y10/41"
      ]
     },
     {
      "n": 38,
      "text": "1.38 Charges of Group 1, 2, 3 and 5, 6, 7 ions and listed named ions.",
      "lessons": [
+      "y11/128",
       "y10/39",
       "y10/85"
      ]
@@ -1856,17 +1855,17 @@
      "text": "1.39 Writing formulae for compounds formed from those ions.",
      "lessons": [
       "y10/39",
-      "y10/50",
-      "y10/37"
+      "y10/49",
+      "y10/119"
      ]
     },
     {
      "n": 40,
      "text": "1.40 Dot-and-cross diagrams for ionic compounds (outer electrons only, Groups 1 to 3, 5 to 7).",
      "lessons": [
-      "y10/39",
       "y10/40",
-      "y10/14"
+      "y10/14",
+      "y10/39"
      ]
     },
     {
@@ -1874,8 +1873,8 @@
      "text": "1.41 Ionic bonding as electrostatic attraction.",
      "lessons": [
       "y10/39",
-      "y10/41",
-      "y10/85"
+      "y11/137",
+      "y11/128"
      ]
     },
     {
@@ -1899,8 +1898,8 @@
      "text": "1.44 A covalent bond is a shared pair of electrons.",
      "lessons": [
       "y10/40",
-      "y10/41",
-      "y10/39"
+      "y11/137",
+      "y10/132"
      ]
     },
     {
@@ -1908,8 +1907,8 @@
      "text": "1.45 Covalent bonding as electrostatic attraction.",
      "lessons": [
       "y10/41",
-      "y10/39",
-      "y10/40"
+      "y11/137",
+      "y11/128"
      ]
     },
     {
@@ -1942,14 +1941,15 @@
      "text": "1.49 Giant covalent structures are solids with high melting and boiling points.",
      "lessons": [
       "y10/85",
-      "y10/9",
-      "y10/8"
+      "y11/128",
+      "y10/9"
      ]
     },
     {
      "n": 50,
      "text": "1.50 Diamond, graphite and C60 fullerene: structure explains conductivity and hardness.",
      "lessons": [
+      "y11/88",
       "y10/41"
      ]
     },
@@ -1958,15 +1958,14 @@
      "text": "1.51 Covalent compounds do not usually conduct electricity.",
      "lessons": [
       "y10/39",
-      "y10/40",
-      "y10/42"
+      "y11/88",
+      "y10/40"
      ]
     },
     {
      "n": 52,
      "text": "1.52C Representing a metallic lattice with a 2-D diagram.",
      "lessons": [
-      "y10/39",
       "y10/41"
      ]
     },
@@ -1976,7 +1975,7 @@
      "lessons": [
       "y10/41",
       "y10/39",
-      "y10/40"
+      "y11/137"
      ]
     },
     {
@@ -1993,8 +1992,8 @@
      "text": "1.55C Why covalent compounds do not conduct electricity.",
      "lessons": [
       "y10/39",
-      "y10/40",
-      "y10/42"
+      "y11/88",
+      "y10/40"
      ]
     },
     {
@@ -2009,7 +2008,8 @@
      "n": 57,
      "text": "1.57C Anion and cation mean negative and positive ions.",
      "lessons": [
-      "y10/50",
+      "y10/39",
+      "y10/119",
       "y10/85"
      ]
     },
@@ -2025,7 +2025,8 @@
      "n": 59,
      "text": "1.59C Ionic half-equations at electrodes; oxidation and reduction.",
      "lessons": [
-      "y10/42"
+      "y10/42",
+      "y11/137"
      ]
     },
     {
@@ -2042,12 +2043,10 @@
    "title": "Inorganic chemistry",
    "year": "Y10",
    "paper": "Chemistry Paper 1 and Paper 2; Science (Double Award) Chemistry Paper 1",
-   "status": "covered",
-   "covered": 50,
+   "status": "partial",
+   "covered": 42,
    "total": 50,
    "lessons": [
-    "y10/25",
-    "y10/37",
     "y10/43",
     "y10/44",
     "y10/45",
@@ -2056,15 +2055,23 @@
     "y10/48",
     "y10/49",
     "y10/50",
+    "y10/77",
+    "y10/88",
     "y10/89",
     "y10/90",
     "y10/91",
     "y10/92",
+    "y10/115",
+    "y10/122",
+    "y10/134",
+    "y10/135",
     "y11/11",
     "y11/24",
     "y11/68",
     "y11/69",
-    "y11/73"
+    "y11/73",
+    "y11/93",
+    "y11/94"
    ],
    "points": [
     {
@@ -2078,42 +2085,41 @@
      "n": 2,
      "text": "2.2 Differences in reactions with air and water show Group 1 reactivity trend.",
      "lessons": [
+      "y10/134",
       "y10/43",
-      "y10/44",
-      "y10/46"
+      "y10/44"
      ]
     },
     {
      "n": 3,
      "text": "2.3 Using Group 1 trends to predict other alkali metals.",
      "lessons": [
-      "y10/43",
-      "y10/44",
-      "y10/91"
+      "y10/122",
+      "y10/134",
+      "y10/43"
      ]
     },
     {
      "n": 4,
      "text": "2.4C Group 1 reactivity trend explained by electronic configuration.",
      "lessons": [
-      "y10/43",
-      "y10/44",
+      "y11/93",
+      "y10/134",
       "y10/47"
      ]
     },
     {
      "n": 5,
      "text": "2.5 Colours, states and physical property trends of chlorine, bromine and iodine.",
-     "lessons": [
-      "y10/43"
-     ]
+     "lessons": []
     },
     {
      "n": 6,
      "text": "2.6 Using Group 7 trends to predict other halogens.",
      "lessons": [
-      "y10/44",
-      "y10/43"
+      "y10/122",
+      "y10/134",
+      "y10/44"
      ]
     },
     {
@@ -2121,16 +2127,16 @@
      "text": "2.7 Halogen displacement reactions show the Group 7 reactivity trend.",
      "lessons": [
       "y10/44",
-      "y10/43",
-      "y10/46"
+      "y10/134",
+      "y10/122"
      ]
     },
     {
      "n": 8,
      "text": "2.8C Group 7 reactivity trend explained by electronic configuration.",
      "lessons": [
-      "y10/43",
-      "y10/44",
+      "y11/93",
+      "y10/134",
       "y10/47"
      ]
     },
@@ -2145,9 +2151,9 @@
      "n": 10,
      "text": "2.10 Finding percentage of oxygen in air using metals or non-metals.",
      "lessons": [
-      "y10/45",
       "y10/89",
-      "y10/37"
+      "y10/47",
+      "y10/90"
      ]
     },
     {
@@ -2161,16 +2167,13 @@
     {
      "n": 12,
      "text": "2.12 Carbon dioxide from thermal decomposition of metal carbonates, such as copper(II) carbonate.",
-     "lessons": [
-      "y10/45"
-     ]
+     "lessons": []
     },
     {
      "n": 13,
      "text": "2.13 Carbon dioxide is a greenhouse gas that may contribute to climate change.",
      "lessons": [
-      "y11/69",
-      "y10/45"
+      "y11/69"
      ]
     },
     {
@@ -2178,8 +2181,7 @@
      "text": "2.14 Practical: approximate percentage by volume of oxygen in air.",
      "lessons": [
       "y10/89",
-      "y10/45",
-      "y10/92"
+      "y10/45"
      ]
     },
     {
@@ -2187,25 +2189,24 @@
      "text": "2.15 Reactivity series from reactions with water and dilute acids.",
      "lessons": [
       "y10/46",
-      "y10/43",
-      "y10/48"
+      "y10/122",
+      "y10/134"
      ]
     },
     {
      "n": 16,
      "text": "2.16 Reactivity series from metal-metal oxide and metal-salt displacement reactions.",
      "lessons": [
+      "y10/122",
       "y10/46",
-      "y10/47",
-      "y10/43"
+      "y10/47"
      ]
     },
     {
      "n": 17,
      "text": "2.17 Order of reactivity: potassium to gold, eleven listed metals.",
      "lessons": [
-      "y10/46",
-      "y10/43",
+      "y11/93",
       "y10/90"
      ]
     },
@@ -2213,28 +2214,28 @@
      "n": 18,
      "text": "2.18 Conditions under which iron rusts.",
      "lessons": [
-      "y10/46"
+      "y10/134"
      ]
     },
     {
      "n": 19,
      "text": "2.19 Preventing rust: barrier methods, galvanising, sacrificial protection.",
      "lessons": [
-      "y10/46"
+      "y10/134"
      ]
     },
     {
      "n": 20,
      "text": "2.20 Oxidation, reduction, redox, oxidising and reducing agents, as oxygen or electron change.",
      "lessons": [
-      "y10/46"
+      "y10/115"
      ]
     },
     {
      "n": 21,
      "text": "2.21 Practical: dilute acids reacting with magnesium, zinc and iron.",
      "lessons": [
-      "y10/46"
+      "y10/134"
      ]
     },
     {
@@ -2249,8 +2250,7 @@
      "text": "2.23C Extraction method relates to reactivity: carbon for iron, electrolysis for aluminium.",
      "lessons": [
       "y10/47",
-      "y10/90",
-      "y10/46"
+      "y10/90"
      ]
     },
     {
@@ -2271,7 +2271,9 @@
      "n": 26,
      "text": "2.26C An alloy is a metal mixed with other elements.",
      "lessons": [
-      "y10/47"
+      "y10/47",
+      "y10/115",
+      "y10/122"
      ]
     },
     {
@@ -2291,26 +2293,22 @@
     {
      "n": 29,
      "text": "2.29 The pH scale 0 to 14 and its strong, weak, neutral ranges.",
-     "lessons": [
-      "y10/48"
-     ]
+     "lessons": []
     },
     {
      "n": 30,
      "text": "2.30 Universal indicator gives approximate pH of a solution.",
      "lessons": [
-      "y10/48",
-      "y10/49",
-      "y10/50"
+      "y10/91"
      ]
     },
     {
      "n": 31,
      "text": "2.31 Acids give hydrogen ions and alkalis give hydroxide ions in water.",
      "lessons": [
-      "y10/43",
-      "y10/48",
-      "y10/91"
+      "y10/135",
+      "y10/49",
+      "y10/50"
      ]
     },
     {
@@ -2318,16 +2316,17 @@
      "text": "2.32 Alkalis neutralise acids.",
      "lessons": [
       "y10/48",
-      "y10/91"
+      "y10/49",
+      "y10/135"
      ]
     },
     {
      "n": 33,
      "text": "2.33C Describe how to carry out an acid-alkali titration.",
      "lessons": [
-      "y10/48",
       "y10/91",
-      "y10/25"
+      "y10/88",
+      "y10/48"
      ]
     },
     {
@@ -2341,17 +2340,16 @@
      "n": 35,
      "text": "2.35 Acids and bases in terms of proton transfer.",
      "lessons": [
-      "y10/49",
-      "y11/24",
-      "y10/46"
+      "y11/94",
+      "y11/24"
      ]
     },
     {
      "n": 36,
      "text": "2.36 An acid is a proton donor; a base is a proton acceptor.",
      "lessons": [
-      "y10/49",
-      "y10/48"
+      "y10/135",
+      "y11/94"
      ]
     },
     {
@@ -2366,7 +2364,7 @@
      "n": 38,
      "text": "2.38 Metal oxides, hydroxides and ammonia act as bases; alkalis are soluble bases.",
      "lessons": [
-      "y10/43",
+      "y10/49",
       "y10/91"
      ]
     },
@@ -2374,27 +2372,25 @@
      "n": 39,
      "text": "2.39 Preparing a pure dry soluble salt from an insoluble reactant.",
      "lessons": [
-      "y10/49",
-      "y10/91",
-      "y10/92"
+      "y10/92",
+      "y10/91"
      ]
     },
     {
      "n": 40,
      "text": "2.40C Preparing a pure dry soluble salt from an acid and an alkali.",
      "lessons": [
-      "y10/49",
-      "y10/48",
-      "y10/91"
+      "y10/92",
+      "y10/91",
+      "y10/48"
      ]
     },
     {
      "n": 41,
      "text": "2.41C Preparing a pure dry insoluble salt from two soluble reactants.",
      "lessons": [
-      "y10/49",
-      "y10/91",
-      "y10/92"
+      "y10/92",
+      "y10/91"
      ]
     },
     {
@@ -2408,52 +2404,43 @@
     {
      "n": 43,
      "text": "2.43C Practical: pure dry lead(II) sulfate.",
-     "lessons": [
-      "y10/92"
-     ]
+     "lessons": []
     },
     {
      "n": 44,
      "text": "2.44 Tests for hydrogen, oxygen, carbon dioxide, ammonia and chlorine.",
      "lessons": [
-      "y10/45"
+      "y10/50",
+      "y10/77"
      ]
     },
     {
      "n": 45,
      "text": "2.45 How to carry out a flame test.",
-     "lessons": [
-      "y10/50"
-     ]
+     "lessons": []
     },
     {
      "n": 46,
      "text": "2.46 Flame colours for Li+, Na+, K+, Ca2+ and Cu2+.",
-     "lessons": [
-      "y10/50"
-     ]
+     "lessons": []
     },
     {
      "n": 47,
      "text": "2.47 Tests for NH4+, Cu2+, Fe2+ and Fe3+ with sodium hydroxide.",
-     "lessons": [
-      "y10/45"
-     ]
+     "lessons": []
     },
     {
      "n": 48,
      "text": "2.48 Tests for chloride, bromide, iodide, sulfate and carbonate ions.",
-     "lessons": [
-      "y10/50"
-     ]
+     "lessons": []
     },
     {
      "n": 49,
      "text": "2.49 Testing for water with anhydrous copper(II) sulfate.",
      "lessons": [
       "y11/73",
-      "y10/50",
-      "y10/92"
+      "y10/92",
+      "y10/50"
      ]
     },
     {
@@ -2474,25 +2461,27 @@
    "covered": 22,
    "total": 22,
    "lessons": [
-    "y10/73",
-    "y10/76",
     "y10/95",
-    "y11/12",
     "y11/36",
     "y11/37",
     "y11/38",
     "y11/39",
     "y11/40",
     "y11/47",
+    "y11/48",
     "y11/72",
     "y11/73",
-    "y11/76"
+    "y11/109",
+    "y11/113",
+    "y11/126",
+    "y11/138"
    ],
    "points": [
     {
      "n": 1,
      "text": "3.1 Exothermic reactions give out heat; endothermic reactions take heat in.",
      "lessons": [
+      "y11/113",
       "y11/36",
       "y11/37"
      ]
@@ -2509,8 +2498,8 @@
      "text": "3.3 Heat energy change from temperature change: Q = mcΔT.",
      "lessons": [
       "y11/72",
-      "y10/73",
-      "y11/47"
+      "y11/47",
+      "y11/48"
      ]
     },
     {
@@ -2518,8 +2507,8 @@
      "text": "3.4 Molar enthalpy change (ΔH) from heat energy change Q.",
      "lessons": [
       "y11/72",
-      "y11/36",
-      "y10/73"
+      "y11/113",
+      "y11/126"
      ]
     },
     {
@@ -2528,7 +2517,7 @@
      "lessons": [
       "y11/36",
       "y11/37",
-      "y11/39"
+      "y11/113"
      ]
     },
     {
@@ -2559,8 +2548,8 @@
      "n": 9,
      "text": "3.9 Experiments on surface area, concentration, temperature and catalyst effects on rate.",
      "lessons": [
+      "y11/109",
       "y11/38",
-      "y10/76",
       "y11/40"
      ]
     },
@@ -2568,8 +2557,8 @@
      "n": 10,
      "text": "3.10 Effects of surface area, concentration, gas pressure, temperature and catalyst on rate.",
      "lessons": [
+      "y11/109",
       "y11/38",
-      "y10/76",
       "y11/40"
      ]
     },
@@ -2577,16 +2566,17 @@
      "n": 11,
      "text": "3.11 Explaining rate changes using particle collision theory.",
      "lessons": [
-      "y11/38"
+      "y11/38",
+      "y11/109"
      ]
     },
     {
      "n": 12,
      "text": "3.12 A catalyst speeds a reaction and is unchanged at the end.",
      "lessons": [
+      "y11/109",
       "y11/39",
-      "y11/12",
-      "y11/76"
+      "y11/138"
      ]
     },
     {
@@ -2594,6 +2584,7 @@
      "text": "3.13 Catalysts give an alternative pathway with lower activation energy.",
      "lessons": [
       "y11/39",
+      "y11/109",
       "y11/37"
      ]
     },
@@ -2626,6 +2617,7 @@
      "text": "3.17 Some reactions are reversible, shown by the symbol ⇌.",
      "lessons": [
       "y11/40",
+      "y11/113",
       "y11/73"
      ]
     },
@@ -2679,10 +2671,11 @@
    "total": 50,
    "lessons": [
     "y10/10",
-    "y10/73",
-    "y10/74",
+    "y10/45",
+    "y10/49",
     "y10/86",
     "y10/88",
+    "y10/116",
     "y11/4",
     "y11/8",
     "y11/10",
@@ -2694,20 +2687,22 @@
     "y11/42",
     "y11/43",
     "y11/44",
-    "y11/47",
     "y11/68",
     "y11/74",
     "y11/75",
-    "y11/76"
+    "y11/76",
+    "y11/116",
+    "y11/119",
+    "y11/138"
    ],
    "points": [
     {
      "n": 1,
      "text": "4.1 A hydrocarbon contains only hydrogen and carbon.",
      "lessons": [
+      "y11/116",
       "y11/8",
-      "y11/12",
-      "y11/75"
+      "y11/12"
      ]
     },
     {
@@ -2716,14 +2711,15 @@
      "lessons": [
       "y11/8",
       "y11/74",
-      "y11/41"
+      "y11/116"
      ]
     },
     {
      "n": 3,
      "text": "4.3 Meaning of homologous series, functional group and isomerism.",
      "lessons": [
-      "y11/74"
+      "y11/74",
+      "y11/116"
      ]
     },
     {
@@ -2785,15 +2781,16 @@
      "n": 11,
      "text": "4.11 A fuel releases heat energy when burned.",
      "lessons": [
-      "y10/73",
-      "y11/4",
-      "y11/47"
+      "y10/45",
+      "y10/116",
+      "y11/4"
      ]
     },
     {
      "n": 12,
      "text": "4.12 Products of complete and incomplete combustion of hydrocarbons.",
      "lessons": [
+      "y11/119",
       "y11/11"
      ]
     },
@@ -2830,7 +2827,8 @@
      "n": 17,
      "text": "4.17 Catalytic cracking of long-chain alkanes (silica or alumina, 600-700 °C).",
      "lessons": [
-      "y11/12"
+      "y11/12",
+      "y11/138"
      ]
     },
     {
@@ -2846,16 +2844,16 @@
      "lessons": [
       "y11/8",
       "y11/74",
-      "y11/41"
+      "y11/116"
      ]
     },
     {
      "n": 20,
      "text": "4.20 Alkanes are saturated hydrocarbons; why.",
      "lessons": [
-      "y11/8",
-      "y11/12",
-      "y11/13"
+      "y11/138",
+      "y11/116",
+      "y11/8"
      ]
     },
     {
@@ -2877,25 +2875,27 @@
      "n": 23,
      "text": "4.23 Alkenes contain the functional group >C=C<.",
      "lessons": [
+      "y11/116",
       "y11/41",
-      "y11/75",
-      "y10/74"
+      "y11/75"
      ]
     },
     {
      "n": 24,
      "text": "4.24 General formula of alkenes.",
      "lessons": [
+      "y11/116",
       "y11/8",
-      "y11/41",
-      "y11/74"
+      "y11/41"
      ]
     },
     {
      "n": 25,
      "text": "4.25 Alkenes are unsaturated hydrocarbons; why.",
      "lessons": [
-      "y11/12"
+      "y11/12",
+      "y11/138",
+      "y11/116"
      ]
     },
     {
@@ -2909,7 +2909,8 @@
      "n": 27,
      "text": "4.27 Alkenes react with bromine to give dibromoalkanes.",
      "lessons": [
-      "y11/13"
+      "y11/13",
+      "y11/138"
      ]
     },
     {
@@ -2981,6 +2982,7 @@
      "text": "4.36C Carboxylic acid solutions reacting with metals and metal carbonates.",
      "lessons": [
       "y11/76",
+      "y10/49",
       "y10/88"
      ]
     },
@@ -2999,7 +3001,7 @@
      "lessons": [
       "y11/75",
       "y11/76",
-      "y10/74"
+      "y11/116"
      ]
     },
     {
@@ -3045,7 +3047,8 @@
      "text": "4.44 Addition polymers form by joining many monomers.",
      "lessons": [
       "y11/14",
-      "y11/44"
+      "y11/44",
+      "y11/119"
      ]
     },
     {
@@ -3107,19 +3110,23 @@
     "y10/18",
     "y10/19",
     "y10/20",
-    "y10/36",
     "y10/51",
     "y10/52",
     "y10/53",
     "y10/54",
     "y10/55",
+    "y10/62",
+    "y10/70",
     "y10/93",
     "y10/94",
     "y10/95",
-    "y11/16",
+    "y10/123",
     "y11/46",
     "y11/77",
-    "y11/82"
+    "y11/89",
+    "y11/90",
+    "y11/130",
+    "y11/139"
    ],
    "points": [
     {
@@ -3152,7 +3159,7 @@
      "lessons": [
       "y10/15",
       "y10/19",
-      "y11/16"
+      "y10/62"
      ]
     },
     {
@@ -3168,7 +3175,7 @@
      "lessons": [
       "y10/16",
       "y10/93",
-      "y10/54"
+      "y11/89"
      ]
     },
     {
@@ -3176,17 +3183,17 @@
      "text": "1.7 Plot and explain velocity-time graphs.",
      "lessons": [
       "y10/52",
-      "y10/15",
-      "y10/16"
+      "y10/16",
+      "y10/123"
      ]
     },
     {
      "n": 8,
      "text": "1.8 Acceleration from the gradient of a velocity-time graph.",
      "lessons": [
+      "y11/89",
       "y10/16",
-      "y10/15",
-      "y10/52"
+      "y10/15"
      ]
     },
     {
@@ -3194,8 +3201,8 @@
      "text": "1.9 Distance from the area under a velocity-time graph.",
      "lessons": [
       "y10/16",
-      "y10/15",
-      "y10/52"
+      "y11/89",
+      "y10/15"
      ]
     },
     {
@@ -3218,7 +3225,6 @@
      "n": 12,
      "text": "1.12 Types of force, such as gravitational or electrostatic.",
      "lessons": [
-      "y10/17",
       "y10/18",
       "y10/93"
      ]
@@ -3227,16 +3233,18 @@
      "n": 13,
      "text": "1.13 Vector quantities differ from scalar quantities.",
      "lessons": [
-      "y10/51"
+      "y10/17",
+      "y10/51",
+      "y10/16"
      ]
     },
     {
      "n": 14,
      "text": "1.14 Force is a vector quantity.",
      "lessons": [
-      "y10/51",
       "y10/17",
-      "y10/53"
+      "y10/51",
+      "y10/16"
      ]
     },
     {
@@ -3244,8 +3252,8 @@
      "text": "1.15 Resultant of forces acting along a line.",
      "lessons": [
       "y10/51",
-      "y10/15",
-      "y10/17"
+      "y10/17",
+      "y10/15"
      ]
     },
     {
@@ -3272,7 +3280,7 @@
      "lessons": [
       "y10/18",
       "y10/93",
-      "y11/82"
+      "y10/70"
      ]
     },
     {
@@ -3280,7 +3288,7 @@
      "text": "1.19 Stopping distance is thinking distance plus braking distance.",
      "lessons": [
       "y10/19",
-      "y10/16"
+      "y11/90"
      ]
     },
     {
@@ -3288,6 +3296,7 @@
      "text": "1.20 Factors affecting stopping distance: speed, mass, road condition, reaction time.",
      "lessons": [
       "y10/19",
+      "y11/90",
       "y10/93"
      ]
     },
@@ -3296,8 +3305,8 @@
      "text": "1.21 Forces on falling objects and why they reach terminal velocity.",
      "lessons": [
       "y10/52",
-      "y10/53",
-      "y10/93"
+      "y11/130",
+      "y10/53"
      ]
     },
     {
@@ -3305,7 +3314,8 @@
      "text": "1.22 Practical: extension against force for springs, wires and rubber bands.",
      "lessons": [
       "y10/94",
-      "y10/20"
+      "y10/20",
+      "y11/90"
      ]
     },
     {
@@ -3313,7 +3323,8 @@
      "text": "1.23 The initial linear region of a force-extension graph relates to Hooke's law.",
      "lessons": [
       "y10/94",
-      "y10/20"
+      "y10/20",
+      "y11/90"
      ]
     },
     {
@@ -3344,7 +3355,7 @@
      "text": "1.27P Conservation of momentum to find mass, velocity or momentum.",
      "lessons": [
       "y10/53",
-      "y10/36",
+      "y10/16",
       "y10/93"
      ]
     },
@@ -3354,7 +3365,7 @@
      "lessons": [
       "y10/54",
       "y10/93",
-      "y10/15"
+      "y11/139"
      ]
     },
     {
@@ -3378,7 +3389,8 @@
      "text": "1.31P Weight acts through the centre of gravity.",
      "lessons": [
       "y10/55",
-      "y10/52"
+      "y10/17",
+      "y10/18"
      ]
     },
     {
@@ -3409,7 +3421,6 @@
    "lessons": [
     "y10/39",
     "y10/42",
-    "y10/46",
     "y10/47",
     "y10/56",
     "y10/57",
@@ -3417,14 +3428,18 @@
     "y10/59",
     "y10/60",
     "y10/61",
-    "y10/69",
     "y10/96",
     "y10/97",
     "y10/98",
     "y10/99",
-    "y10/104",
+    "y10/107",
+    "y10/108",
+    "y10/125",
+    "y10/132",
     "y11/52",
-    "y11/81"
+    "y11/54",
+    "y11/81",
+    "y11/130"
    ],
    "points": [
     {
@@ -3459,9 +3474,9 @@
      "n": 5,
      "text": "2.5 Energy transferred = current x voltage x time.",
      "lessons": [
-      "y10/58",
-      "y10/96",
-      "y10/57"
+      "y10/57",
+      "y10/60",
+      "y10/97"
      ]
     },
     {
@@ -3482,8 +3497,9 @@
      "n": 8,
      "text": "2.8 Series circuit current depends on voltage and on other components.",
      "lessons": [
+      "y10/108",
       "y10/58",
-      "y10/98"
+      "y10/96"
      ]
     },
     {
@@ -3504,7 +3520,8 @@
      "n": 11,
      "text": "2.11 Resistance of LDRs varies with light and of thermistors with temperature.",
      "lessons": [
-      "y10/59"
+      "y10/59",
+      "y11/130"
      ]
     },
     {
@@ -3518,16 +3535,15 @@
      "n": 13,
      "text": "2.13 Voltage = current x resistance (V = IR).",
      "lessons": [
-      "y10/58",
-      "y10/59",
-      "y10/96"
+      "y10/107",
+      "y10/108",
+      "y10/59"
      ]
     },
     {
      "n": 14,
      "text": "2.14 Current is the rate of flow of charge.",
      "lessons": [
-      "y10/96",
       "y10/60"
      ]
     },
@@ -3558,24 +3574,20 @@
      "n": 18,
      "text": "2.18 Voltage is the same across components connected in parallel.",
      "lessons": [
-      "y10/58",
-      "y10/98"
+      "y10/108"
      ]
     },
     {
      "n": 19,
      "text": "2.19 Calculating currents, voltages and resistances for two resistors in series.",
      "lessons": [
-      "y10/96",
-      "y10/98"
+      "y10/96"
      ]
     },
     {
      "n": 20,
      "text": "2.20 Voltage is energy transferred per unit charge; a volt is a joule per coulomb.",
      "lessons": [
-      "y10/96",
-      "y10/58",
       "y10/60"
      ]
     },
@@ -3583,9 +3595,8 @@
      "n": 21,
      "text": "2.21 Energy transferred = charge x voltage (E = QV).",
      "lessons": [
-      "y10/58",
-      "y10/96",
-      "y10/60"
+      "y10/60",
+      "y11/54"
      ]
     },
     {
@@ -3600,7 +3611,8 @@
      "text": "2.23P Practical: charging insulating materials by friction.",
      "lessons": [
       "y10/61",
-      "y10/99"
+      "y10/99",
+      "y10/125"
      ]
     },
     {
@@ -3608,7 +3620,7 @@
      "text": "2.24P Electrostatic charges produced by loss and gain of electrons.",
      "lessons": [
       "y10/39",
-      "y10/46",
+      "y10/132",
       "y10/47"
      ]
     },
@@ -3624,9 +3636,7 @@
      "n": 26,
      "text": "2.26P Explaining electrostatic phenomena through movement of electrons.",
      "lessons": [
-      "y10/69",
-      "y10/99",
-      "y10/104"
+      "y10/99"
      ]
     },
     {
@@ -3650,11 +3660,10 @@
    "title": "Waves",
    "year": "Y10",
    "paper": "Physics Paper 1 and Paper 2; Science (Double Award) Physics Paper 1",
-   "status": "covered",
-   "covered": 29,
+   "status": "partial",
+   "covered": 26,
    "total": 29,
    "lessons": [
-    "y10/60",
     "y10/62",
     "y10/63",
     "y10/64",
@@ -3666,7 +3675,12 @@
     "y10/101",
     "y10/102",
     "y10/103",
-    "y11/19"
+    "y10/110",
+    "y10/113",
+    "y10/115",
+    "y11/19",
+    "y11/99",
+    "y11/100"
    ],
    "points": [
     {
@@ -3680,8 +3694,9 @@
      "n": 2,
      "text": "3.2 Difference between longitudinal and transverse waves.",
      "lessons": [
-      "y10/62",
-      "y10/67"
+      "y11/99",
+      "y10/67",
+      "y10/64"
      ]
     },
     {
@@ -3695,8 +3710,8 @@
      "n": 4,
      "text": "3.4 Waves transfer energy and information, not matter.",
      "lessons": [
-      "y10/63",
-      "y10/60",
+      "y10/101",
+      "y10/62",
       "y10/69"
      ]
     },
@@ -3705,8 +3720,8 @@
      "text": "3.5 Wave speed = frequency x wavelength (v = fλ).",
      "lessons": [
       "y10/62",
-      "y10/63",
-      "y10/64"
+      "y11/99",
+      "y10/67"
      ]
     },
     {
@@ -3720,24 +3735,25 @@
      "n": 7,
      "text": "3.7 Using wave relationships for sound and electromagnetic waves.",
      "lessons": [
-      "y10/62",
-      "y10/64",
-      "y10/67"
+      "y10/110",
+      "y10/67",
+      "y10/100"
      ]
     },
     {
      "n": 8,
      "text": "3.8 Doppler effect: observed frequency and wavelength change for a moving source.",
      "lessons": [
-      "y11/19",
-      "y10/63"
+      "y10/63",
+      "y10/115",
+      "y11/19"
      ]
     },
     {
      "n": 9,
      "text": "3.9 All waves can be reflected and refracted.",
      "lessons": [
-      "y10/63",
+      "y10/103",
       "y10/65",
       "y10/66"
      ]
@@ -3752,16 +3768,14 @@
     {
      "n": 11,
      "text": "3.11 Order of the spectrum by wavelength and frequency, including visible colours.",
-     "lessons": [
-      "y10/64"
-     ]
+     "lessons": []
     },
     {
      "n": 12,
      "text": "3.12 Uses of each electromagnetic radiation, from radio waves to gamma rays.",
      "lessons": [
-      "y10/64",
-      "y10/101"
+      "y10/101",
+      "y10/64"
      ]
     },
     {
@@ -3775,18 +3789,18 @@
      "n": 14,
      "text": "3.14 Light waves are transverse and can be reflected and refracted.",
      "lessons": [
+      "y10/103",
       "y10/65",
-      "y10/66",
-      "y10/103"
+      "y10/66"
      ]
     },
     {
      "n": 15,
      "text": "3.15 Law of reflection: angle of incidence equals angle of reflection.",
      "lessons": [
+      "y10/103",
       "y10/65",
-      "y10/66",
-      "y10/103"
+      "y10/66"
      ]
     },
     {
@@ -3799,16 +3813,12 @@
     {
      "n": 17,
      "text": "3.17 Practical: refraction using rectangular blocks, semi-circular blocks and prisms.",
-     "lessons": [
-      "y10/102"
-     ]
+     "lessons": []
     },
     {
      "n": 18,
      "text": "3.18 Refractive index n = sin i / sin r.",
-     "lessons": [
-      "y10/102"
-     ]
+     "lessons": []
     },
     {
      "n": 19,
@@ -3816,7 +3826,7 @@
      "lessons": [
       "y10/102",
       "y10/103",
-      "y10/65"
+      "y10/66"
      ]
     },
     {
@@ -3824,7 +3834,8 @@
      "text": "3.20 Total internal reflection carries information in optical fibres and prisms.",
      "lessons": [
       "y10/66",
-      "y10/103"
+      "y10/103",
+      "y11/100"
      ]
     },
     {
@@ -3838,18 +3849,18 @@
      "n": 22,
      "text": "3.22 Critical angle and refractive index: sin c = 1/n.",
      "lessons": [
-      "y10/66",
       "y10/103",
-      "y10/65"
+      "y10/66",
+      "y10/113"
      ]
     },
     {
      "n": 23,
      "text": "3.23 Sound waves are longitudinal and can be reflected and refracted.",
      "lessons": [
-      "y10/62",
       "y10/63",
-      "y10/65"
+      "y10/67",
+      "y10/100"
      ]
     },
     {
@@ -3878,15 +3889,14 @@
      "text": "3.27P Practical: frequency of a sound wave using an oscilloscope.",
      "lessons": [
       "y10/67",
-      "y10/62",
-      "y10/100"
+      "y10/100",
+      "y10/63"
      ]
     },
     {
      "n": 28,
      "text": "3.28P Pitch relates to frequency of the source's vibration.",
      "lessons": [
-      "y10/63",
       "y10/100"
      ]
     },
@@ -3904,39 +3914,41 @@
    "title": "Energy resources and energy transfers",
    "year": "Y10",
    "paper": "Physics Paper 1 and Paper 2; Science (Double Award) Physics Paper 1",
-   "status": "covered",
-   "covered": 19,
+   "status": "partial",
+   "covered": 16,
    "total": 19,
    "lessons": [
     "y10/27",
     "y10/57",
-    "y10/58",
+    "y10/62",
     "y10/68",
     "y10/69",
     "y10/70",
     "y10/71",
     "y10/72",
-    "y10/104",
+    "y10/97",
+    "y10/120",
+    "y10/125",
     "y11/4",
     "y11/48",
     "y11/54",
-    "y11/82"
+    "y11/82",
+    "y11/104",
+    "y11/105"
    ],
    "points": [
     {
      "n": 1,
      "text": "4.1 Units: kg, J, m, m/s, m/s2, N, s and W.",
-     "lessons": [
-      "y10/104"
-     ]
+     "lessons": []
     },
     {
      "n": 2,
      "text": "4.2 Energy stores (chemical to nuclear) and transfers: mechanical, electrical, heating, radiation.",
      "lessons": [
       "y10/27",
-      "y10/68",
-      "y10/69"
+      "y10/72",
+      "y10/97"
      ]
     },
     {
@@ -3944,26 +3956,26 @@
      "text": "4.3 Use the principle of conservation of energy.",
      "lessons": [
       "y10/68",
-      "y10/58",
-      "y10/70"
+      "y10/70",
+      "y11/105"
      ]
     },
     {
      "n": 4,
      "text": "4.4 Efficiency = useful energy output / total energy output x 100%.",
      "lessons": [
-      "y10/68",
-      "y11/4",
-      "y11/54"
+      "y10/120",
+      "y11/104",
+      "y11/4"
      ]
     },
     {
      "n": 5,
      "text": "4.5 Explaining energy transfers in devices, including Sankey diagrams.",
      "lessons": [
-      "y10/68",
-      "y10/27",
-      "y10/58"
+      "y10/120",
+      "y11/104",
+      "y10/97"
      ]
     },
     {
@@ -3971,49 +3983,45 @@
      "text": "4.6 Thermal energy transfer by conduction, convection and radiation.",
      "lessons": [
       "y10/69",
-      "y10/104",
-      "y10/68"
+      "y11/104",
+      "y10/97"
      ]
     },
     {
      "n": 7,
      "text": "4.7 Role of convection in everyday phenomena.",
-     "lessons": [
-      "y10/104"
-     ]
+     "lessons": []
     },
     {
      "n": 8,
      "text": "4.8 Emission and absorption of radiation relate to surface and temperature.",
-     "lessons": [
-      "y10/104"
-     ]
+     "lessons": []
     },
     {
      "n": 9,
      "text": "4.9 Practical: thermal energy transfer by conduction, convection and radiation.",
      "lessons": [
       "y10/69",
-      "y10/104",
-      "y10/68"
+      "y11/104",
+      "y10/97"
      ]
     },
     {
      "n": 10,
      "text": "4.10 Reducing unwanted energy transfer, such as insulation.",
      "lessons": [
-      "y10/69",
-      "y11/48",
-      "y10/27"
+      "y10/125",
+      "y10/120",
+      "y11/48"
      ]
     },
     {
      "n": 11,
      "text": "4.11 Work done = force x distance moved in the force's direction.",
      "lessons": [
+      "y11/105",
       "y10/70",
-      "y10/71",
-      "y11/54"
+      "y10/62"
      ]
     },
     {
@@ -4022,7 +4030,7 @@
      "lessons": [
       "y10/70",
       "y10/71",
-      "y11/54"
+      "y11/105"
      ]
     },
     {
@@ -4030,7 +4038,7 @@
      "text": "4.13 Gravitational potential energy = mass x g x height.",
      "lessons": [
       "y10/70",
-      "y10/68",
+      "y11/105",
       "y11/82"
      ]
     },
@@ -4046,8 +4054,8 @@
      "text": "4.15 Conservation of energy links gravitational potential energy, kinetic energy and work.",
      "lessons": [
       "y10/70",
-      "y10/68",
-      "y10/58"
+      "y11/105",
+      "y10/68"
      ]
     },
     {
@@ -4055,14 +4063,15 @@
      "text": "4.16 Power is the rate of energy transfer or of doing work.",
      "lessons": [
       "y10/71",
-      "y10/57",
-      "y10/70"
+      "y11/105",
+      "y10/57"
      ]
     },
     {
      "n": 17,
      "text": "4.17 Power = work done / time taken.",
      "lessons": [
+      "y11/105",
       "y10/71",
       "y10/70"
      ]
@@ -4094,6 +4103,7 @@
    "total": 22,
    "lessons": [
     "y10/8",
+    "y10/69",
     "y10/85",
     "y10/89",
     "y11/45",
@@ -4104,7 +4114,9 @@
     "y11/50",
     "y11/72",
     "y11/77",
-    "y11/78"
+    "y11/78",
+    "y11/110",
+    "y11/137"
    ],
    "points": [
     {
@@ -4127,7 +4139,7 @@
      "lessons": [
       "y11/45",
       "y11/77",
-      "y11/50"
+      "y10/69"
      ]
     },
     {
@@ -4204,7 +4216,7 @@
      "lessons": [
       "y11/48",
       "y11/72",
-      "y11/78"
+      "y11/137"
      ]
     },
     {
@@ -4212,8 +4224,8 @@
      "text": "5.13P Change in thermal energy = mass x specific heat capacity x temperature change.",
      "lessons": [
       "y11/48",
-      "y11/72",
-      "y11/78"
+      "y11/137",
+      "y11/72"
      ]
     },
     {
@@ -4238,7 +4250,8 @@
      "text": "5.16 Absolute zero of temperature is -273 °C.",
      "lessons": [
       "y11/49",
-      "y11/78"
+      "y11/78",
+      "y11/110"
      ]
     },
     {
@@ -4299,14 +4312,15 @@
    "covered": 20,
    "total": 20,
    "lessons": [
-    "y10/88",
     "y11/51",
     "y11/52",
     "y11/53",
     "y11/54",
     "y11/55",
     "y11/79",
-    "y11/80"
+    "y11/80",
+    "y11/114",
+    "y11/140"
    ],
    "points": [
     {
@@ -4330,7 +4344,8 @@
      "text": "6.3 Properties of magnetically hard and soft materials.",
      "lessons": [
       "y11/51",
-      "y11/79"
+      "y11/79",
+      "y11/114"
      ]
     },
     {
@@ -4348,7 +4363,7 @@
      "lessons": [
       "y11/51",
       "y11/52",
-      "y11/53"
+      "y11/114"
      ]
     },
     {
@@ -4374,8 +4389,8 @@
      "text": "6.8 An electric current in a conductor produces a magnetic field.",
      "lessons": [
       "y11/54",
-      "y11/52",
-      "y11/53"
+      "y11/114",
+      "y11/52"
      ]
     },
     {
@@ -4408,30 +4423,33 @@
      "text": "6.12 Force on a current-carrying wire in a field; d.c. motors and loudspeakers.",
      "lessons": [
       "y11/53",
-      "y11/52"
+      "y11/114",
+      "y11/140"
      ]
     },
     {
      "n": 13,
      "text": "6.13 Left-hand rule predicts force direction on a wire perpendicular to the field.",
      "lessons": [
-      "y11/53"
+      "y11/53",
+      "y11/114"
      ]
     },
     {
      "n": 14,
      "text": "6.14 How the force on a conductor changes with field and current.",
      "lessons": [
+      "y11/114",
       "y11/53",
-      "y11/54",
-      "y10/88"
+      "y11/54"
      ]
     },
     {
      "n": 15,
      "text": "6.15 Voltage is induced when a conductor moves through a field or the field changes.",
      "lessons": [
-      "y11/54"
+      "y11/54",
+      "y11/114"
      ]
     },
     {
@@ -4484,7 +4502,7 @@
    "total": 26,
    "lessons": [
     "y10/12",
-    "y10/36",
+    "y10/105",
     "y11/17",
     "y11/56",
     "y11/57",
@@ -4493,13 +4511,17 @@
     "y11/60",
     "y11/61",
     "y11/81",
-    "y11/85"
+    "y11/85",
+    "y11/117",
+    "y11/120",
+    "y11/140"
    ],
    "points": [
     {
      "n": 1,
      "text": "7.1 Units: becquerel (Bq), cm, hour, minute and second.",
      "lessons": [
+      "y11/117",
       "y11/59"
      ]
     },
@@ -4509,7 +4531,7 @@
      "lessons": [
       "y11/56",
       "y10/12",
-      "y11/81"
+      "y11/117"
      ]
     },
     {
@@ -4525,6 +4547,7 @@
      "n": 4,
      "text": "7.4 Alpha, beta and gamma are ionising radiations from unstable nuclei, emitted randomly.",
      "lessons": [
+      "y11/117",
       "y11/57"
      ]
     },
@@ -4547,6 +4570,7 @@
      "text": "7.7 Effect on atomic and mass numbers of alpha, beta, gamma and neutron emission.",
      "lessons": [
       "y11/58",
+      "y11/117",
       "y11/56"
      ]
     },
@@ -4555,7 +4579,7 @@
      "text": "7.8 Balancing nuclear equations for mass and charge.",
      "lessons": [
       "y11/58",
-      "y10/36",
+      "y10/105",
       "y11/56"
      ]
     },
@@ -4579,21 +4603,26 @@
      "n": 11,
      "text": "7.11 Source activity falls over time and is measured in becquerels.",
      "lessons": [
-      "y11/59"
+      "y11/59",
+      "y11/117"
      ]
     },
     {
      "n": 12,
      "text": "7.12 Half-life definition; it differs between radioactive isotopes.",
      "lessons": [
-      "y11/59"
+      "y11/59",
+      "y11/117",
+      "y11/140"
      ]
     },
     {
      "n": 13,
      "text": "7.13 Simple half-life calculations on activity, including graphical methods.",
      "lessons": [
-      "y11/59"
+      "y11/59",
+      "y11/117",
+      "y11/140"
      ]
     },
     {
@@ -4647,6 +4676,7 @@
      "text": "7.20 A chain reaction occurs when released neutrons strike other uranium-235 nuclei.",
      "lessons": [
       "y11/61",
+      "y11/120",
       "y11/81"
      ]
     },
@@ -4654,6 +4684,7 @@
      "n": 21,
      "text": "7.21 Roles of control rods and moderator in fission.",
      "lessons": [
+      "y11/120",
       "y11/61"
      ]
     },
@@ -4670,7 +4701,7 @@
      "lessons": [
       "y11/61",
       "y11/81",
-      "y11/56"
+      "y11/120"
      ]
     },
     {
@@ -4678,8 +4709,8 @@
      "text": "7.24 Fusion joins small nuclei into larger ones, losing mass and releasing energy.",
      "lessons": [
       "y11/17",
-      "y11/61",
-      "y11/81"
+      "y11/120",
+      "y11/61"
      ]
     },
     {
@@ -4687,8 +4718,8 @@
      "text": "7.25 Fusion is the energy source of stars.",
      "lessons": [
       "y11/17",
-      "y11/61",
-      "y11/81"
+      "y11/120",
+      "y11/61"
      ]
     },
     {
@@ -4709,8 +4740,8 @@
    "covered": 18,
    "total": 18,
    "lessons": [
+    "y10/62",
     "y10/63",
-    "y10/104",
     "y11/15",
     "y11/16",
     "y11/18",
@@ -4721,7 +4752,9 @@
     "y11/82",
     "y11/83",
     "y11/84",
-    "y11/85"
+    "y11/85",
+    "y11/99",
+    "y11/121"
    ],
    "points": [
     {
@@ -4765,7 +4798,9 @@
      "n": 6,
      "text": "8.6 Orbital speed = 2 x pi x radius / time period.",
      "lessons": [
-      "y11/16"
+      "y11/16",
+      "y10/62",
+      "y11/121"
      ]
     },
     {
@@ -4780,7 +4815,6 @@
      "text": "8.8 A star's colour relates to its surface temperature.",
      "lessons": [
       "y11/18",
-      "y10/104",
       "y11/84"
      ]
     },
@@ -4789,7 +4823,8 @@
      "text": "8.9 Evolution of Sun-like stars: nebula, main sequence, red giant, white dwarf.",
      "lessons": [
       "y11/83",
-      "y11/84"
+      "y11/84",
+      "y11/121"
      ]
     },
     {
@@ -4849,7 +4884,8 @@
      "text": "8.17P Red-shift in light from galaxies at different distances.",
      "lessons": [
       "y11/63",
-      "y11/85"
+      "y11/85",
+      "y11/99"
      ]
     },
     {

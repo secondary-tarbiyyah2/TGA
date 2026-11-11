@@ -2,6 +2,7 @@
 
 import { useEffect, useState } from "react";
 import { callEdgeFunction, type EdgeResult } from "@/lib/learn/edge";
+import { loadFeatures } from "@/lib/learn/features";
 
 // Client side of the ai-assist Edge Function (supabase/functions/ai-assist).
 // Every AI result is a draft that staff check and edit; nothing here sends
@@ -12,17 +13,18 @@ export const AI_DISCLAIMER = "Drafted by AI from your notes. Check before sendin
 export type AiStatus = {
   configured: boolean;
   daily_limit?: number;
-  can: { report_comment: boolean; tarbiyah_note: boolean; message_triage: boolean; revision_questions?: boolean };
+  can: { report_comment: boolean; tarbiyah_note: boolean; message_triage: boolean; revision_questions?: boolean; quiz_questions?: boolean };
 };
 
-const OFF: AiStatus = { configured: false, can: { report_comment: false, tarbiyah_note: false, message_triage: false, revision_questions: false } };
+const OFF: AiStatus = { configured: false, can: { report_comment: false, tarbiyah_note: false, message_triage: false, revision_questions: false, quiz_questions: false } };
 
 let statusPromise: Promise<AiStatus> | null = null;
 
 /** Asks the server once per page load whether AI is set up and what this person may use. Parents and errors read as "off". */
 export function loadAiStatus(): Promise<AiStatus> {
   if (!statusPromise) {
-    statusPromise = callEdgeFunction("ai-assist", { task: "status" }).then((r) => (r.ok ? { configured: r.configured === true, daily_limit: typeof r.daily_limit === "number" ? r.daily_limit : undefined, can: { ...OFF.can, ...(r.can as AiStatus["can"]) } } : OFF));
+    // AI helpers switched off by the Headteacher (Settings, School features): every AI button stays hidden.
+    statusPromise = loadFeatures().then((f) => (f.ai_helpers ? callEdgeFunction("ai-assist", { task: "status" }) : ({ ok: false } as EdgeResult))).then((r) => (r.ok ? { configured: r.configured === true, daily_limit: typeof r.daily_limit === "number" ? r.daily_limit : undefined, can: { ...OFF.can, ...(r.can as AiStatus["can"]) } } : OFF));
     // A transient failure shouldn't hide AI for the rest of the session.
     statusPromise.then((s) => {
       if (!s.configured) setTimeout(() => (statusPromise = null), 60_000);
@@ -44,7 +46,7 @@ export function useAiStatus(): AiStatus | null {
   return status;
 }
 
-export function aiAssist(task: "report_comment" | "tarbiyah_note" | "triage_message" | "triage_batch" | "revision_questions", body: Record<string, unknown>): Promise<EdgeResult> {
+export function aiAssist(task: "report_comment" | "tarbiyah_note" | "triage_message" | "triage_batch" | "revision_questions" | "quiz_questions", body: Record<string, unknown>): Promise<EdgeResult> {
   return callEdgeFunction("ai-assist", { task, ...body });
 }
 
@@ -55,6 +57,7 @@ export function aiCheck(): Promise<EdgeResult> {
 
 const MESSAGES: Record<string, string> = {
   ai_not_configured: "AI is not set up yet.",
+  ai_switched_off: "The Headteacher has switched AI helpers off (Settings, School features).",
   ai_daily_limit: "The school's AI limit for today has been reached. It resets at midnight.",
   ai_failed: "The AI couldn't write a draft just now. Try again in a moment.",
   forbidden: "Your account can't use this AI helper.",
