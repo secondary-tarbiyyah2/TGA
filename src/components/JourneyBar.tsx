@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import { useEffect, useState } from "react";
 import { usePathname } from "next/navigation";
 import { Container } from "./Container";
 import { Icon } from "@/components/learn/Icon";
@@ -11,10 +12,41 @@ import { JOURNEY, journeyIndex, normalisePath } from "@/lib/siteJourney";
  * Apply) at the top of every page on a prospective family's path. It shows
  * where this page sits and links straight to the next step, so a family is
  * never left wondering where to go after reading a page.
+ *
+ * A step is ticked only once this visitor has opened it (owner, 11 Nov 2026:
+ * opening Open evenings straight away must not show Explore, Check the fit
+ * and Fees as done). Visited steps are remembered in this browser only.
  */
+const VISITED_KEY = "tga:journey-visited";
+
+function readVisited(): string[] {
+  try {
+    const v = JSON.parse(window.localStorage.getItem(VISITED_KEY) || "[]");
+    return Array.isArray(v) ? v.filter((x): x is string => typeof x === "string") : [];
+  } catch {
+    return [];
+  }
+}
+
 export function JourneyBar() {
   const path = normalisePath(usePathname() || "/");
   const at = journeyIndex(path);
+  const [visited, setVisited] = useState<string[]>([]);
+
+  useEffect(() => {
+    if (at === -1) return;
+    const key = JOURNEY[at].key;
+    const seen = readVisited();
+    const updated = seen.includes(key) ? seen : [...seen, key];
+    try {
+      window.localStorage.setItem(VISITED_KEY, JSON.stringify(updated));
+    } catch {
+      /* storage blocked: ticks just stay off */
+    }
+    // eslint-disable-next-line react-hooks/set-state-in-effect -- read the browser's record after mount (static export)
+    setVisited(updated);
+  }, [at]);
+
   if (at === -1) return null;
   const next = JOURNEY[at + 1];
 
@@ -24,10 +56,10 @@ export function JourneyBar() {
         <span className="hidden shrink-0 font-mono text-[0.7rem] font-semibold uppercase tracking-[0.18em] text-gold-700 md:inline">Your journey</span>
         <ol className="flex min-w-0 flex-1 items-center gap-1 overflow-x-auto [scrollbar-width:none]">
           {JOURNEY.map((s, i) => {
-            const state = i < at ? "done" : i === at ? "here" : "todo";
+            const state = i === at ? "here" : visited.includes(s.key) ? "done" : "todo";
             return (
               <li key={s.key} className="flex shrink-0 items-center gap-1">
-                {i > 0 && <span aria-hidden="true" className={`h-px w-4 sm:w-6 ${i <= at ? "bg-gold-500" : "bg-gold-light/70"}`} />}
+                {i > 0 && <span aria-hidden="true" className={`h-px w-4 sm:w-6 ${visited.includes(s.key) && visited.includes(JOURNEY[i - 1].key) ? "bg-gold-500" : "bg-gold-light/70"}`} />}
                 <Link
                   href={s.href}
                   aria-current={state === "here" ? "step" : undefined}
@@ -48,7 +80,7 @@ export function JourneyBar() {
                     {state === "done" ? <Icon name="check" size="sm" className="h-3 w-3" strokeWidth={2.5} /> : i + 1}
                   </span>
                   <span className={state === "here" ? "" : "hidden sm:inline"}>{s.label}</span>
-                  {state === "done" && <span className="sr-only"> (earlier step)</span>}
+                  {state === "done" && <span className="sr-only"> (visited)</span>}
                 </Link>
               </li>
             );
