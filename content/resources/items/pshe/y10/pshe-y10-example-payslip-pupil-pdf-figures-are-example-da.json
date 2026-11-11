@@ -1,0 +1,225 @@
+{
+ "id": "pshe-y10-example-payslip-pupil-pdf-figures-are-example-da",
+ "title": "Example payslip",
+ "type": "worksheet",
+ "subject": "PSHE",
+ "subjectSlug": "pshe",
+ "year": "y10",
+ "unit": "Summer 1: Money and choices",
+ "lessons": [
+  13
+ ],
+ "source": "Written for pshe/y10 lesson 13 (Example payslip (pupil PDF; figures are example data))",
+ "intro": "Lesson 13: Earning, budgeting and saving. Read the ideas from the lesson, then do the tasks.",
+ "blocks": [
+  {
+   "h": "Example payslip (made-up figures)"
+  },
+  {
+   "table": {
+    "head": [
+     "Item",
+     "Amount"
+    ],
+    "rows": [
+     [
+      "Employee",
+      "A. Khan (example)"
+     ],
+     [
+      "Pay period",
+      "Monthly"
+     ],
+     [
+      "Gross pay",
+      "£2,000.00"
+     ],
+     [
+      "Income Tax",
+      "£190.50"
+     ],
+     [
+      "National Insurance",
+      "£76.16"
+     ],
+     [
+      "Workplace pension (5%)",
+      "£100.00"
+     ],
+     [
+      "Net pay (take-home)",
+      "£1,633.34"
+     ]
+    ]
+   }
+  },
+  {
+   "questions": [
+    {
+     "q": "What is the difference between gross pay and net pay?",
+     "a": "Gross is before deductions; net is what you take home after tax, NI and pension.",
+     "marks": 2
+    },
+    {
+     "q": "Check the net pay: 2,000 - 190.50 - 76.16 - 100.",
+     "a": "£1,633.34",
+     "marks": 2
+    },
+    {
+     "q": "Name two things Income Tax pays for.",
+     "a": "For example: the NHS, schools, roads, police",
+     "marks": 2
+    }
+   ]
+  },
+  {
+   "note": "Example figures only; staff should replace them with the current year's rates if they want exact values."
+  },
+  {
+   "h": "A payslip"
+  },
+  {
+   "table": {
+    "head": [
+     "Line",
+     "£ (example)"
+    ],
+    "rows": [
+     [
+      "Gross pay",
+      "1,500"
+     ],
+     [
+      "Income tax",
+      "- 90"
+     ],
+     [
+      "National Insurance",
+      "- 40"
+     ],
+     [
+      "Net pay",
+      "1,370"
+     ]
+    ]
+   }
+  },
+  {
+   "h": "A monthly budget"
+  },
+  {
+   "grid": {
+    "kind": "pie",
+    "cols": 1,
+    "charts": [
+     {
+      "title": "A first-job budget (example data)",
+      "data": [
+       [
+        "Rent share",
+        450
+       ],
+       [
+        "Food",
+        250
+       ],
+       [
+        "Transport",
+        150
+       ],
+       [
+        "Saving",
+        300
+       ],
+       [
+        "Sadaqah",
+        70
+       ],
+       [
+        "Fun",
+        150
+       ]
+      ]
+     }
+    ]
+   }
+  },
+  {
+   "h": "Key words"
+  },
+  {
+   "keywords": [
+    {
+     "term": "gross pay",
+     "def": "pay before deductions"
+    },
+    {
+     "term": "net pay",
+     "def": "take-home pay after deductions"
+    },
+    {
+     "term": "income tax",
+     "def": "money paid to the government from earnings"
+    },
+    {
+     "term": "National Insurance",
+     "def": "payments that build entitlement to the state pension and some benefits"
+    }
+   ]
+  },
+  {
+   "h": "We do"
+  },
+  {
+   "questions": [
+    {
+     "q": "Gross £1,200; tax £60; NI £30. Net pay?",
+     "a": "£1,200 - £90 = £1,110."
+    }
+   ]
+  },
+  {
+   "h": "You do"
+  },
+  {
+   "questions": [
+    {
+     "q": "Pupil PDF: a budget from net pay of £1,370 including saving and sadaqah; it must balance.",
+     "a": "A balanced budget with saving first."
+    },
+    {
+     "q": "Extend: what percentage of the example budget is saved?",
+     "a": "300 ÷ 1,370 × 100 ≈ 21.9%."
+    }
+   ]
+  },
+  {
+   "h": "Check"
+  },
+  {
+   "questions": [
+    {
+     "q": "Net pay is ...",
+     "options": [
+      "take-home pay after deductions",
+      "pay before tax",
+      "a bonus"
+     ],
+     "a": "A) take-home pay after deductions. What actually arrives."
+    },
+    {
+     "q": "Income tax and National Insurance are taken from ...",
+     "a": "gross pay",
+     "options": [
+      "gross pay",
+      "net pay"
+     ]
+    },
+    {
+     "q": "Think again: Your first job advert says £1,500 a month. Will £1,500 arrive in your bank?",
+     "a": "Usually less: tax and National Insurance are taken off before you are paid, if you earn above the thresholds."
+    }
+   ]
+  }
+ ]
+}

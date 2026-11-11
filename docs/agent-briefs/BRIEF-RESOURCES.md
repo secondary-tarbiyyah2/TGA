@@ -60,8 +60,8 @@ question and an answer for every question.
 
 Spring 1 (969) and Spring 2 (1,019) are complete: every resource those lessons ask TGA to make is an item
 (`content/resources/items`) and builds into PDFs (see the "Term resources" log in `docs/curriculum-rebuild.md` for
-what each subject PR added). Summer 1 and Summer 2 have registers but no items yet (about 865 and 810 to make; the
-numbers move as lessons change).
+what each subject PR added). Summer 1 (855) is complete too (11 Nov 2026). Summer 2 has a register but no items yet (about 800 to make; the
+numbers move as lessons change). White Rose checks printed from the school's account are school files, not TO MAKE.
 
 Tips from Spring 2: the register takes a made item's type from the item, so no type override is needed. Rebuilding a
 worksheet from the whole lesson (its texts, tables, models, sorts and questions) is a good default; then hand-write
