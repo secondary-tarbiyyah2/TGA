@@ -26,8 +26,8 @@ export type PaymentMethod = "online" | "card" | "cash" | "bank_transfer";
 export type ChargeStatus = "paid" | "overdue" | "outstanding" | "void";
 
 export const METHOD_LABEL: Record<PaymentMethod, string> = { online: "Online payment", card: "Card", cash: "Cash", bank_transfer: "Bank transfer" };
-/** Methods offered when staff record a new payment. Fees are paid online (owner, 11 Nov 2026); bank transfer is no longer offered. */
-export const RECORDABLE_METHODS: PaymentMethod[] = ["online", "card", "cash"];
+/** Fees are paid online through Stripe and nowhere else (owner, 11 Nov 2026). A payment recorded by hand is always a Stripe payment (fee_record_manual_payment, 0217). */
+export const RECORDABLE_METHODS: PaymentMethod[] = ["online"];
 export const STATUS_LABEL: Record<ChargeStatus, string> = { paid: "Paid", overdue: "Overdue", outstanding: "Outstanding", void: "Void" };
 export const STATUS_STYLE: Record<ChargeStatus, string> = {
   paid: "bg-green-50 text-green-800 border-green-200",

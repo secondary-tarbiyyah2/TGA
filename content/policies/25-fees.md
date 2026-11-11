@@ -35,7 +35,7 @@ Under every plan, the first payment is due on admission, when the place is accep
 
 | Charge | Detail |
 | --- | --- |
-| Application fee | £150 per child, non-refundable. The payment details are emailed after the application is made, and the fee must be paid before a place is confirmed. It covers the entry assessment and the time spent with each family. There is no registration fee. |
+| Application fee | £150 per child, non-refundable. A personal secure link to pay it online is emailed when the application is made, and the fee must be paid before a place is confirmed. It covers the entry assessment and the time spent with each family. There is no registration fee. |
 | Annual payment discount | 2% discount where the annual option is chosen and paid in full on acceptance of the place (no later than Friday 8 January 2027) |
 | Sibling discount | 5% off tuition for a second child and 10% for the third and later children, applied to the younger sibling's tuition. It can be combined with the annual payment discount |
 | Examination fees | Not included. International GCSE entry fees are paid by families directly to the examination centre they register with (see the Examinations and Private Candidates Policy) |
@@ -51,7 +51,7 @@ Under every plan, the first payment is due on admission, when the place is accep
 
 ## 5. Ways to Pay
 
-Fees are paid online, on the Academy's secure payment page, by debit or credit card or directly from a bank app. The link is sent with your offer and is on the Fees page of the Parent Portal. Please give your child's full name as the payment reference.
+Fees are paid online only, through Stripe, the Academy's payment provider: directly from a bank app (Pay by Bank) or by debit or credit card. No other way of paying is accepted. Each family has a payment reference and each charge its own invoice number. New families pay the application fee and the first payment from the personal secure link in their emails; every later payment is listed, and paid, on the Fees page of the Parent Portal. Stripe emails a receipt for every payment.
 
 ## 6. Late Payment
 

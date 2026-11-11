@@ -234,7 +234,14 @@ export function buildTemplateContext(
   app: AppInput,
   settings: SettingsInput | null,
   stage: StageInput | null,
-  opts: { fees?: FeesInput | null; family?: FamilyInput | null; extra?: Record<string, string | null | undefined>; now?: Date } = {},
+  opts: {
+    fees?: FeesInput | null;
+    family?: FamilyInput | null;
+    extra?: Record<string, string | null | undefined>;
+    now?: Date;
+    /** Stripe is set up (STRIPE_SECRET_KEY): "How to pay" points at the family's personal pay link (T71). */
+    personalPayLink?: boolean;
+  } = {},
 ): TemplateVars {
   const now = opts.now || new Date();
   const fees = opts.fees || null;
@@ -248,9 +255,15 @@ export function buildTemplateContext(
   // Fees are paid online (owner, 11 Nov 2026). The {{bank_details}} token keeps
   // its name so stored templates still work: it gives the online payment link
   // once one is set, and the older payment instructions only until then.
-  const payOnline = onlinePaymentLink(settings?.online_payment_url, app.reference);
+  // With Stripe set up, every family pays on their own secure page (the
+  // personal link, /admissions/payment), where amounts come from our records.
+  // The shared Payment Link from 0214 is only a fallback until then.
+  const personal = Boolean(opts.personalPayLink && app.reference);
+  const payOnline = personal ? PAYMENT_LINK_PLACEHOLDER : onlinePaymentLink(settings?.online_payment_url, app.reference);
   const bankRaw = (settings?.payment_instructions || "").trim();
-  const bank = payOnline
+  const bank = personal
+    ? "Pay online on your own secure payment page. You choose your payment plan there, then pay straight from your bank app (Pay by Bank) or by debit or credit card. Your personal link is below; please do not share it."
+    : payOnline
     ? `Pay online, by debit or credit card or straight from your bank app, on our secure payment page:\n${payOnline}`
     : bankRaw && !/^(bank transfer|online payment) details to follow\.?$/i.test(bankRaw)
       ? bankRaw
@@ -351,7 +364,7 @@ export function onlinePaymentLink(raw: string | null | undefined, reference: str
   return u.toString();
 }
 
-/** The server swaps this for the family's personal upload link at send time. */
+/** The server swaps this for the family's personal payment page link at send time. */
 export const PAYMENT_LINK_PLACEHOLDER = "{{PAYMENT_LINK}}";
 
 // ── rendering ────────────────────────────────────────────────────────────
@@ -384,7 +397,7 @@ export const TOKEN_DOCS: { token: string; description: string }[] = [
   { token: "deadline", description: "Offer deadline, or five working days from today if none is set" },
   { token: "bank_details", description: "How to pay: the online payment link once it is set in Admissions settings, otherwise the payment instructions there" },
   { token: "pay_online_link", description: "The online payment link on its own (blank until it is set)" },
-  { token: "payment_link", description: "The family's personal proof-of-payment upload link (issued when sent)" },
+  { token: "payment_link", description: "The family's personal secure payment page (issued when sent): choose a plan and pay online" },
   { token: "school_email", description: "Admissions email address" },
   { token: "school_phone", description: "School phone (blank if none)" },
   { token: "missing_documents", description: "Bulleted list of documents not yet received" },
@@ -476,6 +489,12 @@ Your application reference is {{reference}}. Please quote it if you contact us.
 {{#family_fees}}
 {{family_fees}}
 {{/family_fees}}
+
+{{#pay_online_link}}
+PAY THE APPLICATION FEE ONLINE
+You can pay the application fee now, straight from your bank app or by card, on your secure payment page:
+{{pay_online_link}}
+{{/pay_online_link}}
 
 Our admissions team will review the application and contact you about the next steps, which usually begin with a short remote assessment. If you have any questions in the meantime, just reply to this email.
 
@@ -571,16 +590,14 @@ Please choose ONE plan. The remaining instalments follow the Fees Policy payment
 
 HOW TO PAY
 {{bank_details}}
-Please use {{child_name}} (the child's full name) as the payment reference.
 
 {{#payment_link}}
-UPLOAD YOUR PROOF OF PAYMENT
-After paying, please upload a screenshot or receipt (JPG, PNG or PDF, up to 10 MB each) using your personal secure link, and tell us which plan you chose:
+YOUR SECURE PAYMENT PAGE
 {{payment_link}}
-Please do not share this link. Your place is confirmed once our team has checked the payment, and we will email you when it is.
+Please do not share this link. Your child's place is secured as soon as the first payment reaches us, and you will see every later payment, with its reference, on the Fees page of the parent portal.
 {{/payment_link}}
 
-Your child's place is held only once the payments above have been received and verified. If we have not heard from you by the deadline, we may offer the place to another family. Please also send us ID documents for {{child_first_name}} and a parent or guardian (for example a passport or birth certificate), and proof of {{child_first_name}}'s home address (for example a recent utility bill, council tax bill or bank statement), if you have not already.
+Your child's place is held only once the first payment above has been received. If we have not heard from you by the deadline, we may offer the place to another family. Please also send us ID documents for {{child_first_name}} and a parent or guardian (for example a passport or birth certificate), and proof of {{child_first_name}}'s home address (for example a recent utility bill, council tax bill or bank statement), if you have not already.
 
 If you have any questions, just reply to this email.
 

@@ -367,11 +367,8 @@ function FeesContent() {
               <div className="mt-3 flex flex-wrap gap-2 text-sm">
                 {r.status !== "void" && r.balance > 0 && (
                   <>
-                    <button type="button" onClick={() => setPaying({ row: r, full: true })} className={btn("primary", "sm")}>
-                      Mark paid
-                    </button>
-                    <button type="button" onClick={() => setPaying({ row: r, full: false })} className={btn("secondary", "sm")}>
-                      Record part payment
+                    <button type="button" onClick={() => setPaying({ row: r, full: true })} className={btn("secondary", "sm")} title="Only for a Stripe payment that was not matched automatically">
+                      Record Stripe payment
                     </button>
                   </>
                 )}
