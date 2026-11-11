@@ -1850,3 +1850,68 @@ main[data-site="public"] {
   --text-lg: 1.25rem; /* 18 -> 20px */
   --text-lg--line-height: 1.85rem;
 }
+
+/* ── The digital mushaf used to hear a recitation (src/components/learn/quran/RecitationWorkspace.tsx).
+   The King Fahd Complex's Uthmanic Hafs font v18, served unmodified as published (docs/mushaf.md). */
+@font-face {
+  font-family: "UthmanicHafs";
+  src: url("/fonts/uthmanic-hafs-v18.woff2") format("woff2");
+  font-display: swap;
+}
+.mushaf-text {
+  font-family: "UthmanicHafs", var(--font-arabic), "Noto Naskh Arabic", serif;
+  font-size: 1.75rem;
+  line-height: 2.6;
+  color: var(--color-ink-900);
+  text-align: justify;
+  text-align-last: right;
+}
+@media (min-width: 1024px) {
+  .mushaf-text { font-size: 2rem; }
+}
+.mushaf-word {
+  border-radius: 6px;
+  padding: 0 0.08em;
+  cursor: pointer;
+  transition: background-color 120ms ease;
+}
+.mushaf-word:hover { background: var(--color-gold-50); }
+.mushaf-word:focus-visible, .mushaf-gap:focus-visible, .mushaf-ayah-no:focus-visible { outline: 2px solid var(--color-forest-700); outline-offset: 2px; }
+.mushaf-word[data-mark="prompt"] { background: var(--color-red-50); color: var(--color-red-800); text-decoration: underline 2px var(--color-red-600); text-underline-offset: 0.35em; }
+.mushaf-word[data-mark="slip"] { background: var(--color-amber-50); color: var(--color-amber-900); text-decoration: underline wavy 1.5px var(--color-amber-600); text-underline-offset: 0.35em; }
+.mushaf-word[data-mark="tajweed"] { background: var(--color-sky-50); color: var(--color-sky-800); text-decoration: underline dotted 2px var(--color-sky-600); text-underline-offset: 0.35em; }
+/* The join between two words: a narrow tap target (tajweed across the join). */
+.mushaf-gap {
+  display: inline-block;
+  width: 0.55em;
+  height: 1.3em;
+  vertical-align: middle;
+  border-radius: 4px;
+  cursor: pointer;
+}
+.mushaf-gap:hover { background: var(--color-sky-50); }
+.mushaf-gap[data-mark="tajweed"] { background: transparent; border-bottom: 3px solid var(--color-sky-600); }
+.mushaf-ayah-no {
+  display: inline-flex;
+  min-width: 1.6em;
+  height: 1.6em;
+  align-items: center;
+  justify-content: center;
+  margin: 0 0.2em;
+  border: 1.5px solid var(--color-gold-500);
+  border-radius: 999px;
+  font-family: var(--font-inter), sans-serif;
+  font-size: 0.45em;
+  font-weight: 600;
+  vertical-align: middle;
+  color: var(--color-gold-900);
+  cursor: pointer;
+}
+.mushaf-ayah[data-skipped="true"] .mushaf-word { opacity: 0.35; text-decoration: line-through; cursor: not-allowed; background: none; }
+.mushaf-ayah[data-skipped="true"] .mushaf-ayah-no { border-style: dashed; color: var(--color-ink-500); }
+html[data-reduce-motion] .mushaf-word { transition: none; }
+.mushaf-text--read .mushaf-word, .mushaf-text--read .mushaf-gap, .mushaf-text--read .mushaf-ayah-no { cursor: default; }
+.mushaf-text--read .mushaf-word:hover { background: none; }
+.mushaf-text--read .mushaf-word[data-mark="prompt"]:hover { background: var(--color-red-50); }
+.mushaf-text--read .mushaf-word[data-mark="slip"]:hover { background: var(--color-amber-50); }
+.mushaf-text--read .mushaf-word[data-mark="tajweed"]:hover { background: var(--color-sky-50); }

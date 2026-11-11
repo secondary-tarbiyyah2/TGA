@@ -4,6 +4,28 @@ import type { GuideEntry } from "../types";
 
 export const HEAD_ASSESSMENT: GuideEntry[] = [
   {
+    href: "/admin/quran",
+    name: "Qur'an",
+    category: "Assessment and reports",
+    purpose: "Every Qur'an class's recitations and marks, and the marking standard that turns mistakes into a mark out of 10.",
+    when: "When checking Qur'an progress, and when setting how strict marking is for each level.",
+    steps: [
+      "On Hear and track, choose a Qur'an class to see each pupil's last recitation, mark and recent average.",
+      "Press History beside a pupil for every recitation and what to practise, or Hear to log a recitation yourself.",
+      "On Marking standard, set for each level the most mistake points per page for each mark, and what a slip and a tajweed mistake are worth.",
+      "Press Save standard; every teacher marks to it from then on.",
+      "Below it, choose the level each Qur'an class marks at.",
+    ],
+    tips: ["Without a level, Reception to Year 2 mark as Beginner, Years 3 to 6 as Junior and Year 7 up as Senior.", "Add a Qur'an class for each year group in Academic setup, with the subject Qur'an."],
+    privacy: "Staff see marks and mistakes; pupils and parents see their own marks on their Qur'an page.",
+    related: ["/admin/pupils", "/admin/reports"],
+    showMe: [
+      { target: "quran-sections", label: "Qur'an sections", say: "Hear and track, and the marking standard." },
+      { target: "quran-classes", label: "Qur'an classes", say: "Each pupil's last recitation and mark." },
+    ],
+    tasks: ["Qur'an marking standard", "strictness bands", "Qur'an progress"],
+  },
+  {
     href: "/admin/gcse",
     name: "GCSE grades",
     category: "Assessment and reports",
