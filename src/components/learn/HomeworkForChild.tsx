@@ -11,8 +11,9 @@ import { FeedbackStatusChip, FeedbackView } from "@/components/learn/homework/Su
 import { FileLinks } from "@/components/learn/homework/FileViewer";
 import { SubmitWork, type ExistingSubmission } from "@/components/learn/homework/SubmitWork";
 import { useNow } from "@/lib/learn/useNow";
+import { QuizCard } from "@/components/learn/quiz/QuizCard";
 
-type HomeworkInfo = Pick<Homework, "title" | "instructions" | "max_points" | "allowed_submission_types" | "allowed_file_types" | "late_policy" | "attachments" | "edited_at">;
+type HomeworkInfo = Pick<Homework, "title" | "instructions" | "max_points" | "allowed_submission_types" | "allowed_file_types" | "late_policy" | "attachments" | "edited_at"> & { kind?: string | null };
 type Row = {
   homework_id: string;
   due_at: string;
@@ -30,6 +31,7 @@ type Submission = {
   submitted_at: string | null;
 };
 type Mark = { grade: string | null; feedback: string | null; released: boolean };
+
 
 const STATUS_LABEL: Record<string, { label: string; className: string }> = {
   missing: { label: "Missing", className: "bg-red-100 text-red-700" },
@@ -68,6 +70,9 @@ function HomeworkItem({
   }, [initiallyOpen]);
 
   const hw = row.homework;
+  // A quiz with questions (0205) is sat in the quiz view; an old "quiz" without questions keeps the hand-in form.
+  const [noQuestions, setNoQuestions] = useState(false);
+  const isQuiz = hw?.kind === "quiz" && !noQuestions;
   const loadDetail = async () => {
     if (!supabase || !row.submission_id) return;
     const { data: sub } = await supabase.from("homework_submissions").select("id, kind, response_text, link_url, file_path, files, submitted_at").eq("id", row.submission_id).maybeSingle();
@@ -120,7 +125,9 @@ function HomeworkItem({
             {attachments.length > 0 && <FileLinks files={attachments} bucket="homework-attachments" />}
           </div>
 
-          {submission ? (
+          {isQuiz ? (
+            <QuizCard homeworkId={row.homework_id} title={hw.title} asPupil={canSubmit && !canResubmit} onChanged={done} onNoQuestions={() => setNoQuestions(true)} />
+          ) : submission ? (
             <div className="rounded-lg bg-cream p-3">
               <p className="text-xs text-ink/65">Handed in {submission.submitted_at ? new Date(submission.submitted_at).toLocaleString("en-GB") : "–"}</p>
               {submission.response_text && <p className="mt-1 whitespace-pre-line">{submission.response_text}</p>}
@@ -230,7 +237,7 @@ export function HomeworkForChild({
       .match(classId ? { class_id: classId } : {})
       .order("due_at", { ascending: false });
     // Archived homework is hidden from families by RLS, so its embedded homework comes back null.
-    const withHw = await attachHomework(supabase, data as unknown as { homework_id: string }[], "title, instructions, max_points, allowed_submission_types, allowed_file_types, late_policy, attachments, edited_at");
+    const withHw = await attachHomework(supabase, data as unknown as { homework_id: string }[], "title, instructions, max_points, allowed_submission_types, allowed_file_types, late_policy, attachments, edited_at, kind");
     setRows((withHw as unknown as Row[]).filter((r) => r.homework));
     // Teacher feedback for this child's submissions (RLS limits it to what the viewer may see).
     const { data: fb } = await supabase.from("homework_feedback").select(`${FEEDBACK_COLUMNS}, submission:submission_id!inner(child_id)`).eq("submission.child_id", childId);

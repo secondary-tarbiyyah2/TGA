@@ -118,7 +118,8 @@ export function classPageEntry(a: Area): GuideEntry {
     steps: [
       "Press Set work at the top of the class: the form opens in a panel over the section you are in.",
       "Fill in the title, instructions and due date, then press Assign (or Schedule for later); the panel closes and you are back where you were.",
-      "Inside Classwork, Create also offers Quiz assignment, Question and Material, each in the same panel.",
+      "Inside Classwork, Create shows the four kinds as cards: Assignment, Quiz assignment, Question and Material, each with its own form. The chips above the list show one kind at a time, grouped By kind or By topic.",
+      "A quiz opens full screen: add questions one at a time from the question-type cards (multiple choice, multiple answer, true or false, short and long answer, matching, ordering, number, label a diagram), set marks, explanations, a time limit and attempts, or press Draft questions from a unit and check each one. Press Set quiz; open it again for Results and to mark long answers.",
       "Open Classwork, then To review, to mark what pupils handed in and press Return to pupil.",
       "The class's sections are listed down the left (on a phone, choose one from Section); open Attendance to take this class's register.",
       "Open Settings to paste the class's Teams meeting link once, then Save link.",
@@ -129,8 +130,9 @@ export function classPageEntry(a: Area): GuideEntry {
     showMe: [
       { target: "class-tabs", label: "Class sections", say: "Stream, Classwork, Lessons, People, Attendance, Grades, Insights and Settings." },
       { target: "class-set-work", label: "Set work", say: "Start a new piece of classwork here: choose Assignment, Quiz assignment, Question or Material." },
+      { target: "classwork-kinds", label: "Kinds of classwork", say: "In Classwork: show Assignments, Quizzes, Questions or Materials, grouped by kind or by topic." },
     ],
-    tasks: ["set homework", "set classwork", "mark work", "add a Teams link"],
+    tasks: ["set homework", "set classwork", "set a quiz", "build a quiz", "mark work", "add a Teams link"],
   };
 }
 
