@@ -4,22 +4,43 @@ import { useEffect, useState } from "react";
 import { getSupabaseClient } from "@/lib/supabase/client";
 import { fetchAllClasses, fetchChildClasses, fetchTeacherClasses, type ClassSummary } from "@/lib/learn/classes";
 import { localDateKey, type CalendarScope } from "@/lib/learn/calendar";
+import { EVENT_CATEGORY, type Category } from "./calendarUtils";
 
 // Everything the day-detail calendar shows, fetched ONCE for a date range
 // (the visible Hijri month plus a week either side) and split into days on
 // the client. All queries run as the signed-in user, so RLS decides what comes
 // back; nothing here is a security boundary.
 //
-// Data gaps (no column exists today): lesson "room" (the school is online, so
-// the room is the virtual session name/link) and calendar_events (there is no
-// general events table; term dates, INSET and closures come from
-// useCalendarTerms and announcements stand in for school notices).
+// Lesson "room": the school is online, so the room is the virtual session
+// name/link. Entries staff add (school events, meetings, deadlines and so on)
+// come from calendar_events (0207); parents' evenings and open evenings from
+// their own tables. Term dates and Islamic dates are added by CalendarView.
 
-export type ItemKind = "lesson" | "homework" | "assessment" | "announcement";
+export type ItemKind = "lesson" | "homework" | "assessment" | "event" | "term" | "islamic";
+
+/** A calendar_events row (0207). */
+export type EventRow = {
+  id: string;
+  title: string;
+  category: string;
+  starts_on: string;
+  ends_on: string | null;
+  start_time: string | null;
+  end_time: string | null;
+  audience: "everyone" | "staff" | "families" | "class";
+  class_id: string | null;
+  location: string | null;
+  link_url: string | null;
+  notes: string | null;
+  created_by: string;
+};
 
 export type DayItem = {
   id: string;
   kind: ItemKind;
+  category: Category;
+  /** The calendar_events row behind an added entry (for Edit and Delete). */
+  event?: EventRow;
   date: string; // YYYY-MM-DD
   time: string | null; // HH:MM
   endTime: string | null;
@@ -46,6 +67,8 @@ export type Directory = {
 };
 
 export type CalendarData = { items: DayItem[]; directory: Directory };
+
+const shortDate = (k: string) => new Date(`${k}T12:00:00`).toLocaleDateString("en-GB", { weekday: "short", day: "numeric", month: "short" });
 
 const AREA: Record<CalendarScope["kind"], string> = { teacher: "/teach", staff: "/admin", student: "/student", parent: "/family" };
 const PAGE = 1000;
@@ -89,9 +112,9 @@ type SlotRow = {
   classes?: { meeting_url: string | null } | null;
 };
 
-export function useCalendarData(scope: CalendarScope | null, from: string, to: string): { data: CalendarData | null; loading: boolean } {
+export function useCalendarData(scope: CalendarScope | null, from: string, to: string, refresh = 0): { data: CalendarData | null; loading: boolean } {
   const [state, setState] = useState<{ key: string; data: CalendarData } | null>(null);
-  const key = `${scopeKey(scope)}|${from}|${to}`;
+  const key = `${scopeKey(scope)}|${from}|${to}|${refresh}`;
 
   useEffect(() => {
     const supabase = getSupabaseClient();
@@ -158,15 +181,20 @@ export function useCalendarData(scope: CalendarScope | null, from: string, to: s
       const assess = await fetchAll<{ id: string; class_id: string; child_id: string; title: string; date: string; entered_by: string | null }>((a, b) =>
         supabase.from("assessments").select("id, class_id, child_id, title, date, entered_by").gte("date", from).lte("date", to).order("date").range(a, b),
       );
-      const ann = await fetchAll<{ id: string; scope: string; class_id: string | null; title: string; author_id: string | null; created_at: string; recalled_at: string | null }>((a, b) =>
-        supabase
-          .from("announcements")
-          .select("id, scope, class_id, title, author_id, created_at, recalled_at")
-          .gte("created_at", `${from}T00:00:00`)
-          .lte("created_at", `${to}T23:59:59`)
-          .order("created_at")
-          .range(a, b),
-      );
+      // Entries staff added (0207). Before the migration the table is missing: show none.
+      const evRes = await supabase
+        .from("calendar_events")
+        .select("id, title, category, starts_on, ends_on, start_time, end_time, audience, class_id, location, link_url, notes, created_by")
+        .lte("starts_on", to)
+        .gte("starts_on", localDateKey(new Date(new Date(`${from}T12:00:00`).getTime() - 60 * 86400000)))
+        .order("starts_on")
+        .limit(2000);
+      const events = ((evRes.error ? [] : evRes.data) as EventRow[] | null) || [];
+      // Parents' evenings (meetings) and, for staff, open evenings (admissions). RLS decides who sees them.
+      const pe = await supabase.from("parent_evenings").select("id, title, starts_at, ends_at, join_url, location, status").gte("starts_at", `${from}T00:00:00`).lte("starts_at", `${to}T23:59:59`);
+      const parentEvenings = ((pe.error ? [] : pe.data) as { id: string; title: string; starts_at: string; ends_at: string; join_url: string | null; location: string | null; status: string }[] | null) || [];
+      const oe = scope.kind === "staff" || scope.kind === "teacher" ? await supabase.from("open_evening_sessions").select("id, title, starts_at, ends_at, cancelled_at").gte("starts_at", `${from}T00:00:00`).lte("starts_at", `${to}T23:59:59`) : { data: [], error: null };
+      const openEvenings = ((oe.error ? [] : oe.data) as { id: string; title: string; starts_at: string; ends_at: string; cancelled_at: string | null }[] | null) || [];
 
       // Teacher names (best effort: profiles RLS may hide them from parents).
       const teacherIds = new Set<string>();
@@ -188,6 +216,7 @@ export function useCalendarData(scope: CalendarScope | null, from: string, to: s
             ...blank,
             id: `l-${l.id}-${o.childId || ""}`,
             kind: "lesson",
+            category: "lesson",
             date: l.date,
             time: slot.start_time.slice(0, 5),
             endTime: slot.end_time ? slot.end_time.slice(0, 5) : null,
@@ -214,6 +243,7 @@ export function useCalendarData(scope: CalendarScope | null, from: string, to: s
             ...blank,
             id: `h-${h.id}-${o.childId || ""}`,
             kind: "homework",
+            category: "homework",
             date: localDateKey(due),
             time: due.toLocaleTimeString("en-GB", { hour: "2-digit", minute: "2-digit" }),
             title: h.title,
@@ -242,6 +272,7 @@ export function useCalendarData(scope: CalendarScope | null, from: string, to: s
             ...blank,
             id: `a-${x.id}`,
             kind: "assessment",
+            category: "assessment",
             date: x.date,
             title: x.title,
             subject: o.cls.subject,
@@ -263,6 +294,7 @@ export function useCalendarData(scope: CalendarScope | null, from: string, to: s
               ...blank,
               id: `a-${k}`,
               kind: "assessment",
+              category: "assessment",
               date: x.date,
               title: x.title,
               subject: o.cls.subject,
@@ -277,23 +309,68 @@ export function useCalendarData(scope: CalendarScope | null, from: string, to: s
       }
       items.push(...sittings.values());
 
-      for (const n of ann) {
-        if (n.recalled_at) continue;
-        const isSchool = n.scope === "school";
-        const cls = n.class_id ? (owners.get(n.class_id) || [])[0] : undefined;
-        if (!isSchool && !cls) continue;
-        const t = new Date(n.created_at);
+      const clsName = new Map(classList.map((c) => [c.id, c.name]));
+      for (const e of events) {
+        const last = e.ends_on || e.starts_on;
+        if (last < from) continue;
+        let d = new Date(`${e.starts_on > from ? e.starts_on : from}T12:00:00`);
+        const end = new Date(`${last < to ? last : to}T12:00:00`);
+        const multi = !!e.ends_on && e.ends_on !== e.starts_on;
+        while (d <= end) {
+          const k = localDateKey(d);
+          items.push({
+            ...blank,
+            id: `e-${e.id}-${k}`,
+            kind: "event",
+            category: EVENT_CATEGORY[e.category] || "event",
+            event: e,
+            date: k,
+            time: e.start_time && k === e.starts_on ? e.start_time.slice(0, 5) : null,
+            endTime: e.end_time && k === (e.ends_on || e.starts_on) ? e.end_time.slice(0, 5) : null,
+            title: e.title,
+            classId: e.class_id,
+            className: e.class_id ? clsName.get(e.class_id) || null : e.audience === "staff" ? "Staff only" : null,
+            room: e.location,
+            joinUrl: e.link_url,
+            note: [multi ? `${shortDate(e.starts_on)} to ${shortDate(e.ends_on!)}` : null, e.notes].filter(Boolean).join(". ") || null,
+          });
+          d = new Date(d.getTime() + 86400000);
+        }
+      }
+      for (const p of parentEvenings) {
+        if (p.status === "draft") continue;
+        const s0 = new Date(p.starts_at);
+        const e0 = new Date(p.ends_at);
         items.push({
           ...blank,
-          id: `n-${n.id}`,
-          kind: "announcement",
-          date: localDateKey(t),
-          time: t.toLocaleTimeString("en-GB", { hour: "2-digit", minute: "2-digit" }),
-          title: n.title,
-          classId: cls?.cls.id || null,
-          className: cls?.cls.name || (isSchool ? "Whole school" : null),
-          teacherId: n.author_id,
-          href: `${area}/announcements`,
+          id: `pe-${p.id}`,
+          kind: "event",
+          category: "meeting",
+          date: localDateKey(s0),
+          time: s0.toLocaleTimeString("en-GB", { hour: "2-digit", minute: "2-digit" }),
+          endTime: e0.toLocaleTimeString("en-GB", { hour: "2-digit", minute: "2-digit" }),
+          title: p.title,
+          room: p.location,
+          joinUrl: p.join_url,
+          href: `${area}/parent-evenings`,
+          note: "Parents' evening",
+        });
+      }
+      for (const o of openEvenings) {
+        if (o.cancelled_at) continue;
+        const s0 = new Date(o.starts_at);
+        items.push({
+          ...blank,
+          id: `oe-${o.id}`,
+          kind: "event",
+          category: "admissions",
+          date: localDateKey(s0),
+          time: s0.toLocaleTimeString("en-GB", { hour: "2-digit", minute: "2-digit" }),
+          endTime: new Date(o.ends_at).toLocaleTimeString("en-GB", { hour: "2-digit", minute: "2-digit" }),
+          title: o.title,
+          className: "Staff only",
+          href: scope.kind === "staff" ? "/admin/open-evening" : null,
+          note: "Open evening",
         });
       }
 

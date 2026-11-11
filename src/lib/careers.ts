@@ -41,7 +41,6 @@ export type Option = { value: string; label: string };
 
 export const RIGHT_TO_WORK: Option[] = [
   { value: "uk_yes", label: "Yes, I have the right to work in the UK" },
-  { value: "uk_sponsorship", label: "I live in the UK but would need visa sponsorship" },
   { value: "outside_uk", label: "I live outside the UK and would teach remotely from there" },
 ];
 

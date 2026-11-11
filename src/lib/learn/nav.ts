@@ -381,6 +381,7 @@ export const NAV_CATEGORIES: Record<PortalArea, NavCategory[]> = {
         { href: "/student/dashboard", label: "Today", icon: "house", hint: "Your lessons and work today", keywords: "home dashboard start", short: "Today" },
         { href: "/student/actions", label: "Waiting for you", icon: "flag", hint: "Things waiting for you", keywords: "to do tasks" },
         { href: "/student/announcements", label: "Announcements", icon: "megaphone", hint: "Notices from the school", keywords: "notices news" },
+        { href: "/student/messages", label: "Messages", icon: "messageSquare", hint: "Messages from your teachers", badge: "messages", keywords: "inbox class group teacher" },
       ],
     },
     {

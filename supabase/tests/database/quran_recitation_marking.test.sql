@@ -1,4 +1,4 @@
--- Run via `supabase test db`. Covers 0206: staff read the Qur'an marking standard and class levels, only the
+-- Run via `supabase test db`. Covers 0208: staff read the Qur'an marking standard and class levels, only the
 -- head teacher changes them, families cannot read them, and a moved mark needs a reason.
 begin;
 select plan(9);
