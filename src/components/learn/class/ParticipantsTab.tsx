@@ -5,19 +5,13 @@ import { getSupabaseClient } from "@/lib/supabase/client";
 
 import { askConfirm, Loading } from "@/components/learn/kit";
 import { PupilLink } from "@/components/learn/pupil/PupilLink";
+import { Icon } from "@/components/learn/Icon";
+import { Avatar, Tag, ui } from "@/components/learn/ui";
+import { loadClassAttendance, rateOf, type ClassMark } from "@/components/learn/class/ClassAttendanceTab";
 type Person = { id: string; name: string };
 type Teacher = { user_id: string; full_name: string; role: string };
 type Candidate = { id: string; name: string; year_group_id: string | null };
 type Places = { capacity: number | null; places_used: number | null; places_remaining: number | null; name: string };
-
-function initials(name: string) {
-  return name
-    .split(/\s+/)
-    .map((w) => w[0])
-    .slice(0, 2)
-    .join("")
-    .toUpperCase();
-}
 
 function AddModal({ classId, yearGroupId, yearGroupName, onClose, onDone }: { classId: string; yearGroupId: string | null; yearGroupName: string | null; onClose: () => void; onDone: () => void }) {
   const [candidates, setCandidates] = useState<Candidate[] | null>(null);
@@ -68,26 +62,26 @@ function AddModal({ classId, yearGroupId, yearGroupName, onClose, onDone }: { cl
   };
 
   return (
-    <div className="fixed inset-0 z-50 flex items-end justify-center bg-black/40 p-0 sm:items-center sm:p-4" role="dialog" aria-modal="true" aria-label="Add participants">
-      <div className="flex max-h-[90vh] w-full max-w-lg flex-col overflow-hidden rounded-t-2xl bg-white sm:rounded-2xl">
-        <div className="flex items-center justify-between gap-3 border-b border-gold-light px-5 py-3.5">
-          <h2 className="text-base font-semibold text-ink">Add participants</h2>
-          <button type="button" onClick={onClose} aria-label="Close" className="rounded-lg px-2 py-1 text-lg leading-none text-ink/65 hover:bg-cream">
-            ×
+    <div className="portal fixed inset-0 z-50 flex items-end justify-center bg-ink/40 p-0 sm:items-center sm:p-4" role="dialog" aria-modal="true" aria-label="Add participants">
+      <div className="portal-menu flex max-h-[90vh] w-full max-w-lg flex-col overflow-hidden rounded-t-[1.375rem] border border-[var(--portal-line)] bg-white shadow-xl sm:rounded-[1.375rem]">
+        <div className="flex items-center justify-between gap-3 border-b border-[var(--portal-line-soft)] px-6 py-4">
+          <h2 className="text-lg font-bold tracking-[-0.015em] text-ink">Add participants</h2>
+          <button type="button" onClick={onClose} aria-label="Close" className={`${ui.btnSecondary} portal-btn--icon`}>
+            <Icon name="x" />
           </button>
         </div>
-        <div className="space-y-2 border-b border-gold-light px-5 py-3">
+        <div className="space-y-2 border-b border-[var(--portal-line-soft)] px-6 py-3">
           <input
             type="search"
             value={search}
             onChange={(e) => setSearch(e.target.value)}
             placeholder="Search pupils"
             aria-label="Search pupils"
-            className="w-full rounded-lg border border-gold-light bg-white px-3 py-2 text-sm text-ink focus:border-teal-500 focus:outline-none focus:ring-1 focus:ring-teal-500"
+            className={ui.input}
           />
           {yearGroupId && (
-            <label className="flex items-center gap-2 text-sm text-ink/70">
-              <input type="checkbox" checked={onlyYear} onChange={(e) => setOnlyYear(e.target.checked)} />
+            <label className="flex min-h-11 items-center gap-2.5 text-sm text-ink-700">
+              <input type="checkbox" className="portal-switch" checked={onlyYear} onChange={(e) => setOnlyYear(e.target.checked)} />
               Only {yearGroupName || "this year group"}
             </label>
           )}
@@ -98,12 +92,13 @@ function AddModal({ classId, yearGroupId, yearGroupName, onClose, onDone }: { cl
           ) : shown.length === 0 ? (
             <p className="px-5 py-4 text-sm text-ink/65">No matching pupils to add.</p>
           ) : (
-            <ul className="divide-y divide-gold-light/70">
+            <ul className="divide-y divide-[var(--portal-line-soft)]">
               {shown.map((c) => (
                 <li key={c.id}>
-                  <label className="flex cursor-pointer items-center gap-3 px-5 py-3 hover:bg-cream">
+                  <label className={`flex cursor-pointer items-center gap-3 px-6 py-2.5 hover:bg-[var(--portal-row-hover)] ${picked.has(c.id) ? "bg-[var(--portal-selected)]" : ""}`}>
                     <input type="checkbox" checked={picked.has(c.id)} onChange={() => toggle(c.id)} className="h-4 w-4" />
-                    <span className="truncate text-sm font-medium text-ink">{c.name}</span>
+                    <Avatar name={c.name} seed={c.id} size={30} />
+                    <span className="truncate text-sm font-semibold text-ink">{c.name}</span>
                   </label>
                 </li>
               ))}
@@ -116,13 +111,13 @@ function AddModal({ classId, yearGroupId, yearGroupName, onClose, onDone }: { cl
           </p>
         )}
         {error && <p className="border-t border-red-200 bg-red-50 px-5 py-2 text-sm text-red-800">{error}</p>}
-        <div className="flex items-center justify-between gap-3 border-t border-gold-light px-5 py-3">
-          <span className="text-sm text-ink/65">{picked.size} selected</span>
+        <div className="flex items-center justify-between gap-3 border-t border-[var(--portal-line-soft)] bg-[var(--portal-row-hover)] px-6 py-3.5">
+          <span className="t-meta">{picked.size} selected</span>
           <div className="flex gap-2">
-            <button type="button" onClick={onClose} className="rounded-lg border border-gold-light bg-white px-4 py-2 text-sm font-medium text-ink/80 hover:bg-cream">
+            <button type="button" onClick={onClose} className={ui.btnGhost}>
               Cancel
             </button>
-            <button type="button" onClick={submit} disabled={busy || picked.size === 0} className="rounded-lg bg-gold-700 px-4 py-2 text-sm font-semibold text-white hover:bg-gold-900 disabled:opacity-60">
+            <button type="button" onClick={submit} disabled={busy || picked.size === 0} className={ui.btnPrimary}>
               {busy ? "Adding…" : `Add ${picked.size || ""}`.trim()}
             </button>
           </div>
@@ -141,6 +136,18 @@ export function ParticipantsTab({ classId, onChanged }: { classId: string; onCha
   const [yearGroupName, setYearGroupName] = useState<string | null>(null);
   const [adding, setAdding] = useState(false);
   const [message, setMessage] = useState<string | null>(null);
+  const [marks, setMarks] = useState<ClassMark[] | null>(null);
+
+  // Each pupil's attendance in this class (the last ten weeks), for their card.
+  useEffect(() => {
+    let alive = true;
+    loadClassAttendance(classId).then((r) => {
+      if (alive) setMarks(r?.marks || []);
+    });
+    return () => {
+      alive = false;
+    };
+  }, [classId]);
 
   const load = useCallback(async () => {
     const supabase = getSupabaseClient();
@@ -175,58 +182,67 @@ export function ParticipantsTab({ classId, onChanged }: { classId: string; onCha
     onChanged?.();
   };
 
-  if (people === null) return <Loading label="Loading…" bare />;
+  if (people === null) return <Loading label="Loading…" />;
+
+  const rate = (id: string) => (marks ? rateOf(marks.filter((m) => m.child_id === id)) : null);
 
   return (
-    <div className="space-y-6">
-      {teachers.length > 0 && (
-        <div>
-          <h3 className="mb-2 text-xs font-semibold uppercase tracking-wide text-ink/65">Teacher{teachers.length === 1 ? "" : "s"}</h3>
-          <ul className="grid gap-2 sm:grid-cols-2 lg:grid-cols-3">
-            {teachers.map((t) => (
-              <li key={`${t.user_id}-${t.role}`} className="flex items-center gap-3 rounded-lg border border-gold-light/70 bg-cream/40 px-3 py-2.5">
-                <span className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-gold-light text-xs font-semibold text-ink" aria-hidden="true">
-                  {initials(t.full_name)}
-                </span>
-                <span className="min-w-0">
-                  <span className="block truncate text-sm font-medium text-ink">{t.full_name}</span>
-                  <span className="block text-xs text-ink/65">{t.role === "teacher" ? "Teacher" : "Teaching assistant"}</span>
-                </span>
-              </li>
-            ))}
-          </ul>
+    <div className="space-y-4">
+      <section className="rounded-2xl border border-gold-light bg-white p-5">
+        <div className="mb-3 flex flex-wrap items-baseline justify-between gap-2">
+          <h2 className="t-section">Teacher{teachers.length === 1 ? "" : "s"}</h2>
+          <p className="t-meta">Teachers are assigned from People.</p>
         </div>
-      )}
-      <p className="text-xs text-ink/65">Teachers are assigned from People.</p>
-
-      <div>
-        <div className="mb-2 flex flex-wrap items-center justify-between gap-2">
-          <h3 className="text-xs font-semibold uppercase tracking-wide text-ink/65">Pupils ({people.length})</h3>
-          <button type="button" onClick={() => setAdding(true)} className="rounded-lg bg-gold-700 px-3 py-1.5 text-sm font-medium text-white hover:bg-gold-900">
-            + Add participants
-          </button>
-        </div>
-        {message && <p className="mb-2 rounded-lg bg-red-50 px-3 py-2 text-sm text-red-800">{message}</p>}
-        {people.length === 0 ? (
-          <p className="text-sm text-ink/65">No pupils enrolled yet.</p>
+        {teachers.length === 0 ? (
+          <p className="t-meta">No teacher assigned yet.</p>
         ) : (
-          <ul className="grid gap-2 sm:grid-cols-2 lg:grid-cols-3">
-            {people.map((p) => (
-              <li key={p.id} className="flex items-center gap-3 rounded-lg border border-gold-light/70 px-3 py-2.5">
-                <span className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-teal-100 text-xs font-semibold text-teal-900" aria-hidden="true">
-                  {initials(p.name)}
+          <ul className="grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
+            {teachers.map((t) => (
+              <li key={`${t.user_id}-${t.role}`} className="flex items-center gap-3 rounded-xl bg-[var(--portal-soft)] px-3.5 py-3">
+                <Avatar name={t.full_name} seed={t.user_id} />
+                <span className="min-w-0">
+                  <span className="block truncate text-sm font-semibold text-ink">{t.full_name}</span>
+                  <span className="t-meta block">{t.role === "teacher" ? "Teacher" : "Teaching assistant"}</span>
                 </span>
-                <span className="min-w-0 flex-1 truncate text-sm font-medium text-ink">
-                  <PupilLink id={p.id} name={p.name} />
-                </span>
-                <button type="button" onClick={() => remove(p)} aria-label={`Remove ${p.name}`} className="rounded-md px-2 py-1 text-base leading-none text-ink/65 hover:bg-red-50 hover:text-red-700">
-                  ×
-                </button>
               </li>
             ))}
           </ul>
         )}
-      </div>
+      </section>
+
+      <section className="rounded-2xl border border-gold-light bg-white p-5">
+        <div className="mb-4 flex flex-wrap items-center justify-between gap-2">
+          <h2 className="t-section">
+            Pupils <span className="font-normal text-ink-500">· {people.length}</span>
+          </h2>
+          <button type="button" onClick={() => setAdding(true)} className={`${ui.btnPrimary} ${ui.sm}`}>
+            <Icon name="plus" size="sm" />
+            Add participants
+          </button>
+        </div>
+        {message && <p className="mb-3 rounded-xl bg-[var(--tone-bad-bg)] px-4 py-2.5 text-sm text-[var(--tone-bad)]">{message}</p>}
+        {people.length === 0 ? (
+          <p className="t-meta">No pupils enrolled yet.</p>
+        ) : (
+          <ul className="grid grid-cols-[repeat(auto-fill,minmax(11.5rem,1fr))] gap-3">
+            {people.map((p) => {
+              const r = rate(p.id);
+              return (
+                <li key={p.id} className="relative flex flex-col items-start gap-2 rounded-[0.875rem] border border-[var(--portal-line-soft)] bg-[var(--portal-soft)] p-4 transition-colors hover:border-forest-500">
+                  <Avatar name={p.name} seed={p.id} size={40} />
+                  <span className="min-w-0 max-w-full truncate text-sm font-semibold text-ink">
+                    <PupilLink id={p.id} name={p.name} />
+                  </span>
+                  {marks && <Tag tone={r === null ? "neutral" : r >= 95 ? "good" : r >= 90 ? "neutral" : "warn"}>{r === null ? "No registers yet" : `${r}% attendance`}</Tag>}
+                  <button type="button" onClick={() => remove(p)} aria-label={`Remove ${p.name}`} title={`Remove ${p.name}`} className={`${ui.btnGhost} ${ui.sm} portal-btn--icon absolute right-1.5 top-1.5 !h-8 !min-h-8 !w-8 !min-w-8`}>
+                    <Icon name="x" size="sm" />
+                  </button>
+                </li>
+              );
+            })}
+          </ul>
+        )}
+      </section>
 
       {adding && (
         <AddModal

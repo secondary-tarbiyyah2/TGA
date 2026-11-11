@@ -332,9 +332,7 @@ export function ClassPage({ viewer }: { viewer: ClassViewer }) {
 
       {tab === "people" &&
         (isStaff ? (
-          <Panel title="People">
-            <ParticipantsTab classId={cls.id} />
-          </Panel>
+          <ParticipantsTab classId={cls.id} />
         ) : (
           <MeetYourTeachers classId={cls.id} />
         ))}
