@@ -21,8 +21,8 @@ const STRANDS = [
 
 // Public subject listing only: no exam boards or specification codes (those
 // live in the portal and the Examinations policy, and change with entries).
-const GCSE_CORE = ["English Language", "English Literature", "Mathematics", "Science (Double Award, or Biology, Chemistry and Physics)", "Islamic Studies"];
-const GCSE_OPTIONS = ["Arabic", "Business", "Computer Science", "Geography"];
+const GCSE_CORE = ["English Language", "English Literature", "Mathematics", "Biology, Chemistry and Physics (three separate sciences)", "Islamic Studies"];
+const GCSE_OPTIONS = ["Arabic", "Business", "Geography"];
 
 export default async function CurriculumPage() {
   const [content, keyStages] = await Promise.all([getCurriculumContent(), getKeyStages()]);
@@ -39,7 +39,7 @@ export default async function CurriculumPage() {
             {content.heroBody || (
               <>
                 Qur&apos;an, Arabic and Islamic Studies on the timetable every week, alongside the full national
-                curriculum, taught live by qualified teachers in classes of no more than 15, from Year 1 to International GCSE.
+                curriculum, taught live by qualified teachers in classes of no more than 15, from Year 1 to GCSE.
               </>
             )}
           </p>
@@ -97,8 +97,8 @@ export default async function CurriculumPage() {
           <Kicker>Years 10 and 11</Kicker>
           <h2 className="text-h2 font-serif font-semibold text-ink">Recognised qualifications, sat as private candidates.</h2>
           <p className="mt-4 max-w-2xl text-ink/75">
-            Years 10 and 11 follow two-year International GCSE courses: the core subjects plus two options. Pupils sit their exams as private candidates: families register their child at an approved
-            Pearson Edexcel exam centre near them, in the UK or abroad. We help for free with a list of centres that accept private
+            Years 10 and 11 follow two-year GCSE and International GCSE courses, the same as Tarbiyyah Secondary School: the core subjects plus two options. Pupils sit their exams as private candidates: families register their child at an approved
+            exam centre near them, in the UK or abroad. We help for free with a list of centres that accept private
             candidates, the entry deadlines and timetable, the entry code for each subject, what to ask a centre, and the evidence
             a centre needs for access arrangements, and our exams lead answers your questions.
             History is not offered at GCSE.
