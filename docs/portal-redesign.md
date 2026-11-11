@@ -471,6 +471,10 @@ etc. Needs to be done in a unique way." The short tour above stays as the doorwa
   from the page's code, a menu page is renamed in one place only, or text breaks house style.
 
 ## Log
+- 2026-11-11: Pupil profile Summary and Chronology (feedback 3): an academic-year and term switch; attendance, merits,
+  sanctions and behaviour points on one ruled strip, each against the year group's average (pupils the viewer can
+  see); a weekly or monthly trend; Chronology lists absences, behaviour, missing or late work, results, Qur'an and
+  reports by month with a filter (`pupil/ProfileSummary.tsx`). TGA's own layout, ideas only from SchoolMS.
 - 2026-11-11: Qur'an recitation marking (feedback 2, item 13): Hear and track per Qur'an class, the recitation panel
   with mistakes by type and ayah, strictness bands set by the head teacher (`/admin/quran`, migration 0208).
 - 2026-11-11: Classwork quizzes (feedback 2, items 6, 15, 17; migration 0208): full-screen quiz builder with nine question types as cards, settings, AI draft checked question by question, results and marking; pupils sit quizzes full screen with the server clock, autosave and results; Classwork filters and groups by kind. Add an assessment opens full screen (item 10, `FocusView`).
