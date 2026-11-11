@@ -8,6 +8,7 @@ import { usePathname } from "next/navigation";
 import { useEffect, useMemo } from "react";
 import type { PortalArea } from "@/lib/learn/nav";
 import { markGuideLearned, usePortalPrefs } from "@/lib/learn/portalPrefs";
+import { GuideJourney } from "./GuideJourney";
 import { GuidePanel } from "./GuidePanel";
 import { GuideSpotlight } from "./GuideSpotlight";
 import { closeGuidePanel, endSpot, moveSpot, openGuidePanel, useGuideState } from "./guideStore";
@@ -22,9 +23,11 @@ export function GuideHost({ area, roles, userId }: { area: PortalArea; roles: st
   const entries = role && content ? content.GUIDE[role] : null;
   const entry = role && content ? content.guideEntryFor(role, pathname) : null;
 
-  // A new page closes a Show me that belonged to the old one.
+  // A new page closes a Show me that belonged to the old one. A link from the
+  // Portal guide (?guide=1) opens the new page's guide straight away.
   useEffect(() => {
     if (spot?.kind === "show") endSpot();
+    if (new URLSearchParams(window.location.search).get("guide") === "1") openGuidePanel();
     // eslint-disable-next-line react-hooks/exhaustive-deps -- only on navigation
   }, [pathname]);
 
@@ -43,6 +46,7 @@ export function GuideHost({ area, roles, userId }: { area: PortalArea; roles: st
           Loading the guide…
         </div>
       )}
+      {spot?.kind === "journey" && <GuideJourney spot={spot} />}
       {spot?.kind === "show" && (
         <GuideSpotlight
           heading={spot.heading}

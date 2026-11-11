@@ -1,0 +1,50 @@
+{
+ "id": "computing-y11-pupil-pdf-worksheet-own-exam-style-questions-wit-l39",
+ "title": "Own exam-style questions with answers on the teacher sheet (lesson 39)",
+ "type": "revision set",
+ "subject": "Computing",
+ "subjectSlug": "computing",
+ "year": "y11",
+ "board": "Edexcel IGCSE 4CP0",
+ "unit": "Spring 2: Revision cycle 2",
+ "lessons": [
+  39
+ ],
+ "source": "Seeded from computing/y11 lesson 39 (Pupil PDF worksheet: own exam-style questions with answers on the teacher sheet)",
+ "intro": "Lesson 39: Mock feedback: Paper 2 and debugging. Answer every question. Show your working. Mark it with the mark scheme and log any errors in your repair list.",
+ "time": "25 minutes",
+ "blocks": [
+  {
+   "questions": [
+    {
+     "q": "Pupil PDF: five buggy programs from the mock themes; find, classify and fix each error, then add your own mock errors to the repair list.",
+     "a": "Fixed code and a repair list (answers on the teacher sheet).",
+     "model": "The teacher fixes program 1 live.",
+     "marks": 2
+    },
+    {
+     "q": "write a test table for one fixed program.",
+     "a": "Normal, boundary and erroneous rows.",
+     "marks": 1,
+     "lines": 6
+    },
+    {
+     "q": "What is wrong? 'if age > 18: print(\"adult\")' should include 18.",
+     "a": "Use >= 18.",
+     "model": "I do: 'if score > 100' should allow 100: use >= or the right boundary.",
+     "marks": 1
+    },
+    {
+     "q": "A logic error ...",
+     "a": "gives a wrong result without crashing",
+     "options": [
+      "gives a wrong result without crashing",
+      "stops the program running",
+      "is found by the interpreter"
+     ],
+     "marks": 1
+    }
+   ]
+  }
+ ]
+}

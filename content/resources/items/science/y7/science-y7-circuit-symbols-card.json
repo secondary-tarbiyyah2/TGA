@@ -1,0 +1,76 @@
+{
+ "id": "science-y7-circuit-symbols-card",
+ "title": "Circuit symbols card",
+ "type": "worksheet",
+ "subject": "Science",
+ "subjectSlug": "science",
+ "year": "y7",
+ "unit": "Spring 2: Current electricity (7J); forces (7K)",
+ "lessons": [
+  32
+ ],
+ "source": "Seeded from science/y7 lesson 32 (Circuit symbols card (portal worksheet))",
+ "intro": "Lesson 32: Electric circuits and symbols. To understand what an electric current is and how a complete circuit lets it flow",
+ "blocks": [
+  {
+   "h": "We do"
+  },
+  {
+   "questions": [
+    {
+     "q": "Draw a circuit: one cell, one lamp, one closed switch.",
+     "a": "Rectangle loop with the cell, lamp and closed switch symbols",
+     "model": "Start with the cell symbol (long line, short line). Draw a wire round as a rectangle. Add the lamp (circle with a cross) on one side and the closed switch on another."
+    },
+    {
+     "q": "Why does opening a switch turn off the lamp?",
+     "a": "It makes a gap so the circuit is not complete; no current flows"
+    },
+    {
+     "q": "What is a battery?",
+     "a": "Two or more cells joined together"
+    }
+   ]
+  },
+  {
+   "h": "You do"
+  },
+  {
+   "questions": [
+    {
+     "q": "Build three circuits in the simulator and draw each with symbols: (a) one cell, one lamp; (b) add a switch; (c) two lamps in a line. Say whether each lamp lights.",
+     "a": "All lamps light when the switch is closed; diagrams with correct symbols and square corners",
+     "model": "Teacher builds circuit (a) in the simulator on screen and draws it: cell, wire, lamp, back to the cell."
+    },
+    {
+     "q": "Explain why a torch with one cell the wrong way round does not work.",
+     "a": "The cells push against each other, so there is little or no current."
+    },
+    {
+     "q": "A string of lamps all go out when one breaks. What does that tell you about the circuit?",
+     "a": "They are in series: one break opens the only path."
+    }
+   ]
+  },
+  {
+   "h": "Exit ticket"
+  },
+  {
+   "questions": [
+    {
+     "q": "Current is measured in...",
+     "a": "Amps",
+     "options": [
+      "Volts",
+      "Amps",
+      "Newtons"
+     ]
+    },
+    {
+     "q": "Big question: why might a torch not switch on?",
+     "a": "The circuit is incomplete: flat cell, broken lamp, gap, or cell the wrong way."
+    }
+   ]
+  }
+ ]
+}

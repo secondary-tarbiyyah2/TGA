@@ -1,0 +1,234 @@
+{
+ "id": "computing-y10-homework-24-fix-your-three-weakest-quiz-topics-w-l24",
+ "title": "Homework, lesson 24: Fix your three weakest quiz topics with the knowledge organiser.",
+ "type": "quiz",
+ "subject": "Computing",
+ "subjectSlug": "computing",
+ "year": "y10",
+ "board": "Edexcel IGCSE 4CP0",
+ "unit": "Spring 2: Data representation",
+ "lessons": [
+  24
+ ],
+ "source": "Seeded from computing/y10 lesson 24 (Fix your three weakest quiz topics with the knowledge organiser.)",
+ "intro": "Covers lessons 17 to 39 of Data representation. Answer every question. For multiple choice, fill in one circle.",
+ "time": "30 minutes",
+ "blocks": [
+  {
+   "questions": [
+    {
+     "q": "How many states do 5 bits give?",
+     "options": [
+      "32",
+      "10",
+      "31",
+      "25"
+     ],
+     "a": "A) 32. 2^5 = 32; 31 is the largest value, not the number of states.",
+     "marks": 1
+    },
+    {
+     "q": "11111111 in two's complement is ...",
+     "options": [
+      "−1",
+      "255",
+      "−127",
+      "−128"
+     ],
+     "a": "A) −1. −128 + 127 = −1.",
+     "marks": 1
+    },
+    {
+     "q": "Which sum overflows 8 bits (unsigned)?",
+     "options": [
+      "180 + 90",
+      "100 + 100",
+      "127 + 1",
+      "0 + 255"
+     ],
+     "a": "A) 180 + 90. 180 + 90 = 270 > 255.",
+     "marks": 1
+    },
+    {
+     "q": "01011100 in hex is ...",
+     "options": [
+      "5C",
+      "92",
+      "C5",
+      "5B"
+     ],
+     "a": "A) 5C. 0101 = 5, 1100 = C.",
+     "marks": 1
+    },
+    {
+     "q": "If 'a' is 97, 'e' is ...",
+     "options": [
+      "101",
+      "105",
+      "69",
+      "100"
+     ],
+     "a": "A) 101. a, b, c, d, e: 97 + 4 = 101.",
+     "marks": 1
+    },
+    {
+     "q": "Increasing the sample rate ...",
+     "options": [
+      "improves accuracy and increases file size",
+      "reduces file size",
+      "changes the colour depth",
+      "has no effect"
+     ],
+     "a": "A) improves accuracy and increases file size. More samples per second: closer to the wave, more data.",
+     "marks": 1
+    },
+    {
+     "q": "How many MiB in 2 GiB?",
+     "options": [
+      "2048",
+      "2000",
+      "1024",
+      "16"
+     ],
+     "a": "A) 2048. 2 × 1024 = 2048.",
+     "marks": 1
+    },
+    {
+     "q": "Which file must use lossless compression?",
+     "options": [
+      "A Python program",
+      "A holiday photo",
+      "A streamed video",
+      "A music track"
+     ],
+     "a": "A) A Python program. A program must be rebuilt exactly or it will not run.",
+     "marks": 1
+    },
+    {
+     "q": "10110010 in denary is ...",
+     "options": [
+      "178",
+      "77",
+      "182",
+      "50"
+     ],
+     "a": "A) 178. 128 + 32 + 16 + 2 = 178.",
+     "marks": 1
+    },
+    {
+     "q": "A logical right shift by 1 place ...",
+     "options": [
+      "halves the value (bits may be lost)",
+      "doubles the value",
+      "makes it negative",
+      "has no effect"
+     ],
+     "a": "A) halves the value (bits may be lost). Right shift divides by 2; the rightmost bit falls off.",
+     "marks": 1
+    },
+    {
+     "q": "Why can't 7-bit ASCII store Arabic letters?",
+     "options": [
+      "It has only 128 codes, all used",
+      "Arabic is written right to left",
+      "Arabic has no binary",
+      "ASCII is too new"
+     ],
+     "a": "A) It has only 128 codes, all used. Too few bits for more characters.",
+     "marks": 1
+    },
+    {
+     "q": "A 100 × 100 image with 8-bit colour is how many bytes?",
+     "options": [
+      "10,000",
+      "80,000",
+      "1,250",
+      "800"
+     ],
+     "a": "A) 10,000. 100 × 100 × 8 = 80,000 bits = 10,000 bytes.",
+     "marks": 1
+    },
+    {
+     "q": "2 × 2 × 2 × 2 =?",
+     "a": "16",
+     "options": [
+      "16",
+      "8",
+      "32"
+     ],
+     "marks": 1
+    },
+    {
+     "q": "13 = 8 + 4 + ...",
+     "a": "1",
+     "options": [
+      "1",
+      "2",
+      "3"
+     ],
+     "marks": 1
+    },
+    {
+     "q": "8 bits can hold values from 0 to ...",
+     "a": "255",
+     "options": [
+      "255",
+      "256",
+      "128"
+     ],
+     "marks": 1
+    },
+    {
+     "q": "150 in binary is ...",
+     "a": "10010110",
+     "options": [
+      "10010110",
+      "10100110",
+      "01101001"
+     ],
+     "marks": 1
+    },
+    {
+     "q": "The leftmost bit is the ...",
+     "a": "most significant bit",
+     "options": [
+      "most significant bit",
+      "least significant bit",
+      "sign of the byte"
+     ],
+     "marks": 1
+    },
+    {
+     "q": "The range of 8-bit two's complement is ...",
+     "a": "−128 to 127",
+     "options": [
+      "−128 to 127",
+      "−127 to 128",
+      "0 to 255"
+     ],
+     "marks": 1
+    },
+    {
+     "q": "1 + 1 in binary is ...",
+     "a": "10",
+     "options": [
+      "10",
+      "2",
+      "11"
+     ],
+     "marks": 1
+    },
+    {
+     "q": "Overflow means ...",
+     "a": "the result is too big for the bits available",
+     "options": [
+      "the result is too big for the bits available",
+      "the answer is negative",
+      "there was a carry"
+     ],
+     "marks": 1
+    }
+   ]
+  }
+ ]
+}

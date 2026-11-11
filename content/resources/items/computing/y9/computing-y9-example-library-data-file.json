@@ -1,0 +1,147 @@
+{
+ "id": "computing-y9-example-library-data-file",
+ "title": "Example library data file",
+ "type": "worksheet",
+ "subject": "Computing",
+ "subjectSlug": "computing",
+ "year": "y9",
+ "unit": "Spring 2: Databases and spreadsheets",
+ "lessons": [
+  14
+ ],
+ "source": "Written for computing/y9 lesson 14 (Example library data file (portal))",
+ "intro": "Lesson 14: Validation and lookup. Read the ideas from the lesson, then do the tasks.",
+ "blocks": [
+  {
+   "h": "Validation types"
+  },
+  {
+   "table": {
+    "head": [
+     "Check",
+     "Example"
+    ],
+    "rows": [
+     [
+      "Range",
+      "Age between 11 and 18"
+     ],
+     [
+      "Type",
+      "Must be a whole number"
+     ],
+     [
+      "Length",
+      "Postcode 6 to 8 characters"
+     ],
+     [
+      "List",
+      "Year group from a drop-down"
+     ]
+    ]
+   }
+  },
+  {
+   "h": "Validation vs verification"
+  },
+  {
+   "table": {
+    "head": [
+     "Validation",
+     "Verification"
+    ],
+    "rows": [
+     [
+      "Is it sensible?",
+      "Is it correct?"
+     ],
+     [
+      "Automatic rules",
+      "Double entry or checking"
+     ]
+    ]
+   }
+  },
+  {
+   "h": "Key words"
+  },
+  {
+   "keywords": [
+    {
+     "term": "validation",
+     "def": "a check that data is sensible and allowed"
+    },
+    {
+     "term": "range check",
+     "def": "a value must be between limits"
+    },
+    {
+     "term": "lookup",
+     "def": "a function that finds a value in a table"
+    },
+    {
+     "term": "verification",
+     "def": "checking data matches the original"
+    }
+   ]
+  },
+  {
+   "h": "We do"
+  },
+  {
+   "questions": [
+    {
+     "q": "Write a validation rule for 'pages' in the library table.",
+     "a": "Whole number between 1 and 2,000."
+    }
+   ]
+  },
+  {
+   "h": "You do"
+  },
+  {
+   "questions": [
+    {
+     "q": "In the library spreadsheet: add two validation rules and one lookup that returns a book title from its ID; test with good and bad data.",
+     "a": "Working rules and lookup, with tests recorded."
+    },
+    {
+     "q": "Extend: add a drop-down list for 'Available' (Yes/No).",
+     "a": "A list validation."
+    },
+    {
+     "q": "Stretch: explain why validation cannot prove data is correct.",
+     "a": "Plausible but wrong values still pass."
+    }
+   ]
+  },
+  {
+   "h": "Check"
+  },
+  {
+   "questions": [
+    {
+     "q": "Which is a range check?",
+     "options": [
+      "Age must be between 11 and 18",
+      "Name must be typed twice",
+      "Postcode must be text"
+     ],
+     "a": "A) Age must be between 11 and 18. Range: between limits."
+    },
+    {
+     "q": "Verification checks ...",
+     "a": "data matches the original",
+     "options": [
+      "data matches the original",
+      "data is in range only"
+     ]
+    },
+    {
+     "q": "Think again: Validation stops someone typing an age of 250. Can it stop someone typing the wrong (but possible) age?",
+     "a": "No: 14 instead of 15 passes validation. Verification (double-checking) is also needed."
+    }
+   ]
+  }
+ ]
+}

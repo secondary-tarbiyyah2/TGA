@@ -1,0 +1,127 @@
+{
+ "id": "science-y7-force-diagram-sheet",
+ "title": "Force diagram sheet",
+ "type": "worksheet",
+ "subject": "Science",
+ "subjectSlug": "science",
+ "year": "y7",
+ "unit": "Spring 2: Current electricity (7J); forces (7K)",
+ "lessons": [
+  47
+ ],
+ "source": "Seeded from science/y7 lesson 47 (Force diagram sheet (portal worksheet))",
+ "intro": "Lesson 47: Balanced and unbalanced forces. To understand how balanced and unbalanced forces affect an object's motion",
+ "blocks": [
+  {
+   "h": "Label the diagram"
+  },
+  {
+   "picture": {
+    "find": "parachute descending",
+    "alt": "A parachute in the sky",
+    "labels": 5,
+    "draw": "Draw and label: Force diagram sheet"
+   }
+  },
+  {
+   "starters": [
+    "balanced",
+    "unbalanced",
+    "resultant force",
+    "equilibrium",
+    "accelerate"
+   ],
+   "title": "Word bank"
+  },
+  {
+   "h": "Worked example"
+  },
+  {
+   "model": {
+    "title": "A boat: engine 800 N forwards, drag 500 N backwards. Find the resultant and describe the motion.",
+    "parts": [
+     {
+      "label": "Step 1",
+      "text": "Opposite directions: subtract"
+     },
+     {
+      "label": "Step 2",
+      "text": "800 - 500 = 300 N"
+     },
+     {
+      "label": "Step 3",
+      "text": "Direction of the bigger force: forwards"
+     },
+     {
+      "label": "Step 4",
+      "text": "Unbalanced, so it speeds up"
+     },
+     {
+      "label": "Answer",
+      "text": "300 N forwards; it accelerates"
+     }
+    ]
+   }
+  },
+  {
+   "h": "We do"
+  },
+  {
+   "questions": [
+    {
+     "q": "A cyclist: pedal force 150 N, air resistance 90 N. Resultant?",
+     "a": "60 N forwards",
+     "model": "Opposite directions, so subtract: 150 - 90 = 60. Bigger force is forwards. 60 N forwards."
+    },
+    {
+     "q": "What happens if air resistance becomes 150 N?",
+     "a": "Forces balance; steady speed"
+    },
+    {
+     "q": "Two people push a box the same way with 30 N and 40 N. Resultant?",
+     "a": "70 N"
+    }
+   ]
+  },
+  {
+   "h": "You do"
+  },
+  {
+   "questions": [
+    {
+     "q": "Draw force diagrams and find the resultant for four cases (portal sheet): a lorry, a skydiver, a book on a table, a car braking.",
+     "a": "Lorry: 2000 - 1500 = 500 N forwards; skydiver: 700 - 700 = 0 (steady); book: 0; car: 3000 N backwards (slowing)",
+     "model": "Teacher draws the lorry: 2000 N forward arrow, 1500 N backward arrow, resultant 500 N forwards."
+    },
+    {
+     "q": "A skydiver opens the parachute. Explain what happens to the forces and speed.",
+     "a": "Air resistance becomes bigger than weight, so the resultant is upwards and they slow down until forces balance again."
+    },
+    {
+     "q": "Why does a car need a bigger driving force to keep a steady speed at 70 mph than at 30 mph?",
+     "a": "Drag is much bigger at higher speed, so a bigger force is needed to balance it."
+    }
+   ]
+  },
+  {
+   "h": "Exit ticket"
+  },
+  {
+   "questions": [
+    {
+     "q": "Balanced forces on a moving object: it...",
+     "a": "Keeps the same speed",
+     "options": [
+      "Stops",
+      "Keeps the same speed",
+      "Speeds up"
+     ]
+    },
+    {
+     "q": "Big question: how can a car move steadily with balanced forces?",
+     "a": "Balanced forces mean no change in motion, so it keeps its speed."
+    }
+   ]
+  }
+ ]
+}

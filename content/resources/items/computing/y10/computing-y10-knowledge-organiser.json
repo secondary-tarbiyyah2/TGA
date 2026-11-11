@@ -1,0 +1,271 @@
+{
+ "id": "computing-y10-knowledge-organiser",
+ "title": "Knowledge organiser",
+ "type": "knowledge organiser",
+ "subject": "Computing",
+ "subjectSlug": "computing",
+ "year": "y10",
+ "board": "Edexcel IGCSE 4CP0",
+ "unit": "Spring 2: Data representation",
+ "lessons": [
+  17,
+  18,
+  19,
+  20,
+  21,
+  22,
+  23,
+  24,
+  36,
+  37,
+  38,
+  39
+ ],
+ "source": "Seeded from computing/y10 lessons 17, 18, 19, 20, 21, 22, 23, 24, 36, 37, 38, 39 (Knowledge organiser (pupil PDF))",
+ "intro": "Data representation: the big ideas, key words and examples on one sheet. Keep it in your book and use it to revise (cover, write, check).",
+ "blocks": [
+  {
+   "panels": [
+    {
+     "title": "Big questions",
+     "points": [
+      "A light switch has two positions. How many different patterns can three switches make?",
+      "A lift in a building with basements needs floor −2. How could 8 switches show a negative number?",
+      "A car's mileage counter shows 999999. What happens after one more mile?",
+      "Which is easier to read aloud without a mistake: 10110111 or B7?"
+     ]
+    },
+    {
+     "title": "Islamic foundation",
+     "text": "The Qur'an was revealed in clear Arabic (Yusuf 12:2). Unicode lets the Arabic script, with every vowel mark, appear correctly on screens worldwide, so the text can be read and shared accurately."
+    }
+   ],
+   "cols": 2
+  },
+  {
+   "h": "Key words"
+  },
+  {
+   "keywords": [
+    {
+     "term": "bit",
+     "def": "a binary digit, 0 or 1"
+    },
+    {
+     "term": "byte",
+     "def": "8 bits"
+    },
+    {
+     "term": "state",
+     "def": "one possible pattern of a group of bits"
+    },
+    {
+     "term": "unsigned",
+     "def": "a whole number with no sign, 0 or above"
+    },
+    {
+     "term": "signed integer",
+     "def": "a whole number that can be negative"
+    },
+    {
+     "term": "two's complement",
+     "def": "a signed system where the most significant bit has a negative place value"
+    },
+    {
+     "term": "sign bit",
+     "def": "the leftmost bit: 1 means negative"
+    },
+    {
+     "term": "range",
+     "def": "the smallest and largest values that can be stored"
+    },
+    {
+     "term": "carry",
+     "def": "a 1 passed to the next column"
+    },
+    {
+     "term": "overflow",
+     "def": "a result too large for the number of bits"
+    },
+    {
+     "term": "register",
+     "def": "a small, fixed-size store in the CPU"
+    },
+    {
+     "term": "binary addition",
+     "def": "adding column by column with carries"
+    },
+    {
+     "term": "hexadecimal",
+     "def": "base 16, digits 0 to 9 and A to F"
+    },
+    {
+     "term": "nibble",
+     "def": "4 bits: one hex digit"
+    },
+    {
+     "term": "colour code",
+     "def": "a hex value for red, green and blue"
+    },
+    {
+     "term": "readability",
+     "def": "how easy something is for people to read"
+    },
+    {
+     "term": "character set",
+     "def": "a defined list of characters and their codes"
+    },
+    {
+     "term": "ASCII",
+     "def": "a 7-bit character set of 128 characters"
+    }
+   ]
+  },
+  {
+   "h": "What we learn"
+  },
+  {
+   "panels": [
+    {
+     "title": "Bits, states and unsigned binary",
+     "points": [
+      "Circuits use switches (transistors) that are on or off",
+      "Two states are easy to tell apart and resist noise",
+      "Data and instructions are both stored as bits",
+      "Each place doubles the one to its right"
+     ]
+    },
+    {
+     "title": "Signed integers and two's complement",
+     "points": [
+      "The leftmost place is −128",
+      "Range: −128 to 127"
+     ]
+    },
+    {
+     "title": "Binary addition and overflow",
+     "points": [
+      "11001000 (200) + 01100100 (100) = 300",
+      "300 needs 9 bits: the 9th bit is lost",
+      "Stored result: 00101100 = 44 (wrong)"
+     ]
+    },
+    {
+     "title": "Hexadecimal",
+     "points": [
+      "Shorter than binary",
+      "Easy to convert (one digit per nibble)",
+      "Fewer mistakes",
+      "Used for colours (#FF8800), memory addresses, error codes"
+     ]
+    },
+    {
+     "title": "Representing text: ASCII",
+     "points": [
+      "Letters are in order: C = 67",
+      "Lower case = upper case + 32",
+      "Digit characters are not numbers: '7' is 55"
+     ]
+    },
+    {
+     "title": "Representing images and sound",
+     "points": [
+      "Resolution: width × height in pixels",
+      "Colour depth n bits → 2^n colours",
+      "More pixels or bits: better quality, larger file",
+      "Sample the wave's height at intervals"
+     ]
+    },
+    {
+     "title": "Storage units and capacity",
+     "points": [
+      "order the units from bit to tebibyte",
+      "convert between units using 1024",
+      "calculate how many files fit in a given capacity"
+     ]
+    },
+    {
+     "title": "Compression, and the data representation quiz",
+     "points": [
+      "Faster transfer and streaming",
+      "Lower data costs"
+     ]
+    },
+    {
+     "title": "Converting between denary and binary fluently",
+     "points": [
+      "Add the place values where there is a 1"
+     ]
+    }
+   ],
+   "cols": 2
+  },
+  {
+   "h": "Worked examples"
+  },
+  {
+   "panels": [
+    {
+     "title": "Represent −45 in 8-bit two's complement",
+     "points": [
+      "45 in binary: 00101101",
+      "Flip every bit: 11010010",
+      "Add 1: 11010011",
+      "Check: −128 + 64 + 16 + 2 + 1 = −45",
+      "Answer: 11010011"
+     ]
+    },
+    {
+     "title": "01101101 (109) + 00110110 (54)",
+     "points": [
+      "Add from the right, carrying 1 when a column makes 2 or 3",
+      "Result: 10100011",
+      "Check: 128 + 32 + 2 + 1 = 163 = 109 + 54",
+      "Answer: 10100011"
+     ]
+    },
+    {
+     "title": "Convert B7 to binary and denary",
+     "points": [
+      "B = 1011, 7 = 0111",
+      "Binary: 10110111",
+      "Denary: 11 × 16 + 7 = 183",
+      "Answer: 10110111 = 183"
+     ]
+    },
+    {
+     "title": "How many 4 MiB photos fit on 16 GiB?",
+     "points": [
+      "16 GiB = 16 × 1024 = 16,384 MiB",
+      "16,384 ÷ 4 = 4096",
+      "Round down if needed",
+      "Answer: 4096 photos"
+     ]
+    }
+   ],
+   "cols": 2
+  },
+  {
+   "h": "Common mistakes"
+  },
+  {
+   "table": {
+    "head": [
+     "Not this",
+     "This"
+    ],
+    "rows": [
+     [
+      "Flip the bits and stop",
+      "Flip the bits, then add 1 (or use the −128 place value and check)"
+     ],
+     [
+      "Dividing GiB by MiB without converting",
+      "Convert both to the same unit first"
+     ]
+    ]
+   }
+  }
+ ],
+ "name": false
+}

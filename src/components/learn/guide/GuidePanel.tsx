@@ -16,7 +16,7 @@ import { closeGuidePanel, startSpot } from "./guideStore";
 
 export const GUIDE_HOME = "/guide";
 /** The Portal guide home page (journey map and A to Z) is live. */
-const HAS_GUIDE_HOME = false;
+const HAS_GUIDE_HOME = true;
 
 export function GuidePanel({
   entry,

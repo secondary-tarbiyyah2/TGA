@@ -1,0 +1,82 @@
+{
+ "id": "computing-y8-packet-cards",
+ "title": "Packet cards",
+ "type": "worksheet",
+ "subject": "Computing",
+ "subjectSlug": "computing",
+ "year": "y8",
+ "unit": "Spring 2: Networks and protocols",
+ "lessons": [
+  11
+ ],
+ "source": "Seeded from computing/y8 lesson 11 (Packet cards (pupil PDF))",
+ "intro": "Lesson 11: Packets and addresses: how data travels. To understand how data is split into packets with IP addresses and routed across the internet",
+ "blocks": [
+  {
+   "h": "Cards"
+  },
+  {
+   "cards": [
+    "packet\na small chunk of data with a\nheader",
+    "IP address\na number that identifies a\ndevice on a network",
+    "packet switching\npackets travel separately and\nare reassembled",
+    "header\naddressing information at the\nfront of a packet"
+   ],
+   "cols": 3,
+   "height": 28,
+   "size": 6,
+   "task": "use them to test yourself or a partner."
+  },
+  {
+   "h": "We do"
+  },
+  {
+   "questions": [
+    {
+     "q": "Packets arrive in the order 3, 1, 4, 2. What does the receiver do?",
+     "a": "Reorders them 1, 2, 3, 4 using their numbers.",
+     "model": "I do: read the packet numbers in the headers and sort them."
+    }
+   ]
+  },
+  {
+   "h": "You do"
+  },
+  {
+   "questions": [
+    {
+     "q": "Unplugged simulation (pupil PDF): split a 12-word sentence into 4 packets with headers, 'route' them in a shuffled order, then reassemble.",
+     "a": "Correct packets with headers, reassembled in order.",
+     "model": "The teacher makes packet 1 with its header."
+    },
+    {
+     "q": "what happens if packet 2 never arrives?",
+     "a": "TCP requests it again."
+    },
+    {
+     "q": "is 192.168.300.1 a valid IPv4 address? Why?",
+     "a": "No: 300 is greater than 255."
+    }
+   ]
+  },
+  {
+   "h": "Exit ticket"
+  },
+  {
+   "questions": [
+    {
+     "q": "Packet switching means ...",
+     "a": "packets travel separately",
+     "options": [
+      "packets travel separately",
+      "one big file at once"
+     ]
+    },
+    {
+     "q": "Back to our ponder: A large photo is sent as hundreds of small pieces. Why not send it in one piece?",
+     "a": "Small packets can take the fastest routes, share the network fairly and be resent if lost."
+    }
+   ]
+  }
+ ]
+}
