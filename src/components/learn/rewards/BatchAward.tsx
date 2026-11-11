@@ -46,7 +46,8 @@ export function BatchAward({ classId, roster, onAwarded }: { classId: string; ro
         if (!category.trim() || points < 1) return setMsg({ ok: false, text: "Choose a reason and points." });
         const rows = ids.map((child_id) => ({ child_id, class_id: classId, kind: "merit", points, category: category.trim(), note: note.trim() || null, occurred_on: todayIso() }));
         const { error } = await supabase.from("behaviour_records").insert(rows);
-        if (error) return setMsg({ ok: false, text: "Couldn't save. You can only reward pupils you teach." });
+        // The limits the head teacher sets (0217) come back from the database in plain words.
+        if (error) return setMsg({ ok: false, text: /house points/.test(error.message || "") ? error.message : "Couldn't save. You can only reward pupils you teach." });
         setMsg({ ok: true, text: `${ids.length} ${ids.length === 1 ? "pupil" : "pupils"} each earned ${points} merit ${points === 1 ? "point" : "points"} (${points * ids.length} house points in total).` });
       } else {
         const rows = ids.map((child_id) => ({ child_id, badge }));
