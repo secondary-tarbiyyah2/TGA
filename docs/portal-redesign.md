@@ -50,8 +50,11 @@ Batches and status:
    `Select` now treats an important width (`!w-auto`) as layout, so a dropdown given `!w-auto` sits inline in a
    toolbar (Fees' filters had each taken a whole line). The Designated Safeguarding Lead banner is a quiet panel
    (red outline only when nobody is assigned).
-5. [ ] Workflows (Reports'
-   own sections as stages, Admissions, Entry assessments, Timetable). 6. [ ] Workspaces and Today, Messages,
+5. [x] Workflows, part 1: Reports shows its stages with `Stepper` (Write, Approve for the head teacher with how
+   many are waiting, Issued), each pressable, instead of a switch strip; Report settings left the stages and
+   opens from the header's menu with "Back to reports". The overview's figures use `.portal-figures`. The
+   `Stepper` keeps one row on phones (no notes or joining lines there). Still to do: Admissions, Entry
+   assessments, Timetable. 6. [ ] Workspaces and Today, Messages,
    Calendar, Qur'an, absences.
 
 Screenshots: `scratchpad/tpl/shots.mjs` (the redesign3 mock harness pointed at this worktree, plus subjects,
