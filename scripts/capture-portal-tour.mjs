@@ -62,6 +62,7 @@ const shots = [
   { name: "12d-head-quick-registers-full", who: "head", path: "/admin/dashboard/", click: "Registers", ...FULL },
   { name: "13-teacher-quran-desktop", who: "teacher", path: "/teach/quran/", ...DESK },
   { name: "14-head-quran-desktop", who: "head", path: "/admin/quran/", ...DESK },
+  { name: "15-teacher-quran-hear-full", who: "teacher", path: "/teach/quran/", button: "Hear", ...FULL },
 ].filter(Boolean);
 
 const browser = await chromium.launch();
@@ -75,11 +76,15 @@ for (const s of shots) {
   await page.goto(`${LEARN_URL}${s.path}`, { waitUntil: "networkidle" });
   await page.waitForTimeout(3000);
   await page.evaluate(() => document.querySelectorAll('[aria-label="Cookie consent"]').forEach((el) => el.remove()));
+  if (s.button) {
+    await page.getByRole("button", { name: s.button }).first().click({ timeout: 8000 }).catch((e) => console.log(`button ${s.button}: ${e.message}`));
+    await page.waitForTimeout(4000);
+  }
   if (s.click) {
     await page.getByRole("navigation", { name: "Quick actions" }).getByText(s.click, { exact: false }).first().click({ timeout: 8000 }).catch((e) => console.log(`click ${s.click}: ${e.message}`));
     await page.waitForTimeout(1500);
   }
-  await page.screenshot({ path: `${OUT}/${s.name}.png`, fullPage: !s.click });
+  await page.screenshot({ path: `${OUT}/${s.name}.png`, fullPage: !s.click && !s.button });
   console.log(`captured ${s.name} at ${page.url()}`);
   await ctx.close();
 }
