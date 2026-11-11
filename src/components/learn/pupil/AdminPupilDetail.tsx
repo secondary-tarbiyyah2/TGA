@@ -240,7 +240,7 @@ function PupilProfile({ id, onEdited }: { id: string; onEdited: () => void }) {
             <div className="flex flex-wrap items-start justify-between gap-3">
               <div className="min-w-0">
                 <p className="text-sm text-ink/70">{[child.yearGroup, child.classes.join(", ")].filter(Boolean).join(" · ") || "Not in a class yet"}</p>
-                <p className="text-sm text-ink/70">{child.dob ? `Born ${formatDob(child.dob)}${age !== null ? ` (age ${age})` : ""}` : "Date of birth not recorded"}</p>
+                <p className="text-sm text-ink/70">{child.dob ? `Born ${formatDob(child.dob)}${age !== null ? `, age ${age}` : ""}` : "Date of birth not recorded"}</p>
                 {parent && <p className="text-sm text-ink/70">Parent: {parent.full_name || parent.email}</p>}
                 {/* One pupil record: sign-ins live under Office › Accounts, one click away. */}
                 <p className="mt-1 flex flex-wrap gap-x-3 gap-y-1 text-sm print:hidden">
@@ -288,7 +288,7 @@ function PupilProfile({ id, onEdited }: { id: string; onEdited: () => void }) {
             {tab === "details" && (
               <div className="space-y-4">
                 {record.loaded && missing.length > 0 && <MissingCard missing={missing} requestHref={requestHref} hasParentEmail={!!parent?.email} started={!!record.details} />}
-                {record.loaded ? <RecordSections data={record} only={["basics", "contacts"]} /> : <div className="h-32 motion-safe:animate-pulse rounded-2xl bg-white" />}
+                {record.loaded ? <RecordSections data={record} dob={child.dob} only={["basics", "contacts"]} /> : <div className="h-32 motion-safe:animate-pulse rounded-2xl bg-white" />}
               </div>
             )}
             {tab === "medical" && (record.loaded ? <div className="space-y-4"><RecordSections data={record} showAcks only={["health", "consents", "acks"]} /></div> : <div className="h-32 motion-safe:animate-pulse rounded-2xl bg-white" />)}
@@ -318,7 +318,7 @@ function PupilProfile({ id, onEdited }: { id: string; onEdited: () => void }) {
           {/* Printed: the whole record, whichever tab is open. */}
           <div ref={printRef} className="hidden print:block">
             <PrintScope title={`Pupil information: ${child.name}`} id="pupil-record">
-              {record.loaded && <RecordSections data={record} showAcks />}
+              {record.loaded && <RecordSections data={record} dob={child.dob} showAcks />}
             </PrintScope>
           </div>
         </div>
