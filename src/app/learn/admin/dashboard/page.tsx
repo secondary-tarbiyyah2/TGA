@@ -21,6 +21,7 @@ import { CoverToday } from "@/components/learn/dashboard/CoverToday";
 import { QuickActions, type QuickAction } from "@/components/learn/dashboard/QuickActions";
 import { BehaviourDialog } from "@/components/learn/dashboard/BehaviourDialog";
 import type { ActionItem } from "@/lib/learn/actionCentre";
+import { isDigitalLeadOnly } from "@/lib/learn/nav";
 
 const AUDIT_ACTION_LABELS: Record<string, string> = {
   BOOKING_CALL_JOIN: "started a call for a booking",
@@ -310,13 +311,25 @@ function DashboardContent() {
   return <DashboardWithPanel viewer={{ kind: "staff" }}>{content}</DashboardWithPanel>;
 }
 
+/** A Digital Lead with no office role has no school day to run: its home is the Audit log. */
+function DigitalLeadHome({ children }: { children: React.ReactNode }) {
+  const { roles } = useLearnSession();
+  const digitalLeadOnly = isDigitalLeadOnly(roles.map((r) => r.role));
+  useEffect(() => {
+    if (digitalLeadOnly) window.location.replace("/admin/audit-log");
+  }, [digitalLeadOnly]);
+  return digitalLeadOnly ? <p className="text-ink/65">Opening the audit log…</p> : <>{children}</>;
+}
+
 export default function AdminDashboardPage() {
   return (
     <section className="app-pad">
-      <LearnGate allowedRoles={["head_teacher", "admin", "admissions"]}>
-        <AdminShell>
-          <DashboardContent />
-        </AdminShell>
+      <LearnGate allowedRoles={["head_teacher", "admin", "admissions", "digital_lead"]}>
+        <DigitalLeadHome>
+          <AdminShell>
+            <DashboardContent />
+          </AdminShell>
+        </DigitalLeadHome>
       </LearnGate>
     </section>
   );
