@@ -137,6 +137,7 @@ export const NAV_CATEGORIES: Record<PortalArea, NavCategory[]> = {
       icon: "backpack",
       pages: [
         { href: "/admin/pupils", label: "All pupils", icon: "backpack", hint: "Every pupil's record in one place", headOnly: true, keywords: "students children records add pupil missing details medical", short: "Pupils" },
+        { href: "/admin/families", label: "Families and contacts", icon: "contact", hint: "Parents and emergency contacts for every pupil, and what is missing", headOnly: true, keywords: "parents guardians emergency contacts phone email missing parental responsibility download" },
         { href: "/admin/admissions", label: "Applications", icon: "userRoundPlus", hint: "Applications, calls and availability", keywords: "admissions apply enquiries new families" },
         { href: "/admin/assessments", label: "Entry assessments", icon: "clipboardCheck", hint: "Baseline and entry assessments", keywords: "baseline test placement" },
         { href: "/admin/open-evening", label: "Open evenings", icon: "school", hint: "Sessions, bookings and attendee lists", keywords: "open day taster visits bookings" },

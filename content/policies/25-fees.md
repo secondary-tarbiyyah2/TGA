@@ -38,7 +38,7 @@ Under every plan, the first payment is due on admission, when the place is accep
 | Application fee | £150 per child, non-refundable. The payment details are emailed after the application is made, and the fee must be paid before a place is confirmed. It covers the entry assessment and the time spent with each family. There is no registration fee. |
 | Annual payment discount | 2% discount where the annual option is chosen and paid in full on acceptance of the place (no later than Friday 8 January 2027) |
 | Sibling discount | 5% off tuition for a second child and 10% for the third and later children, applied to the younger sibling's tuition. It can be combined with the annual payment discount |
-| Examination fees | Not included. International GCSE entry fees are paid by families directly to the examination centre they register with (see the Examinations and Private Candidates Policy) |
+| Examination fees | Not included. GCSE and International GCSE entry fees are paid by families directly to the examination centre they register with (see the Examinations and Private Candidates Policy) |
 
 ## 4. Payment Dates
 
@@ -65,7 +65,7 @@ One half term's written notice is required to withdraw a pupil, and fees remain 
 
 1. Fees cover tuition and core digital learning materials, including lesson resources, worksheets and assessments on the Academy's platforms. The Academy gives at least one half term's notice before adding any item to the costs not covered by fees.
 2. Families provide a suitable device, reliable internet, a quiet study space and a way to write on worksheets and the lesson PDF (a tablet with a stylus is recommended; without one, access to printing is required, at home, at a local library or similar), to the published minimum specification. The Academy is not responsible for lessons missed because of a family's equipment or connection.
-3. Examination costs are not included. Families register their child as a private candidate at an approved Pearson Edexcel centre near them, in the UK or abroad, and pay that centre's entry fees directly. The Academy helps families find a centre free of charge but does not book or pay for entries (see the Examinations and Private Candidates Policy).
+3. Examination costs are not included. Families register their child as a private candidate at an approved centre near them, in the UK or abroad, and pay that centre's entry fees directly. The Academy helps families find a centre free of charge but does not book or pay for entries (see the Examinations and Private Candidates Policy).
 4. Extra-curricular activities or additional support with a charge are agreed with parents in writing in advance. No such charge is applied without prior written agreement.
 5. Each fee-payer is liable for the full fees and any agreed supplementary charges, unless the Academy has agreed otherwise in writing.
 6. Fees fall due on the dates above and are paid in full online, by card or from a bank app, on the Academy's secure payment page.

@@ -227,13 +227,13 @@ export type Step = { key: string; label: string; state: StepState; /** A count o
 
 /**
  * A workflow's stages in order, each done, current, still to come, or with a problem. A step
- * with `href` or `onClick` can be opened. Wide screens show the stages in one row; phones show
- * them as a short list, so nothing scrolls sideways.
+ * with `href` or `onClick` can be opened. The stages sit in one row; on phones the lines between
+ * them and the notes under them are hidden, so a few stages still fit without scrolling sideways.
  */
 export function Stepper({ steps, label = "Stages", guide }: { steps: Step[]; label?: string; guide?: string }) {
   return (
     <nav aria-label={label} data-guide={guide} className="print:hidden">
-      <ol className="grid gap-1 sm:flex sm:gap-0">
+      <ol className="flex gap-1 sm:gap-0">
         {steps.map((s, i) => {
           const dot =
             s.state === "done" ? (
@@ -252,13 +252,13 @@ export function Stepper({ steps, label = "Stages", guide }: { steps: Step[]; lab
               {dot}
               <span className="min-w-0">
                 <span className={`block text-sm leading-tight ${s.state === "current" ? "font-semibold text-ink" : s.state === "error" ? "font-medium text-red-800" : "font-medium text-ink-700"}`}>{s.label}</span>
-                {s.meta && <span className="t-meta block leading-tight">{s.meta}</span>}
+                {s.meta && <span className="t-meta hidden leading-tight sm:block">{s.meta}</span>}
               </span>
             </>
           );
-          const cls = "flex min-h-11 min-w-0 items-center gap-2.5 rounded-lg px-2 py-1.5 text-left sm:min-h-0";
+          const cls = "flex min-h-11 min-w-0 items-center gap-2 rounded-lg px-1.5 py-1.5 text-left sm:min-h-0 sm:gap-2.5 sm:px-2";
           return (
-            <li key={s.key} aria-current={s.state === "current" ? "step" : undefined} className="flex min-w-0 items-center sm:flex-1">
+            <li key={s.key} aria-current={s.state === "current" ? "step" : undefined} className="flex min-w-0 flex-1 items-center">
               {s.href ? (
                 <a href={s.href} className={`${cls} hover:bg-[var(--portal-hover)]`}>
                   {body}

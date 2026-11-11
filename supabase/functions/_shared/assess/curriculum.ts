@@ -31,7 +31,7 @@ export const inPaperRange = (level: number, year: number): boolean => {
 
 // ── maths: year → topics (national curriculum programmes of study, KS1–KS4) ──
 export const MATHS_TOPICS: Record<number, RegExp[]> = {
-  1: [/count/i, /one more|one less/i, /add within 20/i, /subtract within 20/i, /missing number/i, /halves/i],
+  1: [/count/i, /one more|one less/i, /add within 20/i, /subtract within 20/i, /missing number/i, /halves/i, /number bonds to 10/i, /take away in a picture/i, /add ones to a 2-digit number/i, /money: add coins/i],
   2: [/add 2-digit/i, /tens and ones/i, /2, 5 and 10 times/i, /tell the time/i, /money/i],
   3: [/add 3-digit/i, /subtract 3-digit/i, /3, 4 and 8 times/i, /fraction of an amount/i, /perimeter/i],
   4: [/times tables to 12/i, /multiply 2-digit by 1-digit/i, /round/i, /equivalent fractions/i, /area/i, /decimals: tenths/i],

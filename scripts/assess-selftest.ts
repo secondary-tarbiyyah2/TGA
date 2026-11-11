@@ -138,6 +138,14 @@ function expectMaths(it: Item): Expect {
   if ((m = s.match(/^([\d.]+) × (\d+) = \?$/))) return { num: N(m[1]) * N(m[2]), tol: 1e-6 };
   if ((m = s.match(/^(\d+) \+ (\d+) × (\d+) = \?$/))) return { num: Number(m[1]) + Number(m[2]) * Number(m[3]) };
   if ((m = s.match(/half of (\d+)/))) return { num: Number(m[1]) / 2 };
+  if ((m = s.match(/If (\d+) rabbits hop away/))) {
+    const all = (it.svg || "").match(/aria-label="(\d+) rabbits"/);
+    return all ? { num: Number(all[1]) - Number(m[1]) } : null;
+  }
+  if (/money is there altogether/.test(s)) {
+    const coins = (it.svg || "").match(/aria-label="Coins: ([^"]+)"/);
+    return coins ? { exact: `${coins[1].split(", ").reduce((t, c) => t + Number(c.replace("p", "")), 0)}p` } : null;
+  }
   if ((m = s.match(/(\d+) tens and (\d+) ones/))) return { num: Number(m[1]) * 10 + Number(m[2]) };
   if ((m = s.match(/pencil for (\d+)p and pays with £1/))) return { num: 100 - Number(m[1]) };
   if (/clock show/.test(s)) {

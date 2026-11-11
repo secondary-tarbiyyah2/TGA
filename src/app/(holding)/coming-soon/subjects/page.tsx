@@ -13,7 +13,7 @@ export const metadata: Metadata = pageMetadata({
 });
 
 // Keep this page simple: subject names only, without exam boards or course codes (publicSubject).
-const simpleStageTitle = (t: string) => t.replace(/\s*\(International GCSE\)/i, "");
+const simpleStageTitle = (t: string) => t.replace(/\s*\((?:GCSE and )?International GCSE\)/i, "");
 
 export default async function HoldingSubjectsPage() {
   const stages = await getKeyStages();
@@ -38,7 +38,7 @@ export default async function HoldingSubjectsPage() {
                 ))}
               </ul>
               {ks.slug === "year-10-11" && (
-                <p className="mt-4 border-t border-gold-light/40 pt-3 text-xs text-ink/65">Leading to Pearson Edexcel International GCSEs. History is not offered at GCSE.</p>
+                <p className="mt-4 border-t border-gold-light/40 pt-3 text-xs text-ink/65">Leading to the same GCSEs and International GCSEs as Tarbiyyah Secondary School. History is not offered at GCSE.</p>
               )}
             </article>
           ))}
