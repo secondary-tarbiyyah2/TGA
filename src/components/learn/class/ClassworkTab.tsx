@@ -20,7 +20,7 @@ import { Tabs } from "@/components/learn/Tabs";
 import { Select } from "@/components/learn/Select";
 
 import { askConfirm } from "@/components/learn/kit";
-import { Button, ui } from "@/components/learn/ui";
+import { Button, ProgressBar, Tag, EmptyState, ui, type Tone } from "@/components/learn/ui";
 type Topic = { id: string; name: string; position: number };
 type Hw = Homework & { topic_id: string | null; status?: string; kind?: string | null; assigned_child_ids?: string[] | null };
 type Mat = { id: string; title: string; kind: "material" | "question"; body: string | null; resources: unknown; topic_id: string | null; allow_comments: boolean; created_at: string };
@@ -31,12 +31,13 @@ type Row =
 
 const KIND_GROUP: Record<ClassworkType, string> = { assignment: "Assignments", quiz: "Quizzes", question: "Questions", material: "Materials" };
 const KIND_LABEL = { homework: "Assignment", quiz: "Quiz", material: "Material", question: "Question" } as const;
+const KIND_ICON: Record<keyof typeof KIND_LABEL, IconName> = { homework: "notebookPen", quiz: "listChecks", material: "bookOpen", question: "circleHelp" };
 
-const STATUS: Record<string, { label: string; cls: string }> = {
-  missing: { label: "Missing", cls: "bg-red-50 text-red-800 ring-red-600/20" },
-  late: { label: "Handed in late", cls: "bg-green-50 text-green-800 ring-green-600/20" },
-  on_time: { label: "Handed in", cls: "bg-green-50 text-green-800 ring-green-600/20" },
-  not_yet_due: { label: "To do", cls: "bg-teal-100 text-teal-900 ring-teal-700/20" },
+const STATUS: Record<string, { label: string; tone: Tone }> = {
+  missing: { label: "Missing", tone: "bad" },
+  late: { label: "Handed in late", tone: "good" },
+  on_time: { label: "Handed in", tone: "good" },
+  not_yet_due: { label: "To do", tone: "info" },
 };
 
 const fmtDue = (iso: string) => new Date(iso).toLocaleDateString("en-GB", { weekday: "short", day: "numeric", month: "short", hour: "2-digit", minute: "2-digit" });
@@ -85,6 +86,8 @@ export function ClassworkTab({ classId, classTitle, viewer, classHref }: { class
   const [view, setView] = useState<"all" | "review">(isStaff && params.get("view") === "review" ? "review" : "all");
   const [reviewHw, setReviewHw] = useState<string | undefined>(undefined);
   const [toReview, setToReview] = useState<Record<string, number>>({});
+  // Staff: how many pupils have handed each piece in, for its progress bar.
+  const [handIn, setHandIn] = useState<Record<string, { done: number; total: number }>>({});
 
   const load = useCallback(async () => {
     const supabase = getSupabaseClient();
@@ -108,6 +111,16 @@ export function ClassworkTab({ classId, classTitle, viewer, classHref }: { class
       const { data: st } = await supabase.from("homework_status").select("homework_id, status").eq("child_id", childId).eq("class_id", classId);
       const byId = new Map(((st as unknown as { homework_id: string; status: string }[]) || []).map((s) => [s.homework_id, s.status]));
       for (const h of hwRows) h.status = byId.get(h.id);
+    }
+    if (isStaff && hwRows.length) {
+      const { data: hs } = await supabase.from("homework_status").select("homework_id, status").eq("class_id", classId).limit(10000);
+      const tally: Record<string, { done: number; total: number }> = {};
+      for (const h of (hs as unknown as { homework_id: string; status: string }[] | null) || []) {
+        const t = (tally[h.homework_id] ||= { done: 0, total: 0 });
+        t.total++;
+        if (h.status === "on_time" || h.status === "late") t.done++;
+      }
+      setHandIn(tally);
     }
     const counts: Record<string, number> = {};
     for (const r of (rq.data as { homework_id: string }[] | null) || []) counts[r.homework_id] = (counts[r.homework_id] || 0) + 1;
@@ -295,7 +308,7 @@ export function ClassworkTab({ classId, classTitle, viewer, classHref }: { class
             ]}
           />
         ) : (
-          <p className="text-sm text-ink/65">Everything set for this class, grouped by topic.</p>
+          <p className="t-meta">Everything set for this class.</p>
         )}
         {canEdit && (
           <Button variant="primary" icon="plus" onClick={() => setPicker(true)} data-guide="classwork-create">
@@ -309,7 +322,7 @@ export function ClassworkTab({ classId, classTitle, viewer, classHref }: { class
       ) : (
       <>
       {note && (
-        <p role="status" className="rounded-lg bg-amber-50 px-3 py-2 text-sm text-amber-900">
+        <p role="status" className="rounded-xl bg-[var(--tone-warn-bg)] px-4 py-2.5 text-sm text-[var(--tone-warn)]">
           {note}
         </p>
       )}
@@ -319,7 +332,7 @@ export function ClassworkTab({ classId, classTitle, viewer, classHref }: { class
       {newTopic && <TopicDialog onClose={() => setNewTopic(false)} onSave={addTopic} />}
       {posting && <PostDialog classId={classId} onClose={() => setPosting(false)} onPosted={() => setNote("Posted to the class stream.")} />}
       {error && (
-        <p role="alert" className="rounded-lg bg-red-50 px-3 py-2 text-sm text-red-800">
+        <p role="alert" className="rounded-xl bg-[var(--tone-bad-bg)] px-4 py-2.5 text-sm text-[var(--tone-bad)]">
           {error}
         </p>
       )}
@@ -350,9 +363,9 @@ export function ClassworkTab({ classId, classTitle, viewer, classHref }: { class
             ))}
           </div>
           <span className="flex-1" />
-          <div role="radiogroup" aria-label="Group by" className="inline-flex rounded-xl bg-cream p-1">
+          <div role="radiogroup" aria-label="Group by" className={ui.seg}>
             {(["kind", "topic"] as const).map((g) => (
-              <button key={g} type="button" role="radio" aria-checked={groupBy === g} onClick={() => setGroupBy(g)} className={`min-h-11 rounded-lg px-3 text-[0.8125rem] font-medium sm:min-h-8 ${groupBy === g ? "bg-white text-ink shadow-sm ring-1 ring-gold-light" : "text-ink/70 hover:text-ink"}`}>
+              <button key={g} type="button" role="radio" aria-checked={groupBy === g} onClick={() => setGroupBy(g)}>
                 {g === "kind" ? "By kind" : "By topic"}
               </button>
             ))}
@@ -361,7 +374,9 @@ export function ClassworkTab({ classId, classTitle, viewer, classHref }: { class
       )}
 
       {rows.length === 0 && topics.length === 0 && (
-        <p className="rounded-2xl border border-dashed border-gold-light bg-white p-8 text-center text-sm text-ink/65">{canEdit ? "No classwork yet. Press Create to add an assignment, a quiz, a question or a material." : "Nothing has been set for this class yet."}</p>
+        <EmptyState title="No classwork yet" icon="notebookPen">
+          {canEdit ? "Press Create to add an assignment, a quiz, a question or a material." : "Nothing has been set for this class yet."}
+        </EmptyState>
       )}
 
       {visibleGroups.map((g) => {
@@ -369,20 +384,21 @@ export function ClassworkTab({ classId, classTitle, viewer, classHref }: { class
         return (
           <section key={g.key} className="rounded-2xl border border-gold-light bg-white">
             {g.topic ? (
-              <div className="flex items-center gap-2 px-4 py-3">
+              <div className="flex flex-wrap items-center gap-2 px-5 pb-2 pt-4">
                 <button type="button" onClick={() => setCollapsed((c) => ({ ...c, [g.key]: !closed }))} aria-expanded={!closed} className="flex min-w-0 flex-1 items-center gap-2 text-left">
                   <svg aria-hidden="true" viewBox="0 0 20 20" className={`h-4 w-4 shrink-0 text-ink/65 transition-transform ${closed ? "-rotate-90" : ""}`}>
                     <path d="M5.5 7.5l4.5 4.5 4.5-4.5" stroke="currentColor" strokeWidth="1.8" fill="none" strokeLinecap="round" strokeLinejoin="round" />
                   </svg>
-                  <h2 className="truncate text-base font-semibold text-ink">{g.topic.name}</h2>
-                  <span className="text-xs text-ink/65">{g.items.length}</span>
+                  <h2 className="truncate text-[1.0625rem] font-bold tracking-[-0.01em] text-ink">{g.topic.name}</h2>
+                  <Tag>{g.items.length}</Tag>
                 </button>
                 {canEdit && (
                   <>
-                    <button type="button" onClick={() => startSetting("assignment", null, (g.topic as Topic).id, true)} className="text-xs font-medium text-teal-800 hover:underline">
-                      + Assignment
+                    <button type="button" onClick={() => startSetting("assignment", null, (g.topic as Topic).id, true)} className={`${ui.btnSecondary} ${ui.sm}`}>
+                      <Icon name="plus" size="sm" />
+                      Assignment
                     </button>
-                    <button type="button" onClick={() => removeTopic(g.topic as Topic)} className="text-xs text-ink/65 hover:text-red-700 hover:underline">
+                    <button type="button" onClick={() => removeTopic(g.topic as Topic)} className={`${ui.btnGhost} ${ui.sm}`}>
                       Delete topic
                     </button>
                   </>
@@ -390,18 +406,17 @@ export function ClassworkTab({ classId, classTitle, viewer, classHref }: { class
               </div>
             ) : (
               g.label ? (
-                <h2 className="flex items-center gap-2 px-4 pt-3 text-sm font-semibold text-ink">
-                  {g.icon && <Icon name={g.icon} className="h-4 w-4 text-ink/60" />}
+                <h2 className="flex items-center gap-2 px-5 pb-1 pt-4 text-[1.0625rem] font-bold tracking-[-0.01em] text-ink">
                   {g.label}
-                  <span className="text-xs font-normal text-ink/65">{g.items.length}</span>
+                  <Tag>{g.items.length}</Tag>
                 </h2>
               ) : (
-                <h2 className="px-4 pt-3 text-sm font-semibold text-ink/65">{topics.length > 0 ? "No topic" : "Classwork"}</h2>
+                <h2 className="px-5 pb-1 pt-4 text-[1.0625rem] font-bold tracking-[-0.01em] text-ink">{topics.length > 0 ? "No topic" : "Classwork"}</h2>
               )
             )}
             {!closed && (
-              <ul className="divide-y divide-gold-light/60 px-2 pb-2">
-                {g.items.length === 0 && <li className="px-3 py-3 text-sm text-ink/65">Nothing in this topic yet.</li>}
+              <ul className="divide-y divide-[var(--portal-line-soft)] px-2 pb-2">
+                {g.items.length === 0 && <li className="px-3 py-3 text-sm text-ink-500">Nothing in this topic yet.</li>}
                 {g.items.map((r) => {
                   const hw = r.type === "homework" ? r.row : null;
                   const kindKey = hw ? (hw.kind === "quiz" ? "quiz" : "homework") : (r.row as Mat).kind;
@@ -410,32 +425,43 @@ export function ClassworkTab({ classId, classTitle, viewer, classHref }: { class
                   const forSome = hw?.assigned_child_ids?.length || 0;
                   const waiting = hw ? toReview[hw.id] || 0 : 0;
                   return (
-                    <li key={`${r.type}-${r.id}`} className="px-3 py-2.5">
+                    <li key={`${r.type}-${r.id}`} className="px-3 py-3">
                       <div className="flex flex-wrap items-center gap-3">
-                        <div className="min-w-0 flex-1">
-                          {groupBy !== "kind" && <p className="text-[11px] font-semibold uppercase tracking-wider text-ink/65">{KIND_LABEL[kindKey]}</p>}
+                        <span aria-hidden="true" className={`flex h-9 w-9 shrink-0 items-center justify-center rounded-[0.625rem] ${kindKey === "quiz" || kindKey === "homework" ? "bg-[var(--tone-warn-bg)] text-[var(--tone-warn)]" : "bg-[var(--tone-ok-bg)] text-[var(--tone-ok)]"}`}>
+                          <Icon name={KIND_ICON[kindKey]} size="sm" />
+                        </span>
+                        <div className="min-w-0 flex-[1_1_12rem]">
                           {hw && !isStaff ? (
-                            <Link href={homeworkHref(viewer)} className="block truncate text-sm font-medium text-ink hover:text-teal-700 hover:underline">
+                            <Link href={homeworkHref(viewer)} className="block truncate text-sm font-semibold text-ink hover:text-forest-700 hover:underline">
                               {r.title}
                             </Link>
                           ) : (
-                            <button type="button" onClick={() => (hw?.kind === "quiz" && canEdit ? startSetting("quiz", hw) : setExpanded(open ? null : `${r.type}-${r.id}`))} aria-expanded={hw?.kind === "quiz" && canEdit ? undefined : open} className="block max-w-full truncate text-left text-sm font-medium text-ink hover:text-teal-700 hover:underline">
+                            <button type="button" onClick={() => (hw?.kind === "quiz" && canEdit ? startSetting("quiz", hw) : setExpanded(open ? null : `${r.type}-${r.id}`))} aria-expanded={hw?.kind === "quiz" && canEdit ? undefined : open} className="block max-w-full truncate text-left text-sm font-semibold text-ink hover:text-forest-700 hover:underline">
                               {r.title}
                             </button>
                           )}
-                          <p className="text-xs text-ink/65">
+                          <p className="t-meta">
+                            {groupBy !== "kind" && `${KIND_LABEL[kindKey]} · `}
                             {hw ? `Due ${fmtDue(r.at)}` : `Posted ${new Date(r.at).toLocaleDateString("en-GB", { day: "numeric", month: "short" })}`}
                             {isStaff && forSome > 0 && ` · For ${forSome} pupil${forSome === 1 ? "" : "s"}`}
                           </p>
                         </div>
-                        {st && <span className={`shrink-0 rounded-full px-2.5 py-1 text-xs font-medium ring-1 ring-inset ${st.cls}`}>{st.label}</span>}
+                        {hw && isStaff && handIn[hw.id] && handIn[hw.id].total > 0 && (
+                          <span className="flex min-w-[9rem] flex-[0_1_12rem] items-center gap-2.5">
+                            <ProgressBar value={(handIn[hw.id].done / handIn[hw.id].total) * 100} />
+                            <span className="t-meta shrink-0 tabular-nums">
+                              {handIn[hw.id].done} of {handIn[hw.id].total} in
+                            </span>
+                          </span>
+                        )}
+                        {st && <Tag tone={st.tone}>{st.label}</Tag>}
                         {isStaff && waiting > 0 && (
-                          <button type="button" onClick={() => openReview(hw?.id)} className="shrink-0 rounded-full bg-teal-100 px-2.5 py-1 text-xs font-semibold text-teal-900 ring-1 ring-inset ring-teal-700/20 hover:bg-teal-700 hover:text-white">
+                          <button type="button" onClick={() => openReview(hw?.id)} className={`${ui.btnPrimary} ${ui.sm}`}>
                             {waiting} to review
                           </button>
                         )}
                         {canEdit && (
-                          <Select aria-label={`Topic for ${r.title}`} value={r.topicId ?? ""} onChange={(e) => moveItem(r, e.target.value)} className="max-w-[10rem] rounded-lg border border-gold-light/70 px-2 py-1 text-xs text-ink/70">
+                          <Select aria-label={`Topic for ${r.title}`} value={r.topicId ?? ""} onChange={(e) => moveItem(r, e.target.value)} className="max-w-[10rem] rounded-[0.5625rem] border border-[var(--portal-control-line)] px-2.5 py-1 text-xs text-ink-700">
                             <option value="">No topic</option>
                             {topics.map((t) => (
                               <option key={t.id} value={t.id}>
@@ -445,7 +471,7 @@ export function ClassworkTab({ classId, classTitle, viewer, classHref }: { class
                           </Select>
                         )}
                         {canEdit && r.type === "material" && (
-                          <button type="button" onClick={() => removeMaterial(r.id)} className="text-xs text-ink/65 hover:text-red-700 hover:underline">
+                          <button type="button" onClick={() => removeMaterial(r.id)} className={`${ui.btnGhost} ${ui.sm}`}>
                             Delete
                           </button>
                         )}
@@ -467,7 +493,7 @@ export function ClassworkTab({ classId, classTitle, viewer, classHref }: { class
                         </div>
                       )}
                       {open && r.type === "material" && (
-                        <div className="mt-2 rounded-lg bg-cream/50 p-3 text-sm text-ink/85">
+                        <div className="mt-2 rounded-xl bg-[var(--portal-row-hover)] p-4 text-sm text-ink-700">
                           {r.row.body ? <div className="space-y-1">{renderMarkup(r.row.body)}</div> : <p className="text-ink/65">No extra details.</p>}
                           <AttachmentList attachments={cleanAttachments(r.row.resources)} />
                           {r.row.allow_comments && (

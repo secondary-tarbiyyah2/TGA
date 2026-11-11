@@ -28,16 +28,16 @@ export function Switch({ checked, onChange, label, hint, disabled }: { checked: 
         aria-label={label}
         disabled={disabled}
         onClick={() => onChange(!checked)}
-        className={`relative mt-0.5 inline-flex h-6 w-11 shrink-0 items-center rounded-full transition-colors disabled:opacity-50 ${checked ? "bg-teal-700" : "bg-ink/25"}`}
+        className={`relative mt-0.5 inline-flex h-6 w-10 shrink-0 items-center rounded-full transition-colors disabled:opacity-50 ${checked ? "bg-forest-700" : "bg-[var(--portal-control-line)]"}`}
       >
-        <span className={`inline-block h-5 w-5 rounded-full bg-white shadow transition-transform ${checked ? "translate-x-5" : "translate-x-0.5"}`} />
+        <span className={`inline-block h-[18px] w-[18px] rounded-full bg-white shadow-[0_1px_2px_rgba(0,0,0,0.25)] transition-transform motion-reduce:transition-none ${checked ? "translate-x-[19px]" : "translate-x-[3px]"}`} />
       </button>
     </div>
   );
 }
 
 const seg = (on: boolean) =>
-  `flex-1 rounded-md px-3 py-1.5 text-sm font-medium transition-colors focus-visible:outline focus-visible:outline-2 focus-visible:outline-forest-700 ${on ? "bg-white text-ink shadow-sm ring-1 ring-gold-light" : "text-ink/65 hover:text-ink"}`;
+  `flex-1 rounded-[0.5625rem] px-3 py-1.5 text-sm font-semibold transition-colors focus-visible:outline focus-visible:outline-2 focus-visible:outline-forest-700 ${on ? "bg-white text-ink shadow-[0_1px_3px_rgba(20,25,20,0.15)]" : "text-ink-500 hover:text-ink"}`;
 
 /**
  * "Add a post" for the class stream: a dialog sized to fit the screen without scrolling (owner,
@@ -146,7 +146,7 @@ export function PostDialog({ classId, onClose, onPosted }: { classId: string; on
             <label htmlFor={`${ids}-body`} className={ui.label}>
               Message
             </label>
-            <div className="mt-1 rounded-lg border border-gold-light focus-within:border-forest-700">
+            <div className="mt-1 rounded-[0.6875rem] border border-[var(--portal-control-line)] focus-within:border-forest-500 focus-within:shadow-[0_0_0_3px_rgba(61,122,95,0.18)]">
               <div className="flex flex-wrap gap-0.5 border-b border-gold-light/70 px-1.5 py-1" role="toolbar" aria-label="Formatting">
                 <button type="button" className={`${TOOL} font-bold`} aria-label="Bold" onClick={() => apply((v, s, e) => wrapSelection(v, s, e, "**"))}>
                   B
@@ -176,7 +176,7 @@ export function PostDialog({ classId, onClose, onPosted }: { classId: string; on
             <p id={`${ids}-when`} className={ui.label}>
               When
             </p>
-            <div role="radiogroup" aria-labelledby={`${ids}-when`} className="mt-1 flex rounded-lg bg-cream p-1">
+            <div role="radiogroup" aria-labelledby={`${ids}-when`} className="mt-1 flex rounded-xl bg-[var(--portal-sunken)] p-1">
               <button type="button" role="radio" aria-checked={!later} className={seg(!later)} onClick={() => setLater(false)}>
                 Now
               </button>
@@ -211,33 +211,35 @@ export function AnnouncementComposer({ classId, onPosted, classworkHref }: { cla
     { k: "material", label: "Material", icon: "bookOpen" },
   ] as const;
   return (
-    <>
+    <section aria-label="Post to the class" className="rounded-2xl border border-gold-light bg-white p-4 sm:p-5">
+      <div className="flex items-center gap-3">
+        <span className="flex h-[2.125rem] w-[2.125rem] shrink-0 items-center justify-center rounded-full bg-forest-700 text-white" aria-hidden="true">
+          <Icon name="megaphone" size="sm" />
+        </span>
+        <button
+          type="button"
+          onClick={() => setOpen(true)}
+          data-guide="stream-add-post"
+          className="flex min-h-11 min-w-0 flex-1 items-center rounded-[0.6875rem] border border-[var(--portal-control-line)] bg-[var(--portal-row-hover)] px-4 text-left text-sm text-ink-500 transition-colors hover:border-[var(--portal-control-line-hover)] hover:text-ink-700 focus-visible:shadow-[0_0_0_3px_var(--portal-focus-ring)] focus-visible:outline-none"
+        >
+          <span className="truncate">Share something with your class</span>
+        </button>
+        <Button variant="primary" onClick={() => setOpen(true)} className="max-sm:hidden">
+          Post
+        </Button>
+      </div>
       {classworkHref && (
-        <nav aria-label="Or set classwork" className="mb-2 flex flex-wrap items-center gap-1 text-sm">
-          <span className="mr-1 text-ink/65">Or set classwork:</span>
+        <nav aria-label="Or set classwork" className="mt-3 flex flex-wrap items-center gap-1.5 border-t border-[var(--portal-line-soft)] pt-3 text-sm">
+          <span className="mr-1 text-[0.8125rem] text-ink-500">Or set classwork</span>
           {kinds.map((x) => (
-            <Link key={x.k} href={classworkHref(x.k)} scroll={false} className={`${ui.btnGhost} ${ui.sm}`}>
+            <Link key={x.k} href={classworkHref(x.k)} scroll={false} className={ui.chip}>
               <Icon name={x.icon} size="sm" />
               {x.label}
             </Link>
           ))}
         </nav>
       )}
-      <button
-        type="button"
-        onClick={() => setOpen(true)}
-        data-guide="stream-add-post"
-        className="flex w-full items-center gap-3 rounded-2xl border border-gold-light bg-white px-5 py-4 text-left text-sm text-ink/65 hover:bg-cream/50 focus-visible:outline focus-visible:outline-2 focus-visible:outline-forest-700"
-      >
-        <span className="flex h-8 w-8 items-center justify-center rounded-full bg-forest-700 text-white" aria-hidden="true">
-          <Icon name="plus" size="sm" />
-        </span>
-        <span>
-          <span className="block font-medium text-ink">Add a post</span>
-          <span className="block text-xs">A message to the class, with files, links or a resource. Now or scheduled.</span>
-        </span>
-      </button>
       {open && <PostDialog classId={classId} onClose={() => setOpen(false)} onPosted={onPosted} />}
-    </>
+    </section>
   );
 }
