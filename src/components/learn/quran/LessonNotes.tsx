@@ -38,6 +38,7 @@ export function LessonNotes({ classId }: { classId: string }) {
   }, [classId]);
 
   useEffect(() => {
+    // eslint-disable-next-line react-hooks/set-state-in-effect -- loads the class's notes from the database
     void load();
   }, [load, tick]);
 
