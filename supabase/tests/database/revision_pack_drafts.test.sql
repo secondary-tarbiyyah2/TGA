@@ -28,6 +28,9 @@ insert into public.curriculum_lessons (subject_slug, subject, year, unit, lesson
    '{"teach": [{"heading": "x", "check": {"q": "Which is right?", "options": ["One", "Two", "Three"], "answer": 1, "why": "Because."}}]}'::jsonb),
   ('test-rp', 'Test subject', 'y8', 'Unit A', 2, 'Second lesson', null);
 
+-- Revision packs start switched off (0206, School features); these tests need them on.
+update public.school_features set enabled = true where key = 'revision_packs';
+
 set local role authenticated;
 set local "request.jwt.claims" to '{"sub": "a1840000-0000-0000-0000-000000000001"}';
 
