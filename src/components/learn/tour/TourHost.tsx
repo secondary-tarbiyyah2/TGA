@@ -12,6 +12,7 @@
 // startTour(PAGE_TIPS[...]).
 
 import { useCallback, useEffect, useId, useLayoutEffect, useRef, useState } from "react";
+import { useFeatures } from "@/lib/learn/features";
 import { createPortal } from "react-dom";
 import { usePathname, useRouter } from "next/navigation";
 import type { PortalArea } from "@/lib/learn/nav";
@@ -58,7 +59,8 @@ export function TourHost({ area, roles, userId }: { area: PortalArea; roles: str
   const titleId = useId();
   const bodyId = useId();
 
-  const steps = (tour?.steps || []).filter((s) => wide || !s.desktopOnly);
+  const features = useFeatures();
+  const steps = (tour?.steps || []).filter((s) => (wide || !s.desktopOnly) && (!s.feature || features[s.feature]));
   const step = steps[index] || null;
 
   const start = useCallback((t: Tour) => {

@@ -7,6 +7,8 @@
 
 /** Same as PortalArea in nav.ts (kept here so this file has no imports and runs in node tests). */
 type PortalArea = "admin" | "teach" | "family" | "student";
+// A type only (erased when run), so the file still needs nothing at run time.
+import type { FeatureKey } from "./features";
 
 export type TourStep = {
   /** CSS selectors for what to highlight; the first one visible on screen wins.
@@ -18,6 +20,8 @@ export type TourStep = {
   phoneBody?: string;
   /** Leave the step out on phones (it points at something only the desktop menu has). */
   desktopOnly?: boolean;
+  /** Left out while the Headteacher has this School feature switched off. */
+  feature?: FeatureKey;
 };
 
 export type Tour = { key: string; steps: TourStep[] };
@@ -177,6 +181,7 @@ export function tourFor(area: PortalArea, roles: string[]): Tour {
       },
       {
         target: [menuLink("/student/revision"), tabLink("/student/revision")],
+        feature: "revision_packs",
         title: "Revise",
         body: "Revise has a quiz for every unit you have studied, so you can test yourself.",
       },
