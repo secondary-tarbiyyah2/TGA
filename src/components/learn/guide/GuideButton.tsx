@@ -36,10 +36,10 @@ export function GuideButton() {
       aria-controls="portal-guide-panel"
       aria-keyshortcuts="?"
       title="Guide me: how this page works (press ?)"
-      className="portal-topbar-btn whitespace-nowrap text-sm font-medium"
+      className="portal-topbar-btn whitespace-nowrap"
     >
-      <Icon name="circleHelp" className="h-[18px] w-[18px]" />
-      <span className="hidden md:inline">Guide me</span>
+      <Icon name="circleHelp" />
+      <span className="hidden lg:inline">Guide me</span>
       <span className="sr-only md:hidden">Guide me</span>
     </button>
   );

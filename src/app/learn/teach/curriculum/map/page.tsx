@@ -10,7 +10,7 @@ export default function TeachCurriculumMapPage() {
     <section className="app-pad">
       <LearnGate allowedRoles={["teacher", "teaching_assistant_cover"]}>
         <LearnShell role="teach">
-          <PageHeader title="Curriculum map" subtitle="How each year's units follow on from one another across the six half terms." />
+          <PageHeader title="Curriculum map" subtitle="How each year's learning builds across the six half terms. Choose a unit to see what it covers, what it builds on and its lessons." />
           <CurriculumMap area="teach" />
         </LearnShell>
       </LearnGate>

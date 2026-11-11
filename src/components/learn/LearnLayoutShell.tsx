@@ -138,7 +138,7 @@ export function LearnLayoutShell({ children }: { children: React.ReactNode }) {
             </Link>
 
             {/* One search for the whole portal: a field on the left on desktop, an icon on phones. */}
-            <div className="flex min-w-0 items-center max-md:order-last md:flex-1">
+            <div className="flex min-w-0 items-center max-lg:order-last lg:flex-1">
               <CommandPalette area={area} roles={roles.map((r) => r.role)} />
             </div>
             {/* Everyday tools, then safeguarding on its own (always visible, never in a menu), then alerts. */}

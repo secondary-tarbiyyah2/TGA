@@ -343,7 +343,7 @@ export function CommandPalette({ area, roles }: { area: PortalArea; roles: strin
         aria-label="Search"
         title={`Search (${shortcut})`}
         data-tour="search"
-        className="portal-icon-btn md:hidden"
+        className="portal-icon-btn lg:hidden"
       >
         <SearchIcon className="h-5 w-5" />
       </button>
@@ -353,7 +353,7 @@ export function CommandPalette({ area, roles }: { area: PortalArea; roles: strin
         aria-label={`Search pages, people and jobs (${shortcut})`}
         aria-keyshortcuts="Control+K Meta+K"
         data-tour="search"
-        className="portal-search hidden w-full max-w-[17rem] md:flex lg:max-w-[22rem] xl:max-w-[26rem]"
+        className="portal-search hidden w-full lg:flex lg:max-w-[20rem] xl:max-w-[26rem]"
       >
         <SearchIcon className="h-4 w-4 shrink-0" />
         <span className="min-w-0 flex-1 truncate text-left">Search pages, people and jobs</span>

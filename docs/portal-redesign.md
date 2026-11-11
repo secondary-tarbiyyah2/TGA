@@ -34,7 +34,16 @@ action and location, gold only as a marker, one status language (dot and word), 
    its own red outline, notifications; category pages as underline tabs (`HubTabs`); `PageHeader` without the icon tile
    or a repeated breadcrumb; buttons, inputs and chips refined at the source (`ui.tsx`); `Status` for the status
    language.
-2. [ ] Curriculum navigation and Curriculum map (six half terms as a timeline; one subject and whole year).
+2. [x] Curriculum navigation and Curriculum map (PR "Portal redesign 2: the Curriculum map"). The Curriculum category's
+   pages are the underline tabs from step 1. `CurriculumMap.tsx`: one control bar (year, subject, One subject or Whole
+   year); One subject is the year as a timeline of the six half terms (horizontal on wide screens through a container
+   query, vertical on phones), each unit a card with its review status; the picked unit (by default this half term's)
+   opens underneath with key knowledge, skills, vocabulary, how it is checked, Builds on / Leads to (the planner's
+   `prereq` and `leads_to`, plus the previous and next unit) and links to its lessons, the review queue, the weekly plan
+   in Syllabus and the Planner. Whole year is subjects by half terms on wide screens and one half term at a time on
+   narrow ones; a unit opens in a `SidePanel` (new in `kit.tsx`). Years 10 and 11 use the board's three terms. Loading is
+   a progress line and a sentence (never shaped like the map), errors offer Try again, and an empty year points to the
+   Planner. Address keeps `year`, `view`, `subject` and `unit`. The guide's `map-view` and `map-grid` targets are kept.
 3. [ ] Syllabus as one page (subject, year, view and unit all in place; old links still work).
 4. [ ] Component consistency pass (tabs, empty and loading states, dialogs, menus, status chips) and the other
    curriculum pages.
