@@ -252,8 +252,9 @@ export function PaymentsBoard() {
                 const sid = stripeIdOf(a.stripe_object_id);
                 return (
                   <li key={a.id} className="flex flex-wrap items-start justify-between gap-3 py-3">
-                    <div className="min-w-0 flex-1">
-                      <Status kind={a.urgency === "now" ? "overdue" : a.urgency === "soon" ? "attention" : "pending"}>{a.title}</Status>
+                    <div className="min-w-0 basis-full sm:basis-0 sm:flex-1">
+                      <Status kind={a.urgency === "now" ? "overdue" : a.urgency === "soon" ? "attention" : "pending"}>{a.urgency === "now" ? "Check now" : a.urgency === "soon" ? "To check" : "For information"}</Status>
+                      <p className="mt-0.5 font-medium text-ink">{a.title}</p>
                       {a.detail && <p className="t-meta mt-1">{a.detail}</p>}
                       <p className="t-meta mt-0.5">{new Date(a.created_at).toLocaleString("en-GB", { day: "numeric", month: "short", hour: "2-digit", minute: "2-digit" })}</p>
                     </div>
@@ -282,7 +283,7 @@ export function PaymentsBoard() {
         )}
 
         <div className={ui.toolbar}>
-          <input type="search" value={q} onChange={(e) => setQ(e.target.value)} placeholder="Family reference, invoice, pupil number or name" aria-label="Search payments" data-guide="payments-search" className={`${ui.input} min-w-0 flex-1 sm:max-w-sm`} />
+          <input type="search" value={q} onChange={(e) => setQ(e.target.value)} placeholder="Family reference, invoice, pupil number or name" aria-label="Search payments" data-guide="payments-search" className={`${ui.input} w-full min-w-0 sm:w-auto sm:max-w-sm sm:flex-1`} />
           {view === "charges" && (
             <>
               <Select value={status} onChange={(e) => setStatus(e.target.value as typeof status)} aria-label="Status" className={`${ui.select} !w-auto`}>
