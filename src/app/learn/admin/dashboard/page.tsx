@@ -18,6 +18,7 @@ import { useActionItems } from "@/components/learn/actions/useActionItems";
 import { getSupabaseClient } from "@/lib/supabase/client";
 import { PushOptIn } from "@/components/learn/PushOptIn";
 import { RegisterPanel } from "@/components/learn/attendance/RegisterPanel";
+import { HeadModules } from "@/components/learn/dashboard/HeadModules";
 
 const AUDIT_ACTION_LABELS: Record<string, string> = {
   BOOKING_CALL_JOIN: "started a call for a booking",
@@ -221,6 +222,9 @@ function DashboardContent() {
   // safeguarding, admissions and more all live there now, in categories).
   const { items: actionItems } = useActionItems("admin");
   const attentionTotal = actionItems === null ? "…" : actionItems.filter((i) => i.urgency !== "info").length;
+  // A register opened from the Today modules (owner, 11 Nov 2026: actions open in place).
+  const [registerId, setRegisterId] = useState<string | null>(null);
+  const registerLesson = registerId ? (lessons || []).find((l) => l.id === registerId) || null : null;
 
   if (!isHead) {
     return (
@@ -258,10 +262,23 @@ function DashboardContent() {
       />
       </div>
 
-      <ActionCentreWidget role="admin" />
-      <PushOptIn />
+      <HeadModules lessons={lessons} items={actionItems} lessonsToApprove={curriculum ? curriculum.waiting : null} now={ukNowHm()} onRegister={setRegisterId} />
 
-      <TodayLessons lessons={lessons} />
+      <div className="grid gap-6 xl:grid-cols-2">
+        <TodayLessons lessons={lessons} />
+        <ActionCentreWidget role="admin" />
+      </div>
+      <PushOptIn />
+      {registerLesson && (
+        <RegisterPanel
+          lessonId={registerLesson.id}
+          classId={registerLesson.class_id}
+          className={registerLesson.className}
+          when={`${registerLesson.start_time.slice(0, 5)} to ${registerLesson.end_time.slice(0, 5)}`}
+          lessonHref={`/admin/lessons/view?id=${registerLesson.id}`}
+          onClose={() => setRegisterId(null)}
+        />
+      )}
 
       <CurriculumHealth figures={curriculum} />
 
