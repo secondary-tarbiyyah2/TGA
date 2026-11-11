@@ -150,30 +150,19 @@ export function PupilWorkTab({ childId }: { childId: string }) {
         {g.length === 0 ? (
           <EmptyState title="No results recorded yet." />
         ) : (
-          <div className="overflow-x-auto rounded-[10px] border border-gold-light bg-white">
-            <table className="w-full min-w-[28rem] text-sm">
-              <thead>
-                <tr className="t-eyebrow text-left">
-                  <th className="px-4 py-2 font-medium">Assessment</th>
-                  <th className="px-3 py-2 font-medium">Class</th>
-                  <th className="px-3 py-2 font-medium">Date</th>
-                  <th className="px-3 py-2 text-right font-medium">Result</th>
-                </tr>
-              </thead>
-              <tbody className="divide-y divide-gold-light/60">
-                {g.map((r) => (
-                  <tr key={r.id}>
-                    <td className="px-4 py-2 font-medium text-ink">{r.title}</td>
-                    <td className="px-3 py-2 text-ink/70">{r.classes?.name || ""}</td>
-                    <td className="px-3 py-2 text-ink/70">{fmt(r.date)}</td>
-                    <td className={`px-3 py-2 text-right tabular-nums ${r.percent !== null && r.percent < 50 ? "font-semibold text-amber-800" : "text-ink"}`}>
-                      {[r.grade_label, r.percent !== null ? `${Math.round(r.percent)}%` : null].filter(Boolean).join(" · ") || "Not marked"}
-                    </td>
-                  </tr>
-                ))}
-              </tbody>
-            </table>
-          </div>
+          <ul className="divide-y divide-gold-light/60 rounded-[10px] border border-gold-light bg-white">
+            {g.map((r) => (
+              <li key={r.id} className="flex flex-wrap items-center gap-x-3 gap-y-1 px-4 py-2.5 text-sm">
+                <span className="min-w-0 flex-1">
+                  <span className="block font-medium text-ink">{r.title}</span>
+                  <span className="t-meta block">{[r.classes?.name, fmt(r.date)].filter(Boolean).join(" · ")}</span>
+                </span>
+                <span className={`tabular-nums ${r.percent !== null && r.percent < 50 ? "font-semibold text-amber-800" : "text-ink"}`}>
+                  {[r.grade_label, r.percent !== null ? `${Math.round(r.percent)}%` : null].filter(Boolean).join(" · ") || "Not marked"}
+                </span>
+              </li>
+            ))}
+          </ul>
         )}
       </section>
     </div>
