@@ -37,7 +37,7 @@ jobs:
       - name: Install Playwright
         run: |
           npm install playwright@1
-          npx playwright install --with-deps chromium
+          npx playwright install --with-deps chromium || npx playwright install chromium
 
       - name: Render each page with a real browser and extract text
         env:

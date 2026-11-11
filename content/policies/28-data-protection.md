@@ -7,9 +7,9 @@ appliesTo: All pupils, parents, staff, trustees and volunteers of Tarbiyyah Glob
 owner: Data Protection Officer
 approvedBy: Ustadh Abu Zayn Haneef Sandhar, Headteacher
 agreedWith: The Chair of Trustees, Tarbiyyah Education Trust
-dateOfIssue: 1 September 2026 (version 1.1, updated 28 October 2026 for the January 2027 launch)
+dateOfIssue: 1 September 2026 (version 1.2)
 nextReview: 31 August 2027
-basis: Updated from the Tarbiyyah Global Academy Data Protection Policy draft (September 2026) and the Tarbiyyah Secondary Data Protection Policy 2025–26; platform references updated to the Academy's current systems
+basis: Updated from the Tarbiyyah Global Academy Data Protection Policy draft (September 2026); platform references updated to the Academy's current systems
 readAlongside: Recording of Live Lessons and Use of Images Policy; Online Safety and Acceptable Use Policy; Child Protection and Safeguarding Policy; Admissions Policy; the privacy notice on the Academy website
 availability: Published on the Academy website and Parent Portal. Available in large print or another accessible format on request.
 ---
@@ -41,8 +41,8 @@ The Academy is responsible for, and able to demonstrate, compliance with these p
 | --- | --- |
 | Trustees | Overall accountability for compliance |
 | Data Protection Officer (DPO) | Advises on and monitors compliance, handles requests and breaches, liaises with the ICO. The DPO role is held by a suitably trained person with direct access to the trustees; the Trust may appoint an external DPO service |
-| Digital Lead | Security of Academy systems, account management, access control and secure deletion |
-| All staff | Handle data in line with this policy and complete annual data protection training |
+| Digital Lead | Security of Academy systems, account management, access control and secure deletion; reviews the audit logs of Academy systems every month and whenever a concern is raised, and reports any suspected breach to the DPO the same day |
+| All staff | Handle data in line with this policy and complete the Academy's data protection training, with its short quiz, at induction and every year |
 
 ## 5. What Data We Hold and Why
 
@@ -55,7 +55,6 @@ The Academy holds personal data about pupils (for example name, date of birth, a
 | Microsoft 365 / the Academy's live-lesson platform (currently Microsoft Teams), joined from the Student Portal | Live lessons, recordings, email |
 | Academy Parent and Student Portals (hosted on Supabase, London region) | Admissions calls, parent and student accounts, bookings, merits, announcements, documents, assignments, class notebooks |
 | Transactional email service (Resend) | Booking confirmations, reminders and portal sign-in codes |
-| Safe Exam Browser | Secure assessments (runs on the pupil's device; no data stored by the provider) |
 | Approved learning subscriptions | Only where a data processing agreement is in place |
 
 Each processor is covered by a written data processing agreement, and a data protection impact assessment (DPIA) is completed before any new system that processes pupils' data is introduced. A DPIA is completed for the Parent and Student Portals before they go live.

@@ -180,7 +180,7 @@ jobs:
         run: |
           set -euo pipefail
           npm i --no-save --no-audit --no-fund marked playwright
-          npx playwright install --with-deps chromium
+          npx playwright install --with-deps chromium || npx playwright install chromium
           node scripts/build-policies.cjs --from-db --out out/policies
 
       # Sanity Studio (the admin panel at /studio) is a separate static SPA

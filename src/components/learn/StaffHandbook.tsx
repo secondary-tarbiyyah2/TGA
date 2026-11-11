@@ -32,7 +32,7 @@ export function StaffHandbook() {
         <p>Open it each morning. It lists missing homework, absence follow-ups and Qur&apos;an revision, most urgent first. Items clear by themselves when the work is done.</p>
       </Section>
       <Section title="Lesson PDFs and worksheets">
-        <p>Make every lesson PDF and worksheet work both ways: pupils either write on it on a tablet with a stylus (recommended for every pupil) or print it at home (required if they have no stylus tablet), so keep pages printable on A4 and leave room to write.</p>
+        <p>Make every lesson PDF and worksheet work both ways: pupils either write on it on a tablet with a stylus (recommended for every pupil) or print it (pupils with no stylus tablet need access to printing, at home or at a library or similar), so keep pages printable on A4 and leave room to write.</p>
       </Section>
       <Section title="Homework that is not handed in">
         <ol>
