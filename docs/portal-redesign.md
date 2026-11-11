@@ -493,6 +493,11 @@ etc. Needs to be done in a unique way." The short tour above stays as the doorwa
   from the page's code, a menu page is renamed in one place only, or text breaks house style.
 
 ## Log
+- 2026-11-11: House points as a proper system (feedback 2, item 21; `rewards/HousePoints.tsx`): one page for teachers and the
+  head teacher with sections down the left (Standings and award, Leaderboard with top pupils, History with filters, CSV
+  and taken-back awards, Star of the week, and for the head Limits and houses); Award points in a side panel; the head
+  teacher's limits (most points in one award, most a pupil a day from one member of staff) enforced by the database
+  (migration 0217, pgTAP `house_point_limits.test.sql`).
 - 2026-11-11: Families and contacts (`/admin/families`, Pupils and admissions; feedback 3): counts that filter (no parent
   linked, no parent email, no phone number, no emergency contact, only one contact, no one with parental responsibility),
   year and search, each family beside the list with tap-to-call numbers, Edit details and Download CSV. Email delivery

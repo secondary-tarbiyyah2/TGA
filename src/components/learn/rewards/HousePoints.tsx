@@ -3,7 +3,7 @@
 import { useCallback, useEffect, useMemo, useState } from "react";
 import { getSupabaseClient } from "@/lib/supabase/client";
 import { fetchAllClasses, fetchTeacherClasses, type ClassSummary } from "@/lib/learn/classes";
-import { loadStudents, MERIT_CATEGORIES, type StudentOption } from "@/components/learn/behaviour/data";
+import { loadStudents, type StudentOption } from "@/components/learn/behaviour/data";
 import { PageHeader } from "@/components/learn/PageHeader";
 import { SectionLayout, SectionNav, type SectionItem } from "@/components/learn/SectionNav";
 import { Tabs } from "@/components/learn/Tabs";
@@ -21,7 +21,7 @@ import { StarManager } from "./StarManager";
 // parts down the left: the standings and awarding, a leaderboard of houses and pupils, the full history (who gave
 // what, when and why, including anything taken back), Star of the Week, and for the head teacher the limits and
 // the houses. House points are merits (behaviour_records), counted for each pupil's house by house_standings();
-// the limits are enforced by the database (0216).
+// the limits are enforced by the database (0217).
 
 type Sec = "award" | "leaderboard" | "history" | "stars" | "settings";
 type Period = "7" | "30" | "0";
@@ -221,7 +221,6 @@ function AwardPanel({ classes, onClose, onAwarded }: { classes: ClassSummary[] |
             </Select>
           </label>
           {roster === null ? <Loading label="Loading pupils" bare /> : <BatchAward classId={cls} roster={roster} onAwarded={onAwarded} />}
-          <p className="t-meta">Reasons: {MERIT_CATEGORIES.map((m) => `${m.label} (${m.points})`).join(", ")}. Every point counts for the pupil&apos;s house.</p>
         </div>
       )}
     </SidePanel>

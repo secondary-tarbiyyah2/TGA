@@ -1,4 +1,4 @@
--- Run via `supabase test db`. Covers 0216: the head teacher sets house point limits; a teacher's award over the
+-- Run via `supabase test db`. Covers 0217: the head teacher sets house point limits; a teacher's award over the
 -- most per award, or over the day's most per pupil, is refused; the head teacher is not limited; families cannot
 -- read the settings.
 begin;
