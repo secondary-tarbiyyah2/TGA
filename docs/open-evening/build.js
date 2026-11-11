@@ -1,4 +1,4 @@
-/* eslint-disable @typescript-eslint/no-require-imports -- a Node build script for the open evening deck, run with node, not part of the site */
+/* eslint-disable @typescript-eslint/no-require-imports -- a CommonJS Node build script, run with `node build.js` */
 const pptxgen = require("pptxgenjs");
 const path = require("path");
 const sizeOf = (f) => {
