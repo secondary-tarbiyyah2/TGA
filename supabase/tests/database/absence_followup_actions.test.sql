@@ -5,14 +5,16 @@ select plan(5);
 
 insert into auth.users (id, email) values
   ('a2070000-0000-0000-0000-000000000001', 'af-head@example.com'),
-  ('a2070000-0000-0000-0000-000000000002', 'af-teacher@example.com');
+  ('a2070000-0000-0000-0000-000000000002', 'af-teacher@example.com'),
+  ('a2070000-0000-0000-0000-000000000003', 'af-parent@example.com');
 insert into public.profiles (id, role, full_name, email) values
   ('a2070000-0000-0000-0000-000000000001', 'admin', 'AF Head', 'af-head@example.com'),
-  ('a2070000-0000-0000-0000-000000000002', 'teacher', 'AF Teacher', 'af-teacher@example.com');
+  ('a2070000-0000-0000-0000-000000000002', 'teacher', 'AF Teacher', 'af-teacher@example.com'),
+  ('a2070000-0000-0000-0000-000000000003', 'parent', 'AF Parent', 'af-parent@example.com');
 insert into public.user_roles (user_id, role, scope_type, scope_id) values
   ('a2070000-0000-0000-0000-000000000001', 'head_teacher', 'none', null),
   ('a2070000-0000-0000-0000-000000000002', 'teacher', 'none', null);
-insert into public.children (id, name, dob, is_test) values ('a2070000-0000-0000-0000-0000000000d1', 'AF Pupil', '2015-01-01', true);
+insert into public.children (id, parent_user_id, name, dob, is_test) values ('a2070000-0000-0000-0000-0000000000d1', 'a2070000-0000-0000-0000-000000000003', 'AF Pupil', '2015-01-01', true);
 insert into public.absence_followups (id, child_id, absence_date) values ('a2070000-0000-0000-0000-0000000000f1', 'a2070000-0000-0000-0000-0000000000d1', '2026-11-10');
 
 set local role authenticated;
