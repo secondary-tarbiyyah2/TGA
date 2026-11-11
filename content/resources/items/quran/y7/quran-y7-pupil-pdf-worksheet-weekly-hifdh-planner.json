@@ -1,0 +1,72 @@
+{
+ "id": "quran-y7-pupil-pdf-worksheet-weekly-hifdh-planner",
+ "title": "Weekly hifdh planner",
+ "type": "worksheet",
+ "subject": "Qur'an & Tajweed",
+ "subjectSlug": "quran",
+ "year": "y7",
+ "unit": "Summer 1: An-Naba' and Al-Qadr as a model",
+ "lessons": [
+  12
+ ],
+ "source": "Written for quran/y7 lesson 12 (Pupil PDF worksheet: weekly hifdh planner)",
+ "intro": "Lesson 12: Memorisation technique: sabaq, sabqi and manzil. Ten minutes a day. Recite to a grown-up, then colour the box.",
+ "blocks": [
+  {
+   "panels": [
+    {
+     "title": "Three parts every day",
+     "points": [
+      "Sabaq: new ayat (3-3-link)",
+      "Sabqi: the last one or two weeks",
+      "Manzil: older surahs on a rota"
+     ]
+    }
+   ],
+   "cols": 1
+  },
+  {
+   "h": "Spacing"
+  },
+  {
+   "grid": {
+    "kind": "barchart",
+    "cats": [
+     "Learned, never revised",
+     "Revised once",
+     "Revised on a rota"
+    ],
+    "yMax": 90,
+    "yStep": 10,
+    "yLabel": "%",
+    "xLabel": "Ayat recalled after two weeks (example data)",
+    "values": [
+     25,
+     45,
+     90
+    ],
+    "line": false
+   }
+  },
+  {
+   "tracker": {
+    "corner": "Week",
+    "cols": [
+     "Day 1",
+     "Day 2",
+     "Day 3",
+     "Day 4",
+     "Day 5",
+     "Day 6",
+     "Day 7"
+    ],
+    "rows": [
+     "Week 1",
+     "Week 2",
+     "Week 3",
+     "Week 4"
+    ]
+   }
+  }
+ ]
+}
