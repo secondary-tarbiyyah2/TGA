@@ -13,7 +13,7 @@ export const JOURNEYS: Record<GuideRole, Journey[]> = {
       summary: "Plan a lesson, teach it live on Teams, take the register, set and mark work, log behaviour and write a report.",
       steps: [
         { href: "/teach/dashboard", target: "teach-your-day", title: "Start with Your day", body: "Today lists your lessons in order, each with Start on Teams and its register." },
-        { href: "/teach/curriculum", target: "library-filters", title: "Plan: find the lesson", body: "In the Lesson library, choose the subject and year you are teaching." },
+        { href: "/teach/curriculum", target: "curriculum-browser", title: "Plan: find the lesson", body: "In Curriculum, Browse, open the year, subject and unit you are teaching." },
         { href: "/teach/curriculum", target: "library-units", title: "Open the lesson", body: "Pick the unit, then press Open lesson for its slides, plan and Present slides." },
         { href: "/teach/curriculum/review", target: "review-queue", title: "Edit, then send for review", body: "On a lesson's own page, Edit lesson changes the slides or plan and Submit for review sends it to the head teacher. This list shows where each lesson is." },
         { href: "/teach/today", target: "today-lessons", title: "Teach it live", body: "When the lesson is due, press Join to start it on Teams." },

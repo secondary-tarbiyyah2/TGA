@@ -3,6 +3,7 @@
 import { LearnGate } from "@/components/learn/LearnGate";
 import { LearnShell } from "@/components/learn/LearnShell";
 import { PageHeader } from "@/components/learn/PageHeader";
+import { CurriculumViews } from "@/components/learn/curriculum/CurriculumHome";
 import { ReviewQueue } from "@/components/learn/curriculum/ReviewQueue";
 
 export default function TeachLessonReviewPage() {
@@ -10,7 +11,7 @@ export default function TeachLessonReviewPage() {
     <section className="app-pad">
       <LearnGate allowedRoles={["teacher", "teaching_assistant_cover"]}>
         <LearnShell role="teach">
-          <PageHeader title="Lesson review" subtitle="Lessons in review across the school: what's waiting, what needs changes, and what's approved." />
+          <PageHeader actions={<CurriculumViews area="teach" />} title="Lesson review" subtitle="Lessons in review across the school: what's waiting, what needs changes, and what's approved." />
           <ReviewQueue area="teach" />
         </LearnShell>
       </LearnGate>
