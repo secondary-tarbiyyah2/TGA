@@ -104,7 +104,7 @@ function FamilyBehaviourContent() {
         </EmptyState>
       ) : (
         <div className="space-y-4">
-          <div className="grid grid-cols-2 gap-3 lg:grid-cols-3">
+          <div data-guide="merit-stats" className="grid grid-cols-2 gap-3 lg:grid-cols-3">
             <StatTile label="Points total" value={String(total)} sub={total > 0 ? "Keep it up!" : undefined} tone="good" />
             <StatTile label="Merits earned" value={String(merits)} />
             <StatTile label="Badges" value={String(badges.length)} />
@@ -129,7 +129,7 @@ function FamilyBehaviourContent() {
             <BadgeShelf badges={badges} empty="No badges yet. Every merit is a step towards one." />
           </section>
 
-          <section className="rounded-2xl border border-gold-light/50 bg-white p-4">
+          <section data-guide="merit-recent" className="rounded-2xl border border-gold-light/50 bg-white p-4">
             <h3 className="mb-3 text-base font-semibold text-ink">
               Recent records {records.length > 0 && <span className="font-normal text-ink/60">· {records.length}</span>}
             </h3>

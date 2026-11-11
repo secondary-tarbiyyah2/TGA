@@ -164,6 +164,7 @@ export function TeachPupils() {
         <Tabs
           variant="switch"
           label="Show"
+          guide="pupils-filter"
           value={only}
           onChange={setOnly}
           items={[
@@ -180,7 +181,7 @@ export function TeachPupils() {
         ) : rows.length === 0 ? (
           <p className="rounded-2xl border border-gold-light bg-white p-4 text-sm text-ink/65">No pupils to show.</p>
         ) : (
-          <ul className="divide-y divide-gold-light/50 rounded-2xl border border-gold-light bg-white">
+          <ul data-guide="pupils-list" className="divide-y divide-gold-light/50 rounded-2xl border border-gold-light bg-white">
             {rows.map((p) => {
               const st = ackState(p);
               const sig = signals?.[p.id];

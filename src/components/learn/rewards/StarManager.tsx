@@ -120,7 +120,7 @@ export function StarManager({ isHead, housesAdmin }: { isHead: boolean; housesAd
 
   return (
     <div className="space-y-4">
-      <Tabs variant="switch" label="Star of the Week sections" items={tabs} value={view} onChange={setView} />
+      <Tabs variant="switch" label="Star of the Week sections" guide="stars" items={tabs} value={view} onChange={setView} />
 
       {classes === null ? (
         <div className="h-40 motion-safe:animate-pulse rounded-2xl bg-white" />

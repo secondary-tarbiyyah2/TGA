@@ -197,7 +197,7 @@ export function Register({ lessonId, classId, onProgress }: { lessonId: string; 
   const timeOf = ukTimeOf;
 
   return (
-    <div>
+    <div data-guide="register" >
       <div className="flex flex-wrap items-center justify-between gap-3 border-b border-gold-light/70 px-5 py-3">
         <p className="text-sm text-ink/70">
           <span className="font-semibold text-ink">

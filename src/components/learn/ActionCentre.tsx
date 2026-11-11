@@ -159,7 +159,7 @@ export function ActionCentre({ role }: { role: Role }) {
         </EmptyState>
       ) : (
         <div className="grid grid-cols-[minmax(0,1fr)] gap-5 lg:grid-cols-[15rem_minmax(0,1fr)]">
-          <nav ref={navRef} aria-label="Categories" className="min-w-0 print:hidden lg:sticky lg:top-[76px] lg:self-start">
+          <nav ref={navRef} data-guide="waiting-categories" aria-label="Categories" className="min-w-0 print:hidden lg:sticky lg:top-[76px] lg:self-start">
             <div className="-mx-4 flex gap-2 overflow-x-auto px-4 pb-1 lg:mx-0 lg:flex-col lg:gap-0.5 lg:overflow-visible lg:px-0 lg:pb-0">
               {navButton("all", "Everything", open.length, urgentAll, "layoutGrid")}
               {cats.map((c) => navButton(c.key, c.label, c.count, c.urgent, c.icon))}
@@ -228,7 +228,7 @@ function CategorySection({ title, icon, list, role, isDone, onDone, showTitle }:
           </button>
         )}
       </div>
-      <ul className="space-y-2">
+      <ul data-guide="waiting-list" className="space-y-2">
         {list.map((i) => (
           <ItemRow key={i.id} item={i} role={role} done={isDone(i)} onDone={(on) => onDone(i, on)} />
         ))}

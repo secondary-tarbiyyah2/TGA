@@ -111,7 +111,7 @@ function ListContent() {
                 {[...byDate.entries()].map(([date, list]) => (
                   <div key={date}>
                     <h3 className="text-sm font-semibold text-ink">{new Date(`${date}T12:00:00Z`).toLocaleDateString("en-GB", { weekday: "long", day: "numeric", month: "long", ...(range === "past" ? { year: "numeric" } : {}), timeZone: "UTC" })}{date === ukIsoDate() ? " (today)" : ""}</h3>
-                    <ul className="mt-1 divide-y divide-gold-light/30">
+                    <ul data-guide="lessons-list" className="mt-1 divide-y divide-gold-light/30">
                       {list.sort((a, b) => (a.timetable_slots?.start_time || "").localeCompare(b.timetable_slots?.start_time || "")).map((r) => {
                         const s = r.timetable_slots;
                         const link = s?.classes?.meeting_url;

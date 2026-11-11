@@ -139,7 +139,7 @@ export function StaffProfileForm({ userId, fullName }: { userId: string; fullNam
   if (!loaded) return <LoadingState rows={3} label="Loading your profile" />;
 
   return (
-    <div className="space-y-5">
+    <div data-guide="staff-profile" className="space-y-5">
       <FormSection title="Photo" description="A clear head-and-shoulders photo helps families recognise you. Optional.">
         <div className="flex items-center gap-4">
           <StaffAvatar name={fullName} src={photoUrl} size={72} />

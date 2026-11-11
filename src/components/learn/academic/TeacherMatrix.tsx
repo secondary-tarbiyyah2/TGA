@@ -108,7 +108,7 @@ export function TeacherMatrix({ classes, yearGroups, subjects, teachers, classTe
   const maxed = (id: string | null) => id !== null && (load.get(id) || 0) > MAX_TEACHER_LESSONS_PER_WEEK;
 
   return (
-    <section id="teacher-matrix" className="scroll-mt-20 rounded-2xl border border-gold-light/50 bg-white p-4 sm:p-6">
+    <section id="teacher-matrix" data-guide="teacher-matrix" className="scroll-mt-20 rounded-2xl border border-gold-light/50 bg-white p-4 sm:p-6">
       <h2 className="font-serif text-h3 font-semibold text-ink">Who teaches what</h2>
       <p className="mt-0.5 text-sm text-ink/65">
         Each class subject has its own teacher, so one teacher can teach many classes. Pick a cell to choose the teacher, or to add a dated override such as cover while someone is away.

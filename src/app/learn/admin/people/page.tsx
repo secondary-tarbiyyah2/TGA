@@ -25,7 +25,7 @@ function PeopleContent() {
         title="People"
         subtitle="Staff (including teachers) and families. Adults get an email to set their own password; pupils can have a username login instead."
         action={
-          <Button variant="primary" icon="plus" onClick={() => openModal()}>
+          <Button variant="primary" icon="plus" onClick={() => openModal()} data-guide="people-add">
             Add person
           </Button>
         }

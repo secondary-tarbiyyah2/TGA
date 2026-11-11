@@ -635,7 +635,7 @@ function TakeRegister() {
 
   return (
     <>
-      <div className="mb-4 flex flex-wrap items-center gap-2 rounded-2xl border border-gold-light bg-white p-3">
+      <div data-guide="registers-day" className="mb-4 flex flex-wrap items-center gap-2 rounded-2xl border border-gold-light bg-white p-3">
         <button type="button" onClick={() => go(shiftDateKey(date, -1))} className={navBtn} aria-label="Previous day">
           ‹ Previous
         </button>
@@ -712,7 +712,7 @@ function AttendanceContent() {
   return (
     <>
       <PageHeader crumbs={[{ label: "Today", href: "/admin/dashboard" }, { label: "Attendance" }]} title="Attendance" subtitle="Take or correct any lesson's register, or report across a date range." />
-      <Tabs items={tabs} value={tab} onChange={setTab} label="Attendance sections" idBase="attendance" className="mb-5" />
+      <Tabs items={tabs} value={tab} onChange={setTab} label="Attendance sections" guide="registers-filters" idBase="attendance" className="mb-5" />
       <div {...tabPanelProps("attendance", tab)}>{tab === "register" ? <TakeRegister /> : <ReportsContent />}</div>
     </>
   );

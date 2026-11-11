@@ -41,7 +41,7 @@ export function ThreadList({
   }, [threads, tab, q]);
 
   return (
-    <div className="flex h-full min-h-0 flex-col">
+    <div data-guide="oversight-list" className="flex h-full min-h-0 flex-col">
       <Tabs
         variant="switch"
         items={TABS.map((t) => ({

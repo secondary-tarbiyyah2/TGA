@@ -269,7 +269,7 @@ export function CurriculumMap({ area }: { area: "teach" | "admin" }) {
             </Select>
           </label>
         )}
-        <div className="w-full sm:ml-auto sm:w-auto">
+        <div data-guide="map-view" className="w-full sm:ml-auto sm:w-auto">
           <span className="t-eyebrow mb-1.5 block sm:text-right">
             Show
           </span>
@@ -422,7 +422,7 @@ function SubjectMap({ s, year, cols, nowKey, statsFor, selected, onSelect, links
         </div>
       </header>
 
-      <div className="@container">
+      <div data-guide="map-grid" className="@container">
         {/* Wide: a horizontal track, one column per half term. */}
         <div className="hidden @4xl:block">
           <TermHeads cols={cols} />
@@ -677,7 +677,7 @@ function YearGrid({ subjects, year, cols, nowKey, statsFor, onOpen, onSubject }:
   const [col, setCol] = useState<string>(cols.some((c) => c.key === nowKey) ? nowKey : cols[0].key);
   const grid = { gridTemplateColumns: `9.5rem repeat(${cols.length}, minmax(0, 1fr))` };
   return (
-    <section aria-label={`${yearLabel(year)}: every subject by half term`} className="@container">
+    <section data-guide="map-grid" aria-label={`${yearLabel(year)}: every subject by half term`} className="@container">
       <div className="hidden overflow-hidden rounded-2xl border border-gold-light bg-white @4xl:block">
         <div className="grid border-b border-gold-light bg-cream/60" style={grid}>
           <div className="t-eyebrow flex items-end px-4 pb-2.5">Subject</div>

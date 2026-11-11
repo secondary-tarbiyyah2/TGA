@@ -62,7 +62,7 @@ function AdminGcseContent() {
         subtitle="Target, predicted and actual grades (9 to 1) for Years 10 and 11 (Pearson Edexcel International GCSE). Select a pupil for their history and mock exams. Pupils and parents see their own."
       />
 
-      <Tabs items={TABS.map((t) => ({ key: t.id, label: t.label }))} value={tab} onChange={setTab} label="GCSE progress sections" idBase="gcse" className="mb-5" />
+      <Tabs items={TABS.map((t) => ({ key: t.id, label: t.label }))} value={tab} onChange={setTab} label="GCSE progress sections" guide="gcse-tabs" idBase="gcse" className="mb-5" />
 
       <div {...tabPanelProps("gcse", tab)}>
         {tab === "overview" && <GcseOverview key={version} />}

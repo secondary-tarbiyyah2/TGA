@@ -1,0 +1,64 @@
+{
+ "id": "mathematics-y11-revision-exam-style-question-set-portal-workshee-l85",
+ "title": "Revision exam-style question set (lesson 85)",
+ "type": "revision set",
+ "subject": "Mathematics",
+ "subjectSlug": "mathematics",
+ "year": "y11",
+ "board": "Edexcel IGCSE 4MA1 Higher",
+ "unit": "Spring 2: Revision cycle 2: Geometry, vectors, statistics, calculus",
+ "lessons": [
+  85
+ ],
+ "source": "Seeded from mathematics/y11 lesson 85 (Revision exam-style question set (portal worksheet written for this lesson; original questions with mark-scheme answers))",
+ "intro": "Lesson 85: Transformations: enlargement and combined transformations. Answer every question. Show your working. Mark it with the mark scheme and log any errors in your repair list.",
+ "time": "20 minutes",
+ "blocks": [
+  {
+   "questions": [
+    {
+     "q": "(a) Enlarge triangle (1, 1), (3, 1), (1, 2) by scale factor -2 about (0, 0) [2] (b) A(2, 3) maps to A'(6, 9) and B(4, 3) to B'(12, 9): describe fully [3] (c) Reflect in y = x then rotate 90° clockwise about (0, 0): find the single transformation using (2, 1) and (5, 3) [4] (d) Enlargement scale factor ⅓ about (3, 0) of (9, 6) [3]",
+     "a": "(a) (-2, -2), (-6, -2), (-2, -4) (b) enlargement scale factor 3, centre (0, 0) (c) (2, 1) → (1, 2) → (2, -1); (5, 3) → (3, 5) → (5, -3): reflection in the x-axis (d) (5, 2)",
+     "model": "(a) multiply by -2. (b) each coordinate × 3 from the origin. (c) y = x swaps; 90° clockwise maps (x, y) to (y, -x); the result keeps x and negates y. (d) (3, 0) + ⅓(6, 6) = (5, 2).",
+     "marks": 12
+    },
+    {
+     "q": "Find the scale factor and centre of the enlargement that maps (1, 1) to (7, 4) and (3, 1) to (11, 4).",
+     "a": "k = (11 - 7) ÷ (3 - 1) = 2; centre (p, q): 7 = p + 2(1 - p) gives p = -5, 4 = q + 2(1 - q) gives q = -2: centre (-5, -2)",
+     "marks": 3
+    },
+    {
+     "q": "Enlarge (6, 4) by scale factor ½ about (0, 0).",
+     "a": "(3, 2)",
+     "model": "Multiply both coordinates by ½: (3, 2).",
+     "marks": 1
+    },
+    {
+     "q": "Enlarge (3, 5) by scale factor -2 about (1, 1).",
+     "a": "(-3, -7)",
+     "marks": 1
+    },
+    {
+     "q": "A shape of area 12 cm² is enlarged by scale factor -3. New area?",
+     "a": "108 cm²",
+     "marks": 1
+    },
+    {
+     "q": "Describe fully: (x, y) → (y, x)",
+     "a": "Reflection in the line y = x",
+     "marks": 2
+    },
+    {
+     "q": "Scale factor -1 about the origin equals",
+     "a": "A) rotation 180°",
+     "options": [
+      "rotation 180°",
+      "reflection in y-axis",
+      "no change"
+     ],
+     "marks": 1
+    }
+   ]
+  }
+ ]
+}

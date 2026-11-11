@@ -255,7 +255,7 @@ export function LessonDetail({ lessonInstanceId, variant, childId }: { lessonIns
         </p>
       </div>
 
-      <div className="rounded-2xl border border-gold-light/50 bg-white p-6">
+      <div data-guide="lesson-objectives" className="rounded-2xl border border-gold-light/50 bg-white p-6">
         <h2 className="font-serif text-h3 font-semibold text-ink">Objectives</h2>
         {variant === "teacher" ? (
           <>
@@ -267,7 +267,7 @@ export function LessonDetail({ lessonInstanceId, variant, childId }: { lessonIns
               placeholder="What will this lesson cover?"
             />
             <h3 className="mt-4 text-sm font-medium text-ink">Resources</h3>
-            <div className="mt-2 space-y-2">
+            <div data-guide="lesson-resources" className="mt-2 space-y-2">
               {resourcesDraft.map((r, i) => (
                 <div key={i} className="flex flex-wrap gap-2">
                   <input
@@ -303,7 +303,7 @@ export function LessonDetail({ lessonInstanceId, variant, childId }: { lessonIns
           <>
             <p className="mt-2 text-sm text-ink/70">{lesson.objectives || "No objectives set yet."}</p>
             {lesson.resources.length > 0 && (
-              <ul className="mt-3 space-y-1 text-sm">
+              <ul data-guide="lesson-resources" className="mt-3 space-y-1 text-sm">
                 {lesson.resources.map((r, i) => (
                   <li key={i}>
                     <a href={r.url} target="_blank" rel="noopener noreferrer" className="text-gold-700 underline">
@@ -318,7 +318,7 @@ export function LessonDetail({ lessonInstanceId, variant, childId }: { lessonIns
       </div>
 
       {variant === "teacher" && (
-        <div className="rounded-2xl border border-gold-light/50 bg-white p-6">
+        <div data-guide="lesson-register" className="rounded-2xl border border-gold-light/50 bg-white p-6">
           <h2 className="font-serif text-h3 font-semibold text-ink">Register</h2>
           {enrolledChildren.length === 0 && <p className="mt-2 text-sm text-ink/65">No enrolled students found for this class.</p>}
           <ul className="mt-3 space-y-2">
@@ -410,7 +410,7 @@ export function LessonDetail({ lessonInstanceId, variant, childId }: { lessonIns
       </div>
 
       {variant === "parent" && childId && (
-        <div className="rounded-2xl border border-gold-light/50 bg-white p-6">
+        <div data-guide="lesson-absence" className="rounded-2xl border border-gold-light/50 bg-white p-6">
           <h2 className="font-serif text-h3 font-semibold text-ink">Report an absence</h2>
           {absenceNoticeSent ? (
             <p className="mt-2 text-sm text-ink/65">An absence notice has already been submitted for this lesson, thank you.</p>

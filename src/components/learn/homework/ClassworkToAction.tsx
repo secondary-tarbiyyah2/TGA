@@ -122,7 +122,7 @@ export function ClassworkToAction({ scope }: { scope: "teach" | "admin" }) {
         }
       />
 
-      <div className="mb-5 flex flex-wrap items-center gap-2" role="group" aria-label="Show">
+      <div data-guide="cta-filter" className="mb-5 flex flex-wrap items-center gap-2" role="group" aria-label="Show">
         <button type="button" aria-pressed={kind === "all"} onClick={() => setKind("all")} className={kind === "all" ? ui.chipOn : ui.chip}>
           Everything ({all})
         </button>
@@ -188,7 +188,7 @@ export function ClassworkToAction({ scope }: { scope: "teach" | "admin" }) {
                   </Link>
                 </span>
               </div>
-              <ul className="divide-y divide-gold-light/60">
+              <ul data-guide="cta-list" className="divide-y divide-gold-light/60">
                 {g.pieces.map((p) => (
                   <li key={p.id} className="flex flex-wrap items-center gap-x-4 gap-y-1.5 px-4 py-3 text-sm sm:px-5">
                     <span className="min-w-0 flex-1 basis-56">

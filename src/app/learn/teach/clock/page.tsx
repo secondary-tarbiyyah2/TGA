@@ -102,7 +102,7 @@ function MyHoursContent() {
         ) : monthShifts.length === 0 ? (
           <p className="px-5 py-4 text-sm text-ink/65">No shifts yet this month.</p>
         ) : (
-          <div className="overflow-x-auto">
+          <div data-guide="clock-table" className="overflow-x-auto">
             <table className="w-full min-w-[420px] text-sm">
               <thead>
                 <tr className="border-b border-gold-light text-left text-xs font-semibold uppercase tracking-wide text-ink/65">

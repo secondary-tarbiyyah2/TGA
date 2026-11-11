@@ -281,7 +281,7 @@ export function FamilyParentEvenings() {
   return (
     <div className="space-y-6">
       {upcoming.length > 0 && (
-        <div className="rounded-2xl border border-gold-light/50 bg-white p-4 sm:p-6">
+        <div data-guide="pe-bookings" className="rounded-2xl border border-gold-light/50 bg-white p-4 sm:p-6">
           <h2 className="font-serif text-h3 font-semibold text-ink">Your bookings</h2>
           <ul className="mt-3 space-y-2">
             {upcoming.map((b) => (

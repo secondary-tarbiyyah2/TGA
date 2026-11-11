@@ -58,7 +58,7 @@ export function MeetingLinksSection({ classes, reload }: { classes: ClassRow[]; 
         ) : shown.length === 0 ? (
           <EmptyState>Every class has a meeting link.</EmptyState>
         ) : (
-          <ul className="divide-y divide-gold-light/30">{shown.map((c) => <Row key={`${c.id}-${c.meeting_url || ""}`} c={c} reload={reload} />)}</ul>
+          <ul data-guide="meeting-links" className="divide-y divide-gold-light/30">{shown.map((c) => <Row key={`${c.id}-${c.meeting_url || ""}`} c={c} reload={reload} />)}</ul>
         )}
       </div>
     </section>

@@ -189,6 +189,7 @@ function BehaviourContent() {
               value={sub}
               onChange={setSub}
               label="Behaviour view"
+              guide="behaviour-views"
             />
             {sub === "overview" && (
               <label className="text-sm text-ink/70">

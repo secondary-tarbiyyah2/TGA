@@ -120,7 +120,7 @@ export function FamilyWithdrawal() {
 
   const field = "mt-1";
   return (
-    <section aria-labelledby="leaving-heading" className={`${ui.card} mt-8`}>
+    <section data-guide="fees-withdrawal" aria-labelledby="leaving-heading" className={`${ui.card} mt-8`}>
       <div className="flex flex-wrap items-start justify-between gap-3">
         <div className="min-w-0">
           <h2 id="leaving-heading" className="font-serif text-lg font-semibold text-ink">

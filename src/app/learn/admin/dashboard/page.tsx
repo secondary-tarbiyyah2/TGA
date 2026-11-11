@@ -132,7 +132,7 @@ function useSchoolToday() {
 function TodayLessons({ lessons }: { lessons: TodayLessonRow[] | null }) {
   const now = ukNowHm();
   return (
-    <div className="rounded-2xl border border-gold-light bg-white">
+    <div data-guide="admin-lessons-today" className="rounded-2xl border border-gold-light bg-white">
       <div className="flex items-center justify-between border-b border-gold-light px-5 py-3.5">
         <h2 className="text-sm font-semibold text-ink">Today&apos;s lessons</h2>
         <span className="flex gap-3">
@@ -204,7 +204,7 @@ function DashboardContent() {
     return (
       <div className="space-y-6">
         <DashboardHero area="admin" subtitle={myRoles} />
-        <div className="grid gap-3 sm:grid-cols-2">
+        <div data-guide="admissions-shortcuts" className="grid gap-3 sm:grid-cols-2">
           {[
             { href: "/admin/admissions", title: "Applications", help: "Applications, calls and bookings." },
             { href: "/admin/assessments", title: "Entry assessments", help: "Set and mark each applicant's entry assessment." },
@@ -223,6 +223,7 @@ function DashboardContent() {
 
   const content = (
     <div className="space-y-6">
+      <div data-guide="admin-stats">
       <DashboardHero
         area="admin"
         subtitle={myRoles ? `${myRoles}. The school today, and what needs a decision.` : "The school today, and what needs a decision."}
@@ -233,6 +234,7 @@ function DashboardContent() {
           { label: "Curriculum approved", value: curriculum ? `${curriculum.lessons ? Math.round((curriculum.approved / curriculum.lessons) * 100) : 0}%` : "…", hint: curriculum ? `${curriculum.approved} of ${curriculum.lessons} lessons` : undefined, href: "/admin/curriculum/map" },
         ]}
       />
+      </div>
 
       <ActionCentreWidget role="admin" />
       <PushOptIn />

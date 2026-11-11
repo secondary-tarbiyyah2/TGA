@@ -244,7 +244,7 @@ export function JoinLessonCard({ who, classId, className = "" }: { who: JoinWho;
   };
 
   return (
-    <section aria-label="Live lesson" className={`space-y-3 ${className}`}>
+    <section data-guide="join-lesson" aria-label="Live lesson" className={`space-y-3 ${className}`}>
       {open.map((l) => {
         const started = nowMinutes >= minutesOf(l.start);
         const asParent = who.kind === "parent";

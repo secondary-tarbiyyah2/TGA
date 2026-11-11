@@ -189,7 +189,7 @@ function TimetableContent() {
         <div className="space-y-4">
           {message && <p role="status" className="rounded-xl border border-teal-500/30 bg-teal-100/60 px-4 py-2 text-sm text-teal-900">{message}</p>}
 
-          <div className="rounded-2xl border border-gold-light bg-white p-4">
+          <div data-guide="timetable-version" className="rounded-2xl border border-gold-light bg-white p-4">
             <div className="flex flex-wrap items-center gap-2">
               <span className="text-xs font-semibold uppercase tracking-wider text-ink/65">Version</span>
               {runs.slice(0, 4).map((r) => (

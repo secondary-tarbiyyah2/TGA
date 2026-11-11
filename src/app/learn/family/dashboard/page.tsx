@@ -223,7 +223,7 @@ function FamilyContent() {
         />
 
         {hasChildren && (
-          <nav aria-label="Quick actions" className="flex flex-wrap gap-2 print:hidden">
+          <nav data-guide="family-quick-actions" aria-label="Quick actions" className="flex flex-wrap gap-2 print:hidden">
             <Link href="/family/absences" className={ui.btnPrimary}>
               Report an absence
             </Link>
@@ -240,7 +240,7 @@ function FamilyContent() {
 
         {children === null && <div className="h-32 motion-safe:animate-pulse rounded-2xl bg-white" />}
         {children && children.length > 1 && (
-          <div role="group" aria-label="Whose school day to show" className="flex flex-wrap gap-2.5">
+          <div data-guide="family-child-switch" role="group" aria-label="Whose school day to show" className="flex flex-wrap gap-2.5">
             {children.map((c, i) => {
               const on = current?.id === c.id;
               const initials = c.name.split(/\s+/).filter(Boolean).slice(0, 2).map((w) => w[0]?.toUpperCase()).join("");

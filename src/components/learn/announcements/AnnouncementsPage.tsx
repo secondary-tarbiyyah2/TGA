@@ -125,6 +125,7 @@ export function AnnouncementsPage({ mode }: { mode: AnnouncementsMode }) {
             <button
               type="button"
               disabled={!canCompose}
+              data-guide="notices-post"
               onClick={() => setComposing(true)}
               className="rounded-lg bg-gold-700 px-4 py-2.5 text-sm font-semibold text-white hover:bg-gold-900 disabled:opacity-50"
             >
@@ -141,6 +142,7 @@ export function AnnouncementsPage({ mode }: { mode: AnnouncementsMode }) {
           onChange={(e) => setQuery(e.target.value)}
           placeholder="Search notices"
           aria-label="Search notices"
+          data-guide="notices-search"
           className="w-full rounded-lg border border-gold-light bg-white px-3 py-2.5 text-sm sm:max-w-sm"
         />
         {canManage && items && (
@@ -183,7 +185,7 @@ export function AnnouncementsPage({ mode }: { mode: AnnouncementsMode }) {
           </p>
         </div>
       ) : (
-        <ul className="space-y-3">
+        <ul data-guide="notices-list" className="space-y-3">
           {visible.map((a) => {
             const recalled = a.recalled_at !== null;
             const expired = isExpired(a);

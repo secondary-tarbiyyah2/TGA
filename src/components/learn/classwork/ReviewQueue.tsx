@@ -141,7 +141,7 @@ export function ReviewQueue({ classId: fixedClass, homeworkId, embedded = false,
         </div>
 
         <div className="grid gap-4 lg:grid-cols-[15rem_minmax(0,1fr)]">
-          <nav aria-label="Pupils to mark" className="self-start rounded-2xl border border-gold-light bg-white p-2 lg:sticky lg:top-[76px]">
+          <nav data-guide="mark-queue" aria-label="Pupils to mark" className="self-start rounded-2xl border border-gold-light bg-white p-2 lg:sticky lg:top-[76px]">
             <ScrollArea label="Pupils to mark" className="max-h-[60vh]">
             <ol className="space-y-0.5">
               {marking.items.map((i, k) => {
@@ -255,7 +255,7 @@ export function ReviewQueue({ classId: fixedClass, homeworkId, embedded = false,
 
           <div className="min-w-0 rounded-2xl border border-gold-light bg-white">
             <div className="border-b border-gold-light px-4 py-3">
-              <Tabs variant="switch" items={statusTabs} value={only} onChange={setOnly} label="Show" />
+              <Tabs variant="switch" items={statusTabs} value={only} onChange={setOnly} label="Show" guide="mark-filter" />
             </div>
           {groups.length === 0 ? (
             <p className="p-8 text-center text-sm text-ink/65">Nothing matches this filter.</p>

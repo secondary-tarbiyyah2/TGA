@@ -336,7 +336,7 @@ export function AdminParentEvenings() {
     <div className="space-y-6">
       <div className="flex flex-wrap items-center gap-3">
         {!creating && (
-          <button type="button" onClick={() => { setCreating(true); setNotice(null); }} className={btn("primary")}>
+          <button type="button" onClick={() => { setCreating(true); setNotice(null); }} data-guide="pe-new" className={btn("primary")}>
             + New parent evening
           </button>
         )}

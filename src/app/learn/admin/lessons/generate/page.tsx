@@ -149,7 +149,7 @@ function GenerateContent() {
   return (
     <div>
       <LessonsHeader title="Generate" subtitle="Build a new draft timetable in four steps. A draft never changes the live timetable." />
-      <ol aria-label="Progress" className="mb-5 grid grid-cols-2 gap-2 sm:grid-cols-4">
+      <ol data-guide="generate-steps" aria-label="Progress" className="mb-5 grid grid-cols-2 gap-2 sm:grid-cols-4">
         {STEPS.map((s, i) => (
           <li key={s} aria-current={stepDone.findIndex((d) => !d) === i ? "step" : undefined} className="flex items-center gap-2 rounded-xl border border-gold-light bg-white px-3 py-2 text-xs font-medium text-ink/75">
             <span aria-hidden="true" className={`flex h-5 w-5 shrink-0 items-center justify-center rounded-full text-[11px] font-semibold ${stepDone[i] ? "bg-green-100 text-green-900" : "bg-gold-100 text-gold-900"}`}>{stepDone[i] ? <Icon name="check" className="h-3.5 w-3.5" strokeWidth={2.5} /> : i + 1}</span>

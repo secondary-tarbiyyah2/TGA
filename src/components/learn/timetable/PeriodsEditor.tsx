@@ -221,7 +221,7 @@ export function PeriodsEditor({ periods, reload, staff = [] }: { periods: Timeta
   ) : null;
 
   return (
-    <section className="rounded-2xl border border-gold-light/50 bg-white p-4 sm:p-6">
+    <section data-guide="school-day" className="rounded-2xl border border-gold-light/50 bg-white p-4 sm:p-6">
       <div className="flex flex-wrap items-start justify-between gap-2">
         <div>
           <h2 className="font-serif text-h3 font-semibold text-ink">School day</h2>

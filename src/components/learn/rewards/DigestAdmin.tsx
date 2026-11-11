@@ -95,6 +95,7 @@ export function DigestAdmin() {
       <Tabs
         variant="switch"
         label="Weekly digest sections"
+        guide="digest-tabs"
         value={tabValue}
         onChange={(k) => go(k)}
         items={[

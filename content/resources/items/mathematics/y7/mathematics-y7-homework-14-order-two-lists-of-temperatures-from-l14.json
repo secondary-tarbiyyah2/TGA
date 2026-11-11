@@ -1,0 +1,119 @@
+{
+ "id": "mathematics-y7-homework-14-order-two-lists-of-temperatures-from-l14",
+ "title": "Homework: ordering temperatures (8 questions)",
+ "type": "revision set",
+ "subject": "Mathematics",
+ "subjectSlug": "mathematics",
+ "year": "y7",
+ "unit": "Spring 2: Directed numbers; adding fractions",
+ "lessons": [
+  14
+ ],
+ "source": "Written for mathematics/y7 lesson 14 (Order two lists of temperatures from a weather map (portal homework sheet, 8 questions).)",
+ "intro": "Lesson 14 homework. Example January temperatures (°C) from a weather map. Show your working on a number line.",
+ "time": "20 minutes",
+ "blocks": [
+  {
+   "table": {
+    "head": [
+     "UK city",
+     "°C",
+     "World city",
+     "°C"
+    ],
+    "rows": [
+     [
+      "London",
+      "4",
+      "Moscow",
+      "-9"
+     ],
+     [
+      "Edinburgh",
+      "-2",
+      "Cairo",
+      "19"
+     ],
+     [
+      "Cardiff",
+      "5",
+      "Oslo",
+      "-6"
+     ],
+     [
+      "Belfast",
+      "1",
+      "Makkah",
+      "24"
+     ],
+     [
+      "Manchester",
+      "3",
+      "Toronto",
+      "-5"
+     ],
+     [
+      "Aberdeen",
+      "-4",
+      "Istanbul",
+      "6"
+     ]
+    ]
+   }
+  },
+  {
+   "grid": {
+    "kind": "numberline",
+    "min": -10,
+    "max": 25,
+    "step": 1,
+    "labelEvery": 5,
+    "count": 1
+   }
+  },
+  {
+   "questions": [
+    {
+     "q": "Order the UK temperatures from lowest to highest.",
+     "a": "-4, -2, 1, 3, 4, 5 (Aberdeen, Edinburgh, Belfast, Manchester, London, Cardiff)",
+     "marks": 2
+    },
+    {
+     "q": "Order the world temperatures from highest to lowest.",
+     "a": "24, 19, 6, -5, -6, -9 (Makkah, Cairo, Istanbul, Toronto, Oslo, Moscow)",
+     "marks": 2
+    },
+    {
+     "q": "How much warmer is London than Edinburgh?",
+     "a": "4 - (-2) = 6 °C",
+     "marks": 1
+    },
+    {
+     "q": "How much warmer is Makkah than Moscow?",
+     "a": "24 - (-9) = 33 °C",
+     "marks": 1
+    },
+    {
+     "q": "Which city is the coldest of all twelve?",
+     "a": "Moscow (-9 °C)",
+     "marks": 1
+    },
+    {
+     "q": "How much warmer is Cairo than Oslo?",
+     "a": "19 - (-6) = 25 °C",
+     "marks": 1
+    },
+    {
+     "q": "The temperature in Aberdeen rises by 7 °C. What is it now?",
+     "a": "-4 + 7 = 3 °C",
+     "marks": 1
+    },
+    {
+     "q": "The temperature in Toronto falls by 6 °C. What is it now?",
+     "a": "-5 - 6 = -11 °C",
+     "marks": 1
+    }
+   ]
+  }
+ ]
+}
