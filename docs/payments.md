@@ -141,7 +141,7 @@ billing for education services. The switch is `src/lib/storeApp.ts`. Store apps 
 
 | Part | File |
 | --- | --- |
-| Tables, references, statuses, RLS | `supabase/migrations/0217_payments_references_charges.sql` |
+| Tables, references, statuses, RLS | `supabase/migrations/0218_payments_references_charges.sql` |
 | RLS tests | `supabase/tests/database/payments.test.sql` |
 | Stripe API and signature check | `supabase/functions/_shared/stripe.ts` |
 | Checkout, amount checks, idempotency | `supabase/functions/_shared/payments.ts` |

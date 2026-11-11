@@ -4,7 +4,8 @@ import { PaymentsSettings } from "@/components/learn/payments/PaymentsSettings";
 import { useEffect, useState } from "react";
 import { getSupabaseClient } from "@/lib/supabase/client";
 import { EmailTemplatesPanel } from "@/components/learn/admissions/EmailTemplatesPanel";
-import { Group, fieldCls, primaryBtn } from "@/components/learn/admissions/ui";
+import { fieldCls, primaryBtn } from "@/components/learn/admissions/ui";
+import { SettingsGroup } from "@/components/learn/templates/parts";
 
 type Draft = { online_payment_url: string; payment_instructions: string; assessment_join_url: string; interview_join_url: string; assessment_duration_text: string };
 const EMPTY: Draft = { online_payment_url: "", payment_instructions: "", assessment_join_url: "", interview_join_url: "", assessment_duration_text: "" };
@@ -71,16 +72,17 @@ export function AdmissionsSettingsPanel() {
   return (
     <div className="space-y-4">
       <PaymentsSettings />
-      <Group
-        title="Offer & assessment email settings"
-        help="Used when staff write offer, assessment and interview emails. Fee amounts are not set here: change them in Content > Fees. Note: these settings are stored in the public site settings table, so never put a password, API key or secret here."
-      >
+      <div className="rounded-2xl border border-gold-light bg-white px-4 py-5 sm:px-6">
+      <p className="t-meta mb-4 max-w-prose">Used when staff write offer, assessment and interview emails. Fee amounts are not set here: change them in Content, Fees. These settings are stored in the public site settings table, so never put a password, API key or secret here.</p>
+      <SettingsGroup title="Paying fees" description="What the offer email says under How to pay.">
         <label className="block text-sm font-medium text-ink">
           Online payment link
           <input type="url" value={d.online_payment_url} onChange={(e) => set("online_payment_url", e.target.value)} placeholder="https://buy.stripe.com/…" maxLength={500} disabled={!loaded} className={fieldCls} />
           <span className="mt-1 block text-xs font-normal text-ink/65">Fallback only, while Stripe is not connected (see Payments above): a shared Stripe Payment Link for the email payment page. Once Stripe is connected every family pays on their own page and this is not used; clear it then. See docs/payments.md.</span>
         </label>
-        <div className="mt-3 grid gap-3 sm:grid-cols-2">
+      </SettingsGroup>
+      <SettingsGroup title="Assessments and interviews" description="The links and wording put into assessment and interview emails.">
+        <div className="grid gap-3 sm:grid-cols-2">
           <label className="block text-sm font-medium text-ink">
             Default assessment join link
             <input type="url" value={d.assessment_join_url} onChange={(e) => set("assessment_join_url", e.target.value)} placeholder="https://teams.microsoft.com/…" maxLength={500} disabled={!loaded} className={fieldCls} />
@@ -94,10 +96,11 @@ export function AdmissionsSettingsPanel() {
             <input value={d.assessment_duration_text} onChange={(e) => set("assessment_duration_text", e.target.value)} maxLength={100} disabled={!loaded} className={fieldCls} />
           </label>
         </div>
-      </Group>
-      <div className="flex items-center gap-3">
+      </SettingsGroup>
+      <div className="flex flex-wrap items-center gap-3 border-t border-gold-light pt-4">
         <button type="button" onClick={save} disabled={saving || !dirty || !loaded} className={primaryBtn}>{saving ? "Saving…" : "Save settings"}</button>
-        {msg && <span role={msg.ok ? "status" : "alert"} className={`text-xs ${msg.ok ? "text-teal-700" : "text-red-700"}`}>{msg.text}</span>}
+        {msg && <span role={msg.ok ? "status" : "alert"} className={`text-sm ${msg.ok ? "text-forest-800" : "text-red-700"}`}>{msg.text}</span>}
+      </div>
       </div>
       <EmailTemplatesPanel />
     </div>
