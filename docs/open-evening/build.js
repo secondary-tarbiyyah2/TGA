@@ -246,7 +246,7 @@ s = content("How we teach", "What your child learns", "The full curriculum, alon
 const cur = [
   ["Years 1 to 6", "Primary", ["Phonics, early reading, English and maths every day", "Science, history, geography, computing, art and design", "Qur'an and Tajweed, starting with the Qaidah", "Arabic, Islamic Studies and PSHE"]],
   ["Years 7 to 9", "Key Stage 3", ["English, maths and science (biology, chemistry, physics)", "History, geography, computing, art and design", "Qur'an and Tajweed, Arabic, Islamic Studies", "Study habits that prepare for GCSE"]],
-  ["Years 10 to 11", "International GCSE", ["Pearson Edexcel International GCSEs", "English, maths, science and Islamic Studies", "Two options chosen in Year 9", "UK pupils sit exams at Tarbiyyah Secondary School"]],
+  ["Years 10 to 11", "International GCSE", ["Pearson Edexcel International GCSEs", "English, maths, science and Islamic Studies", "Two options chosen in Year 9", "Families register at an exam centre near them; we help them find one"]],
 ];
 const cw = (W - 2 * M - 2 * 0.3) / 3;
 cur.forEach(([y1, k, items], i) => {
@@ -256,7 +256,7 @@ cur.forEach(([y1, k, items], i) => {
   text(s, y1, { x: x + 0.35, y: y + 0.62, w: cw - 0.7, h: 0.55, fontFace: "Cambria", fontSize: 24, bold: true });
   text(s, items.map((t, j) => ({ text: t, options: { bullet: { indent: 16 }, breakLine: j < items.length - 1 } })), { x: x + 0.35, y: y + 1.4, w: cw - 0.7, h: 3.2, fontSize: 15, paraSpaceAfter: 9, color: "33373B" });
 });
-s.addNotes("Maths follows White Rose for Years 1 to 9. Homework is kept manageable and tracked in the portal, and termly reports come to parents. GCSE entry fees are paid to the exam centre and are not part of tuition. Families abroad are helped to find an approved centre. History is not offered at GCSE. Avoid naming every option subject in case the list changes; the Learning page on the website has the current list.");
+s.addNotes("Maths follows White Rose for Years 1 to 9. Homework is kept manageable and tracked in the portal, and termly reports come to parents. We are not an exam centre: families register their child as a private candidate at an approved exam centre near them, in the UK or abroad, and pay that centre's entry fees, which are not part of tuition. We help every family for free with a list of centres that take private candidates, the deadlines, the entry codes and what to ask a centre, and our exams lead answers questions. We do not book or pay for entries. History is not offered at GCSE. Avoid naming every option subject in case the list changes; the Learning page on the website has the current list.");
 
 // ══ 8. Qur'an ══
 s = content("How we teach", "Qur'an", "Every recitation heard, marked and shared with you");
