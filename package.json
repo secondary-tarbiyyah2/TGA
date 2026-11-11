@@ -11,7 +11,8 @@
     "sanity:dev": "sanity dev",
     "sanity:build": "sanity build out/studio --yes && node scripts/clean-studio-build.mjs",
     "split-static-export": "node scripts/split-static-export.mjs",
-    "sanity:deploy": "sanity deploy"
+    "sanity:deploy": "sanity deploy",
+    "build:demo": "node scripts/demo/build.mjs"
   },
   "dependencies": {
     "@sanity/image-url": "^2.1.1",
