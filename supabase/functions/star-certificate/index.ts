@@ -1,5 +1,6 @@
 // Generates (on demand) the "Star of the week" PDF certificate for an
-// APPROVED star, stores it in the private `star-certificates` bucket and
+// APPROVED star, signed automatically with the Headteacher's and the
+// nominating class teacher's saved signatures (Your account > Your signature), stores it in the private `star-certificates` bucket and
 // returns a short-lived link. Optionally emails it to the child's parent.
 //
 // Deployed WITH JWT verification. Staff only: the caller must hold a
@@ -24,6 +25,33 @@ const LEARN_SITE_URL = (Deno.env.get("LEARN_SITE_URL") || "https://learn.tarbiyy
 const service = createClient(supabaseUrl, serviceRoleKey);
 const BUCKET = "star-certificates";
 const URL_TTL_SECONDS = 600;
+
+// A staff member's saved signature (Your account > Your signature) and name,
+// for the certificate's signature lines. Missing pieces come back null.
+async function signerFor(userId: string | null | undefined): Promise<{ name: string | null; signature: Uint8Array | null }> {
+  if (!userId) return { name: null, signature: null };
+  const [{ data: prof }, { data: sig }] = await Promise.all([
+    service.from("profiles").select("full_name").eq("id", userId).maybeSingle(),
+    service.from("user_signatures").select("image_path").eq("user_id", userId).maybeSingle(),
+  ]);
+  let signature: Uint8Array | null = null;
+  if (sig?.image_path) {
+    const { data: blob } = await service.storage.from("signature-images").download(sig.image_path as string);
+    if (blob) signature = new Uint8Array(await blob.arrayBuffer());
+  }
+  return { name: (prof?.full_name as string | null) || null, signature };
+}
+
+// The Headteacher who signs: the approver when they are the Headteacher, else the
+// school's Headteacher (the first head_teacher role).
+async function headteacherId(approverId: string | null | undefined): Promise<string | null> {
+  if (approverId) {
+    const { data } = await service.from("user_roles").select("user_id").eq("user_id", approverId).eq("role", "head_teacher").maybeSingle();
+    if (data) return approverId;
+  }
+  const { data: heads } = await service.from("user_roles").select("user_id").eq("role", "head_teacher").limit(1);
+  return (heads?.[0]?.user_id as string | undefined) ?? null;
+}
 
 const esc = (s: string) => s.replace(/[&<>"']/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" })[c]!);
 
@@ -67,7 +95,7 @@ Deno.serve(async (req) => {
 
   const { data: star } = await service
     .from("star_of_the_week")
-    .select("id, child_id, week_start, reason, message, status, certificate_path, decided_at, children(name, parent_user_id), classes(name)")
+    .select("id, child_id, week_start, reason, message, status, certificate_path, decided_at, nominated_by, decided_by, children(name, parent_user_id), classes(name)")
     .eq("id", starId)
     .maybeSingle();
   if (!star) return jsonResponse({ ok: false, error: "not_found" }, 404);
@@ -86,7 +114,13 @@ Deno.serve(async (req) => {
     let bytes: Uint8Array | null = null;
     let generated = false;
     if (!star.certificate_path || (regenerate && isHead)) {
+      const s = star as { nominated_by?: string | null; decided_by?: string | null };
+      const [head, teacher] = await Promise.all([headteacherId(s.decided_by).then(signerFor), signerFor(s.nominated_by)]);
       bytes = await buildStarCertificate({
+        headName: head.name,
+        headSignature: head.signature,
+        teacherName: teacher.name,
+        teacherSignature: teacher.signature,
         fullName,
         firstName,
         reason: star.reason,

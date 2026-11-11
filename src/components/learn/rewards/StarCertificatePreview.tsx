@@ -1,3 +1,4 @@
+import Link from "next/link";
 import { firstName, longDay } from "./starData";
 
 /**
@@ -27,7 +28,13 @@ export function StarCertificatePreview({ name, reason, message, className, weekS
           <p className="mt-2 text-[10px] text-ink/60">{[className, `Week beginning ${longDay(weekStart)}`].filter(Boolean).join("  ·  ")}</p>
         </div>
       </div>
-      <figcaption className="mt-1.5 text-center text-[11px] text-ink/60">Preview. The PDF is made once the Headteacher approves.</figcaption>
+      <figcaption className="mt-1.5 text-center text-[11px] text-ink/60">
+        Preview. The PDF is made once the Headteacher approves, signed with the Headteacher&apos;s and class teacher&apos;s saved signatures (
+        <Link href="/account" className="underline underline-offset-2 hover:text-ink">
+          add yours in Your account
+        </Link>
+        ).
+      </figcaption>
     </figure>
   );
 }

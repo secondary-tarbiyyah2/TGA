@@ -29,6 +29,12 @@ export type CertificateInput = {
   weekStart: string;
   /** ISO timestamp the star was approved, shown as the certificate date. */
   approvedAt: string | null;
+  /** Saved signature PNGs (Your account > Your signature) and names for the two
+   *  signature lines; a missing signature leaves the line blank to sign by hand. */
+  headName?: string | null;
+  headSignature?: Uint8Array | null;
+  teacherName?: string | null;
+  teacherSignature?: Uint8Array | null;
 };
 
 const b64 = (s: string) => Uint8Array.from(atob(s), (c) => c.charCodeAt(0));
@@ -131,24 +137,24 @@ export async function buildStarCertificate(input: CertificateInput): Promise<Uin
   // Logo, in its official gold.
   const logoW = 200;
   const logoH = (logo.height / logo.width) * logoW;
-  page.drawImage(logo, { x: cx - logoW / 2, y: H - 64 - logoH, width: logoW, height: logoH });
+  page.drawImage(logo, { x: cx - logoW / 2, y: H - 56 - logoH, width: logoW, height: logoH });
 
-  tracked(page, "CERTIFICATE OF ACHIEVEMENT", cx, H - 148, medium, 10.5, GOLD_DARK, 3.2);
-  center("Star of the Week", H - 200, bold, 50, INK);
-  center("This certificate is proudly presented to", H - 232, regular, 13.5, GREY);
+  tracked(page, "CERTIFICATE OF ACHIEVEMENT", cx, H - 140, medium, 10.5, GOLD_DARK, 3.2);
+  center("Star of the Week", H - 190, bold, 50, INK);
+  center("This certificate is proudly presented to", H - 220, regular, 13.5, GREY);
 
   // The child's name: the hero line, shrunk to fit.
   const maxName = W - 220;
   let nameSize = 46;
   const name = safe(bold, input.fullName);
   while (nameSize > 22 && bold.widthOfTextAtSize(name, nameSize) > maxName) nameSize -= 2;
-  center(name, H - 288, bold, nameSize, GOLD_DARK);
-  page.drawRectangle({ x: cx - 36, y: H - 306, width: 72, height: 3, color: GOLD });
+  center(name, H - 274, bold, nameSize, GOLD_DARK);
+  page.drawRectangle({ x: cx - 36, y: H - 291, width: 72, height: 3, color: GOLD });
 
   // Why: the teacher's reason, then their own message in a soft panel.
   const message = (input.message || "").trim();
   const reasonLines = wrap(medium, 15, `Well done, ${input.firstName}! ${input.reason}`, 580).slice(0, message ? 3 : 4);
-  let y = H - 338;
+  let y = H - 322;
   for (const l of reasonLines) {
     center(l, y, medium, 15, INK);
     y -= 21;
@@ -186,12 +192,31 @@ export async function buildStarCertificate(input: CertificateInput): Promise<Uin
     if (i > 0) page.drawLine({ start: { x: left + colW * i, y: rowY - 8 }, end: { x: left + colW * i, y: rowY + 26 }, thickness: 0.6, color: GOLD_LIGHT });
   });
 
-  // Signature lines.
+  // Signature lines, with saved signatures drawn on them automatically.
   const sigY = 62;
-  page.drawLine({ start: { x: 96, y: sigY + 12 }, end: { x: 276, y: sigY + 12 }, thickness: 0.6, color: GREY });
-  page.drawText("Headteacher", { x: 96, y: sigY, size: 9, font: regular, color: GREY });
-  page.drawLine({ start: { x: W - 276, y: sigY + 12 }, end: { x: W - 96, y: sigY + 12 }, thickness: 0.6, color: GREY });
-  page.drawText("Class teacher", { x: W - 276, y: sigY, size: 9, font: regular, color: GREY });
+  const signLine = async (x0: number, role: string, name: string | null | undefined, png: Uint8Array | null | undefined) => {
+    const lineW = 180;
+    if (png) {
+      try {
+        const img = await pdf.embedPng(png);
+        const maxW = lineW - 10;
+        const maxH = 30; // stays clear of the details row above
+        const scale = Math.min(maxW / img.width, maxH / img.height);
+        const w = img.width * scale;
+        const h = img.height * scale;
+        page.drawImage(img, { x: x0 + (lineW - w) / 2, y: sigY + 13, width: w, height: h });
+      } catch {
+        // an unreadable image leaves the line blank to sign by hand
+      }
+    }
+    page.drawLine({ start: { x: x0, y: sigY + 12 }, end: { x: x0 + lineW, y: sigY + 12 }, thickness: 0.6, color: GREY });
+    const label = name ? `${safe(regular, name)}, ${role}` : role;
+    let size = 9;
+    while (size > 7 && regular.widthOfTextAtSize(label, size) > lineW) size -= 0.5;
+    page.drawText(label, { x: x0, y: sigY, size, font: regular, color: GREY });
+  };
+  await signLine(96, "Headteacher", input.headName, input.headSignature);
+  await signLine(W - 276, "Class teacher", input.teacherName, input.teacherSignature);
   center("globalacademy.tarbiyyah.co.uk", sigY, regular, 8.5, GREY);
 
   pdf.setTitle(`Star of the Week - ${safe(regular, input.fullName)}`);
