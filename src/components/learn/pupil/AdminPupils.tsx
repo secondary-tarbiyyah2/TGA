@@ -513,8 +513,11 @@ export function AdminPupils() {
       </div>
 
       {adding && <AddPupil onClose={() => setAdding(false)} onChanged={refresh} />}
+      {/* Edit pupil replaces the pupil's panel (owner, 11 Nov 2026: the edit form must never open
+          underneath it); closing the edit brings the pupil's panel back. */}
       {editing && <EditPupilModal childId={editing} onClose={() => setEditing(null)} onSaved={refresh} />}
       {(() => {
+        if (editing) return null;
         const i = peek ? rows.findIndex((r) => r.id === peek) : -1;
         if (i < 0) return null;
         const pupil = rows[i];
