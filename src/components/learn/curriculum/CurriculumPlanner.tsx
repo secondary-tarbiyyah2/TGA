@@ -451,7 +451,7 @@ function UnitEditor({ initial, original, canEdit, syncNotes, onClose, onSaved }:
 
   const dis = !canEdit || busy;
   return (
-    <Modal title={original ? `${d.subject}, ${yearLabel(d.year)}: ${original.title}` : `New ${d.subject} unit, ${yearLabel(d.year)}`} onClose={close} wide>
+    <Modal title={original ? `${d.subject}, ${yearLabel(d.year)}: ${original.title}` : `New ${d.subject} unit, ${yearLabel(d.year)}`} onClose={close} panel>
       <div className="space-y-5 p-4 sm:p-6">
         {syncNotes.length > 0 && (
           <div role="status" className="rounded-lg border border-amber-200 bg-amber-50 px-3 py-2 text-sm text-amber-900">
