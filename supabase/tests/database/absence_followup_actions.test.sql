@@ -12,7 +12,7 @@ insert into public.profiles (id, role, full_name, email) values
 insert into public.user_roles (user_id, role, scope_type, scope_id) values
   ('a2070000-0000-0000-0000-000000000001', 'head_teacher', 'none', null),
   ('a2070000-0000-0000-0000-000000000002', 'teacher', 'none', null);
-insert into public.children (id, name) values ('a2070000-0000-0000-0000-0000000000d1', 'AF Pupil');
+insert into public.children (id, name, dob, is_test) values ('a2070000-0000-0000-0000-0000000000d1', 'AF Pupil', '2015-01-01', true);
 insert into public.absence_followups (id, child_id, absence_date) values ('a2070000-0000-0000-0000-0000000000f1', 'a2070000-0000-0000-0000-0000000000d1', '2026-11-10');
 
 set local role authenticated;
