@@ -182,9 +182,9 @@ export function ClassInsightsTab({ classId, classHref, area = "/teach" }: { clas
                       </td>
                       <td className="ml-auto sm:px-4 sm:py-2.5 sm:text-right">
                         <span className="inline-flex gap-1">
-                          <Link href={`${area}/messages?compose=1`} className={`${ui.btnGhost} ${ui.sm}`} aria-label={`Message about ${p.name}`}>
+                          <Link href={`${area}/messages?family=${p.id}`} className={`${ui.btnGhost} ${ui.sm}`} aria-label={`Message ${p.name}'s family`}>
                             <Icon name="messageSquare" size="sm" />
-                            <span className="hidden lg:inline">Message</span>
+                            <span className="hidden lg:inline">Message family</span>
                           </Link>
                           <Link href={profile(p.id)} className={`${ui.btnSecondary} ${ui.sm}`} aria-label={`Open ${p.name}'s record`}>
                             Record

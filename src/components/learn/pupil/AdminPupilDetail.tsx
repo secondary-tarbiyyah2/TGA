@@ -215,6 +215,9 @@ function PupilProfile({ id, onEdited }: { id: string; onEdited: () => void }) {
               <button type="button" onClick={() => printElement(findPrintScope(printRef.current, "pupil-record"))} className={ui.btnSecondary}>
                 Print record
               </button>
+              <Link href={`/admin/messages?family=${id}`} className={ui.btnSecondary}>
+                Message family
+              </Link>
               <Link href={`/admin/pupils?id=${id}&edit=details`} scroll={false} className={ui.btnSecondary} data-guide="pupil-edit-details">
                 Edit details
               </Link>

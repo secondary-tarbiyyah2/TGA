@@ -143,6 +143,9 @@ function PupilPeek({ pupil, extras, onClose, onEdit, onPrev, onNext, position }:
           <button type="button" onClick={onEdit} className={ui.btnSecondary}>
             Edit pupil
           </button>
+          <Link href={`/admin/messages?family=${pupil.id}`} className={ui.btnSecondary}>
+            Message family
+          </Link>
           <span className="ml-auto flex gap-1">
             <IconButton icon="chevronLeft" label="Previous pupil" onClick={onPrev} disabled={!onPrev} />
             <IconButton icon="chevronRight" label="Next pupil" onClick={onNext} disabled={!onNext} />
