@@ -85,6 +85,12 @@ what's left are in docs/portal-redesign.md; follow its design rules for every ne
 Founding-year lessons: DONE for every subject, Spring 1 to Summer 2 (11 Jan to 9 Jul 2027), all v3, merged by
 10 Nov 2026 (PRs #52 to #130). Open questions are in each PR and in the packs' "To confirm" lists.
 
+PAUSED 11 Nov 2026 08:40 (owner: portal UI first, come back later): term resources for Summer 1 and Summer 2. Spring 1
+and Spring 2 are complete. Summer 1 had started: open PR #157 (claude/resources-summer-1-science) is unfinished; check it,
+finish or close it, then continue per docs/agent-briefs/BRIEF-RESOURCES.md. The previous agent's generator scripts were in
+a session scratchpad and may be gone; the repo's scripts/resources/ has the pipeline.
+NOW: portal structure redesign per docs/owner-briefs/2026-11-10-ui-ux-redesign.md (incl. 11 Nov feedback), docs/portal-structure.md.
+
 Next, in this order (each one agent; briefs in docs/agent-briefs/):
 1. (done) Founding-year lessons.
 2. (done) Spring 2, Summer 1, Summer 2.
