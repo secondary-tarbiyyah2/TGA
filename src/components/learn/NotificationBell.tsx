@@ -4,6 +4,7 @@ import { Loading } from "@/components/learn/kit";
 import { useEffect, useState } from "react";
 import { getSupabaseClient } from "@/lib/supabase/client";
 import { useLearnPermission } from "@/lib/learn/session";
+import { loadFeatures } from "@/lib/learn/features";
 import { Icon } from "@/components/learn/Icon";
 import { ScrollArea } from "@/components/learn/ScrollArea";
 
@@ -46,7 +47,12 @@ export function NotificationBell({ userId }: { userId: string }) {
         // New feedback tickets (0092). RLS returns rows only to head/admin.
         supabase.from("feedback_tickets").select("id, created_at, kind").eq("status", "new").order("created_at", { ascending: false }).limit(10),
         // Lesson feedback from staff (0191, Tafweed T34). RLS returns every note only to head/admin.
-        supabase.from("curriculum_lesson_feedback").select("id, created_at, author_id").eq("status", "open").neq("author_id", userId).order("created_at", { ascending: false }).limit(10),
+        // Not while the Headteacher has Lesson feedback switched off (Settings, School features).
+        (async (): Promise<{ data: { id: string; created_at: string }[] | null; error: unknown }> => {
+          if (!(await loadFeatures()).lesson_feedback) return { data: [], error: null };
+          const r = await supabase.from("curriculum_lesson_feedback").select("id, created_at, author_id").eq("status", "open").neq("author_id", userId).order("created_at", { ascending: false }).limit(10);
+          return { data: r.data, error: r.error };
+        })(),
       ]);
 
       const timestamped: Signal[] = [

@@ -16,6 +16,7 @@ import { uploadClassFile } from "@/components/learn/class/Attachments";
 import { Tabs } from "@/components/learn/Tabs";
 import { makeZip, type ZipEntry } from "@/lib/learn/zip";
 import { revisionOverview, unitsForYear, type StaffUnit } from "@/lib/learn/revision";
+import { useFeatures } from "@/lib/learn/features";
 import { UnitResults } from "@/components/learn/revision/UnitResults";
 import { PackBuilder } from "@/components/learn/revision/PackBuilder";
 import { RevisionPackPanel } from "@/components/learn/revision/RevisionPackPanel";
@@ -157,14 +158,18 @@ export function CurriculumLibrary({ area }: { area: "teach" | "admin" }) {
   const [editingLesson, setEditingLesson] = useState<CurriculumLesson | null>(null);
   // T34/T35: the click-to-edit lesson (optionally opened from a feedback note), feedback, and the Headteacher's queue.
   const isHead = roles.some((r) => r.role === "head_teacher" || r.role === "admin");
+  // School features (Settings): revision packs and lesson feedback can be switched off by the Headteacher.
+  const features = useFeatures();
+  const revisionOn = features.revision_packs;
+  const feedbackOn = features.lesson_feedback;
   const [studio, setStudio] = useState<{ lesson: CurriculumLesson; feedback?: LessonFeedback | null } | null>(null);
   const [feedbackFor, setFeedbackFor] = useState<{ lesson: CurriculumLesson; part: string; content?: { teach?: { heading?: string }[]; hook?: unknown } | null } | null>(null);
   const [queueOpen, setQueueOpen] = useState(false);
   const [waitingFeedback, setWaitingFeedback] = useState(0);
   const loadWaiting = useCallback(async () => {
-    if (!isHead) return;
+    if (!isHead || !feedbackOn) return;
     setWaitingFeedback((await loadFeedback({ openOnly: true })).length);
-  }, [isHead]);
+  }, [isHead, feedbackOn]);
   useEffect(() => {
     // eslint-disable-next-line react-hooks/set-state-in-effect -- count once for the queue button
     loadWaiting();
@@ -297,21 +302,22 @@ export function CurriculumLibrary({ area }: { area: "teach" | "admin" }) {
     };
     const [{ data, error }, packList, planRes] = await Promise.all([
       fetchLessons(),
-      unitsForYear(year).catch(() => [] as StaffUnit[]),
+      revisionOn ? unitsForYear(year).catch(() => [] as StaffUnit[]) : Promise.resolve([] as StaffUnit[]),
       Promise.resolve(supabase.from("curriculum_units").select("subject_slug, title, half_term").eq("year", year)).catch(() => ({ data: null })),
     ]);
     setPacks(packList);
     setPlanUnits(((planRes as { data: unknown }).data as { subject_slug: string; title: string; half_term: string | null }[] | null) || []);
-    revisionOverview()
-      .then((rows) => setScores(Object.fromEntries(rows.map((r) => [r.unit_id, r.avg_pct ?? null]))))
-      .catch(() => setScores({}));
+    if (revisionOn)
+      revisionOverview()
+        .then((rows) => setScores(Object.fromEntries(rows.map((r) => [r.unit_id, r.avg_pct ?? null]))))
+        .catch(() => setScores({}));
     if (error) {
       setMessage("Couldn't load the Lesson library. Refresh to try again.");
       setLessons([]);
       return;
     }
     setLessons((data as unknown as CurriculumLesson[]) || []);
-  }, [supabase, year]);
+  }, [supabase, year, revisionOn]);
 
   useEffect(() => {
     // eslint-disable-next-line react-hooks/set-state-in-effect -- data load when the year changes
@@ -495,7 +501,7 @@ export function CurriculumLibrary({ area }: { area: "teach" | "admin" }) {
       { label: pinned.has(l.id) ? "Unpin from my dashboard" : "Pin to my dashboard", icon: "star", onSelect: () => void togglePin(l.id) },
       { label: "Share to a class", icon: "send", onSelect: () => setSharing(l), disabled: !l.deck_path },
       { label: canEditLessons ? "Edit lesson" : "Look inside", icon: "pencil", onSelect: () => setStudio({ lesson: l }) },
-      { label: "Give feedback", icon: "messageSquarePlus", onSelect: () => setFeedbackFor({ lesson: l, part: "lesson" }) },
+      ...((feedbackOn ? [{ label: "Give feedback", icon: "messageSquarePlus", onSelect: () => setFeedbackFor({ lesson: l, part: "lesson" }) }] : []) as MenuAction[]),
       { label: "Review and approval", icon: "clipboardCheck", href: `${lessonHref(l)}#review` },
       ...((canEditLessons ? [{ section: "More", label: "" }, { label: "Edit in the full form", icon: "fileText", onSelect: () => setEditingLesson(l) }, { label: "Upload my own slides", icon: "upload", onSelect: () => setReplacing(l) }] : []) as MenuAction[]),
       { label: "Version history", icon: "refresh", onSelect: () => setHistory(l) },
@@ -560,12 +566,12 @@ export function CurriculumLibrary({ area }: { area: "teach" | "admin" }) {
           {year && <Tabs variant="switch" items={yearTabs} value={year} onChange={setYear} label="Year group" />}
           <span className="flex flex-wrap items-center gap-2">
             {myYears.length > 0 && <span className="t-meta text-xs">• a year you teach</span>}
-            {isHead && (
+            {isHead && feedbackOn && (
               <button type="button" className={btnFor("ghost", "sm")} onClick={() => setQueueOpen(true)}>
                 <Icon name="messageSquare" size="sm" /> Staff feedback{waitingFeedback ? ` (${waitingFeedback})` : ""}
               </button>
             )}
-            {year && !building && (
+            {year && !building && revisionOn && (
               <button type="button" className={btn} onClick={() => setBuilding({})}>
                 <Icon name="plus" size="sm" /> New revision pack
               </button>
@@ -737,7 +743,7 @@ export function CurriculumLibrary({ area }: { area: "teach" | "admin" }) {
                         )}
                       </span>
                       <span className="col-start-2 row-start-1 flex items-center gap-1 sm:col-start-auto sm:row-start-auto">
-                        {!p && (
+                        {!p && revisionOn && (
                           <button type="button" onClick={() => setBuilding({ initial: { subject_slug: u.subject_slug, subject: u.subject, unit: u.unit } })} className={`${ui.btnLink} !hidden px-2 !text-ink-500 hover:!text-forest-700 lg:!inline-flex`}>
                             Add revision
                           </button>
@@ -813,10 +819,12 @@ export function CurriculumLibrary({ area }: { area: "teach" | "admin" }) {
                 </ul>
               </div>
             ))}
+            {revisionOn && (
             <p className="t-meta flex items-center gap-1.5 border-t border-gold-light px-2 pt-2 text-xs">
               <span className="h-1.5 w-1.5 rounded-full bg-gold-500" /> revision pack
               <span className="ml-2 h-1.5 w-1.5 rounded-full bg-forest-700" /> pupils have revised
             </p>
+            )}
           </nav>
 
           <div className="min-w-0 space-y-3">
@@ -841,7 +849,7 @@ export function CurriculumLibrary({ area }: { area: "teach" | "admin" }) {
                     const unitMenu: MenuAction[] = current.lessons.length
                       ? [
                           { section: "Download the unit", label: "" },
-                          { label: "Revision booklet (PDF)", icon: "download", onSelect: () => downloadBooklet(current.lessons, current.unit) },
+                          ...(revisionOn ? [{ label: "Revision booklet (PDF)", icon: "download" as const, onSelect: () => downloadBooklet(current.lessons, current.unit) }] : []),
                           dl("Slides and plans (PDF, ZIP)", ["slides-pdf", "plan-pdf"]),
                           dl("Slides only (PDF, ZIP)", ["slides-pdf"]),
                           dl("Plans only (PDF, ZIP)", ["plan-pdf"]),
@@ -899,14 +907,18 @@ export function CurriculumLibrary({ area }: { area: "teach" | "admin" }) {
                       { key: "lessons" as UnitTab, label: "Lessons", count: current.lessons.length },
                       { key: "spec" as UnitTab, label: "Spec points" },
                       { key: "connections" as UnitTab, label: "Connections" },
-                      { key: "revision" as UnitTab, label: "Revision pack" },
-                      { key: "results" as UnitTab, label: "Pupil results", count: currentPack?.takers || undefined },
+                      ...(revisionOn
+                        ? [
+                            { key: "revision" as UnitTab, label: "Revision pack" },
+                            { key: "results" as UnitTab, label: "Pupil results", count: currentPack?.takers || undefined },
+                          ]
+                        : []),
                     ]}
-                    value={tab}
+                    value={!revisionOn && (tab === "revision" || tab === "results") ? "lessons" : tab}
                     onChange={setTab}
                     label="Unit"
                   />
-                  {tab === "lessons" &&
+                  {(tab === "lessons" || (!revisionOn && (tab === "revision" || tab === "results"))) &&
                     (current.lessons.length ? (
                       <ol data-guide="library-units" aria-label={`Lessons in ${current.unit}`} className="overflow-hidden rounded-2xl border border-gold-light bg-white">{current.lessons.map((l) => lessonRow(l))}</ol>
                     ) : (
@@ -914,7 +926,7 @@ export function CurriculumLibrary({ area }: { area: "teach" | "admin" }) {
                     ))}
                   {tab === "spec" && <SpecPanel slug={current.subject_slug} unit={current.unit} year={year || ""} signoffs={signoffs} onSign={(ref, label) => setSigning({ slug: current.subject_slug, scope: "spec", ref, label })} onOpenLesson={openLessonById} />}
                   {tab === "connections" && <ConnectionsPanel subject={current.subject} unit={current.unit} onOpenLesson={(id, slug) => openLessonById(id, slug)} />}
-                  {tab === "revision" && (
+                  {tab === "revision" && revisionOn && (
                     <RevisionPackPanel
                       pack={currentPack}
                       year={year || ""}
@@ -929,6 +941,7 @@ export function CurriculumLibrary({ area }: { area: "teach" | "admin" }) {
                     />
                   )}
                   {tab === "results" &&
+                    revisionOn &&
                     (currentPack ? (
                       <UnitResults key={currentPack.id} unitId={currentPack.id} />
                     ) : (
@@ -964,9 +977,11 @@ export function CurriculumLibrary({ area }: { area: "teach" | "admin" }) {
               <button type="button" className={btn} onClick={() => download(viewing.lesson, viewing.kind)}>
                 Download
               </button>
-              <button type="button" className={btn} onClick={() => setFeedbackFor({ lesson: viewing.lesson, part: viewing.kind === "plan-pdf" ? "plan" : "lesson" })}>
-                Feedback
-              </button>
+              {feedbackOn && (
+                <button type="button" className={btn} onClick={() => setFeedbackFor({ lesson: viewing.lesson, part: viewing.kind === "plan-pdf" ? "plan" : "lesson" })}>
+                  Feedback
+                </button>
+              )}
               <button
                 type="button"
                 className={btn}
@@ -1051,10 +1066,10 @@ export function CurriculumLibrary({ area }: { area: "teach" | "admin" }) {
             setStudio(null);
             setEditingLesson(l);
           }}
-          onFeedback={(part, content) => setFeedbackFor({ lesson: studio.lesson, part, content })}
+          onFeedback={feedbackOn ? (part, content) => setFeedbackFor({ lesson: studio.lesson, part, content }) : undefined}
         />
       )}
-      {feedbackFor && (
+      {feedbackFor && feedbackOn && (
         <FeedbackDialog
           lesson={feedbackFor.lesson}
           content={feedbackFor.content}
@@ -1067,7 +1082,7 @@ export function CurriculumLibrary({ area }: { area: "teach" | "admin" }) {
           }}
         />
       )}
-      {queueOpen && (
+      {queueOpen && feedbackOn && (
         <FeedbackQueue
           onClose={() => {
             setQueueOpen(false);
