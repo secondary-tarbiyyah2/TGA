@@ -122,7 +122,7 @@ function Answer({ q, value, onChange }: { q: PupilQuestion; value: unknown; onCh
       return (
         <ul className="space-y-3">
           {rows.map((r) => (
-            <li key={r.i} className="rounded-xl border border-gold-light bg-white p-3">
+            <li key={r.i} className="border-t border-gold-light/70 pt-3 first:border-0 first:pt-0">
               <p className="mb-2 text-[0.9375rem] font-medium text-ink">{r.text}</p>
               <div role="radiogroup" aria-label={`Match for ${r.text}`} className="flex flex-wrap gap-1.5">
                 {options.map((o) => (

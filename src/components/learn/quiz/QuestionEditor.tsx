@@ -3,6 +3,7 @@
 import { useEffect, useRef, useState, type ReactNode } from "react";
 import { Icon } from "@/components/learn/Icon";
 import { ui } from "@/components/learn/ui";
+import { ActionsMenu } from "@/components/learn/kit";
 import { QTYPES, changeType, questionProblem, type DraftQuestion, type QType } from "@/lib/learn/quiz";
 
 const smallBtn = `${ui.btnGhost} ${ui.sm}`;
@@ -230,7 +231,7 @@ export function QuestionEditor({
 
   return (
     <section ref={ref} id={`q-${q.id}`} aria-label={`Question ${index + 1}`} className={`scroll-mt-4 rounded-xl border bg-white ${showProblems && problem ? "border-red-300" : q.ai && !q.checked ? "border-amber-300" : "border-gold-light"}`}>
-      <header className="flex flex-wrap items-center gap-2 border-b border-gold-light/70 px-4 py-2.5">
+      <header className="flex flex-wrap items-center gap-1 border-b border-gold-light/70 px-4 py-2.5">
         <span className="flex h-7 min-w-7 items-center justify-center rounded-full bg-cream px-2 text-xs font-semibold tabular-nums text-ink">{index + 1}</span>
         <button type="button" onClick={() => setTypeOpen((o) => !o)} aria-expanded={typeOpen} className={`${smallBtn} !text-ink`}>
           <Icon name={meta.icon} size="sm" />
@@ -244,19 +245,22 @@ export function QuestionEditor({
             Drafted by AI
           </span>
         )}
-        <span className="flex-1" />
-        <button type="button" className={ui.btnIcon} aria-label={`Move question ${index + 1} up`} disabled={index === 0} onClick={() => onMove(-1)}>
+        <span className="ml-auto" />
+        <button type="button" className={`${ui.btnIcon} !hidden sm:!inline-flex`} aria-label={`Move question ${index + 1} up`} disabled={index === 0} onClick={() => onMove(-1)}>
           <Icon name="chevronUp" size="sm" />
         </button>
-        <button type="button" className={ui.btnIcon} aria-label={`Move question ${index + 1} down`} disabled={index === count - 1} onClick={() => onMove(1)}>
+        <button type="button" className={`${ui.btnIcon} !hidden sm:!inline-flex`} aria-label={`Move question ${index + 1} down`} disabled={index === count - 1} onClick={() => onMove(1)}>
           <Icon name="chevronDown" size="sm" />
         </button>
-        <button type="button" className={ui.btnIcon} aria-label={`Duplicate question ${index + 1}`} onClick={onDuplicate}>
-          <Icon name="copy" size="sm" />
-        </button>
-        <button type="button" className={ui.btnIcon} aria-label={`Delete question ${index + 1}`} onClick={onRemove}>
-          <Icon name="trash" size="sm" />
-        </button>
+        <ActionsMenu
+          label={`More for question ${index + 1}`}
+          items={[
+            ...(index > 0 ? [{ label: "Move up", icon: "chevronUp" as const, onSelect: () => onMove(-1) }] : []),
+            ...(index < count - 1 ? [{ label: "Move down", icon: "chevronDown" as const, onSelect: () => onMove(1) }] : []),
+            { label: "Duplicate", icon: "copy", onSelect: onDuplicate },
+            { label: "Delete question", icon: "trash", danger: true, onSelect: onRemove },
+          ]}
+        />
       </header>
 
       <div className="space-y-4 p-4">
@@ -354,7 +358,7 @@ export function QuestionEditor({
               {q.pairs.map((p, i) => (
                 <li key={i} className="grid grid-cols-[1fr_auto_1fr_auto] items-center gap-2">
                   <input type="text" value={p.left} maxLength={200} onChange={(e) => set({ pairs: q.pairs.map((x, k) => (k === i ? { ...x, left: e.target.value } : x)) })} placeholder="Item" aria-label={`Pair ${i + 1}: item`} className={ui.input} />
-                  <Icon name="arrowLeftRight" size="sm" className="text-ink/50" />
+                  <Icon name="arrowLeftRight" className="h-4 w-4 text-ink/50" />
                   <input type="text" value={p.right} maxLength={200} onChange={(e) => set({ pairs: q.pairs.map((x, k) => (k === i ? { ...x, right: e.target.value } : x)) })} placeholder="Its match" aria-label={`Pair ${i + 1}: match`} className={ui.input} />
                   <button type="button" className={ui.btnIcon} aria-label={`Remove pair ${i + 1}`} disabled={q.pairs.length <= 2} onClick={() => set({ pairs: q.pairs.filter((_, k) => k !== i) })}>
                     <Icon name="x" size="sm" />

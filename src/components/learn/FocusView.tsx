@@ -1,6 +1,7 @@
 "use client";
 
-import { useEffect, useId, useRef, type ReactNode } from "react";
+import { useEffect, useId, useRef, useState, type ReactNode } from "react";
+import { createPortal } from "react-dom";
 import { Icon } from "@/components/learn/Icon";
 
 /**
@@ -73,8 +74,16 @@ export function FocusView({
     };
   }, []);
 
+  // Rendered at the end of <body>, so nothing on the page (the phone tab bar, a sticky header in
+  // its own stacking context) can show through. Dialogs and panels opened from inside stack above.
+  const [host, setHost] = useState<HTMLElement | null>(null);
+  useEffect(() => {
+    // eslint-disable-next-line react-hooks/set-state-in-effect -- the portal target exists only in the browser
+    setHost(document.body);
+  }, []);
+
   const inner = width === "reading" ? "max-w-3xl" : "max-w-6xl";
-  return (
+  const view = (
     <div
       ref={ref}
       tabIndex={-1}
@@ -83,7 +92,7 @@ export function FocusView({
       aria-labelledby={titleId}
       aria-label={label}
       data-guide={dataGuide}
-      className="portal portal-focus fixed inset-0 z-[90] flex flex-col bg-[var(--portal-canvas)] outline-none"
+      className="portal portal-focus fixed inset-0 z-[85] flex flex-col bg-[var(--portal-canvas)] outline-none"
     >
       <header className="shrink-0 border-b border-gold-light bg-[var(--portal-surface)]">
         <div className={`mx-auto flex w-full ${inner} flex-wrap items-center gap-x-3 gap-y-2 px-4 py-2.5 sm:px-6`}>
@@ -111,4 +120,5 @@ export function FocusView({
       )}
     </div>
   );
+  return host ? createPortal(view, host) : null;
 }

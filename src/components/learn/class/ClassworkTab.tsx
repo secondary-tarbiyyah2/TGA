@@ -391,7 +391,7 @@ export function ClassworkTab({ classId, classTitle, viewer, classHref }: { class
             ) : (
               g.label ? (
                 <h2 className="flex items-center gap-2 px-4 pt-3 text-sm font-semibold text-ink">
-                  {g.icon && <Icon name={g.icon} size="sm" className="text-ink/60" />}
+                  {g.icon && <Icon name={g.icon} className="h-4 w-4 text-ink/60" />}
                   {g.label}
                   <span className="text-xs font-normal text-ink/65">{g.items.length}</span>
                 </h2>
@@ -413,7 +413,7 @@ export function ClassworkTab({ classId, classTitle, viewer, classHref }: { class
                     <li key={`${r.type}-${r.id}`} className="px-3 py-2.5">
                       <div className="flex flex-wrap items-center gap-3">
                         <div className="min-w-0 flex-1">
-                          <p className="text-[11px] font-semibold uppercase tracking-wider text-ink/65">{KIND_LABEL[kindKey]}</p>
+                          {groupBy !== "kind" && <p className="text-[11px] font-semibold uppercase tracking-wider text-ink/65">{KIND_LABEL[kindKey]}</p>}
                           {hw && !isStaff ? (
                             <Link href={homeworkHref(viewer)} className="block truncate text-sm font-medium text-ink hover:text-teal-700 hover:underline">
                               {r.title}

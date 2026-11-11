@@ -394,6 +394,7 @@ etc. Needs to be done in a unique way." The short tour above stays as the doorwa
   from the page's code, a menu page is renamed in one place only, or text breaks house style.
 
 ## Log
+- 2026-11-11: Classwork quizzes (feedback 2, items 6, 15, 17; migration 0205): full-screen quiz builder with nine question types as cards, settings, AI draft checked question by question, results and marking; pupils sit quizzes full screen with the server clock, autosave and results; Classwork filters and groups by kind. Add an assessment opens full screen (item 10, `FocusView`).
 - 2026-11-11: Class stream and classwork create (feedback 2, items 5 and 6): "Add a post" opens a dialog that fits without scrolling (title, formatted message, upload, link or a printable from the resource library, for whom, now or scheduled, comments, pin). Classwork's Create shows Assignment, Quiz assignment, Question and Material as large cards, each with its own form; Question and Material open in dialogs; a new topic is a small dialog. The class header's Set work opens the same cards.
 - 2026-11-10: Portal guide part 1 (T39): an entry for every page per role, Guide me panel and Show me, progress in
   `portal_prefs.guide_progress` (migration 0203).
