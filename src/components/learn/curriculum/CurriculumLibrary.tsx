@@ -105,7 +105,7 @@ function SignoffDialog({ target, current, onClose, onDone }: { target: { slug: s
     onDone();
   };
   return (
-    <Modal title={`Sign off: ${target.label}`} onClose={onClose}>
+    <Modal title={`Sign off: ${target.label}`} onClose={onClose} panel>
       <div className="space-y-3 p-4">
         <p className="text-sm text-ink/75">
           {target.scope === "spec" ? "Record that the specification points for this unit match the board's own document." : "Record that this lesson is accurate, teaches the spec points it claims, and is ready to use."} Your name and today&apos;s date are recorded.
@@ -1473,7 +1473,7 @@ export function ReplaceDialog({ lesson, onClose, onDone }: { lesson: CurriculumL
     onDone();
   };
   return (
-    <Modal title={`Upload edited deck: ${lesson.title}`} onClose={onClose}>
+    <Modal title={`Upload edited deck: ${lesson.title}`} onClose={onClose} panel>
       <div className="space-y-3 p-4 text-sm text-ink/80">
         <p>
           Most changes are quicker with <strong>Edit lesson</strong>: the slides are rebuilt for you. Use this instead to keep slides you made yourself: download the PowerPoint, change it in PowerPoint,
@@ -1532,7 +1532,7 @@ export function HistoryDialog({ lesson, onClose, onChanged }: { lesson: Curricul
     saveBlob(blob, fileNameFor(lesson, "pptx").replace(/\.pptx$/, ` v${v.version}.pptx`));
   };
   return (
-    <Modal title={`History: ${lesson.title}`} onClose={onClose}>
+    <Modal title={`History: ${lesson.title}`} onClose={onClose} panel>
       <div className="p-4">
         {error && <p className="mb-2 text-sm text-red-700">{error}</p>}
         {!versions ? (
@@ -1626,7 +1626,7 @@ export function ShareDialog({ lesson, area, onClose, onDone }: { lesson: Curricu
   };
 
   return (
-    <Modal title={`Share to class: ${lesson.title}`} onClose={onClose}>
+    <Modal title={`Share to class: ${lesson.title}`} onClose={onClose} panel>
       <div className="space-y-3 p-4 text-sm text-ink/80">
         {classes === null ? (
           <p>Loading your classes…</p>
