@@ -44,7 +44,11 @@ const learnSourceDir = path.join(outDir, "learn");
 // metadata.icons). Kept as an explicit list, not "copy everything", so a
 // stray marketing-only asset doesn't quietly end up served from the portal
 // subdomain too.
-const SHARED_ASSET_PATHS = ["_next", "brand", "favicon.svg", "favicon.png", "favicon.ico", "icon-48.png", "icon-96.png", "icon-192.png", "icon-512.png", "site.webmanifest", "apple-touch-icon.png"];
+// "mushaf" (the Qur'an text the portal's recitation marking loads) and "fonts" (the
+// Uthmanic Hafs font it is drawn in) are needed by the portal too: without them the
+// Qur'an workspace said "The text didn't load" (owner, 11 Nov 2026).
+// "images/flags": the phone-number country flags on the portal's forms.
+const SHARED_ASSET_PATHS = ["_next", "brand", "mushaf", "fonts", "images/flags", "favicon.svg", "favicon.png", "favicon.ico", "icon-48.png", "icon-96.png", "icon-192.png", "icon-512.png", "site.webmanifest", "apple-touch-icon.png"];
 
 async function main() {
   if (!existsSync(outDir)) {

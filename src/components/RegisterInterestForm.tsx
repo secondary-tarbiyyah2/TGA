@@ -7,6 +7,7 @@ import { PhoneInput } from "@/components/ui/PhoneInput";
 import { Select } from "@/components/ui/Dropdown";
 import { YEAR_GROUP_OPTIONS } from "@/components/admissions/applicationShared";
 import { Icon } from "@/components/learn/Icon";
+import { ROLE_EMAILS } from "@/content/contacts";
 
 type Status = "idle" | "submitting" | "success" | "error";
 type Enquiry = "interest" | "question" | "current";
@@ -227,7 +228,7 @@ export function RegisterInterestForm({ heading = true, enquiryChoice = false }: 
       {status === "error" && (
         <p role="alert" className="mt-4 text-sm text-red-700">
           Something went wrong. Please try again, or email{" "}
-          <a href="mailto:globalacademy@tarbiyyah.co.uk" className="underline">globalacademy@tarbiyyah.co.uk</a> directly.
+          <a href={`mailto:${ROLE_EMAILS.admissions}`} className="underline">{ROLE_EMAILS.admissions}</a> directly.
         </p>
       )}
     </form>

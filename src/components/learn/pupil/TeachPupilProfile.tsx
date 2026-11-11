@@ -1,7 +1,7 @@
 "use client";
 
 import Link from "next/link";
-import { useEffect, useMemo, useState } from "react";
+import { useMemo, useState } from "react";
 import { useRouter, useSearchParams } from "next/navigation";
 import { PageHeader } from "@/components/learn/PageHeader";
 import { SectionLayout, SectionNav, type SectionItem } from "@/components/learn/SectionNav";
@@ -9,18 +9,18 @@ import { ButtonLink, Notice, StatusChip, ui } from "@/components/learn/ui";
 import { Loading } from "@/components/learn/kit";
 import { useLearnSession } from "@/lib/learn/session";
 import { getSupabaseClient } from "@/lib/supabase/client";
-import { ukDaysAgo } from "@/lib/learn/ukTime";
 import { useSupportPlans } from "@/lib/learn/send";
 import { PupilSupportCard } from "@/components/learn/send/SupportAtAGlance";
 import { ageFromDob, formatDob, formatStamp, medicalAlerts } from "./data";
 import { PupilOverview } from "./PupilOverview";
 import { RecordSections, usePupilRecordData } from "./PupilRecord";
-import { Fig, PupilAttendanceTab, PupilBehaviourTab, PupilReportsTab, attendanceFigures } from "./ProfileTabs";
+import { PupilAttendanceTab, PupilBehaviourTab, PupilReportsTab } from "./ProfileTabs";
+import { PupilChronology, PupilSummary } from "./ProfileSummary";
 import { PupilDocumentsTab, PupilQuranTab, PupilWorkTab } from "./ProfileSections";
 import { ackState, usePupils } from "./usePupils";
 
-type Sec = "overview" | "attendance" | "behaviour" | "work" | "quran" | "support" | "contacts" | "reports" | "documents";
-const SECS: Sec[] = ["overview", "attendance", "behaviour", "work", "quran", "support", "contacts", "reports", "documents"];
+type Sec = "overview" | "chronology" | "attendance" | "behaviour" | "work" | "quran" | "support" | "contacts" | "reports" | "documents";
+const SECS: Sec[] = ["overview", "chronology", "attendance", "behaviour", "work", "quran", "support", "contacts", "reports", "documents"];
 
 /**
  * A pupil's full profile for the staff who teach them (owner, 11 Nov 2026: "press on the students' names and
@@ -41,27 +41,8 @@ export function TeachPupilProfile({ id }: { id: string }) {
   const plans = useSupportPlans(pupil ? [pupil.id] : null);
   const plan = plans?.[id];
   const record = usePupilRecordData(id, { teacherView: true });
-  const [att30, setAtt30] = useState<ReturnType<typeof attendanceFigures> | null>(null);
   const [busy, setBusy] = useState(false);
   const [ackError, setAckError] = useState<string | null>(null);
-
-  useEffect(() => {
-    const supabase = getSupabaseClient();
-    if (!supabase) return;
-    let alive = true;
-    supabase
-      .from("attendance_records")
-      .select("status, lesson_instances!inner(date)")
-      .eq("child_id", id)
-      .gte("lesson_instances.date", ukDaysAgo(29))
-      .limit(1000)
-      .then(({ data }) => {
-        if (alive) setAtt30(attendanceFigures((data as { status: string }[]) || []));
-      });
-    return () => {
-      alive = false;
-    };
-  }, [id]);
 
   // Previous and next pupil, in the same order as the My pupils list.
   const order = useMemo(() => (pupils || []).filter((p) => p.classes.length > 0), [pupils]);
@@ -89,7 +70,8 @@ export function TeachPupilProfile({ id }: { id: string }) {
   const st = ackState(pupil);
   const age = ageFromDob(pupil.dob);
   const items: SectionItem<Sec>[] = [
-    { key: "overview", label: "Overview" },
+    { key: "overview", label: "Summary" },
+    { key: "chronology", label: "Chronology" },
     { key: "attendance", label: "Attendance" },
     { key: "behaviour", label: "Behaviour and house points" },
     { key: "work", label: "Classwork and grades" },
@@ -132,7 +114,7 @@ export function TeachPupilProfile({ id }: { id: string }) {
           </span>
         }
         action={
-          <ButtonLink href={`/teach/messages?compose=1`} variant="primary" icon="messageSquare">
+          <ButtonLink href={`/teach/messages?family=${id}`} variant="primary" icon="messageSquare">
             Message family
           </ButtonLink>
         }
@@ -149,16 +131,12 @@ export function TeachPupilProfile({ id }: { id: string }) {
       )}
       <SectionLayout nav={<SectionNav items={items} value={sec} hrefFor={hrefFor} label="Pupil profile sections" guide="pupil-sections" id="pupil-section" />}>
         {sec === "overview" && (
-          <div className="space-y-5">
-            <dl className="grid grid-cols-2 gap-2 sm:grid-cols-4">
-              <Fig label="Attendance (30 days)" value={att30 ? (att30.rate === null ? "No lessons" : `${att30.rate}%`) : "…"} warn={!!att30 && att30.rate !== null && att30.rate < 90} sub={att30 ? `${att30.absent} missed of ${att30.lessons}` : undefined} />
-              <Fig label="Medical alerts" value={alerts.length ? alerts.join(", ") : "None"} warn={alerts.length > 0} />
-              <Fig label="Support plan" value={plan ? "Yes" : "No"} />
-              <Fig label="Health information" value={st === "current" ? "Read" : "Not read yet"} warn={canAcknowledge && st !== "current"} sub={pupil.ack ? `You read it on ${formatStamp(pupil.ack.acknowledged_at)}` : undefined} />
-            </dl>
+          <div className="space-y-6">
+            <PupilSummary childId={id} yearGroupId={pupil.yearGroupId} yearGroup={pupil.yearGroup} scopeNote="Averages are for the pupils in this year group that you teach." />
             <PupilOverview childId={id} />
           </div>
         )}
+        {sec === "chronology" && <PupilChronology childId={id} />}
         {sec === "attendance" && <PupilAttendanceTab childId={id} />}
         {sec === "behaviour" && <PupilBehaviourTab childId={id} />}
         {sec === "work" && <PupilWorkTab childId={id} />}

@@ -8,6 +8,7 @@ import { formatDateKey, shiftDateKey, ukToday } from "@/lib/learn/ukTime";
 import { STATUS_LABEL, fetchAbsences, fetchNotes, formatDay, formatRange, type Absence, type AbsenceNote, type NoteStatus } from "./data";
 import { ui } from "@/components/learn/ui";
 import { Icon } from "@/components/learn/Icon";
+import { ATTENDANCE_CODES } from "@/lib/learn/attendanceCodes";
 
 type Child = { id: string; name: string };
 const CHIP: Record<NoteStatus, string> = {
@@ -16,7 +17,19 @@ const CHIP: Record<NoteStatus, string> = {
   unauthorised: "bg-red-50 text-red-800",
 };
 const fieldCls = `mt-1 ${ui.input}`;
-const REASONS = ["Unwell", "Medical or dental appointment", "Family emergency", "Religious observance", "Other"];
+// The reasons a family can give, in the school's own terms (owner, 11 Nov 2026; codes in attendanceCodes.ts).
+// The office decides the code; the hint says how each reason is usually recorded.
+const REASONS = ["Illness", "Medical appointment", "Religious observance", "Could not connect", "Exceptional circumstances", "Holiday", "Other"];
+const REASON_HINT: Record<string, string> = {
+  Illness: "Usually recorded as an authorised absence.",
+  "Medical appointment": "Authorised when the appointment could not be arranged outside lessons.",
+  "Religious observance": "For example Eid. Usually recorded as an authorised absence.",
+  "Could not connect": "Recorded as a technical absence, kept separate from other absences. Tell us what went wrong so we can help.",
+  "Exceptional circumstances": "Authorised only with the Headteacher's approval. Please tell us what happened.",
+  Holiday: "Holidays in term time are recorded as unauthorised absences.",
+  Other: "The Headteacher decides whether it is authorised.",
+};
+const NEEDS_TEXT = new Set(["Other", "Exceptional circumstances", "Could not connect"]);
 
 /** `embedded`: inside a panel over Today (no page title of its own). */
 export function FamilyAbsences({ embedded = false }: { embedded?: boolean } = {}) {
@@ -117,7 +130,7 @@ export function FamilyAbsences({ embedded = false }: { embedded?: boolean } = {}
     const supabase = getSupabaseClient();
     if (!supabase || !list.length) return;
     if (!qCategory) return setQError("Please choose a reason.");
-    if (qCategory === "Other" && !qReason.trim()) return setQError("Please tell us a little about why.");
+    if (NEEDS_TEXT.has(qCategory) && !qReason.trim()) return setQError("Please tell us a little about why.");
     setQBusy(true);
     setQError(null);
     const text = qReason.trim() ? `${qCategory}: ${qReason.trim()}` : qCategory;
@@ -141,7 +154,7 @@ export function FamilyAbsences({ embedded = false }: { embedded?: boolean } = {}
     const [from, to] = when === "today" ? [today, today] : when === "tomorrow" ? [tmw, tmw] : [fromDate, toDate];
     if (!from || !to || to < from) return setFormError("Please check the dates. The last day can't be before the first.");
     if (!category) return setFormError("Please choose a reason.");
-    if (category === "Other" && !reason.trim()) return setFormError("Please tell us a little about why.");
+    if (NEEDS_TEXT.has(category) && !reason.trim()) return setFormError("Please tell us a little about why.");
     const text = reason.trim() ? `${category}: ${reason.trim()}` : category;
     setBusy(true);
     setFormError(null);
@@ -282,6 +295,17 @@ export function FamilyAbsences({ embedded = false }: { embedded?: boolean } = {}
               </button>
             )}
           </section>
+          <details className="mt-6 rounded-xl border border-gold-light bg-white px-4 py-3 text-sm">
+            <summary className="cursor-pointer font-medium text-forest-700">How the school records attendance</summary>
+            <dl className="mt-3 space-y-2">
+              {ATTENDANCE_CODES.map((c) => (
+                <div key={c.value}>
+                  <dt className="font-medium text-ink">{c.label}</dt>
+                  <dd className="text-ink-500">{c.help}</dd>
+                </div>
+              ))}
+            </dl>
+          </details>
         </>
       )}
 
@@ -327,9 +351,10 @@ export function FamilyAbsences({ embedded = false }: { embedded?: boolean } = {}
                   </button>
                 ))}
               </div>
-              {(qCategory === "Other" || showNote) && (
+              {qCategory && <p className="mt-2 text-sm text-ink-500">{REASON_HINT[qCategory]}</p>}
+              {(NEEDS_TEXT.has(qCategory) || showNote) && (
                 <label className="mt-4 block text-sm font-medium text-ink">
-                  {qCategory === "Other" ? "Tell us why" : "Anything else? (optional)"}
+                  {NEEDS_TEXT.has(qCategory) ? "Tell us why" : "Anything else? (optional)"}
                   <textarea rows={2} value={qReason} onChange={(e) => setQReason(e.target.value)} className={fieldCls} />
                 </label>
               )}
@@ -448,9 +473,10 @@ export function FamilyAbsences({ embedded = false }: { embedded?: boolean } = {}
                     </button>
                   ))}
                 </div>
+                {category && <p className="mt-2 text-sm font-normal text-ink-500">{REASON_HINT[category]}</p>}
               </fieldset>
               <label className="block text-sm font-semibold text-ink">
-                {category === "Other" ? "Tell us why" : "Anything else? (optional)"}
+                {NEEDS_TEXT.has(category) ? "Tell us why" : "Anything else? (optional)"}
                 <textarea rows={2} value={reason} onChange={(e) => edit(setReason)(e.target.value)} placeholder="e.g. A temperature since last night, back on Thursday." className={`${fieldCls} font-normal`} />
               </label>
               {formError && <p className="rounded-lg bg-red-50 px-3 py-2 text-sm text-red-800">{formError}</p>}

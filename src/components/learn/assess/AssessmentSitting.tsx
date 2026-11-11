@@ -8,6 +8,7 @@ import { getEdgeFunctionUrl } from "@/lib/supabase/client";
 import { MathText, mathPlain } from "@/components/learn/assess/MathText";
 import { itemSpeech, passageSpeech } from "@/components/learn/assess/mathSpeech";
 import { isSpeechAvailable, loadVoices, speak, stopSpeaking } from "@/components/learn/assess/speech";
+import { ROLE_EMAILS } from "@/content/contacts";
 
 /*
  * The child's side of the TGA entry assessment, opened from a one-time link
@@ -822,7 +823,7 @@ function Message({ title, body }: { title: string; body: string }) {
     <div className="mx-auto max-w-lg py-20 text-center">
       <h1 className="text-2xl font-semibold text-ink">{title}</h1>
       <p className="mt-3 text-ink/75">{body}</p>
-      <p className="mt-6 text-sm text-ink/60">globalacademy@tarbiyyah.co.uk · 020 3719 8697</p>
+      <p className="mt-6 text-sm text-ink/60">{ROLE_EMAILS.admissions} · 020 3719 8697</p>
     </div>
   );
 }

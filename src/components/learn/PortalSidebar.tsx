@@ -15,7 +15,6 @@ import { ActionsMenu, type MenuAction } from "@/components/learn/kit";
 import { InstallAppLink } from "@/components/learn/InstallApp";
 import { useNavBadges, type NavBadges } from "@/lib/learn/navBadges";
 import { setCategoryOpen, togglePin, usePortalPrefs, type PortalPrefs } from "@/lib/learn/portalPrefs";
-import { startTour } from "@/lib/learn/tours";
 
 const AREA_NAMES: Record<string, string> = {
   "/admin/dashboard": "School administration",
@@ -89,7 +88,7 @@ function NavLink({ item, active, here, onNavigate, count, pin }: { item: Sidebar
       <span className="portal-nav-icon" aria-hidden="true">
         <Icon name={item.icon} />
       </span>
-      <span className="min-w-0 flex-1 truncate">{item.label}</span>
+      <span className="min-w-0 flex-1 break-words leading-snug">{item.label}</span>
       <NavCount count={count} alert={isAlertBadge(item)} />
     </Link>
   );
@@ -135,7 +134,7 @@ function SubLeaves({ subs, pathname, onNavigate }: { subs: PortalNavItem[]; path
         return (
           <li key={sp.href}>
             <Link href={sp.href} onClick={onNavigate} aria-current={on ? "page" : undefined} title={sp.hint} className={`portal-nav-sub ${on ? "portal-nav-sub--active" : ""}`}>
-              <span className="min-w-0 flex-1 truncate">{sp.label}</span>
+              <span className="min-w-0 flex-1 break-words leading-snug">{sp.label}</span>
             </Link>
           </li>
         );
@@ -153,7 +152,7 @@ function NavLeaf({ item, active, onNavigate, count, pinned, pathname }: { item: 
     <>
       <div className="portal-nav-item relative">
         <Link href={item.href} onClick={onNavigate} aria-current={active && !onSub ? "page" : undefined} title={item.hint} className={`portal-nav-leaf ${pinned === undefined ? "" : "!pr-9"} ${active ? (onSub ? "portal-nav-leaf--here" : "portal-nav-leaf--active") : ""}`}>
-          <span className="min-w-0 flex-1 truncate">{item.label}</span>
+          <span className="min-w-0 flex-1 break-words leading-snug">{item.label}</span>
           <NavCount count={count} alert={isAlertBadge(item)} />
         </Link>
         {pinned !== undefined && <PinButton item={item} pinned={pinned} />}
@@ -330,7 +329,7 @@ function SidebarBody({
   // portals this person can open, and signing out.
   const accountItems: MenuAction[] = [
     { label: "Your account", icon: "userRound", href: "/account", hint: "Name, sign-in, notifications and display" },
-    { label: "Portal guide", icon: "bookOpenCheck", href: `/guide?area=${area}`, hint: "Every page explained, A to Z" },
+    { label: "Portal guide", icon: "bookOpenCheck", href: `/guide?area=${area}`, hint: "Quick tour, a day in the life, every page A to Z" },
     ...(areas.length > 1
       ? [
           { label: "", section: "Switch portal" } as MenuAction,
@@ -467,31 +466,21 @@ function SidebarBody({
                 <span className="portal-nav-icon" aria-hidden="true">
                   <Icon name="layoutGrid" />
                 </span>
-                <span className="min-w-0 flex-1 truncate">All admin pages</span>
+                <span className="min-w-0 flex-1 break-words leading-snug">All admin pages</span>
               </Link>
             ))}
+          {/* One way into help (owner, 11 Nov 2026: "portal guide and tour together"): the Portal guide,
+              whose home starts with the quick tour, then a day in the life, then every page A to Z. */}
           {collapsed ? (
-            <button type="button" data-tour="help" onClick={() => startTour()} data-tip="Take the tour" aria-label="Take the tour" className="portal-rail-btn">
-              <Icon name="compass" />
-            </button>
-          ) : (
-            <button type="button" data-tour="help" onClick={() => startTour()} className="portal-nav-row text-left">
-              <span className="portal-nav-icon" aria-hidden="true">
-                <Icon name="compass" />
-              </span>
-              <span className="min-w-0 flex-1 truncate">Take the tour</span>
-            </button>
-          )}
-          {collapsed ? (
-            <Link href={`/guide?area=${area}`} data-tip="Portal guide" aria-label="Portal guide" aria-current={normalisePortalPath(pathname) === "/guide" ? "page" : undefined} className="portal-rail-btn">
+            <Link href={`/guide?area=${area}`} data-tour="help" data-tip="Portal guide: quick tour and every page" aria-label="Portal guide" aria-current={normalisePortalPath(pathname) === "/guide" ? "page" : undefined} className="portal-rail-btn">
               <Icon name="bookOpenCheck" />
             </Link>
           ) : (
-            <Link href={`/guide?area=${area}`} onClick={onNavigate} data-tour="guide-home" aria-current={normalisePortalPath(pathname) === "/guide" ? "page" : undefined} className={`portal-nav-row ${normalisePortalPath(pathname) === "/guide" ? "portal-nav-row--active" : ""}`}>
+            <Link href={`/guide?area=${area}`} onClick={onNavigate} data-tour="help" aria-current={normalisePortalPath(pathname) === "/guide" ? "page" : undefined} className={`portal-nav-row ${normalisePortalPath(pathname) === "/guide" ? "portal-nav-row--active" : ""}`}>
               <span className="portal-nav-icon" aria-hidden="true">
                 <Icon name="bookOpenCheck" />
               </span>
-              <span className="min-w-0 flex-1 truncate">Portal guide</span>
+              <span className="min-w-0 flex-1 break-words leading-snug">Portal guide</span>
             </Link>
           )}
           <InstallAppLink onNavigate={onNavigate} compact={collapsed} />

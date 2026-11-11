@@ -12,9 +12,10 @@ import { jsonResponse } from "../_shared/cors.ts";
 import { emailShell, sendEmail } from "../_shared/resend.ts";
 import { buildIcs } from "../_shared/ics.ts";
 import { generateToken, hashToken } from "../_shared/manageToken.ts";
+import { ROLE_EMAILS } from "../_shared/contacts.ts";
 
 const SITE_URL = Deno.env.get("SITE_URL") || "https://globalacademy.tarbiyyah.co.uk";
-const ADMISSIONS_EMAIL = Deno.env.get("ADMISSIONS_EMAIL") || "globalacademy@tarbiyyah.co.uk";
+const ADMISSIONS_EMAIL = Deno.env.get("ADMISSIONS_EMAIL") || ROLE_EMAILS.admissions;
 const serviceRoleKey = Deno.env.get("SUPABASE_SERVICE_ROLE_KEY")!;
 const supabaseUrl = Deno.env.get("SUPABASE_URL")!;
 const supabase = createClient(supabaseUrl, serviceRoleKey);

@@ -5,7 +5,8 @@ import Link from "next/link";
 import { useEffect, useMemo, useState } from "react";
 import { getSupabaseClient } from "@/lib/supabase/client";
 import { ukDaysAgo } from "@/lib/learn/ukTime";
-import { EmptyState, StatusChip, ui } from "@/components/learn/ui";
+import { EmptyState, Notice, StatusChip, ui } from "@/components/learn/ui";
+import { TECHNICAL_REPEAT, attendanceLabel, tallyAttendance, technicalRepeats } from "@/lib/learn/attendanceCodes";
 import { reasonLabel } from "@/components/learn/absences/data";
 import { ReportDocument, PrintStyles, StatusBadge } from "@/components/learn/reports/ReportDocument";
 import { asNarrative } from "@/components/learn/reports/summary";
@@ -20,20 +21,12 @@ const fmtLong = (iso: string) => new Date(iso).toLocaleDateString("en-GB", { day
 
 // ── Attendance ──────────────────────────────────────────────────────────
 type AttRow = { status: string; lesson_instances: { date: string; timetable_slots: { classes: { name: string } | null } | null } | null };
-export type AttendanceFigures = { lessons: number; attended: number; late: number; absent: number; excused: number; rate: number | null };
+export type AttendanceFigures = { lessons: number; attended: number; late: number; /** Unauthorised absences. */ absent: number; /** Authorised absences. */ excused: number; /** Technical absences, counted on their own. */ technical: number; rate: number | null };
 
+/** The school's figures (attendanceCodes.ts): technical absences are counted separately and not held against the rate. */
 export function attendanceFigures(rows: { status: string }[]): AttendanceFigures {
-  const f: AttendanceFigures = { lessons: rows.length, attended: 0, late: 0, absent: 0, excused: 0, rate: null };
-  for (const r of rows) {
-    if (r.status === "present" || r.status === "not_engaged") f.attended++;
-    else if (r.status === "late") {
-      f.attended++;
-      f.late++;
-    } else if (r.status === "absent") f.absent++;
-    else f.excused++;
-  }
-  f.rate = f.attended + f.absent > 0 ? Math.round((f.attended / (f.attended + f.absent)) * 100) : null;
-  return f;
+  const t = tallyAttendance(rows);
+  return { lessons: t.lessons, attended: t.attended, late: t.late, absent: t.unauthorised, excused: t.authorised, technical: t.technical, rate: t.rate };
 }
 
 export function PupilAttendanceTab({ childId }: { childId: string }) {
@@ -68,15 +61,20 @@ export function PupilAttendanceTab({ childId }: { childId: string }) {
 
   const fig = useMemo(() => attendanceFigures(rows || []), [rows]);
   const absences = useMemo(() => {
-    const by = new Map<string, string[]>();
+    const by = new Map<string, { classes: string[]; codes: Set<string> }>();
     for (const r of rows || []) {
       if (r.status !== "absent" && r.status !== "excused" && r.status !== "technical") continue;
       const d = r.lesson_instances?.date;
       if (!d) continue;
-      by.set(d, [...(by.get(d) || []), r.lesson_instances?.timetable_slots?.classes?.name || "Lesson"]);
+      const e = by.get(d) || { classes: [], codes: new Set<string>() };
+      e.classes.push(r.lesson_instances?.timetable_slots?.classes?.name || "Lesson");
+      e.codes.add(r.status);
+      by.set(d, e);
     }
     return Array.from(by.entries()).sort((a, b) => b[0].localeCompare(a[0]));
   }, [rows]);
+  const technicalDates = useMemo(() => (rows || []).filter((r) => r.status === "technical" && r.lesson_instances?.date).map((r) => r.lesson_instances!.date), [rows]);
+  const technicalFlag = technicalRepeats(technicalDates);
 
   return (
     <div className="space-y-4">
@@ -93,12 +91,18 @@ export function PupilAttendanceTab({ childId }: { childId: string }) {
           Open Absences
         </Link>
       </div>
-      <dl className="grid grid-cols-2 gap-2 sm:grid-cols-4">
+      <dl className="grid grid-cols-2 gap-2 sm:grid-cols-3 lg:grid-cols-5">
         <Fig label="Attendance" value={rows ? (fig.rate === null ? "–" : `${fig.rate}%`) : "…"} warn={fig.rate !== null && fig.rate < 90} sub={`${fig.lessons} lessons registered`} />
-        <Fig label="Attended" value={rows ? String(fig.attended) : "…"} sub={fig.late ? `${fig.late} late` : "on time"} />
-        <Fig label="Missed" value={rows ? String(fig.absent) : "…"} warn={fig.absent > 0} sub="not excused" />
-        <Fig label="Excused" value={rows ? String(fig.excused) : "…"} sub="authorised or technical" />
+        <Fig label="Present or late" value={rows ? String(fig.attended) : "…"} sub={fig.late ? `${fig.late} late` : "on time"} />
+        <Fig label="Authorised absence" value={rows ? String(fig.excused) : "…"} sub="not held against the rate" />
+        <Fig label="Unauthorised absence" value={rows ? String(fig.absent) : "…"} warn={fig.absent > 0} sub="counts against the rate" />
+        <Fig label="Technical absence" value={rows ? String(fig.technical) : "…"} warn={technicalFlag} sub={technicalFlag ? "Repeated: check the connection" : "counted separately"} />
       </dl>
+      {technicalFlag && (
+        <Notice tone="warn">
+          Repeated technical absences: {TECHNICAL_REPEAT.count} or more days within {TECHNICAL_REPEAT.days} days. Check the family&apos;s connection and device with them.
+        </Notice>
+      )}
       <section className="rounded-2xl border border-gold-light bg-white">
         <h3 className="border-b border-gold-light px-4 py-2.5 text-sm font-semibold text-ink">Days away</h3>
         {rows === null ? (
@@ -107,7 +111,7 @@ export function PupilAttendanceTab({ childId }: { childId: string }) {
           <p className="px-4 py-3 text-sm text-ink/65">No absences in this period.</p>
         ) : (
           <ul className="divide-y divide-gold-light/50">
-            {absences.map(([date, classes]) => {
+            {absences.map(([date, { classes, codes }]) => {
               const note = notes.find((n) => n.from_date <= date && date <= n.to_date);
               const code = reasons[date];
               const fu = followups[date];
@@ -118,10 +122,11 @@ export function PupilAttendanceTab({ childId }: { childId: string }) {
                     <span className="block text-ink">{note?.reason || reasonLabel(code) || <span className="text-ink/60">No reason given</span>}</span>
                     <span className="block text-xs text-ink/60">{Array.from(new Set(classes)).join(", ")}</span>
                   </span>
+                  <span className="t-meta">{[...codes].map((c) => attendanceLabel(c)).join(", ")}</span>
                   {note?.status === "authorised" && <StatusChip tone="good">Authorised</StatusChip>}
                   {note?.status === "unauthorised" && <StatusChip tone="bad">Not authorised</StatusChip>}
                   {fu === "escalated" && <StatusChip tone="bad">Escalated</StatusChip>}
-                  {!note && !code && fu !== "escalated" && <StatusChip tone="warn">{fu === "contacted" ? "Family contacted" : "To follow up"}</StatusChip>}
+                  {!note && !code && fu !== "escalated" && !(codes.size === 1 && codes.has("technical")) && <StatusChip tone="warn">{fu === "contacted" ? "Family contacted" : "To follow up"}</StatusChip>}
                 </li>
               );
             })}
@@ -188,7 +193,7 @@ export function PupilBehaviourTab({ childId, extra }: { childId: string; extra?:
       {approved.length > 0 && (
         <section className="rounded-2xl border border-gold-light bg-white">
           <h3 className="border-b border-gold-light px-4 py-2.5 text-sm font-semibold text-ink">
-            <Icon name="star" className="mr-1.5 inline h-4 w-4 align-[-2px] text-gold-700" />Star of the Week
+            <Icon name="award" className="mr-1.5 inline h-4 w-4 align-[-2px] text-gold-700" />Star of the Week
           </h3>
           <ul className="divide-y divide-gold-light/50">
             {approved.map((s) => (

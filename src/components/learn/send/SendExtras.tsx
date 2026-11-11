@@ -184,7 +184,7 @@ type InlinePatch = Partial<{ status: PlanStatus; support_level: SupportLevel; pr
  * pupil is a card with the same controls. Every change is logged (0169 audit
  * triggers) and shows under Recent changes.
  */
-export function RegisterTable({ rows, onOpen, onSaved }: { rows: RegisterRow[]; onOpen: (childId: string) => void; onSaved: () => void }) {
+export function RegisterTable({ rows, onOpen, onSaved, nameLink }: { rows: RegisterRow[]; onOpen: (childId: string) => void; onSaved: () => void; /** The pupil's name as a link to their profile, where the viewer has one. */ nameLink?: (r: RegisterRow) => React.ReactNode }) {
   const [status, setStatus] = useState<{ tone: "good" | "bad"; text: string } | null>(null);
   const [saving, setSaving] = useState<string | null>(null);
 
@@ -303,7 +303,7 @@ export function RegisterTable({ rows, onOpen, onSaved }: { rows: RegisterRow[]; 
               return (
                 <tr key={r.child_id} className="align-top">
                   <th scope="row" className="px-4 py-3 font-normal">
-                    <span className="block font-medium text-ink">{r.child_name}</span>
+                    <span className="block font-medium text-ink">{nameLink ? nameLink(r) : r.child_name}</span>
                     <span className="block text-xs text-ink/65">{summary(r)}</span>
                     <span className="mt-1.5 block">{chips(r)}</span>
                   </th>
@@ -331,7 +331,7 @@ export function RegisterTable({ rows, onOpen, onSaved }: { rows: RegisterRow[]; 
             <li key={r.child_id} className="rounded-2xl border border-gold-light bg-white p-4">
               <div className="flex flex-wrap items-start gap-2">
                 <div className="min-w-0 flex-1">
-                  <h3 className="font-medium text-ink">{r.child_name}</h3>
+                  <h3 className="font-medium text-ink">{nameLink ? nameLink(r) : r.child_name}</h3>
                   <p className="text-xs text-ink/65">{summary(r)}</p>
                 </div>
                 <Button size="sm" onClick={() => onOpen(r.child_id)} aria-label={`${r.plan_id ? "Open the plan for" : "Start a plan for"} ${r.child_name}`}>

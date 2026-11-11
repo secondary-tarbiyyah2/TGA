@@ -36,13 +36,14 @@ import { parseAbsenceEmail, REASON_CATEGORIES, type ChildRef, type DateRange, ty
 import { header, isAutomated, senderAuthenticated, type HeaderMap } from "./sender.ts";
 import { verifySvix } from "./svix.ts";
 import { cleanEmailBody, htmlToText } from "./text.ts";
+import { ROLE_EMAILS } from "../_shared/contacts.ts";
 
 const supabaseUrl = Deno.env.get("SUPABASE_URL")!;
 const anonKey = Deno.env.get("SUPABASE_ANON_KEY")!;
 const serviceRoleKey = Deno.env.get("SUPABASE_SERVICE_ROLE_KEY")!;
 const service = createClient(supabaseUrl, serviceRoleKey);
 
-const INBOX = (Deno.env.get("ABSENCE_INBOX_EMAIL") || "absence@globalacademy.tarbiyyah.co.uk").toLowerCase();
+const INBOX = (Deno.env.get("ABSENCE_INBOX_EMAIL") || ROLE_EMAILS.attendance).toLowerCase();
 const LEARN_SITE_URL = (Deno.env.get("LEARN_SITE_URL") || "https://learn.tarbiyyah.co.uk").replace(/\/$/, "");
 const PORTAL_ABSENCES = `${LEARN_SITE_URL}/family/absences`;
 const OWN_DOMAINS = ["globalacademy.tarbiyyah.co.uk"];

@@ -3,7 +3,6 @@ import type { Metadata } from "next";
 import { pageMetadata } from "@/lib/seo";
 import { Container } from "@/components/Container";
 import { Kicker } from "@/components/Section";
-import { StarMark } from "@/components/StarMark";
 import { KEY_DATES } from "@/content/keyDates";
 import { Button } from "@/components/Button";
 import { CtaBand } from "@/components/CtaBand";
@@ -64,8 +63,6 @@ export default async function HomePage() {
     <>
       {/* HERO */}
       <section className="geo-texture relative overflow-hidden bg-cream">
-        {/* Large, very faint brand star behind the hero (decorative). */}
-        <StarMark className="hero-star pointer-events-none absolute -right-24 -top-24 h-[34rem] w-[34rem] text-gold-300/40 sm:-right-16" />
         <span aria-hidden="true" className="pointer-events-none absolute -left-40 bottom-0 h-80 w-80 rounded-full bg-gold-100/70 blur-3xl" />
         <span aria-hidden="true" className="tech-grid pointer-events-none absolute inset-0" />
         <Container className="relative grid gap-12 py-14 lg:grid-cols-[1.35fr_1fr] lg:items-center lg:gap-14 lg:py-20">
@@ -112,7 +109,6 @@ export default async function HomePage() {
           <aside aria-labelledby="key-dates-heading" className="relative mx-auto w-full max-w-md lg:mr-0">
             <div className="glow-border relative rounded-3xl border border-gold-light/70 bg-white p-6 shadow-warm sm:p-8">
               <div className="flex items-center gap-2 text-xs font-semibold uppercase tracking-[0.2em] text-gold-700">
-                <StarMark className="h-3.5 w-3.5" />
                 <h2 id="key-dates-heading">Key dates</h2>
               </div>
               <p className="mt-1 text-sm text-ink/65">For the founding cohort. All times UK.</p>
@@ -198,7 +194,7 @@ export default async function HomePage() {
                 key={name}
                 className={`flex items-center gap-4 rounded-2xl border p-4 ${i === all.length - 1 ? "border-gold-500 bg-ink-900 text-white" : "border-gold-light/60 bg-white text-ink"}`}
               >
-                <StarMark className={`h-6 w-6 shrink-0 ${i === all.length - 1 ? "text-gold-300" : "text-gold-500"}`} />
+                <span aria-hidden="true" className={`h-2.5 w-2.5 shrink-0 rounded-full ${i === all.length - 1 ? "bg-gold-300" : "bg-gold-500"}`} />
                 <span className="font-serif text-lg font-semibold">{name}</span>
                 <span className={`ml-auto text-sm ${i === all.length - 1 ? "text-gold-300" : "text-ink/60"}`}>{i === all.length - 1 ? "Online, from January 2027" : "Over ten years"}</span>
               </li>

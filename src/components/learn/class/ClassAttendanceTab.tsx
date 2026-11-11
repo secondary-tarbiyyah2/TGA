@@ -16,7 +16,7 @@ type Mark = ClassMark;
 export const LOOKBACK_DAYS = 70;
 const fmtDay = (d: string) => new Date(`${d}T00:00:00`).toLocaleDateString("en-GB", { weekday: "short", day: "numeric", month: "short" });
 
-/** Present, late and "present, not engaged" count as attended; excused and couldn't-connect are left out (as the Attendance page does). */
+/** Present and late (and the older "not engaged" mark) count as attended; authorised and technical absences are left out (as the Attendance page does). */
 export function rateOf(marks: Mark[]): number | null {
   const attended = marks.filter((m) => m.status === "present" || m.status === "late" || m.status === "not_engaged").length;
   const absent = marks.filter((m) => m.status === "absent").length;
@@ -80,7 +80,7 @@ export function ClassAttendanceTab({ classId, area }: { classId: string; area: s
       (roster || [])
         .map((p) => {
           const mine = marks.filter((m) => m.child_id === p.id);
-          return { ...p, rate: rateOf(mine), absent: mine.filter((m) => m.status === "absent").length, late: mine.filter((m) => m.status === "late").length };
+          return { ...p, rate: rateOf(mine), absent: mine.filter((m) => m.status === "absent").length, authorised: mine.filter((m) => m.status === "excused").length, technical: mine.filter((m) => m.status === "technical").length, late: mine.filter((m) => m.status === "late").length };
         })
         .sort((a, b) => (a.rate ?? 101) - (b.rate ?? 101) || a.name.localeCompare(b.name)),
     [roster, marks],
@@ -101,7 +101,7 @@ export function ClassAttendanceTab({ classId, area }: { classId: string; area: s
       <div className="grid gap-3 sm:grid-cols-3">
         <Tile label="Attendance" value={overall === null ? "–" : `${overall}%`} sub={`Last ${LOOKBACK_DAYS / 7} weeks, this class`} />
         <Tile label="Registers taken" value={`${taken} of ${lessons.length}`} sub={lessons.length - taken > 0 ? `${lessons.length - taken} still to take` : "All up to date"} alert={lessons.length - taken > 0} />
-        <Tile label="Absent marks" value={String(marks.filter((m) => m.status === "absent").length)} sub={`${marks.filter((m) => m.status === "late").length} late`} />
+        <Tile label="Unauthorised absences" value={String(marks.filter((m) => m.status === "absent").length)} sub={`${marks.filter((m) => m.status === "excused").length} authorised, ${marks.filter((m) => m.status === "technical").length} technical, ${marks.filter((m) => m.status === "late").length} late`} />
       </div>
 
       <section className="rounded-2xl border border-gold-light bg-white">
@@ -154,12 +154,14 @@ export function ClassAttendanceTab({ classId, area }: { classId: string; area: s
           <p className="p-5 text-sm text-ink/65">No pupils are enrolled in this class yet.</p>
         ) : (
           <div className="overflow-x-auto">
-            <table className="w-full min-w-[420px] text-left text-sm">
+            <table className="w-full min-w-[560px] text-left text-sm">
               <thead>
                 <tr className="border-b border-gold-light text-xs uppercase tracking-wide text-ink/65">
                   <th className="px-5 py-2 font-semibold">Pupil</th>
                   <th className="px-5 py-2 text-right font-semibold">Attendance</th>
-                  <th className="px-5 py-2 text-right font-semibold">Absent</th>
+                  <th className="px-5 py-2 text-right font-semibold" title="Authorised absence">Authorised</th>
+                  <th className="px-5 py-2 text-right font-semibold" title="Unauthorised absence">Unauthorised</th>
+                  <th className="px-5 py-2 text-right font-semibold" title="Technical absence: could not connect">Technical</th>
                   <th className="px-5 py-2 text-right font-semibold">Late</th>
                 </tr>
               </thead>
@@ -170,7 +172,9 @@ export function ClassAttendanceTab({ classId, area }: { classId: string; area: s
                       <PupilLink id={p.id} name={p.name} />
                     </td>
                     <td className={`px-5 py-2.5 text-right font-semibold tabular-nums ${p.rate !== null && p.rate < 90 ? "text-red-700" : "text-ink"}`}>{p.rate === null ? "–" : `${p.rate}%`}</td>
+                    <td className="px-5 py-2.5 text-right tabular-nums text-ink/80">{p.authorised}</td>
                     <td className="px-5 py-2.5 text-right tabular-nums text-ink/80">{p.absent}</td>
+                    <td className="px-5 py-2.5 text-right tabular-nums text-ink/80">{p.technical}</td>
                     <td className="px-5 py-2.5 text-right tabular-nums text-ink/80">{p.late}</td>
                   </tr>
                 ))}

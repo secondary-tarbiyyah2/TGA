@@ -3,6 +3,7 @@
 import { useCallback, useEffect, useState } from "react";
 import { getSupabaseClient } from "@/lib/supabase/client";
 import { Button, Switch, ui } from "@/components/learn/ui";
+import { ROLE_EMAILS } from "@/content/contacts";
 
 type Settings = { notify_email: string; attach_cv: boolean; auto_acknowledge: boolean; auto_screen: boolean; screening_criteria: string };
 
@@ -16,7 +17,7 @@ export function RecruitmentSettingsPanel() {
     if (!supabase) return;
     const { data, error } = await supabase.from("recruitment_settings").select("notify_email, attach_cv, auto_acknowledge, auto_screen, screening_criteria").eq("id", true).maybeSingle();
     if (error) setMessage({ text: "Couldn't load the settings.", error: true });
-    setS((data as Settings | null) || { notify_email: "globalacademy@tarbiyyah.co.uk", attach_cv: true, auto_acknowledge: true, auto_screen: true, screening_criteria: "" });
+    setS((data as Settings | null) || { notify_email: ROLE_EMAILS.careers, attach_cv: true, auto_acknowledge: true, auto_screen: true, screening_criteria: "" });
   }, [supabase]);
 
   useEffect(() => {

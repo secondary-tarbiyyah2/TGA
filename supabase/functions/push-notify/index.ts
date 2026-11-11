@@ -16,13 +16,14 @@
 import { createClient } from "jsr:@supabase/supabase-js@2";
 import webpush from "npm:web-push@3.6.7";
 import { corsHeaders, jsonResponse } from "../_shared/cors.ts";
+import { ROLE_EMAILS } from "../_shared/contacts.ts";
 
 const supabaseUrl = Deno.env.get("SUPABASE_URL")!;
 const anonKey = Deno.env.get("SUPABASE_ANON_KEY")!;
 const serviceClient = createClient(supabaseUrl, Deno.env.get("SUPABASE_SERVICE_ROLE_KEY")!);
 const VAPID_PUBLIC = Deno.env.get("VAPID_PUBLIC_KEY") || "";
 const VAPID_PRIVATE = Deno.env.get("VAPID_PRIVATE_KEY") || "";
-const VAPID_SUBJECT = Deno.env.get("VAPID_SUBJECT") || "mailto:globalacademy@tarbiyyah.co.uk";
+const VAPID_SUBJECT = Deno.env.get("VAPID_SUBJECT") || `mailto:${ROLE_EMAILS.general}`;
 
 type Sub = { id: string; user_id: string; endpoint: string; p256dh: string; auth: string };
 type Payload = { title: string; body: string; url: string; tag: string };

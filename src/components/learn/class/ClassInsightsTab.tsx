@@ -85,7 +85,7 @@ export function ClassInsightsTab({ classId, classHref, area = "/teach" }: { clas
   const weeks = LOOKBACK_DAYS / 7;
 
   const figures = [
-    { label: "Attendance", value: att === null ? "–" : `${att}%`, sub: "Present, late or not engaged", alert: att !== null && att < 90, href: classHref("attendance") },
+    { label: "Attendance", value: att === null ? "–" : `${att}%`, sub: "Present or late", alert: att !== null && att < 90, href: classHref("attendance") },
     { label: "Homework handed in", value: due.length ? `${Math.round((handedIn / due.length) * 100)}%` : "–", sub: missing ? `${missing} missing` : "Nothing missing", alert: missing > 0, href: classHref("classwork") },
     { label: "To review", value: String(review), sub: review ? "Handed in, not yet returned" : "All marked", alert: review > 0, href: `${classHref("classwork")}&view=review` },
     { label: "Average result", value: avg === null ? "–" : `${avg}%`, sub: `${scored.length} result${scored.length === 1 ? "" : "s"} recorded`, alert: false, href: classHref("grades") },
@@ -182,9 +182,9 @@ export function ClassInsightsTab({ classId, classHref, area = "/teach" }: { clas
                       </td>
                       <td className="ml-auto sm:px-4 sm:py-2.5 sm:text-right">
                         <span className="inline-flex gap-1">
-                          <Link href={`${area}/messages?compose=1`} className={`${ui.btnGhost} ${ui.sm}`} aria-label={`Message about ${p.name}`}>
+                          <Link href={`${area}/messages?family=${p.id}`} className={`${ui.btnGhost} ${ui.sm}`} aria-label={`Message ${p.name}'s family`}>
                             <Icon name="messageSquare" size="sm" />
-                            <span className="hidden lg:inline">Message</span>
+                            <span className="hidden lg:inline">Message family</span>
                           </Link>
                           <Link href={profile(p.id)} className={`${ui.btnSecondary} ${ui.sm}`} aria-label={`Open ${p.name}'s record`}>
                             Record

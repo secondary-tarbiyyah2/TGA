@@ -524,7 +524,16 @@ function FeeSummary({
           <dt>Application fee, if you proceed</dt>
           <dd>{formatGBP(estimate.applicationFeeTotal)}{many ? ` (${kids.length} children)` : ""}</dd>
         </div>
+        {plan && estimate.total > 0 && (
+          <div className="flex justify-between gap-4 text-ink/80">
+            <dt>First payment, due when you accept a place</dt>
+            <dd>{formatGBP(estimate.dueOnAcceptance)}</dd>
+          </div>
+        )}
       </dl>
+      {plan && estimate.payments.length > 1 && (
+        <p className="text-xs text-ink/70">Under every plan the first payment is due when you accept a place, to secure it; the remaining payments then follow the dates on the Fees page.</p>
+      )}
     </div>
   );
 }
