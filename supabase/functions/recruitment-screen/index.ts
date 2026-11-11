@@ -3,14 +3,22 @@
 // (re-checked here with the service role). Advisory only: it writes the AI
 // screening onto the application and a line on its timeline, and never
 // changes a status or contacts anyone. See _shared/recruitmentScreen.ts.
+// It also sends staff-written emails to a candidate from the portal (the
+// "Email candidate" and "Unsuccessful" dialogs), so nobody has to copy the
+// message into their own mail app.
 //
 // POST { action: "status" }            -> { ok, configured }
 // POST { action: "screen", ids: [..] } -> { ok, results: { [id]: { ok, score?, recommendation?, error? } }, stopped? }
 //   ids: up to 5 per call (the portal loops for more). Stops early at the
 //   daily AI cap and reports stopped: "ai_daily_limit".
+// POST { action: "email", id, subject, message } -> { ok, detail? }
+//   Sends the message to the candidate in the school's email layout (from the
+//   school mailbox, replies go to the recruitment inbox) and logs it on the
+//   application's timeline. error "send_failed" if no provider accepted it.
 import { createClient } from "jsr:@supabase/supabase-js@2";
 import { corsHeaders, jsonResponse } from "../_shared/cors.ts";
 import { screenApplication, screeningConfigured } from "../_shared/recruitmentScreen.ts";
+import { emailShell, sendEmail } from "../_shared/resend.ts";
 
 const supabaseUrl = Deno.env.get("SUPABASE_URL")!;
 const anonKey = Deno.env.get("SUPABASE_ANON_KEY")!;
@@ -45,6 +53,8 @@ Deno.serve(async (req) => {
 
   if (body.action === "status") return jsonResponse({ ok: true, configured: screeningConfigured() });
 
+  if (body.action === "email") return await emailCandidate(body, me);
+
   if (body.action !== "screen") return jsonResponse({ ok: false, error: "invalid_input" }, 400);
   if (!screeningConfigured()) return jsonResponse({ ok: false, error: "ai_not_configured", detail: "AI is not set up yet." }, 503);
 
@@ -63,3 +73,31 @@ Deno.serve(async (req) => {
   }
   return jsonResponse({ ok: true, results });
 });
+
+const esc = (t: string) => t.replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;").replace(/"/g, "&quot;");
+
+async function emailCandidate(body: Record<string, unknown>, me: string): Promise<Response> {
+  const id = String(body.id || "");
+  const subject = String(body.subject || "").trim().slice(0, 200);
+  const message = String(body.message || "").replace(/\r\n/g, "\n").trim().slice(0, 8000);
+  if (!UUID.test(id) || !subject || !message) return jsonResponse({ ok: false, error: "invalid_input" }, 400);
+
+  const { data: app } = await service.from("job_applications").select("id, email, first_name, last_name").eq("id", id).maybeSingle();
+  if (!app?.email) return jsonResponse({ ok: false, error: "not_found" }, 404);
+
+  const paragraphs = message
+    .split(/\n{2,}/)
+    .map((p) => `<p style="margin:0 0 14px;line-height:1.55;">${esc(p).replace(/\n/g, "<br>")}</p>`)
+    .join("");
+  const fullName = `${app.first_name} ${app.last_name}`.trim();
+  let sent: { ok: boolean; detail: string };
+  try {
+    sent = await sendEmail({ to: app.email, toName: fullName, subject, html: emailShell(paragraphs, subject) });
+  } catch (e) {
+    sent = { ok: false, detail: String(e) };
+  }
+  if (!sent.ok) return jsonResponse({ ok: false, error: "send_failed", detail: sent.detail.slice(0, 300) });
+
+  await service.from("job_application_events").insert({ application_id: id, kind: "email", body: `Emailed the candidate: ${subject}\n\n${message}`.slice(0, 4000), created_by: me });
+  return jsonResponse({ ok: true });
+}
