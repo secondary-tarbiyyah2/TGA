@@ -191,7 +191,7 @@ export function curriculumMapEntry(a: Area): GuideEntry {
     category: "Curriculum",
     purpose: "How each year's learning builds across the six half terms, by subject, with how many lessons are approved.",
     when: "To see what is taught when, what a unit builds on and leads to, or to find a unit's lessons.",
-    steps: ["Pick a year group.", "Choose One subject (a timeline of the year) or Whole year (every subject by half term).", "Select a unit to see what it covers, what it builds on and leads to, and its lessons."],
+    steps: ["Pick a year group.", "Choose One subject (a timeline of the year) or Whole year (every subject by half term).", "Select a unit to see what it covers, what it builds on and leads to.", "Press its lessons or Weekly plan: they open in a panel over the map, and each lesson opens its own page."],
     tips: ["Each unit shows how many of its lessons are approved; the bar fills as they are.", "Years 10 and 11 follow the exam board's three terms."],
     privacy: "Staff only.",
     related: [`/${a}/curriculum`, `/${a}/planner`, `/${a}/syllabus`],
@@ -262,7 +262,8 @@ export function lessonReviewEntry(a: Area): GuideEntry {
     steps: [
       "Filter by subject if you need to.",
       "Look under Waiting for review, Changes requested and Approved, not yet published.",
-      "Open a lesson to act on it in its workspace.",
+      "Press a lesson: its objectives and review open beside the list, so you can approve, send back or publish without leaving it.",
+      "Press Open the lesson in the panel for its slides, plan and versions.",
     ],
     tips: ["Changed after approval marks a lesson edited since it was approved."],
     privacy: "Staff only.",

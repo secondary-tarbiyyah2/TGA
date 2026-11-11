@@ -5,10 +5,12 @@ import { useEffect, useMemo, useState } from "react";
 import { getSupabaseClient } from "@/lib/supabase/client";
 import { yearLabel } from "@/lib/learn/curriculum";
 import { loadReviews, type ReviewRow } from "@/lib/learn/curriculumReview";
-import { WorkflowBadge, type WorkflowStatus } from "@/components/learn/kit";
+import { SidePanel, WorkflowBadge, type WorkflowStatus } from "@/components/learn/kit";
+import { ReviewPanel } from "@/components/learn/curriculum/ReviewPanel";
+import { useLearnSession } from "@/lib/learn/session";
 import { EmptyState, LoadingState, ui } from "@/components/learn/ui";
 
-type LessonLite = { id: string; subject_slug: string; subject: string; year: string; unit: string | null; lesson_no: number; title: string };
+type LessonLite = { id: string; subject_slug: string; subject: string; year: string; unit: string | null; lesson_no: number; title: string; version?: number | null; objectives?: string[] | null };
 type Item = ReviewRow & { lesson: LessonLite | null };
 
 const GROUPS: { key: string; title: string; statuses: WorkflowStatus[]; hint: string }[] = [
@@ -27,6 +29,12 @@ const when = (iso: string | null) => (iso ? new Date(iso).toLocaleDateString("en
 export function ReviewQueue({ area }: { area: "teach" | "admin" }) {
   const [items, setItems] = useState<Item[] | null>(null);
   const [subject, setSubject] = useState("all");
+  // The lesson whose review is open beside the list (owner, 11 Nov 2026: list and detail).
+  const [open, setOpen] = useState<string | null>(null);
+  const [reload, setReload] = useState(0);
+  const { roles } = useLearnSession();
+  const reviewer = roles.some((r) => r.role === "head_teacher" || r.role === "admin");
+  const canSubmit = reviewer || roles.some((r) => r.role === "teacher");
 
   useEffect(() => {
     const supabase = getSupabaseClient();
@@ -37,7 +45,7 @@ export function ReviewQueue({ area }: { area: "teach" | "admin" }) {
       const slugs = [...new Set(reviews.map((r) => r.subject_slug))];
       const lessons: LessonLite[] = [];
       if (slugs.length) {
-        const { data } = await supabase.from("curriculum_lessons").select("id, subject_slug, subject, year, unit, lesson_no, title").in("subject_slug", slugs).limit(5000);
+        const { data } = await supabase.from("curriculum_lessons").select("id, subject_slug, subject, year, unit, lesson_no, title, version, objectives").in("subject_slug", slugs).limit(5000);
         lessons.push(...((data as LessonLite[] | null) || []));
       }
       const by = new Map(lessons.map((l) => [`${l.subject_slug}|${l.year}/${l.lesson_no}`, l]));
@@ -47,7 +55,7 @@ export function ReviewQueue({ area }: { area: "teach" | "admin" }) {
     return () => {
       alive = false;
     };
-  }, []);
+  }, [reload]);
 
   const subjects = useMemo(() => [...new Set((items || []).map((i) => i.lesson?.subject).filter(Boolean) as string[])].sort(), [items]);
   if (items === null) return <LoadingState rows={6} label="Loading lessons in review" />;
@@ -86,7 +94,7 @@ export function ReviewQueue({ area }: { area: "teach" | "admin" }) {
               {list.map((i) => (
                 <li key={`${i.subject_slug}|${i.ref}`}>
                   {i.lesson ? (
-                    <Link href={`/${area}/curriculum/lesson?id=${i.lesson.id}#review`} className="flex flex-wrap items-center gap-x-4 gap-y-1 px-4 py-3 hover:bg-cream sm:flex-nowrap">
+                    <button type="button" onClick={() => setOpen(`${i.subject_slug}|${i.ref}`)} aria-haspopup="dialog" className="flex w-full flex-wrap items-center gap-x-4 gap-y-1 px-4 py-3 text-left hover:bg-cream sm:flex-nowrap">
                       <span className="min-w-[min(100%,16rem)] flex-1">
                         <span className="block text-sm font-semibold text-ink">{i.lesson.title}</span>
                         <span className="block text-xs text-ink/60">
@@ -100,7 +108,7 @@ export function ReviewQueue({ area }: { area: "teach" | "admin" }) {
                         <WorkflowBadge status={i.status} />
                         <span>{i.submitted_name ? `${i.submitted_name}, ${when(i.submitted_at)}` : when(i.checked_at)}</span>
                       </span>
-                    </Link>
+                    </button>
                   ) : (
                     <span className="block px-4 py-3 text-sm text-ink/60">
                       {i.subject_slug} {i.ref} (this lesson is no longer in the library)
@@ -112,6 +120,41 @@ export function ReviewQueue({ area }: { area: "teach" | "admin" }) {
           </section>
         );
       })}
+      {(() => {
+        const i = open ? items.find((x) => `${x.subject_slug}|${x.ref}` === open) : null;
+        if (!i || !i.lesson) return null;
+        const l = i.lesson;
+        return (
+          <SidePanel
+            title={l.title}
+            eyebrow={`${l.subject} · ${yearLabel(l.year)} · Lesson ${l.lesson_no}`}
+            onClose={() => setOpen(null)}
+            footer={
+              <Link href={`/${area}/curriculum/lesson?id=${l.id}`} className={`${ui.btnSecondary} ml-auto`}>
+                Open the lesson
+              </Link>
+            }
+          >
+            <div data-guide="review-detail" className="space-y-4">
+              {l.unit && <p className="t-meta">Unit: {l.unit}</p>}
+              {l.objectives && l.objectives.length > 0 && (
+                <section>
+                  <h3 className="t-eyebrow">Objectives</h3>
+                  <ol className="mt-1.5 list-decimal space-y-1 pl-5 text-sm text-ink-700">
+                    {l.objectives.map((o, n) => (
+                      <li key={n}>{o}</li>
+                    ))}
+                  </ol>
+                </section>
+              )}
+              <section>
+                <h3 className="t-eyebrow mb-2">Review</h3>
+                <ReviewPanel slug={l.subject_slug} scope="lesson" refKey={i.ref} row={i} reviewer={reviewer} canSubmit={canSubmit} currentVersion={l.version ?? undefined} onChanged={() => setReload((n) => n + 1)} />
+              </section>
+            </div>
+          </SidePanel>
+        );
+      })()}
     </div>
   );
 }
