@@ -35,7 +35,7 @@ export const PUPIL_GUIDE: GuideEntry[] = [
     steps: [
       "Look at Do now first. These are the most important.",
       "Then look at This week and Good to know.",
-      "Press a line to open the work and do it.",
+      "Press the button on a line to open the work and do it.",
       "When it is done, it leaves the list by itself.",
     ],
     tips: ["Homework you miss shows here the day after it was due. You can still hand it in late."],
@@ -43,7 +43,7 @@ export const PUPIL_GUIDE: GuideEntry[] = [
     related: ["/student/dashboard", "/student/todo"],
     showMe: [
       { target: "waiting-categories", label: "Groups", say: "Pick a group to see only those things." },
-      { target: "waiting-list", label: "Your list", say: "Each line is one thing to do. Press it to open it." },
+      { target: "waiting-list", label: "Your list", say: "Each line is one thing to do. Press its button to open it." },
     ],
     tasks: ["see what to do next"],
   },
@@ -112,6 +112,7 @@ export const PUPIL_GUIDE: GuideEntry[] = [
       "Read the task and the due date.",
       "Type your answer, add a file or add a link. The page tells you which ones are allowed.",
       "Press Hand in.",
+      "A quiz has Start the quiz instead: it opens full screen, one question at a time. Your answers save as you go; if there is a timer it shows at the top. Press Finish, check the numbers, then Hand in to see your result.",
       "Come back later to read Teacher feedback.",
     ],
     tips: ["After the due time some homework closes and will not take work any more.", "Use Replace my work if you handed in the wrong file and the teacher has not marked it yet."],
@@ -121,7 +122,7 @@ export const PUPIL_GUIDE: GuideEntry[] = [
       { target: "homework-hand-in", label: "Hand in", say: "Add your work here, then press Hand in." },
       { target: "homework-list", label: "Your homework", say: "Still to hand in comes first, then Handed in." },
     ],
-    tasks: ["hand in homework", "read teacher feedback"],
+    tasks: ["hand in homework", "read teacher feedback", "take a quiz", "do a quiz"],
   },
   {
     href: "/student/classes",

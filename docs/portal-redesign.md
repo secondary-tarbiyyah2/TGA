@@ -96,6 +96,14 @@ patterns are in `docs/portal-structure.md`.
 10. [x] Curriculum editors in panels: the curriculum `Modal` takes `panel` (renders the portal `SidePanel`, size lg);
    the Planner's unit editor, the lesson's full form, sign off, upload own slides, version history, share to class
    (lessons and term resources) and lesson feedback all open as side panels. `SubPageNav` deleted (unused).
+11. [x] Curriculum as one Drive-like browser (owner feedback 2, items 14 and 18; `CurriculumBrowser.tsx`,
+   `CurriculumHome.tsx`): `/{area}/curriculum` (menu "Browse", was Lesson library) shows folders Year > Subject >
+   Unit, a unit holding its lessons, resources and weekly plan; breadcrumb; one toolbar (search, Everything / Lessons /
+   Resources, review status, grid or list remembered per browser); a details pane (a panel on phones); a lesson opens
+   its workspace page, which has "Back to <unit>". Address keeps `year`, `subject`, `unit` (old library links land in
+   the folder); `classic=1` opens the old unit page as "Unit tools" (spec, connections, revision pack, results);
+   `/curriculum/resources` opens the browser with `type=resources`, `?terms=1` keeps the term lists. Map, Planner,
+   Review and Syllabus carry the same Browse button and "Views and tools" menu (`CurriculumViews`).
 
 **Consistency sweep (11 Nov 2026): what is left, and why.**
 - In-page view switches (`Tabs`) remain on about 37 pages (Admissions, Attendance, Behaviour, Fees, GCSE,
@@ -432,6 +440,16 @@ etc. Needs to be done in a unique way." The short tour above stays as the doorwa
   from the page's code, a menu page is renamed in one place only, or text breaks house style.
 
 ## Log
+- 2026-11-11: Classwork quizzes (feedback 2, items 6, 15, 17; migration 0206): full-screen quiz builder with nine question types as cards, settings, AI draft checked question by question, results and marking; pupils sit quizzes full screen with the server clock, autosave and results; Classwork filters and groups by kind. Add an assessment opens full screen (item 10, `FocusView`).
+- 2026-11-11: Class Insights restructured (owner feedback 2, item 11): one strip of four figures linking to their sections, then "Pupils who may need a word" as a table with one column per reason (capitalised), a reason filter, each flagged figure linking to Attendance, Classwork or Grades, the name to the pupil record (`pupilRecordHref`), Message and Record per row; phones show each pupil as a short card.
+- 2026-11-11: Waiting for you page compartmentalised (owner feedback 2, item 2): in Everything each category is its own box with a count and "N to do now", showing its first four lines and Show all; every line carries its one action as a button (marking opens in place), and the three dots open its detail (pupils named, Mark done, print). Save as PDF still prints every line.
+- 2026-11-11: Pupil profile with sections down the left for teachers and the head (feedback 2, item 8): classwork
+  and grades, Qur'an and documents added; `SectionNav` (`src/components/learn/SectionNav.tsx`) for any record's sections.
+- 2026-11-11: Today rebuilt (owner feedback 2, items 1 and 12): quick actions as a compact row at the very top (teacher: take register, set work, mark work, log behaviour in panels or dialogs; message, Qur'an, results, absences as links; head: registers, behaviour, message, announcement, absences and cover, pupils, lesson review, applications), then the day's lessons, then Waiting for you as category boxes (two lines each, one button, See all). Teacher registers not taken, work to mark, pupil records to read and the person's own documents to sign are now Action centre items, so the teacher figures strip and the Pending your signature block are gone; the head's figures strip and "Today at a glance" row are replaced by today's lessons (taken ones folded away) and Cover today beside them; lessons to approve join the Curriculum box. Recently opened is a one-line strip of links at the foot.
+- 2026-11-11: Registers like SIMS and pupil links (feedback 2, items 8, 9, 13 part): a list of sessions with filters,
+  each register on its own page with notes; `PupilLink` opens a pupil's full record; teachers get `/teach/pupils?id=`;
+  Qur'an and Qaidah moved under My teaching.
+- 2026-11-11: Class stream and classwork create (feedback 2, items 5 and 6): "Add a post" opens a dialog that fits without scrolling (title, formatted message, upload, link or a printable from the resource library, for whom, now or scheduled, comments, pin). Classwork's Create shows Assignment, Quiz assignment, Question and Material as large cards, each with its own form; Question and Material open in dialogs; a new topic is a small dialog. The class header's Set work opens the same cards.
 - 2026-11-10: Portal guide part 1 (T39): an entry for every page per role, Guide me panel and Show me, progress in
   `portal_prefs.guide_progress` (migration 0203).
 - 2026-11-10: Guided tour (T38, PR "Portal: a short guided tour for every role"): role tours, page tips on the lesson
