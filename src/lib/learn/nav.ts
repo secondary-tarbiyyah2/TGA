@@ -252,6 +252,8 @@ export const NAV_CATEGORIES: Record<PortalArea, NavCategory[]> = {
         { href: "/teach/today", label: "Lessons and registers", icon: "userCheck", hint: "Today's lessons, with the register for each", matchPrefixes: ["/teach/enrichment"], keywords: "attendance register take the register lessons today teams join" },
         { href: "/teach/review", label: "To mark", icon: "clipboardCheck", hint: "Work handed in and waiting to be marked", badge: "review", keywords: "marking feedback submissions handed in", short: "To mark" },
         { href: "/teach/homework", label: "Classwork to action", icon: "notebookPen", hint: "To mark, missing and late, with links into each class", keywords: "homework late missing chase" },
+        // Its own page, apart from My pupils (owner, 11 Nov 2026): hear each Qur'an class recite.
+        { href: "/teach/quran", label: "Qur'an and Qaidah", icon: "bookMarked", hint: "Hear each Qur'an class recite, log mistakes and see each pupil's history", keywords: "quran hifz memorisation recitation qaidah mistakes tajweed strictness" },
       ],
     },
     {
@@ -259,7 +261,6 @@ export const NAV_CATEGORIES: Record<PortalArea, NavCategory[]> = {
       icon: "backpack",
       pages: [
         { href: "/teach/pupils", label: "My pupils", icon: "backpack", hint: "Records for the pupils you teach", keywords: "students children records" },
-        { href: "/teach/quran", label: "Qur'an and Qaidah", icon: "bookMarked", hint: "Recitation and memorisation progress", keywords: "quran hifz memorisation recitation qaidah" },
       ],
     },
     {

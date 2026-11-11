@@ -378,6 +378,9 @@ etc. Needs to be done in a unique way." The short tour above stays as the doorwa
   from the page's code, a menu page is renamed in one place only, or text breaks house style.
 
 ## Log
+- 2026-11-11: Registers like SIMS and pupil links (feedback 2, items 8, 9, 13 part): a list of sessions with filters,
+  each register on its own page with notes; `PupilLink` opens a pupil's full record; teachers get `/teach/pupils?id=`;
+  Qur'an and Qaidah moved under My teaching.
 - 2026-11-10: Portal guide part 1 (T39): an entry for every page per role, Guide me panel and Show me, progress in
   `portal_prefs.guide_progress` (migration 0203).
 - 2026-11-10: Guided tour (T38, PR "Portal: a short guided tour for every role"): role tours, page tips on the lesson
