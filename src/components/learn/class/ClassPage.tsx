@@ -6,8 +6,10 @@ import { useRouter, useSearchParams } from "next/navigation";
 import { getSupabaseClient } from "@/lib/supabase/client";
 import { fetchClass, recordRecentPage, type ClassSummary, type ClassViewer } from "@/lib/learn/classes";
 import type { Crumb } from "@/components/learn/PageHeader";
-import { WorkspaceHeader, type MenuAction, Loading } from "@/components/learn/kit";
-import { Button } from "@/components/learn/ui";
+import { ActionsMenu, type MenuAction, Loading } from "@/components/learn/kit";
+import { Icon } from "@/components/learn/Icon";
+import { ClassHero } from "@/components/learn/class/ClassHero";
+import { Avatar, Button, scoreClass } from "@/components/learn/ui";
 import { CLASSWORK_CREATE, SetWorkPanel } from "@/components/learn/class/SetWorkPanel";
 import { ParticipantsTab } from "@/components/learn/class/ParticipantsTab";
 import { CourseTab } from "@/components/learn/class/CourseTab";
@@ -35,8 +37,8 @@ function routesFor(viewer: ClassViewer) {
 function Panel({ title, action, children }: { title: string; action?: React.ReactNode; children: React.ReactNode }) {
   return (
     <section className="rounded-2xl border border-gold-light bg-white">
-      <div className="flex items-center justify-between gap-3 border-b border-gold-light px-5 py-3.5">
-        <h2 className="text-sm font-semibold text-ink">{title}</h2>
+      <div className="flex items-center justify-between gap-3 border-b border-[var(--portal-line-soft)] px-5 py-4">
+        <h2 className="t-section">{title}</h2>
         {action}
       </div>
       <div className="p-5">{children}</div>
@@ -98,29 +100,36 @@ function GradesTab({ classId, viewer }: { classId: string; viewer: ClassViewer }
   return (
     <>
       {overall !== null && (
-        <p className="mb-4 rounded-xl bg-teal-50 px-4 py-3 text-sm text-teal-900">
-          Overall grade: <span className="text-base font-semibold tabular-nums">{overall}%</span>
-          <span className="ml-2 text-xs text-teal-900/70">{settings?.gradeCalculation === "weighted" ? "weighted by category" : "average of all results"}</span>
+        <p className="mb-4 flex flex-wrap items-center gap-x-3 gap-y-1 rounded-xl bg-[var(--portal-selected)] px-4 py-3 text-sm text-forest-800">
+          Overall grade <span className={scoreClass(overall)}>{overall}%</span>
+          <span className="text-xs text-ink-500">{settings?.gradeCalculation === "weighted" ? "weighted by category" : "average of all results"}</span>
         </p>
       )}
     <div className="-mx-5 overflow-x-auto">
       <table className="w-full min-w-[480px] text-left text-sm">
         <thead>
-          <tr className="border-b border-gold-light text-xs uppercase tracking-wide text-ink/65">
+          <tr className="border-b border-[var(--portal-line)] text-xs uppercase tracking-[0.04em] text-ink-500">
             {teacher && <th className="px-5 py-2 font-semibold">Pupil</th>}
             <th className="px-5 py-2 font-semibold">Assessment</th>
             <th className="px-5 py-2 font-semibold">Date</th>
             <th className="px-5 py-2 text-right font-semibold">Result</th>
           </tr>
         </thead>
-        <tbody className="divide-y divide-gold-light/70">
+        <tbody className="divide-y divide-[var(--portal-line-soft)]">
           {rows.map((r) => (
             <tr key={r.id}>
-              {teacher && <td className="px-5 py-2.5 font-medium text-ink">{r.children?.name || "–"}</td>}
-              <td className="px-5 py-2.5 text-ink/80">{r.title}</td>
-              <td className="px-5 py-2.5 text-ink/65">{fmtDate(r.date)}</td>
-              <td className="px-5 py-2.5 text-right font-semibold tabular-nums text-ink">
-                {r.grade_label || (r.percent != null ? `${r.percent}%` : "–")}
+              {teacher && (
+                <td className="px-5 py-3 font-medium text-ink">
+                  <span className="inline-flex items-center gap-2.5">
+                    <Avatar name={r.children?.name || "Pupil"} size={28} />
+                    {r.children?.name || "–"}
+                  </span>
+                </td>
+              )}
+              <td className="px-5 py-3 font-medium text-ink">{r.title}</td>
+              <td className="px-5 py-3 text-ink-500">{fmtDate(r.date)}</td>
+              <td className="px-5 py-3 text-right">
+                <span className={scoreClass(r.percent != null ? Number(r.percent) : null)}>{r.grade_label || (r.percent != null ? `${r.percent}%` : "–")}</span>
               </td>
             </tr>
           ))}
@@ -243,38 +252,58 @@ export function ClassPage({ viewer }: { viewer: ClassViewer }) {
 
   return (
     <div>
-      {/* The redesign's workspace header (docs/portal-redesign.md): where you are, the class, one main action and a menu; then the class sections. */}
-      <WorkspaceHeader
-        eyebrow={[{ label: crumbs[1].label, href: crumbs[1].href }, ...(cls.subject ? [{ label: cls.subject }] : []), ...(cls.yearGroup ? [{ label: cls.yearGroup }] : [])]}
-        title={cls.name}
-        primary={
-          isStaff ? (
-            <Button
-              variant="primary"
-              icon="plus"
-              data-guide="class-set-work"
-              onClick={() => {
-                // The kinds of classwork as cards, in the Classwork section (opened there if need be).
-                if (tab === "classwork") window.dispatchEvent(new Event(CLASSWORK_CREATE));
-                else router.push(`${classHref("classwork")}&create=1`, { scroll: false });
-              }}
-            >
-              Set work
-            </Button>
+      <Link href={crumbs[1].href as string} className="-ml-1 mb-2 inline-flex min-h-9 items-center gap-1 rounded-lg px-1 text-[0.8125rem] font-medium text-ink-500 hover:text-forest-700">
+        <Icon name="chevronLeft" size="sm" />
+        {crumbs[1].label}
+      </Link>
+      {/* Evergreen (owner, 11 Nov 2026): the class opens on a deep green hero: subject and year, the
+          class, when it meets, who teaches it, the class's figures and the live lesson's Join button. */}
+      <ClassHero
+        cls={cls}
+        viewer={viewer}
+        quran={quranClass}
+        join={
+          viewer.kind !== "staff" ? (
+            <JoinLessonCard
+              variant="hero"
+              who={viewer.kind === "teacher" ? { kind: "teacher" } : viewer.kind === "student" ? { kind: "student", childId: viewer.childId } : { kind: "parent", childId: viewer.childId }}
+              classId={cls.id}
+            />
           ) : undefined
         }
-        menu={[
-          ...(isStaff
-            ? ([
-                // The quiz builder lives in Classwork (full screen over it).
-                { label: "Set a quiz", icon: "listChecks", onSelect: () => router.push(`${classHref("classwork")}&create=quiz&n=${Date.now()}`, { scroll: false }) },
-                { label: "Take the register", icon: "userCheck", href: classHref("attendance") },
-                { label: "Grades", icon: "chartColumnIncreasing", href: classHref("grades") },
-                { label: "Class settings", icon: "settings", href: classHref("settings") },
-              ] as MenuAction[])
-            : []),
-          { label: viewer.kind === "student" ? "All my classes" : "All classes", icon: "layoutGrid", href: crumbs[1].href as string },
-        ]}
+        actions={
+          <>
+            {isStaff && (
+              <Button
+                variant="secondary"
+                icon="plus"
+                data-guide="class-set-work"
+                onClick={() => {
+                  // The kinds of classwork as cards, in the Classwork section (opened there if need be).
+                  if (tab === "classwork") window.dispatchEvent(new Event(CLASSWORK_CREATE));
+                  else router.push(`${classHref("classwork")}&create=1`, { scroll: false });
+                }}
+              >
+                Set work
+              </Button>
+            )}
+            <ActionsMenu
+              label="Class actions"
+              items={[
+                ...(isStaff
+                  ? ([
+                      // The quiz builder lives in Classwork (full screen over it).
+                      { label: "Set a quiz", icon: "listChecks", onSelect: () => router.push(`${classHref("classwork")}&create=quiz&n=${Date.now()}`, { scroll: false }) },
+                      { label: "Take the register", icon: "userCheck", href: classHref("attendance") },
+                      { label: "Grades", icon: "chartColumnIncreasing", href: classHref("grades") },
+                      { label: "Class settings", icon: "settings", href: classHref("settings") },
+                    ] as MenuAction[])
+                  : []),
+                { label: viewer.kind === "student" ? "All my classes" : "All classes", icon: "layoutGrid", href: crumbs[1].href as string },
+              ]}
+            />
+          </>
+        }
       />
       {setWork && (
         <SetWorkPanel
@@ -287,19 +316,11 @@ export function ClassPage({ viewer }: { viewer: ClassViewer }) {
           }}
         />
       )}
-      <div className="mt-2 md:grid md:grid-cols-[10.5rem_minmax(0,1fr)] md:gap-6 lg:grid-cols-[11.5rem_minmax(0,1fr)] lg:gap-10">
+      <div className="md:grid md:grid-cols-[11rem_minmax(0,1fr)] md:items-start md:gap-5 lg:grid-cols-[13rem_minmax(0,1fr)] lg:gap-6">
       {/* The class's sections: a list down the left from tablet width, a small board of buttons on phones;
           never a strip across the top or a dropdown (owner, 11 Nov 2026; docs/portal-structure.md, pattern 5). */}
       <SectionNav guide="class-tabs" label="Class sections" id="class-section" items={tabs.map((t) => ({ key: t, label: TAB_LABELS[t] }))} value={tab} hrefFor={(t) => classHref(t)} />
       <div className="min-w-0">
-
-      {viewer.kind !== "staff" && (
-        <JoinLessonCard
-          who={viewer.kind === "teacher" ? { kind: "teacher" } : viewer.kind === "student" ? { kind: "student", childId: viewer.childId } : { kind: "parent", childId: viewer.childId }}
-          classId={cls.id}
-          className="mb-6"
-        />
-      )}
 
       {tab === "stream" && <StreamTab classId={cls.id} viewer={viewer} area={area} classHref={classHref} />}
 

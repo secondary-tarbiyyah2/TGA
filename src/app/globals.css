@@ -2641,6 +2641,13 @@ html[data-reduce-motion] .mushaf-word { transition: none; }
     background: var(--tone-neutral-bg);
     color: var(--tone-neutral);
   }
+  .portal-score--ok, .portal-heat--present { background: var(--tone-ok-bg); color: var(--tone-ok); }
+  .portal-score--warn, .portal-heat--late { background: var(--tone-warn-bg); color: var(--tone-warn); }
+  .portal-score--bad, .portal-heat--absent { background: var(--tone-bad-bg); color: var(--tone-bad); }
+  .portal-heat--authorised { background: var(--tone-info-bg); color: var(--tone-info); }
+  .portal-heat--technical { background: var(--tone-neutral-bg); color: var(--tone-neutral); outline: 1px dashed var(--color-ink-500); outline-offset: -1px; }
+  .portal-heat--none { background: transparent; color: var(--color-ink-500); outline: 1px dashed var(--portal-control-line); outline-offset: -1px; }
+  .portal-score--none { background: transparent; color: var(--color-ink-500); }
   /* Touch screens: the top bar's buttons reach 44px; very narrow phones (360 to 419px) 38px,
      so every control still fits on one line. */
   @media (max-width: 639px) {

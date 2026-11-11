@@ -7,6 +7,7 @@ import { ukDaysAgo, ukToday } from "@/lib/learn/ukTime";
 import type { Status } from "@/components/learn/attendance/Register";
 import { PupilLink } from "@/components/learn/pupil/PupilLink";
 import { useClassRoster } from "@/components/learn/class/PupilPicker";
+import { Avatar, Tag, ui } from "@/components/learn/ui";
 
 export type ClassLesson = { id: string; date: string; start: string | null };
 export type ClassMark = { lesson_instance_id: string; child_id: string; status: Status };
@@ -96,6 +97,10 @@ export function ClassAttendanceTab({ classId, area }: { classId: string; area: s
   // Each register opens on its own page with a Back link (owner, 11 Nov 2026), never expanded here.
   const registerBase = area === "/admin" ? "/admin" : "/teach";
 
+  // The heat grid: the last ten lessons, oldest on the left.
+  const gridLessons = lessons.slice(0, 10).reverse();
+  const markOf = (lessonId: string, childId: string) => byLesson.get(lessonId)?.find((m) => m.child_id === childId)?.status;
+
   return (
     <div className="space-y-4">
       <div className="grid gap-3 sm:grid-cols-3">
@@ -105,29 +110,101 @@ export function ClassAttendanceTab({ classId, area }: { classId: string; area: s
       </div>
 
       <section className="rounded-2xl border border-gold-light bg-white">
-        <div className="flex flex-wrap items-center justify-between gap-2 border-b border-gold-light px-5 py-3.5">
-          <h2 className="text-sm font-semibold text-ink">Lessons</h2>
-          <Link href={absencesHref} className="text-sm text-teal-800 hover:underline">
+        <div className="flex flex-wrap items-center justify-between gap-x-4 gap-y-2 px-5 pb-2 pt-4">
+          <div>
+            <h2 className="t-section">Pupils</h2>
+            <p className="t-meta">The last {gridLessons.length} lesson{gridLessons.length === 1 ? "" : "s"}, oldest first. Lowest attendance at the top.</p>
+          </div>
+          <HeatLegend />
+        </div>
+        {pupils.length === 0 ? (
+          <p className="px-5 pb-5 pt-2 text-sm text-ink-500">No pupils are enrolled in this class yet.</p>
+        ) : (
+          <div className="overflow-x-auto pb-2">
+            <table className="portal-heat-table w-full min-w-[640px] border-separate border-spacing-0 text-left text-sm">
+              <thead>
+                <tr className="text-xs font-semibold text-ink-500">
+                  <th scope="col" className="border-b border-[var(--portal-line)] px-5 py-2.5 font-semibold">
+                    Pupil
+                  </th>
+                  {gridLessons.map((l) => (
+                    <th key={l.id} scope="col" className="whitespace-nowrap border-b border-[var(--portal-line)] px-1 py-2.5 text-center font-semibold tabular-nums">
+                      {shortDay(l.date)}
+                    </th>
+                  ))}
+                  <th scope="col" className="border-b border-[var(--portal-line)] px-4 py-2.5 text-right font-semibold">
+                    Rate
+                  </th>
+                  <th scope="col" className="border-b border-[var(--portal-line)] px-3 py-2.5 text-right font-semibold" title="Authorised absence">
+                    Auth.
+                  </th>
+                  <th scope="col" className="border-b border-[var(--portal-line)] px-3 py-2.5 text-right font-semibold" title="Unauthorised absence">
+                    Unauth.
+                  </th>
+                  <th scope="col" className="border-b border-[var(--portal-line)] px-3 py-2.5 text-right font-semibold" title="Technical absence: could not connect">
+                    Tech.
+                  </th>
+                  <th scope="col" className="border-b border-[var(--portal-line)] px-5 py-2.5 text-right font-semibold">
+                    Late
+                  </th>
+                </tr>
+              </thead>
+              <tbody>
+                {pupils.map((p) => (
+                  <tr key={p.id} className="hover:bg-[var(--portal-row-hover)]">
+                    <th scope="row" className="whitespace-nowrap border-b border-[var(--portal-line-soft)] px-5 py-2 text-left font-semibold text-ink">
+                      <span className="inline-flex items-center gap-2.5">
+                        <Avatar name={p.name} seed={p.id} size={30} />
+                        <PupilLink id={p.id} name={p.name} />
+                      </span>
+                    </th>
+                    {gridLessons.map((l) => {
+                      const st = markOf(l.id, p.id);
+                      const h = HEAT[st || "none"] || HEAT.none;
+                      return (
+                        <td key={l.id} className="border-b border-[var(--portal-line-soft)] px-1 py-1.5 text-center">
+                          <span className={`portal-heat ${h.cls}`} title={`${fmtDay(l.date)}: ${h.label}`}>
+                            <span aria-hidden="true">{h.code}</span>
+                            <span className="sr-only">{h.label}</span>
+                          </span>
+                        </td>
+                      );
+                    })}
+                    <td className={`border-b border-[var(--portal-line-soft)] px-4 py-2 text-right font-bold tabular-nums ${p.rate !== null && p.rate < 90 ? "text-red-700" : "text-ink"}`}>{p.rate === null ? "–" : `${p.rate}%`}</td>
+                    <td className="border-b border-[var(--portal-line-soft)] px-3 py-2 text-right tabular-nums text-ink-700">{p.authorised}</td>
+                    <td className="border-b border-[var(--portal-line-soft)] px-3 py-2 text-right tabular-nums text-ink-700">{p.absent}</td>
+                    <td className="border-b border-[var(--portal-line-soft)] px-3 py-2 text-right tabular-nums text-ink-700">{p.technical}</td>
+                    <td className="border-b border-[var(--portal-line-soft)] px-5 py-2 text-right tabular-nums text-ink-700">{p.late}</td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
+        )}
+      </section>
+
+      <section className="rounded-2xl border border-gold-light bg-white">
+        <div className="flex flex-wrap items-center justify-between gap-2 border-b border-[var(--portal-line-soft)] px-5 py-4">
+          <h2 className="t-section">Registers</h2>
+          <Link href={absencesHref} className={`${ui.btnSecondary} ${ui.sm}`}>
             Reported absences
           </Link>
         </div>
         {lessons.length === 0 ? (
-          <p className="p-5 text-sm text-ink/65">No lessons for this class in the last {LOOKBACK_DAYS / 7} weeks.</p>
+          <p className="p-5 text-sm text-ink-500">No lessons for this class in the last {LOOKBACK_DAYS / 7} weeks.</p>
         ) : (
-          <ul className="divide-y divide-gold-light/60">
+          <ul className="divide-y divide-[var(--portal-line-soft)]">
             {shownLessons.map((l) => {
               const n = byLesson.get(l.id)?.length || 0;
               return (
                 <li key={l.id} className="px-5 py-3">
                   <div className="flex flex-wrap items-center gap-3">
                     <span className="min-w-0 flex-1 text-sm">
-                      <span className="font-medium text-ink">{fmtDay(l.date)}</span>
-                      {l.start && <span className="text-ink/65"> · {l.start}</span>}
+                      <span className="font-semibold text-ink">{fmtDay(l.date)}</span>
+                      {l.start && <span className="text-ink-500"> · {l.start}</span>}
                     </span>
-                    <span className={`rounded-full px-2.5 py-1 text-xs font-medium ring-1 ring-inset ${n === 0 ? "bg-amber-50 text-amber-900 ring-amber-600/20" : n < total ? "bg-cream text-ink/75 ring-gold-light" : "bg-green-50 text-green-800 ring-green-600/20"}`}>
-                      {n === 0 ? "Not taken" : `${n} of ${total} marked`}
-                    </span>
-                    <Link href={`${registerBase}/register?id=${l.id}&from=class`} className="rounded-lg border border-gold-light px-3 py-1.5 text-sm font-medium text-ink/80 hover:bg-cream">
+                    <Tag tone={n === 0 ? "warn" : n < total ? "neutral" : "good"}>{n === 0 ? "Not taken" : `${n} of ${total} marked`}</Tag>
+                    <Link href={`${registerBase}/register?id=${l.id}&from=class`} className={`${n === 0 ? ui.btnPrimary : ui.btnSecondary} ${ui.sm}`}>
                       {n === 0 ? "Take register" : "Open register"}
                     </Link>
                   </div>
@@ -137,49 +214,10 @@ export function ClassAttendanceTab({ classId, area }: { classId: string; area: s
           </ul>
         )}
         {lessons.length > 8 && (
-          <div className="border-t border-gold-light/60 px-5 py-2.5">
-            <button type="button" onClick={() => setShowAll((s) => !s)} className="text-sm font-medium text-teal-800 hover:underline">
+          <div className="border-t border-[var(--portal-line-soft)] px-5 py-2.5">
+            <button type="button" onClick={() => setShowAll((s) => !s)} className={ui.btnLink}>
               {showAll ? "Show fewer" : `Show all ${lessons.length} lessons`}
             </button>
-          </div>
-        )}
-      </section>
-
-      <section className="rounded-2xl border border-gold-light bg-white">
-        <div className="border-b border-gold-light px-5 py-3.5">
-          <h2 className="text-sm font-semibold text-ink">Pupils</h2>
-          <p className="text-xs text-ink/65">Lowest attendance first.</p>
-        </div>
-        {pupils.length === 0 ? (
-          <p className="p-5 text-sm text-ink/65">No pupils are enrolled in this class yet.</p>
-        ) : (
-          <div className="overflow-x-auto">
-            <table className="w-full min-w-[560px] text-left text-sm">
-              <thead>
-                <tr className="border-b border-gold-light text-xs uppercase tracking-wide text-ink/65">
-                  <th className="px-5 py-2 font-semibold">Pupil</th>
-                  <th className="px-5 py-2 text-right font-semibold">Attendance</th>
-                  <th className="px-5 py-2 text-right font-semibold" title="Authorised absence">Authorised</th>
-                  <th className="px-5 py-2 text-right font-semibold" title="Unauthorised absence">Unauthorised</th>
-                  <th className="px-5 py-2 text-right font-semibold" title="Technical absence: could not connect">Technical</th>
-                  <th className="px-5 py-2 text-right font-semibold">Late</th>
-                </tr>
-              </thead>
-              <tbody className="divide-y divide-gold-light/60">
-                {pupils.map((p) => (
-                  <tr key={p.id}>
-                    <td className="px-5 py-2.5 font-medium text-ink">
-                      <PupilLink id={p.id} name={p.name} />
-                    </td>
-                    <td className={`px-5 py-2.5 text-right font-semibold tabular-nums ${p.rate !== null && p.rate < 90 ? "text-red-700" : "text-ink"}`}>{p.rate === null ? "–" : `${p.rate}%`}</td>
-                    <td className="px-5 py-2.5 text-right tabular-nums text-ink/80">{p.authorised}</td>
-                    <td className="px-5 py-2.5 text-right tabular-nums text-ink/80">{p.absent}</td>
-                    <td className="px-5 py-2.5 text-right tabular-nums text-ink/80">{p.technical}</td>
-                    <td className="px-5 py-2.5 text-right tabular-nums text-ink/80">{p.late}</td>
-                  </tr>
-                ))}
-              </tbody>
-            </table>
           </div>
         )}
       </section>
@@ -187,12 +225,42 @@ export function ClassAttendanceTab({ classId, area }: { classId: string; area: s
   );
 }
 
+const shortDay = (d: string) => {
+  const x = new Date(`${d}T00:00:00`);
+  return `${x.toLocaleDateString("en-GB", { weekday: "short" }).slice(0, 2)} ${x.getDate()}`;
+};
+
+/** One register mark as a heat cell: its code, colour and name (the name is read out). */
+const HEAT: Record<string, { cls: string; code: string; label: string }> = {
+  present: { cls: "portal-heat--present", code: "", label: "Present" },
+  late: { cls: "portal-heat--late", code: "L", label: "Late" },
+  excused: { cls: "portal-heat--authorised", code: "A", label: "Authorised absence" },
+  absent: { cls: "portal-heat--absent", code: "U", label: "Unauthorised absence" },
+  technical: { cls: "portal-heat--technical", code: "T", label: "Technical absence" },
+  not_engaged: { cls: "", code: "N", label: "Not engaged" },
+  none: { cls: "portal-heat--none", code: "", label: "Not marked" },
+};
+
+function HeatLegend() {
+  const items = ["present", "late", "excused", "absent", "technical"] as const;
+  return (
+    <ul className="flex flex-wrap gap-x-3 gap-y-1 text-xs text-ink-500" aria-label="Key">
+      {items.map((k) => (
+        <li key={k} className="inline-flex items-center gap-1.5">
+          <span aria-hidden="true" className={`portal-heat ${HEAT[k].cls} !h-3 !w-3 !rounded-[4px]`} />
+          {HEAT[k].label}
+        </li>
+      ))}
+    </ul>
+  );
+}
+
 export function Tile({ label, value, sub, alert }: { label: string; value: string; sub?: string; alert?: boolean }) {
   return (
-    <div className="rounded-2xl border border-gold-light bg-white p-4">
-      <p className="text-sm font-medium text-ink/65">{label}</p>
-      <p className="mt-1 text-2xl font-semibold tabular-nums tracking-tight text-ink">{value}</p>
-      {sub && <p className={`mt-0.5 text-xs ${alert ? "text-amber-800" : "text-ink/65"}`}>{sub}</p>}
+    <div className="rounded-2xl border border-gold-light bg-white p-5">
+      <p className="text-[0.8125rem] font-medium text-ink-500">{label}</p>
+      <p className="mt-1 text-[1.75rem] font-bold leading-[1.1] tracking-[-0.02em] tabular-nums text-ink">{value}</p>
+      {sub && <p className={`mt-1 text-xs ${alert ? "font-medium text-amber-800" : "text-ink-500"}`}>{sub}</p>}
     </div>
   );
 }

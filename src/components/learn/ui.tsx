@@ -215,6 +215,12 @@ export function Avatar({ name, seed, size = 34, className = "" }: { name: string
   );
 }
 
+/** A score chip's classes (rounded, tinted): green from 70%, neutral from 50%, amber below, plain when there is no score. */
+export function scoreClass(percent: number | null | undefined): string {
+  if (percent == null || Number.isNaN(percent)) return "portal-score portal-score--none";
+  return `portal-score ${percent >= 70 ? "portal-score--ok" : percent >= 50 ? "" : "portal-score--warn"}`;
+}
+
 /** A thin progress bar (decorative: say the figure in words beside it). */
 export function ProgressBar({ value, className = "" }: { value: number; className?: string }) {
   const v = Math.max(0, Math.min(100, Math.round(value)));
