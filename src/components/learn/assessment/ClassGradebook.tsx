@@ -49,7 +49,10 @@ export function ClassGradebook({
   pupils,
   selected,
   onSelect,
+  toolbar,
 }: {
+  /** Shown at the left of the gradebook's action row (the Gradebook page puts its class picker here). */
+  toolbar?: ReactNode;
   classId: string;
   subjectId: string | null;
   pupils: GbPupil[] | null;
@@ -388,11 +391,11 @@ export function ClassGradebook({
   }
 
   return (
-    <div data-guide="gradebook" className="space-y-3 rounded-2xl border border-gold-light bg-white p-5">
-      <div className="flex flex-wrap items-center justify-between gap-2">
-        <div>
-          <h2 className="font-serif text-h3 font-semibold text-ink">Gradebook</h2>
-          <p className="text-sm text-ink/65">Pupils down the side, assessments across. Choose a heading to enter or change its results; choose a pupil for their Qur&apos;an progress and weekly note.</p>
+    <div data-guide="gradebook" className="space-y-3">
+      <div className="flex flex-wrap items-center justify-between gap-3">
+        <div className="flex min-w-0 flex-wrap items-center gap-3">
+          {toolbar}
+          <p className={`t-meta max-w-prose ${toolbar ? "sr-only" : ""}`}>Choose a heading to enter or change its results; choose a pupil for their Qur&apos;an progress and weekly note.</p>
         </div>
         <button type="button" className={btnPrimary} onClick={openNew} disabled={!pupils?.length || !types.length}>
           Add an assessment
@@ -403,7 +406,7 @@ export function ClassGradebook({
           {msg.text}
         </p>
       )}
-      {!types.length && <p className="text-sm text-ink/70">No assessment types are set up yet. The head or office adds them under Academic setup.</p>}
+      {!types.length && <p className="text-sm text-ink/70">No assessment types are set up yet. The head or office adds them under Progress reports, Report settings.</p>}
       {pupils === null || rows === null ? (
         <div className="h-32 motion-safe:animate-pulse rounded-lg bg-cream" />
       ) : pupils.length === 0 ? (
