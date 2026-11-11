@@ -6,14 +6,17 @@ select plan(7);
 
 insert into auth.users (id, email) values
   ('a2110000-0000-0000-0000-000000000001', 'arc-head@example.com'),
-  ('a2110000-0000-0000-0000-000000000002', 'arc-teacher@example.com');
+  ('a2110000-0000-0000-0000-000000000002', 'arc-teacher@example.com'),
+  ('a2110000-0000-0000-0000-000000000003', 'arc-parent@example.com');
 insert into public.profiles (id, role, full_name, email) values
   ('a2110000-0000-0000-0000-000000000001', 'admin', 'ARC Head', 'arc-head@example.com'),
-  ('a2110000-0000-0000-0000-000000000002', 'teacher', 'ARC Teacher', 'arc-teacher@example.com');
+  ('a2110000-0000-0000-0000-000000000002', 'teacher', 'ARC Teacher', 'arc-teacher@example.com'),
+  ('a2110000-0000-0000-0000-000000000003', 'parent', 'ARC Parent', 'arc-parent@example.com');
 insert into public.user_roles (user_id, role, scope_type, scope_id) values
   ('a2110000-0000-0000-0000-000000000001', 'head_teacher', 'none', null),
-  ('a2110000-0000-0000-0000-000000000002', 'teacher', 'none', null);
-insert into public.children (id, name, dob, is_test) values ('a2110000-0000-0000-0000-0000000000d1', 'ARC Pupil', '2014-03-01', true);
+  ('a2110000-0000-0000-0000-000000000002', 'teacher', 'none', null),
+  ('a2110000-0000-0000-0000-000000000003', 'parent', 'none', null);
+insert into public.children (id, parent_user_id, name, dob, is_test) values ('a2110000-0000-0000-0000-0000000000d1', 'a2110000-0000-0000-0000-000000000003', 'ARC Pupil', '2014-03-01', true);
 
 select ok(
   (select pg_get_constraintdef(oid) from pg_constraint where conname = 'attendance_records_status_check')
