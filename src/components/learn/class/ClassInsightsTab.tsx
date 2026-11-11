@@ -7,6 +7,7 @@ import { useClassRoster } from "@/components/learn/class/PupilPicker";
 import { LOOKBACK_DAYS, loadClassAttendance, rateOf, type ClassMark } from "@/components/learn/class/ClassAttendanceTab";
 import { Icon } from "@/components/learn/Icon";
 import { ui } from "@/components/learn/ui";
+import { pupilRecordHref } from "@/components/learn/pupil/PupilLink";
 
 type Why = "attendance" | "homework" | "results";
 const WHY: { key: Why; label: string }[] = [
@@ -92,7 +93,7 @@ export function ClassInsightsTab({ classId, classHref, area = "/teach" }: { clas
   const counts: Record<Why, number> = { attendance: 0, homework: 0, results: 0 };
   for (const p of pupils) for (const r of p.reasons) counts[r]++;
   const shown = why === "all" ? pupils : pupils.filter((p) => p.flags[why]);
-  const profile = (id: string) => (area === "/admin" ? `/admin/pupils?id=${id}` : `${area}/pupils?pupil=${id}`);
+  const profile = (id: string) => pupilRecordHref(area.replace("/", ""), id) || `${area}/pupils`;
   const reasonHref: Record<Why, string> = { attendance: classHref("attendance"), homework: classHref("classwork"), results: classHref("grades") };
   const cell = (p: (typeof pupils)[number], k: Why, text: string) =>
     p.flags[k] ? (
