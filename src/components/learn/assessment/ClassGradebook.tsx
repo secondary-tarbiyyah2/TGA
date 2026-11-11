@@ -492,7 +492,7 @@ export function ClassGradebook({
             </option>
           ))}
         </Select>
-        <Select value={typeFilter} onChange={(e) => setTypeFilter(e.target.value)} aria-label="Kind of assessment" className={`${ui.select} w-full sm:w-48`}>
+        <Select value={typeFilter} onChange={(e) => setTypeFilter(e.target.value)} aria-label="Kind of assessment" className={`${ui.select} w-full sm:w-60`}>
           <option value="">Every kind of assessment</option>
           {types.map((t) => (
             <option key={t.id} value={t.id}>
