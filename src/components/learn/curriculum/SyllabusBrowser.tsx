@@ -23,7 +23,8 @@ import {
   type PlanUnit,
   type SubjectPlan,
 } from "@/lib/learn/syllabusPlan";
-import { ui } from "@/components/learn/ui";
+import { Status, ui } from "@/components/learn/ui";
+import { SidePanel } from "@/components/learn/kit";
 import { Icon, type IconName } from "@/components/learn/Icon";
 import { Tabs, tabPanelProps } from "@/components/learn/Tabs";
 import { Select } from "@/components/ui/Dropdown";
@@ -59,9 +60,12 @@ const yearShort = (y: string) => yearLabel(y).replace("Year ", "Y");
 const span = (p: SubjectPlan) => (p.yearKeys.length ? `${yearLabel(p.yearKeys[0])} to ${yearLabel(p.yearKeys[p.yearKeys.length - 1])}` : "");
 
 /**
- * The Syllabus pages: every subject's curriculum, Year 1 to Year 11, as a long-term plan
- * (half term by half term), then year by year with a page for each unit and its week-by-week
- * plan, plus the subject's pack document (PDF and Word) to print or download. Reads the
+ * Syllabus (owner, 10 Nov 2026: "one page, everything reachable in place"): every subject's
+ * curriculum, Year 1 to Year 11, on a single page. The subject list stays on the left (a
+ * dropdown on phones); the subject's long-term plan, year by year units, progression and
+ * exams are tabs; a unit opens in place (a side panel from the long-term plan, alongside the
+ * list in Year by year), so nothing sends you to another page. The address keeps
+ * ?subject=&view=&year=&unit=, so links from before still open the same thing. Reads the
  * Curriculum planner (curriculum_units), falling back to the published syllabus index.
  */
 export function SyllabusBrowser({ area }: { area: "teach" | "admin" }) {
@@ -72,6 +76,7 @@ export function SyllabusBrowser({ area }: { area: "teach" | "admin" }) {
   const [view, setView] = useState<View>("plan");
   const [year, setYear] = useState("");
   const [unitKey, setUnitKey] = useState<string | null>(null);
+  const [panelKey, setPanelKey] = useState<string | null>(null);
   const [docs, setDocs] = useState<Record<string, PackDocs>>({});
   const [docError, setDocError] = useState<string | null>(null);
   const detailRef = useRef<HTMLElement | null>(null);
@@ -93,7 +98,10 @@ export function SyllabusBrowser({ area }: { area: "teach" | "admin" }) {
     const v = q.get("view");
     if (v === "plan" || v === "years" || v === "progression" || v === "exams") setView(v);
     if (q.get("year")) setYear(q.get("year") || "");
-    if (q.get("unit")) setUnitKey(q.get("unit"));
+    if (q.get("unit")) {
+      if (v === "years") setUnitKey(q.get("unit"));
+      else setPanelKey(q.get("unit"));
+    }
     setRestored(true);
     /* eslint-enable react-hooks/set-state-in-effect */
     loadPlan().then(setPlan);
@@ -108,14 +116,15 @@ export function SyllabusBrowser({ area }: { area: "teach" | "admin" }) {
     if (slug && view !== "plan") q.set("view", view);
     if (slug && view === "years" && year) q.set("year", year);
     if (slug && view === "years" && unitKey) q.set("unit", unitKey);
+    if (slug && view === "plan" && panelKey) q.set("unit", panelKey);
     const s = q.toString();
-    window.history.replaceState(null, "", `${window.location.pathname}${s ? `?${s}` : ""}`);
+    window.history.replaceState(window.history.state, "", `${window.location.pathname}${s ? `?${s}` : ""}`);
     try {
       if (slug) window.localStorage.setItem(SUBJECT_KEY, slug);
     } catch {
       /* ignore */
     }
-  }, [restored, slug, view, year, unitKey]);
+  }, [restored, slug, view, year, unitKey, panelKey]);
 
   // The pack's documents in storage (staff-only bucket).
   useEffect(() => {
@@ -157,28 +166,41 @@ export function SyllabusBrowser({ area }: { area: "teach" | "admin" }) {
     }
   };
 
-  const subject = PLAN_SUBJECTS.find((s) => s.slug === slug);
-  const sp = useMemo(() => (plan && subject ? subjectPlan(subject, plan.units) : null), [plan, subject]);
+  // Subjects with something to show, in the pack's order; the chosen one (or the first).
+  const available = useMemo(() => (plan ? PLAN_SUBJECTS.map((s) => ({ s, p: subjectPlan(s, plan.units) })).filter((x) => x.p.unitCount > 0) : []), [plan]);
+  const current = available.find((x) => x.s.slug === slug) || available[0] || null;
+  const sp: SubjectPlan | null = current?.p || null;
   const years = sp?.yearKeys || [];
   const activeYear = years.includes(year) ? year : years[0] || "";
   const yearUnits = useMemo(() => (sp && activeYear ? unitsOfYear(sp, activeYear) : []), [sp, activeYear]);
   const activeUnit = yearUnits.find((u) => u.key === unitKey) || yearUnits.find((u) => isFoundingHalfTerm(u.halfTerm)) || yearUnits[0] || null;
+  const allUnits = useMemo(() => (sp ? sp.yearKeys.flatMap((y) => unitsOfYear(sp, y)) : []), [sp]);
+  const panelUnit = panelKey ? allUnits.find((u) => u.key === panelKey) || null : null;
+  const panelSiblings = panelUnit ? unitsOfYear(sp as SubjectPlan, panelUnit.year) : [];
+  const panelIndex = panelUnit ? panelSiblings.findIndex((u) => u.key === panelUnit.key) : -1;
 
-  const openUnit = useCallback((u: PlanUnit) => {
+  const openInYears = useCallback((u: PlanUnit) => {
     setView("years");
     setYear(u.year);
     setUnitKey(u.key);
+    setPanelKey(null);
     window.setTimeout(() => detailRef.current?.focus({ preventScroll: true }), 0);
-    window.setTimeout(() => detailRef.current?.scrollIntoView({ behavior: "smooth", block: "start" }), 0);
   }, []);
   const chooseSubject = (s: string) => {
     setSlug(s);
     setView("plan");
     setYear("");
     setUnitKey(null);
+    setPanelKey(null);
   };
 
-  if (!plan) return <div className="h-48 motion-safe:animate-pulse rounded-2xl bg-white" aria-label="Loading the syllabus" />;
+  if (!plan)
+    return (
+      <div role="status" aria-live="polite" className="flex flex-col items-center gap-3 py-16">
+        <div className="portal-progress w-40" aria-hidden="true" />
+        <p className="t-meta">Loading the syllabus</p>
+      </div>
+    );
 
   const views: { key: View; label: string }[] = sp
     ? [
@@ -191,74 +213,97 @@ export function SyllabusBrowser({ area }: { area: "teach" | "admin" }) {
   const activeView = views.some((v) => v.key === view) ? view : "plan";
 
   return (
-    <div className="space-y-4">
-      {docError && (
-        <p role="alert" className="rounded-xl border border-red-200 bg-red-50 px-3 py-2 text-sm text-red-800">
-          {docError}
-        </p>
-      )}
-
-      {!sp && (
-        <>
-          <SubjectGrid plan={plan} onPick={chooseSubject} />
-          <WholeSchool docs={docs} openFile={openFile} />
-        </>
-      )}
-
-      {sp && (
-        <>
-          <SubjectHeader sp={sp} live={plan.live} docs={docs[sp.subject.slug]} overview={docs.overview} openFile={openFile} onSubject={chooseSubject} canEdit={canEdit} area={area} />
-          <Tabs items={views} value={activeView} onChange={setView} label="Syllabus views" idBase="syl" />
-          <div {...tabPanelProps("syl", activeView)} className="focus:outline-none">
-            {activeView === "plan" && <PlanView sp={sp} onOpen={openUnit} />}
-            {activeView === "years" && (
-              <YearsView sp={sp} years={years} year={activeYear} units={yearUnits} active={activeUnit} onYear={(y) => { setYear(y); setUnitKey(null); }} onUnit={(u) => openUnit(u)} detailRef={detailRef} area={area} canEdit={canEdit} />
-            )}
-            {activeView === "progression" && <ProgressionView sp={sp} />}
-            {activeView === "exams" && <ExamsView sp={sp} />}
+    <div className="grid gap-6 lg:grid-cols-[13.5rem_minmax(0,1fr)] lg:gap-8">
+      {/* Subjects: always in view on wide screens, a dropdown on phones. */}
+      <aside className="space-y-5 lg:sticky lg:top-[76px] lg:self-start">
+        <div data-guide="syllabus-subject">
+          <div className="lg:hidden">
+            <Select value={current?.s.slug || ""} onChange={(e) => chooseSubject(e.target.value)} aria-label="Subject">
+              {available.map(({ s }) => (
+                <option key={s.slug} value={s.slug}>
+                  {s.name}
+                </option>
+              ))}
+            </Select>
           </div>
-        </>
+          <nav aria-label="Subjects" className="hidden lg:block">
+            <p className="t-eyebrow mb-2 px-2.5">Subjects</p>
+            <ul className="space-y-px">
+              {available.map(({ s, p }) => {
+                const on = current?.s.slug === s.slug;
+                return (
+                  <li key={s.slug}>
+                    <button type="button" onClick={() => chooseSubject(s.slug)} aria-current={on ? "true" : undefined} className={`flex w-full items-center gap-2.5 rounded-lg px-2.5 py-1.5 text-left text-sm transition-colors ${on ? "bg-white font-semibold text-forest-900 shadow-[var(--portal-shadow-lift)]" : "text-ink-700 hover:bg-[var(--portal-hover)] hover:text-ink"}`}>
+                      <Icon name={ICONS[s.slug] || "bookOpen"} className={`h-4 w-4 shrink-0 ${on ? "text-forest-700" : "text-ink-500"}`} />
+                      <span className="min-w-0 flex-1 truncate">{s.name}</span>
+                      <span className="shrink-0 text-xs font-normal tabular-nums text-ink-500">{p.unitCount}</span>
+                    </button>
+                  </li>
+                );
+              })}
+            </ul>
+          </nav>
+        </div>
+        <WholeSchool docs={docs} openFile={openFile} />
+      </aside>
+
+      <div className="min-w-0 space-y-5">
+        {docError && (
+          <p role="alert" className="rounded-lg border border-red-200 bg-red-50 px-3 py-2 text-sm text-red-800">
+            {docError}
+          </p>
+        )}
+        {!sp ? (
+          <p className="rounded-2xl border border-dashed border-gold-light px-6 py-12 text-center text-sm text-ink-500">No subject curriculum has been published yet.</p>
+        ) : (
+          <>
+            <SubjectHeader sp={sp} live={plan.live} docs={docs[sp.subject.slug]} overview={docs.overview} openFile={openFile} canEdit={canEdit} area={area} />
+            <Tabs items={views} value={activeView} onChange={(v) => { setView(v); setPanelKey(null); }} label="Syllabus views" idBase="syl" />
+            <div {...tabPanelProps("syl", activeView)} className="focus:outline-none">
+              {activeView === "plan" && <PlanView sp={sp} onOpen={(u) => setPanelKey(u.key)} />}
+              {activeView === "years" && (
+                <YearsView sp={sp} years={years} year={activeYear} units={yearUnits} active={activeUnit} onYear={(y) => { setYear(y); setUnitKey(null); }} onUnit={(u) => openInYears(u)} detailRef={detailRef} area={area} canEdit={canEdit} />
+              )}
+              {activeView === "progression" && <ProgressionView sp={sp} />}
+              {activeView === "exams" && <ExamsView sp={sp} />}
+            </div>
+          </>
+        )}
+      </div>
+
+      {panelUnit && sp && (
+        <SidePanel
+          title={panelUnit.kind === "spec" ? panelUnit.title : focusTitle(panelUnit.title)}
+          eyebrow={`${panelUnit.kind === "spec" ? `${termOf(panelUnit)} · ${panelUnit.ref}` : halfTermLabel(panelUnit.halfTerm)} · ${yearLabel(panelUnit.year)}`}
+          onClose={() => setPanelKey(null)}
+          footer={
+            <>
+              {panelIndex > 0 && (
+                <button type="button" className={`${ui.btnGhost} ${ui.sm}`} onClick={() => setPanelKey(panelSiblings[panelIndex - 1].key)}>
+                  <Icon name="chevronLeft" className="h-4 w-4" /> Previous unit
+                </button>
+              )}
+              {panelIndex >= 0 && panelIndex < panelSiblings.length - 1 && (
+                <button type="button" className={`${ui.btnGhost} ${ui.sm}`} onClick={() => setPanelKey(panelSiblings[panelIndex + 1].key)}>
+                  Next unit <Icon name="chevronRight" className="h-4 w-4" />
+                </button>
+              )}
+              <button type="button" className={`${ui.btnSecondary} ${ui.sm} ml-auto`} onClick={() => openInYears(panelUnit)}>
+                Open in Year by year
+              </button>
+            </>
+          }
+        >
+          <UnitDetail key={panelUnit.key} u={panelUnit} sp={sp} area={area} canEdit={canEdit} bare />
+        </SidePanel>
       )}
     </div>
   );
 }
 
-function SubjectGrid({ plan, onPick }: { plan: PlanSource; onPick: (s: string) => void }) {
-  return (
-    <section data-guide="syllabus-subject" aria-labelledby="syl-pick" className={ui.card}>
-      <h2 id="syl-pick" className={eyebrow}>
-        Choose a subject
-      </h2>
-      <ul className="mt-3 grid gap-2 sm:grid-cols-2 lg:grid-cols-3">
-        {PLAN_SUBJECTS.map((s) => {
-          const p = subjectPlan(s, plan.units);
-          if (!p.unitCount) return null;
-          return (
-            <li key={s.slug}>
-              <button type="button" onClick={() => onPick(s.slug)} className={`group flex w-full items-center gap-3 rounded-xl border border-gold-light bg-white p-3 text-left transition hover:border-teal-700 hover:bg-cream ${focusRing}`}>
-                <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-lg bg-teal-100 text-teal-700">
-                  <Icon name={ICONS[s.slug] || "bookOpen"} className="h-5 w-5" />
-                </span>
-                <span className="min-w-0 flex-1">
-                  <span className="block font-semibold leading-tight text-ink">{s.name}</span>
-                  <span className="block text-xs text-ink/70">
-                    {span(p)} · {p.unitCount} units
-                  </span>
-                </span>
-                <Icon name="chevronRight" className="h-4 w-4 text-ink/40 group-hover:text-teal-700" />
-              </button>
-            </li>
-          );
-        })}
-      </ul>
-      <p className="mt-4 text-xs text-ink/65">{plan.live ? "Live from the Curriculum planner." : "Showing the last published copy of the curriculum: the Curriculum planner could not be reached."}</p>
-    </section>
-  );
-}
-
 function DocButtons({ docs, openFile, pdfLabel = "Print or save the PDF", small = false }: { docs?: PackDocs; openFile: (f: PackFile, d: boolean) => void; pdfLabel?: string; small?: boolean }) {
   const btn = `${ui.btnSecondary}${small ? ` ${ui.sm}` : ""}`;
-  if (!docs?.pdf && !docs?.editable) return <span className="text-xs text-ink/65">The documents are being built. Check back in about 30 minutes.</span>;
+  if (!docs?.pdf && !docs?.editable) return <span className="text-xs text-ink-500">Being built; check back in about 30 minutes.</span>;
   const ext = docs.editable?.name.split(".").pop();
   return (
     <span className="flex flex-wrap gap-2">
@@ -276,89 +321,77 @@ function DocButtons({ docs, openFile, pdfLabel = "Print or save the PDF", small 
   );
 }
 
+/** The two whole-school documents, under the subject list. */
 function WholeSchool({ docs, openFile }: { docs: Record<string, PackDocs>; openFile: (f: PackFile, d: boolean) => void }) {
+  const row = (label: string, hint: string, d: PackDocs | undefined) => (
+    <li className="px-2.5 py-2">
+      <p className="text-[0.8125rem] font-medium text-ink">{label}</p>
+      <p className="t-meta text-xs">{hint}</p>
+      <div className="mt-1.5">
+        {d?.pdf ? (
+          <button type="button" className="text-xs font-semibold text-forest-700 hover:underline" onClick={() => openFile(d.pdf as PackFile, false)}>
+            Open the PDF
+          </button>
+        ) : (
+          <span className="text-xs text-ink-500">Being built</span>
+        )}
+      </div>
+    </li>
+  );
   return (
-    <section aria-labelledby="syl-whole" className={ui.card}>
-      <h2 id="syl-whole" className={eyebrow}>
-        Whole-school documents
+    <section aria-labelledby="syl-whole" className="border-t border-gold-light pt-4">
+      <h2 id="syl-whole" className="t-eyebrow mb-1 px-2.5">
+        Whole school
       </h2>
-      <ul className="mt-3 divide-y divide-gold-light">
-        <li className="flex flex-wrap items-center justify-between gap-3 py-3">
-          <span>
-            <span className="block font-semibold text-ink">Curriculum overview</span>
-            <span className="block text-sm text-ink/70">Every year group&apos;s long-term plan, Year 1 to Year 11, with the exams pupils sit.</span>
-          </span>
-          <DocButtons docs={docs.overview} openFile={openFile} small />
-        </li>
-        <li className="flex flex-wrap items-center justify-between gap-3 py-3">
-          <span>
-            <span className="block font-semibold text-ink">Cross-curricular matrices</span>
-            <span className="block text-sm text-ink/70">How the subjects link: heatmaps, teaching hubs and year-by-year maps.</span>
-          </span>
-          <DocButtons docs={docs.matrix} openFile={openFile} pdfLabel="Open the PDF" small />
-        </li>
+      <ul>
+        {row("Curriculum overview", "Every year group's long-term plan and the exams pupils sit.", docs.overview)}
+        {row("Cross-curricular matrices", "How the subjects link, year by year.", docs.matrix)}
       </ul>
     </section>
   );
 }
 
-function SubjectHeader({ sp, live, docs, overview, openFile, onSubject, canEdit, area }: { sp: SubjectPlan; live: boolean; docs?: PackDocs; overview?: PackDocs; openFile: (f: PackFile, d: boolean) => void; onSubject: (s: string) => void; canEdit: boolean; area: string }) {
+function SubjectHeader({ sp, live, docs, overview, openFile, canEdit, area }: { sp: SubjectPlan; live: boolean; docs?: PackDocs; overview?: PackDocs; openFile: (f: PackFile, d: boolean) => void; canEdit: boolean; area: string }) {
   const facts: [string, string][] = [];
   if (sp.syllabus) facts.push(["Years 1 to 9", sp.syllabus.framework]);
   sp.specs.forEach(({ info }) => facts.push([`Years 10 and 11${sp.specs.length > 1 ? `: ${info.subject}` : ""}`, info.examEntry ? `Taught from ${info.board} ${info.code}; pupils sit ${qualName(info.examEntry.board, info.examEntry.qualification)} (${info.examEntry.code})` : `${qualName(info.board, info.qualification)} (${info.code})`]));
   const statuses = [sp.syllabus?.status, ...sp.specs.map((s) => s.info.status)].filter(Boolean);
   const verified = statuses.every((s) => s === "Verified");
   return (
-    <section aria-labelledby="syl-subject" className={ui.card}>
-      <div className="flex flex-wrap items-start justify-between gap-4">
-        <div className="flex min-w-0 items-center gap-3">
-          <span className="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl bg-teal-100 text-teal-700">
-            <Icon name={ICONS[sp.subject.slug] || "bookOpen"} className="h-6 w-6" />
-          </span>
-          <div className="min-w-0">
-            <p className={eyebrow}>Subject curriculum</p>
-            <h2 id="syl-subject" className="text-2xl font-semibold leading-tight text-ink">
-              {sp.subject.name}
-            </h2>
-            <p className="text-sm text-ink/75">
-              {span(sp)} · {sp.unitCount} units{" "}
-              <span className={`ml-1 inline-flex items-center rounded-full px-2 py-0.5 text-xs font-semibold ${verified ? "bg-teal-100 text-teal-900" : "bg-gold-100 text-gold-900"}`}>{verified ? "Verified" : "Provisional"}</span>
-            </p>
-          </div>
+    <section aria-labelledby="syl-subject" className="space-y-4">
+      <div className="flex flex-wrap items-start justify-between gap-x-6 gap-y-3">
+        <div className="min-w-0">
+          <h2 id="syl-subject" className="text-lg font-semibold tracking-tight text-ink">
+            {sp.subject.name}
+          </h2>
+          <p className="t-meta mt-0.5 flex flex-wrap items-center gap-x-3 gap-y-1">
+            <span>
+              {span(sp)} · {sp.unitCount} units
+            </span>
+            <Status kind={verified ? "approved" : "attention"}>{verified ? "Verified" : "Provisional"}</Status>
+          </p>
         </div>
-        <div data-guide="syllabus-subject" className="w-full sm:w-60">
-          <Select value={sp.subject.slug} onChange={(e) => onSubject(e.target.value)} aria-label="Change subject">
-            {PLAN_SUBJECTS.map((s) => (
-              <option key={s.slug} value={s.slug}>
-                {s.name}
-              </option>
-            ))}
-          </Select>
-        </div>
+        <DocButtons docs={docs} openFile={openFile} small />
       </div>
-      <dl className="mt-4 grid gap-x-6 gap-y-2 border-t border-gold-light pt-3 text-sm sm:grid-cols-[11rem_minmax(0,1fr)]">
+      <dl className="grid gap-x-6 gap-y-1.5 border-y border-gold-light py-3 text-sm sm:grid-cols-[11rem_minmax(0,1fr)]">
         {facts.map(([k, v]) => (
           <div key={k} className="contents">
-            <dt className="font-semibold text-ink/75">{k}</dt>
-            <dd className="text-ink">{v}</dd>
+            <dt className="t-meta font-medium">{k}</dt>
+            <dd className="text-ink-700">{v}</dd>
           </div>
         ))}
       </dl>
-      <div className="mt-4 flex flex-wrap items-center justify-between gap-3 rounded-xl bg-cream px-3 py-3">
-        <span className="text-sm font-medium text-ink">The {sp.subject.name} curriculum document</span>
-        <DocButtons docs={docs} openFile={openFile} small />
-      </div>
-      <p className="mt-3 text-xs text-ink/65">
+      <p className="t-meta text-xs">
         {live ? "Live from the Curriculum planner; the documents are rebuilt after each change." : "Showing the last published copy: the Curriculum planner could not be reached."}{" "}
         {canEdit && (
-          <Link href={`/${area}/planner`} className="font-semibold text-teal-700 underline">
+          <Link href={`/${area}/planner`} className="font-semibold text-forest-700 underline-offset-2 hover:underline">
             Edit in the Curriculum planner
           </Link>
         )}
         {overview?.pdf && (
           <>
             {" · "}
-            <button type="button" className="font-semibold text-teal-700 underline" onClick={() => openFile(overview.pdf as PackFile, false)}>
+            <button type="button" className="font-semibold text-forest-700 underline-offset-2 hover:underline" onClick={() => openFile(overview.pdf as PackFile, false)}>
               Whole-school overview (PDF)
             </button>
           </>
@@ -372,7 +405,7 @@ function FoundingLegend() {
   return (
     <p className="flex flex-wrap items-center gap-x-4 gap-y-1 text-xs text-ink/75">
       <span className="inline-flex items-center gap-1.5">
-        <span aria-hidden="true" className="h-3 w-3 rounded-sm border border-teal-500 bg-teal-100" /> Taught in the founding year (January to July 2027)
+        <span aria-hidden="true" className="h-3 w-3 rounded-sm border border-forest-200 bg-forest-100" /> Taught in the founding year (January to July 2027)
       </span>
       <span className="inline-flex items-center gap-1.5">
         <span aria-hidden="true" className="h-3 w-3 rounded-sm border border-gold-light bg-white" /> From September 2027
@@ -381,7 +414,7 @@ function FoundingLegend() {
   );
 }
 
-const cellBtn = `block w-full rounded-lg border px-2 py-1.5 text-left text-[13px] leading-snug text-ink transition hover:border-teal-700 hover:bg-white ${focusRing}`;
+const cellBtn = `block w-full rounded-md border px-2 py-1.5 text-left text-[13px] leading-snug text-ink [overflow-wrap:anywhere] transition-colors hover:border-forest-700 hover:bg-white ${focusRing}`;
 
 function PlanView({ sp, onOpen }: { sp: SubjectPlan; onOpen: (u: PlanUnit) => void }) {
   const ks13Years = Object.keys(sp.years).filter((y) => y !== "y10" && y !== "y11");
@@ -402,7 +435,7 @@ function PlanView({ sp, onOpen }: { sp: SubjectPlan; onOpen: (u: PlanUnit) => vo
               <tr>
                 <th scope="col" className="w-20" />
                 {HALF_TERMS.map((h) => (
-                  <th key={h.key} scope="col" className={`rounded-lg px-2 py-2 text-left text-xs font-semibold ${isFoundingHalfTerm(h.key) ? "bg-teal-700 text-white" : "bg-ink text-white"}`}>
+                  <th key={h.key} scope="col" className={`rounded-md px-2 py-2 text-left text-xs font-semibold ${isFoundingHalfTerm(h.key) ? "bg-forest-100 text-forest-900" : "bg-[var(--portal-sunken)] text-ink-700"}`}>
                     {h.label}
                   </th>
                 ))}
@@ -411,7 +444,7 @@ function PlanView({ sp, onOpen }: { sp: SubjectPlan; onOpen: (u: PlanUnit) => vo
             <tbody>
               {ks13Years.map((y) => (
                 <tr key={y}>
-                  <th scope="row" className="rounded-lg bg-cream px-2 text-left align-middle text-sm font-semibold text-ink">
+                  <th scope="row" className="px-2 text-left align-middle text-[0.8125rem] font-semibold text-ink">
                     {yearLabel(y)}
                   </th>
                   {HALF_TERMS.map((h) => {
@@ -421,7 +454,7 @@ function PlanView({ sp, onOpen }: { sp: SubjectPlan; onOpen: (u: PlanUnit) => vo
                         {us.length ? (
                           <div className="space-y-1">
                             {us.map((u) => (
-                              <button key={u.key} type="button" onClick={() => onOpen(u)} className={`${cellBtn} ${isFoundingHalfTerm(h.key) ? "border-teal-100 bg-teal-100/60" : "border-gold-light bg-white"}`}>
+                              <button key={u.key} type="button" onClick={() => onOpen(u)} className={`${cellBtn} ${isFoundingHalfTerm(h.key) ? "border-forest-200 bg-forest-50" : "border-gold-light bg-white"}`}>
                                 {focusTitle(u.title)}
                               </button>
                             ))}
@@ -447,7 +480,7 @@ function PlanView({ sp, onOpen }: { sp: SubjectPlan; onOpen: (u: PlanUnit) => vo
                       .filter((u) => u.halfTerm === h.key)
                       .map((u) => (
                         <li key={u.key}>
-                          <button type="button" onClick={() => onOpen(u)} className={`${cellBtn} flex items-baseline gap-2 ${isFoundingHalfTerm(h.key) ? "border-teal-100 bg-teal-100/60" : "border-gold-light bg-white"}`}>
+                          <button type="button" onClick={() => onOpen(u)} className={`${cellBtn} flex items-baseline gap-2 ${isFoundingHalfTerm(h.key) ? "border-forest-200 bg-forest-50" : "border-gold-light bg-white"}`}>
                             <span className="w-[4.5rem] shrink-0 whitespace-nowrap text-xs font-semibold text-ink/70">{h.label}</span>
                             <span>{focusTitle(u.title)}</span>
                           </button>
@@ -480,7 +513,7 @@ function PlanView({ sp, onOpen }: { sp: SubjectPlan; onOpen: (u: PlanUnit) => vo
                   <h4 className="mb-1.5 text-sm font-semibold text-ink">{yearLabel(y)}</h4>
                   <div className="grid gap-2 md:grid-cols-3">
                     {TERMS.map((t) => (
-                      <div key={t} className="rounded-xl border border-gold-light bg-cream/60 p-2">
+                      <div key={t} className="rounded-lg border border-gold-light p-2">
                         <p className="mb-1 px-1 text-xs font-semibold uppercase tracking-wide text-ink/70">{t}</p>
                         <ul className="space-y-1">
                           {us
@@ -519,20 +552,20 @@ function YearsView({ sp, years, year, units, active, onYear, onUnit, detailRef, 
   const label = (u: PlanUnit) => (u.kind === "spec" ? `${termOf(u)} · ${u.ref}` : u.halfTerm ? halfTermLabel(u.halfTerm) : "Not placed yet");
   return (
     <div className="space-y-4">
-      <div className="rounded-2xl border border-gold-light bg-white p-3">
+      <div>
         <Tabs variant="switch" items={years.map((y) => ({ key: y, label: yearShort(y) }))} value={year} onChange={onYear} label="Year group" />
       </div>
       <div className="grid gap-4 lg:grid-cols-[17rem_minmax(0,1fr)]">
-        <nav aria-label={`${sp.subject.name} units in ${yearLabel(year)}`} className="self-start rounded-2xl border border-gold-light bg-white p-2 lg:sticky lg:top-4">
+        <nav aria-label={`${sp.subject.name} units in ${yearLabel(year)}`} className="self-start lg:sticky lg:top-[76px]">
           <ol className="space-y-1">
             {units.map((u) => {
               const on = active?.key === u.key;
               const fy = u.kind === "syllabus" && isFoundingHalfTerm(u.halfTerm);
               return (
                 <li key={u.key}>
-                  <button type="button" aria-current={on ? "true" : undefined} onClick={() => onUnit(u)} className={`flex w-full flex-col rounded-xl px-3 py-2 text-left transition ${focusRing} ${on ? "bg-teal-700 text-white" : "text-ink hover:bg-cream"}`}>
-                    <span className={`flex items-center gap-1.5 text-[11px] font-semibold uppercase tracking-wide ${on ? "text-white/85" : "text-ink/65"}`}>
-                      {fy && <span aria-hidden="true" className={`h-1.5 w-1.5 rounded-full ${on ? "bg-white" : "bg-teal-500"}`} />}
+                  <button type="button" aria-current={on ? "true" : undefined} onClick={() => onUnit(u)} className={`flex w-full flex-col rounded-xl px-3 py-2 text-left transition ${focusRing} ${on ? "bg-white text-forest-900 shadow-[var(--portal-shadow-lift)]" : "text-ink hover:bg-[var(--portal-hover)]"}`}>
+                    <span className={`flex items-center gap-1.5 text-[11px] font-semibold uppercase tracking-wide ${on ? "text-forest-700" : "text-ink-500"}`}>
+                      {fy && <span aria-hidden="true" className={`h-1.5 w-1.5 rounded-full "bg-forest-500"`} />}
                       {label(u)}
                       {u.kind === "spec" && sp.specs.length > 1 ? ` · ${u.subject}` : ""}
                     </span>
@@ -565,7 +598,7 @@ function Chips({ items }: { items: string[] }) {
   );
 }
 
-function UnitDetail({ u, sp, detailRef, area, canEdit, prev, next, onUnit }: { u: PlanUnit; sp: SubjectPlan; detailRef: React.RefObject<HTMLElement | null>; area: string; canEdit: boolean; prev: PlanUnit | null; next: PlanUnit | null; onUnit: (u: PlanUnit) => void }) {
+function UnitDetail({ u, sp, detailRef, area, canEdit, prev = null, next = null, onUnit, bare = false }: { u: PlanUnit; sp: SubjectPlan; detailRef?: React.RefObject<HTMLElement | null>; area: string; canEdit: boolean; prev?: PlanUnit | null; next?: PlanUnit | null; onUnit?: (u: PlanUnit) => void; bare?: boolean }) {
   const spec = u.kind === "spec";
   const fy = !spec && isFoundingHalfTerm(u.halfTerm);
   const links = lessonLinks(u);
@@ -574,10 +607,11 @@ function UnitDetail({ u, sp, detailRef, area, canEdit, prev, next, onUnit }: { u
   const libHref = (l: { slug: string; year: string; unit: string }) => `/${area}/curriculum?year=${l.year}&subject=${encodeURIComponent(l.slug)}&unit=${encodeURIComponent(l.unit)}`;
   const h = `unit-${u.key.replace(/[^a-zA-Z0-9]/g, "")}`;
   return (
-    <article ref={detailRef} tabIndex={-1} aria-labelledby={h} className="min-w-0 self-start scroll-mt-4 rounded-2xl border border-gold-light bg-white focus:outline-none">
-      <header className="rounded-t-2xl border-b border-gold-light bg-cream/70 px-4 py-4 sm:px-6">
+    <article ref={detailRef} tabIndex={-1} aria-labelledby={bare ? undefined : h} aria-label={bare ? (spec ? u.title : focusTitle(u.title)) : undefined} className={bare ? "min-w-0 focus:outline-none" : "min-w-0 self-start scroll-mt-24 rounded-2xl border border-gold-light bg-white focus:outline-none"}>
+      {!bare && (
+      <header className="rounded-t-2xl border-b border-gold-light px-4 py-4 sm:px-6">
         <p className="flex flex-wrap items-center gap-2 text-xs font-semibold">
-          <span className="rounded-full bg-teal-700 px-2.5 py-0.5 uppercase tracking-wide text-white">{spec ? u.ref : halfTermLabel(u.halfTerm)}</span>
+          <span className="t-eyebrow !text-forest-800">{spec ? u.ref : halfTermLabel(u.halfTerm)}</span>
           {spec && <span className="text-ink/75">{[u.paper, u.term].filter(Boolean).join(" · ")}</span>}
           {!spec && u.halfTerm && <span className={fy ? "text-teal-900" : "text-ink/70"}>{fy ? "Taught in the founding year, 2027" : "From September 2027"}</span>}
         </p>
@@ -588,8 +622,9 @@ function UnitDetail({ u, sp, detailRef, area, canEdit, prev, next, onUnit }: { u
           {yearLabel(u.year)} · {spec ? u.subject : sp.subject.name}
         </p>
       </header>
+      )}
 
-      <div className="space-y-5 px-4 py-4 sm:px-6 sm:py-5">
+      <div className={bare ? "space-y-5" : "space-y-5 px-4 py-4 sm:px-6 sm:py-5"}>
         {spec ? (
           <section aria-labelledby={`${h}-pts`}>
             <h4 id={`${h}-pts`} className={eyebrow}>
@@ -655,13 +690,13 @@ function UnitDetail({ u, sp, detailRef, area, canEdit, prev, next, onUnit }: { u
         )}
 
         {!spec && (
-          <dl className="grid overflow-hidden rounded-xl border border-gold-light text-sm sm:grid-cols-3">
+          <dl className={`grid overflow-hidden rounded-lg border border-gold-light text-sm ${bare ? "" : "sm:grid-cols-3"}`}>
             {[
               ["Builds on", u.prereq],
               ["How it is checked", u.assess],
               ["Leads to", u.leadsTo],
             ].map(([k, v], n) => (
-              <div key={k} className={`px-3 py-2.5 ${n ? "border-t border-gold-light sm:border-l sm:border-t-0" : ""}`}>
+              <div key={k} className={`px-3 py-2.5 ${n ? (bare ? "border-t border-gold-light" : "border-t border-gold-light sm:border-l sm:border-t-0") : ""}`}>
                 <dt className="text-xs font-semibold uppercase tracking-wide text-ink/65">{k}</dt>
                 <dd className={`mt-0.5 ${v ? "text-ink" : "text-ink/60"}`}>{v || "Not recorded"}</dd>
               </div>
@@ -806,6 +841,7 @@ function UnitDetail({ u, sp, detailRef, area, canEdit, prev, next, onUnit }: { u
         </section>
       </div>
 
+      {!bare && onUnit && (
       <footer className="flex flex-wrap justify-between gap-2 border-t border-gold-light px-4 py-3 sm:px-6">
         {prev ? (
           <button type="button" className={`${ui.btnGhost} ${ui.sm}`} onClick={() => onUnit(prev)}>
@@ -820,6 +856,7 @@ function UnitDetail({ u, sp, detailRef, area, canEdit, prev, next, onUnit }: { u
           </button>
         )}
       </footer>
+      )}
     </article>
   );
 }

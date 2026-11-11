@@ -324,7 +324,7 @@ export function syllabusEntry(a: Area): GuideEntry {
     category: "Curriculum",
     purpose: "Schemes of work and exam specifications, subject by subject, with whole-school documents.",
     when: "To check what the specification requires, or download the curriculum overview.",
-    steps: ["Choose a subject.", "Read the long-term plan and select a unit for its detail.", "Download the whole-school documents (PDF) if you need them."],
+    steps: ["Choose a subject from the list (a dropdown on phones).", "Switch between Long-term plan, Year by year, Progression and Exams.", "Select a unit: it opens beside the plan, without leaving the page.", "Download the subject or whole-school documents (PDF) if you need them."],
     tips: ["To change a unit, use Edit in the Curriculum planner."],
     privacy: "Staff only.",
     related: [`/${a}/planner`, `/${a}/curriculum`],
