@@ -13,6 +13,7 @@ const args = process.argv.slice(2);
 const check = args.includes("--check");
 const report = (args.find((a) => a.startsWith("--report=")) || "").slice(9);
 const overrides = readJson(path.join(RES_DIR, "overrides.json"), {});
+const LINK = /\s*(https?:\/\/\S+)\s*/;
 
 /** Build the register for every term: Map term -> entries. */
 export function buildRegister() {
@@ -49,12 +50,16 @@ export function buildRegister() {
       if (!groups.has(g)) groups.set(g, []);
       groups.get(g).push(x);
     }
+    // A line may end with a link (the school's own SharePoint decks): the title leaves it out, the wording keeps it whole.
+    const link = LINK.exec(u.text);
     for (const [g, list] of groups) {
-      const base = normTitle(u.text);
+      const base = normTitle(link ? u.text.replace(LINK, " ") : u.text);
       let title = u.via === "homework" ? `Homework, lesson ${list[0].n}: ${base}` : base;
       if (scope === "unit" && u.via !== "homework") title = `${base}: ${list[0].unit.replace(/^(spring|summer|autumn) \d:\s*/i, "")}`;
       if (scope === "lesson" && u.via !== "homework") title = `${base} (lesson ${list[0].n})`;
-      let id = `${u.subjectSlug}-${u.year}-${slug(u.via === "homework" ? `homework ${list[0].n} ${base}` : base, 48)}${g ? `-${g}` : ""}`;
+      // Linked school files share a long prefix ("School's own deck (staff only, ...)"): name them by what follows it.
+      const idText = u.via === "homework" ? `homework ${list[0].n} ${base}` : link ? `school ${base.replace(/^[^:]*:\s*/, "")}` : base;
+      let id = `${u.subjectSlug}-${u.year}-${slug(idText, 48)}${g ? `-${g}` : ""}`;
       if (seen.has(id)) id = `${id}-${shortHash(u.text + g)}`;
       seen.add(id);
       const o = overrides[id] || {};
@@ -82,8 +87,9 @@ export function buildRegister() {
           via: u.via,
           source,
           status: source === "generated" ? (made ? "made" : "to make") : source === "school" ? "in school files" : "ready",
-          wording: u.text.length > 220 ? `${u.text.slice(0, 217)}...` : u.text,
-          ...(item ? { item: path.relative(path.dirname(ITEMS_DIR), item).replace(/\\/g, "/") } : {}),
+          wording: link || u.text.length <= 220 ? u.text : `${u.text.slice(0, 217)}...`,
+          ...(link ? { url: link[1] } : {}),
+          ...(item ?{ item: path.relative(path.dirname(ITEMS_DIR), item).replace(/\\/g, "/") } : {}),
         });
       }
     }

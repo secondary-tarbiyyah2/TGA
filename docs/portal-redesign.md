@@ -41,7 +41,7 @@ Brief: `docs/owner-briefs/2026-11-11-feedback-2.md`. Branches `claude/fb2-msg-*`
    dates (computed from the Hijri calendar: new year, Ashura, Ramadan, Eid al-Fitr, Dhul Hijjah, Arafah, Eid
    al-Adha), meetings (also parents' evenings), admissions (also open evenings; staff only). The category chips are
    the legend and the filter (remembered in the browser). Views: Month (Hijri month, Gregorian small, named bars in
-   category colours; dots on phones), Week (seven columns on wide screens), Agenda (the next six weeks). Add to
+   category colours; dots on phones), Week (a timetable grid on wide screens: a time rail, a column per school day, an all-day strip, items placed by their times; structure only from the SchoolMS idea in feedback 3, in TGA's own look; a list per day on phones), Agenda (the next six weeks). Add to
    calendar opens `calendar/EventDialog` (fits the screen; Enter saves, Escape closes). Announcements left the
    calendar (they are notices, not dates; they stay on Announcements and Today).
 
