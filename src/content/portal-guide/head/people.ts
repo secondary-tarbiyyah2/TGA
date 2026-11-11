@@ -9,6 +9,7 @@ export const HEAD_DASHBOARD: GuideEntry = {
   when: "First thing every morning.",
   steps: [
     "Read the figures: lessons today, need attention, lessons to approve and curriculum approved.",
+    "Below them, press Registers today, Safeguarding, Admissions, Cover today or Approvals: the list behind it opens over Today, each with its own button.",
     "Check today's lessons for Register missing, and press Take register on the lesson: its register opens over Today.",
     "Open Waiting for you for the full list of jobs.",
     "Glance at Recent activity, or open the Full audit log.",
@@ -18,6 +19,7 @@ export const HEAD_DASHBOARD: GuideEntry = {
   related: ["/admin/actions", "/admin/attendance", "/admin/curriculum/review"],
   showMe: [
     { target: "admin-stats", label: "Figures", say: "Lessons today, things needing attention and curriculum progress." },
+    { target: "head-modules", label: "Today at a glance", say: "Registers, safeguarding, admissions, cover and approvals; press one for its list." },
     { target: "admin-lessons-today", label: "Lessons today", say: "Every lesson today with its register status." },
     { target: "waiting-widget", label: "Waiting for you", say: "The most urgent jobs, with a link to all of them." },
   ],
