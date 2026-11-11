@@ -119,7 +119,7 @@ Deno.serve(async (req) => {
         emailNote = "This family has no email address on file.";
       } else {
         const html = emailShell(`
-          <h2 style="margin:0 0 12px;font-size:20px;">&#9733; ${esc(firstName)} is Star of the Week!</h2>
+          <h2 style="margin:0 0 12px;font-size:20px;">${esc(firstName)} is Star of the Week!</h2>
           <p style="margin:0 0 12px;">Assalamu alaykum${parent.full_name ? ` ${esc(parent.full_name)}` : ""},</p>
           <p style="margin:0 0 12px;">We are delighted to share that <strong>${esc(fullName)}</strong> has been chosen as Star of the Week${cls?.name ? ` in ${esc(cls.name)}` : ""}.</p>
           <p style="margin:0 0 12px;padding:10px 12px;background:#FDF6E3;border-left:3px solid #B08E45;"><em>${esc(star.reason)}</em></p>
