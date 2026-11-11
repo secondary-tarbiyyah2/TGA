@@ -164,7 +164,7 @@ export const FIT_CHECK = {
     timezoneEdge: (localStart: string, localEnd: string) =>
       `Live lessons would run from ${localStart} to ${localEnd} where you are. That is workable, but early starts or late finishes can wear on a child over a term, so think about how it would feel every day.`,
     timezoneLate: (localStart: string, localEnd: string) =>
-      `Live lessons would run from ${localStart} to ${localEnd} where you are. That is outside the hours most children learn well, and it is the first thing we would want to talk through. Families in other time zones can ask about the Academy's flexible learning options, but we cannot promise they will suit every year group.`,
+      `Live lessons would run from ${localStart} to ${localEnd} where you are. That is outside the hours most children learn well, and it is the first thing we would want to talk through. Families in other time zones can ask about flexible learning, which is offered subject to availability, so we cannot promise it for every year group.`,
     setupReady: "You already have the quiet space and the device with a camera that live lessons need.",
     arrangeDevice: "You will need the quiet space and the device with a camera ready for induction week, 4 to 8 January 2027.",
     noDevice:
