@@ -85,8 +85,8 @@ export function Tabs<K extends string>({
 
   const listCls =
     variant === "line"
-      ? "portal-tabs flex gap-1 overflow-x-auto border-b border-gold-light"
-      : `portal-tabs ${fill ? "flex" : "inline-flex max-w-full"} gap-1 overflow-x-auto rounded-xl border border-gold-light bg-cream p-1`;
+      ? "portal-tabs flex gap-4 overflow-x-auto border-b border-gold-light"
+      : `portal-tabs ${fill ? "flex" : "inline-flex max-w-full"} gap-0.5 overflow-x-auto rounded-lg bg-[var(--portal-sunken)] p-[3px]`;
 
   return (
     <div ref={listRef} role="tablist" aria-label={label} data-guide={guide} className={`${listCls} ${more ? "portal-tabs--more" : ""} ${className}`}>
@@ -94,11 +94,11 @@ export function Tabs<K extends string>({
         const selected = t.key === value;
         const tabCls =
           variant === "line"
-            ? `-mb-px inline-flex min-h-11 shrink-0 items-center whitespace-nowrap border-b-2 px-3 text-sm font-medium transition-colors ${
-                selected ? "border-teal-700 text-ink" : "border-transparent text-ink/65 hover:border-ink/20 hover:text-ink"
+            ? `-mb-px inline-flex min-h-11 shrink-0 items-center whitespace-nowrap border-b-2 px-0.5 text-sm transition-colors duration-150 ${
+                selected ? "border-forest-700 font-semibold text-ink" : "border-transparent font-medium text-ink-500 hover:border-ink/20 hover:text-ink"
               }`
-            : `${fill ? "flex-1" : "shrink-0"} inline-flex min-h-10 items-center justify-center whitespace-nowrap rounded-lg px-3 text-sm font-medium transition-colors sm:min-h-8 ${
-                selected ? "bg-white text-ink shadow-sm" : "text-ink/65 hover:text-ink"
+            : `${fill ? "flex-1" : "shrink-0"} inline-flex min-h-10 items-center justify-center whitespace-nowrap rounded-md px-3 text-[0.8125rem] font-medium transition-[background-color,color,box-shadow] duration-150 sm:min-h-8 ${
+                selected ? "bg-white text-ink shadow-[var(--portal-shadow-lift)]" : "text-ink-500 hover:text-ink"
               }`;
         return (
           <button
@@ -118,7 +118,7 @@ export function Tabs<K extends string>({
           >
             {t.label}
             {t.count !== undefined && (
-              <span className={`ml-1.5 rounded-full px-1.5 py-0.5 text-xs tabular-nums ${t.countAlert && t.count > 0 ? "bg-red-50 text-red-800" : selected && variant === "line" ? "bg-teal-100 text-teal-900" : "bg-white/70 text-ink/65"}`}>
+              <span className={`ml-1.5 rounded-full px-1.5 py-0.5 text-xs tabular-nums ${t.countAlert && t.count > 0 ? "bg-red-50 text-red-800" : selected && variant === "line" ? "bg-forest-100 text-forest-900" : "bg-[var(--portal-sunken)] text-ink-500"}`}>
                 {t.count}
               </span>
             )}

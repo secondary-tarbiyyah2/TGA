@@ -281,10 +281,10 @@ export function Dialog({
   const width = size === "sm" ? "max-w-md" : size === "lg" ? "max-w-3xl" : "max-w-lg";
   return (
     <div className="portal fixed inset-0 z-[90] flex items-end justify-center sm:items-center sm:p-4">
-      <button type="button" aria-label="Close" tabIndex={-1} onClick={onClose} className="absolute inset-0 bg-ink/50" />
-      <div ref={ref} role="dialog" aria-modal="true" aria-labelledby={titleId} className={`relative flex max-h-[92vh] w-full ${width} flex-col overflow-hidden rounded-t-2xl bg-white shadow-xl sm:rounded-2xl`}>
+      <button type="button" aria-label="Close" tabIndex={-1} onClick={onClose} className="portal-scrim absolute inset-0 bg-ink/40" />
+      <div ref={ref} role="dialog" aria-modal="true" aria-labelledby={titleId} className={`portal-menu relative flex max-h-[92vh] w-full ${width} flex-col overflow-hidden rounded-t-2xl bg-white shadow-xl sm:rounded-xl`}>
         <div className="px-5 pb-2 pt-5">
-          <h2 id={titleId} className="text-base font-semibold text-ink">
+          <h2 id={titleId} className="t-section text-base">
             {title}
           </h2>
           {description && <div className="mt-1 text-sm text-ink/70">{description}</div>}
@@ -447,15 +447,10 @@ export function useConfirm(): (o: ConfirmOptions) => Promise<boolean> {
  * screen readers. `lines` sets how tall it is; `bare` drops the card.
  */
 export function Loading({ label = "Loading", lines = 3, bare = false, className = "" }: { label?: string; lines?: number; bare?: boolean; className?: string }) {
-  const widths = ["w-11/12", "w-4/5", "w-2/3", "w-3/4", "w-1/2"];
   return (
-    <div role="status" aria-live="polite" className={`${bare ? "" : "rounded-2xl border border-gold-light bg-white p-4 sm:p-5"} ${className}`}>
-      <span className="sr-only">{label.replace(/…$/, "")}…</span>
-      <div aria-hidden="true" className="space-y-2.5">
-        {Array.from({ length: Math.max(1, lines) }, (_, i) => (
-          <div key={i} className={`h-3 rounded-full bg-ink/[0.07] motion-safe:animate-pulse ${widths[i % widths.length]}`} />
-        ))}
-      </div>
+    <div role="status" aria-live="polite" className={`flex flex-col items-center justify-center gap-2.5 ${bare ? "py-4" : "rounded-2xl border border-dashed border-gold-light px-5"} ${className}`} style={bare ? undefined : { minHeight: `${Math.max(4.5, Math.min(lines, 8) * 1.5)}rem` }}>
+      <div className="portal-progress w-28" aria-hidden="true" />
+      <p className="t-meta">{label.replace(/\u2026$|\.\.\.$/, "")}</p>
     </div>
   );
 }
@@ -474,7 +469,7 @@ export function StatTile({ value, label, hint, href, tone = "neutral" }: { value
   );
   const cls = "block min-w-0 px-4 py-3.5";
   return href ? (
-    <Link href={href} className={`${cls} rounded-lg transition-colors hover:bg-cream`}>
+    <Link href={href} className={`${cls} transition-colors hover:bg-cream`}>
       {body}
     </Link>
   ) : (

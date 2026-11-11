@@ -55,7 +55,7 @@ export function DashboardHero({ subtitle, chips = [], area }: { subtitle?: strin
         {weekday} {date}
         {area ? <> · {AREA_WORKSPACE[area]}</> : null}
       </p>
-      <h1 id="dash-greeting" className="portal-display mt-1 text-[1.75rem] font-semibold leading-tight text-forest-900 sm:text-[2.125rem]">
+      <h1 id="dash-greeting" className="portal-display mt-1 text-[1.5rem] font-semibold leading-tight text-ink sm:text-[1.625rem]">
         {greeting}
         {firstName ? `, ${firstName}` : ""}
       </h1>
