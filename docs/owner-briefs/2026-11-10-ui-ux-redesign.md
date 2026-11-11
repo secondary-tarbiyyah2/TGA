@@ -518,3 +518,12 @@ The final result should look and feel like a product that a professional product
 ---
 
 Owner addition (10 Nov 2026, 20:36): the Syllabus pages are annoying because they send you to different pages. Change it entirely: one page, everything reachable in place.
+
+---
+
+Owner feedback (11 Nov 2026, 08:28), screenshot docs/owner-briefs/2026-11-11-curriculum-map-feedback.png:
+"I don't like the fact that options are on top and across (Curriculum etc). Also some buttons, when I press, for
+example Set homework, take me to a separate page. I hate the pages themselves."
+Meaning: (1) remove the horizontal secondary tab strips (Curriculum map / Lesson library / ... across the top; the
+sidebar already lists these, so the strip duplicates it); (2) actions open in place (side panel / sheet / dialog) on
+the page you are on, never a separate page; (3) rethink the pages so you rarely leave where you are.
