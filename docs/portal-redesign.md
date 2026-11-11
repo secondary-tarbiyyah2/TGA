@@ -44,7 +44,12 @@ action and location, gold only as a marker, one status language (dot and word), 
    narrow ones; a unit opens in a `SidePanel` (new in `kit.tsx`). Years 10 and 11 use the board's three terms. Loading is
    a progress line and a sentence (never shaped like the map), errors offer Try again, and an empty year points to the
    Planner. Address keeps `year`, `view`, `subject` and `unit`. The guide's `map-view` and `map-grid` targets are kept.
-3. [ ] Syllabus as one page (subject, year, view and unit all in place; old links still work).
+3. [x] Syllabus as one page (PR "Portal redesign 2: Syllabus on one page"; owner: "one page, everything reachable in
+   place"). No subject-grid landing: the subject list stays on the left (a dropdown on phones) with the whole-school
+   documents under it; the subject's facts and documents sit in a compact header; Long-term plan, Year by year,
+   Progression and Exams are tabs; a unit picked on the long-term plan opens in a side panel (previous and next unit,
+   "Open in Year by year") instead of switching view. Same route; the address still uses `subject`, `view`, `year`
+   and `unit`, so older links open the same view (a `unit` on the long-term plan opens its panel).
 4. [ ] Component consistency pass (tabs, empty and loading states, dialogs, menus, status chips) and the other
    curriculum pages.
 

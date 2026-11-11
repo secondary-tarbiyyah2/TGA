@@ -11,8 +11,8 @@ export default function TeachSyllabusPage() {
       <LearnGate allowedRoles={["teacher", "teaching_assistant_cover"]}>
         <LearnShell role="teach">
           <PageHeader
-            title="Syllabus and specifications"
-            subtitle="What each subject teaches from Year 1 to Year 11: the long-term plan half term by half term, every unit with its week-by-week plan, and the curriculum document to print or download."
+            title="Syllabus"
+            subtitle="What each subject teaches from Year 1 to Year 11: the long-term plan, every unit week by week, progression and exams, all on this page."
           />
           <SyllabusBrowser area="teach" />
         </LearnShell>
