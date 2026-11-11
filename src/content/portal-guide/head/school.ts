@@ -286,11 +286,11 @@ export const HEAD_STAFF: GuideEntry[] = [
     purpose: "Staff profiles, roles and compliance dates (DBS, safeguarding training, right to work).",
     when: "When someone joins, changes role, or a check is due.",
     steps: ["Choose a member of staff.", "Update Name and contact, Roles and Vetting and training.", "Turn on Designated Safeguarding Lead for the right person.", "Save."],
-    tips: ["Only the Headteacher can change roles.", "Add new staff in Accounts and sign-ins first; their profile then appears here."],
+    tips: ["Only the Headteacher can change roles.", "Add new staff in Accounts and sign-ins first; their profile then appears here.", "Tick Digital Lead for the person who reviews the audit log; it opens the Audit log page read only and nothing else."],
     privacy: "Head teacher and admin only. Families see only the public profile a teacher writes.",
     related: ["/admin/people", "/admin/compliance", "/admin/staff-attendance"],
     showMe: [{ target: "staff-list", label: "Staff", say: "Choose someone to edit." }],
-    tasks: ["change a role", "DBS date"],
+    tasks: ["change a role", "DBS date", "name the Digital Lead"],
   },
   {
     href: "/admin/staff-attendance",
