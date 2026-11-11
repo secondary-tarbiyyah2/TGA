@@ -7,7 +7,7 @@ appliesTo: All parents and fee-payers of pupils at Tarbiyyah Global Academy
 owner: Headteacher, with the finance team
 approvedBy: Ustadh Abu Zayn Haneef Sandhar, Headteacher
 agreedWith: The Chair of Trustees, Tarbiyyah Education Trust
-dateOfIssue: 1 September 2026 (version 1.4)
+dateOfIssue: 1 September 2026 (version 1.5)
 nextReview: 31 August 2027
 basis: Tarbiyyah Global Academy Fee Policy (September 2026), updated in October 2026 to the founding-cohort fees, charges and payment dates published in the Prospectus 2026–27 (live lessons from 11 January 2027)
 readAlongside: Admissions Policy; Flexible Learning Policy; Examinations and Private Candidates Policy; Concerns and Complaints Policy
@@ -38,7 +38,7 @@ The two payments are due on Friday 8 January 2027 and Sunday 28 March 2027. Mont
 | Application fee | £150 per child, non-refundable, payable when applying. It covers the entry assessment and the time spent with each family. There is no registration fee. |
 | Annual payment discount | 2% discount where the annual option is chosen and paid in full by Friday 8 January 2027 |
 | Sibling discount | 5% off tuition for a second child and 10% for the third and later children, applied to the younger sibling's tuition. It can be combined with the annual payment discount |
-| Examination fees | Not included. International GCSE entry fees are billed separately by the examination centre (see the Examinations and Private Candidates Policy) |
+| Examination fees | Not included. International GCSE entry fees are paid by families directly to the examination centre they register with (see the Examinations and Private Candidates Policy) |
 
 ## 4. Payment Dates
 
@@ -67,7 +67,7 @@ One half term's written notice is required to withdraw a pupil, and fees remain 
 
 1. Fees cover tuition and core digital learning materials, including lesson resources, worksheets and assessments on the Academy's platforms. The Academy gives at least one half term's notice before adding any item to the costs not covered by fees.
 2. Families provide a suitable device, reliable internet, a quiet study space and a way to write on worksheets and the lesson PDF (a tablet with a stylus is recommended; without one, access to printing is required, at home, at a local library or similar), to the published minimum specification. The Academy is not responsible for lessons missed because of a family's equipment or connection.
-3. Examination costs are not included. Pupils are entered for International GCSE examinations through Tarbiyyah Secondary School as the examination centre, or through another centre arranged for pupils outside the UK, and the centre's entry fees are billed separately.
+3. Examination costs are not included. Families register their child as a private candidate at an approved Pearson Edexcel centre near them, in the UK or abroad, and pay that centre's entry fees directly. The Academy helps families find a centre free of charge but does not book or pay for entries (see the Examinations and Private Candidates Policy).
 4. Extra-curricular activities or additional support with a charge are agreed with parents in writing in advance. No such charge is applied without prior written agreement.
 5. Each fee-payer is liable for the full fees and any agreed supplementary charges, unless the Academy has agreed otherwise in writing.
 6. Fees fall due on the dates above and are paid in full by standing order, card or bank transfer.

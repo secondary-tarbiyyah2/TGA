@@ -218,7 +218,7 @@ export const FIT_CHECK = {
           "A tablet with a stylus, so your child can write on worksheets and the lesson PDF each day (recommended: any tablet that takes a stylus, or a basic graphics tablet that plugs into the laptop). Without one, access to printing is required: at home, at a local library or similar",
         adult: "An adult nearby during live lessons (Years 1 to 6)",
         ks1Parent: "Time for a parent to guide the away-from-screen activities sent home each week (Years 1 and 2)",
-        exams: "An exam centre for International GCSE exams (Years 10 and 11): pupils in the UK sit them at Tarbiyyah Secondary School as their exam centre, and families outside the UK get help finding and registering with an approved centre nearby",
+        exams: "An exam centre for International GCSE exams (Years 10 and 11): you register your child as a private candidate at an approved centre near you, in the UK or abroad, and pay its entry fees. We help for free with a list of centres, the deadlines and the entry codes",
         support: "Details of any support your child already receives, so we can draw up a support plan together",
       },
     },
