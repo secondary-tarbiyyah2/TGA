@@ -1,0 +1,93 @@
+{
+ "id": "science-y9-pendulum-results-sheet-with-example-data-and-ans",
+ "title": "Pendulum results sheet with example data",
+ "type": "worksheet",
+ "subject": "Science",
+ "subjectSlug": "science",
+ "year": "y9",
+ "unit": "Summer 1: Review of Key Stage 3 and working scientifically (9C)",
+ "lessons": [
+  48
+ ],
+ "source": "Written for science/y9 lesson 48 (Pendulum results sheet with example data and answers (portal worksheet))",
+ "intro": "Lesson 48. Use your own results or the example data. Circle anomalies, find means and ranges, then draw a line graph.",
+ "blocks": [
+  {
+   "table": {
+    "head": [
+     "Length (cm)",
+     "10 swings, 1 (s)",
+     "2 (s)",
+     "3 (s)",
+     "Mean (s)",
+     "Range (s)"
+    ],
+    "rows": [
+     [
+      "25",
+      "10.1",
+      "9.9",
+      "10.0",
+      "",
+      ""
+     ],
+     [
+      "50",
+      "14.3",
+      "14.1",
+      "19.6",
+      "",
+      ""
+     ],
+     [
+      "75",
+      "17.3",
+      "17.6",
+      "17.4",
+      "",
+      ""
+     ],
+     [
+      "100",
+      "20.0",
+      "20.2",
+      "20.1",
+      "",
+      ""
+     ]
+    ]
+   }
+  },
+  {
+   "answers": "25 cm: mean 10.0, range 0.2; 50 cm: mean 14.2 (19.6 is an anomaly), range 0.2; 75 cm: mean 17.4, range 0.3; 100 cm: mean 20.1, range 0.2"
+  },
+  {
+   "grid": {
+    "kind": "graph",
+    "xMin": 0,
+    "xMax": 100,
+    "yMin": 0,
+    "yMax": 25,
+    "xStep": 25,
+    "yStep": 5,
+    "xLabel": "Length (cm)",
+    "yLabel": "Mean time for 10 swings (s)",
+    "height": 100
+   }
+  },
+  {
+   "questions": [
+    {
+     "q": "Describe the pattern. Is time proportional to length?",
+     "a": "Time rises with length but not proportionally: doubling from 25 to 50 cm does not double the time.",
+     "marks": 2
+    },
+    {
+     "q": "Suggest two ways to reduce random error.",
+     "a": "Time 20 swings; use a marker at the centre; video and count frames.",
+     "marks": 2
+    }
+   ]
+  }
+ ]
+}

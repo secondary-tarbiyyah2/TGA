@@ -1,0 +1,202 @@
+{
+ "id": "gcse-science-y10-squared-paper-for-sankey-diagrams",
+ "title": "Squared paper for Sankey diagrams",
+ "type": "printable graph/grid",
+ "subject": "Science (GCSE Biology, Chemistry, Physics)",
+ "subjectSlug": "gcse-science",
+ "year": "y10",
+ "board": "Edexcel IGCSE 4BI1 · 4CH1 · 4PH1 · 4SD0",
+ "unit": "Summer 1: Photosynthesis, salts and energy",
+ "lessons": [
+  120
+ ],
+ "source": "Written for gcse-science/y10 lesson 120 (Squared paper for Sankey diagrams (portal printable))",
+ "intro": "Lesson 120: Efficiency and Sankey diagrams. Read the ideas from the lesson, then do the tasks.",
+ "blocks": [
+  {
+   "h": "Squared paper for Sankey diagrams"
+  },
+  {
+   "grid": {
+    "kind": "squared",
+    "size": 5,
+    "height": 120
+   }
+  },
+  {
+   "text": "Choose a scale, for example 1 small square = 10 J. Draw the input arrow, then split it into useful and wasted arrows whose widths add up to the input."
+  },
+  {
+   "h": "Efficiency (4.4)"
+  },
+  {
+   "model": {
+    "title": "A motor takes in 200 J and does 50 J of useful work.",
+    "parts": [
+     {
+      "text": "Efficiency = useful output ÷ total output × 100%"
+     },
+     {
+      "text": "50 ÷ 200 × 100"
+     },
+     {
+      "label": "Why it works",
+      "text": "25%"
+     }
+    ]
+   }
+  },
+  {
+   "panels": [
+    {
+     "title": "Sankey diagrams (4.5)",
+     "points": [
+      "Input on the left",
+      "Useful arrow straight on",
+      "Wasted arrows bend down",
+      "Widths drawn to scale"
+     ]
+    }
+   ],
+   "cols": 1
+  },
+  {
+   "h": "Example devices"
+  },
+  {
+   "grid": {
+    "kind": "barchart",
+    "cats": [
+     "Filament bulb",
+     "LED",
+     "Electric motor",
+     "Car engine",
+     "Electric heater"
+    ],
+    "yMax": 100,
+    "yStep": 10,
+    "yLabel": "%",
+    "xLabel": "Typical efficiency",
+    "values": [
+     5,
+     80,
+     75,
+     30,
+     100
+    ],
+    "line": false
+   }
+  },
+  {
+   "bullets": [
+    "Typical efficiencies"
+   ]
+  },
+  {
+   "panels": [
+    {
+     "title": "Improving efficiency",
+     "points": [
+      "Lubricate moving parts",
+      "Insulate to cut heat loss",
+      "Streamline to cut air resistance"
+     ]
+    }
+   ],
+   "cols": 1
+  },
+  {
+   "h": "Key words"
+  },
+  {
+   "keywords": [
+    {
+     "term": "efficiency",
+     "def": "useful energy output ÷ total energy output × 100%"
+    },
+    {
+     "term": "Sankey diagram",
+     "def": "arrow diagram whose widths show energy amounts"
+    },
+    {
+     "term": "useful energy",
+     "def": "energy transferred to the store we want"
+    },
+    {
+     "term": "wasted energy",
+     "def": "energy transferred to stores we do not want"
+    },
+    {
+     "term": "lubrication",
+     "def": "reducing friction with oil or grease"
+    }
+   ]
+  },
+  {
+   "h": "We do"
+  },
+  {
+   "questions": [
+    {
+     "q": "An LED gets 20 J and gives 16 J of light. Efficiency as a decimal and a percentage?",
+     "a": "0.8, 80%"
+    },
+    {
+     "q": "Why can efficiency not exceed 100%?",
+     "a": "Energy cannot be created"
+    },
+    {
+     "q": "Give one way to make a bicycle more efficient.",
+     "a": "Oil the chain"
+    }
+   ]
+  },
+  {
+   "h": "You do"
+  },
+  {
+   "questions": [
+    {
+     "q": "Core: Draw Sankey diagrams to scale for three devices and answer the 4SD0-style questions (12 marks).",
+     "a": "Correct widths; marked questions"
+    },
+    {
+     "q": "Extend: A 60% efficient motor must deliver 300 J of useful work. Total input?",
+     "a": "500 J"
+    },
+    {
+     "q": "Stretch: Evaluate replacing ten 60 W filament bulbs with 8 W LEDs. (3)",
+     "a": "Same light, less input; less heat wasted; lower bills; upfront cost repaid"
+    }
+   ]
+  },
+  {
+   "h": "Check"
+  },
+  {
+   "questions": [
+    {
+     "q": "A device has 400 J input and 300 J wasted. Efficiency?",
+     "options": [
+      "25%",
+      "75%",
+      "133%"
+     ],
+     "a": "A) 25%. Useful = 100 J; 100 ÷ 400 = 25%."
+    },
+    {
+     "q": "Efficiency of 30 J useful from 120 J total?",
+     "a": "25%",
+     "options": [
+      "25%",
+      "40%"
+     ]
+    },
+    {
+     "q": "Big question: where does 95% of a filament bulb's energy go?",
+     "a": "Dissipated as thermal energy."
+    }
+   ]
+  }
+ ]
+}

@@ -1,0 +1,86 @@
+{
+ "id": "science-y8-appliance-cost-calculations-sheet-with-answers-p",
+ "title": "Appliance cost calculations (example price 25p per kWh)",
+ "type": "worksheet",
+ "subject": "Science",
+ "subjectSlug": "science",
+ "year": "y8",
+ "unit": "Summer 1: Metals and their uses (8G); energy transfers (8K)",
+ "lessons": [
+  56
+ ],
+ "source": "Written for science/y8 lesson 56 (Appliance cost calculations sheet with answers (portal worksheet; example price 25p per kWh))",
+ "intro": "Lesson 56. Energy (kWh) = power (kW) × time (hours). Cost = kWh × price.",
+ "blocks": [
+  {
+   "table": {
+    "head": [
+     "Appliance",
+     "Power (kW)",
+     "Time a day (h)",
+     "Energy (kWh)",
+     "Cost a day"
+    ],
+    "rows": [
+     [
+      "Kettle",
+      "3",
+      "0.2",
+      "",
+      ""
+     ],
+     [
+      "Fridge",
+      "0.1",
+      "24",
+      "",
+      ""
+     ],
+     [
+      "Television",
+      "0.1",
+      "4",
+      "",
+      ""
+     ],
+     [
+      "Washing machine",
+      "2",
+      "1",
+      "",
+      ""
+     ],
+     [
+      "LED bulb",
+      "0.01",
+      "5",
+      "",
+      ""
+     ]
+    ]
+   }
+  },
+  {
+   "answers": "Kettle: 3 × 0.2 = 0.6 kWh; 0.6 × 25p = 15p. Fridge: 0.1 × 24 = 2.4 kWh; 2.4 × 25p = 60p. Television: 0.1 × 4 = 0.4 kWh; 0.4 × 25p = 10p. Washing machine: 2 × 1 = 2 kWh; 2 × 25p = 50p. LED bulb: 0.01 × 5 = 0.05 kWh; 0.05 × 25p = 1.25p"
+  },
+  {
+   "questions": [
+    {
+     "q": "Which appliance costs the most a day?",
+     "a": "The fridge (60p), because it is on all day",
+     "marks": 1
+    },
+    {
+     "q": "A 60 W bulb is on 8 hours a day for a year. Find the cost at 25p per kWh.",
+     "a": "0.06 kW × 8 × 365 = 175.2 kWh; × 25p = £43.80",
+     "marks": 3
+    },
+    {
+     "q": "A filament bulb is 10% efficient and an LED is 80% efficient. Why switch?",
+     "a": "The LED wastes far less energy as heat, so it costs less to run for the same light.",
+     "marks": 2
+    }
+   ]
+  }
+ ]
+}
