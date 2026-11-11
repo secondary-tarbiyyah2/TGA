@@ -1,4 +1,4 @@
--- Run via `supabase test db`. Covers 0217 (online payments, T71): references
+-- Run via `supabase test db`. Covers 0218 (online payments, T71): references
 -- (family TGA-F-, pupil TGA-P-, invoice TGA-INV-), the application fee charge,
 -- RLS (families see only their own account; finance tables are head teacher
 -- and admin only; nobody writes payments directly), the audited manual

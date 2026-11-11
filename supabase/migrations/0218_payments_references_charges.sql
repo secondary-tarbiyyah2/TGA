@@ -1,4 +1,4 @@
--- 0217: online payments through Stripe (T71, owner 11 Nov 2026: "we want all
+-- 0218: online payments through Stripe (T71, owner 11 Nov 2026: "we want all
 -- payments to be online ... think about references for students and generate a
 -- system so it's easy to ensure payments have been done, account for everything").
 -- See docs/payments.md.

@@ -1,6 +1,6 @@
 import type { StatusKind } from "@/components/learn/ui";
 
-/** A charge's status as stored in fee_charges.status (migration 0217). */
+/** A charge's status as stored in fee_charges.status (migration 0218). */
 export type ChargeState = "due" | "overdue" | "processing" | "paid" | "part_paid" | "failed" | "refunded" | "waived" | "void";
 
 export const CHARGE_STATES: ChargeState[] = ["due", "overdue", "processing", "paid", "part_paid", "failed", "refunded", "waived", "void"];
