@@ -194,7 +194,7 @@ export function DataTable<T>({
       {rows === null ? (
         <LoadingState label={`Loading ${caption.toLowerCase()}`} />
       ) : shown.length === 0 ? (
-        <div className="flex items-center gap-3 rounded-2xl border border-dashed border-gold-light bg-white px-4 py-6 text-sm text-ink/70 sm:px-5">
+        <div className="flex items-center gap-3 rounded-2xl border border-dashed border-[var(--portal-control-line)] bg-white px-4 py-6 text-sm text-ink-500 sm:px-5">
           <span className="portal-tile tile-gold shrink-0" aria-hidden="true">
             <Icon name={rows.length === 0 ? "inbox" : "search"} size="sm" />
           </span>
@@ -206,8 +206,8 @@ export function DataTable<T>({
           <div className="hidden overflow-x-auto rounded-2xl border border-gold-light bg-white sm:block">
             <table className="w-full text-sm">
               <caption className="sr-only">{caption}</caption>
-              <thead className="sticky top-0 z-[1] bg-cream/70 backdrop-blur-sm">
-                <tr className="border-b border-gold-light">
+              <thead className="sticky top-0 z-[1] bg-white/95 backdrop-blur-sm">
+                <tr className="border-b border-[var(--portal-line)]">
                   {bulkActions && (
                     <th scope="col" className="w-10 px-4 py-2.5">
                       <input type="checkbox" checked={allOnPage} onChange={tickPage} aria-label="Tick every row on this page" className="h-4 w-4 accent-[var(--color-forest-700)]" />
@@ -220,7 +220,7 @@ export function DataTable<T>({
                         key={c.key}
                         scope="col"
                         aria-sort={active ? (sort!.dir === "asc" ? "ascending" : "descending") : c.sort ? "none" : undefined}
-                        className={`whitespace-nowrap px-4 py-2.5 text-xs font-semibold uppercase tracking-wide text-ink/70 ${alignCls(c.align)}`}
+                        className={`whitespace-nowrap px-4 py-3 text-xs font-semibold uppercase tracking-[0.04em] text-ink-500 ${alignCls(c.align)}`}
                       >
                         {c.sort ? (
                           <button type="button" onClick={() => toggleSort(c.key)} className={`-mx-1 inline-flex items-center gap-1 rounded px-1 uppercase tracking-wide hover:text-teal-700 ${active ? "text-teal-700" : ""}`}>
@@ -237,10 +237,10 @@ export function DataTable<T>({
               </thead>
               <tbody>
                 {pageRows.map((r) => (
-                  <tr key={rowKey(r)} onClick={rowClick(r)} className={`border-t border-gold-light/50 align-top hover:bg-cream/60 ${clickCls} ${rowClassName?.(r) || ""}`}>
+                  <tr key={rowKey(r)} onClick={rowClick(r)} className={`border-t border-[var(--portal-line-soft)] align-top hover:bg-[var(--portal-row-hover)] ${clickCls} ${rowClassName?.(r) || ""}`}>
                     {bulkActions && <td className="w-10 px-4 py-2.5">{tickBox(r)}</td>}
                     {columns.map((c) => (
-                      <td key={c.key} className={`px-4 py-2.5 text-ink ${alignCls(c.align)} ${c.align === "right" ? "tabular-nums" : ""} ${c.className || ""}`}>
+                      <td key={c.key} className={`px-4 py-3 text-ink ${alignCls(c.align)} ${c.align === "right" ? "tabular-nums" : ""} ${c.className || ""}`}>
                         {c.cell(r)}
                       </td>
                     ))}
