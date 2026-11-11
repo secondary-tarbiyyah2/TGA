@@ -278,7 +278,8 @@ export function FollowUpTab({ absences, onChanged }: { absences: Absence[] | nul
           </EmptyState>
         ) : (
           <>
-            <div className="flex flex-wrap items-center gap-2">
+            <input type="search" value={q} onChange={(e) => setQ(e.target.value)} placeholder="Search by name" aria-label="Search by name" className="w-full rounded-[7px] border border-gold-light bg-white px-3 py-2 text-sm sm:max-w-xs" />
+            <div className="overflow-x-auto">
               <Tabs
                 variant="switch"
                 label="Show follow-ups"
@@ -293,7 +294,6 @@ export function FollowUpTab({ absences, onChanged }: { absences: Absence[] | nul
                   { key: "closed", label: "Closed", count: counts.closed },
                 ]}
               />
-              <input type="search" value={q} onChange={(e) => setQ(e.target.value)} placeholder="Search by name" aria-label="Search by name" className="min-w-[10rem] flex-1 rounded-[7px] border border-gold-light bg-white px-3 py-2 text-sm" />
             </div>
             {shown.length === 0 ? (
               <p className="py-4 text-center text-sm text-ink/65">Nothing in this view.</p>
@@ -419,6 +419,23 @@ function CasePanel({
   const overdue = overdueReason(r, today);
   const escalated = status === "escalated";
   const [remindOn, setRemindOn] = useState(r.fu?.next_action_due || "");
+  const [contacts, setContacts] = useState<{ id: string; name: string; relationship: string | null; phone: string | null; email: string | null }[] | null>(null);
+  useEffect(() => {
+    const supabase = getSupabaseClient();
+    if (!supabase) return;
+    let alive = true;
+    supabase
+      .from("pupil_emergency_contacts")
+      .select("id, name, relationship, phone, email")
+      .eq("child_id", r.abs.childId)
+      .order("priority")
+      .then(({ data }) => {
+        if (alive) setContacts((data as { id: string; name: string; relationship: string | null; phone: string | null; email: string | null }[] | null) || []);
+      });
+    return () => {
+      alive = false;
+    };
+  }, [r.abs.childId]);
   return (
     <SidePanel
       title={<PupilLink id={r.abs.childId} name={r.abs.childName} />}
@@ -465,6 +482,33 @@ function CasePanel({
             )}
           </div>
         )}
+
+        <section aria-labelledby="case-contacts">
+          <h3 id="case-contacts" className="t-eyebrow mb-2">
+            Who to contact
+          </h3>
+          {contacts === null ? (
+            <p className="t-meta">Loading contacts…</p>
+          ) : contacts.length === 0 ? (
+            <p className="text-sm text-ink/70">No contacts on the pupil&apos;s record. Message the family through the portal.</p>
+          ) : (
+            <ul className="divide-y divide-gold-light/60 rounded-[10px] border border-gold-light">
+              {contacts.map((c) => (
+                <li key={c.id} className="flex flex-wrap items-center gap-x-3 gap-y-1 px-3 py-2 text-sm">
+                  <span className="min-w-0 flex-1">
+                    <span className="block font-medium text-ink">{c.name}</span>
+                    {c.relationship && <span className="t-meta block">{c.relationship}</span>}
+                  </span>
+                  {c.phone && (
+                    <a href={`tel:${c.phone.replace(/\s+/g, "")}`} className="font-medium tabular-nums text-forest-700 hover:underline">
+                      {c.phone}
+                    </a>
+                  )}
+                </li>
+              ))}
+            </ul>
+          )}
+        </section>
 
         <section aria-labelledby="case-actions">
           <h3 id="case-actions" className="t-eyebrow mb-2">
