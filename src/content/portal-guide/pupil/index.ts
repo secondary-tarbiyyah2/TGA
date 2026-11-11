@@ -96,6 +96,7 @@ export const PUPIL_GUIDE: GuideEntry[] = [
       "Read the task and the due date.",
       "Type your answer, add a file or add a link. The page tells you which ones are allowed.",
       "Press Hand in.",
+      "A quiz has Start the quiz instead: it opens full screen, one question at a time. Your answers save as you go; if there is a timer it shows at the top. Press Finish, check the numbers, then Hand in to see your result.",
       "Come back later to read Teacher feedback.",
     ],
     tips: ["After the due time some homework closes and will not take work any more.", "Use Replace my work if you handed in the wrong file and the teacher has not marked it yet."],
@@ -105,7 +106,7 @@ export const PUPIL_GUIDE: GuideEntry[] = [
       { target: "homework-hand-in", label: "Hand in", say: "Add your work here, then press Hand in." },
       { target: "homework-list", label: "Your homework", say: "Still to hand in comes first, then Handed in." },
     ],
-    tasks: ["hand in homework", "read teacher feedback"],
+    tasks: ["hand in homework", "read teacher feedback", "take a quiz", "do a quiz"],
   },
   {
     href: "/student/classes",

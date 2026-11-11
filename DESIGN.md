@@ -44,6 +44,10 @@ Audience: Muslim families in the UK and abroad — "wherever home is."
   the Lesson library's "Pupil results" and the "Revision results" page. Formal assessments stay
   in Teams Forms. No AI is used with pupils: questions, hints and explanations come from
   teacher-checked content and are marked on the server, so answers never reach pupils' browsers.
+- **Classwork quizzes** (owner, 11 Nov 2026; migration 0206) also run in the portal: teachers build
+  them in the full-screen quiz builder (`src/components/learn/quiz/`), pupils sit them full screen,
+  and they are marked on the server so answers never reach pupils' browsers before they finish.
+  AI may draft questions for a teacher to check; it is never used with pupils.
 - Load `supabase-js` only on the pages that need it (booking, portals, staff area) — as a
   React client component import scoped to those routes, not a site-wide script.
 - The two existing PHP form endpoints (`public/register.php`, `public/apply.php`) are

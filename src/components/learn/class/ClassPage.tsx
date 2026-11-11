@@ -259,7 +259,8 @@ export function ClassPage({ viewer }: { viewer: ClassViewer }) {
         menu={[
           ...(isStaff
             ? ([
-                { label: "Set a quiz", icon: "listChecks", onSelect: () => setSetWork("quiz") },
+                // The quiz builder lives in Classwork (full screen over it).
+                { label: "Set a quiz", icon: "listChecks", onSelect: () => router.push(`${classHref("classwork")}&create=quiz&n=${Date.now()}`, { scroll: false }) },
                 { label: "Take the register", icon: "userCheck", href: classHref("attendance") },
                 { label: "Grades", icon: "chartColumnIncreasing", href: classHref("grades") },
                 { label: "Class settings", icon: "settings", href: classHref("settings") },
