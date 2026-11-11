@@ -41,8 +41,8 @@ The Academy is responsible for, and able to demonstrate, compliance with these p
 | --- | --- |
 | Trustees | Overall accountability for compliance |
 | Data Protection Officer (DPO) | Advises on and monitors compliance, handles requests and breaches, liaises with the ICO. The DPO role is held by a suitably trained person with direct access to the trustees; the Trust may appoint an external DPO service |
-| Digital Lead | Security of Academy systems, account management, access control and secure deletion |
-| All staff | Handle data in line with this policy and complete annual data protection training |
+| Digital Lead | Security of Academy systems, account management, access control and secure deletion; reviews the audit logs of Academy systems every month and whenever a concern is raised, and reports any suspected breach to the DPO the same day |
+| All staff | Handle data in line with this policy and complete the Academy's data protection training, with its short quiz, at induction and every year |
 
 ## 5. What Data We Hold and Why
 
@@ -55,7 +55,6 @@ The Academy holds personal data about pupils (for example name, date of birth, a
 | Microsoft 365 / the Academy's live-lesson platform (currently Microsoft Teams), joined from the Student Portal | Live lessons, recordings, email |
 | Academy Parent and Student Portals (hosted on Supabase, London region) | Admissions calls, parent and student accounts, bookings, merits, announcements, documents, assignments, class notebooks |
 | Transactional email service (Resend) | Booking confirmations, reminders and portal sign-in codes |
-| Safe Exam Browser | Secure assessments (runs on the pupil's device; no data stored by the provider) |
 | Approved learning subscriptions | Only where a data processing agreement is in place |
 
 Each processor is covered by a written data processing agreement, and a data protection impact assessment (DPIA) is completed before any new system that processes pupils' data is introduced. A DPIA is completed for the Parent and Student Portals before they go live.

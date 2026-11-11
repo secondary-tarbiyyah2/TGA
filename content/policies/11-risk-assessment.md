@@ -57,7 +57,7 @@ The Headteacher maintains an Academy Risk Register, reviewed each term by senior
 
 Specific written risk assessments are completed for:
 
-- every virtual guest speaker or external provider (see the Safeguarding: Extremism and Radicalisation Policy);
+- every virtual guest speaker, external provider or external resource, on the Virtual Guest Speaker and External Content Risk Assessment form (see the Safeguarding: Extremism and Radicalisation Policy);
 - any in-person event, trip or examination sitting;
 - any new platform or major change to platform settings (combined with a data protection impact assessment);
 - individual pupils where needed, for example a pupil with a medical condition, significant SEND or a safeguarding plan;
@@ -66,7 +66,7 @@ Specific written risk assessments are completed for:
 
 ## 5. Business Continuity
 
-The Academy maintains a continuity plan so that education continues if a platform fails or key staff are unavailable. It includes: alternative meeting links; offline work set on Teams Assignments; a cover rota; out-of-hours contact routes; and backup of key records. The plan is tested before launch and reviewed annually.
+The Academy maintains a continuity plan so that education continues if a platform fails or key staff are unavailable. It includes: alternative meeting links; offline work set in the Student Portal; a cover rota; out-of-hours contact routes; and backup of key records. The plan is tested before launch and reviewed annually.
 
 ## 6. Monitoring and Review
 

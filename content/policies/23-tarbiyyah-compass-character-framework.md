@@ -43,7 +43,7 @@ Tarbiyyah means nurturing of the heart, the mind and the character. The Tarbiyya
 
 ## 4. How the Values are Recognised
 
-- Merits (M1–M3) are linked to specific values, as set out in the Behaviour and Online Conduct Policy.
+- Merits (M1 and M2) are linked to specific values, as set out in the Behaviour and Online Conduct Policy.
 - Each half term, a "Compass Star" is recognised in each class for the value of the half term.
 - Termly reports include a short comment on character and values.
 - Families are invited to share examples of their child living the values at home.

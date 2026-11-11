@@ -44,7 +44,7 @@ We aim to acknowledge every concern within two school days (48 hours) and to res
 
 ## 5. Stage 2 — Formal Complaint to the Headteacher
 
-If a concern is not resolved, parents may make a formal complaint in writing using the Complaint Form in Appendix A (or by email, including the same information) to globalacademy@tarbiyyah.co.uk, marked "For the attention of the Headteacher". Complaints should be made within three months of the issue arising.
+If a concern is not resolved, parents may make a formal complaint in writing to globalacademy@tarbiyyah.co.uk, marked "For the attention of the Headteacher", using the [Complaint Form](https://globalacademy.tarbiyyah.co.uk/policies/complaint-form/) (also available from the Academy office) or an email that gives the same information. Complaints should be made within three months of the issue arising.
 
 - The Headteacher (or a senior leader not involved) acknowledges the complaint within five school days and offers a video meeting.
 - The complaint is investigated, including review of relevant records such as lesson recordings where appropriate.
@@ -74,16 +74,3 @@ The Academy is committed to dealing with all complaints fairly. Where a complain
 ## 9. External Routes
 
 The decision of the Complaints Panel is the final stage of the Academy's procedure. This does not affect families' statutory rights, including their rights as consumers under the Consumer Rights Act 2015, and families may seek independent advice at any stage. Safeguarding concerns can always be raised directly with the local authority.
-
-## Appendix A — Complaint Form
-
-| Detail | Please complete |
-| --- | --- |
-| Your name | |
-| Your email and phone number | |
-| Pupil's name and year group | |
-| What is your complaint about? | |
-| Who have you already raised it with, and when? | |
-| What was the result? | |
-| What would you like the Academy to do to resolve it? | |
-| Signature and date | |

@@ -33,13 +33,13 @@ Honesty (sidq and amanah) is one of our Tarbiyyah Compass values. Honest work is
 | Level | Used for | Controls |
 | --- | --- | --- |
 | Practice | Homework, quick quizzes, retrieval practice | Any browser; shuffled questions and answers; time limit; one attempt where appropriate. Some risk is accepted because the purpose is learning. |
-| Secure | End-of-unit tests, termly tests, mock examinations | Taken inside Safe Exam Browser, which locks the device to the test (no other apps, tabs, copy and paste, or screen capture). The test link is only released through the Student Portal to enrolled pupils during the test window. Pupils join a live invigilation call with cameras on and may be asked to show their desk and room. |
+| Secure | End-of-unit tests, termly tests, mock examinations | The test is only released through the Student Portal to enrolled pupils during the test window, with a time limit and one attempt. Tests set in the portal's own quiz tool are marked on the Academy's server, so the answers never reach the pupil's device. Pupils join a live invigilation call with cameras on and may be asked to show their desk and room. |
 | External | International GCSE examinations | Sat in person at an approved examination centre under JCQ regulations |
 
 ## 4. Secure Tests: What Families Need to Know
 
-- Secure tests require a Windows computer, Mac or iPad. Safe Exam Browser does not currently support Chromebooks or Android tablets, and families should plan a suitable device before joining. The Academy's device-check page tells families whether their device is supported.
-- Before a pupil's first secure test, they complete a practice run to check Safe Exam Browser works.
+- Secure tests are sat on the pupil's usual device (a Windows or Mac computer, or an iPad), with the camera on for the invigilation call.
+- Before a pupil's first secure test, they complete a practice run so they know how the test works in the Student Portal.
 - During the test, the pupil should be alone in a quiet room, with their phone away and out of reach.
 - Invigilation calls are not recorded by the Academy unless an incident needs to be documented, in which case the pupil and parent are informed.
 - If a technical problem occurs, the pupil messages the invigilator immediately through the invigilation call. Genuine technical failures are not treated as misconduct; the test is rescheduled.

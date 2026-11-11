@@ -42,7 +42,7 @@ The level of security is matched to how much the assessment matters, as set out 
 | Level | Controls |
 | --- | --- |
 | Practice | Any browser; shuffled questions; time limit |
-| Secure | Safe Exam Browser, time window, one attempt, live invigilation with cameras on |
+| Secure | Released only to the pupil's class during the time window, one attempt, live invigilation with cameras on |
 | External | Sat in person at an approved examination centre |
 
 ## 5. Recording and Tracking

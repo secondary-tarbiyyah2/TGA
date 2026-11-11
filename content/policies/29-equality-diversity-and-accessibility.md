@@ -51,7 +51,7 @@ In a physical school, an accessibility plan focuses on ramps, lifts and classroo
 | Access to the curriculum | Captions and transcripts in live lessons; Immersive Reader; recorded explanations; adapted resources; assistive technology; flexible camera arrangements | From launch; reviewed termly |
 | Access to information | Policies and letters available in large print, accessible PDFs and plain-English summaries; key information available in other languages on request. The website's Policies page lets families search the policies, jump to a group, and request any policy in another format | From launch |
 | Digital platforms | Website and portals built to WCAG 2.2 AA (keyboard access, colour contrast, screen reader support, reduced motion); annual accessibility audit | Launch and annually |
-| Assessments | Access arrangements configured in Safe Exam Browser and Forms; alternative formats where needed | Ongoing |
+| Assessments | Access arrangements (such as extra time and rest breaks) set up in the Student Portal and Forms; alternative formats where needed | Ongoing |
 | Staff | Training on accessible teaching and inclusive online practice | Annually |
 
 This plan runs from January 2027 to January 2030 and is reviewed annually.

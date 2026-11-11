@@ -56,7 +56,7 @@ Pupils with SEND, medical conditions or temporary injuries may be eligible for a
 
 ## 7. Mock Examinations
 
-Mock examinations are held in Year 11 (and at the end of Year 10) under secure conditions, using Safe Exam Browser and live invigilation, or with paper-based submission under timed, camera-on conditions. Results inform predicted grades and entry decisions.
+Mock examinations are held in Year 11 (and at the end of Year 10) under secure conditions, with live invigilation and cameras on, or with paper-based submission under timed, camera-on conditions. Results inform predicted grades and entry decisions.
 
 ## 8. Examinations in Other Countries
 

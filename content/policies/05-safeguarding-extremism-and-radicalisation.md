@@ -50,7 +50,16 @@ Academy platforms — live lessons, portal channels, assignments, the Parent and
 
 ### Risk assessment
 
-Every virtual guest speaker, webinar or external resource is approved in advance through a written risk assessment by the Headteacher or DSL, considering the speaker's or provider's background, the planned content, and whether there is any risk of extremist views or reputational harm.
+Every virtual guest speaker, webinar or external resource is approved in advance through a written risk assessment, completed by the member of staff organising it on the Academy's Virtual Guest Speaker and External Content Risk Assessment form and signed off by the DSL (or the Headteacher). The form covers:
+
+- the speaker's or provider's background and any public statements, checked online before the invitation;
+- the planned content, seen in advance (slides, script, video or resource);
+- the pupils taking part, their ages and any pupils who may be particularly affected;
+- the risk of extremist views, misinformation, inappropriate content or reputational harm, rated on the Academy's 1 to 5 scale for likelihood and impact (see the Risk Assessment Policy);
+- the controls below, and who is responsible for each;
+- the decision (approved, approved with conditions, or declined) and the date.
+
+Completed forms are kept by the DSL in line with the Data Protection Policy. Speakers who return are reassessed each academic year, or sooner if anything changes.
 
 ### Controls
 
@@ -77,8 +86,10 @@ None of these alone proves radicalisation; each is a reason to talk to the DSL.
 
 All staff report any concern to the DSL on the same day, using the online concern form. The DSL will consider the concern alongside other information, speak to the family where appropriate, and decide whether to refer:
 
-- for pupils in England and Wales, to the local authority's safeguarding team, which can arrange specialist support where appropriate;
-- for pupils living abroad, to the appropriate local authority, and to the police where there is a risk of harm.
+- **for pupils living in the UK:** to children's services at the local authority where the pupil lives (in Scotland, the council's social work service; in Northern Ireland, the Health and Social Care Trust), which can arrange specialist support where appropriate, and to the police where there is a risk of harm;
+- **for pupils living outside the UK:** to the child protection or social services in the country where the pupil lives, and to the police there where there is a risk of harm, using the contacts in the Emergency Contact Register kept by the DSL (see the Child Protection and Safeguarding Policy). Where the right local service is unclear, the DSL seeks advice from the London Borough of Hounslow's children's services; for British nationals, the DSL may also contact the Foreign, Commonwealth and Development Office and the local authority where the family last lived in the UK.
+
+The DSL records the reasons for every decision, including a decision not to refer, and tells the family unless doing so would put the pupil or anyone else at risk.
 
 In an emergency, staff call the police (999 in the UK) or the local emergency number. The DfE counter-extremism helpline (020 7340 7264, counter.extremism@education.gov.uk) is available for non-emergency advice.
 
@@ -88,10 +99,13 @@ All staff complete training on extremism and radicalisation as part of safeguard
 
 ## 9. Teaching Pupils to be Resilient
 
-- **PSHE and Citizenship:** challenging stereotypes, debating safely, recognising manipulation and propaganda.
-- **Islamic Studies:** the Prophetic example of mercy, justice and mutual respect; understanding scholarly disagreement; why extremist groups misrepresent Islam.
+**Islamic Studies comes first.** Pupils learn the Prophetic example of mercy, justice and mutual respect; the sanctity of life; how scholars disagree with good manners; who has the authority to give religious rulings; and why extremist groups misrepresent Islam and its texts. Pupils who know their faith well, from trusted teachers, are far harder to mislead.
+
+Other subjects build on this:
+
+- **PSHE and Citizenship:** challenging stereotypes, debating safely, and recognising manipulation and propaganda.
 - **History and English:** propaganda, human rights and the dangers of authoritarianism.
-- **Online safety:** evaluating sources, recognising misinformation and algorithmic "rabbit holes", and knowing how to report.
+- **Online safety:** checking sources, recognising misinformation and algorithmic "rabbit holes", and knowing how to report.
 
 Lessons provide a safe space, chaired by a teacher, to discuss difficult questions so that pupils do not seek answers from unsafe sources.
 

@@ -66,7 +66,7 @@ One half term's written notice is required to withdraw a pupil, and fees remain 
 ## 8. Terms and Conditions
 
 1. Fees cover tuition and core digital learning materials, including lesson resources, worksheets and assessments on the Academy's platforms. The Academy gives at least one half term's notice before adding any item to the costs not covered by fees.
-2. Families provide a suitable device, reliable internet, a quiet study space and a way to write on worksheets and the lesson PDF (a tablet with a stylus is recommended; without one, a printer at home is required), to the published minimum specification. The Academy is not responsible for lessons missed because of a family's equipment or connection.
+2. Families provide a suitable device, reliable internet, a quiet study space and a way to write on worksheets and the lesson PDF (a tablet with a stylus is recommended; without one, access to printing is required, at home, at a local library or similar), to the published minimum specification. The Academy is not responsible for lessons missed because of a family's equipment or connection.
 3. Examination costs are not included. Pupils are entered for International GCSE examinations through Tarbiyyah Secondary School as the examination centre, or through another centre arranged for pupils outside the UK, and the centre's entry fees are billed separately.
 4. Extra-curricular activities or additional support with a charge are agreed with parents in writing in advance. No such charge is applied without prior written agreement.
 5. Each fee-payer is liable for the full fees and any agreed supplementary charges, unless the Academy has agreed otherwise in writing.

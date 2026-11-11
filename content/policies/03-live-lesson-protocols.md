@@ -31,6 +31,8 @@ Live lessons are the heart of Tarbiyyah Global Academy. These protocols set out 
 
 ### Model day (Years 7–11, UK time)
 
+The model day below is an example only and is subject to change. Each pupil's own timetable, published in the Student Portal, is the one to follow.
+
 | Time | Session |
 | --- | --- |
 | 09:00–09:10 | Form time: tutor check-in and wellbeing (the lesson register is taken in each lesson) |
