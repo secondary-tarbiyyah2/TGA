@@ -1,0 +1,77 @@
+name: Capture open evening screenshots
+
+# Run by hand. Signs in as the demo parent, pupil and teacher (made-up data
+# only) and captures the portal screens shown in the open evening slides.
+# The pictures are uploaded as a workflow artifact, not committed.
+
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  capture:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    env:
+      SUPABASE_ACCESS_TOKEN: ${{ secrets.SUPABASE_ACCESS_TOKEN }}
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4.4.0
+      - uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020 # v4.4.0
+        with:
+          node-version: 22
+          cache: npm
+      - uses: supabase/setup-cli@1dedf2c611547ede7232d26866dd3c56ab903bbb # v1.7.3
+        with:
+          version: 2.122.1
+      - name: Find the project and keys
+        id: keys
+        run: |
+          set -euo pipefail
+          REF=$(supabase projects list -o json | jq -r '.[0].id')
+          KEYS=$(supabase projects api-keys --project-ref "$REF" -o json)
+          SR=$(echo "$KEYS" | jq -r '.[] | select(.name=="service_role" or .name=="secret") | .api_key' | head -n1)
+          AN=$(echo "$KEYS" | jq -r '.[] | select(.name=="anon" or .name=="publishable") | .api_key' | head -n1)
+          echo "::add-mask::$SR"
+          echo "ref=$REF" >> "$GITHUB_OUTPUT"
+          echo "sr=$SR" >> "$GITHUB_OUTPUT"
+          echo "anon=$AN" >> "$GITHUB_OUTPUT"
+      - run: npm ci --no-audit --no-fund
+      - run: npm i --no-save --no-audit --no-fund playwright@1.49.1 && npx playwright install --with-deps chromium
+      - name: Capture
+        env:
+          SUPABASE_URL: https://${{ steps.keys.outputs.ref }}.supabase.co
+          SUPABASE_SERVICE_ROLE_KEY: ${{ steps.keys.outputs.sr }}
+          SUPABASE_ANON_KEY: ${{ steps.keys.outputs.anon }}
+          LEARN_URL: ${{ vars.LEARN_SITE_URL || 'https://learn.tarbiyyah.co.uk' }}
+          OUT_DIR: open-evening-shots
+        run: |
+          export PREVIEW_KEY="$(tr -d '[:space:]' < deploy/preview-key.txt)"
+          D='"viewport":{"width":1440,"height":900},"scale":2,"mobile":false,"height":900'
+          P='"viewport":{"width":390,"height":844},"scale":3,"mobile":true,"height":844'
+          export SHOTS="[
+            {\"name\":\"parent-today\",\"who\":\"parent\",\"path\":\"/family/dashboard/\",\"greet\":\"Umm Yusuf\",$D},
+            {\"name\":\"parent-today-phone\",\"who\":\"parent\",\"path\":\"/family/dashboard/\",\"greet\":\"Umm Yusuf\",$P},
+            {\"name\":\"parent-homework\",\"who\":\"parent\",\"path\":\"/family/homework/\",\"greet\":\"Umm Yusuf\",$D},
+            {\"name\":\"parent-absence\",\"who\":\"parent\",\"path\":\"/family/absences/\",\"greet\":\"Umm Yusuf\",$D},
+            {\"name\":\"parent-absence-phone\",\"who\":\"parent\",\"path\":\"/family/absences/\",\"greet\":\"Umm Yusuf\",$P},
+            {\"name\":\"parent-reports\",\"who\":\"parent\",\"path\":\"/family/reports/\",\"greet\":\"Umm Yusuf\",$D},
+            {\"name\":\"parent-quran\",\"who\":\"parent\",\"path\":\"/family/quran/\",\"greet\":\"Umm Yusuf\",$D},
+            {\"name\":\"parent-messages\",\"who\":\"parent\",\"path\":\"/family/messages/\",\"greet\":\"Umm Yusuf\",$D},
+            {\"name\":\"parent-calendar\",\"who\":\"parent\",\"path\":\"/family/calendar/\",\"greet\":\"Umm Yusuf\",$D},
+            {\"name\":\"parent-behaviour\",\"who\":\"parent\",\"path\":\"/family/behaviour/\",\"greet\":\"Umm Yusuf\",$D},
+            {\"name\":\"pupil-today\",\"who\":\"student\",\"path\":\"/student/dashboard/\",\"greet\":\"Yusuf\",$D},
+            {\"name\":\"pupil-today-phone\",\"who\":\"student\",\"path\":\"/student/dashboard/\",\"greet\":\"Yusuf\",$P},
+            {\"name\":\"pupil-homework\",\"who\":\"student\",\"path\":\"/student/homework/\",\"greet\":\"Yusuf\",$D},
+            {\"name\":\"pupil-quran\",\"who\":\"student\",\"path\":\"/student/quran/\",\"greet\":\"Yusuf\",$D},
+            {\"name\":\"pupil-behaviour\",\"who\":\"student\",\"path\":\"/student/behaviour/\",\"greet\":\"Yusuf\",$D},
+            {\"name\":\"teacher-today\",\"who\":\"teacher\",\"path\":\"/teach/today/\",\"greet\":\"Ustadh Bilal\",$D}
+          ]"
+          node scripts/capture-portal-screenshots.mjs
+          ls -la open-evening-shots
+      - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02 # v4.6.2
+        with:
+          name: open-evening-shots
+          path: open-evening-shots
+          retention-days: 14
