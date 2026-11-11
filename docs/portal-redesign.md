@@ -50,8 +50,20 @@ action and location, gold only as a marker, one status language (dot and word), 
    Progression and Exams are tabs; a unit picked on the long-term plan opens in a side panel (previous and next unit,
    "Open in Year by year") instead of switching view. Same route; the address still uses `subject`, `view`, `year`
    and `unit`, so older links open the same view (a `unit` on the long-term plan opens its panel).
-4. [ ] Component consistency pass (tabs, empty and loading states, dialogs, menus, status chips) and the other
-   curriculum pages.
+4. [x] Component consistency pass (PR "Portal redesign 2: components"), fixed at the source so every page follows:
+   `Tabs` (line tabs with a forest underline; the switch is a sunken track with a lifted choice), `StatusChip` (a
+   hairline pill with a dot, colour only in meaning), `EmptyState` (quiet icon, no tile or dotted canvas),
+   `LoadingState` and `Loading` (a progress line and a few words, never shaped like the content), `Dialog` and menus
+   (one pop-in, one shadow), the date picker (forest selection) and the branded dropdown in portal colours (scoped
+   CSS, so the website's dropdown is unchanged); dashboard greeting at a calmer size; phones from 360px fit every top-bar
+   control. The other curriculum pages (Lesson library, Lesson review, Resources, Planner) pick all of this up through
+   the tokens, `PageHeader` and the section tabs.
+5. Next candidates: the Lesson library's own unit and lesson layout (`CurriculumLibrary.tsx`, 1,600 lines) and the
+   Planner grid could take the map's card and timeline language; dashboard stat strips could use `t-title` figures.
+
+Screenshots of this pass (made-up data, mocked Supabase) were taken at 1440, 1280, 768, 375 and 360px with
+`scratchpad/redesign2/shots.mjs`-style Playwright scripts: build with `NEXT_PUBLIC_SUPABASE_URL=https://mock.supabase.co`
+and intercept `mock.supabase.co` requests.
 
 ## First pass (owner brief, 9 Nov 2026)
 
