@@ -10,6 +10,8 @@ import { PrintHeader } from "@/components/learn/print";
 import { printElement } from "@/components/learn/printScope";
 import { CATEGORIES, categoryOf, type ActionItem, type CategoryKey, type Role, type Urgency } from "@/lib/learn/actionCentre";
 import { useActionItems } from "@/components/learn/actions/useActionItems";
+import { SidePanel } from "@/components/learn/kit";
+import { MarkingPanel } from "@/components/learn/classwork/MarkingPanel";
 
 const URGENCY: Record<Urgency, { label: string; tone: "bad" | "warn" | "neutral" }> = {
   now: { label: "Do now", tone: "bad" },
@@ -237,48 +239,90 @@ function CategorySection({ title, icon, list, role, isDone, onDone, showTitle }:
   );
 }
 
+/** Work to mark is marked in a panel right here; everything else opens the page that does it. */
+const marksInPlace = (i: ActionItem) => i.area === "Marking" || /\/(teach|admin)\/(homework|review)$/.test(i.href);
+
+/**
+ * One item in the list: a row that opens its detail beside the list (owner, 11 Nov 2026:
+ * list and detail; docs/portal-structure.md, pattern 4). The detail holds everything about it
+ * (every pupil named, what to do), and its actions: do it (marking opens in place), mark done,
+ * print or save as PDF.
+ */
 function ItemRow({ item: i, role, done, onDone }: { item: ActionItem; role: Role; done: boolean; onDone: (on: boolean) => void }) {
-  const ref = useRef<HTMLLIElement>(null);
+  const ref = useRef<HTMLDivElement>(null);
+  const [open, setOpen] = useState(false);
+  const [marking, setMarking] = useState(false);
   const u = URGENCY[i.urgency];
+  const pupilHref = (id: string) => (role === "teach" ? `/teach/pupils?pupil=${id}` : role === "admin" ? `/admin/pupils?id=${id}` : null);
   return (
-    <li ref={ref} className={`rounded-2xl border bg-white p-4 ${i.urgency === "now" && !done ? "border-red-200" : "border-gold-light"} ${done ? "opacity-70" : ""}`}>
-      <OwnPrintHeader title={`Waiting for you: ${i.area}`} />
-      <div className="flex flex-wrap items-start gap-x-4 gap-y-3">
-        <div className="min-w-0 flex-1 basis-72">
-          <p className="flex flex-wrap items-center gap-2 text-xs">
-            <StatusChip tone={done ? "neutral" : u.tone}>{done ? "Marked done" : u.label}</StatusChip>
-            <span className="font-medium text-ink/65">{i.area}</span>
-          </p>
-          <p className="mt-1.5 text-sm font-semibold text-ink">{i.title}</p>
-          <p className="mt-0.5 text-sm text-ink/75">{i.detail}</p>
-          {(i.people?.length || i.who) && (
-            <p className="mt-1 text-xs text-ink/65">
-              {role === "teach" && i.people
-                ? i.people.map((p, n) => (
-                    <span key={p.id}>
-                      {n > 0 && ", "}
-                      <Link href={`/teach/pupils?pupil=${p.id}`} className="font-medium text-teal-700 hover:underline">
-                        {p.name}
-                      </Link>
-                    </span>
-                  ))
-                : i.people?.map((p) => p.name).join(", ")}
-              {i.who ? ` ${i.who}` : ""}
-            </p>
-          )}
-        </div>
-        <div className="flex flex-wrap items-center gap-1.5 print:hidden">
-          <Link href={i.href} className={`${i.urgency === "now" && !done ? ui.btnPrimary : ui.btnSecondary} ${ui.sm}`}>
-            {i.cta}
-          </Link>
-          <Button size="sm" variant="ghost" icon={done ? "refresh" : "check"} onClick={() => onDone(!done)} title={done ? "Put it back in the list" : "Hide it on this device until something about it changes"}>
-            {done ? "Undo" : "Mark done"}
-          </Button>
-          <button type="button" onClick={() => printElement(ref.current)} aria-label={`Print or save as PDF: ${i.title}`} title="Print or save as PDF" className={ui.btnIcon}>
-            <Icon name="printer" size="sm" />
-          </button>
-        </div>
-      </div>
+    <li className={`rounded-[10px] border bg-white ${i.urgency === "now" && !done ? "border-red-200" : "border-gold-light"} ${done ? "opacity-70" : ""}`}>
+      <button type="button" onClick={() => setOpen(true)} aria-haspopup="dialog" className="flex w-full flex-wrap items-center gap-x-4 gap-y-1.5 px-4 py-3 text-left transition-colors hover:bg-[var(--portal-hover)]">
+        <span className="min-w-0 flex-1 basis-72">
+          <span className="block text-sm font-semibold text-ink">{i.title}</span>
+          <span className="mt-0.5 block truncate text-sm text-ink/70">{i.detail}</span>
+        </span>
+        <span className="flex shrink-0 items-center gap-2 text-xs">
+          <StatusChip tone={done ? "neutral" : u.tone}>{done ? "Marked done" : u.label}</StatusChip>
+          <span className="font-medium text-ink/65">{i.area}</span>
+          <Icon name="chevronRight" size="sm" className="text-ink/50" />
+        </span>
+      </button>
+      {open && (
+        <SidePanel
+          title={i.title}
+          eyebrow={`${i.area} · ${done ? "Marked done" : u.label}`}
+          onClose={() => setOpen(false)}
+          footer={
+            <>
+              {marksInPlace(i) && (role === "teach" || role === "admin") ? (
+                <button type="button" onClick={() => { setOpen(false); setMarking(true); }} className={i.urgency === "now" && !done ? ui.btnPrimary : ui.btnSecondary}>
+                  Mark work here
+                </button>
+              ) : (
+                <Link href={i.href} className={i.urgency === "now" && !done ? ui.btnPrimary : ui.btnSecondary}>
+                  {i.cta}
+                </Link>
+              )}
+              <Button variant="ghost" icon={done ? "refresh" : "check"} onClick={() => onDone(!done)} title={done ? "Put it back in the list" : "Hide it on this device until something about it changes"}>
+                {done ? "Undo" : "Mark done"}
+              </Button>
+              <button type="button" onClick={() => printElement(ref.current)} aria-label={`Print or save as PDF: ${i.title}`} title="Print or save as PDF" className={`${ui.btnIcon} ml-auto`}>
+                <Icon name="printer" size="sm" />
+              </button>
+            </>
+          }
+        >
+          <div ref={ref} data-guide="waiting-detail" className="space-y-4">
+            <OwnPrintHeader title={`Waiting for you: ${i.area}`} />
+            <p className="hidden text-base font-semibold text-ink print:block">{i.title}</p>
+            <p className="text-sm text-ink-700">{i.detail}</p>
+            {(i.people?.length || i.who) && (
+              <section>
+                <h3 className="t-eyebrow mb-1.5">Who</h3>
+                <ul className="divide-y divide-gold-light text-sm">
+                  {(i.people || []).map((p) => {
+                    const href = pupilHref(p.id);
+                    return (
+                      <li key={p.id} className="py-2">
+                        {href ? (
+                          <Link href={href} className="font-medium text-forest-700 hover:underline">
+                            {p.name}
+                          </Link>
+                        ) : (
+                          p.name
+                        )}
+                      </li>
+                    );
+                  })}
+                </ul>
+                {i.who && <p className="mt-1 text-xs text-ink-500">{i.who}</p>}
+              </section>
+            )}
+            <p className="t-meta">{done ? "You marked this done on this device. It comes back by itself if something about it changes." : "This clears by itself once the work is done."}</p>
+          </div>
+        </SidePanel>
+      )}
+      {marking && <MarkingPanel onClose={() => setMarking(false)} />}
     </li>
   );
 }

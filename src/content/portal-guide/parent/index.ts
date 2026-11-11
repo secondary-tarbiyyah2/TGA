@@ -38,7 +38,7 @@ export const PARENT_GUIDE: GuideEntry[] = [
     when: "When the number on Today shows something is waiting.",
     steps: [
       "Start with Do now, then This week, then Good to know.",
-      "Press an item to open the page where you can deal with it.",
+      "Press an item: its detail opens beside the list, with the button to deal with it and Mark done.",
       "Use Save as PDF if you want a printed copy of the list.",
       "Items clear by themselves once the work is done.",
     ],
@@ -47,7 +47,7 @@ export const PARENT_GUIDE: GuideEntry[] = [
     related: ["/family/dashboard", "/family/todo", "/family/fees", "/documents"],
     showMe: [
       { target: "waiting-categories", label: "Groups", say: "Filter the list by type." },
-      { target: "waiting-list", label: "The list", say: "Each line opens the page where you can deal with it." },
+      { target: "waiting-list", label: "The list", say: "Press a line to see it and deal with it." },
     ],
     tasks: ["sign a form", "see what needs me"],
   },

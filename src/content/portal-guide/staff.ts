@@ -18,7 +18,7 @@ export function actionsEntry(a: Area): GuideEntry {
     steps: [
       "Choose a group at the top, or leave it on All.",
       "Work down Do now first, then This week, then Good to know.",
-      "Press the button on a line to go straight to the page where you deal with it.",
+      "Press a line: its detail opens beside the list, with every pupil named and its buttons (do it, Mark done, print). Work to mark is marked right there.",
       "Come back: lines clear by themselves once the work is done.",
     ],
     tips: ["Save as PDF prints the list for a meeting.", "How missing homework is followed up explains who does what on each day after a due date."],
@@ -26,7 +26,7 @@ export function actionsEntry(a: Area): GuideEntry {
     related: [`/${a}/dashboard`, `/${a}/messages`],
     showMe: [
       { target: "waiting-categories", label: "Groups", say: "Filter the list by type of job." },
-      { target: "waiting-list", label: "The list", say: "Each line has one button that takes you to the job." },
+      { target: "waiting-list", label: "The list", say: "Press a line to see it and act on it beside the list." },
     ],
     tasks: ["see what needs me", "action centre"],
   };

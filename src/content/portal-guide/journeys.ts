@@ -34,7 +34,7 @@ export const JOURNEYS: Record<GuideRole, Journey[]> = {
       steps: [
         { href: "/admin/dashboard", target: "admin-stats", title: "Today's figures", body: "Lessons today, things needing attention, lessons to approve and curriculum progress." },
         { href: "/admin/dashboard", target: "admin-lessons-today", title: "Registers", body: "Any lesson showing Register missing needs chasing." },
-        { href: "/admin/actions", target: "waiting-list", title: "Waiting for you", body: "The Action centre: work down Do now, then This week. Each line has one button to the job." },
+        { href: "/admin/actions", target: "waiting-list", title: "Waiting for you", body: "The Action centre: work down Do now, then This week. Press a line to see it and act on it beside the list." },
         { href: "/admin/admissions", target: "admissions-list", title: "Admissions", body: "New applications arrive here. Move each one on with the arrows." },
         { href: "/admin/compliance", target: "safeguarding-summary", title: "Safeguarding", body: "Critical and high alerts first: acknowledge, act, then resolve with what was done." },
         { href: "/admin/message-oversight", target: "oversight-list", title: "Flagged messages", body: "Read any flagged conversation; opening one is recorded in the audit log." },
