@@ -69,7 +69,7 @@ export function FeedbackDialog({
   };
 
   return (
-    <Modal title={`Feedback on lesson ${lesson.lesson_no}: ${lesson.title}`} onClose={onClose}>
+    <Modal title={`Feedback on lesson ${lesson.lesson_no}: ${lesson.title}`} onClose={onClose} panel>
       <div className="space-y-4 p-4 sm:p-5">
         <p className="text-sm text-ink/75">Spotted something to fix? Say which part and what should change. Only the Headteacher and Admin see it. Pupils and parents never do.</p>
         <div>
@@ -210,7 +210,7 @@ export function FeedbackQueue({ onClose, onEdit }: { onClose: () => void; onEdit
   const waiting = (all || []).filter((f) => f.status === "open" || f.status === "accepted");
   const list = show === "waiting" ? waiting : all || [];
   return (
-    <Modal title="Lesson feedback from staff" onClose={onClose} wide>
+    <Modal title="Lesson feedback from staff" onClose={onClose} panel>
       <div className="flex h-full flex-col">
         <div className="flex flex-wrap items-center gap-2 border-b border-gold-light px-4 py-2">
           <button type="button" className={show === "waiting" ? ui.chipOn : ui.chip} onClick={() => setShow("waiting")} aria-pressed={show === "waiting"}>
