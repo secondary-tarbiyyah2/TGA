@@ -1,65 +1,15 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
-import { WEEKDAYS, FALLBACK_PERIODS, AUDIENCES, lessonPeriods, type PeriodKind, type TimetablePeriod, type TimetableSlot } from "@/lib/learn/timetable";
+import { WEEKDAYS, lessonPeriods, type TimetablePeriod, type TimetableSlot } from "@/lib/learn/timetable";
+import { DEFAULT_LESSON, MIN_LESSON, SNAP, bandOnDay, buildBands, fmt, laneLayout, snap, timeRange, toMin, type GridBreak } from "./gridShared";
+import { RowsGrid } from "./RowsGrid";
+import { chipCls } from "./api";
 import { classColour, hhmm, moveProblem, type Colour, type LockableSlot, type Teacher } from "./types";
 
 const PX_PER_MIN = 1.15; // vertical scale: 60 min = 69px
-const SNAP = 5; // minutes
-const MIN_LESSON = 10; // shortest lesson, minutes
-const DEFAULT_LESSON = 45; // length of a lesson added by clicking outside any lesson period
 const GUTTER = 56; // px, time labels
 const MIN_LANE_PX = 72; // narrowest a lesson block gets before the grid scrolls sideways
-
-const toMin = (t: string) => {
-  const [h, m] = hhmm(t).split(":").map(Number);
-  return h * 60 + m;
-};
-const fmt = (m: number) => `${String(Math.floor(m / 60)).padStart(2, "0")}:${String(m % 60).padStart(2, "0")}`;
-const snap = (m: number) => Math.round(m / SNAP) * SNAP;
-
-/**
- * Side-by-side lanes for lessons that overlap on one day (e.g. every class's
- * Lesson 1 in the "Everyone" view), so no block hides another. Returns each
- * slot's lane and the lane count of its overlapping group.
- */
-function laneLayout(daySlots: TimetableSlot[]): Map<string, { lane: number; lanes: number }> {
-  const out = new Map<string, { lane: number; lanes: number }>();
-  const sorted = [...daySlots].sort((a, b) => toMin(a.start_time) - toMin(b.start_time) || toMin(a.end_time) - toMin(b.end_time));
-  let group: { id: string; lane: number }[] = [];
-  let laneEnds: number[] = [];
-  let groupEnd = -1;
-  const flush = () => {
-    for (const g of group) out.set(g.id, { lane: g.lane, lanes: Math.max(1, laneEnds.length) });
-    group = [];
-    laneEnds = [];
-  };
-  for (const s of sorted) {
-    const st = toMin(s.start_time);
-    const en = toMin(s.end_time);
-    const fresh = st >= groupEnd;
-    if (fresh) flush();
-    let lane = laneEnds.findIndex((end) => end <= st);
-    if (lane === -1) {
-      lane = laneEnds.length;
-      laneEnds.push(en);
-    } else laneEnds[lane] = en;
-    group.push({ id: s.id, lane });
-    groupEnd = fresh ? en : Math.max(groupEnd, en);
-  }
-  flush();
-  return out;
-}
-
-export type GridBreak = { weekday: number; start: string; end: string; name: string };
-
-/** Band shading per period kind: break grey, lunch/prayer amber, enrichment green. */
-const BAND_CLASS: Record<Exclude<PeriodKind, "lesson">, string> = {
-  break: "bg-cream text-ink/70",
-  lunch: "bg-amber-100/80 text-amber-900",
-  prayer: "bg-amber-100/80 text-amber-900",
-  enrichment: "bg-green-100/80 text-green-900",
-};
 
 type Drag = {
   id: string;
@@ -73,28 +23,7 @@ type Drag = {
   cur: { weekday: number; start: number; end: number };
 };
 
-/**
- * Days across, a continuous time axis down (to the minute). Lessons are
- * coloured blocks sized by their length: drag a block anywhere (it snaps to
- * 5 minutes), drag its bottom edge to change the length, click it to edit,
- * click an empty spot to add a lesson there. Gaps between the standard
- * periods show as breaks, and protected times (prayer, lunch...) are
- * shaded. On a phone the grid scrolls sideways inside its card.
- */
-export function WeeklyGrid({
-  slots,
-  teachers,
-  editable,
-  onEdit,
-  onAdd,
-  onMove,
-  allSlots,
-  colourOf,
-  flagged,
-  moveNotes,
-  breaks,
-  periods,
-}: {
+export type GridProps = {
   slots: TimetableSlot[];
   /** Every slot in the run: clash checks use this even when `slots` is a filtered view. */
   allSlots?: TimetableSlot[];
@@ -114,7 +43,30 @@ export function WeeklyGrid({
   breaks?: GridBreak[];
   /** The school day's stored periods. Their non-lesson blocks (break, lunch, prayer, enrichment) are drawn as bands; with none, the built-in day's blocks are drawn. */
   periods?: TimetablePeriod[];
-}) {
+};
+
+/**
+ * Days across, a continuous time axis down (to the minute). Lessons are
+ * coloured blocks sized by their length: drag a block anywhere (it snaps to
+ * 5 minutes), drag its bottom edge to change the length, click it to edit,
+ * click an empty spot to add a lesson there. Gaps between the standard
+ * periods show as breaks, and protected times (prayer, lunch...) are
+ * shaded. On a phone the grid scrolls sideways inside its card.
+ */
+function ColumnsGrid({
+  slots,
+  teachers,
+  editable,
+  onEdit,
+  onAdd,
+  onMove,
+  allSlots,
+  colourOf,
+  flagged,
+  moveNotes,
+  breaks,
+  periods,
+}: GridProps) {
   const [drag, setDrag] = useState<Drag | null>(null);
   const dragRef = useRef<Drag | null>(null);
   const [moveError, setMoveError] = useState<string | null>(null);
@@ -136,37 +88,13 @@ export function WeeklyGrid({
     timer.current = window.setTimeout(() => setMoveError(null), 5000);
   };
 
-  // Visible time range: the school day (09:00-15:00), widened to fit any
-  // stored period or lesson outside it.
-  let lo = 9 * 60;
-  let hi = 15 * 60;
-  for (const p of (periods ?? []).filter((x) => x.active)) {
-    lo = Math.min(lo, Math.floor(toMin(p.start_time) / 60) * 60);
-    hi = Math.max(hi, Math.ceil(toMin(p.end_time) / 60) * 60);
-  }
-  for (const s of slots) {
-    lo = Math.min(lo, Math.floor(toMin(s.start_time) / 60) * 60);
-    hi = Math.max(hi, Math.ceil(toMin(s.end_time) / 60) * 60);
-  }
+  const { lo, hi } = timeRange(periods, slots);
   const height = (hi - lo) * PX_PER_MIN;
   const yOf = (m: number) => (m - lo) * PX_PER_MIN;
   const hours: number[] = [];
   for (let m = lo; m <= hi; m += 60) hours.push(m);
 
-  // Bands: the stored non-lesson periods (break, lunch, prayer, enrichment); with
-  // none stored, the built-in day's blocks; then protected times.
-  const bands: { weekday: number | null; weekdays?: number[]; start: number; end: number; label: string; className: string }[] = [];
-  const stored = (periods ?? []).filter((p) => p.active);
-  // With no stored day, draw the built-in day's blocks (form time, breaks, lunch & Dhuhr).
-  const blocks = (stored.length > 0 ? stored : FALLBACK_PERIODS).filter((p) => p.active && p.kind !== "lesson");
-  if (blocks.length > 0) {
-    for (const p of blocks) {
-      const who = p.applies_to.includes("all") ? "" : ` (${p.applies_to.map((a) => AUDIENCES.find((x) => x.value === a)?.label ?? a).join(", ")})`;
-      const kind = p.kind as Exclude<PeriodKind, "lesson">;
-      bands.push({ weekday: null, weekdays: p.weekdays, start: toMin(p.start_time), end: toMin(p.end_time), label: `${p.name}${p.kind === "enrichment" && p.activity ? `: ${p.activity}` : ""}${p.kind === "enrichment" && p.supervisor_name ? ` · ${p.supervisor_name}` : ""}${who}`, className: BAND_CLASS[kind] });
-    }
-  }
-  for (const p of breaks ?? []) bands.push({ weekday: p.weekday, start: toMin(p.start), end: toMin(p.end), label: p.name, className: "bg-orange-100/80 text-orange-900/80" });
+  const bands = buildBands(periods, breaks);
 
   const nameOf = (id: string) => teachers.find((t) => t.id === id)?.full_name || "Teacher";
 
@@ -276,12 +204,6 @@ export function WeeklyGrid({
       {moveNote && !moveError && <p role="status" className="mb-2 rounded-lg bg-amber-50 px-3 py-2 text-xs text-amber-900">{moveNote}</p>}
       {moveError && <p role="alert" className="mb-2 rounded-lg bg-red-50 px-3 py-2 text-xs text-red-800">{moveError}</p>}
       {!editable && slots.length > 0 && <p className="mb-2 text-xs text-ink/65">Locked: only draft timetables can be changed or dragged.</p>}
-      {canDrag && (
-        <details className="mb-2 text-xs text-ink/65">
-          <summary className="cursor-pointer font-medium">How to edit the grid</summary>
-          <p className="mt-1">Drag a lesson to any day or time (snaps to 5 minutes), drag its bottom edge to change the length, or click an empty spot to add a lesson for that period. Shaded bands are breaks (grey), lunch and prayer (amber), enrichment (green) and protected times (orange).</p>
-        </details>
-      )}
       <div className="overflow-x-auto rounded-xl border border-gold-light/50">
         <div style={{ minWidth: minGridWidth }}>
           <div className="flex bg-cream/70 text-xs font-semibold text-ink/70">
@@ -328,7 +250,7 @@ export function WeeklyGrid({
                   }
                 >
                   {bands
-                    .filter((b) => (b.weekday === null ? !b.weekdays || b.weekdays.includes(wd.value) : b.weekday === wd.value))
+                    .filter((b) => bandOnDay(b, wd.value))
                     .map((b, bi) => (
                       <div
                         key={bi}
@@ -422,6 +344,96 @@ export function WeeklyGrid({
           </div>
         </div>
       </div>
+    </div>
+  );
+}
+
+type Layout = "rows" | "days" | "classic";
+const ZOOMS = [
+  { id: "s", label: "Compact", ppm: 1.1 },
+  { id: "m", label: "Normal", ppm: 1.5 },
+  { id: "l", label: "Wide", ppm: 2.2 },
+] as const;
+const PREF_KEY = "tga.timetable.layout";
+
+/**
+ * The weekly timetable with a layout switch. "One row per class / teacher"
+ * (the default for the whole school) puts Monday to Friday side by side so the
+ * week reads across in a few compact rows; "One row per day" (the default for
+ * a single class or teacher) gives five short rows; "Classic" is the older
+ * time-down grid. The choice and zoom are remembered on this device.
+ */
+export function WeeklyGrid(props: GridProps & { groupBy?: "class" | "teacher"; single?: boolean }) {
+  const { groupBy = "class", single = false, ...grid } = props;
+  const [pref, setPref] = useState<{ layout: Layout | null; zoom: (typeof ZOOMS)[number]["id"] }>({ layout: null, zoom: "m" });
+  const layout = pref.layout;
+  const zoom = pref.zoom;
+  const setLayout = (l: Layout) => setPref((p) => ({ ...p, layout: l }));
+  const setZoom = (z: (typeof ZOOMS)[number]["id"]) => setPref((p) => ({ ...p, zoom: z }));
+  useEffect(() => {
+    let saved: { layout?: Layout; zoom?: string } | null = null;
+    try {
+      saved = JSON.parse(window.localStorage.getItem(PREF_KEY) || "null");
+    } catch {
+      saved = null; // storage unavailable: defaults
+    }
+    const z = ZOOMS.find((x) => x.id === saved?.zoom)?.id;
+    if (saved?.layout === "classic" || z) {
+      // eslint-disable-next-line react-hooks/set-state-in-effect -- read a per-device preference once
+      setPref((p) => ({ layout: saved?.layout === "classic" ? "classic" : p.layout, zoom: z ?? p.zoom }));
+    }
+  }, []);
+  const save = (next: { layout?: Layout; zoom?: string }) => {
+    try {
+      const cur = JSON.parse(window.localStorage.getItem(PREF_KEY) || "{}");
+      window.localStorage.setItem(PREF_KEY, JSON.stringify({ ...cur, ...next }));
+    } catch {
+      /* ignore */
+    }
+  };
+  // Whole school: one row per class (or teacher); one class or teacher: one row per day.
+  const eff: Layout = layout ?? (single ? "days" : "rows");
+  const ppm = ZOOMS.find((z) => z.id === zoom)?.ppm ?? 1.5;
+  const options: { id: Layout; label: string }[] = [
+    { id: "rows", label: groupBy === "teacher" ? "Row per teacher" : "Row per class" },
+    { id: "days", label: "Row per day" },
+    { id: "classic", label: "Classic (time down)" },
+  ];
+  const seg = (on: boolean) => `${chipCls(on)} !py-0.5 !text-xs`;
+  return (
+    <div className="space-y-2">
+      <div className="flex flex-wrap items-center gap-x-4 gap-y-2">
+        <div className="flex flex-wrap items-center gap-1.5" role="group" aria-label="Grid layout">
+          <span className="text-xs font-semibold uppercase tracking-wider text-ink/65">Layout</span>
+          {options.map((o) => (
+            <button key={o.id} type="button" aria-pressed={eff === o.id} className={seg(eff === o.id)} onClick={() => { setLayout(o.id); save({ layout: o.id }); }}>
+              {o.label}
+            </button>
+          ))}
+        </div>
+        {eff !== "classic" && (
+          <div className="flex flex-wrap items-center gap-1.5" role="group" aria-label="Zoom">
+            <span className="text-xs font-semibold uppercase tracking-wider text-ink/65">Zoom</span>
+            {ZOOMS.map((z) => (
+              <button key={z.id} type="button" aria-pressed={zoom === z.id} className={seg(zoom === z.id)} onClick={() => { setZoom(z.id); save({ zoom: z.id }); }}>
+                {z.label}
+              </button>
+            ))}
+          </div>
+        )}
+        {grid.editable && grid.onMove && (
+          <details className="text-xs text-ink/65">
+            <summary className="cursor-pointer font-medium">How to edit</summary>
+            <p className="mt-1 max-w-prose">
+              {eff === "classic"
+                ? "Drag a lesson to any day or time (snaps to 5 minutes), drag its bottom edge to change the length, or click an empty spot to add a lesson."
+                : "Drag a lesson sideways to change its time or day (snaps to 5 minutes), drag its right edge to change the length, click it to edit, or click an empty spot to add a lesson."}{" "}
+              Shaded bands are breaks (grey), lunch and prayer (amber), enrichment (green) and protected times (orange).
+            </p>
+          </details>
+        )}
+      </div>
+      {eff === "classic" ? <ColumnsGrid {...grid} /> : <RowsGrid {...grid} rowsBy={eff === "days" ? "day" : groupBy} pxPerMin={ppm} />}
     </div>
   );
 }
