@@ -7,8 +7,6 @@ import { AdminShell } from "@/components/learn/AdminShell";
 import { PageHeader } from "@/components/learn/PageHeader";
 import { teacherFor, todayIso } from "@/lib/learn/teacherFor";
 import { useAcademicData } from "@/components/learn/academic/useAcademicData";
-import { ACADEMIC_STEPS } from "@/components/learn/academic/AcademicPage";
-import { SubPageNav } from "@/components/learn/SubPageNav";
 import { Notice, ui } from "@/components/learn/ui";
 
 type Card = { href: string; title: string; help: string; count: number; unit: string; done: boolean; blocked?: string };
@@ -48,7 +46,6 @@ function AcademicHub() {
         title="Academic setup"
         subtitle="Set the school up once, in order. Each step has its own page."
       />
-      <SubPageNav label="Academic setup steps" items={ACADEMIC_STEPS} />
       {!data.loaded ? (
         <div className="h-40 motion-safe:animate-pulse rounded-2xl bg-white" aria-label="Loading" />
       ) : (

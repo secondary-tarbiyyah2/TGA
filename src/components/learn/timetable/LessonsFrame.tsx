@@ -4,7 +4,6 @@ import type { ReactNode } from "react";
 import { LearnGate } from "@/components/learn/LearnGate";
 import { AdminShell } from "@/components/learn/AdminShell";
 import { PageHeader } from "@/components/learn/PageHeader";
-import { SubPageNav } from "@/components/learn/SubPageNav";
 
 export const LESSON_TABS: { href: string; label: string; exact?: boolean }[] = [
   { href: "/admin/lessons", label: "Overview", exact: true },
@@ -18,7 +17,7 @@ export const LESSON_TABS: { href: string; label: string; exact?: boolean }[] = [
 /** The overview page's title; the other pages sit under it in the breadcrumb. */
 export const LESSONS_HUB_TITLE = "Timetable and lessons";
 
-/** Header, breadcrumb and sub-page tab strip. Render inside LessonsFrame. */
+/** Header and breadcrumb (the sub-pages are listed under Timetable in the sidebar). Render inside LessonsFrame. */
 export function LessonsHeader({ title, subtitle, actions }: { title: string; subtitle?: string; actions?: ReactNode }) {
   const isHub = title === LESSONS_HUB_TITLE;
   return (
@@ -29,7 +28,6 @@ export function LessonsHeader({ title, subtitle, actions }: { title: string; sub
         subtitle={subtitle}
         actions={actions}
       />
-      <SubPageNav label="Timetable and lessons pages" items={LESSON_TABS} />
     </>
   );
 }
