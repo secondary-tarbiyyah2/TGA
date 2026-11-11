@@ -989,6 +989,64 @@ a.portal-card:hover, .portal a.rounded-2xl.border.bg-white:hover {
   border-color: transparent;
   background: var(--color-cream);
 }
+/* Things that open: menus and popovers drop in a few pixels, side panels slide in, the
+   backdrop fades. Short, no bounce, and nothing at all under reduced motion. */
+@media (prefers-reduced-motion: no-preference) {
+  .portal-menu {
+    animation: portalPop 140ms var(--portal-ease, ease-out);
+  }
+  .portal-scrim {
+    animation: portalFade 160ms ease-out;
+  }
+  .portal-sheet {
+    animation: portalSheetUp 220ms var(--portal-ease, ease-out);
+  }
+  @media (min-width: 640px) {
+    .portal-sheet {
+      animation-name: portalSheetIn;
+    }
+  }
+  .portal-reveal {
+    animation: portalFade 180ms ease-out;
+  }
+}
+@keyframes portalPop {
+  from { opacity: 0; transform: translateY(-3px) scale(0.985); }
+  to { opacity: 1; transform: none; }
+}
+@keyframes portalFade {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+@keyframes portalSheetIn {
+  from { transform: translateX(24px); opacity: 0; }
+  to { transform: none; opacity: 1; }
+}
+@keyframes portalSheetUp {
+  from { transform: translateY(24px); opacity: 0; }
+  to { transform: none; opacity: 1; }
+}
+/* An indeterminate progress line, for loading that is not shaped like the page. */
+.portal-progress {
+  position: relative;
+  height: 2px;
+  overflow: hidden;
+  border-radius: 2px;
+  background: var(--color-gold-light);
+}
+.portal-progress::after {
+  content: "";
+  position: absolute;
+  inset: 0 auto 0 0;
+  width: 35%;
+  border-radius: 2px;
+  background: var(--color-forest-500);
+  animation: portalSlide 1.1s ease-in-out infinite;
+}
+@keyframes portalSlide {
+  from { transform: translateX(-100%); }
+  to { transform: translateX(290%); }
+}
 /* Anything that floats (menus, popovers, the search palette, dialogs) shares one shadow. */
 .portal :is(.shadow-lg, .shadow-xl, .shadow-2xl, .shadow-warm) {
   box-shadow: var(--portal-shadow-pop);

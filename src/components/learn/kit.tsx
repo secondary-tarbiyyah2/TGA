@@ -296,6 +296,49 @@ export function Dialog({
   );
 }
 
+/**
+ * A panel that slides in from the right (a sheet from the bottom on phones) to show the
+ * detail of something picked on the page without leaving it: progressive disclosure. Escape,
+ * the close button and the backdrop close it; focus moves into it and back out.
+ */
+export function SidePanel({ title, eyebrow, onClose, children, footer, label }: { title: ReactNode; eyebrow?: ReactNode; onClose: () => void; children: ReactNode; footer?: ReactNode; label?: string }) {
+  const ref = useRef<HTMLDivElement>(null);
+  const titleId = useId();
+  useEffect(() => {
+    const back = document.activeElement as HTMLElement | null;
+    ref.current?.focus();
+    const onKey = (e: KeyboardEvent) => e.key === "Escape" && onClose();
+    document.addEventListener("keydown", onKey);
+    const prev = document.body.style.overflow;
+    document.body.style.overflow = "hidden";
+    return () => {
+      document.removeEventListener("keydown", onKey);
+      document.body.style.overflow = prev;
+      back?.focus?.();
+    };
+  }, [onClose]);
+  return (
+    <div className="portal fixed inset-0 z-[90] flex items-end justify-end sm:items-stretch">
+      <button type="button" aria-label="Close" tabIndex={-1} onClick={onClose} className="portal-scrim absolute inset-0 bg-ink/35" />
+      <div ref={ref} tabIndex={-1} role="dialog" aria-modal="true" aria-labelledby={titleId} aria-label={label} className="portal-sheet relative flex max-h-[88vh] w-full flex-col overflow-hidden rounded-t-2xl bg-white shadow-xl outline-none sm:max-h-none sm:w-[min(32rem,92vw)] sm:rounded-none sm:border-l sm:border-gold-light">
+        <div className="flex items-start gap-3 border-b border-gold-light px-5 py-4">
+          <div className="min-w-0 flex-1">
+            {eyebrow && <div className="t-eyebrow mb-1">{eyebrow}</div>}
+            <h2 id={titleId} className="t-section text-base">
+              {title}
+            </h2>
+          </div>
+          <button type="button" onClick={onClose} aria-label="Close" className="portal-icon-btn -mr-1.5 -mt-1 shrink-0">
+            <Icon name="x" />
+          </button>
+        </div>
+        <div className="min-h-0 flex-1 overflow-y-auto px-5 py-4">{children}</div>
+        {footer && <div className="flex flex-wrap items-center gap-2 border-t border-gold-light px-5 py-3">{footer}</div>}
+      </div>
+    </div>
+  );
+}
+
 type ConfirmOptions = { title: string; description?: ReactNode; confirmLabel?: string; cancelLabel?: string; danger?: boolean; /** A notice: one OK button, no Cancel. */ noCancel?: boolean };
 
 /** One confirmation, the same everywhere. Prefer `useConfirm()`. */
