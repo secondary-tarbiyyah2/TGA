@@ -361,7 +361,11 @@ export function reportsEntry(a: Area): GuideEntry {
       "Write your comment (search the comment bank, or Draft with AI and reword it), then Save draft.",
       head(a) ? "Open Approval queue, read each report and press Approve and issue." : "Press Submit for approval when it is ready.",
     ],
-    tips: ["What the family will see shows the report exactly as it will be issued.", "A report sent back by the Headteacher shows the reason at the top."],
+    tips: [
+      "What the family will see shows the report exactly as it will be issued.",
+      "A report sent back by the Headteacher shows the reason at the top.",
+      ...(head(a) ? ["Settings has two sections down the left: Comments and assessments (the comment bank beside the assessment types) and Grading (pick a subject, then a scale, then set its grade boundaries)."] : []),
+    ],
     privacy: "Families and pupils see a report only once it is issued.",
     related: [head(a) ? "/admin/summary" : "/teach/assessment", `/${a}/revision`],
     showMe: [{ target: "reports-sections", label: "Report sections", say: "Overview, classes and issued reports." }],

@@ -7,9 +7,9 @@ appliesTo: All pupils, parents, staff, trustees and volunteers of Tarbiyyah Glob
 owner: Headteacher
 approvedBy: Ustadh Abu Zayn Haneef Sandhar, Headteacher
 agreedWith: The Chair of Trustees, Tarbiyyah Education Trust
-dateOfIssue: 1 September 2026 (version 2.1, updated 10 November 2026: the Academy's own values, which spell IHSAN, replace the values shared with the other Tarbiyyah schools)
+dateOfIssue: 1 September 2026 (version 2.2)
 nextReview: 31 August 2027
-basis: Written for Tarbiyyah Global Academy. Its values are the Academy's own and differ from those of Tarbiyyah Primary, Tarbiyyah Secondary School for Boys and Tarbiyyah Al-Banaat
+basis: Written for Tarbiyyah Global Academy; its values are the Academy's own
 readAlongside: Behaviour and Online Conduct Policy; Curriculum Policy; Enrichment and Clubs Policy
 availability: Published on the Academy website and Parent Portal. Available in large print or another accessible format on request.
 ---
@@ -43,7 +43,7 @@ Tarbiyyah means nurturing of the heart, the mind and the character. The Tarbiyya
 
 ## 4. How the Values are Recognised
 
-- Merits (M1–M3) are linked to specific values, as set out in the Behaviour and Online Conduct Policy.
+- Merits (M1 and M2) are linked to specific values, as set out in the Behaviour and Online Conduct Policy.
 - Each half term, a "Compass Star" is recognised in each class for the value of the half term.
 - Termly reports include a short comment on character and values.
 - Families are invited to share examples of their child living the values at home.

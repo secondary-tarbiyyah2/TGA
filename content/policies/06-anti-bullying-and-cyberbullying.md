@@ -7,16 +7,15 @@ appliesTo: All pupils, parents, staff, trustees and volunteers of Tarbiyyah Glob
 owner: Pastoral Lead
 approvedBy: Ustadh Abu Zayn Haneef Sandhar, Headteacher
 agreedWith: The Chair of Trustees, Tarbiyyah Education Trust
-dateOfIssue: 1 September 2026 (version 1.1, updated 28 October 2026 for the January 2027 launch)
+dateOfIssue: 1 September 2026 (version 1.2)
 nextReview: 31 August 2027
-basis: Adapted from the Tarbiyyah Secondary Anti-Bullying Policy 2025–26 for online provision
 readAlongside: Behaviour and Online Conduct Policy; Child Protection and Safeguarding Policy; Online Safety and Acceptable Use Policy; Equality, Diversity and Accessibility Policy
 availability: Published on the Academy website and Parent Portal. Available in large print or another accessible format on request.
 ---
 
 ## 1. Our Commitment
 
-Every pupil at Tarbiyyah Global Academy has the right to learn without fear. Bullying goes against everything our faith teaches about brotherhood, sisterhood, mercy and guarding the tongue. The Prophet ﷺ said: "The Muslim is the one from whose tongue and hand the people are safe." We expect every member of our community to live by this, on screen and off.
+Every pupil at Tarbiyyah Global Academy has the right to learn without fear. Bullying goes against everything our faith teaches about brotherhood, sisterhood, mercy and guarding the tongue. The Prophet Muhammad صلى الله عليه وسلم (peace and blessings be upon him) said: "The Muslim is the one from whose tongue and hand the people are safe." We expect every member of our community to live by this, on screen and off.
 
 Bullying in an online school rarely looks like a push in a corridor. It is more likely to be a comment in chat, exclusion from a breakout group, a mocking message on a private app, or an image shared without permission. This policy is written for that reality.
 

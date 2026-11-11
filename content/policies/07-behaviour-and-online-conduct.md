@@ -7,9 +7,9 @@ appliesTo: All pupils, parents, staff, trustees and volunteers of Tarbiyyah Glob
 owner: Pastoral and Behaviour Lead
 approvedBy: Ustadh Abu Zayn Haneef Sandhar, Headteacher
 agreedWith: The Chair of Trustees, Tarbiyyah Education Trust
-dateOfIssue: 1 September 2026 (version 1.2, updated 9 November 2026: a tablet with a stylus is recommended for every pupil, and a printer at home is required without one)
+dateOfIssue: 1 September 2026 (version 1.3)
 nextReview: 31 August 2027
-basis: Tidied and updated from the Tarbiyyah Global Academy Behaviour and Online Conduct Policy draft (September 2026), which was adapted from the Tarbiyyah Secondary Behaviour Policy
+basis: Tidied and updated from the Tarbiyyah Global Academy Behaviour and Online Conduct Policy draft (September 2026)
 readAlongside: Live Lesson Protocols; Anti-Bullying and Cyberbullying Policy; Online Safety and Acceptable Use Policy; Academic Integrity and Secure Assessment Policy; SEND and Inclusion Policy; Child Protection and Safeguarding Policy
 availability: Published on the Academy website and Parent Portal. Available in large print or another accessible format on request.
 ---
@@ -34,52 +34,62 @@ This policy applies to all pupils during live lessons, assemblies, form times, c
 | Pastoral and Behaviour Lead | Support staff, conduct lesson drop-ins, lead reflection sessions and pastoral plans, analyse patterns |
 | Headteacher | Ensures consistency and the Islamic ethos; holds sole authority to suspend or permanently exclude |
 | Trustees | Ensure the policy is lawful and fair; form the independent panel for exclusion reviews |
-| Parents | Provide a suitable study space and device, and a tablet with a stylus (recommended) or a printer at home (required without one) for worksheets and the lesson PDF; ensure punctual attendance with camera working; support the Academy's standards at home |
+| Parents | Provide a suitable study space and device, and a tablet with a stylus (recommended) or, without one, access to printing (at home, at a local library or similar) for worksheets and the lesson PDF; ensure punctual attendance with camera working; support the Academy's standards at home |
 | Pupils | Follow the Live Lesson Protocols and this policy; treat everyone with respect; act with integrity |
 
 ### Adab of correction
 
-To keep the virtual classroom calm and respectful, staff will:
+Correction online has to be quick, calm and private, without a corridor or a quiet word at the door. Staff use these steps in order and move on only if the behaviour carries on:
 
-- correct privately first — through a direct message or a brief private conversation — rather than in front of peers;
-- never raise their voice or use sarcasm or humiliation;
-- give a clear warning before any consequence, except where there is an immediate safety risk;
-- allow a pupil a moment to regulate before discussing behaviour.
+1. **A reminder to the whole class.** Restate the expectation for everyone ("cameras on and eyes on the board, please") without naming anyone.
+2. **A private prompt.** A short private message to the pupil in the lesson chat (staff to pupil only; it is kept by the Academy like all lesson chat), or a calm word using the pupil's name, said as an instruction rather than a telling-off: "Yusuf, microphone off please, thank you."
+3. **A clear warning (C1).** Tell the pupil privately what will happen if it continues.
+4. **The platform tools, used calmly.** Mute the pupil's microphone, turn off their chat, or move them to the lobby for a few minutes to settle, then let them back in. Say privately why.
+5. **A short word at the end of the lesson.** Two to five minutes with the pupil before the meeting is closed, while it is still recorded, never in an unrecorded one-to-one call.
+6. **Log it the same day** in the portal's behaviour log, so the form tutor and parents see a pattern early rather than a surprise later.
 
-## 4. Promoting Positive Behaviour: the Merit System
+Staff never raise their voice, use sarcasm or humiliation, or discuss a pupil's behaviour with other pupils. They give a pupil a moment to regulate before talking about what happened. Every lesson starts fresh: once a consequence is done, it is not held against the pupil.
 
-Good conduct, effort and character are noticed and celebrated. Merits are awarded through the Student Portal and are visible to pupils and parents.
+## 4. Rewards: Merits, Stars and Houses
 
-| Level | Value | Examples |
+Good conduct, effort and character are noticed often, and rewards are things pupils actually want. Merits are given in the Student Portal and are seen by pupils and parents straight away.
+
+| Merit | Worth | For example |
 | --- | --- | --- |
-| M1 | Daily consistency — 1 merit | Punctual, prepared, camera on, respectful chat, homework on time |
-| M2 | Going further — 2 merits | Outstanding work or contribution, helping peers in group work, marked improvement |
-| M3 | Exceptional ihsan — 3 merits | Leadership, service or charity initiatives, exemplary integrity |
+| M1 | 1 merit | Punctual and ready, camera on, good manners, helpfulness, homework on time |
+| M2 | 2 merits | Excellent work, real improvement, leadership, a beautiful recitation, an act of real kindness or integrity |
 
-| Award | Cumulative merits |
-| --- | --- |
-| Bronze Badge | 50 |
-| Silver Certificate | 100 |
-| Gold Certificate | 150 |
-| Bookshop voucher | 175 |
-| Platinum Badge | 200 |
-| End-of-year virtual celebration | 250 |
+Teachers aim to give merits in most lessons, so a pupil who works hard should earn several a week. Merits add to the pupil's House total, and the House with the most points wins the House Cup each term.
 
-Merits also contribute to House points. Achievements are celebrated in half-termly virtual merit assemblies and in termly reports to parents.
+### Every week
 
-## 5. The Consequence System (C1–C5)
+- **Star of the Week** in each class, chosen by the teacher for the value of the half term: a certificate in the portal and a mention in the weekly email to families.
+- **A privilege of the pupil's choice** for each Star of the Week, from: choosing the topic of the class's end-of-week quiz; leading the opening du'a or recitation in form time; being the lesson helper (timer, reading instructions, sharing the board); or a **homework pass** (one homework handed in two days late without penalty; never for assessed work).
 
-Consequences are proportionate, consistent and always explained to the pupil privately.
+### Milestones
 
-| Level | What happens | Escalation |
+| Award | Merits | What the pupil gets |
 | --- | --- | --- |
-| C1 | A private verbal or chat warning in the lesson | A repeat in the same lesson moves to C2 |
-| C2 | A second warning; the pupil may be moved to a supervised breakout room for the rest of the activity | Three C2s in a week trigger a pastoral conversation and a C3 |
-| C3 | A virtual reflection session with the Pastoral Lead outside lesson time (30 minutes for punctuality, homework or home-environment issues; 45 minutes for behaviour) | Three C3s in a half term lead to a parent meeting and a monitoring report |
-| C4 | Removal from the live lesson; the pupil completes set work independently and attends a supervised catch-up session | Three C4s in a half term lead to a review for suspension |
-| C5 | A serious incident: immediate suspension of platform access pending Headteacher review, with a parent meeting | Repeated C5s lead to a review for permanent exclusion |
+| Bronze | 30 | Certificate, and a message home from the form tutor |
+| Silver | 75 | Certificate, and a message home from the Headteacher |
+| Gold | 150 | Certificate, named in assembly, and a privilege of their choice (as above) |
+| Platinum | 250 | Certificate and a book voucher, presented by the Headteacher in assembly |
 
-A pupil who misses a reflection session without good reason repeats it the following day; persistent non-attendance escalates to C4 and a parent call.
+Pupils who reach Gold by the end of the year, with no C4 or C5 in the final half term, are invited to the end-of-year celebration. The milestones are checked against real merit totals after the first half term and adjusted if they prove too easy or too hard.
+
+## 5. Consequences (C1 to C5)
+
+Consequences are proportionate, consistent and always explained to the pupil privately. Online, the consequences that matter most to pupils are their own time, their privileges, their House and their parents knowing, so those are the ones used.
+
+| Level | What happens | What it costs the pupil |
+| --- | --- | --- |
+| C1 | A private warning in the lesson | Nothing yet: a chance to put it right |
+| C2 | A second warning and a demerit in the portal; chat or microphone turned off for the rest of the lesson where that helps | The demerit comes off the pupil's House total and parents see it in the portal |
+| C3 | A reflection session in the pupil's own time: 30 minutes online with a member of staff after the live day, camera on, to put the work right or reflect on what happened. Three C2s in a week also lead to a C3 | Their own time; parents are told the same day |
+| C4 | Removal from the live lesson (to the lobby, with work set), a phone call to parents, and two weeks "on report": a daily check-in with the form tutor against agreed targets | Not eligible for Star of the Week, privileges or clubs while on report |
+| C5 | A serious incident: platform access suspended pending the Headteacher's review, and a parent meeting | Suspension; repeated C5s lead to a review for permanent exclusion |
+
+A pupil who misses a reflection session without good reason does it the next day as a 60-minute session; missing that as well moves to C4. Three C3s in a half term lead to a parent meeting and a C4. Three C4s in a half term lead to a review for suspension.
 
 ### Repeated concerns
 
