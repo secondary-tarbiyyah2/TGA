@@ -29,6 +29,7 @@ import { AnnouncementsFeed } from "@/components/learn/AnnouncementsFeed";
 import { getSupabaseClient } from "@/lib/supabase/client";
 import type { TimetableSlot } from "@/lib/learn/timetable";
 import { ukToday } from "@/lib/learn/ukTime";
+import { DatePicker } from "@/components/learn/DatePicker";
 import { PushOptIn } from "@/components/learn/PushOptIn";
 
 type Child = { id: string; name: string; year_group_id: string | null; year_groups?: { name: string } | null };
@@ -301,10 +302,7 @@ function FamilyContent() {
                 <input id="new-child-name" value={newChildName} onChange={(e) => setNewChildName(e.target.value)} autoComplete="off" className={`mt-1 ${ui.input}`} placeholder="Maryam Khan" />
               </div>
               <div className="w-full sm:w-auto">
-                <label htmlFor="new-child-dob" className="block text-xs font-medium text-ink/70">
-                  Date of birth
-                </label>
-                <input id="new-child-dob" type="date" value={newChildDob} max={ukToday()} onChange={(e) => setNewChildDob(e.target.value)} className={`mt-1 ${ui.input}`} />
+                <DatePicker id="new-child-dob" label="Date of birth" value={newChildDob} onChange={setNewChildDob} required min="2005-01-01" max={ukToday()} defaultView={`${new Date().getFullYear() - 8}-09-01`} />
               </div>
               <button type="submit" disabled={busy} className={ui.btnPrimary}>
                 {busy ? "Adding…" : "Add child"}
