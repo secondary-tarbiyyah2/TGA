@@ -11,6 +11,7 @@ import { formatGBP } from "@/lib/format";
 import { FamilyWithdrawal } from "@/components/learn/fees/FamilyWithdrawal";
 import { EmptyState } from "@/components/learn/ui";
 import { FamilyFees } from "@/components/learn/FamilyFees";
+import { PayOnlinePanel } from "@/components/learn/fees/PayOnlinePanel";
 
 type Kid = { id: string; name: string; year_groups?: { name: string } | null };
 // Things to pay first (overdue, then due), then what is settled.
@@ -79,13 +80,14 @@ function FamilyFeesContent() {
       <PageHeader crumbs={[{ label: "Today", href: "/family/dashboard" }, { label: "Fees" }]} title="Fees" subtitle="What has been charged, what you have paid, and what is still due." />
       {error && <p className="mb-4 rounded-lg border border-red-200 bg-red-50 px-4 py-2 text-sm text-red-800">Could not load your fees. Please try again later.</p>}
       {rows === null && <Loading label="Loading…" bare />}
+      {rows && <PayOnlinePanel balance={totals.balance} />}
       {rows && rows.length === 0 && !error && (
         <EmptyState
           title="Nothing to pay"
           icon="wallet"
           tile="tile-green"
         >
-          No fees have been charged to your family yet. Invoices and payment plans appear here once your child&apos;s place is confirmed.
+          No fees have been charged to your family yet. The first payment is due when you accept your child&apos;s place; your payment plan and the remaining payments then appear here.
         </EmptyState>
       )}
       {rows && rows.length > 0 && (
@@ -134,7 +136,7 @@ function FamilyFeesContent() {
               </li>
             ))}
           </ul>
-          <p className="mt-4 text-xs text-ink/65">Paid by bank transfer, cash or card? It appears here once the school office has recorded it. Contact the office with any billing query.</p>
+          <p className="mt-4 text-xs text-ink/65">A payment appears here once the school office has recorded it. Contact the office with any billing query.</p>
         </>
       )}
       {kidList.length > 0 && <FamilyFees familyChildren={kidList} />}

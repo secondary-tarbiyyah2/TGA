@@ -144,7 +144,7 @@ export const keyStages: KeyStage[] = [
     lessonLength: "50 minutes",
     totalLessons: "23 live lessons a week",
     note: "Years 10 and 11 follow the full live timetable, because International GCSE courses need it. Every pupil sits Pearson Edexcel International GCSEs. History is not offered at GCSE.",
-    gcseNote: "Exam entry fees are not included in tuition: families register their child at an approved exam centre and pay the centre's charges.",
+    gcseNote: "Exam entry fees are not included in tuition: families register their child as a private candidate at an approved exam centre near them and pay the centre's charges. We help you find a centre, free of charge.",
   },
 ];
 

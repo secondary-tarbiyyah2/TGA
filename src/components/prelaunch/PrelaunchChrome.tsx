@@ -4,6 +4,7 @@ import Link from "next/link";
 import { Container } from "@/components/Container";
 import { getSiteSettings } from "@/lib/content";
 import { PrelaunchNav } from "./PrelaunchNav";
+import { ROLE_EMAILS } from "@/content/contacts";
 
 export function PrelaunchHeader() {
   return (
@@ -23,7 +24,7 @@ export function PrelaunchHeader() {
 
 export async function PrelaunchFooter() {
   const settings = await getSiteSettings();
-  const email = settings.admissionsEmail || "globalacademy@tarbiyyah.co.uk";
+  const email = settings.admissionsEmail || ROLE_EMAILS.general;
   return (
     <footer className="border-t border-gold-light/40 bg-cream">
       <Container className="flex flex-col items-center gap-3 py-8 text-center text-xs text-ink/60 sm:flex-row sm:justify-between sm:text-left">

@@ -22,12 +22,13 @@ import { createClient } from "jsr:@supabase/supabase-js@2";
 import { corsHeaders, jsonResponse } from "../_shared/cors.ts";
 import { sendEmail, emailShell } from "../_shared/resend.ts";
 import { DEFAULT_TEMPLATES, buildTemplateContext, renderTemplate, type FamilyInput } from "../admissions-correspond/templating.ts";
+import { ROLE_EMAILS } from "../_shared/contacts.ts";
 
 const supabaseUrl = Deno.env.get("SUPABASE_URL")!;
 const serviceRoleKey = Deno.env.get("SUPABASE_SERVICE_ROLE_KEY")!;
 const serviceClient = createClient(supabaseUrl, serviceRoleKey);
 
-const ADMISSIONS_EMAIL = Deno.env.get("ADMISSIONS_EMAIL") || "globalacademy@tarbiyyah.co.uk";
+const ADMISSIONS_EMAIL = Deno.env.get("ADMISSIONS_EMAIL") || ROLE_EMAILS.admissions;
 const LEARN_SITE_URL = (Deno.env.get("LEARN_SITE_URL") || "https://learn.tarbiyyah.co.uk").replace(/\/$/, "");
 const UUID = /^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$/i;
 const FRESH_MS = 30 * 60 * 1000;
@@ -127,7 +128,7 @@ Deno.serve(async (req) => {
   if (!tpl.auto_send) return jsonResponse({ ok: true, skipped: "auto_send_off", staffNotified });
 
   const [{ data: settings }, { data: stage }] = await Promise.all([
-    serviceClient.from("site_settings").select("payment_instructions, assessment_join_url, interview_join_url, assessment_duration_text, admissions_email, contact_phone").eq("id", true).maybeSingle(),
+    serviceClient.from("site_settings").select("online_payment_url, payment_instructions, assessment_join_url, interview_join_url, assessment_duration_text, admissions_email, contact_phone").eq("id", true).maybeSingle(),
     serviceClient.from("admissions_stage_details").select("assessment_platform, assessment_link, assessment_duration_text, interview_interviewer, interview_link, offer_start_date").eq("application_id", lead.id).maybeSingle(),
   ]);
   const family: FamilyInput = {

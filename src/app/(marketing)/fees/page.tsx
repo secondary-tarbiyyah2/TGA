@@ -8,6 +8,7 @@ import { getFeeBands, getSiteSettings } from "@/lib/content";
 import { formatGBP } from "@/lib/format";
 import { computeFeeSchedule, describePlan, roundingNote, FEE_DEFAULTS, FEE_POLICY_DEFAULTS } from "@/lib/fees";
 import { FeeCalculatorPanel } from "@/components/FeeCalculatorPanel";
+import { PayOnline } from "@/components/PayOnline";
 
 export const metadata: Metadata = pageMetadata({
   title: "Fees & Payment Plans",
@@ -112,8 +113,9 @@ export default async function FeesPage() {
           <p className="mt-3 text-xs text-ink/70">
             Every payment plan adds up to exactly the annual total: each instalment is the annual fee divided by{" "}
             {terms} payments or {instalments} monthly payments, and if the division leaves a few pence over they are
-            added to the final instalment. A {discountPercent}% discount applies when the annual option is chosen and
-            paid in full by 8 January 2027.
+            added to the final instalment. Under every plan the first payment is due when you accept your place. A{" "}
+            {discountPercent}% discount applies when the annual option is chosen and paid in full on acceptance (by 8
+            January 2027 at the latest).
           </p>
           {rows.some((r) => roundingNote(r.sched.monthly)) && (
             <p className="mt-1 text-xs text-ink/70">
@@ -129,8 +131,8 @@ export default async function FeesPage() {
             </div>
             <div className="rounded-2xl border border-gold-light/50 bg-white p-6">
               <p className="text-sm font-semibold uppercase tracking-wide text-gold-700">Securing your place</p>
-              <p className="mt-1 font-serif text-3xl font-bold text-ink">By 8 January 2027</p>
-              <p className="mt-1 text-sm text-ink/70">Accept your offer within five working days and make your first fee payment, no later than 8 January 2027. The application fee is the only admissions fee.</p>
+              <p className="mt-1 font-serif text-3xl font-bold text-ink">On acceptance</p>
+              <p className="mt-1 text-sm text-ink/70">Your first fee payment is due when you accept your place, within five working days of your offer and no later than 8 January 2027. Your child&apos;s place is held once it is paid; the remaining payments then follow the dates below. The application fee is the only admissions fee.</p>
             </div>
             {settings.siblingDiscountPercent != null && (
               <div className="rounded-2xl border border-gold-light/50 bg-white p-6 sm:col-span-2">
@@ -149,8 +151,9 @@ export default async function FeesPage() {
             <div className="rounded-2xl border border-gold-light/50 bg-white p-6">
               <h2 className="font-serif text-lg font-semibold text-ink">How to pay</h2>
               <p className="mt-2 text-sm text-ink/70">
-                Standing order (preferred for monthly plans), card or bank transfer, with your child&apos;s full name as the reference. Full instructions come with your offer, after the assessment and interview; you then send proof of payment (a screenshot or receipt) to confirm your place.
+                Online, by debit or credit card or straight from your bank app, on our secure payment page, with your child&apos;s full name as the reference. The link comes with your offer, after the assessment and interview, and is on the Fees page of the Parent Portal.
               </p>
+              <PayOnline url={settings.onlinePaymentUrl} className="mt-4" />
             </div>
           </div>
           <p className="mt-6 text-sm text-ink/70">

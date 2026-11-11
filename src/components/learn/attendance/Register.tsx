@@ -3,7 +3,8 @@
 import { Loading } from "@/components/learn/kit";
 import { useCallback, useEffect, useRef, useState } from "react";
 import { getSupabaseClient } from "@/lib/supabase/client";
-import { REASONS, saveReason } from "@/components/learn/absences/data";
+import { REASONS, reasonKind, saveReason } from "@/components/learn/absences/data";
+import { ATTENDANCE_CODES, attendanceLabel, type AttendanceStatus } from "@/lib/learn/attendanceCodes";
 import { useLearnSession } from "@/lib/learn/session";
 import { ukTimeOf } from "@/lib/learn/ukTime";
 import { useSupportPlans } from "@/lib/learn/send";
@@ -11,26 +12,23 @@ import { SupportAtAGlance, SupportBadge } from "@/components/learn/send/SupportA
 import { Select } from "@/components/learn/Select";
 import { PupilLink } from "@/components/learn/pupil/PupilLink";
 
-export type Status = "present" | "late" | "absent" | "excused" | "not_engaged" | "technical";
-/** The four marks used every lesson, as one-tap buttons. */
-export const STATUSES: { value: Status; label: string; on: string }[] = [
-  { value: "present", label: "Present", on: "bg-green-600 text-white" },
-  { value: "late", label: "Late", on: "bg-amber-500 text-white" },
-  { value: "absent", label: "Absent", on: "bg-red-600 text-white" },
-  { value: "excused", label: "Authorised", on: "bg-slate-500 text-white" },
-];
-/** The two less common marks from the Attendance Policy, under "Other". */
-export const OTHER_STATUSES: { value: Status; label: string; hint: string }[] = [
-  { value: "not_engaged", label: "Present, not engaged", hint: "Logged in but no camera or response after a check. Counts as present; the form tutor sees it." },
-  { value: "technical", label: "Couldn't connect", hint: "Tried but couldn't connect. Recorded separately; it doesn't count against attendance." },
-];
+export type Status = AttendanceStatus;
+/** The five register codes (owner, 11 Nov 2026), as one-tap buttons. The meanings come from attendanceCodes.ts. */
+const BUTTON: Record<Exclude<Status, "not_engaged">, { text: string; on: string }> = {
+  present: { text: "Present", on: "bg-green-600 text-white" },
+  late: { text: "Late", on: "bg-amber-500 text-white" },
+  excused: { text: "Authorised", on: "bg-slate-600 text-white" },
+  absent: { text: "Unauthorised", on: "bg-red-600 text-white" },
+  technical: { text: "Technical", on: "bg-ink-700 text-white" },
+};
+export const STATUSES = ATTENDANCE_CODES.map((c) => ({ value: c.value as Status, label: BUTTON[c.value].text, full: c.label, help: c.help, on: BUTTON[c.value].on }));
 export const STATUS_LABEL: Record<Status, string> = {
-  present: "Present",
-  late: "Late",
-  absent: "Absent",
-  excused: "Authorised absence",
-  not_engaged: "Present, not engaged",
-  technical: "Couldn't connect",
+  present: attendanceLabel("present"),
+  late: attendanceLabel("late"),
+  absent: attendanceLabel("absent"),
+  excused: attendanceLabel("excused"),
+  not_engaged: attendanceLabel("not_engaged"),
+  technical: attendanceLabel("technical"),
 };
 
 type TeamsHint = { child_id: string; first_join_at: string | null; total_seconds: number; matched_by: string };
@@ -198,7 +196,13 @@ export function Register({ lessonId, classId, onProgress }: { lessonId: string; 
         return back;
       });
       setReasonError(`Could not save the absence reason: ${err}`);
+      return;
     }
+    // The reason decides the code: an accepted reason is an authorised absence; a holiday or no reason is unauthorised.
+    const kind = reasonKind(code);
+    const now = marksRef.current[childId];
+    if (kind === "authorised" && now === "absent") await save([{ childId, status: "excused" }]);
+    if (kind === "unauthorised" && now === "excused") await save([{ childId, status: "absent" }]);
   };
 
   const saveNote = async (childId: string) => {
@@ -244,6 +248,17 @@ export function Register({ lessonId, classId, onProgress }: { lessonId: string; 
           </button>
         )}
       </div>
+      <details className="border-b border-gold-light/70 px-5 py-2 text-sm">
+        <summary className="cursor-pointer font-medium text-forest-700">What the codes mean</summary>
+        <dl className="mt-2 space-y-1.5 pb-1">
+          {STATUSES.map((st) => (
+            <div key={st.value} className="sm:flex sm:gap-2">
+              <dt className="shrink-0 font-medium text-ink sm:w-44">{st.full}</dt>
+              <dd className="text-ink-500">{st.help}</dd>
+            </div>
+          ))}
+        </dl>
+      </details>
       <SupportAtAGlance pupils={children} plans={plans} className="mx-5 my-3" />
       {reasonError && (
         <p role="alert" className="border-b border-gold-light/70 bg-red-50 px-5 py-2 text-xs text-red-800">
@@ -289,27 +304,17 @@ export function Register({ lessonId, classId, onProgress }: { lessonId: string; 
                       type="button"
                       role="radio"
                       aria-checked={on && !!current}
+                      aria-label={st.full}
+                      title={`${st.full}: ${st.help}`}
                       onClick={() => save([{ childId: c.id, status: st.value }])}
-                      className={`px-3 py-1.5 text-sm font-medium transition-colors ${on ? (current ? st.on : "bg-green-50 text-green-800") : "bg-white text-ink/65 hover:bg-cream"}`}
+                      className={`px-2.5 py-1.5 text-sm font-medium transition-colors sm:px-3 ${on ? (current ? st.on : "bg-green-50 text-green-800") : "bg-white text-ink/65 hover:bg-cream"}`}
                     >
                       {st.label}
                     </button>
                   );
                 })}
               </div>
-              <Select
-                aria-label={`Other mark for ${c.name}`}
-                value={current === "not_engaged" || current === "technical" ? current : ""}
-                onChange={(e) => e.target.value && save([{ childId: c.id, status: e.target.value as Status }])}
-                className={`rounded-lg border px-2 py-1.5 text-sm ${current === "not_engaged" ? "border-amber-500 bg-amber-50 font-medium text-amber-900" : current === "technical" ? "border-slate-500 bg-slate-100 font-medium text-slate-800" : "border-gold-light bg-white text-ink/65"}`}
-              >
-                <option value="">Other…</option>
-                {OTHER_STATUSES.map((o) => (
-                  <option key={o.value} value={o.value} title={o.hint}>
-                    {o.label}
-                  </option>
-                ))}
-              </Select>
+              {current === "not_engaged" && <span className="text-xs text-ink-500">Older mark: present, not engaged</span>}
               <button
                 type="button"
                 onClick={() => setNoteOpen(noteOpen === c.id ? null : c.id)}
@@ -346,17 +351,17 @@ export function Register({ lessonId, classId, onProgress }: { lessonId: string; 
                 </label>
               )}
               {noteOpen !== c.id && notes[c.id] && <p className="w-full truncate text-xs text-ink/65">Note: {notes[c.id]}</p>}
-              {current === "absent" && lessonDate && !canRecordReason && (
+              {(current === "absent" || current === "excused") && lessonDate && !canRecordReason && (
                 <p className="w-full text-xs text-ink/65">
                   Reason: {reasons[c.id] ? REASONS.find((r) => r.value === reasons[c.id])?.label || "Recorded" : "not given yet (the office follows this up)"}
                 </p>
               )}
-              {current === "absent" && lessonDate && canRecordReason && (
+              {(current === "absent" || current === "excused") && lessonDate && canRecordReason && (
                 <label className="flex w-full items-center gap-2 text-xs text-ink/65">
                   Reason
                   <Select value={reasons[c.id] || ""} onChange={(e) => setReason(c.id, e.target.value)} className="rounded-lg border border-gold-light bg-white px-2 py-1 text-xs text-ink">
                     <option value="">Not recorded</option>
-                    {REASONS.map((r) => (
+                    {REASONS.filter((r) => !r.legacy || r.value === reasons[c.id]).map((r) => (
                       <option key={r.value} value={r.value}>
                         {r.label}
                       </option>

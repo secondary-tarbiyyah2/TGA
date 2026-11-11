@@ -118,14 +118,22 @@ export function classify(childId: string, date: string, attendance: "absent" | "
   return sawNo ? "unauthorised" : "unexplained";
 }
 
-/** Recorded reasons that count as an authorised / unauthorised explanation. */
+/**
+ * Recorded reasons that count as an authorised / unauthorised explanation (the school's codes,
+ * src/lib/learn/attendanceCodes.ts): illness, a medical appointment, religious observance and
+ * exceptional circumstances approved by the Headteacher are authorised; a holiday in term time
+ * or no reason at all is unauthorised.
+ */
 const REASON_KIND: Record<string, AbsenceKind> = {
   illness: "authorised",
   medical_appointment: "authorised",
-  family_emergency: "authorised",
   religious_observance: "authorised",
+  exceptional: "authorised",
+  family_emergency: "authorised",
   holiday: "unauthorised",
+  unknown: "unauthorised",
 };
+export const reasonKind = (code?: string | null): AbsenceKind | undefined => (code ? REASON_KIND[code] : undefined);
 
 export async function fetchAbsences(from: string, to: string, notes: AbsenceNote[], reasons: Record<string, string> = {}): Promise<{ absences: Absence[]; error: string | null }> {
   const supabase = getSupabaseClient();
@@ -209,14 +217,16 @@ export async function fetchReasons(from: string, to: string): Promise<{ map: Rec
   return { map, error: error ? error.message : null };
 }
 
-export const REASONS: { value: string; label: string }[] = [
+/** Reasons the office records for an absence. `legacy` ones are kept for older records but no longer offered. */
+export const REASONS: { value: string; label: string; legacy?: boolean }[] = [
   { value: "illness", label: "Illness" },
-  { value: "medical_appointment", label: "Medical appointment" },
-  { value: "family_emergency", label: "Family emergency" },
-  { value: "religious_observance", label: "Religious observance" },
-  { value: "holiday", label: "Holiday" },
-  { value: "unknown", label: "Unknown / no contact" },
-  { value: "other", label: "Other" },
+  { value: "medical_appointment", label: "Medical appointment that could not be arranged outside lessons" },
+  { value: "religious_observance", label: "Religious observance (for example Eid)" },
+  { value: "exceptional", label: "Exceptional circumstances approved by the Headteacher" },
+  { value: "holiday", label: "Holiday in term time" },
+  { value: "unknown", label: "No reason given" },
+  { value: "other", label: "Other (Headteacher to decide)" },
+  { value: "family_emergency", label: "Family emergency (older reason)", legacy: true },
 ];
 export const reasonLabel = (code?: string | null) => REASONS.find((r) => r.value === code)?.label || "";
 

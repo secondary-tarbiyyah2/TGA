@@ -2,6 +2,7 @@ import { PrintSheet } from "@/components/learn/print";
 import { StatusChip, type Tone } from "@/components/learn/ui";
 import { PRINT_AREA } from "./printArea";
 import type { ClassSummary, ReportNarrative, SubjectRating } from "./summary";
+import { ROLE_EMAILS } from "@/content/contacts";
 
 export { PRINT_AREA };
 
@@ -112,7 +113,7 @@ function ClassBlock({ c, rating }: { c: ClassSummary; rating?: SubjectRating }) 
       )}
       {rating?.comment && <p className="mt-2 whitespace-pre-wrap text-sm text-ink/80">{rating.comment}</p>}
       <div className="mt-3 grid grid-cols-2 gap-3 sm:grid-cols-4">
-        <Stat label="Attendance" value={fmtPct(a.rate)} sub={a.total === 0 ? "No lessons recorded" : `${a.attended} attended · ${a.absent} missed${a.excused ? ` · ${a.excused} excused` : ""}`} />
+        <Stat label="Attendance" value={fmtPct(a.rate)} sub={a.total === 0 ? "No lessons recorded" : `${a.attended} attended · ${a.absent} unauthorised${a.excused ? ` · ${a.excused} authorised` : ""}${a.technical ? ` · ${a.technical} technical` : ""}`} />
         <Stat label="Homework" value={h.total === 0 ? "–" : `${h.done}/${h.total}`} sub={h.rate === null ? "None set" : `${h.rate}% completed`} />
         <Stat label="Average grade" value={fmtPct(s.average_percent)} sub={s.count === 0 ? "No assessments" : `${s.count} assessment${s.count === 1 ? "" : "s"}`} />
         <Stat label="Qur'an progress" value={quranValue(c.quran)} sub={quranSub(c.quran)} />
@@ -211,7 +212,7 @@ export function ReportDocument({
       </div>
       <footer className="mt-5 flex flex-wrap items-center justify-between gap-2 border-t border-gold-light/50 pt-3 text-[11px] text-ink/65">
         <span>Tarbiyyah Global Academy · part of the Tarbiyyah Education Trust</span>
-        <span>globalacademy@tarbiyyah.co.uk</span>
+        <span>{ROLE_EMAILS.general}</span>
       </footer>
       </div>
     </article>

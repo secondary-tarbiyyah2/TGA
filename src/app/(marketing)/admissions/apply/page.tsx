@@ -23,7 +23,7 @@ export default async function ApplyPage() {
     "Proof of your child's address, such as a recent utility bill or bank statement. You can send this later if needed.",
     "Your child's home address, and your email and phone number.",
   ];
-  const paymentNote = `No payment is taken on this form. If we offer a place, you then send proof of payment for the application fee${settings.applicationFee != null ? ` (${formatGBP(settings.applicationFee)})` : ""}, if not yet paid, and your first fee payment.`;
+  const paymentNote = `No payment is taken on this form. If we offer a place, you then send proof of payment for the application fee${settings.applicationFee != null ? ` (${formatGBP(settings.applicationFee)})` : ""}, if not yet paid, and your first fee payment, which is due when you accept the place.`;
 
   return (
     <section className="geo-texture bg-cream pb-16 pt-10 sm:pt-12" aria-labelledby="apply-heading">

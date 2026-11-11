@@ -3,7 +3,8 @@ import { averageScore, scoreTrend, type ScoreTrend } from "@/lib/learn/quran";
 
 export type Sb = NonNullable<ReturnType<typeof getSupabaseClient>>;
 
-export type AttendanceSummary = { attended: number; absent: number; excused: number; total: number; rate: number | null };
+/** `absent` is unauthorised, `excused` authorised; `technical` (counted on its own) is missing from reports saved before Nov 2026. */
+export type AttendanceSummary = { attended: number; absent: number; excused: number; technical?: number; total: number; rate: number | null };
 export type HomeworkSummary = { done: number; total: number; rate: number | null };
 export type AssessmentItem = { title: string; percent: number | null; grade: string | null };
 export type AssessmentSummary = { count: number; average_percent: number | null; items: AssessmentItem[] };
@@ -77,7 +78,7 @@ function emptySummary(cls: { id: string; name: string }): ClassSummary {
   return {
     class_id: cls.id,
     class_name: cls.name,
-    attendance: { attended: 0, absent: 0, excused: 0, total: 0, rate: null },
+    attendance: { attended: 0, absent: 0, excused: 0, technical: 0, total: 0, rate: null },
     homework: { done: 0, total: 0, rate: null },
     assessments: { count: 0, average_percent: null, items: [] },
     quran: { entries: 0, latest: null, average_score: null, scored_sessions: 0, trend: null },
@@ -188,15 +189,16 @@ export async function buildClassSummaries(
   for (const r of att) {
     const s = result[r.child_id];
     if (!s) continue;
-    // "Present but not engaged" counts as attended; "couldn't connect" is
-    // recorded separately and, like excused, not held against the rate.
+    // The school's codes (attendanceCodes.ts): present and late (and the older "not engaged") attend;
+    // a technical absence is counted on its own and, like an authorised absence, not held against the rate.
     if (r.status === "present" || r.status === "late" || r.status === "not_engaged") s.attendance.attended += 1;
     else if (r.status === "absent") s.attendance.absent += 1;
-    else if (r.status === "excused" || r.status === "technical") s.attendance.excused += 1;
+    else if (r.status === "excused") s.attendance.excused += 1;
+    else if (r.status === "technical") s.attendance.technical = (s.attendance.technical || 0) + 1;
   }
   for (const id of childIds) {
     const a = result[id].attendance;
-    a.total = a.attended + a.absent + a.excused;
+    a.total = a.attended + a.absent + a.excused + (a.technical || 0);
     // Authorised (excused) absences don't count against the rate.
     a.rate = pct(a.attended, a.attended + a.absent);
     result[id].homework.total = hw.length;
