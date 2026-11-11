@@ -1,5 +1,6 @@
 "use client";
 
+import Link from "next/link";
 import { useId, useRef, useState } from "react";
 import { getSupabaseClient } from "@/lib/supabase/client";
 import { toggleList, wrapSelection, type Edit } from "@/lib/learn/markup";
@@ -201,10 +202,27 @@ export function PostDialog({ classId, onClose, onPosted }: { classId: string; on
 }
 
 /** The stream's "Add a post" row; the dialog opens over the page, which stays where it was. */
-export function AnnouncementComposer({ classId, onPosted }: { classId: string; onPosted: () => void }) {
+export function AnnouncementComposer({ classId, onPosted, classworkHref }: { classId: string; onPosted: () => void; /** Where each kind of classwork is created (Classwork, with its own form open). */ classworkHref?: (kind: "assignment" | "quiz" | "question" | "material") => string }) {
   const [open, setOpen] = useState(false);
+  const kinds = [
+    { k: "assignment", label: "Assignment", icon: "notebookPen" },
+    { k: "quiz", label: "Quiz", icon: "listChecks" },
+    { k: "question", label: "Question", icon: "circleHelp" },
+    { k: "material", label: "Material", icon: "bookOpen" },
+  ] as const;
   return (
     <>
+      {classworkHref && (
+        <nav aria-label="Or set classwork" className="mb-2 flex flex-wrap items-center gap-1 text-sm">
+          <span className="mr-1 text-ink/65">Or set classwork:</span>
+          {kinds.map((x) => (
+            <Link key={x.k} href={classworkHref(x.k)} scroll={false} className={`${ui.btnGhost} ${ui.sm}`}>
+              <Icon name={x.icon} size="sm" />
+              {x.label}
+            </Link>
+          ))}
+        </nav>
+      )}
       <button
         type="button"
         onClick={() => setOpen(true)}

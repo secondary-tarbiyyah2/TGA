@@ -189,6 +189,20 @@ export function ClassworkTab({ classId, classTitle, viewer, classHref }: { class
     }
   };
 
+  // ?create=assignment|quiz|question|material (the Stream's "Or set classwork" links) opens that
+  // kind's own form once, straight away, instead of the cards.
+  const createKind = canEdit ? params.get("create") : null;
+  const [createHandled, setCreateHandled] = useState(false);
+  useEffect(() => {
+    if (createHandled || topics === null) return;
+    if (createKind === "assignment" || createKind === "quiz" || createKind === "question" || createKind === "material") {
+      // eslint-disable-next-line react-hooks/set-state-in-effect -- one-off: open the form the link asked for
+      setCreateHandled(true);
+      pick(createKind);
+    }
+    // eslint-disable-next-line react-hooks/exhaustive-deps -- runs once when the list has loaded
+  }, [topics, createKind, createHandled]);
+
   const removeTopic = async (t: Topic) => {
     const supabase = getSupabaseClient();
     if (!supabase || !(await askConfirm(`Delete the topic "${t.name}"? Its items stay in the class, just without a topic.`))) return;
