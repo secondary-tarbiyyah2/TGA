@@ -9,7 +9,7 @@ import type { Crumb } from "@/components/learn/PageHeader";
 import { WorkspaceHeader, type MenuAction, Loading } from "@/components/learn/kit";
 import { Button } from "@/components/learn/ui";
 import { Select } from "@/components/learn/Select";
-import { SetWorkPanel } from "@/components/learn/class/SetWorkPanel";
+import { CLASSWORK_CREATE, SetWorkPanel } from "@/components/learn/class/SetWorkPanel";
 import { ParticipantsTab } from "@/components/learn/class/ParticipantsTab";
 import { CourseTab } from "@/components/learn/class/CourseTab";
 import { StreamTab } from "@/components/learn/class/StreamTab";
@@ -242,7 +242,16 @@ export function ClassPage({ viewer }: { viewer: ClassViewer }) {
         title={cls.name}
         primary={
           isStaff ? (
-            <Button variant="primary" icon="plus" data-guide="class-set-work" onClick={() => setSetWork("assignment")}>
+            <Button
+              variant="primary"
+              icon="plus"
+              data-guide="class-set-work"
+              onClick={() => {
+                // The kinds of classwork as cards, in the Classwork section (opened there if need be).
+                if (tab === "classwork") window.dispatchEvent(new Event(CLASSWORK_CREATE));
+                else router.push(`${classHref("classwork")}&create=1`, { scroll: false });
+              }}
+            >
               Set work
             </Button>
           ) : undefined
