@@ -94,7 +94,7 @@ export function RecitationWorkspace({
   const [dateReason, setDateReason] = useState("");
   const [level, setLevel] = useState<MarkingLevel>(classLevel);
   const [pen, setPen] = useState<Pen>("prompt");
-  const [marks, setMarks] = useState<Mistake[]>([]);
+  const [allMarks, setMarks] = useState<Mistake[]>([]);
   const [text, setText] = useState<MushafAyah[] | null>(null);
   const [textError, setTextError] = useState(false);
   const [noRecite, setNoRecite] = useState(false);
@@ -150,12 +150,11 @@ export function RecitationWorkspace({
     // eslint-disable-next-line react-hooks/exhaustive-deps -- ayatKey stands for ayat
   }, [ayatKey]);
 
-  // Marks outside a changed portion are dropped.
-  useEffect(() => {
+  // Marks outside a changed portion are left out (and not saved).
+  const marks = useMemo(() => {
     const inside = new Set(ayatKey.split(","));
-    // eslint-disable-next-line react-hooks/set-state-in-effect -- keep marks inside the portion
-    setMarks((ms) => ms.filter((m) => m.ayah !== null && m.surah && inside.has(keyOf(m.surah, m.ayah))));
-  }, [ayatKey]);
+    return allMarks.filter((m) => m.ayah !== null && !!m.surah && inside.has(keyOf(m.surah, m.ayah)));
+  }, [allMarks, ayatKey]);
 
   const skipped = useMemo(() => new Set(marks.filter((m) => m.kind === "skipped").map((m) => keyOf(m.surah || 0, m.ayah || 0))), [marks]);
   const heard = useMemo(() => ayat.filter(([s, a]) => !skipped.has(keyOf(s, a))), [ayat, skipped]);
@@ -532,15 +531,11 @@ function MushafText({
   markAt: (surah: number, ayah: number, word: number, gap: boolean) => Mistake | undefined;
 }) {
   const label: Record<string, string> = { prompt: "prompt", slip: "slip", tajweed: "tajweed" };
-  let lastSurah = 0;
-  let lastPage = 0;
   return (
     <div lang="ar" dir="rtl" className="mushaf-text px-4 pb-6 pt-2 sm:px-6">
-      {ayat.map((a) => {
-        const head = a.surah !== lastSurah;
-        const pageBreak = a.page !== lastPage;
-        lastSurah = a.surah;
-        lastPage = a.page;
+      {ayat.map((a, n) => {
+        const head = n === 0 || ayat[n - 1].surah !== a.surah;
+        const pageBreak = n === 0 || ayat[n - 1].page !== a.page;
         const isSkipped = skipped.has(`${a.surah}:${a.ayah}`);
         return (
           <span key={`${a.surah}:${a.ayah}`} className="mushaf-ayah" data-skipped={isSkipped}>

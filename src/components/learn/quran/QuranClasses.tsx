@@ -49,7 +49,8 @@ export function useQuranStandard() {
  * are shown first; with none, every class you can see is offered.
  */
 export function QuranClasses({ scope, focusPupil, fixedClass }: { scope: "teach" | "admin"; focusPupil?: string | null; /** Inside a class's own page: that class only, with its lesson notes. */ fixedClass?: ClassSummary }) {
-  const [classes, setClasses] = useState<ClassSummary[] | null>(null);
+  const [loadedClasses, setClasses] = useState<ClassSummary[] | null>(null);
+  const classes = fixedClass ? [fixedClass] : loadedClasses;
   const [classId, setClassId] = useState("");
   const [pupils, setPupils] = useState<Pupil[] | null>(null);
   const [marks, setMarks] = useState<Mark[]>([]);
@@ -61,10 +62,7 @@ export function QuranClasses({ scope, focusPupil, fixedClass }: { scope: "teach"
 
   useEffect(() => {
     let alive = true;
-    if (fixedClass) {
-      setClasses([fixedClass]);
-      return;
-    }
+    if (fixedClass) return;
     (scope === "admin" ? fetchAllClasses() : fetchTeacherClasses()).then((all) => {
       if (!alive) return;
       const quran = all.filter(isQuranClass);
