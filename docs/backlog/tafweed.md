@@ -322,6 +322,83 @@ Statuses: **Not started** · **In progress** · **Done** · **Needs decision** �
 
 ---
 
+## Third batch (owner, 11 Nov 2026, Tafweed 3): policies
+
+All on branch `claude/tafweed3-policies`, migration 0212 `tafweed3_policy_wording` (live policy text and FAQs updated without asking anyone to re-sign). **Run "Sync policies" after the deploy** (no need to tick "overwrite text": the migration already updated the text). The policy PDFs in `public/policies/` are rebuilt from the database by the site deploy.
+
+### T50. No reference to Prevent or the LADO anywhere
+- **Owner's note:** "No need for reference to prevent and lado."
+- **Done:** policies, site and portal copy already had none after T22 (migration 0196). Five teacher notes and one resource line in the Year 11 Islamic Studies and PSHE lessons still said "Prevent" (`content/lessons/islamic-studies/y11.json`, `content/lessons/pshe/y11.json`, the staging copy, `content/resources/spring-2.json`); now "safeguarding" wording. "Prevent" left only where it is an ordinary verb (Computing, Business, Science).
+- **Status:** Done (awaiting owner check). The decks rebuild when this merges.
+
+### T51. Without a stylus tablet: access to printing, not a home printer; no "replaces Tarbiyyah Secondary" basis lines
+- **Owner's note:** "printer at home isnt required without one, access to printing, could be a library etc, no need for reference to what it replaces on tarbiyyah secondary policies as on 'basis'."
+- **Done:** learning page, FAQs (equipment; what fees do not cover), "Is it right for us?" checklist and its email, staff handbook line, policies 02, 07, 24, 25: "access to printing (at home, at a local library or similar)". Basis lines naming Tarbiyyah Secondary removed or reworded (see T57).
+- **Status:** Done (awaiting owner check). Prospectus PDF still the follow-up from T36.
+
+### T52. Safe Exam Browser not in use; other ways to secure assessments; Digital Lead reviews audit logs; home filtering offered
+- **Owner's note:** "currently safe exam browser is not in use, so remove reference to it. As a side note, explore alternative methods to secure assessments and methods of integration with our policy and system. Ensure that there are suitable roles for audit logs to be reviewed specifically digital lead. Ensure that the filtering at home with router level filtering, device parental controls etc are offered."
+- **Done:** Safe Exam Browser removed from policies 01, 02, 13, 19, 20, 24, 28, 29 and the equipment FAQ; secure tests are described as released only to the class in the Student Portal, time window, one attempt, server marking for portal quizzes, live invigilation. Options note: `docs/assessment-security-options.md` (nothing built). Policy 02 has a "Digital Lead" subsection (monthly audit log review and on any concern, accounts and access, termly settings check, record of reviews); policies 01 and 28 say the same. Policy 02's "Filtering at home" now lists router-level filtering, device parental controls, safe search and shared spaces, and offers help; the Safeguarding page has a matching "Filtering at home" section (`src/app/(marketing)/safeguarding/page.tsx`), replacing the old claim that advice was "on the Parent Portal".
+- **Open:** the Digital Lead's name (placeholder in policy 02). The portal's Audit log (`/admin/audit-log`) only admits the Headteacher and Admin, so a Digital Lead who is neither cannot open it: a read-only "Digital Lead" role or switch would be needed (not built; owner to decide).
+- **Status:** Done (awaiting owner check); portal role **Needs decision**.
+
+### T53. Model day subject to change
+- **Owner's note:** "Model day in policy 3 is subject to change."
+- **Done:** policy 03 says the model day is an example and subject to change, and the pupil's own timetable in the Student Portal is the one to follow.
+- **Status:** Done (awaiting owner check)
+
+### T54. Guest speaker and external content risk assessment; reporting and referral for pupils outside the UK
+- **Owner's note:** "Can u prepare a risk assessment in order to ensure we follow the virtual guest speakers and external content risk assessment, also for reporting and referral, remember that not all students are in uk."
+- **Done:** `docs/risk-assessments/virtual-guest-speakers-and-external-content.md` (the form: session, speaker checks, content checks, live-session controls, risks scored on policy 11's 1 to 5 scale, DSL decision, after-session review, and the referral route wherever the pupil lives). Policy 05 section 5 names the form and what it covers; section 7 now has UK referrals (England and Wales, Scotland, Northern Ireland) and pupils abroad (local child protection services and police via the Emergency Contact Register, advice from Hounslow, FCDO for British nationals), with every decision recorded. Policy 01 section 10 adds advice from Hounslow where the local service is unclear; policy 11 names the form.
+- **Open:** put the form where staff can fill it in (e.g. a Word copy in Documents, or a portal form later).
+- **Status:** Done (awaiting owner check)
+
+### T55. "Teaching pupils to be resilient": Islamic Studies first
+- **Owner's note:** "for 9. Teaching pupils to be resilient, start off w islamic studies, then the rest (3 POINTS OR SO)."
+- **Done:** policy 05 section 9 opens with an Islamic Studies paragraph, then three points (PSHE and Citizenship; History and English; Online safety).
+- **Status:** Done (awaiting owner check)
+
+### T56. Policy 6: the Prophet's honorific written clearly
+- **Owner's note:** "Policy 6: The Prophet صلى الله عليه وسلم said ... make sure this text is written clearly, arabic bit."
+- **Done:** the ligature (U+FDFA), which the PDF fonts could not draw, is replaced by the words صلى الله عليه وسلم with "(peace and blessings be upon him)". Policy markdown now marks every run of Arabic `lang="ar" dir="rtl"` on the web (`markArabic` in `src/lib/safeMarkdown.ts`, test in `safeMarkdown.test.ts`; the site's Amiri font applies) and in the PDF (`scripts/build-policies.cjs`, Amiri embedded).
+- **Status:** Done (awaiting owner check: look at policy 06 on the site and in the PDF after deploy)
+
+### T57. Dates of issue, no TSS in the basis, better values
+- **Owner's note:** "Put all date of issue as september or october", "the basis remove reference to tss cuz thats not needed for public", "we need to change up the values to something better".
+- **Done:** every policy's date of issue is "1 September 2026 (version n)" (versions bumped where the wording changed this time). Basis lines that named Tarbiyyah Secondary were removed, or reworded where something useful remained (02, 04, 05, 07, 17, 19, 23, 28). Policy text that names Tarbiyyah Secondary School as the examination centre (19, 25, fit check) is a fact families need and was left.
+- **Values:** not changed. Proposals for the owner are in the PR description (keep IHSAN but one Arabic value per letter, or a revised set).
+- **Status:** dates and basis Done; values **Needs decision**.
+
+### T58. Adab of correction, merits and consequences that work online
+- **Owner's note:** "Ensure that the Adab of correction is realistic and practical; should that be a reason if we can block kids from contacting each other in dms during class? Shouldnt they be able to msg their mates on the portal to ask for hello etc or is it better they ask staff only. Ensure the merits and demerits are actually realistic and punishment is painful in its own way and rewards are actually rewarding."
+- **Done:** policy 07 rewritten: six-step adab of correction (class reminder, private prompt from staff, warning, platform tools, short word at the end of the recorded lesson, log it); merits M1/M2 worth 1 or 2 (as in the portal), Star of the Week with a privilege of the pupil's choice (quiz topic, leading du'a, lesson helper, homework pass), House Cup, milestones at 30/75/150/250 to be checked after the first half term; consequences C1 to C5 that cost what pupils feel (own time, privileges, House points, parents told, on report). Policy 23 now says M1 and M2.
+- **Pupil DMs:** not changed. The portal does not let pupils message each other (1:1 threads are adults only, migration 0085; in class groups a pupil's reply goes to staff only, 0204), and policy 02 says private pupil-to-pupil chat is off in Teams. Recommendation in the PR: keep it that way; pupils greet each other in the lesson chat and clubs.
+- **Open:** cost of book vouchers (owner).
+- **Status:** Done (awaiting owner check)
+
+### T59. Policy 24 "How to apply" matches the website
+- **Owner's note:** "Ensure the how to apply in policy 24 is in line w what the website says."
+- **Done:** section 5 now has the website's six steps (Apply, We review, Remote assessment, Family video call, Offer and securing the place, Welcome; `admissionsProcessSteps` in `src/components/admissions/applicationShared.ts`), with the optional call, open evening and "Is it right for us?" before applying. Appendix A lists what the form asks for (child's ID, parent's photo ID, proof of address, school report if any) and what comes later.
+- **Open (fees job):** the website says the application fee is paid with the first fee payment "if not already paid"; the policy says it is paid at application. Fee wording was left to the parallel fees work.
+- **Status:** Done (awaiting owner check)
+
+### T60. Complaint Form as its own document
+- **Owner's note:** "Complaint form as appendix a needs to be separated."
+- **Done:** `/policies/complaint-form/` (`src/app/(marketing)/policies/complaint-form/page.tsx`): how to send it, then the questions with room to write, printable. Appendix A removed from policy 26, which links to the page.
+- **Status:** Done (awaiting owner check)
+
+### T61. Live lessons realistic; flexible learning subject to availability
+- **Owner's note:** "Make sure live lessons offered is realistic for us to offer." "We need to see if its feasible to provide flexible learning or just make it subject to availability."
+- **Done:** policy 21 says every option except the standard timetable is offered subject to availability (reasonable adjustments for SEND and medical needs are not); a daily live contact is required, and an option is not offered if it cannot be staffed. Requests go through the office or portal Messages (there is no request form in the portal). Website key stage note and "Is it right for us?" say "subject to availability".
+- **Flagged for the owner (not changed):** see the PR description (23 live lessons a week in Years 7 to 11, daily form time, time-zone pods and clinics, recorded one-to-ones, class size 15).
+- **Status:** Done (awaiting owner check); live-lesson promises **Needs decision**.
+
+### T62. Data protection training for staff
+- **Owner's note:** "Generate data protection training."
+- **Done:** `docs/training/data-protection-training.md`: principles, special category data, daily do and don't, working from home or abroad, sharing (safeguarding first), requests, breaches, recordings, audit logs, and a 10-question quiz (pass mark 8) with answers. Policy 28 refers to it.
+- **Open:** DPO and Digital Lead names (placeholders); where staff record that they passed; putting it into the portal's Staff handbook.
+- **Status:** Done (awaiting owner check)
+
 ## Third batch (owner, 11 Nov 2026, Tafweed 3): fees, payments and contacts
 
 ### T70. First payment due on admission, then the remaining payments
@@ -361,6 +438,8 @@ Statuses: **Not started** · **In progress** · **Done** · **Needs decision** �
 
 ## Log
 
+- 2026-11-11: Tafweed 3 policies, T50 to T62 (branch `claude/tafweed3-policies`, migration 0212 `tafweed3_policy_wording`). No Prevent in lesson notes; access to printing instead of a home printer; Safe Exam Browser removed; Digital Lead reviews audit logs; home filtering offered (policy 02 and the Safeguarding page); model day subject to change; guest speaker risk assessment form (`docs/risk-assessments/`) and referrals for pupils in and outside the UK; resilience led by Islamic Studies; the honorific in policy 06 written out and marked as Arabic on the web and in PDFs; dates of issue all 1 September 2026; no Tarbiyyah Secondary in basis lines; behaviour policy correction, rewards and consequences rewritten; how to apply as on the website; Complaint Form at `/policies/complaint-form/`; flexible learning subject to availability; `docs/assessment-security-options.md` and `docs/training/data-protection-training.md`. Run Sync policies after deploy.
+
 - 2026-11-11: Third batch, Tafweed 3 (branch `claude/tafweed3-fees`, migration 0214 `fees_online_payment`, pgTAP `fees_online_payment.test.sql`). T70: the first payment is due on acceptance under every plan, then the remaining payments, on the fees page, calculator, apply form, "Is it right for us?", FAQs, policies 24 and 25 and the family Fees page. T71: online payments researched (`docs/online-payments-options.md`, recommendation Stripe Pay by Bank, capped at £5 a payment) and a "Pay online" button on the website and portal driven by `site_settings.online_payment_url`, hidden until set. T72: standing order and bank transfer removed everywhere (old payment records still valid). T73: policy 24's How to Apply matches the website's six steps. T74: role mailboxes listed (`docs/role-email-addresses.md`) and all addresses moved into `ROLE_EMAILS`, still pointing at today's addresses.
 - 2026-11-11: T39 part 3 (branch `claude/portal-guide`): "A day in the life" journeys on the Portal guide home (`src/content/portal-guide/journeys.ts`, `GuideJourney.tsx`, `GuideJourneys.tsx`). Teacher: plan a lesson, send it for review, teach it live on Teams, take the register, set and mark work, log behaviour, write a report. Head: Today, Waiting for you, admissions, safeguarding, flagged messages, registers, absences and cover, lessons to approve, policies. Admissions, SENCo, parent (today, homework, messages, fees, absence, details, calendar) and pupil (join a lesson, homework, a class, revise, merits). Each step goes to the real page (following a real class link where needed) and outlines the real element; Skip this step, Stop for now, and Carry on later from where you stopped (saved in `guide_progress.journeys`). `guide.test.ts` checks 6 to 12 steps and every target.
 - 2026-11-11: T39 part 2 (branch `claude/portal-guide`): the Portal guide home at `/guide` (`GuideHome.tsx`): progress ring ("18 of 42 pages learned"), Carry on (last page read) and Next, the role's pages as a journey map of chapters with a tick per page learned, a searchable A to Z of every page and common job (links open the page with its guide panel, `?guide=1`), and Start the guide again. Linked from the menu (Portal guide, under Take the tour), the account menu and search ("Open the Portal guide", "Guide me on this page"). The first-sign-in tour's last step is now "Want the full guide?" with an Open the Portal guide button.
@@ -392,3 +471,4 @@ Statuses: **Not started** · **In progress** · **Done** · **Needs decision** �
 - 2026-11-10: Owner asked again for (a) job applications managed in the portal: already at Staff › Recruitment (`/admin/recruitment`), to be surfaced better; (b) a timetable generator matching staff availability with pupils' subjects: already at Classes › Timetable › Generate (`/admin/lessons/generate`, solver `scripts/timetable-solver/generate.py`), to be surfaced better; (c) application form to pupil record without retyping: accepting now also copies gender, previous school and the parent/guardian as emergency contacts, filling only empty fields (PR "Admissions: accepting fills the pupil record"). Portal redesign canvas: https://claude.ai/artifact/5xxUxFxTLMmFfoGSi4izku
 - 2026-11-10: Lesson builder: assessment mode. Tests, mocks and quizzes (`assessmentMode`, set on the 272 lessons the title detection finds) now get an exam-conditions slide with the timer, questions labelled Question 1, 2 or Section A, B with marks, no answers in the pupils' flow or PDF, and the mark scheme after a teacher-only divider and in the lesson plan (branch builder-assessment-mode).
 - 2026-11-10: Assessment mode follow-up: quiz lessons (often review and quiz) now keep starter, guided practice and poll answers in the lesson and hold back only the quiz questions' answers; follow-on tasks in a mock are labelled "Extra" and left out of the total (branch builder-assessment-mode-2).
+- 2026-11-11: Owner feedback 3 (`docs/owner-briefs/2026-11-11-feedback-3.md`): **Settings › School features** (branch `claude/school-features`, migration 0210 `school_features`, pgTAP `school_features.test.sql`, unit tests `features.test.ts`, hook `useFeature`). Headteacher switches, read once per session: Revision packs (OFF by default: hidden everywhere, no automatic draft packs, data kept), Only subject teachers can edit lessons (ON; enforced in `curriculum_can_edit_lesson`), AI helpers (ON; also refused in `ai-assist`), House points (ON), Portal guide journeys (ON), Lesson feedback (ON).

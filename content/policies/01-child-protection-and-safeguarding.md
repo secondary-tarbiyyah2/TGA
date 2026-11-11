@@ -7,9 +7,8 @@ appliesTo: All pupils, parents, staff, trustees and volunteers of Tarbiyyah Glob
 owner: Designated Safeguarding Lead
 approvedBy: Ustadh Abu Zayn Haneef Sandhar, Headteacher
 agreedWith: The Chair of Trustees, Tarbiyyah Education Trust
-dateOfIssue: 1 September 2026 (version 1.1, updated 28 October 2026 for the January 2027 launch)
+dateOfIssue: 1 September 2026 (version 1.2)
 nextReview: 31 August 2027
-basis: Adapted from the Tarbiyyah Secondary School Child Protection and Safeguarding Policy 2025–26, rewritten for fully online provision
 readAlongside: Online Safety and Acceptable Use Policy; Live Lesson Protocols; Recording of Live Lessons and Use of Images Policy; Safeguarding: Extremism and Radicalisation Policy; Attendance, Punctuality and Children Missing Education Policy
 availability: Published on the Academy website and Parent Portal. Available in large print or another accessible format on request.
 ---
@@ -149,8 +148,9 @@ Because the Academy does not provide the internet connection in a pupil's home, 
 - the live-lesson platform is configured so that only staff can start meetings, admit participants, share screens by default, record, or create breakout rooms;
 - lobby (waiting room) settings are used so that only invited Academy accounts can join live lessons;
 - live lessons are recorded for safeguarding purposes in line with the Recording of Live Lessons and Use of Images Policy;
-- secure assessments use Safe Exam Browser, which restricts access to other sites during a test;
-- parents are given guidance on home filtering, parental controls and supervising younger children online;
+- secure assessments are released only to the pupil's class during the test window and are invigilated live, with cameras on;
+- the Digital Lead reviews the audit logs of Academy platforms every month and whenever a concern is raised, and passes any safeguarding concern to the DSL the same day;
+- parents are offered guidance and help to set up router-level filtering, device parental controls and safe search at home, and to supervise younger children online;
 - the DSL reviews filtering and monitoring arrangements at least annually against the DfE Filtering and Monitoring Standards, adapted for online provision. Full detail is set out in the Online Safety and Acceptable Use Policy.
 
 ## 10. Pupils Living Outside England
@@ -162,6 +162,7 @@ Many of our pupils live in other countries. The Academy's duty of care does not 
 - Where a pupil living abroad is at immediate risk, staff will contact the local emergency services first, then the DSL.
 - For non-emergency concerns about a pupil abroad, the DSL will seek advice from the local child protection authority, the NSPCC and, where appropriate, the Foreign, Commonwealth and Development Office, and will record the reasoning for every decision.
 - Where a pupil is a British national abroad and the concern is serious, the DSL may also contact the local authority where the family was last resident in the UK.
+- Where it is unclear which local service to contact, the DSL seeks advice from Hounslow Children's Services (see section 2) while making sure the pupil is safe in the meantime.
 
 > **Time zones**
 >

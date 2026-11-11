@@ -31,7 +31,7 @@ jobs:
       - name: Install Playwright
         run: |
           npm install playwright@1
-          npx playwright install --with-deps chromium
+          npx playwright install --with-deps chromium || npx playwright install chromium
       - name: Run diagnostic
         env:
           TEST_EMAIL: ${{ inputs.email }}

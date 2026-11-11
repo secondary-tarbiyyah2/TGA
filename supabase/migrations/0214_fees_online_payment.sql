@@ -137,6 +137,44 @@ update public.policy_links
 set body_md = regexp_replace(body_md, '\s*## Appendix A [^\n]*Standing Order Form.*$', E'\n')
 where body_md ~ '## Appendix A [^\n]*Standing Order Form';
 
+-- Policy 24 section 5 as migration 0212 left it (Tafweed 3 policies, merged first) -> the
+-- website's steps after this change (no payment on the form; first fee payment on acceptance).
+update public.policy_links set body_md = replace(body_md, $t$## 5. How to Apply
+
+Before applying, families are welcome to book an admissions call, join an online open evening or the taster morning, and use "Is it right for us?" on the Academy website to see the likely year group, the live day in their time zone, what they need at home and the fees. The application itself follows the same six steps as the "How to apply" page of the website:
+
+| Step | What happens |
+| --- | --- |
+| 1. Apply | Complete the online application form (one form for all the children in a family), including each child's home address, and upload the documents listed in Appendix A. Pay the application fee of £150 per child, which is non-refundable (see the Fees Policy) |
+| 2. We review the application | The admissions team checks the application and documents, asks the child's current school for a confidential report, and tells the family if anything else is needed |
+| 3. Remote assessment | The pupil sits an age-appropriate online entry assessment, supervised with the camera on. The Academy emails the date, time and what to prepare |
+| 4. Family video call | A video call with the Headteacher or a member of the leadership team, the parent or guardian and the pupil, about learning goals, values and any support needs |
+| 5. Offer and securing the place | The decision is sent in writing, normally within three working days of the family video call (and within ten working days of a complete application). A successful applicant receives a conditional offer with the terms and conditions and the Fees Policy, and the family secures the place as set out in section 7 |
+| 6. Welcome | The Academy creates the parent and pupil accounts, emails the sign-in details, and welcomes the pupil to induction week before the first live lessons |$t$, $t$## 5. How to Apply
+
+Before applying, families are welcome to come to an online open evening, book an admissions call or use "Is it right for us?" on the Academy website to see the likely year group, live day, timetable and fees. The application itself follows the six steps shown on the website's Admissions page:
+
+| Step | What happens |
+| --- | --- |
+| 1. Apply | Complete the online application form (several children can be added to the same form) and upload the documents listed in Appendix A, including photo ID for a parent or guardian, each child's passport or birth certificate, proof of the child's home address and, if available, a recent school report or homeschool record. No payment is taken on the form |
+| 2. We review your application | The admissions team checks the application and documents, requests a confidential report from the current school and tells the family if anything else is needed. The Academy emails the details for paying the application fee of £150 per child, which is non-refundable (see the Fees Policy) and must be paid before a place is confirmed |
+| 3. Remote assessment | The pupil completes an age-appropriate online entry assessment under supervised, camera-on conditions; the date, time and what to prepare are emailed |
+| 4. Family video call | A video call with the Headteacher or a member of the leadership team, the parent or guardian and the child, about learning goals, values and support needs. Offers are made in writing, normally within three working days of the call (and within ten working days of a complete application) |
+| 5. Offer and securing your place | A conditional offer is emailed with the terms and conditions and the Fees Policy. To accept, the family replies within five working days and pays the first fee payment on acceptance, plus the application fee if not already paid |
+| 6. Welcome | The Academy creates the parent and pupil accounts, emails the sign-in details and welcomes the pupil to induction week (4 to 8 January 2027), ahead of the first live lessons on Monday 11 January 2027 |$t$)
+where position($t$## 5. How to Apply
+
+Before applying, families are welcome to book an admissions call, join an online open evening or the taster morning, and use "Is it right for us?" on the Academy website to see the likely year group, the live day in their time zone, what they need at home and the fees. The application itself follows the same six steps as the "How to apply" page of the website:
+
+| Step | What happens |
+| --- | --- |
+| 1. Apply | Complete the online application form (one form for all the children in a family), including each child's home address, and upload the documents listed in Appendix A. Pay the application fee of £150 per child, which is non-refundable (see the Fees Policy) |
+| 2. We review the application | The admissions team checks the application and documents, asks the child's current school for a confidential report, and tells the family if anything else is needed |
+| 3. Remote assessment | The pupil sits an age-appropriate online entry assessment, supervised with the camera on. The Academy emails the date, time and what to prepare |
+| 4. Family video call | A video call with the Headteacher or a member of the leadership team, the parent or guardian and the pupil, about learning goals, values and any support needs |
+| 5. Offer and securing the place | The decision is sent in writing, normally within three working days of the family video call (and within ten working days of a complete application). A successful applicant receives a conditional offer with the terms and conditions and the Fees Policy, and the family secures the place as set out in section 7 |
+| 6. Welcome | The Academy creates the parent and pupil accounts, emails the sign-in details, and welcomes the pupil to induction week before the first live lessons |$t$ in body_md) > 0;
+
 -- Policies (version line)
 update public.policy_links
 set meta = jsonb_set(meta, '{dateOfIssue}', to_jsonb($t$1 September 2026 (version 1.4, updated 11 November 2026: the first payment is due on acceptance of a place, and fees are paid online)$t$::text))

@@ -20,6 +20,28 @@ export const metadata: Metadata = pageMetadata({
 const DSL_FALLBACK = { name: "Ustadh Abu Zayn Haneef Sandhar, Headteacher", phone: "020 3719 8697" };
 const DEPUTY_DSL = "Skander Ahmed";
 
+// Home filtering help the Online Safety and Acceptable Use Policy (02,
+// section 4) promises families (owner, Tafweed 3: "ensure that the filtering
+// at home with router level filtering, device parental controls etc are offered").
+const HOME_FILTERING = [
+  {
+    title: "Router-level filtering",
+    body: "Most broadband providers offer a free family filter that blocks harmful and adult sites on every device in your home. Switch it on in your provider's account or app, or in your router's settings.",
+  },
+  {
+    title: "Parental controls on each device",
+    body: "Microsoft Family Safety on Windows, Screen Time on iPad and Mac, and Google Family Link on Android and Chromebook let you filter websites, limit apps and set screen-time limits.",
+  },
+  {
+    title: "Safe search and restricted modes",
+    body: "Turn on safe search in search engines and restricted mode on video sites, on every browser and account your child uses.",
+  },
+  {
+    title: "Devices in shared spaces",
+    body: "Younger children learn best with the device in a family room. For all ages, phones and tablets are best charged outside bedrooms overnight.",
+  },
+];
+
 const RELATED_POLICIES = [
   { slug: "02-online-safety-and-acceptable-use", label: "Online Safety and Acceptable Use" },
   { slug: "03-live-lesson-protocols", label: "Live Lesson Protocols" },
@@ -143,6 +165,26 @@ export default async function SafeguardingPage() {
               </div>
             </div>
           )}
+
+          <div id="filtering-at-home">
+            <Kicker>Online safety at home</Kicker>
+            <h2 className="text-h2 font-serif font-semibold text-ink">Filtering at home.</h2>
+            <p className="mt-4 text-ink/75">
+              We keep our own platforms locked down, but we do not control the internet in your home. These four steps make the
+              biggest difference. We go through them in the parents&apos; induction session, and if you would like help setting
+              any of them up, email{" "}
+              <a href={`mailto:${email}`} className="font-semibold text-gold-700 underline">{email}</a> and our Digital Lead will
+              help.
+            </p>
+            <ul className="mt-6 grid gap-4 sm:grid-cols-2">
+              {HOME_FILTERING.map((h) => (
+                <li key={h.title} className="rounded-xl border border-gold-light/60 bg-white p-5">
+                  <h3 className="font-semibold text-ink">{h.title}</h3>
+                  <p className="mt-2 text-sm text-ink/75">{h.body}</p>
+                </li>
+              ))}
+            </ul>
+          </div>
 
           <div>
             <h2 className="font-serif text-xl font-semibold text-ink">Keeping children safe online</h2>

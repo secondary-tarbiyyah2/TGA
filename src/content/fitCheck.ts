@@ -164,7 +164,7 @@ export const FIT_CHECK = {
     timezoneEdge: (localStart: string, localEnd: string) =>
       `Live lessons would run from ${localStart} to ${localEnd} where you are. That is workable, but early starts or late finishes can wear on a child over a term, so think about how it would feel every day.`,
     timezoneLate: (localStart: string, localEnd: string) =>
-      `Live lessons would run from ${localStart} to ${localEnd} where you are. That is outside the hours most children learn well, and it is the first thing we would want to talk through. Families in other time zones can ask about the Academy's flexible learning options, but we cannot promise they will suit every year group.`,
+      `Live lessons would run from ${localStart} to ${localEnd} where you are. That is outside the hours most children learn well, and it is the first thing we would want to talk through. Families in other time zones can ask about flexible learning, which is offered subject to availability, so we cannot promise it for every year group.`,
     setupReady: "You already have the quiet space and the device with a camera that live lessons need.",
     arrangeDevice: "You will need the quiet space and the device with a camera ready for induction week, 4 to 8 January 2027.",
     noDevice:
@@ -215,7 +215,7 @@ export const FIT_CHECK = {
         device: "A laptop or tablet with a camera and microphone, and a reliable internet connection",
         space: "A quiet place where your child can learn without interruption",
         writing:
-          "A tablet with a stylus, so your child can write on worksheets and the lesson PDF each day (recommended: any tablet that takes a stylus, or a basic graphics tablet that plugs into the laptop). Without one, a printer at home is required",
+          "A tablet with a stylus, so your child can write on worksheets and the lesson PDF each day (recommended: any tablet that takes a stylus, or a basic graphics tablet that plugs into the laptop). Without one, access to printing is required: at home, at a local library or similar",
         adult: "An adult nearby during live lessons (Years 1 to 6)",
         ks1Parent: "Time for a parent to guide the away-from-screen activities sent home each week (Years 1 and 2)",
         exams: "An exam centre for International GCSE exams (Years 10 and 11): pupils in the UK sit them at Tarbiyyah Secondary School as their exam centre, and families outside the UK get help finding and registering with an approved centre nearby",
