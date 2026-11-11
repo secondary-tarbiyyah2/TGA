@@ -150,7 +150,7 @@ function SendRegister({ area }: { area: "admin" | "teach" }) {
         </dl>
         <div className={ui.toolbar}>
           <input type="search" value={q} onChange={(e) => setQ(e.target.value)} placeholder="Search by name" aria-label="Search by name" className={`${ui.input} !w-auto min-w-[12rem] flex-1`} />
-          <Select value={need} onChange={(e) => setNeed(e.target.value as "" | PrimaryNeed)} aria-label="Area of need" className="w-full sm:w-64">
+          <Select value={need} onChange={(e) => setNeed(e.target.value as "" | PrimaryNeed)} aria-label="Area of need" className={`${ui.select} w-full sm:w-64`}>
             <option value="">Every area of need</option>
             {(Object.keys(PRIMARY_NEED) as PrimaryNeed[]).map((k) => (
               <option key={k} value={k}>
@@ -158,7 +158,7 @@ function SendRegister({ area }: { area: "admin" | "teach" }) {
               </option>
             ))}
           </Select>
-          <Select value={level} onChange={(e) => setLevel(e.target.value as "" | SupportLevel)} aria-label="Level of support" className="w-full sm:w-44">
+          <Select value={level} onChange={(e) => setLevel(e.target.value as "" | SupportLevel)} aria-label="Level of support" className={`${ui.select} w-full sm:w-44`}>
             <option value="">Every level</option>
             {(Object.keys(SUPPORT_LEVEL) as SupportLevel[]).map((k) => (
               <option key={k} value={k}>
@@ -166,7 +166,7 @@ function SendRegister({ area }: { area: "admin" | "teach" }) {
               </option>
             ))}
           </Select>
-          <Select value={year} onChange={(e) => setYear(e.target.value)} aria-label="Year group" className="w-full sm:w-40">
+          <Select value={year} onChange={(e) => setYear(e.target.value)} aria-label="Year group" className={`${ui.select} w-full sm:w-40`}>
             <option value="">Every year</option>
             {years.map((y) => (
               <option key={y} value={y}>
