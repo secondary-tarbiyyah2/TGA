@@ -92,7 +92,7 @@ function FamilyFeesContent() {
       )}
       {rows && rows.length > 0 && (
         <>
-          <div data-guide="fees-figures" className="mb-6 grid grid-cols-2 gap-3 lg:grid-cols-4">
+          <div data-guide="fees-figures" className="portal-figures mb-6 grid grid-cols-2 gap-3 lg:grid-cols-4">
             <StatTile label="Charged" value={formatGBP(totals.billed)} />
             <StatTile label="Paid" value={formatGBP(totals.paid)} />
             <StatTile label="Balance due" value={formatGBP(totals.balance)} status={totals.balance === 0 ? "ok" : undefined} />

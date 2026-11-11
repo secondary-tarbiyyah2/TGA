@@ -207,7 +207,7 @@ function BehaviourContent() {
 
           {sub === "overview" && tab === "merits" && (
             <div className="space-y-4">
-              <div className="grid grid-cols-2 gap-3 lg:grid-cols-4">
+              <div className="portal-figures grid grid-cols-2 gap-3 lg:grid-cols-4">
                 <StatTile label="Merit points (all time)" value={String(stats.allTimePoints)} sub="Net of demerits" />
                 <StatTile
                   label={`Merits · ${PERIOD_LABEL[period].toLowerCase()}`}

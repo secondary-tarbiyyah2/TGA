@@ -104,7 +104,7 @@ function FamilyBehaviourContent() {
         </EmptyState>
       ) : (
         <div className="space-y-4">
-          <div data-guide="merit-stats" className="grid grid-cols-2 gap-3 lg:grid-cols-3">
+          <div data-guide="merit-stats" className="portal-figures grid grid-cols-2 gap-3 lg:grid-cols-3">
             <StatTile label="Points total" value={String(total)} sub={total > 0 ? "Keep it up!" : undefined} tone="good" />
             <StatTile label="Merits earned" value={String(merits)} />
             <StatTile label="Badges" value={String(badges.length)} />

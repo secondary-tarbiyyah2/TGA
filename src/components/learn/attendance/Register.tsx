@@ -346,7 +346,9 @@ export function Register({ lessonId, classId, onProgress }: { lessonId: string; 
               }}
               className="flex flex-wrap items-center gap-3 px-5 py-2.5 focus-visible:bg-cream/70 focus-visible:outline-none"
             >
-              <span className="min-w-0 flex-1 truncate text-sm font-medium text-ink">
+              {/* The name keeps at least 12rem; in a narrow panel the mark buttons wrap onto the
+                  next line instead of squeezing the name to a few letters (owner, 11 Nov 2026). */}
+              <span className="min-w-[12rem] flex-[1_1_12rem] break-words text-sm font-medium text-ink">
                 <PupilLink id={c.id} name={c.name} />
                 {rates[c.id] !== undefined && (
                   <span className={`ml-2 text-xs font-normal tabular-nums ${rates[c.id] < 90 ? "text-amber-800" : "text-ink/60"}`} title="Attendance over the last 60 days">

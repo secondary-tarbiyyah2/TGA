@@ -75,6 +75,7 @@ export function RecitationWorkspace({
   level: classLevel,
   standard,
   last,
+  lastOfKind,
   onClose,
   onSaved,
 }: {
@@ -84,11 +85,27 @@ export function RecitationWorkspace({
   level: MarkingLevel;
   standard: MarkingStandard;
   last?: QuranMark | null;
+  /** The pupil's last recitation of a kind, so memorisation carries on from the last memorisation and
+   *  revision from the last revision (not from whatever was heard last). */
+  lastOfKind?: (kind: RecitationKind) => QuranMark | null;
   onClose: () => void;
   onSaved: (text: string) => void;
 }) {
-  const [kind, setKind] = useState<RecitationKind>("memorisation");
-  const [portions, setPortions] = useState<Portion[]>(() => [startPortion(last)]);
+  const [kind, setKindState] = useState<RecitationKind>("memorisation");
+  const [portions, setPortionsState] = useState<Portion[]>(() => [startPortion(lastOfKind?.("memorisation") ?? last)]);
+  // Until the teacher changes the portion, switching the kind moves it to where that kind left off.
+  const [portionTouched, setPortionTouched] = useState(false);
+  const setPortions: typeof setPortionsState = (v) => {
+    setPortionTouched(true);
+    setPortionsState(v);
+  };
+  const setKind = (k: RecitationKind) => {
+    setKindState(k);
+    if (!portionTouched && lastOfKind) {
+      const from = lastOfKind(k);
+      if (from) setPortionsState([startPortion(from)]);
+    }
+  };
   const [lessonDay, setLessonDay] = useState<string | null>(null);
   const [date, setDate] = useState<string>("");
   const [dateReason, setDateReason] = useState("");

@@ -708,6 +708,32 @@ html[data-readable-font] .portal .portal-display {
 }
 /* A workspace's own sections (a class: Stream, Classwork, Lessons...), listed down the left of
    the content on wide screens instead of a strip across the top. */
+/* A row of figures (Fees, Behaviour, Safeguarding, School summary): one panel divided by hairlines
+   instead of four separate cards. Add `portal-figures` to the grid that holds the tiles; the tiles
+   lose their own border, corners and fill. Each tile's 1px outline meets its neighbour's in the 1px
+   gap, so the lines stay single whatever the column count, and an empty cell stays plain. */
+.portal .portal-figures {
+  gap: 1px !important;
+  overflow: hidden;
+  border: 1px solid var(--color-gold-light);
+  border-radius: var(--radius-2xl);
+  background: var(--portal-surface);
+}
+.portal .portal-figures > * {
+  border: 0 !important;
+  border-radius: 0 !important;
+  background: var(--portal-surface) !important;
+  box-shadow: 0 0 0 1px var(--color-gold-light) !important;
+  padding: 0.875rem 1rem !important;
+}
+.portal .portal-figures > *::before {
+  display: none;
+}
+@media print {
+  .portal .portal-figures > * {
+    box-shadow: none !important;
+  }
+}
 .portal-section-nav {
   border-left: 1px solid var(--color-gold-light);
 }
