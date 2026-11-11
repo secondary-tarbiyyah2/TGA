@@ -95,6 +95,22 @@ claude/fb2-pupils-* (7-9, 13, 19-21), claude/redesign3-* (Action centre, pupil h
 Curriculum as a Drive-like browser). Ihsan LMS reference (read-only): github.com/Bananamc/madrasa-maina.
 BEFORE THAT: portal structure redesign per docs/owner-briefs/2026-11-10-ui-ux-redesign.md (incl. 11 Nov feedback), docs/portal-structure.md.
 
+SECONDARY REBUILD FROM ISS1 (owner, 11 Nov 2026 14:30: "do everything from scratch based off of iss1"; where the
+school's booklet and TGA's earlier choices clash, "booklet wins"). Branch `claude/iss1-secondary-ks3-plans`:
+- Years 7 to 9 unit plans (content/syllabus/ks1-3 yearMap y7 to y9) rewritten from the ISS1 Curriculum Booklet 2026-27
+  for Arabic, Art, English, Geography, History, ICT (slug computing), Islamic Studies, Maths and Science. Booklet terms
+  map to half terms: Autumn -> Autumn 1 and 2; Spring (Jan to May) -> Spring 1, Spring 2, Summer 1; Summer -> Summer 2.
+  PSHE and Qur'an are not in the booklet and are unchanged.
+- Years 10 and 11: English Language exam is AQA 8700 (4EB1 entry withdrawn); English Literature is Pearson GCSE 1ET0
+  (Macbeth, An Inspector Calls, A Christmas Carol, Conflict collection; replaces 4ET1); Geography is AQA 8035 (replaces
+  4GE1; hot deserts, coasts and rivers, food; school case studies); Science is three separate International GCSEs
+  (4SD0 withdrawn). Maths 4MA1, Business 4BS1, Islamic Studies 4IS1 (all Section A and B in Year 10, C in Year 11) and
+  Arabic 1AA0 reordered to the booklet. Computer Science is not in the booklet: kept, unchanged, flagged.
+- NOT YET DONE: the 2,863 secondary lessons (content/lessons/*/y7 to y11) still follow the old plans. They must be
+  rewritten to the new plans subject by subject (v3 rules), then term resources rebuilt. The public website and policies
+  still name the old exam codes (src/content/curriculum.ts, migrations 0140/0153 copies, FAQs): change them only when
+  the owner confirms the new exam entries, because 8035 fieldwork needs a centre's Head of Centre statement.
+
 Next, in this order (each one agent; briefs in docs/agent-briefs/):
 1. (done) Founding-year lessons.
 2. (done) Spring 2, Summer 1, Summer 2.

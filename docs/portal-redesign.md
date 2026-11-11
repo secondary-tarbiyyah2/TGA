@@ -37,9 +37,24 @@ Batches and status:
    they went); the selected chip's count is readable again. People: Staff / Families switch beside the search,
    role chips under it, one bordered list with shared `Pagination` (was a card around everything with Show
    more). Staff profiles already list and detail; unchanged.
-3. [ ] Records. 4. [ ] Other settings pages
-   (School settings, Account, Academic setup, Admissions and Recruitment settings). 5. [ ] Workflows (Reports'
-   own sections as stages, Admissions, Entry assessments, Timetable). 6. [ ] Workspaces and Today, Messages,
+3. [ ] Records.
+4. [x] Settings pages, part 1: School settings (`/admin/settings`) is a `SettingsPage`: School features, School
+   details, Lessons and attendance, Messages, Staff clock-in, Microsoft 365, AI helpers, Related pages down the
+   left, one at a time, `?section=`; the accordions (`<details>`) in SchoolFeatures, Microsoft365Connection and
+   AiUsage became plain panels; a section with no access or no data says so instead of vanishing. Your account
+   (`/account`) is one panel of `SettingsGroup` rows (Password, Messages, Notifications, Parent PIN, Weekly email,
+   Your feedback); gold-filled buttons there became the forest primary. `SectionNav`'s phone dropdown now has the
+   input box (was borderless). Still to do: Academic setup, Admissions and Recruitment settings. 5a. [x] Figures: `.portal-figures` (globals.css) turns any grid of figure tiles into one panel divided by hairlines
+   (no separate cards, no tinted fills, no coloured left bars). Used on Fees (staff and family), Safeguarding,
+   Behaviour (all four roles) and School summary; safeguarding figures carry their state in the number's colour.
+   `Select` now treats an important width (`!w-auto`) as layout, so a dropdown given `!w-auto` sits inline in a
+   toolbar (Fees' filters had each taken a whole line). The Designated Safeguarding Lead banner is a quiet panel
+   (red outline only when nobody is assigned).
+5. [x] Workflows, part 1: Reports shows its stages with `Stepper` (Write, Approve for the head teacher with how
+   many are waiting, Issued), each pressable, instead of a switch strip; Report settings left the stages and
+   opens from the header's menu with "Back to reports". The overview's figures use `.portal-figures`. The
+   `Stepper` keeps one row on phones (no notes or joining lines there). Still to do: Admissions, Entry
+   assessments, Timetable. 6. [ ] Workspaces and Today, Messages,
    Calendar, Qur'an, absences.
 
 Screenshots: `scratchpad/tpl/shots.mjs` (the redesign3 mock harness pointed at this worktree, plus subjects,
@@ -478,6 +493,13 @@ etc. Needs to be done in a unique way." The short tour above stays as the doorwa
   from the page's code, a menu page is renamed in one place only, or text breaks house style.
 
 ## Log
+- 2026-11-11: A register's page (feedback 3): a footer that stays in view with the counts (marked, present, late,
+  authorised, unauthorised, technical) and when it last saved; Change the whole class; each pupil's attendance over the
+  last 60 days beside their name; keyboard marking (P, L, A, U, T, arrow keys); Previous and Next lesson of the class.
+- 2026-11-11: Families and contacts (`/admin/families`, Pupils and admissions; feedback 3): counts that filter (no parent
+  linked, no parent email, no phone number, no emergency contact, only one contact, no one with parental responsibility),
+  year and search, each family beside the list with tap-to-call numbers, Edit details and Download CSV. Email delivery
+  status is not shown: the portal does not record bounces yet (would need the email provider's webhooks).
 - 2026-11-11: Pupil profile Summary and Chronology (feedback 3): an academic-year and term switch; attendance, merits,
   sanctions and behaviour points on one ruled strip, each against the year group's average (pupils the viewer can
   see); a weekly or monthly trend; Chronology lists absences, behaviour, missing or late work, results, Qur'an and

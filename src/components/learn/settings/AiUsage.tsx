@@ -80,15 +80,8 @@ export function AiUsage() {
   const usedToday = sum(null, today);
 
   return (
-    <details className="group rounded-2xl border border-gold-light bg-white">
-      <summary className="flex cursor-pointer list-none items-start justify-between gap-3 px-5 py-4">
-        <span>
-          <span className="block text-base font-semibold text-ink">AI helpers</span>
-          <span className="mt-0.5 block text-sm text-ink/65">Drafts of report comments, Tarbiyah Notes and replies to parents. Staff check every draft before it is sent.</span>
-        </span>
-        <span aria-hidden="true" className="mt-1 text-lg leading-none text-ink/50 transition-transform group-open:rotate-90">›</span>
-      </summary>
-      <div className="space-y-3 border-t border-gold-light px-5 py-5 text-sm">
+    <div className="rounded-2xl border border-gold-light bg-white">
+      <div className="space-y-3 px-5 py-5 text-sm">
         {!aiOn && <p className="rounded-lg bg-[var(--portal-sunken)] px-3 py-2 text-ink-700">Switched off under School features. Switch AI helpers on there to bring the AI buttons back.</p>}
         {aiOn && status && !status.configured && <p className="rounded-lg bg-amber-50 px-3 py-2 text-amber-950">AI helpers are not switched on yet. Ask whoever looks after the website to add the AI key (technical note: the ANTHROPIC_API_KEY secret); the AI buttons appear for staff once it is set.</p>}
         {status?.configured && (
@@ -131,6 +124,6 @@ export function AiUsage() {
           </div>
         )}
       </div>
-    </details>
+    </div>
   );
 }

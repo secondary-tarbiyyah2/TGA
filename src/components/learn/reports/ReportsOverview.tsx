@@ -69,7 +69,7 @@ export function ReportsOverview({ mode, classes, term, termKey, tick }: { mode: 
   return (
     <div className="space-y-5">
       {error && <p className="rounded-lg bg-red-50 px-3 py-2 text-sm text-red-800">Some figures couldn&apos;t load. Refresh to try again.</p>}
-      <dl className="grid grid-cols-2 gap-3 sm:grid-cols-4">
+      <dl className="portal-figures grid grid-cols-2 gap-3 sm:grid-cols-4">
         <Tile label="Not started" value={counts ? totals.not_started : "–"} />
         <Tile label="Drafts" value={counts ? totals.draft + totals.returned : "–"} sub={totals.returned ? `${totals.returned} sent back` : undefined} warn={totals.returned > 0} />
         <Tile label="Awaiting approval" value={counts ? totals.pending : "–"} warn={mode === "admin" && totals.pending > 0} />

@@ -5,8 +5,9 @@ import { getSupabaseClient } from "@/lib/supabase/client";
 import { Tabs } from "@/components/learn/Tabs";
 import { EmptyState, Notice, StatusChip, ui } from "@/components/learn/ui";
 import { focusLabel, JUZ_AMMA_COUNT, surahAr, surahName } from "@/lib/learn/surahs";
+import { pupilOverview, recitationsOf } from "@/lib/learn/quranOverview";
 import {
-  ayatLabel, bandFor, HW_KINDS, MARK_COLUMNS, nextSession, pupilStats, revisionRows, SETTING_LABEL, shortLevel, todayISO,
+  ayatLabel, bandFor, MARK_BANDS, HW_KINDS, MARK_COLUMNS, nextSession, pupilStats, revisionRows, SETTING_LABEL, shortLevel, todayISO,
   type Homework, type Level, type QuranMark, type Session,
 } from "@/lib/learn/quranClassroom";
 
@@ -31,7 +32,7 @@ export function QuranPupilView({ childId, name }: { childId: string; name?: stri
     let alive = true;
     (async () => {
       const [m, l, cl, h, s] = await Promise.all([
-        supabase.from("quran_progress").select(MARK_COLUMNS).eq("child_id", childId).eq("milestone_type", "quran_memorisation"),
+        supabase.from("quran_progress").select(`${MARK_COLUMNS}, recitation_kind, class_id`).eq("child_id", childId).eq("milestone_type", "quran_memorisation"),
         supabase.from("quran_levels").select("id, track, name, sort, meets").order("sort"),
         supabase.from("quran_child_levels").select("level_id").eq("child_id", childId),
         supabase.from("quran_homework").select("id, level_id, kind, surah, ayah_from, ayah_to, note, due_date").order("due_date", { ascending: false }).limit(60),
@@ -102,6 +103,7 @@ export function QuranPupilView({ childId, name }: { childId: string; name?: stri
               <Stat label="Secure surahs" value={String(stats.secure)} sub="average 8 or more" />
               <Stat label="Juz Amma" value={`${stats.juzAmma} / ${JUZ_AMMA_COUNT}`} sub="surahs 78 to 114" />
             </div>
+            <LatestRecitations marks={d.marks} />
             <div className={ui.card}>
               <h2 className="text-base font-semibold text-ink">Focus areas</h2>
               <div className="mt-2 flex flex-wrap gap-2">
@@ -247,6 +249,65 @@ function Stat({ label, value, sub }: { label: string; value: string; sub: string
       <p className="text-xs text-ink/65">{label}</p>
       <p className="mt-0.5 text-2xl font-semibold tabular-nums text-ink">{value}</p>
       <p className="text-xs text-ink/65">{sub}</p>
+    </div>
+  );
+}
+
+/**
+ * The latest recitations as bars (owner, 11 Nov 2026: Qur'an revamp, after Ihsan LMS's family view):
+ * the last six marks oldest to newest, how much is memorised, and what each mark means.
+ */
+function LatestRecitations({ marks }: { marks: QuranMark[] }) {
+  const recs = recitationsOf(marks).filter((r) => r.score !== null).slice(0, 6).reverse();
+  const o = pupilOverview(marks);
+  if (!recs.length) return null;
+  const latest = recs[recs.length - 1];
+  const band = bandFor(latest.score);
+  return (
+    <div className={ui.card}>
+      <div className="flex flex-wrap items-start justify-between gap-4">
+        <div>
+          <h2 className="text-base font-semibold text-ink">Latest recitation</h2>
+          <p className="mt-1 text-sm text-ink">
+            <span className="text-2xl font-semibold tabular-nums">{latest.score}</span>/10 {band && <span className="text-ink/70">· {band.label}</span>}
+          </p>
+          <p className="text-xs text-ink/65">
+            {fmt(latest.date)} · {latest.parts.map((p) => surahName(p.surah)).join(", ")}
+          </p>
+        </div>
+        <div className="text-right">
+          <p className="text-xs text-ink/65">Memorised</p>
+          <p className="text-lg font-semibold tabular-nums text-ink">{o.coverage.pagePercent}%</p>
+          <p className="text-xs text-ink/65">
+            {o.coverage.pages} of 604 pages · {o.coverage.surahs.length} whole surah{o.coverage.surahs.length === 1 ? "" : "s"}
+          </p>
+        </div>
+      </div>
+      <div className="mt-4 flex h-28 items-end gap-2" role="img" aria-label={`Last ${recs.length} marks: ${recs.map((r) => r.score).join(", ")} out of 10`}>
+        {recs.map((r, i) => {
+          const sc = r.score as number;
+          return (
+            <div key={`${r.date}-${i}`} className="flex flex-1 flex-col items-center gap-1">
+              <span className="text-xs font-semibold tabular-nums text-ink">{sc}</span>
+              <span className={`w-full max-w-10 rounded-t ${sc >= 8 ? "bg-teal-700" : sc >= 5 ? "bg-gold-500" : "bg-red-600"}`} style={{ height: `${Math.max(6, sc * 8)}px` }} />
+              <span className="text-[11px] text-ink/65">{new Date(`${r.date}T12:00:00`).toLocaleDateString("en-GB", { day: "numeric", month: "short" })}</span>
+            </div>
+          );
+        })}
+      </div>
+      {o.recentAverage !== null && <p className="mt-2 text-xs text-ink/65">Average of the last five: {o.recentAverage} / 10</p>}
+      <details className="mt-3 text-sm">
+        <summary className="cursor-pointer font-medium text-ink">What the marks mean</summary>
+        <ul className="mt-2 space-y-1">
+          {MARK_BANDS.slice().reverse().map((b) => (
+            <li key={b.label} className="grid grid-cols-[3.5rem_7rem_1fr] gap-2">
+              <span className="tabular-nums font-semibold text-ink">{b.min === b.max ? b.min : `${b.min} to ${b.max}`}</span>
+              <span className="text-ink">{b.label}</span>
+              <span className="text-ink/70">{b.means}</span>
+            </li>
+          ))}
+        </ul>
+      </details>
     </div>
   );
 }

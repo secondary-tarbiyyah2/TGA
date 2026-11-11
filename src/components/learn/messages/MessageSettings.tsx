@@ -70,9 +70,8 @@ export function MessageSettings({ userId }: { userId: string }) {
   };
 
   return (
-    <div className="rounded-2xl border border-gold-light/50 bg-white p-6">
-      <h2 className="font-serif text-h3 font-semibold text-ink">Messages</h2>
-      <div className="mt-3 flex items-start justify-between gap-4">
+    <div>
+      <div className="flex items-start justify-between gap-4">
         <div className="text-sm text-ink">
           <p className="font-medium">Read receipts</p>
           <p className="mt-1 text-ink/65">

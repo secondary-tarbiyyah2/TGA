@@ -51,6 +51,27 @@ export const HEAD_PEOPLE: GuideEntry[] = [
     tasks: ["find a pupil", "add a pupil", "chase missing details", "edit pupil details"],
   },
   {
+    href: "/admin/families",
+    name: "Families and contacts",
+    category: "Pupils and admissions",
+    purpose: "Who to reach for every pupil: the parent's sign-in and every emergency contact, and what is missing.",
+    when: "Before term starts, after admissions, and whenever a family is hard to reach.",
+    steps: [
+      "The counts at the top show who has no parent linked, no parent email, no phone number, no emergency contact, only one contact or no one with parental responsibility.",
+      "Press a count to show only those pupils; press it again to show everyone. Choose a year group or search a name.",
+      "Press a pupil to see their family beside the list: tap a number to ring it, or an email address to write.",
+      "Press Edit details to fill in what is missing, or Download CSV for a copy of the list.",
+    ],
+    tips: ["Families fill in contacts themselves under their child's details; the pupil's record shows a reminder until it is complete."],
+    privacy: "Head teacher and admin only. The CSV holds personal details: keep it on school systems and delete it when done.",
+    related: ["/admin/pupils", "/admin/people"],
+    showMe: [
+      { target: "families-counts", label: "What is missing", say: "Each count filters the list." },
+      { target: "families-list", label: "Families", say: "Press a pupil to see their contacts." },
+    ],
+    tasks: ["emergency contacts", "missing phone numbers", "parent contact list", "download contacts"],
+  },
+  {
     href: "/admin/admissions",
     name: "Applications",
     category: "Pupils and admissions",

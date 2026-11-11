@@ -117,7 +117,7 @@ function TeachBehaviourContent() {
             </label>
           </div>
 
-          <div className="grid grid-cols-2 gap-3 lg:grid-cols-4">
+          <div className="portal-figures grid grid-cols-2 gap-3 lg:grid-cols-4">
             <StatTile label="Merit points (all time)" value={String(stats.allTimePoints)} sub="Net of demerits" />
             <StatTile label="Merits this week" value={String(stats.merits)} sub={delta} tone={stats.meritsPrev !== null && stats.merits >= stats.meritsPrev ? "good" : "bad"} />
             <StatTile label="Sanctions this week" value={String(stats.demerits)} />

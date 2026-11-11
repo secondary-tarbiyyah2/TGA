@@ -23,7 +23,7 @@ async function sessionFor(email) {
   return data.session;
 }
 const sessions = {};
-for (const [who, email] of [["parent", "demo-parent@tarbiyyah.co.uk"], ["teacher", "demo-teacher@tarbiyyah.co.uk"], ["student", "demo-student@tarbiyyah.co.uk"]]) {
+for (const [who, email] of [["parent", "demo-parent@tarbiyyah.co.uk"], ["teacher", "demo-teacher@tarbiyyah.co.uk"], ["student", "demo-student@tarbiyyah.co.uk"], ["head", process.env.HEAD_EMAIL || "globalacademy@tarbiyyah.co.uk"]]) {
   try {
     sessions[who] = await sessionFor(email);
   } catch (e) {
@@ -40,6 +40,8 @@ if (sessions.teacher) {
 
 const storageKey = `sb-${new URL(SUPABASE_URL).hostname.split(".")[0]}-auth-token`;
 const DESK = { viewport: { width: 1440, height: 1000 }, scale: 1, mobile: false };
+// A maximised window on a 1080p screen.
+const FULL = { viewport: { width: 1920, height: 960 }, scale: 1, mobile: false };
 const PHONE = { viewport: { width: 390, height: 844 }, scale: 2, mobile: true };
 const shots = [
   { name: "01-family-today-desktop", who: "parent", path: "/family/dashboard/", ...DESK },
@@ -49,6 +51,18 @@ const shots = [
   classId && { name: "05-class-settings-teams-desktop", who: "teacher", path: `/teach/class/?id=${classId}&tab=settings`, ...DESK },
   { name: "06-curriculum-map-desktop", who: "teacher", path: "/teach/curriculum/map/", ...DESK },
   { name: "07-pupil-today-phone", who: "student", path: "/student/dashboard/", ...PHONE },
+  // Headteacher Today, desktop and full screen, and each quick action opened (read-only: panels are opened, never saved).
+  { name: "08-head-today-desktop", who: "head", path: "/admin/dashboard/", ...DESK },
+  { name: "09-head-today-full", who: "head", path: "/admin/dashboard/", ...FULL },
+  { name: "10-head-quick-behaviour-full", who: "head", path: "/admin/dashboard/", click: "Log behaviour", ...FULL },
+  { name: "11-teacher-quick-register-full", who: "teacher", path: "/teach/dashboard/", click: "Take register", ...FULL },
+  { name: "12-teacher-quick-setwork-full", who: "teacher", path: "/teach/dashboard/", click: "Set work", ...FULL },
+  { name: "12b-teacher-quick-behaviour-full", who: "teacher", path: "/teach/dashboard/", click: "Log behaviour", ...FULL },
+  { name: "12c-teacher-quick-mark-full", who: "teacher", path: "/teach/dashboard/", click: "Mark work", ...FULL },
+  { name: "12d-head-quick-registers-full", who: "head", path: "/admin/dashboard/", click: "Registers", ...FULL },
+  { name: "13-teacher-quran-desktop", who: "teacher", path: "/teach/quran/", ...DESK },
+  { name: "14-head-quran-desktop", who: "head", path: "/admin/quran/", ...DESK },
+  { name: "15-teacher-quran-hear-full", who: "teacher", path: "/teach/quran/", button: "Hear", ...FULL },
 ].filter(Boolean);
 
 const browser = await chromium.launch();
@@ -62,7 +76,15 @@ for (const s of shots) {
   await page.goto(`${LEARN_URL}${s.path}`, { waitUntil: "networkidle" });
   await page.waitForTimeout(3000);
   await page.evaluate(() => document.querySelectorAll('[aria-label="Cookie consent"]').forEach((el) => el.remove()));
-  await page.screenshot({ path: `${OUT}/${s.name}.png`, fullPage: true });
+  if (s.button) {
+    await page.getByRole("button", { name: s.button }).first().click({ timeout: 8000 }).catch((e) => console.log(`button ${s.button}: ${e.message}`));
+    await page.waitForTimeout(4000);
+  }
+  if (s.click) {
+    await page.getByRole("navigation", { name: "Quick actions" }).getByText(s.click, { exact: false }).first().click({ timeout: 8000 }).catch((e) => console.log(`click ${s.click}: ${e.message}`));
+    await page.waitForTimeout(1500);
+  }
+  await page.screenshot({ path: `${OUT}/${s.name}.png`, fullPage: !s.click && !s.button });
   console.log(`captured ${s.name} at ${page.url()}`);
   await ctx.close();
 }
