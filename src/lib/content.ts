@@ -86,6 +86,7 @@ export const getLiveSiteSettings = async (): Promise<SiteSettings | null> => {
       feeInstalments: sanitiseFeeSettings({ instalments: r.fee_instalments }).instalments,
       annualDiscountPercent: r.annual_discount_percent != null && Number.isFinite(Number(r.annual_discount_percent)) ? Number(r.annual_discount_percent) : FEE_POLICY_DEFAULTS.annualDiscountPercent,
       paymentScheduleText: (r.payment_schedule_text as string) || FEE_POLICY_DEFAULTS.paymentScheduleText,
+      onlinePaymentUrl: (r.online_payment_url as string) || undefined,
       siblingDiscountPercent: (r.sibling_discount_percent as number) ?? undefined,
       siblingDiscountNote: (r.sibling_discount_note as string) || undefined,
       discounts: (r.discounts as SiteSettings["discounts"]) || [],

@@ -234,8 +234,8 @@ export function admissionsProcessSteps(fees: { applicationFee?: number }): Proce
     {
       title: "Offer and securing your place",
       owner: "you",
-      short: "We email the offer. Accept within five working days and pay your first fee payment to secure your place.",
-      body: `We email you a conditional offer. To accept, reply within five working days and pay your first fee payment (the whole year, the first of two payments, or the first monthly payment) by Friday 8 January 2027, plus the application fee (${app}) if not already paid. You can cancel within 14 days of accepting, as the Fees Policy explains.`,
+      short: "We email the offer. Accept within five working days and pay your first fee payment when you accept, to secure your place.",
+      body: `We email you a conditional offer. To accept, reply within five working days and pay your first fee payment at the same time (the whole year, the first of two payments, or the first monthly payment; by Friday 8 January 2027 at the latest), plus the application fee (${app}) if not already paid. Your child's place is held once that payment is made, and the remaining payments follow the dates in the Fees Policy. Payments are made online, by card or from your bank app. You can cancel within 14 days of accepting, as the Fees Policy explains.`,
     },
     {
       title: "Welcome",
