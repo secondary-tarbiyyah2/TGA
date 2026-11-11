@@ -12,7 +12,7 @@ export default function TeachCalendarPage() {
   return (
     <section className="app-pad">
       <LearnGate allowedRoles={["teacher", "teaching_assistant_cover"]}>
-        <PageHeader title="Calendar" subtitle="Your lessons and the homework you've set." />
+        <PageHeader title="Calendar" subtitle="Your lessons, homework and assessments, school events, meetings, term dates and Islamic dates." />
         <CalendarView scope={SCOPE} />
         <IcsFeedLink />
       </LearnGate>

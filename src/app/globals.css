@@ -241,6 +241,18 @@ button:not(:disabled),
   --color-teal-100: var(--color-forest-100);
   --color-teal-50: var(--color-forest-50);
 
+  /* Calendar categories (owner feedback 11 Nov 2026, item 4): one colour each, used for the
+     bar, dot and legend swatch beside an item (never as text on its own; every one is at
+     least 4.5:1 on white). The label always says the category too. */
+  --cal-lesson: #2a5640;
+  --cal-assessment: #9f1239;
+  --cal-homework: #a24a07;
+  --cal-event: #1e3a8a;
+  --cal-holiday: #6b6259;
+  --cal-islamic: #7a5a12;
+  --cal-meeting: #6b2f6b;
+  --cal-admissions: #475569;
+
   /* Depth: hairlines at rest; a shadow only on things that float (menus, dialogs, popovers). */
   --portal-shadow-rgb: 23, 32, 27;
   --portal-shadow-pop: 0 12px 32px -12px rgba(var(--portal-shadow-rgb), 0.22), 0 2px 6px -2px rgba(var(--portal-shadow-rgb), 0.08), 0 0 0 1px rgba(var(--portal-shadow-rgb), 0.06);
