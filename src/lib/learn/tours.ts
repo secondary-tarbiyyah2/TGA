@@ -53,9 +53,9 @@ const CONCERN: TourStep = {
 };
 const HELP: TourStep = {
   target: ["[data-tour=help]", "[data-tour=menu-button]"],
-  title: "See this again",
-  body: "You can take this tour again from “Take the tour” at the bottom of the menu.",
-  phoneBody: "You can take this tour again from Menu, then “Take the tour”.",
+  title: "Want the full guide?",
+  body: "Open the Portal guide at the bottom of the menu for every page explained, or press Guide me on any page.",
+  phoneBody: "Open the Portal guide from Menu for every page explained, or press the ? button on any page.",
 };
 
 function isHead(roles: string[]) {

@@ -323,6 +323,12 @@ function SidebarBody({
               </span>
               <span className="min-w-0 flex-1 truncate">Take the tour</span>
             </button>
+            <Link href={`/guide?area=${area}`} onClick={onNavigate} data-tour="guide-home" aria-current={normalisePortalPath(pathname) === "/guide" ? "page" : undefined} className={`portal-nav-row ${normalisePortalPath(pathname) === "/guide" ? "portal-nav-row--active" : ""}`}>
+              <span className="portal-tile tile-slate" aria-hidden="true">
+                <Icon name="bookOpenCheck" />
+              </span>
+              <span className="min-w-0 flex-1 truncate">Portal guide</span>
+            </Link>
             <InstallAppLink onNavigate={onNavigate} />
           </div>
         )}
@@ -340,6 +346,11 @@ function SidebarBody({
                 <Icon name="compass" />
               </span>
             </button>
+            <Link href={`/guide?area=${area}`} title="Portal guide" aria-label="Portal guide" className="portal-nav-row w-full justify-center !px-0">
+              <span className="portal-tile tile-slate" aria-hidden="true">
+                <Icon name="bookOpenCheck" />
+              </span>
+            </Link>
             <InstallAppLink onNavigate={onNavigate} compact />
           </div>
         )}

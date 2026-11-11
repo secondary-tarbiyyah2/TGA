@@ -8,6 +8,7 @@ import { fetchAllClasses, fetchChildClasses, fetchTeacherClasses, readRecentPage
 import { isGroupedArea, navPageFor, visiblePages, type PortalArea } from "@/lib/learn/nav";
 import { togglePin, usePortalPrefs } from "@/lib/learn/portalPrefs";
 import { startTour } from "@/lib/learn/tours";
+import { openGuidePanel } from "@/components/learn/guide/guideStore";
 import { Icon, type IconName } from "@/components/learn/Icon";
 
 type Item = { id: string; group: "Pinned" | "Recent" | "Actions" | "Pages" | "Classes" | "Lessons" | "Pupils" | "People"; label: string; hint?: string; href?: string; run?: () => void; keywords?: string; icon: IconName };
@@ -257,6 +258,8 @@ export function CommandPalette({ area, roles }: { area: PortalArea; roles: strin
         : []),
       ...COMMON_ACTIONS.map((a): Item => ({ id: `action:${a.label}`, group: "Actions", label: a.label, href: a.href, keywords: a.keywords, icon: a.icon })),
       { id: "action:tour", group: "Actions", label: "Take the tour", keywords: "help guide how to use where is show me around getting started", icon: "compass", run: () => startTour() },
+      { id: "action:guide", group: "Actions", label: "Open the Portal guide", href: `/guide?area=${area}`, keywords: "help guide manual a to z every page how do i explain instructions journey day in the life", icon: "bookOpenCheck" },
+      { id: "action:guide-page", group: "Actions", label: "Guide me on this page", keywords: "help how does this page work explain show me what is this question mark", icon: "circleHelp", run: () => openGuidePanel() },
     ];
     const pinned: Item[] = grouped ? prefs.pinned.flatMap((h) => pages.filter((p) => p.href === h).map((p) => ({ ...p, id: `pinned:${h}`, group: "Pinned" as const, icon: "pin" as IconName }))) : [];
     const cls: Item[] = (classes || []).map((c) => ({

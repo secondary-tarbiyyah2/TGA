@@ -13,7 +13,7 @@
 
 import { useCallback, useEffect, useId, useLayoutEffect, useRef, useState } from "react";
 import { createPortal } from "react-dom";
-import { usePathname } from "next/navigation";
+import { usePathname, useRouter } from "next/navigation";
 import type { PortalArea } from "@/lib/learn/nav";
 import { markTourSeen, usePortalPrefs } from "@/lib/learn/portalPrefs";
 import { START_TOUR_EVENT, tourFor, type Tour, type TourStep } from "@/lib/learn/tours";
@@ -46,6 +46,7 @@ type Rect = { top: number; left: number; width: number; height: number };
 export function TourHost({ area, roles, userId }: { area: PortalArea; roles: string[]; userId: string }) {
   const prefs = usePortalPrefs(userId);
   const pathname = usePathname();
+  const router = useRouter();
   const [tour, setTour] = useState<Tour | null>(null);
   const [index, setIndex] = useState(0);
   const [rect, setRect] = useState<Rect | null>(null);
@@ -217,6 +218,18 @@ export function TourHost({ area, roles, userId }: { area: PortalArea; roles: str
           {index < steps.length - 1 && (
             <button type="button" onClick={finish} className="min-h-11 rounded-lg px-2 text-sm font-medium text-ink/70 underline-offset-2 hover:text-ink hover:underline sm:min-h-9">
               {tour.key.startsWith("tip:") ? "Skip tips" : "Skip tour"}
+            </button>
+          )}
+          {index === steps.length - 1 && !tour.key.startsWith("tip:") && (
+            <button
+              type="button"
+              onClick={() => {
+                finish();
+                router.push(`/guide?area=${area}`);
+              }}
+              className="min-h-11 rounded-lg px-2 text-sm font-semibold text-teal-700 underline-offset-2 hover:underline sm:min-h-9"
+            >
+              Open the Portal guide
             </button>
           )}
           <span className="ml-auto" />

@@ -66,6 +66,7 @@ export function LearnAccountMenu({ session, roles }: { session: Session; roles: 
     { section: areas.length > 1 ? "Your account" : undefined, label: "" },
     { label: "Dashboard", icon: "house", href: areas.includes(currentArea) ? currentArea : areas[0] || "/" },
     { label: "Account settings", icon: "userRound", href: "/account" },
+    { label: "Portal guide", icon: "bookOpenCheck", href: "/guide" },
     ...(isAdminIsh ? [{ label: "School settings", icon: "settings", href: "/admin/settings" } as MenuAction] : []),
     { label: "Report a concern", icon: "shieldAlert", href: "/report-concern" },
     {
