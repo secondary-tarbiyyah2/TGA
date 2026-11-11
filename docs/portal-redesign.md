@@ -403,7 +403,12 @@ etc. Needs to be done in a unique way." The short tour above stays as the doorwa
 
 ## Log
 - 2026-11-11: Qur'an recitation marking (feedback 2, item 13): Hear and track per Qur'an class, the recitation panel
-  with mistakes by type and ayah, strictness bands set by the head teacher (`/admin/quran`, migration 0205).
+  with mistakes by type and ayah, strictness bands set by the head teacher (`/admin/quran`, migration 0206).
+- 2026-11-11: Class Insights restructured (owner feedback 2, item 11): one strip of four figures linking to their sections, then "Pupils who may need a word" as a table with one column per reason (capitalised), a reason filter, each flagged figure linking to Attendance, Classwork or Grades, the name to the pupil record (`pupilRecordHref`), Message and Record per row; phones show each pupil as a short card.
+- 2026-11-11: Waiting for you page compartmentalised (owner feedback 2, item 2): in Everything each category is its own box with a count and "N to do now", showing its first four lines and Show all; every line carries its one action as a button (marking opens in place), and the three dots open its detail (pupils named, Mark done, print). Save as PDF still prints every line.
+- 2026-11-11: Pupil profile with sections down the left for teachers and the head (feedback 2, item 8): classwork
+  and grades, Qur'an and documents added; `SectionNav` (`src/components/learn/SectionNav.tsx`) for any record's sections.
+- 2026-11-11: Today rebuilt (owner feedback 2, items 1 and 12): quick actions as a compact row at the very top (teacher: take register, set work, mark work, log behaviour in panels or dialogs; message, Qur'an, results, absences as links; head: registers, behaviour, message, announcement, absences and cover, pupils, lesson review, applications), then the day's lessons, then Waiting for you as category boxes (two lines each, one button, See all). Teacher registers not taken, work to mark, pupil records to read and the person's own documents to sign are now Action centre items, so the teacher figures strip and the Pending your signature block are gone; the head's figures strip and "Today at a glance" row are replaced by today's lessons (taken ones folded away) and Cover today beside them; lessons to approve join the Curriculum box. Recently opened is a one-line strip of links at the foot.
 - 2026-11-11: Registers like SIMS and pupil links (feedback 2, items 8, 9, 13 part): a list of sessions with filters,
   each register on its own page with notes; `PupilLink` opens a pupil's full record; teachers get `/teach/pupils?id=`;
   Qur'an and Qaidah moved under My teaching.
