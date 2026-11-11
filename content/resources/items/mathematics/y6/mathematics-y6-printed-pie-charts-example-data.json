@@ -1,0 +1,185 @@
+{
+ "id": "mathematics-y6-printed-pie-charts-example-data",
+ "title": "Printed pie charts (example data)",
+ "type": "worksheet",
+ "subject": "Mathematics",
+ "subjectSlug": "mathematics",
+ "year": "y6",
+ "unit": "Summer 1: Percentages; area, perimeter and volume; statistics; shape",
+ "lessons": [
+  71
+ ],
+ "source": "Seeded from mathematics/y6 lesson 71 (Printed pie charts (example data))",
+ "intro": "Lesson 71: Read and interpret pie charts. To understand how to read pie charts using fractions and angles",
+ "blocks": [
+  {
+   "h": "Pie charts (example data)"
+  },
+  {
+   "grid": {
+    "kind": "pie",
+    "cols": 2,
+    "charts": [
+     {
+      "title": "How 24 pupils travel to the masjid",
+      "data": [
+       [
+        "Walk",
+        12
+       ],
+       [
+        "Car",
+        6
+       ],
+       [
+        "Bus",
+        4
+       ],
+       [
+        "Cycle",
+        2
+       ]
+      ]
+     },
+     {
+      "title": "36 pupils' favourite fruit",
+      "data": [
+       [
+        "Dates",
+        9
+       ],
+       [
+        "Apples",
+        12
+       ],
+       [
+        "Mango",
+        15
+       ]
+      ]
+     }
+    ]
+   }
+  },
+  {
+   "questions": [
+    {
+     "q": "Chart 1: how many pupils walk?",
+     "a": "12 (180°, half of 24)",
+     "marks": 1
+    },
+    {
+     "q": "Chart 1: what fraction travel by car?",
+     "a": "1/4 (90°)",
+     "marks": 1
+    },
+    {
+     "q": "Chart 2: the sectors are 90°, 120° and 150°. How many chose each fruit?",
+     "a": "Dates 9, apples 12, mango 15",
+     "marks": 3
+    }
+   ]
+  },
+  {
+   "h": "Worked examples"
+  },
+  {
+   "model": {
+    "title": "Car sector is a right angle",
+    "parts": [
+     {
+      "label": "Step 1",
+      "text": "90° is a quarter of 360°"
+     },
+     {
+      "label": "Step 2",
+      "text": "1/4 of 24 = 6"
+     },
+     {
+      "label": "Answer",
+      "text": "6 pupils"
+     }
+    ]
+   }
+  },
+  {
+   "model": {
+    "title": "Bus sector is 60°",
+    "parts": [
+     {
+      "label": "Step 1",
+      "text": "60° out of 360° = 1/6"
+     },
+     {
+      "label": "Step 2",
+      "text": "1/6 of 24 = 4"
+     },
+     {
+      "label": "Answer",
+      "text": "4 pupils"
+     }
+    ]
+   }
+  },
+  {
+   "h": "We do"
+  },
+  {
+   "questions": [
+    {
+     "q": "Cycle sector is 30°. How many cycle?",
+     "a": "2",
+     "model": "Teacher: 30/360 = 1/12; 24 ÷ 12 = 2."
+    },
+    {
+     "q": "What fraction travel by car?",
+     "a": "1/4"
+    },
+    {
+     "q": "Do the pupils total 24?",
+     "a": "Yes: 12 + 6 + 4 + 2"
+    }
+   ]
+  },
+  {
+   "h": "You do"
+  },
+  {
+   "questions": [
+    {
+     "q": "A pie chart of 36 pupils: sectors 90°, 120°, 150°. How many in each?",
+     "a": "9, 12, 15",
+     "model": "Teacher: 90° is 1/4 of 36: 9."
+    },
+    {
+     "q": "Two pie charts: class A (20 pupils) and class B (40 pupils). Both show 'dates' as half. Do the same number like dates?",
+     "a": "No: 10 and 20"
+    },
+    {
+     "q": "A sector is 72°. What fraction of the circle?",
+     "a": "1/5"
+    }
+   ]
+  },
+  {
+   "h": "Exit ticket"
+  },
+  {
+   "questions": [
+    {
+     "q": "A quarter of a pie chart is... A) 90° B) 25° C) 180°",
+     "a": "A) 90°",
+     "options": [
+      "90°",
+      "25°",
+      "180°"
+     ]
+    },
+    {
+     "q": "Big question: why a circle?",
+     "a": "The whole circle is the whole group (360°), so each part is a fraction of it"
+    }
+   ]
+  }
+ ]
+}

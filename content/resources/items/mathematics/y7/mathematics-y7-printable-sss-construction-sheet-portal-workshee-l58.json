@@ -1,0 +1,109 @@
+{
+ "id": "mathematics-y7-printable-sss-construction-sheet-portal-workshee-l58",
+ "title": "Printable SSS construction sheet (lesson 58)",
+ "type": "worksheet",
+ "subject": "Mathematics",
+ "subjectSlug": "mathematics",
+ "year": "y7",
+ "unit": "Summer 1: Geometric notation and constructions; geometric reasoning",
+ "lessons": [
+  58
+ ],
+ "source": "Seeded from mathematics/y7 lesson 58 (Printable SSS construction sheet (portal worksheet for this lesson))",
+ "intro": "Lesson 58: Constructing triangles with compasses: three sides (SSS). To understand how to construct a triangle from three sides using a ruler and compasses",
+ "blocks": [
+  {
+   "h": "Worked example"
+  },
+  {
+   "model": {
+    "title": "Construct triangle ABC with AB = 6 cm, BC = 5 cm and AC = 4 cm.",
+    "parts": [
+     {
+      "label": "Step 1",
+      "text": "Draw AB = 6 cm"
+     },
+     {
+      "label": "Step 2",
+      "text": "Set compasses to 4 cm: arc from A"
+     },
+     {
+      "label": "Step 3",
+      "text": "Set compasses to 5 cm: arc from B"
+     },
+     {
+      "label": "Step 4",
+      "text": "Join A and B to the crossing point C"
+     },
+     {
+      "label": "Answer",
+      "text": "Measure each side to check"
+     }
+    ]
+   }
+  },
+  {
+   "h": "We do"
+  },
+  {
+   "questions": [
+    {
+     "q": "Construct an equilateral triangle with sides of 7 cm.",
+     "a": "Each angle measures 60°",
+     "model": "Draw 7 cm. Keep the compasses at 7 cm and draw an arc from each end. Join both ends to the crossing point: all sides 7 cm, so all angles 60°."
+    },
+    {
+     "q": "Construct triangle PQR with PQ = 8 cm, QR = 6 cm and PR = 10 cm. Measure the largest angle.",
+     "a": "90°, at Q"
+    },
+    {
+     "q": "Can 2.5 cm, 3.5 cm and 6 cm make a triangle?",
+     "a": "No: 2.5 + 3.5 = 6, so it would lie flat."
+    }
+   ]
+  },
+  {
+   "h": "You do"
+  },
+  {
+   "questions": [
+    {
+     "q": "Construct each triangle with ruler and compasses, leaving the arcs, and measure the largest angle: (a) 5 cm, 5 cm, 5 cm (b) 7 cm, 4 cm, 5 cm (c) 9 cm, 6 cm, 6 cm",
+     "a": "(a) 60° (b) about 101° to 102° (c) about 97°",
+     "model": "(b) Draw the longest side, 7 cm, first. Arc of 4 cm from one end, arc of 5 cm from the other; join both ends to the crossing. The largest angle is opposite the 7 cm side."
+    },
+    {
+     "q": "Construct a kite with sides 5 cm, 5 cm, 8 cm and 8 cm whose short diagonal is 6 cm.",
+     "a": "Draw the 6 cm diagonal; arcs of 5 cm from both ends on one side and 8 cm from both ends on the other; join."
+    },
+    {
+     "q": "A triangle has sides of 4 cm, 9 cm and x cm, where x is a whole number. List every possible value of x.",
+     "a": "6, 7, 8, 9, 10, 11, 12 (x must be more than 5 and less than 13)"
+    }
+   ]
+  },
+  {
+   "h": "Exit ticket"
+  },
+  {
+   "questions": [
+    {
+     "q": "Can 3 cm, 4 cm and 9 cm make a triangle?",
+     "a": "B) No",
+     "options": [
+      "Yes",
+      "No"
+     ]
+    },
+    {
+     "q": "To draw a side of 6 cm with an arc, set the compasses to:",
+     "a": "6 cm"
+    },
+    {
+     "q": "Big question: how can compasses find a point 5 cm from one place and 4 cm from another?",
+     "a": "Draw an arc of radius 5 cm from the first and 4 cm from the second: where they cross is the point."
+    }
+   ]
+  }
+ ]
+}

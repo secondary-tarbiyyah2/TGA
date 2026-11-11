@@ -1,0 +1,112 @@
+{
+ "id": "mathematics-y7-homework-57-construct-three-asa-triangles-from-t-l57",
+ "title": "Homework, lesson 57: Construct three ASA triangles from the portal sheet; calculate and then measure the third angle of each.",
+ "type": "worksheet",
+ "subject": "Mathematics",
+ "subjectSlug": "mathematics",
+ "year": "y7",
+ "unit": "Summer 1: Geometric notation and constructions; geometric reasoning",
+ "lessons": [
+  57
+ ],
+ "source": "Seeded from mathematics/y7 lesson 57 (Construct three ASA triangles from the portal sheet; calculate and then measure the third angle of each.)",
+ "intro": "Lesson 57: Constructing triangles: two angles and the included side (ASA). To understand how to construct a triangle accurately from two angles and the side between them",
+ "blocks": [
+  {
+   "h": "Worked example"
+  },
+  {
+   "model": {
+    "title": "Construct triangle ABC with AB = 6 cm, angle A = 50° and angle B = 70°.",
+    "parts": [
+     {
+      "label": "Step 1",
+      "text": "Draw AB = 6 cm"
+     },
+     {
+      "label": "Step 2",
+      "text": "At A, draw a long faint line at 50°"
+     },
+     {
+      "label": "Step 3",
+      "text": "At B, draw a long faint line at 70° on the same side"
+     },
+     {
+      "label": "Step 4",
+      "text": "The lines cross at C: label it"
+     },
+     {
+      "label": "Answer",
+      "text": "Check: angle C = 180 - 50 - 70 = 60°"
+     }
+    ]
+   }
+  },
+  {
+   "h": "We do"
+  },
+  {
+   "questions": [
+    {
+     "q": "Construct triangle PQR with PQ = 7 cm, angle P = 45° and angle Q = 45°. Find angle R and measure PR.",
+     "a": "R = 90°; PR ≈ 4.9 to 5.0 cm",
+     "model": "180 - 45 - 45 = 90, so R is a right angle. The base angles are equal, so PR = QR: measure about 4.9 cm."
+    },
+    {
+     "q": "Angles of 35° and 120° are at the ends of a 5 cm side. Find the third angle.",
+     "a": "25°"
+    }
+   ]
+  },
+  {
+   "h": "You do"
+  },
+  {
+   "questions": [
+    {
+     "q": "Calculate the third angle, then construct and measure the other two sides: (a) AB = 8 cm, angle A = 30°, angle B = 60° (b) XY = 5.5 cm, angle X = 75°, angle Y = 75° (c) DE = 6 cm, angle D = 110°, angle E = 40°",
+     "a": "(a) C = 90°; AC ≈ 6.9 cm, BC = 4.0 cm (b) Z = 30°; XZ = YZ ≈ 10.6 cm (c) F = 30°; DF ≈ 7.7 cm, EF ≈ 11.3 cm (accept ± 2 mm)",
+     "model": "(a) 180 - 30 - 60 = 90, so angle C = 90°. Draw AB = 8 cm, 30° at A and 60° at B on the same side; they meet at C. BC measures 4 cm: half of AB, as in every 30°, 60°, 90° triangle."
+    },
+    {
+     "q": "Explain why angles of 95° and 85° cannot be the two angles at the ends of a side.",
+     "a": "95 + 85 = 180, so the arms are parallel and never meet."
+    },
+    {
+     "q": "AB = 6 cm, angle A = 40° and angle C = 80°, where C is not on AB. How can you still construct it?",
+     "a": "Angle B = 180 - 40 - 80 = 60°; then use ASA with AB, angle A = 40° and angle B = 60°."
+    }
+   ]
+  },
+  {
+   "h": "Exit ticket"
+  },
+  {
+   "questions": [
+    {
+     "q": "Two angles at the ends of a side are 60° and 50°. The third angle is:",
+     "a": "A) 70°",
+     "options": [
+      "70°",
+      "110°",
+      "90°"
+     ]
+    },
+    {
+     "q": "Name the side between angles P and Q.",
+     "a": "PQ"
+    },
+    {
+     "q": "Big question: why do two angles and a side fix a triangle, but three angles do not?",
+     "a": "Two angles and the side between them fix where the third vertex is; three angles fix only the shape, so the size can change."
+    }
+   ]
+  },
+  {
+   "h": "Homework"
+  },
+  {
+   "text": "Construct three ASA triangles from the portal sheet; calculate and then measure the third angle of each."
+  }
+ ]
+}

@@ -1,0 +1,140 @@
+{
+ "id": "mathematics-y7-printable-construction-sheet-angle-bisectors-por-l60",
+ "title": "Printable construction sheet: angle bisectors (lesson 60)",
+ "type": "worksheet",
+ "subject": "Mathematics",
+ "subjectSlug": "mathematics",
+ "year": "y7",
+ "unit": "Summer 1: Geometric notation and constructions; geometric reasoning",
+ "lessons": [
+  60
+ ],
+ "source": "Seeded from mathematics/y7 lesson 60 (Printable construction sheet: angle bisectors (portal worksheet for this lesson))",
+ "intro": "Lesson 60: Constructing an angle bisector. To understand how to bisect an angle with compasses and why the construction works",
+ "blocks": [
+  {
+   "h": "Worked example"
+  },
+  {
+   "model": {
+    "title": "Bisect angle ABC = 70°.",
+    "parts": [
+     {
+      "label": "Step 1",
+      "text": "Arc from B cutting both arms at P and Q"
+     },
+     {
+      "label": "Step 2",
+      "text": "Same radius: arcs from P and from Q crossing inside the angle"
+     },
+     {
+      "label": "Step 3",
+      "text": "Join B to the crossing point"
+     },
+     {
+      "label": "Answer",
+      "text": "Two angles of 35°: check with a protractor"
+     }
+    ]
+   }
+  },
+  {
+   "h": "Special angles"
+  },
+  {
+   "table": {
+    "head": [
+     "Construct",
+     "Then",
+     "Angle"
+    ],
+    "rows": [
+     [
+      "equilateral triangle",
+      "nothing",
+      "60°"
+     ],
+     [
+      "60°",
+      "bisect",
+      "30°"
+     ],
+     [
+      "perpendicular",
+      "nothing",
+      "90°"
+     ],
+     [
+      "90°",
+      "bisect",
+      "45°"
+     ]
+    ]
+   }
+  },
+  {
+   "h": "We do"
+  },
+  {
+   "questions": [
+    {
+     "q": "Draw an angle of 80° and bisect it with compasses.",
+     "a": "Two angles of 40°",
+     "model": "Arc from the vertex across both arms. Equal arcs from the two crossing points; join the vertex to where they meet. Check: 40° each."
+    },
+    {
+     "q": "Construct an angle of 60° with compasses and a ruler.",
+     "a": "Arc from the vertex; same radius from where it cuts the line; join the vertex to the crossing."
+    },
+    {
+     "q": "Which construction gives 45°?",
+     "a": "Construct 90° (a perpendicular), then bisect it."
+    }
+   ]
+  },
+  {
+   "h": "You do"
+  },
+  {
+   "questions": [
+    {
+     "q": "(a) Draw angles of 50°, 130° and 90° and bisect each. (b) Construct an angle of 30° without a protractor. (c) Measure your halves and record any error.",
+     "a": "(a) 25°, 65°, 45° (b) construct 60°, then bisect (c) within 1° is accurate",
+     "model": "(a) For 130°: arc from the vertex across both arms; equal arcs from those points; join the vertex to the crossing; measure 65° each."
+    },
+    {
+     "q": "Construct an angle of 15° with compasses and a ruler only.",
+     "a": "Construct 60°, bisect to 30°, bisect again to 15°."
+    },
+    {
+     "q": "Construct triangle ABC with AB = 7 cm, BC = 6 cm and AC = 5 cm. Bisect all three angles. What do you notice?",
+     "a": "The three bisectors meet at one point: the centre of the circle that touches all three sides."
+    }
+   ]
+  },
+  {
+   "h": "Exit ticket"
+  },
+  {
+   "questions": [
+    {
+     "q": "Bisecting a 90° angle gives:",
+     "a": "B) 45°",
+     "options": [
+      "30°",
+      "45°",
+      "60°"
+     ]
+    },
+    {
+     "q": "Which angle do you bisect to get 30°?",
+     "a": "60°"
+    },
+    {
+     "q": "Big question: how can you halve any angle without a protractor?",
+     "a": "Equal arcs from the vertex, then from the arms; the line to the crossing splits it exactly in half."
+    }
+   ]
+  }
+ ]
+}

@@ -1,0 +1,207 @@
+{
+ "id": "mathematics-y7-printable-angle-sheet-six-angles-to-measure-port-l54",
+ "title": "Printable angle sheet: six angles to measure (lesson 54)",
+ "type": "worksheet",
+ "subject": "Mathematics",
+ "subjectSlug": "mathematics",
+ "year": "y7",
+ "unit": "Summer 1: Geometric notation and constructions; geometric reasoning",
+ "lessons": [
+  54
+ ],
+ "source": "Seeded from mathematics/y7 lesson 54 (Printable angle sheet: six angles to measure (portal worksheet for this lesson))",
+ "intro": "Lesson 54: Measuring and drawing angles with a protractor. To understand how to measure and draw angles accurately with a protractor, including reflex angles",
+ "blocks": [
+  {
+   "h": "Angles a to f"
+  },
+  {
+   "grid": {
+    "kind": "angles",
+    "cols": 3,
+    "items": [
+     {
+      "deg": 35,
+      "label": "a"
+     },
+     {
+      "deg": 118,
+      "label": "b"
+     },
+     {
+      "deg": 90,
+      "label": "c"
+     },
+     {
+      "deg": 162,
+      "label": "d"
+     },
+     {
+      "deg": 205,
+      "label": "e"
+     },
+     {
+      "deg": 330,
+      "label": "f"
+     }
+    ]
+   }
+  },
+  {
+   "h": "Draw these angles"
+  },
+  {
+   "box": {
+    "title": "40°, 125° and 250°",
+    "height": 60
+   }
+  },
+  {
+   "answers": "a 35°, b 118°, c 90°, d 162°, e 205° (reflex), f 330° (reflex); accept ± 2°. Draw 250° as 110° inside with the outside angle marked."
+  },
+  {
+   "h": "Worked examples"
+  },
+  {
+   "model": {
+    "title": "Measure angle ABC.",
+    "parts": [
+     {
+      "label": "Step 1",
+      "text": "Put the centre cross exactly on the vertex B"
+     },
+     {
+      "label": "Step 2",
+      "text": "Line up the zero line with arm BA"
+     },
+     {
+      "label": "Step 3",
+      "text": "Count up from 0° on the scale that starts at BA"
+     },
+     {
+      "label": "Step 4",
+      "text": "Read where arm BC crosses; check: acute or obtuse?"
+     },
+     {
+      "label": "Answer",
+      "text": "Use the scale that starts at 0 on your arm"
+     }
+    ]
+   }
+  },
+  {
+   "model": {
+    "title": "Draw angle PQR = 65°.",
+    "parts": [
+     {
+      "label": "Step 1",
+      "text": "Draw arm QR with a ruler, at least 7 cm"
+     },
+     {
+      "label": "Step 2",
+      "text": "Centre on Q, zero line on QR"
+     },
+     {
+      "label": "Step 3",
+      "text": "Mark a dot at 65° on the scale starting at R"
+     },
+     {
+      "label": "Step 4",
+      "text": "Join Q to the dot and label 65°"
+     },
+     {
+      "label": "Answer",
+      "text": "Check: it looks less than a right angle"
+     }
+    ]
+   }
+  },
+  {
+   "model": {
+    "title": "Draw a reflex angle of 230°.",
+    "parts": [
+     {
+      "label": "Step 1",
+      "text": "360 - 230 = 130"
+     },
+     {
+      "label": "Step 2",
+      "text": "Draw 130° in the usual way"
+     },
+     {
+      "label": "Step 3",
+      "text": "Mark the outside angle with an arc and label it 230°"
+     },
+     {
+      "label": "Answer",
+      "text": "230° = 360° - 130°"
+     }
+    ]
+   }
+  },
+  {
+   "h": "We do"
+  },
+  {
+   "questions": [
+    {
+     "q": "An angle measures 72°. A pupil writes 108°. What went wrong?",
+     "a": "They read the wrong scale: 180 - 72 = 108",
+     "model": "72 + 108 = 180: the two scales always add up to 180°. The angle is acute, so 72° is correct; 108° came from the other scale."
+    },
+    {
+     "q": "Draw an angle of 140°. Which type is it?",
+     "a": "obtuse"
+    },
+    {
+     "q": "To draw 300°, what angle do you draw first?",
+     "a": "60°"
+    }
+   ]
+  },
+  {
+   "h": "You do"
+  },
+  {
+   "questions": [
+    {
+     "q": "Measure the six angles a to f on the printable angle sheet, then draw angles of 40°, 125° and 250°.",
+     "a": "Sheet: a 35°, b 118°, c 90°, d 162°, e 205°, f 330° (accept ± 2°). 250° is drawn as 110° inside with the outside marked.",
+     "model": "Angle a: centre on the vertex, zero line on the lower arm, read the inner scale from 0: 35°. It looks acute, so 35° (not 145°) is sensible."
+    },
+    {
+     "q": "Without measuring, explain why angles of 175° and 185° look almost the same.",
+     "a": "Both are 5° from a straight line (180°), one on each side."
+    },
+    {
+     "q": "Draw triangle ABC with AB = 8 cm, angle A = 50° and angle B = 60°. Measure angle C. What should it be?",
+     "a": "70°, because the angles in a triangle add up to 180°"
+    }
+   ]
+  },
+  {
+   "h": "Exit ticket"
+  },
+  {
+   "questions": [
+    {
+     "q": "The inside angle is 100°. The reflex angle is:",
+     "a": "B) 260°",
+     "options": [
+      "80°",
+      "260°",
+      "200°"
+     ]
+    },
+    {
+     "q": "Where does the centre cross of the protractor go?",
+     "a": "On the vertex of the angle"
+    },
+    {
+     "q": "Big question: why do the two scales cause wrong answers, and how do you avoid it?",
+     "a": "Each angle can be read as x or 180 - x; start from 0 on your arm and decide acute or obtuse first."
+    }
+   ]
+  }
+ ]
+}

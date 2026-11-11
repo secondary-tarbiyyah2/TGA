@@ -1,0 +1,129 @@
+{
+ "id": "mathematics-y7-printable-construction-sheet-perpendiculars-port-l61",
+ "title": "Printable construction sheet: perpendiculars (lesson 61)",
+ "type": "worksheet",
+ "subject": "Mathematics",
+ "subjectSlug": "mathematics",
+ "year": "y7",
+ "unit": "Summer 1: Geometric notation and constructions; geometric reasoning",
+ "lessons": [
+  61
+ ],
+ "source": "Seeded from mathematics/y7 lesson 61 (Printable construction sheet: perpendiculars (portal worksheet for this lesson))",
+ "intro": "Lesson 61: Constructing perpendiculars and shortest distances. To understand how to construct perpendiculars from a point and at a point, and use them to find shortest distances",
+ "blocks": [
+  {
+   "h": "Worked examples"
+  },
+  {
+   "model": {
+    "title": "Construct the perpendicular from point P to line l.",
+    "parts": [
+     {
+      "label": "Step 1",
+      "text": "Arc from P cutting l at A and B"
+     },
+     {
+      "label": "Step 2",
+      "text": "Same radius: arcs from A and B on the other side of l"
+     },
+     {
+      "label": "Step 3",
+      "text": "Join P to the crossing point"
+     },
+     {
+      "label": "Answer",
+      "text": "The line meets l at 90°"
+     }
+    ]
+   }
+  },
+  {
+   "model": {
+    "title": "Construct a right angle at point Q on a line.",
+    "parts": [
+     {
+      "label": "Step 1",
+      "text": "Arcs from Q cut the line at A and B, so QA = QB"
+     },
+     {
+      "label": "Step 2",
+      "text": "Wider radius: arcs from A and B crossing above Q"
+     },
+     {
+      "label": "Step 3",
+      "text": "Join Q to the crossing"
+     },
+     {
+      "label": "Answer",
+      "text": "A 90° angle at Q"
+     }
+    ]
+   }
+  },
+  {
+   "h": "We do"
+  },
+  {
+   "questions": [
+    {
+     "q": "Draw a line and a point P 5 cm above it. Construct the perpendicular from P and measure the shortest distance.",
+     "a": "5 cm",
+     "model": "Arc from P cutting the line twice. Equal arcs from those points below the line; join P to the crossing. Measure from P to the foot: 5 cm."
+    },
+    {
+     "q": "Construct a right angle at the 3 cm mark of a 10 cm line.",
+     "a": "Perpendicular at a point on the line"
+    },
+    {
+     "q": "Why is the height of a triangle measured along a perpendicular?",
+     "a": "Height is the shortest distance from the vertex to the base, which is along the perpendicular."
+    }
+   ]
+  },
+  {
+   "h": "You do"
+  },
+  {
+   "questions": [
+    {
+     "q": "(a) Construct a square of side 5 cm using perpendiculars (no protractor). (b) Draw triangle ABC with AB = 8 cm, AC = 6 cm, BC = 7 cm and construct the perpendicular from C to AB. Measure the height. (c) Work out the area: ½ × 8 × height.",
+     "a": "(a) right angles at the corners, sides 5 cm (b) height ≈ 5.1 cm (c) area ≈ 20.3 cm² (accept 20 to 21 cm²)",
+     "model": "(a) Draw 5 cm. Construct a perpendicular at each end. Measure 5 cm up each one and join the tops."
+    },
+    {
+     "q": "A ship S is 6 km from a straight coastline (scale 1 cm = 1 km). Construct the point on the coast closest to the ship.",
+     "a": "The foot of the perpendicular from S to the coastline, 6 cm from S on the drawing."
+    },
+    {
+     "q": "Explain why the perpendicular from the top of an isosceles triangle cuts the base in half.",
+     "a": "It makes two right-angled triangles with equal hypotenuses and a shared side, so by Pythagoras their bases are equal."
+    }
+   ]
+  },
+  {
+   "h": "Exit ticket"
+  },
+  {
+   "questions": [
+    {
+     "q": "The shortest distance from a point to a line is:",
+     "a": "B) along the perpendicular",
+     "options": [
+      "along any straight path",
+      "along the perpendicular",
+      "along a curve"
+     ]
+    },
+    {
+     "q": "What angle does a constructed perpendicular make with the line?",
+     "a": "90°"
+    },
+    {
+     "q": "Big question: what is the shortest path from a point to a straight road?",
+     "a": "The perpendicular: the path that meets the road at 90°."
+    }
+   ]
+  }
+ ]
+}

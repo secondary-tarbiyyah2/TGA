@@ -1,0 +1,46 @@
+{
+ "id": "mathematics-y6-printed-line-graph-sheet-example-data",
+ "title": "Printed line graph sheet (example data)",
+ "type": "printable graph/grid",
+ "subject": "Mathematics",
+ "subjectSlug": "mathematics",
+ "year": "y6",
+ "unit": "Summer 1: Percentages; area, perimeter and volume; statistics; shape",
+ "lessons": [
+  68
+ ],
+ "source": "Seeded from mathematics/y6 lesson 68 (Printed line graph sheet (example data))",
+ "intro": "Lesson 68: Read and interpret line graphs.",
+ "blocks": [
+  {
+   "h": "Temperature on a June day (example data)"
+  },
+  {
+   "grid": {
+    "kind": "barchart",
+    "cats": [
+     "6 am",
+     "9 am",
+     "12 pm",
+     "3 pm",
+     "6 pm"
+    ],
+    "yMax": 25,
+    "yStep": 5,
+    "yLabel": "Temperature (°C)",
+    "xLabel": "Time",
+    "values": [
+     12,
+     15,
+     21,
+     23,
+     18
+    ],
+    "line": true
+   }
+  },
+  {
+   "h": "Graph"
+  }
+ ]
+}

@@ -1,0 +1,106 @@
+{
+ "id": "mathematics-y7-printable-construction-sheet-bisectors-portal-wo-l59",
+ "title": "Printable construction sheet: bisectors (lesson 59)",
+ "type": "worksheet",
+ "subject": "Mathematics",
+ "subjectSlug": "mathematics",
+ "year": "y7",
+ "unit": "Summer 1: Geometric notation and constructions; geometric reasoning",
+ "lessons": [
+  59
+ ],
+ "source": "Seeded from mathematics/y7 lesson 59 (Printable construction sheet: bisectors (portal worksheet for this lesson))",
+ "intro": "Lesson 59: Constructing the perpendicular bisector of a line segment. To understand how to construct a perpendicular bisector with compasses and why it works",
+ "blocks": [
+  {
+   "h": "Worked example"
+  },
+  {
+   "model": {
+    "title": "Construct the perpendicular bisector of AB = 8 cm.",
+    "parts": [
+     {
+      "label": "Step 1",
+      "text": "Open the compasses to more than half of AB, for example 5 cm"
+     },
+     {
+      "label": "Step 2",
+      "text": "Draw arcs above and below the line from A"
+     },
+     {
+      "label": "Step 3",
+      "text": "Keep the radius: arcs above and below from B"
+     },
+     {
+      "label": "Step 4",
+      "text": "Join the two crossing points with a ruler"
+     },
+     {
+      "label": "Answer",
+      "text": "It crosses AB at the midpoint, 4 cm from each end, at 90°"
+     }
+    ]
+   }
+  },
+  {
+   "h": "We do"
+  },
+  {
+   "questions": [
+    {
+     "q": "Construct the perpendicular bisector of a 6 cm line. Measure each half and the angle.",
+     "a": "3 cm each, meeting at 90°",
+     "model": "Compasses at about 4 cm; arcs from both ends above and below; join the crossings. Measure 3 cm and 3 cm and check 90° with a protractor."
+    },
+    {
+     "q": "Point P is on the perpendicular bisector of CD and PC = 7 cm. Find PD.",
+     "a": "7 cm"
+    }
+   ]
+  },
+  {
+   "h": "You do"
+  },
+  {
+   "questions": [
+    {
+     "q": "(a) Draw AB = 10 cm and construct its perpendicular bisector. (b) Mark the midpoint M and measure AM. (c) Mark any point P on the bisector; measure PA and PB. (d) Draw any triangle and construct the perpendicular bisectors of two of its sides.",
+     "a": "(a) arcs visible (b) AM = 5 cm (c) PA = PB (d) the bisectors cross at a point the same distance from all three vertices",
+     "model": "(a) Compasses at 6 cm. Arcs from A and from B, above and below; join the two crossings with a ruler."
+    },
+    {
+     "q": "Two villages A and B are 6 km apart (1 cm = 1 km). A well must be the same distance from both and 5 km from A. Construct its possible positions.",
+     "a": "Construct the perpendicular bisector of AB; an arc of 5 cm from A cuts it in two places, each 4 km from the midpoint."
+    },
+    {
+     "q": "Explain why the three perpendicular bisectors of a triangle meet at one point.",
+     "a": "Where two meet, the point is equidistant from all three vertices, so it must also lie on the third bisector."
+    }
+   ]
+  },
+  {
+   "h": "Exit ticket"
+  },
+  {
+   "questions": [
+    {
+     "q": "The perpendicular bisector of AB crosses AB at:",
+     "a": "B) the midpoint",
+     "options": [
+      "A",
+      "the midpoint",
+      "B"
+     ]
+    },
+    {
+     "q": "Q is on the perpendicular bisector of EF and QE = 4.5 cm. Find QF.",
+     "a": "4.5 cm"
+    },
+    {
+     "q": "Big question: how can you find the exact middle of a line without measuring?",
+     "a": "Construct the perpendicular bisector with equal arcs from both ends: it crosses at the midpoint."
+    }
+   ]
+  }
+ ]
+}

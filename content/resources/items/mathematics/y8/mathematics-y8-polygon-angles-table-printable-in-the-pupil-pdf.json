@@ -1,0 +1,169 @@
+{
+ "id": "mathematics-y8-polygon-angles-table-printable-in-the-pupil-pdf",
+ "title": "Polygon angles table",
+ "type": "worksheet",
+ "subject": "Mathematics",
+ "subjectSlug": "mathematics",
+ "year": "y8",
+ "unit": "Summer 1: Angles, area and symmetry",
+ "lessons": [
+  58,
+  59
+ ],
+ "source": "Seeded from mathematics/y8 lessons 58, 59 (Polygon angles table (printable, in the pupil PDF))",
+ "intro": "To understand how to find the sum of the interior angles of any polygon and use it to find missing angles",
+ "blocks": [
+  {
+   "h": "Triangles from one vertex"
+  },
+  {
+   "table": {
+    "head": [
+     "Polygon",
+     "Sides n",
+     "Triangles",
+     "Angle sum"
+    ],
+    "rows": [
+     [
+      "Triangle",
+      "3",
+      "1",
+      "180°"
+     ],
+     [
+      "Quadrilateral",
+      "4",
+      "2",
+      "360°"
+     ],
+     [
+      "Pentagon",
+      "5",
+      "3",
+      "540°"
+     ],
+     [
+      "Hexagon",
+      "6",
+      "4",
+      "720°"
+     ],
+     [
+      "Octagon",
+      "8",
+      "6",
+      "1080°"
+     ]
+    ]
+   }
+  },
+  {
+   "h": "We do"
+  },
+  {
+   "questions": [
+    {
+     "q": "Find one interior angle of a regular octagon.",
+     "a": "135°",
+     "model": "Sum = (8 - 2) × 180 = 1080°. 1080 ÷ 8 = 135°."
+    },
+    {
+     "q": "The angle sum of a 12-sided polygon",
+     "a": "1800°"
+    },
+    {
+     "q": "A hexagon has five angles of 115°. Find the sixth.",
+     "a": "720 - 575 = 145°"
+    },
+    {
+     "q": "Find the exterior and interior angles of a regular decagon.",
+     "a": "36° and 144°",
+     "model": "Exterior = 360 ÷ 10 = 36°. Interior = 180 - 36 = 144°."
+    },
+    {
+     "q": "A regular polygon has interior angles of 150°. How many sides?",
+     "a": "12"
+    },
+    {
+     "q": "Can a regular polygon have an exterior angle of 50°?",
+     "a": "No: 360 ÷ 50 = 7.2, not a whole number."
+    }
+   ]
+  },
+  {
+   "h": "You do"
+  },
+  {
+   "questions": [
+    {
+     "q": "(a) the angle sum of a heptagon (b) one interior angle of a regular hexagon (c) one interior angle of a regular decagon (d) a pentagon has angles 2x, 2x, 3x, 3x and 140°: find x",
+     "a": "(a) 900° (b) 120° (c) 144° (d) x = 40",
+     "model": "(a) n = 7: (7 - 2) × 180 = 5 × 180 = 900°. (d) 10x + 140 = 540, 10x = 400, x = 40."
+    },
+    {
+     "q": "A polygon has an angle sum of 2340°. How many sides has it?",
+     "a": "2340 ÷ 180 = 13 triangles, so 15 sides"
+    },
+    {
+     "q": "Can a regular polygon have interior angles of 130°? Explain.",
+     "a": "(n - 2) × 180 = 130n gives 50n = 360 and n = 7.2, not a whole number: no."
+    },
+    {
+     "q": "(a) the exterior angle of a regular 20-gon (b) the interior angle of a regular 9-gon (c) the number of sides when the exterior angle is 30° (d) the number of sides when the interior angle is 156°",
+     "a": "(a) 18° (b) 140° (c) 12 (d) 15",
+     "model": "(b) Exterior = 360 ÷ 9 = 40°; interior = 180 - 40 = 140°. (d) Exterior = 180 - 156 = 24°; n = 360 ÷ 24 = 15."
+    },
+    {
+     "q": "The exterior angles of a pentagon are x, 2x, 2x, 3x and 4x. Find x.",
+     "a": "12x = 360, so x = 30"
+    },
+    {
+     "q": "The interior angle of a regular polygon is 4 times its exterior angle. How many sides has it?",
+     "a": "Exterior e, interior 4e: 5e = 180, e = 36°, so n = 10"
+    }
+   ]
+  },
+  {
+   "h": "Exit ticket"
+  },
+  {
+   "questions": [
+    {
+     "q": "The angle sum of a pentagon is:",
+     "a": "B) 540°",
+     "options": [
+      "360°",
+      "540°",
+      "720°"
+     ]
+    },
+    {
+     "q": "One interior angle of a regular hexagon",
+     "a": "120°"
+    },
+    {
+     "q": "Big question: is there a rule for the angle sum of any polygon?",
+     "a": "Yes: (n - 2) × 180°, because it splits into n - 2 triangles from one vertex."
+    },
+    {
+     "q": "The exterior angles of any polygon add up to:",
+     "a": "B) 360°",
+     "options": [
+      "180°",
+      "360°",
+      "540°"
+     ]
+    },
+    {
+     "q": "The exterior angle of a regular 12-gon",
+     "a": "30°"
+    },
+    {
+     "q": "Big question: why do exterior angles always add up to 360°?",
+     "a": "Walking round the shape you turn through each exterior angle and end facing the way you started: one full turn."
+    }
+   ]
+  }
+ ]
+}

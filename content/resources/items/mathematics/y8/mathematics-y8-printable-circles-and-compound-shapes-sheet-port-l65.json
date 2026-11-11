@@ -1,0 +1,152 @@
+{
+ "id": "mathematics-y8-printable-circles-and-compound-shapes-sheet-port-l65",
+ "title": "Printable circles and compound shapes sheet (lesson 65)",
+ "type": "worksheet",
+ "subject": "Mathematics",
+ "subjectSlug": "mathematics",
+ "year": "y8",
+ "unit": "Summer 1: Angles, area and symmetry",
+ "lessons": [
+  65
+ ],
+ "source": "Seeded from mathematics/y8 lesson 65 (Printable circles and compound shapes sheet (portal worksheet for this lesson))",
+ "intro": "Lesson 65: Semicircles, quarter circles and compound shapes. To understand how to find the area and perimeter of semicircles, quarter circles and compound shapes with circles",
+ "blocks": [
+  {
+   "h": "Worked examples"
+  },
+  {
+   "model": {
+    "title": "A semicircle has diameter 10 cm. Find its area and perimeter.",
+    "parts": [
+     {
+      "label": "Step 1",
+      "text": "Area = ½ × π × 5² = 39.27..."
+     },
+     {
+      "label": "Step 2",
+      "text": "Curved edge = ½ × π × 10 = 15.70..."
+     },
+     {
+      "label": "Step 3",
+      "text": "Perimeter = 15.70 + 10"
+     },
+     {
+      "label": "Answer",
+      "text": "Area 39.3 cm²; perimeter 25.7 cm"
+     }
+    ]
+   }
+  },
+  {
+   "model": {
+    "title": "A quarter circle has radius 6 cm. Find its area and perimeter.",
+    "parts": [
+     {
+      "label": "Step 1",
+      "text": "Area = ¼ × π × 36 = 28.27..."
+     },
+     {
+      "label": "Step 2",
+      "text": "Arc = ¼ × 2 × π × 6 = 9.42..."
+     },
+     {
+      "label": "Step 3",
+      "text": "Perimeter = 9.42 + 6 + 6"
+     },
+     {
+      "label": "Answer",
+      "text": "Area 28.3 cm²; perimeter 21.4 cm"
+     }
+    ]
+   }
+  },
+  {
+   "model": {
+    "title": "A track is a 100 m by 60 m rectangle with a semicircle on each 60 m end. How far is one lap?",
+    "parts": [
+     {
+      "label": "Step 1",
+      "text": "Two semicircles: one circle of diameter 60: π × 60 = 188.49..."
+     },
+     {
+      "label": "Step 2",
+      "text": "Straights: 2 × 100 = 200"
+     },
+     {
+      "label": "Step 3",
+      "text": "Total"
+     },
+     {
+      "label": "Answer",
+      "text": "388.5 m"
+     }
+    ]
+   }
+  },
+  {
+   "h": "We do"
+  },
+  {
+   "questions": [
+    {
+     "q": "Find the area of a semicircle with radius 8 cm, to 1 d.p.",
+     "a": "100.5 cm²",
+     "model": "Area = ½ × π × 8² = 32π = 100.53... = 100.5 cm²."
+    },
+    {
+     "q": "The arc length of a quarter circle of radius 10 cm (1 d.p.)",
+     "a": "5π = 15.7 cm"
+    },
+    {
+     "q": "The perimeter of that quarter circle",
+     "a": "15.7 + 20 = 35.7 cm"
+    }
+   ]
+  },
+  {
+   "h": "You do"
+  },
+  {
+   "questions": [
+    {
+     "q": "(a) a semicircle of diameter 14 cm: area and perimeter (b) a window: an 80 cm wide, 100 cm tall rectangle with a semicircle on top: total area (c) a 10 cm square with a quarter circle of radius 10 cm drawn from one corner: the area outside the quarter circle",
+     "a": "(a) 77.0 cm² and 36.0 cm (b) 10 513.3 cm² (c) 21.5 cm²",
+     "model": "(a) r = 7: area = ½ × π × 49 = 76.96...; curved edge ½ × π × 14 = 21.99...; perimeter 21.99 + 14 = 36.0 cm. (b) 8000 + ½ × π × 40² = 8000 + 2513.3 = 10 513.3 cm²."
+    },
+    {
+     "q": "An arched masjid doorway is a rectangle 1.2 m wide and 2 m tall with a semicircular top. Find the area of the opening to 2 d.p.",
+     "a": "2.4 + ½ × π × 0.6² = 2.4 + 0.565 = 2.97 m²"
+    },
+    {
+     "q": "Show that the perimeter of a semicircle of radius r is r(π + 2).",
+     "a": "Curved edge πr plus diameter 2r: πr + 2r = r(π + 2)"
+    }
+   ]
+  },
+  {
+   "h": "Exit ticket"
+  },
+  {
+   "questions": [
+    {
+     "q": "Two semicircles of diameter d make:",
+     "a": "A) a full circle of diameter d",
+     "options": [
+      "a full circle of diameter d",
+      "a quarter circle",
+      "a rectangle"
+     ]
+    },
+    {
+     "q": "Perimeter of a semicircle with d = 10 cm (1 d.p.)",
+     "a": "25.7 cm"
+    },
+    {
+     "q": "Big question: how do you find the perimeter of a shape with a curved edge?",
+     "a": "Add the curved arc (the right fraction of πd) to all the straight edges."
+    }
+   ]
+  }
+ ]
+}

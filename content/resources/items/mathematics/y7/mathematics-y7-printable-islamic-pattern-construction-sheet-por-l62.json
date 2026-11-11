@@ -1,0 +1,106 @@
+{
+ "id": "mathematics-y7-printable-islamic-pattern-construction-sheet-por-l62",
+ "title": "Printable Islamic pattern construction sheet (lesson 62)",
+ "type": "worksheet",
+ "subject": "Mathematics",
+ "subjectSlug": "mathematics",
+ "year": "y7",
+ "unit": "Summer 1: Geometric notation and constructions; geometric reasoning",
+ "lessons": [
+  62
+ ],
+ "source": "Seeded from mathematics/y7 lesson 62 (Printable Islamic pattern construction sheet (portal worksheet for this lesson; usable on a drawing tablet))",
+ "intro": "Lesson 62: Constructions in Islamic geometric patterns. To understand how compass constructions create regular hexagons, stars and Islamic geometric patterns",
+ "blocks": [
+  {
+   "h": "Worked example"
+  },
+  {
+   "model": {
+    "title": "Construct a regular hexagon in a circle of radius 4 cm.",
+    "parts": [
+     {
+      "label": "Step 1",
+      "text": "Draw a circle of radius 4 cm and mark a point on it"
+     },
+     {
+      "label": "Step 2",
+      "text": "Keep the radius: step round the circle, marking 6 points"
+     },
+     {
+      "label": "Step 3",
+      "text": "Join neighbouring points with a ruler"
+     },
+     {
+      "label": "Answer",
+      "text": "Six sides of 4 cm"
+     }
+    ]
+   }
+  },
+  {
+   "h": "We do"
+  },
+  {
+   "questions": [
+    {
+     "q": "Construct a regular hexagon with sides of 5 cm.",
+     "a": "Circle of radius 5 cm; step 6 points round it; join them",
+     "model": "Draw a circle of radius 5 cm. Keep the compasses at 5 cm and step round, marking six points. Join neighbouring points with a ruler."
+    },
+    {
+     "q": "Two 60° angles meet at each corner of the hexagon. What is its interior angle?",
+     "a": "120°"
+    },
+    {
+     "q": "Join alternate vertices of the hexagon. What shape do you get?",
+     "a": "An equilateral triangle"
+    }
+   ]
+  },
+  {
+   "h": "You do"
+  },
+  {
+   "questions": [
+    {
+     "q": "(a) construct a regular hexagon in a circle of radius 5 cm (b) draw the six-point star (c) shade it in two colours to keep its symmetry and write its order of rotational symmetry.",
+     "a": "(a) sides of 5 cm (b) two overlapping equilateral triangles (c) order 6",
+     "model": "(a) Mark one point on the circle; keep the compasses at 5 cm and step round; join neighbouring points. (b) Join alternate points to make one triangle, then the other three."
+    },
+    {
+     "q": "Bisect the angles at the centre to make 12 equal parts. What angle is each part?",
+     "a": "30°"
+    },
+    {
+     "q": "Regular hexagons tessellate. Use angles to explain why.",
+     "a": "Each interior angle is 120°, and three meet at a point: 3 × 120° = 360°."
+    }
+   ]
+  },
+  {
+   "h": "Exit ticket"
+  },
+  {
+   "questions": [
+    {
+     "q": "The side of a hexagon drawn this way equals the:",
+     "a": "B) radius",
+     "options": [
+      "diameter",
+      "radius",
+      "circumference"
+     ]
+    },
+    {
+     "q": "Order of rotational symmetry of a six-point star",
+     "a": "6"
+    },
+    {
+     "q": "Big question: how did craftsmen build these patterns with only compasses and a straight edge?",
+     "a": "Stepping the radius round a circle makes six equal parts; joining and bisecting builds hexagons, stars and twelve-fold patterns."
+    }
+   ]
+  }
+ ]
+}

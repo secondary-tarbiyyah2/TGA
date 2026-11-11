@@ -212,7 +212,8 @@ function cards({ items = [], cols = 4, height = 26, size = 6 } = {}) {
 }
 
 /** Analogue clock faces, blank hands unless times are given ("3:30"). */
-function clock({ count = 6, times = [] } = {}) {
+const ROMAN = ["", "I", "II", "III", "IV", "V", "VI", "VII", "VIII", "IX", "X", "XI", "XII"];
+function clock({ count = 6, times = [], roman = false } = {}) {
   const per = 3;
   const cw = W / per;
   const r = 24;
@@ -228,7 +229,7 @@ function clock({ count = 6, times = [] } = {}) {
     }
     for (let hNum = 1; hNum <= 12; hNum++) {
       const a = (hNum / 12) * 2 * Math.PI;
-      s += txt(cx + Math.sin(a) * (r - 6.5), cy - Math.cos(a) * (r - 6.5) + 1.4, String(hNum), { size: 3.8 });
+      s += txt(cx + Math.sin(a) * (r - 6.5), cy - Math.cos(a) * (r - 6.5) + 1.4, roman ? ROMAN[hNum] : String(hNum), { size: roman ? 3 : 3.8 });
     }
     s += `<circle cx="${cx}" cy="${cy}" r="0.9" fill="${INK}"/>`;
     const t = times[i];
@@ -244,7 +245,7 @@ function clock({ count = 6, times = [] } = {}) {
 }
 
 /** Empty axes for a bar chart or line graph with category labels. */
-function barchart({ cats = [], yMax = 10, yStep = 1, yLabel = "", xLabel = "" } = {}) {
+function barchart({ cats = [], yMax = 10, yStep = 1, yLabel = "", xLabel = "", values, line = false, key = [] } = {}) {
   const pad = 14;
   const h = 110;
   const cw = (W - pad - 4) / Math.max(1, cats.length);
@@ -259,7 +260,49 @@ function barchart({ cats = [], yMax = 10, yStep = 1, yLabel = "", xLabel = "" } 
   cats.forEach((c, i) => (s += txt(pad + cw * i + cw / 2, h - 8, c, { size: cats.length > 6 ? 2.6 : 3.2 })));
   if (yLabel) s += `<text x="3" y="${h / 2}" font-size="3" transform="rotate(-90 3 ${h / 2})" text-anchor="middle" font-family="Carlito, Calibri, 'Amiri Pack', Arial, sans-serif">${esc(yLabel)}</text>`;
   if (xLabel) s += txt(W / 2, h - 1.5, xLabel, { size: 3.2 });
+  // Filled in: `values` (one series) or `values: [[...], [...]]` (dual bars); `line: true` joins points instead.
+  if (values && values.length) {
+    const series = Array.isArray(values[0]) ? values : [values];
+    const fills = ["#2E6E5E", "#C9A227", "#7A8C99"];
+    const Y = (v) => h - 14 - (v / yStep) * unit;
+    series.forEach((vals, k) => {
+      if (line) {
+        const pts = vals.map((v, i) => [pad + cw * i + cw / 2, Y(v)]);
+        s += `<polyline points="${pts.map((p) => p.map((n) => n.toFixed(2)).join(",")).join(" ")}" fill="none" stroke="${fills[k]}" stroke-width="0.7"/>`;
+        pts.forEach(([x, y]) => (s += `<circle cx="${x.toFixed(2)}" cy="${y.toFixed(2)}" r="1" fill="${fills[k]}"/>`));
+      } else {
+        const bw = (cw * 0.6) / series.length;
+        vals.forEach((v, i) => (s += `<rect x="${(pad + cw * i + cw * 0.2 + k * bw).toFixed(2)}" y="${Y(v).toFixed(2)}" width="${bw.toFixed(2)}" height="${(h - 14 - Y(v)).toFixed(2)}" fill="${fills[k]}" fill-opacity="0.75"/>`));
+      }
+    });
+    key.forEach((label, k) => (s += `<rect x="${W - 46}" y="${4 + k * 5}" width="3" height="3" fill="${fills[k]}"/>` + txt(W - 41, 6.6 + k * 5, label, { size: 2.8, anchor: "start" })));
+  }
   return svg(W, h, s);
+}
+/** Pie charts: each {title, data: [[label, value]], blank?} drawn with sector lines and labels (blank leaves labels off). */
+function pie({ charts = [], cols = 2 } = {}) {
+  const cw = W / cols;
+  const R = Math.min(32, cw / 2 - 12);
+  const rh = 2 * R + 20;
+  let s = "";
+  charts.forEach((c, n) => {
+    const cx = (n % cols) * cw + cw / 2;
+    const cy = Math.floor(n / cols) * rh + R + 10;
+    const total = c.data.reduce((a, d) => a + d[1], 0);
+    s += txt(cx, cy - R - 4, c.title || "", { size: 3, bold: true });
+    s += `<circle cx="${cx}" cy="${cy}" r="${R}" fill="#FFFFFF" stroke="${INK}" stroke-width="0.5"/>`;
+    let a = -Math.PI / 2;
+    for (const [label, v] of c.data) {
+      const da = (v / total) * 2 * Math.PI;
+      s += `<line x1="${cx}" y1="${cy}" x2="${(cx + Math.cos(a) * R).toFixed(2)}" y2="${(cy + Math.sin(a) * R).toFixed(2)}" stroke="${INK}" stroke-width="0.45"/>`;
+      if (!c.blank) {
+        const m = a + da / 2;
+        s += txt(cx + Math.cos(m) * R * 0.6, cy + Math.sin(m) * R * 0.6 + 1, label, { size: 2.7 });
+      }
+      a += da;
+    }
+  });
+  return svg(W, Math.ceil(charts.length / cols) * rh, s);
 }
 
 /** A colour wheel of `segments` empty segments (6 or 12), optionally labelled outside, with an inner ring. */
@@ -549,7 +592,76 @@ function periodic({ ar = true } = {}) {
   return svg(W, 6 + 7 * h + 6, s);
 }
 
-export const GRID_KINDS = { squared, dot, isometric, graph, numberline, hundred, times, placevalue, fractionwall, tenframe, cards, clock, barchart, periodic, wheel, boxes, perspective, star8, schematic, worldmap, gridmap };
+
+/** A paper protractor: 180° (half) or 360° (full), marked every degree and labelled every 10°, both scales on the half. */
+function protractor({ full = false, count = 1 } = {}) {
+  const R = full ? 62 : 80;
+  const h = full ? 2 * R + 10 : R + 14;
+  let s = "";
+  for (let k = 0; k < count; k++) {
+    const cx = W / 2;
+    const cy = full ? R + 5 : R + 6;
+    s += full ? `<circle cx="${cx}" cy="${cy}" r="${R}" fill="#FFFFFF" stroke="${INK}" stroke-width="0.5"/>` : `<path d="M${cx - R},${cy} A${R},${R} 0 0 1 ${cx + R},${cy} Z" fill="#FFFFFF" stroke="${INK}" stroke-width="0.5"/>`;
+    const max = full ? 360 : 180;
+    for (let d = 0; d <= max; d++) {
+      if (full && d === 360) continue;
+      const a = full ? ((d - 90) * Math.PI) / 180 : Math.PI - (d * Math.PI) / 180;
+      const l = d % 10 === 0 ? 6 : d % 5 === 0 ? 4 : 2;
+      const x = (r) => cx + Math.cos(a) * r;
+      const y = (r) => (full ? cy + Math.sin(a) * r : cy - Math.sin(a) * r);
+      s += `<line x1="${x(R - l).toFixed(2)}" y1="${y(R - l).toFixed(2)}" x2="${x(R).toFixed(2)}" y2="${y(R).toFixed(2)}" stroke="${INK}" stroke-width="${d % 10 === 0 ? 0.4 : 0.2}"/>`;
+      if (d % 10 === 0) {
+        s += txt(x(R - 10), y(R - 10) + 1.1, String(d), { size: 2.7 });
+        if (!full) s += txt(x(R - 16), y(R - 16) + 1.1, String(180 - d), { size: 2.3, color: "#8C877C" });
+      }
+    }
+    s += `<circle cx="${cx}" cy="${cy}" r="0.9" fill="${INK}"/>`;
+    if (!full) s += `<line x1="${cx - R}" y1="${cy}" x2="${cx + R}" y2="${cy}" stroke="${INK}" stroke-width="0.4"/><line x1="${cx}" y1="${cy}" x2="${cx}" y2="${cy - 8}" stroke="${INK}" stroke-width="0.3"/>`;
+    else s += `<line x1="${cx}" y1="${cy}" x2="${cx}" y2="${cy - R}" stroke="${INK}" stroke-width="0.3"/>`;
+  }
+  return svg(W, h, s);
+}
+/** Angles to measure: each item {deg, label, turn?} drawn as two arms from a vertex (arms 30 mm), 3 or 4 a row. */
+function angles({ items = [], cols = 3 } = {}) {
+  const cw = W / cols;
+  const rh = 52;
+  let s = "";
+  items.forEach((it, i) => {
+    const cx = (i % cols) * cw + cw / 2;
+    const cy = Math.floor(i / cols) * rh + rh / 2 + 6;
+    if (it.tri) {
+      // A triangle with base angles tri[0] (left) and tri[1] (right) on a base of 40 mm.
+      const [A, B] = it.tri.map((d) => (d * Math.PI) / 180);
+      const b = Math.min(40, cw - 14);
+      const x0 = cx - b / 2;
+      const y0 = cy + 16;
+      const hx = (b * Math.tan(B)) / (Math.tan(A) + Math.tan(B));
+      const apex = [x0 + hx, y0 - hx * Math.tan(A)];
+      s += `<polygon points="${x0},${y0} ${x0 + b},${y0} ${apex[0].toFixed(2)},${apex[1].toFixed(2)}" fill="none" stroke="${INK}" stroke-width="0.5"/>`;
+      s += txt((i % cols) * cw + 5, Math.floor(i / cols) * rh + 6, it.label || "Triangle", { bold: true, size: 4, anchor: "start" });
+      return;
+    }
+    const L = Math.min(30, cw / 2 - 4);
+    const base = ((it.turn ?? (i * 47) % 360) * Math.PI) / 180;
+    const a2 = base + ((it.deg || 0) * Math.PI) / 180;
+    const vx = cx - Math.cos(base + (it.deg * Math.PI) / 360) * L * 0.35;
+    const vy = cy + Math.sin(base + (it.deg * Math.PI) / 360) * L * 0.35;
+    const ex = (a) => [vx + Math.cos(a) * L, vy - Math.sin(a) * L];
+    const [x1, y1] = ex(base);
+    const [x2, y2] = ex(a2);
+    s += `<line x1="${vx.toFixed(2)}" y1="${vy.toFixed(2)}" x2="${x1.toFixed(2)}" y2="${y1.toFixed(2)}" stroke="${INK}" stroke-width="0.5"/><line x1="${vx.toFixed(2)}" y1="${vy.toFixed(2)}" x2="${x2.toFixed(2)}" y2="${y2.toFixed(2)}" stroke="${INK}" stroke-width="0.5"/>`;
+    const ar = 5;
+    const p1 = [vx + Math.cos(base) * ar, vy - Math.sin(base) * ar];
+    const p2 = [vx + Math.cos(a2) * ar, vy - Math.sin(a2) * ar];
+    const large = it.deg > 180 ? 1 : 0;
+    s += `<path d="M${p1[0].toFixed(2)},${p1[1].toFixed(2)} A${ar},${ar} 0 ${large} 0 ${p2[0].toFixed(2)},${p2[1].toFixed(2)}" fill="none" stroke="${INK}" stroke-width="0.35"/>`;
+    s += txt((i % cols) * cw + 5, Math.floor(i / cols) * rh + 6, it.label || String.fromCharCode(65 + i), { bold: true, size: 4, anchor: "start" });
+    s += `<line x1="${(i % cols) * cw + cw - 26}" y1="${Math.floor(i / cols) * rh + rh - 2}" x2="${(i % cols) * cw + cw - 6}" y2="${Math.floor(i / cols) * rh + rh - 2}" stroke="${LINE}" stroke-width="0.4"/>` + txt((i % cols) * cw + cw - 3, Math.floor(i / cols) * rh + rh - 2.5, "°", { size: 3.4 });
+  });
+  return svg(W, Math.ceil(items.length / cols) * rh + 4, s);
+}
+
+export const GRID_KINDS = { protractor, angles, pie, squared, dot, isometric, graph, numberline, hundred, times, placevalue, fractionwall, tenframe, cards, clock, barchart, periodic, wheel, boxes, perspective, star8, schematic, worldmap, gridmap };
 export function gridSvg(spec = {}) {
   const f = GRID_KINDS[spec.kind];
   if (!f) throw new Error(`Unknown grid kind "${spec.kind}"`);

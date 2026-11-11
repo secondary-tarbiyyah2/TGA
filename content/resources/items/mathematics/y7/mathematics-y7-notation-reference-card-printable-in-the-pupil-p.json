@@ -1,0 +1,84 @@
+{
+ "id": "mathematics-y7-notation-reference-card-printable-in-the-pupil-p",
+ "title": "Notation reference card",
+ "type": "worksheet",
+ "subject": "Mathematics",
+ "subjectSlug": "mathematics",
+ "year": "y7",
+ "unit": "Summer 1: Geometric notation and constructions; geometric reasoning",
+ "lessons": [
+  52
+ ],
+ "source": "Seeded from mathematics/y7 lesson 52 (Notation reference card (printable, in the pupil PDF))",
+ "intro": "Lesson 52: Geometric notation: points, lines and line segments. To understand how geometric notation describes points, lines, line segments and shapes precisely",
+ "blocks": [
+  {
+   "h": "We do"
+  },
+  {
+   "questions": [
+    {
+     "q": "Triangle ABC has AB = AC. How do we show this on a diagram, and what type of triangle is it?",
+     "a": "One dash on AB and one dash on AC; isosceles",
+     "model": "Equal sides get the same number of dashes: one dash on AB, one on AC. Two equal sides make the triangle isosceles."
+    },
+    {
+     "q": "Name all four sides of quadrilateral KLMN.",
+     "a": "KL, LM, MN, NK"
+    },
+    {
+     "q": "Write in notation: line segment EF is parallel to line segment GH.",
+     "a": "EF ∥ GH"
+    },
+    {
+     "q": "How many diagonals does pentagon ABCDE have? Name them.",
+     "a": "5: AC, AD, BD, BE, CE"
+    }
+   ]
+  },
+  {
+   "h": "You do"
+  },
+  {
+   "questions": [
+    {
+     "q": "Parallelogram ABCD is labelled in order. (a) Which side is parallel to AB? (b) Which side is equal to AD? (c) Name both diagonals. (d) Write one statement using ∥.",
+     "a": "(a) DC (b) BC (c) AC and BD (d) AD ∥ BC (or AB ∥ DC)",
+     "model": "Opposite sides of a parallelogram are parallel and equal: AB with DC, AD with BC. Diagonals join opposite corners: A to C and B to D."
+    },
+    {
+     "q": "A hexagon has vertices A to F. How many diagonals does it have? Explain a quick way to count them.",
+     "a": "9: from each of 6 vertices there are 3 diagonals (not to itself or its 2 neighbours); 6 × 3 = 18 counts each one twice, so 9"
+    },
+    {
+     "q": "Find a rule for the number of diagonals of a polygon with n sides. Test it on an octagon.",
+     "a": "n(n - 3) ÷ 2; octagon: 8 × 5 ÷ 2 = 20"
+    }
+   ]
+  },
+  {
+   "h": "Exit ticket"
+  },
+  {
+   "questions": [
+    {
+     "q": "Which symbol means 'is perpendicular to'?",
+     "a": "A) ⊥",
+     "options": [
+      "⊥",
+      "∥",
+      "="
+     ]
+    },
+    {
+     "q": "Rectangle PQRS: name the side parallel to QR.",
+     "a": "PS"
+    },
+    {
+     "q": "Big question: why do mathematicians label shapes with letters?",
+     "a": "So everyone means exactly the same point, line or angle; words alone can be misunderstood."
+    }
+   ]
+  }
+ ]
+}

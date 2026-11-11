@@ -1,0 +1,119 @@
+{
+ "id": "mathematics-y9-printable-coordinate-grid-sheet-portal-worksheet-l54",
+ "title": "Printable coordinate grid sheet (lesson 54)",
+ "type": "printable graph/grid",
+ "subject": "Mathematics",
+ "subjectSlug": "mathematics",
+ "year": "y9",
+ "unit": "Summer 1: Enlargement and similarity; ratio and proportion; rates",
+ "lessons": [
+  54
+ ],
+ "source": "Seeded from mathematics/y9 lesson 54 (Printable coordinate grid sheet (portal worksheet for this lesson))",
+ "intro": "Lesson 54: Describing enlargements: finding the centre and scale factor. To understand how to describe an enlargement fully by finding its scale factor and centre",
+ "blocks": [
+  {
+   "h": "Coordinate grid"
+  },
+  {
+   "grid": {
+    "kind": "graph",
+    "xMin": -8,
+    "xMax": 8,
+    "yMin": -8,
+    "yMax": 8,
+    "height": 125
+   }
+  },
+  {
+   "h": "Worked example"
+  },
+  {
+   "model": {
+    "title": "Object (1, 1), (2, 1), (1, 3) has image (3, 1), (5, 1), (3, 5). Describe the transformation fully.",
+    "parts": [
+     {
+      "label": "Step 1",
+      "text": "Side from (1, 1) to (2, 1) is 1; its image is 2: scale factor 2"
+     },
+     {
+      "label": "Step 2",
+      "text": "Ray lines through (1, 1) and (3, 1), and through (1, 3) and (3, 5)"
+     },
+     {
+      "label": "Step 3",
+      "text": "They meet at (-1, 1)"
+     },
+     {
+      "label": "Answer",
+      "text": "Enlargement, scale factor 2, centre (-1, 1)"
+     }
+    ]
+   }
+  },
+  {
+   "h": "We do"
+  },
+  {
+   "questions": [
+    {
+     "q": "Object (2, 2), (4, 2), (2, 3) has image (4, 4), (8, 4), (4, 6). Describe the transformation fully.",
+     "a": "Enlargement, scale factor 2, centre (0, 0)",
+     "model": "Lengths double: scale factor 2. Every image coordinate is double the object's, so the ray lines meet at the origin."
+    },
+    {
+     "q": "Object (6, 6), (9, 6), (6, 9) has image (2, 2), (3, 2), (2, 3). Describe it fully.",
+     "a": "Enlargement, scale factor ⅓, centre (0, 0)"
+    },
+    {
+     "q": "A perimeter of 12 cm becomes 30 cm. Scale factor?",
+     "a": "2.5"
+    }
+   ]
+  },
+  {
+   "h": "You do"
+  },
+  {
+   "questions": [
+    {
+     "q": "Describe each transformation fully: (a) (1, 2), (3, 2), (1, 3) → (2, 4), (6, 4), (2, 6) (b) (2, 1), (4, 1), (4, 2) → (2, 1), (8, 1), (8, 4) (c) (5, 5), (9, 5), (9, 7) → (3, 4), (5, 4), (5, 5)",
+     "a": "(a) enlargement, scale factor 2, centre (0, 0) (b) enlargement, scale factor 3, centre (2, 1) (c) enlargement, scale factor ½, centre (1, 3)",
+     "model": "(a) Each image coordinate is double the object's and the lengths double: scale factor 2 from the origin. (b) (2, 1) does not move, so it is the centre; the side 2 becomes 6: scale factor 3."
+    },
+    {
+     "q": "An enlargement maps a 4 cm by 6 cm rectangle to a similar rectangle of area 216 cm². Find the scale factor.",
+     "a": "24 cm² → 216 cm² is × 9 = 3², so scale factor 3"
+    },
+    {
+     "q": "Explain why the centre of enlargement never moves.",
+     "a": "Its distance from the centre is 0, and 0 × any scale factor is still 0."
+    }
+   ]
+  },
+  {
+   "h": "Exit ticket"
+  },
+  {
+   "questions": [
+    {
+     "q": "To describe an enlargement fully, give:",
+     "a": "A) the scale factor and the centre",
+     "options": [
+      "the scale factor and the centre",
+      "the scale factor only",
+      "the direction it moved"
+     ]
+    },
+    {
+     "q": "The scale factor from 8 cm to 2 cm",
+     "a": "¼"
+    },
+    {
+     "q": "Big question: how can you work back to the centre of enlargement?",
+     "a": "Draw ray lines through each vertex and its image; they meet at the centre."
+    }
+   ]
+  }
+ ]
+}

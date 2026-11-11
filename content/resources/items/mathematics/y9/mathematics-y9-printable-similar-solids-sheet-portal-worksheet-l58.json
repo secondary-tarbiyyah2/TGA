@@ -1,0 +1,182 @@
+{
+ "id": "mathematics-y9-printable-similar-solids-sheet-portal-worksheet-l58",
+ "title": "Printable similar solids sheet (lesson 58)",
+ "type": "worksheet",
+ "subject": "Mathematics",
+ "subjectSlug": "mathematics",
+ "year": "y9",
+ "unit": "Summer 1: Enlargement and similarity; ratio and proportion; rates",
+ "lessons": [
+  58
+ ],
+ "source": "Seeded from mathematics/y9 lesson 58 (Printable similar solids sheet (portal worksheet for this lesson))",
+ "intro": "Lesson 58: Similar shapes: volume. To understand how the volume of similar solids changes by the cube of the length scale factor, and choose the right factor in mixed problems",
+ "blocks": [
+  {
+   "h": "Worked examples"
+  },
+  {
+   "model": {
+    "title": "Two similar jugs have length scale factor 3. The small jug holds 0.5 litres. How much does the large jug hold?",
+    "parts": [
+     {
+      "label": "Step 1",
+      "text": "Volume factor 3³ = 27"
+     },
+     {
+      "label": "Step 2",
+      "text": "0.5 × 27"
+     },
+     {
+      "label": "Answer",
+      "text": "13.5 litres"
+     }
+    ]
+   }
+  },
+  {
+   "model": {
+    "title": "Similar boxes have volumes 64 cm³ and 343 cm³. The small box is 8 cm tall. How tall is the large one?",
+    "parts": [
+     {
+      "label": "Step 1",
+      "text": "Volume factor 343 ÷ 64"
+     },
+     {
+      "label": "Step 2",
+      "text": "Length scale factor ∛(343 ÷ 64) = 7 ÷ 4"
+     },
+     {
+      "label": "Step 3",
+      "text": "8 × 7 ÷ 4"
+     },
+     {
+      "label": "Answer",
+      "text": "14 cm"
+     }
+    ]
+   }
+  },
+  {
+   "model": {
+    "title": "Two similar bottles have surface areas 50 cm² and 200 cm². The small one holds 30 cm³. How much does the large one hold?",
+    "parts": [
+     {
+      "label": "Step 1",
+      "text": "Area factor 4, so length scale factor 2"
+     },
+     {
+      "label": "Step 2",
+      "text": "Volume factor 2³ = 8"
+     },
+     {
+      "label": "Step 3",
+      "text": "30 × 8"
+     },
+     {
+      "label": "Answer",
+      "text": "240 cm³"
+     }
+    ]
+   }
+  },
+  {
+   "h": "Three factors"
+  },
+  {
+   "table": {
+    "head": [
+     "Length scale factor k",
+     "Area factor k²",
+     "Volume factor k³"
+    ],
+    "rows": [
+     [
+      "2",
+      "4",
+      "8"
+     ],
+     [
+      "3",
+      "9",
+      "27"
+     ],
+     [
+      "½",
+      "¼",
+      "⅛"
+     ],
+     [
+      "10",
+      "100",
+      "1000"
+     ]
+    ]
+   }
+  },
+  {
+   "h": "We do"
+  },
+  {
+   "questions": [
+    {
+     "q": "Length scale factor 2; the small volume is 15 cm³. Find the large volume.",
+     "a": "120 cm³",
+     "model": "Volume factor 2³ = 8. 15 × 8 = 120 cm³."
+    },
+    {
+     "q": "A volume factor of 125 means a length scale factor of",
+     "a": "5"
+    },
+    {
+     "q": "Scale factor ⅓; the large volume is 54 cm³. Find the small volume.",
+     "a": "54 × 1/27 = 2 cm³"
+    }
+   ]
+  },
+  {
+   "h": "You do"
+  },
+  {
+   "questions": [
+    {
+     "q": "(a) scale factor 4, small volume 3 cm³: large volume (b) volumes 40 cm³ and 1080 cm³: length scale factor (c) a model car is 1/20 of the real length; the real boot holds 400 litres: how much does the model's hold? (d) similar cylinders 6 cm and 9 cm tall; the large surface area is 270 cm²: the small surface area",
+     "a": "(a) 192 cm³ (b) 3 (c) 0.05 litres (50 ml) (d) 120 cm²",
+     "model": "(a) Volume factor 4³ = 64; 3 × 64 = 192 cm³. (d) Scale factor 1.5, area factor 2.25; 270 ÷ 2.25 = 120 cm²."
+    },
+    {
+     "q": "Two similar water tanks are 1.2 m and 1.8 m tall. The small one holds 400 litres. How much does the large one hold?",
+     "a": "Scale factor 1.5, volume factor 3.375: 1350 litres"
+    },
+    {
+     "q": "Two similar solids have surface areas in the ratio 9 : 25. Find the ratio of their volumes.",
+     "a": "Length ratio 3 : 5, so volumes 27 : 125"
+    }
+   ]
+  },
+  {
+   "h": "Exit ticket"
+  },
+  {
+   "questions": [
+    {
+     "q": "Length scale factor 2 gives a volume factor of:",
+     "a": "C) 8",
+     "options": [
+      "4",
+      "6",
+      "8"
+     ]
+    },
+    {
+     "q": "∛1000",
+     "a": "10"
+    },
+    {
+     "q": "Big question: a model 10 times smaller in length is how much smaller in volume?",
+     "a": "10³ = 1000 times smaller, because volume uses three lengths."
+    }
+   ]
+  }
+ ]
+}

@@ -39,7 +39,7 @@ grid?, picture? }`), `keywords` (`[{term, def}]`, `blank: true` to leave definit
 (`[{title, points?|text?|arabic?}]`, `cols` 1-3), `table` (`{head, rows, blankRows?, tall?}`), `frame`
 (`[{label, prompt?, starters?, lines?}]`), `starters` (word bank or sentence starters, `title`), `arabic`
 (`{text, ref?, translation?, spaced?, quran?, size?}`: Qur'an and Arabic text exactly as in the lesson), `grid`
-(`{kind: squared|dot|isometric|graph|numberline|hundred|times|placevalue|fractionwall|tenframe|clock|barchart|periodic|
+(`{kind: squared|dot|isometric|graph|numberline|hundred|times|placevalue|fractionwall|tenframe|clock (`roman: true`)|barchart (`values`, dual `values: [[..],[..]]` with `key`, `line: true`)|pie (`charts: [{title, data: [[label, value]]}]`)|protractor (`full: true` for 360°)|angles (`items: [{deg, label?} | {tri: [a, b]}]`)|periodic|
 wheel|boxes|perspective|star8|schematic|gridmap|worldmap, ...}`, see `grids.mjs`; `worldmap` draws outline maps from Natural
 Earth (public domain, modern borders) for regions world, europe, uk (with `ukBorders`), british-isles, mediterranean,
 middle-east, south-asia, china, western-front, arctic, antarctica, with `lines` (equator, tropics, polar circles),
@@ -87,6 +87,11 @@ What always needs a person (or an agent) to write it, as Spring 1 did:
 - home practical guides: a real method (5 to 7 steps), the kit, the safety lines from the name, and a results table;
 - maps of the past (alliances, empires): a modern outline with the places marked, or a Commons `picture`;
 - Ordnance Survey extracts cannot be printed (Crown copyright): make a worksheet that uses an online OS map instead.
+
+Authoring helpers: `scripts/resources/authoring/` (README there): `generic.mjs` (rebuild worksheets from the whole lesson,
+including the lesson's charts), `marks.mjs`, `practical.mjs`, `quran.mjs`, previews and wait scripts. Usual order per
+subject: seed with `--overwrite`, `generic.mjs`, `marks.mjs`, then a one-off subject script for hand-written content;
+after that, `git checkout -- content/resources/items` so items shared with an earlier term (same id) stay as on main.
 
 Hand edits are kept: the seeder never overwrites an item unless `--overwrite`. Spring 1 used small throwaway scripts
 that call the same idea as `seed.mjs` (find the register entry by subject, year and wording, then write the item); any

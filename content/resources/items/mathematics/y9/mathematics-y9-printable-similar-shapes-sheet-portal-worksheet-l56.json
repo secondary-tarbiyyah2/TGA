@@ -1,0 +1,170 @@
+{
+ "id": "mathematics-y9-printable-similar-shapes-sheet-portal-worksheet-l56",
+ "title": "Printable similar shapes sheet (lesson 56)",
+ "type": "worksheet",
+ "subject": "Mathematics",
+ "subjectSlug": "mathematics",
+ "year": "y9",
+ "unit": "Summer 1: Enlargement and similarity; ratio and proportion; rates",
+ "lessons": [
+  56
+ ],
+ "source": "Seeded from mathematics/y9 lesson 56 (Printable similar shapes sheet (portal worksheet for this lesson))",
+ "intro": "Lesson 56: Similar shapes: finding missing lengths. To understand how similar shapes have equal angles and sides in the same ratio, and use this to find missing lengths",
+ "blocks": [
+  {
+   "h": "Worked examples"
+  },
+  {
+   "model": {
+    "title": "Rectangles 4 cm by 6 cm and 10 cm by x cm are similar. Find x.",
+    "parts": [
+     {
+      "label": "Step 1",
+      "text": "Scale factor = 10 ÷ 4 = 2.5"
+     },
+     {
+      "label": "Step 2",
+      "text": "x = 6 × 2.5"
+     },
+     {
+      "label": "Answer",
+      "text": "15 cm"
+     }
+    ]
+   }
+  },
+  {
+   "model": {
+    "title": "AB = 6, BC = 9 and PQ = 8, where AB corresponds to PQ. Find QR.",
+    "parts": [
+     {
+      "label": "Step 1",
+      "text": "Scale factor = 8 ÷ 6 = 4/3"
+     },
+     {
+      "label": "Step 2",
+      "text": "QR = 9 × 4/3"
+     },
+     {
+      "label": "Answer",
+      "text": "QR = 12"
+     }
+    ]
+   }
+  },
+  {
+   "model": {
+    "title": "In triangle ABC, D is on AB and E on AC with DE ∥ BC. AD = 4, AB = 10 and DE = 6. Find BC.",
+    "parts": [
+     {
+      "label": "Step 1",
+      "text": "DE ∥ BC, so the angles match (corresponding angles): ADE and ABC are similar"
+     },
+     {
+      "label": "Step 2",
+      "text": "Scale factor = 10 ÷ 4 = 2.5"
+     },
+     {
+      "label": "Step 3",
+      "text": "BC = 6 × 2.5"
+     },
+     {
+      "label": "Answer",
+      "text": "BC = 15"
+     }
+    ]
+   }
+  },
+  {
+   "h": "Similar or congruent?"
+  },
+  {
+   "table": {
+    "head": [
+     "Similar",
+     "Congruent"
+    ],
+    "rows": [
+     [
+      "equal angles",
+      "equal angles"
+     ],
+     [
+      "sides in the same ratio",
+      "equal sides"
+     ],
+     [
+      "one is an enlargement of the other",
+      "scale factor 1"
+     ]
+    ],
+    "blankRows": 2
+   }
+  },
+  {
+   "h": "We do"
+  },
+  {
+   "questions": [
+    {
+     "q": "Rectangles 3 cm by 5 cm and 7.5 cm by y cm are similar. Find y.",
+     "a": "y = 12.5",
+     "model": "Scale factor = 7.5 ÷ 3 = 2.5. y = 5 × 2.5 = 12.5."
+    },
+    {
+     "q": "Are rectangles 6 by 8 and 9 by 12 similar?",
+     "a": "Yes: both sides × 1.5"
+    },
+    {
+     "q": "Are rectangles 6 by 8 and 8 by 10 similar?",
+     "a": "No: 8 ÷ 6 is not equal to 10 ÷ 8"
+    }
+   ]
+  },
+  {
+   "h": "You do"
+  },
+  {
+   "questions": [
+    {
+     "q": "(a) Similar triangles have sides 4, 6, 7 and 10, x, y: find x and y. (b) DE ∥ BC, AD = 3, AB = 12, DE = 2.5: find BC. (c) A 1.5 m pole casts a 2 m shadow; at the same time a tree casts a 14 m shadow: how tall is the tree? (d) Are triangles with sides 3, 4, 5 and 7.5, 10, 12.5 similar?",
+     "a": "(a) x = 15, y = 17.5 (b) BC = 10 (c) 10.5 m (d) yes: every side × 2.5",
+     "model": "(a) Scale factor = 10 ÷ 4 = 2.5; x = 6 × 2.5 = 15; y = 7 × 2.5 = 17.5. (c) Shadow scale factor 14 ÷ 2 = 7; height 1.5 × 7 = 10.5 m."
+    },
+    {
+     "q": "DE ∥ BC with AD = 5, DB = 3 and DE = 4. Find BC.",
+     "a": "AB = 8, scale factor 8 ÷ 5 = 1.6, BC = 6.4"
+    },
+    {
+     "q": "Explain why two triangles with the same three angles must be similar.",
+     "a": "Fixing the angles fixes the shape; only the size can change, so one is an enlargement of the other."
+    }
+   ]
+  },
+  {
+   "h": "Exit ticket"
+  },
+  {
+   "questions": [
+    {
+     "q": "Similar shapes have:",
+     "a": "A) equal angles and sides in the same ratio",
+     "options": [
+      "equal angles and sides in the same ratio",
+      "equal sides",
+      "equal areas"
+     ]
+    },
+    {
+     "q": "Scale factor 3: a 4 cm side becomes",
+     "a": "12 cm"
+    },
+    {
+     "q": "Big question: how can you tell whether shapes are similar and find a missing length?",
+     "a": "Check corresponding sides are in the same ratio; then multiply by the scale factor."
+    }
+   ]
+  }
+ ]
+}

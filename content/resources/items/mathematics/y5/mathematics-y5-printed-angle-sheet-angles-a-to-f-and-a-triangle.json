@@ -1,0 +1,141 @@
+{
+ "id": "mathematics-y5-printed-angle-sheet-angles-a-to-f-and-a-triangle",
+ "title": "Printed angle sheet (angles A to F and a triangle)",
+ "type": "worksheet",
+ "subject": "Mathematics",
+ "subjectSlug": "mathematics",
+ "year": "y5",
+ "unit": "Summer 1: Shape; position and direction; decimals",
+ "lessons": [
+  61
+ ],
+ "source": "Seeded from mathematics/y5 lesson 61 (Printed angle sheet (angles A to F and a triangle))",
+ "intro": "Lesson 61: Measure angles up to 180°. To understand how to measure angles up to 180° accurately with a protractor",
+ "blocks": [
+  {
+   "h": "Measure each angle"
+  },
+  {
+   "grid": {
+    "kind": "angles",
+    "cols": 3,
+    "items": [
+     {
+      "deg": 35
+     },
+     {
+      "deg": 120
+     },
+     {
+      "deg": 90
+     },
+     {
+      "deg": 48
+     },
+     {
+      "deg": 155
+     },
+     {
+      "deg": 72
+     },
+     {
+      "tri": [
+       62,
+       58
+      ],
+      "label": "Triangle"
+     }
+    ]
+   }
+  },
+  {
+   "answers": "A 35°, B 120°, C 90°, D 48°, E 155°, F 72°. Triangle: 62°, 58° and 60°, total 180° (accept within 2°)."
+  },
+  {
+   "h": "Worked example"
+  },
+  {
+   "model": {
+    "title": "Angle with one arm on the right zero",
+    "parts": [
+     {
+      "label": "Step 1",
+      "text": "Use the inner scale from 0"
+     },
+     {
+      "label": "Step 2",
+      "text": "Other arm crosses 65"
+     },
+     {
+      "label": "Step 3",
+      "text": "It looks acute ✓"
+     },
+     {
+      "label": "Answer",
+      "text": "65°"
+     }
+    ]
+   }
+  },
+  {
+   "h": "We do"
+  },
+  {
+   "questions": [
+    {
+     "q": "Measure printed angle A.",
+     "a": "35°",
+     "model": "Teacher: centre on vertex, 0 on the bottom arm, read 35°; it is acute ✓."
+    },
+    {
+     "q": "Measure angle B.",
+     "a": "120°"
+    },
+    {
+     "q": "Measure angle C.",
+     "a": "90°"
+    }
+   ]
+  },
+  {
+   "h": "You do"
+  },
+  {
+   "questions": [
+    {
+     "q": "Measure angles D, E, F.",
+     "a": "D 48°; E 155°; F 72°",
+     "model": "Teacher measures D: 48°."
+    },
+    {
+     "q": "Measure the 3 angles of the printed triangle. Add them.",
+     "a": "62°, 58°, 60°: 180°"
+    },
+    {
+     "q": "The qiblah from London is about 119° from north. Draw it with a protractor from a north line.",
+     "a": "A line 119° clockwise from north (obtuse)"
+    }
+   ]
+  },
+  {
+   "h": "Exit ticket"
+  },
+  {
+   "questions": [
+    {
+     "q": "First step with a protractor? A) centre on the vertex B) read the bigger number C) start at 180",
+     "a": "A) centre on the vertex",
+     "options": [
+      "centre on the vertex",
+      "read the bigger number",
+      "start at 180"
+     ]
+    },
+    {
+     "q": "Big question: why two scales?",
+     "a": "So we can start from 0 on either arm"
+    }
+   ]
+  }
+ ]
+}

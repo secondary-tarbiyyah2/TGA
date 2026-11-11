@@ -1,0 +1,155 @@
+{
+ "id": "mathematics-y9-printable-proportion-practice-sheet-portal-works-l64",
+ "title": "Printable proportion practice sheet (lesson 64)",
+ "type": "worksheet",
+ "subject": "Mathematics",
+ "subjectSlug": "mathematics",
+ "year": "y9",
+ "unit": "Summer 1: Enlargement and similarity; ratio and proportion; rates",
+ "lessons": [
+  64
+ ],
+ "source": "Seeded from mathematics/y9 lesson 64 (Printable proportion practice sheet (portal worksheet for this lesson))",
+ "intro": "Lesson 64: Inverse proportion. To understand how to recognise inverse proportion and solve problems where the product of the quantities stays the same",
+ "blocks": [
+  {
+   "h": "Worked examples"
+  },
+  {
+   "model": {
+    "title": "4 volunteers take 6 hours. How long would 3 volunteers take?",
+    "parts": [
+     {
+      "label": "Step 1",
+      "text": "Total work: 4 × 6 = 24 volunteer-hours"
+     },
+     {
+      "label": "Step 2",
+      "text": "3 volunteers: 24 ÷ 3"
+     },
+     {
+      "label": "Answer",
+      "text": "8 hours"
+     }
+    ]
+   }
+  },
+  {
+   "model": {
+    "title": "y is inversely proportional to x, and y = 5 when x = 8. Find y when x = 4.",
+    "parts": [
+     {
+      "label": "Step 1",
+      "text": "y = k ÷ x"
+     },
+     {
+      "label": "Step 2",
+      "text": "k = 5 × 8 = 40"
+     },
+     {
+      "label": "Step 3",
+      "text": "y = 40 ÷ 4"
+     },
+     {
+      "label": "Answer",
+      "text": "y = 10"
+     }
+    ]
+   }
+  },
+  {
+   "h": "The table"
+  },
+  {
+   "table": {
+    "head": [
+     "Volunteers x",
+     "1",
+     "2",
+     "4",
+     "8"
+    ],
+    "rows": [
+     [
+      "Hours y",
+      "24",
+      "12",
+      "6",
+      "3"
+     ],
+     [
+      "x × y",
+      "24",
+      "24",
+      "24",
+      "24"
+     ]
+    ]
+   }
+  },
+  {
+   "h": "We do"
+  },
+  {
+   "questions": [
+    {
+     "q": "A journey takes 3 hours at 40 mph. How long at 60 mph?",
+     "a": "2 hours",
+     "model": "Distance = 3 × 40 = 120 miles (constant). 120 ÷ 60 = 2 hours."
+    },
+    {
+     "q": "y ∝ 1/x and y = 12 when x = 3. Find y when x = 9.",
+     "a": "k = 36, y = 4"
+    },
+    {
+     "q": "Is x: 2, 4, 5; y: 10, 5, 4 an inverse proportion?",
+     "a": "Yes: x × y = 20 every time"
+    }
+   ]
+  },
+  {
+   "h": "You do"
+  },
+  {
+   "questions": [
+    {
+     "q": "(a) 5 workers build a wall in 12 days: how long for 3 workers? (b) a bag of grain feeds 12 chickens for 10 days: how long for 15 chickens? (c) y = k ÷ x and y = 9 when x = 4: find y when x = 6 (d) direct, inverse or neither: x 1, 2, 3 with y 12, 6, 4; x 1, 2, 3 with y 4, 8, 12; x 1, 2, 3 with y 5, 8, 11",
+     "a": "(a) 20 days (b) 8 days (c) 6 (d) inverse; direct; neither",
+     "model": "(a) Total work: 5 × 12 = 60 worker-days; 3 workers: 60 ÷ 3 = 20 days. (b) 12 × 10 = 120 chicken-days; 120 ÷ 15 = 8 days."
+    },
+    {
+     "q": "A water supply lasts 18 days for 30 people. After 6 days, 10 more people arrive. How much longer does it last?",
+     "a": "12 × 30 = 360 person-days left; 360 ÷ 40 = 9 more days"
+    },
+    {
+     "q": "y is inversely proportional to x². y = 4 when x = 3. Find y when x = 6.",
+     "a": "k = 36, y = 36 ÷ 36 = 1"
+    }
+   ]
+  },
+  {
+   "h": "Exit ticket"
+  },
+  {
+   "questions": [
+    {
+     "q": "In inverse proportion, when x doubles, y:",
+     "a": "A) halves",
+     "options": [
+      "halves",
+      "doubles",
+      "stays the same"
+     ]
+    },
+    {
+     "q": "x × y = 30 and x = 6. y?",
+     "a": "5"
+    },
+    {
+     "q": "Big question: why does one quantity go down in a fixed way as the other goes up?",
+     "a": "The total (the product x × y) stays the same, so more of one means proportionally less of the other."
+    }
+   ]
+  }
+ ]
+}
