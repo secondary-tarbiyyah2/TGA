@@ -8,7 +8,6 @@ import { fetchClass, recordRecentPage, type ClassSummary, type ClassViewer } fro
 import type { Crumb } from "@/components/learn/PageHeader";
 import { WorkspaceHeader, type MenuAction, Loading } from "@/components/learn/kit";
 import { Button } from "@/components/learn/ui";
-import { Select } from "@/components/learn/Select";
 import { CLASSWORK_CREATE, SetWorkPanel } from "@/components/learn/class/SetWorkPanel";
 import { ParticipantsTab } from "@/components/learn/class/ParticipantsTab";
 import { CourseTab } from "@/components/learn/class/CourseTab";
@@ -21,6 +20,7 @@ import { JoinLessonCard } from "@/components/learn/live/JoinLessonCard";
 import { ClassGradebook } from "@/components/learn/assessment/ClassGradebook";
 import { ClassAttendanceTab } from "@/components/learn/class/ClassAttendanceTab";
 import { ClassInsightsTab } from "@/components/learn/class/ClassInsightsTab";
+import { SectionNav } from "@/components/learn/SectionNav";
 import { useClassRoster } from "@/components/learn/class/PupilPicker";
 
 /** Route bases per viewer, e.g. the class page and lesson page URLs. */
@@ -280,35 +280,10 @@ export function ClassPage({ viewer }: { viewer: ClassViewer }) {
           }}
         />
       )}
-      <div className="mt-2 lg:grid lg:grid-cols-[11.5rem_minmax(0,1fr)] lg:gap-10">
-      {/* The class's sections: a list down the left on wide screens and a dropdown on phones,
-          not a strip across the top (owner, 11 Nov 2026; docs/portal-structure.md, pattern 5). */}
-      <nav data-guide="class-tabs" aria-label="Class sections" className="mb-5 lg:mb-0">
-        <div className="lg:hidden">
-          <label className="t-eyebrow mb-1 block" htmlFor="class-section">
-            Section
-          </label>
-          <Select id="class-section" value={tab} onChange={(e) => router.push(classHref(e.target.value), { scroll: false })} className="w-full">
-            {tabs.map((t) => (
-              <option key={t} value={t}>
-                {TAB_LABELS[t]}
-              </option>
-            ))}
-          </Select>
-        </div>
-        <ul className="portal-section-nav hidden lg:sticky lg:top-[calc(var(--portal-topbar-h)+1.5rem)] lg:block">
-          {tabs.map((t) => {
-            const active = t === tab;
-            return (
-              <li key={t}>
-                <Link href={classHref(t)} scroll={false} aria-current={active ? "page" : undefined} className={`portal-section-link ${active ? "portal-section-link--active" : ""}`}>
-                  {TAB_LABELS[t]}
-                </Link>
-              </li>
-            );
-          })}
-        </ul>
-      </nav>
+      <div className="mt-2 md:grid md:grid-cols-[10.5rem_minmax(0,1fr)] md:gap-6 lg:grid-cols-[11.5rem_minmax(0,1fr)] lg:gap-10">
+      {/* The class's sections: a list down the left from tablet width, a small board of buttons on phones;
+          never a strip across the top or a dropdown (owner, 11 Nov 2026; docs/portal-structure.md, pattern 5). */}
+      <SectionNav guide="class-tabs" label="Class sections" id="class-section" items={tabs.map((t) => ({ key: t, label: TAB_LABELS[t] }))} value={tab} hrefFor={(t) => classHref(t)} />
       <div className="min-w-0">
 
       {viewer.kind !== "staff" && (

@@ -686,6 +686,33 @@ html[data-readable-font] .portal .portal-display {
 .portal-section-nav {
   border-left: 1px solid var(--color-gold-light);
 }
+/* Sections on phones: every section as a small button, the current one marked (no dropdown). */
+.portal-section-tile {
+  display: flex;
+  width: 100%;
+  min-height: 2.75rem;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.5rem;
+  border: 1px solid var(--color-gold-light);
+  border-radius: 8px;
+  background: var(--color-white, #fff);
+  padding: 0 0.75rem;
+  font-size: 0.875rem;
+  font-weight: 500;
+  line-height: 1.2;
+  text-align: left;
+  color: var(--color-ink-700, var(--color-ink-900));
+}
+.portal-section-tile:hover {
+  border-color: var(--color-forest-500, var(--color-forest-700));
+}
+.portal-section-tile--active {
+  border-color: var(--color-forest-700);
+  box-shadow: inset 3px 0 0 var(--color-forest-700);
+  color: var(--color-forest-900);
+  font-weight: 600;
+}
 .portal-section-link {
   position: relative;
   display: flex;
