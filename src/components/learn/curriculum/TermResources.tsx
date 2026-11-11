@@ -72,7 +72,7 @@ export function ShareResourceDialog({ resource, area, onClose, onDone }: { resou
   };
 
   return (
-    <Modal title={`Share to class: ${resource.title}`} onClose={onClose}>
+    <Modal title={`Share to class: ${resource.title}`} onClose={onClose} panel>
       <div className="space-y-3 p-4 text-sm text-ink/80">
         {classes === null ? (
           <p>Loading your classes…</p>

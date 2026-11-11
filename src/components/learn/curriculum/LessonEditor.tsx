@@ -310,7 +310,7 @@ export function LessonEditor({ lesson, canEdit, onClose, onSaved }: { lesson: Cu
 
   const dis = !canEdit || busy;
   return (
-    <Modal title={`Edit lesson ${lesson.lesson_no}: ${lesson.title}`} onClose={close} wide>
+    <Modal title={`Edit lesson ${lesson.lesson_no}: ${lesson.title}`} onClose={close} panel>
       <div className="space-y-5 p-4 sm:p-6">
         {error && <p className="rounded-lg border border-amber-300 bg-amber-50 px-3 py-2 text-sm text-amber-900">{error}</p>}
         {!error && !loaded && <p className="text-sm text-ink/65">Opening…</p>}
