@@ -1,13 +1,13 @@
 ---
 number: "19"
 title: Examinations and Private Candidates Policy
-subtitle: How International GCSE entries work for an online school
+subtitle: How GCSE and International GCSE entries work for an online school
 policyName: Examinations and Private Candidates Policy 2026–2027
 appliesTo: All pupils, parents, staff, trustees and volunteers of Tarbiyyah Global Academy
 owner: Examinations Officer
 approvedBy: Ustadh Abu Zayn Haneef Sandhar, Headteacher
 agreedWith: The Chair of Trustees, Tarbiyyah Education Trust
-dateOfIssue: 1 September 2026 (version 1.1, updated 28 October 2026 for the January 2027 launch)
+dateOfIssue: 1 September 2026 (version 1.2, updated 11 November 2026: exam courses now match Tarbiyyah Secondary School)
 nextReview: 31 August 2027
 basis: New policy for online provision (draws on the Tarbiyyah Secondary examination practice and the TGA Fees Policy)
 readAlongside: Assessment Policy; Academic Integrity and Secure Assessment Policy; Fees Policy; SEND and Inclusion Policy; Careers Education and Guidance Policy
@@ -29,7 +29,7 @@ Pupils are entered for their examinations through Tarbiyyah Secondary School, wh
 
 ## 3. Choosing Qualifications
 
-Pupils are entered for International GCSE examinations, which are assessed by examination and widely available to private candidates in the UK and abroad. Where a course is taught to a GCSE specification, pupils sit the matching International GCSE. If a subject has any non-examined assessment, the Academy will confirm in advance how it can be completed and authenticated.
+Pupils take the same courses, with the same awarding bodies, as Tarbiyyah Secondary School, our examination centre: GCSEs (AQA English Language and Geography; Pearson Edexcel English Literature) and Pearson Edexcel International GCSEs in the other subjects. If a subject has any non-examined assessment or required fieldwork, the Academy will confirm in advance how it is completed and authenticated with the centre.
 
 ## 4. Timeline (typical)
 
@@ -60,13 +60,24 @@ Mock examinations are held in Year 11 (and at the end of Year 10) under secure c
 
 ## 8. Examinations in Other Countries
 
-Families living outside the UK can usually sit International GCSEs at British Council or other approved international centres, which is one reason the Academy enters pupils for International GCSEs. The Academy will advise on centres when subjects are chosen.
+Families living outside the UK can usually sit International GCSEs at British Council or other approved international centres. UK GCSEs (English Language, English Literature and Geography) are less widely available abroad, so the Academy confirms a centre for these subjects when options are chosen. The Academy will advise on centres when subjects are chosen.
 
 ## 9. Subjects and Entry
 
-In Years 10 and 11 pupils follow International GCSE courses in English Language, English Literature, Mathematics, Science (Double Award, or separate Biology, Chemistry and Physics) and Islamic Studies, with options from Arabic, Business, Computer Science and Geography. English Language, Mathematics, Computer Science, Geography and Arabic are taught from the UK GCSE specifications, and teachers add the content and exam practice each International GCSE requires. History is taught from Year 1 to Year 9 and is not offered at Key Stage 4.
+In Years 10 and 11 pupils follow the same courses as Tarbiyyah Secondary School:
 
-International GCSEs are not regulated by Ofqual; the awarding body describes them as generally equivalent to GCSEs, and sixth forms and universities set their own entry requirements. Computer Science includes a 3-hour practical examination on a computer, held in June, so families must choose a centre that can run it. English Language and Arabic have no compulsory speaking test. Geography fieldwork is examined in the written papers, and pupils complete one physical and one human fieldwork enquiry during the course. Entry for Arabic is confirmed for each pupil by the end of Year 10.
+| Subject | Qualification |
+| --- | --- |
+| English Language | AQA GCSE (8700) |
+| English Literature | Pearson Edexcel GCSE (1ET0) |
+| Mathematics | Pearson Edexcel International GCSE (4MA1) |
+| Biology, Chemistry and Physics | Three Pearson Edexcel International GCSEs (4BI1, 4CH1, 4PH1) |
+| Islamic Studies | Pearson Edexcel International GCSE (4IS1) |
+| Options (two from) | Geography: AQA GCSE (8035); Business: Pearson Edexcel International GCSE (4BS1); Arabic: taught from the Pearson Edexcel GCSE course, with the entry confirmed for each pupil by the end of Year 10 |
+
+History is taught from Year 1 to Year 9 and is not offered at Key Stage 4.
+
+GCSEs are regulated by Ofqual. International GCSEs are not; the awarding body describes them as generally equivalent to GCSEs, and sixth forms and universities set their own entry requirements. English Language includes the Spoken Language endorsement, which the centre records. Geography requires two fieldwork enquiries on at least two occasions outside the classroom; the Academy organises them with families and the centre signs the fieldwork statement AQA requires.
 
 ## 10. Monitoring and Review
 

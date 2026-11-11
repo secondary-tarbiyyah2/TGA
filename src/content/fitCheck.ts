@@ -179,7 +179,7 @@ export const FIT_CHECK = {
     significantNeeds:
       "We provide individual support plans, adjustments in lessons and access arrangements in assessments, but we cannot offer in-person help such as an adult in the room. For a child with significant needs we want to be honest about whether a live online school can meet them, so a conversation first is the right step.",
     year11January:
-      "Joining Year 11 in January 2027 means starting partway through the International GCSE courses. We would want to look at what your child has already covered before advising you.",
+      "Joining Year 11 in January 2027 means starting partway through the GCSE courses. We would want to look at what your child has already covered before advising you.",
     priorities: (labels: string) => `You told us what matters most: ${labels}. Below is honestly what we offer for each.`,
     laterStart:
       "You are not looking at January 2027, so there is no deadline pressure. Register your interest and we will let you know when places for a later start open.",
@@ -218,7 +218,7 @@ export const FIT_CHECK = {
           "A tablet with a stylus, so your child can write on worksheets and the lesson PDF each day (recommended: any tablet that takes a stylus, or a basic graphics tablet that plugs into the laptop). Without one, a printer at home is required",
         adult: "An adult nearby during live lessons (Years 1 to 6)",
         ks1Parent: "Time for a parent to guide the away-from-screen activities sent home each week (Years 1 and 2)",
-        exams: "An exam centre for International GCSE exams (Years 10 and 11): pupils in the UK sit them at Tarbiyyah Secondary School as their exam centre, and families outside the UK get help finding and registering with an approved centre nearby",
+        exams: "An exam centre for GCSE and International GCSE exams (Years 10 and 11): pupils in the UK sit them at Tarbiyyah Secondary School as their exam centre, and families outside the UK get help finding and registering with an approved centre nearby",
         support: "Details of any support your child already receives, so we can draw up a support plan together",
       },
     },
@@ -238,7 +238,7 @@ export const FIT_CHECK = {
         n > 1 ? `Application fee ${fee} per child, paid once you apply. There is no registration fee.` : `Application fee ${fee}, paid once you apply. There is no registration fee.`,
       siblingLine: (pct: number) => `The sibling discount (${pct}% off the second child) is included above.`,
       siblingFallback: "A sibling discount applies to younger brothers and sisters. The exact amount is on the Fees page.",
-      examNote: "International GCSE exam entry fees are not included in tuition.",
+      examNote: "GCSE and International GCSE exam entry fees are not included in tuition.",
       link: "See all fees and payment dates",
       href: "/fees",
     },
@@ -246,11 +246,11 @@ export const FIT_CHECK = {
       title: "What we offer for what matters to you",
       items: {
         quran: { label: "Qur'an and hifdh", body: "Qur'an and Tajweed are on the timetable every week in every year group, in groups set by ability. Hifdh is not compulsory: every pupil memorises at a pace agreed with you, and a full hifdh track is available if you want it to be central." },
-        arabic: { label: "Arabic", body: "Arabic is taught as a language from Year 1: reading, writing, speaking and grammar. In Years 10 and 11 it is an International GCSE option (Arabic as a first language)." },
-        academics: { label: "Strong academics and GCSEs", body: "The full national curriculum taught live by qualified teachers, leading to Pearson Edexcel International GCSEs in Years 10 and 11, with subjects chosen so online pupils can sit them as private candidates." },
+        arabic: { label: "Arabic", body: "Arabic is taught as a language from Year 1: reading, writing, speaking and grammar. In Years 10 and 11 it is a GCSE option, taught from the same Pearson Edexcel course as Tarbiyyah Secondary School." },
+        academics: { label: "Strong academics and GCSEs", body: "The full national curriculum taught live by qualified teachers, leading in Years 10 and 11 to the same GCSE and International GCSE courses as Tarbiyyah Secondary School, where UK pupils sit their exams." },
         environment: { label: "An Islamic environment", body: "Qur'an, Arabic and Islamic Studies are timetabled lessons at every key stage, with du'a and Islamic manners through the week. Friday afternoons are free for Jumu'ah, and from Year 7 puberty and its fiqh are taught to boys and girls separately." },
         small: { label: "Small classes", body: "No class has more than 15 pupils, so every child is seen and heard in every live lesson." },
-        flexibility: { label: "Flexibility", body: "A four-day live week (Monday to Thursday, with Friday as a structured independent study day) is available for Years 1 to 9. Years 10 and 11 follow the full live timetable, because International GCSE courses need it." },
+        flexibility: { label: "Flexibility", body: "A four-day live week (Monday to Thursday, with Friday as a structured independent study day) is available for Years 1 to 9. Years 10 and 11 follow the full live timetable, because GCSE courses need it." },
         send: { label: "SEND support", body: "An individual support plan reviewed regularly with you, adjustments in lessons, and extra time or a reader or scribe in assessments where your child needs them. We cannot provide in-person help such as an adult in the room." },
       },
       noneChosen: "You did not pick anything in particular, so here is what every family gets.",

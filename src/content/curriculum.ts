@@ -94,7 +94,7 @@ export const keyStages: KeyStage[] = [
       "Science (biology, chemistry and physics)",
       "History",
       "Geography",
-      "Computing",
+      "ICT and computing",
       "Arabic",
       "Art and design",
       "PSHE",
@@ -106,7 +106,7 @@ export const keyStages: KeyStage[] = [
       { subject: "English", lessons: 4 },
       { subject: "Mathematics", lessons: 4 },
       { subject: "Science", lessons: 3 },
-      { subject: "History, geography and computing", lessons: 3 },
+      { subject: "History, geography and ICT", lessons: 3 },
       { subject: "Qur'an and Tajweed", lessons: 3 },
       { subject: "Arabic and Islamic Studies", lessons: 4 },
       { subject: "PSHE", lessons: 1 },
@@ -119,31 +119,31 @@ export const keyStages: KeyStage[] = [
   {
     slug: "year-10-11",
     range: "Year 10 – Year 11",
-    title: "Key Stage 4 (International GCSE)",
+    title: "Key Stage 4 (GCSE and International GCSE)",
     subjects: [
-      "English Language (International GCSE 4EB1, taught from the AQA GCSE course)",
-      "English Literature (International GCSE 4ET1)",
+      "English Language (GCSE, AQA 8700)",
+      "English Literature (GCSE, Pearson Edexcel 1ET0)",
       "Mathematics (International GCSE 4MA1, taught from the Pearson Edexcel GCSE course)",
-      "Combined (Double Award 4SD0) or separate sciences: Biology 4BI1, Chemistry 4CH1 and Physics 4PH1 (International GCSE)",
+      "Biology, Chemistry and Physics (three separate International GCSEs: 4BI1, 4CH1 and 4PH1)",
       "Islamic Studies (International GCSE 4IS1)",
-      "Two options from Geography (International GCSE 4GE1, taught from the AQA GCSE course), Computer Science (International GCSE 4CP0, taught from the Pearson Edexcel GCSE course), Business (International GCSE 4BS1) and Arabic (International GCSE Arabic as a first language 4AA1, taught from the Pearson Edexcel GCSE course)",
+      "Two options from Geography (GCSE, AQA 8035), Business (International GCSE 4BS1) and Arabic (taught from the Pearson Edexcel GCSE course)",
       "Qur'an and Tajweed",
       "PSHE",
     ],
     liveSplit:
-      "Live lessons in every subject, leading to Pearson Edexcel International GCSEs. Subjects are chosen so they suit online learners sitting exams as private candidates, for example without coursework that a centre must supervise.",
+      "Live lessons in every subject, leading to the same GCSE and International GCSE courses as Tarbiyyah Secondary School, our partner school and exam centre.",
     weekly: [
       { subject: "English Language and Literature", lessons: 5 },
       { subject: "Mathematics", lessons: 4 },
       { subject: "Sciences", lessons: 5 },
-      { subject: "Two International GCSE options", lessons: 4 },
+      { subject: "Two GCSE options", lessons: 4 },
       { subject: "Islamic Studies (International GCSE)", lessons: 2 },
       { subject: "Qur'an and Tajweed", lessons: 2 },
       { subject: "PSHE", lessons: 1 },
     ],
     lessonLength: "50 minutes",
     totalLessons: "23 live lessons a week",
-    note: "Years 10 and 11 follow the full live timetable, because International GCSE courses need it. Every pupil sits Pearson Edexcel International GCSEs. History is not offered at GCSE.",
+    note: "Years 10 and 11 follow the full live timetable, because GCSE courses need it. Pupils take the same exam courses as Tarbiyyah Secondary School: AQA GCSE English Language and Geography, Pearson Edexcel GCSE English Literature, and Pearson Edexcel International GCSEs in the other subjects. History is not offered at GCSE.",
     gcseNote: "Exam entry fees are not included in tuition: families register their child at an approved exam centre and pay the centre's charges.",
   },
 ];
@@ -156,7 +156,6 @@ export const keyStages: KeyStage[] = [
 const SUBJECT_DETAIL = /\s*\((?:[^()]*(?:GCSE|taught from|Double Award|Edexcel|AQA|Pearson)[^()]*)\)/g;
 export function publicSubject(s: string): string | null {
   if (/^PE\b/i.test(s)) return null;
-  if (/^Combined\b.*separate sciences/i.test(s)) return "Science: combined (Double Award), or separate biology, chemistry and physics";
   return s.replace(SUBJECT_DETAIL, "").replace(/\s+/g, " ").trim();
 }
 
