@@ -7,6 +7,7 @@ import { LearnGate } from "@/components/learn/LearnGate";
 import { PageHeader } from "@/components/learn/PageHeader";
 import { useLearnSession } from "@/lib/learn/session";
 import { SUB_PAGES, visibleAdminSections } from "@/lib/learn/nav";
+import { useFeatures } from "@/lib/learn/features";
 import { ui } from "@/components/learn/ui";
 
 /**
@@ -16,9 +17,10 @@ import { ui } from "@/components/learn/ui";
  */
 function SiteAdminContent() {
   const { roles } = useLearnSession();
+  const features = useFeatures();
   const sections = useMemo(
-    () => visibleAdminSections(roles.map((r) => r.role)).map((s) => ({ ...s, items: s.items.flatMap((i) => [i, ...(SUB_PAGES[i.href] || []).map((c) => ({ ...c, sub: true }))]) })),
-    [roles],
+    () => visibleAdminSections(roles.map((r) => r.role), features).map((s) => ({ ...s, items: s.items.flatMap((i) => [i, ...(SUB_PAGES[i.href] || []).map((c) => ({ ...c, sub: true }))]) })),
+    [roles, features],
   );
   const [tab, setTab] = useState<string>("All");
   const [query, setQuery] = useState("");

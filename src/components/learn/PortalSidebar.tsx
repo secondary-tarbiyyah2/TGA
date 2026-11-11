@@ -9,6 +9,7 @@ import type { Session } from "@supabase/supabase-js";
 import { getSupabaseClient } from "@/lib/supabase/client";
 import { dashboardPathForRole, learnRoleLabel, useLearnSignOut, type RoleGrant } from "@/lib/learn/session";
 import { ADMIN_INDEX_HREF, AREA_SUBTITLE, SUB_PAGES, isGroupedArea, isSidebarItemActive, navItemFor, normalisePortalPath, sidebarLayout, visiblePages, visibleSidebar, type PortalArea, type PortalNavItem, type SidebarGroup, type SidebarItem } from "@/lib/learn/nav";
+import { useFeatures } from "@/lib/learn/features";
 import { Icon } from "@/components/learn/Icon";
 import { ActionsMenu, type MenuAction } from "@/components/learn/kit";
 import { InstallAppLink } from "@/components/learn/InstallApp";
@@ -272,7 +273,8 @@ function SidebarBody({
   const signOut = useLearnSignOut();
   const [fullName, setFullName] = useState<string | null>(null);
   const roleNames = roles.map((r) => r.role);
-  const entries = sidebarLayout(area, roleNames);
+  const features = useFeatures();
+  const entries = sidebarLayout(area, roleNames, features);
   const sections = entries.flatMap((e) => (e.kind === "section" ? [e.section] : []));
   const grouped = isGroupedArea(area);
   const prefs = usePortalPrefs(session.user.id);
@@ -285,7 +287,7 @@ function SidebarBody({
   const rootRef = useRef<HTMLDivElement>(null);
 
   // Pinned pages (staff): only pages this person can still open, in the order pinned.
-  const pages = grouped ? visiblePages(area, roleNames) : [];
+  const pages = grouped ? visiblePages(area, roleNames, features) : [];
   const pinnedItems: SidebarItem[] = grouped
     ? prefs.pinned.flatMap((href) => {
         const p = pages.find((x) => x.href === href);
@@ -321,7 +323,7 @@ function SidebarBody({
   }, [session.user.id]);
 
   // Collapsed rail: one icon per Home page and per category (to its first page).
-  const railItems = visibleSidebar(area, roleNames).map((item, idx, all) => ({ item, divider: grouped && idx > 0 && !item.page && !!all[idx - 1].page }));
+  const railItems = visibleSidebar(area, roleNames, features).map((item, idx, all) => ({ item, divider: grouped && idx > 0 && !item.page && !!all[idx - 1].page }));
 
   // The account menu at the foot of the sidebar: who is signed in, the account page, other
   // portals this person can open, and signing out.

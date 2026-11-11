@@ -215,10 +215,16 @@ Deno.serve(async (req) => {
   const isWriter = caller.roles.some((r) => WRITERS.includes(r));
   const task = String(body.task || "");
 
+  // School features (migration 0206): the Headteacher can switch AI helpers off for everyone.
+  // Before 0206 is deployed the function is missing, which reads as on.
+  const { data: aiOn, error: aiOnErr } = await service.rpc("school_feature_on", { p_key: "ai_helpers" });
+  const switchedOff = !aiOnErr && aiOn === false;
+
   if (task === "status") {
-    return jsonResponse({ ok: true, configured: isClaudeConfigured(), daily_limit: DAILY_LIMIT, can: { report_comment: isWriter, tarbiyah_note: isWriter, message_triage: true, revision_questions: caller.roles.some((r) => PACK_WRITERS.includes(r)), quiz_questions: isWriter } });
+    return jsonResponse({ ok: true, switched_off: switchedOff, configured: isClaudeConfigured() && !switchedOff, daily_limit: DAILY_LIMIT, can: { report_comment: isWriter, tarbiyah_note: isWriter, message_triage: true, revision_questions: caller.roles.some((r) => PACK_WRITERS.includes(r)), quiz_questions: isWriter } });
   }
 
+  if (switchedOff) return jsonResponse({ ok: false, error: "ai_switched_off", detail: "The Headteacher has switched AI helpers off." }, 403);
   if (!isClaudeConfigured()) return jsonResponse(NOT_SET_UP, 503);
 
   // "Test the AI connection" (Settings › AI): one tiny call, so the owner can

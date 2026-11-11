@@ -13,7 +13,8 @@ import { Icon } from "@/components/learn/Icon";
 import { PageHeader } from "@/components/learn/PageHeader";
 import { Tabs } from "@/components/learn/Tabs";
 import type { GuideEntry, GuideRole } from "@/content/portal-guide";
-import { portalAreaFor, type PortalArea } from "@/lib/learn/nav";
+import { guideFilterFor, portalAreaFor, type PortalArea } from "@/lib/learn/nav";
+import { useFeatures } from "@/lib/learn/features";
 import { dashboardPathForRole, useLearnSession, type LearnRole } from "@/lib/learn/session";
 import { resetGuideProgress, usePortalPrefs } from "@/lib/learn/portalPrefs";
 import { askConfirm } from "@/components/learn/kit";
@@ -53,9 +54,12 @@ export function GuideHome({ userId, journeys }: { userId: string; journeys?: Rea
   const [view, setView] = useState<"map" | "az">("map");
   const [q, setQ] = useState("");
 
+  // School features the Headteacher has switched off are left out of the guide (Settings, School features).
+  const features = useFeatures();
+  const filter = useMemo(() => guideFilterFor(features), [features]);
   const role: GuideRole | null = content && area ? content.guideRoleFor(area, roleNames) : null;
-  const entries = useMemo(() => (role && content ? content.GUIDE[role] : []), [role, content]);
-  const chapters = role && content ? content.guideChapters(role) : [];
+  const entries = useMemo(() => (role && content ? content.filterGuide(content.GUIDE[role], filter) : []), [role, content, filter]);
+  const chapters = role && content ? content.guideChapters(role, filter) : [];
   const learned = new Set(prefs.guide.learned);
   const shown = new Set(prefs.guide.shown);
   const done = entries.filter((e) => learned.has(e.href)).length;
@@ -108,7 +112,7 @@ export function GuideHome({ userId, journeys }: { userId: string; journeys?: Rea
               n: 2,
               title: "A day in the life",
               body: "Walk through the pages you use together, in the order you use them.",
-              done: content.JOURNEYS[role].length > 0 && content.JOURNEYS[role].every((j) => prefs.guide.journeys[j.id] === -1),
+              done: content.filterJourneys(content.JOURNEYS[role], filter).length > 0 && content.filterJourneys(content.JOURNEYS[role], filter).every((j) => prefs.guide.journeys[j.id] === -1),
               action: (
                 <a href="#journeys-title" className={`${ui.btnSecondary} ${ui.sm}`}>
                   See the journeys
@@ -142,7 +146,7 @@ export function GuideHome({ userId, journeys }: { userId: string; journeys?: Rea
         </ol>
       </nav>
 
-      {journeys ?? <GuideJourneys journeys={content.JOURNEYS[role]} progress={prefs.guide.journeys} />}
+      {journeys ?? <GuideJourneys journeys={content.filterJourneys(content.JOURNEYS[role], filter)} progress={prefs.guide.journeys} />}
 
       <section aria-labelledby="guide-progress" className="guide-progress rounded-2xl border border-gold-light bg-white p-5 sm:p-6">
         <div className="flex flex-wrap items-center gap-5">
