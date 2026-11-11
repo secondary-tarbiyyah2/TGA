@@ -188,7 +188,7 @@ export function PupilBehaviourTab({ childId, extra }: { childId: string; extra?:
       {approved.length > 0 && (
         <section className="rounded-2xl border border-gold-light bg-white">
           <h3 className="border-b border-gold-light px-4 py-2.5 text-sm font-semibold text-ink">
-            <Icon name="star" className="mr-1.5 inline h-4 w-4 align-[-2px] text-gold-700" />Star of the Week
+            <Icon name="award" className="mr-1.5 inline h-4 w-4 align-[-2px] text-gold-700" />Star of the Week
           </h3>
           <ul className="divide-y divide-gold-light/50">
             {approved.map((s) => (
