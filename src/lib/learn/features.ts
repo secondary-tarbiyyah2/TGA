@@ -4,7 +4,7 @@
 // School features (owner, 11 Nov 2026: "allow this to be turned on or off by
 // headteacher ... turn off the function until it's fully developed, because we
 // are opening"). Stored in the database (public.school_features, migration
-// 0206), read once per session and cached; `useFeature("revision_packs")`
+// 0210), read once per session and cached; `useFeature("revision_packs")`
 // answers whether a part of the portal is on.
 //
 // Switching something off hides it everywhere; no data is deleted. The parts
@@ -186,7 +186,7 @@ const supabaseLoader: FeatureLoader = async () => {
   const { data: session } = await supabase.auth.getSession();
   if (!session.session) return null; // signed out: defaults until sign-in
   const { data, error } = await supabase.from("school_features").select("key, enabled");
-  // Before migration 0206 is deployed the table is missing: use the defaults (and don't cache them).
+  // Before migration 0210 is deployed the table is missing: use the defaults (and don't cache them).
   return error ? null : ((data as { key: string; enabled: boolean }[] | null) ?? null);
 };
 

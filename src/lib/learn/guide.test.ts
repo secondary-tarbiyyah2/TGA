@@ -186,7 +186,7 @@ test("Day in the life journeys: 6 to 12 steps, on pages the role has, pointing a
   assert.deepEqual(missing, [], "journey targets not found on their pages");
 });
 
-// School features (Settings, migration 0206): a switched-off feature's pages
+// School features (Settings, migration 0210): a switched-off feature's pages
 // leave the menu, so their guide entries and journey stops are skipped, and
 // every page still in the menu keeps its entry.
 const ALL_OFF: FeatureMap = { revision_packs: false, subject_lesson_editing: false, ai_helpers: false, house_points: false, guide_journeys: false, lesson_feedback: false };

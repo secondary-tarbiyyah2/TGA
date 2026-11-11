@@ -10,7 +10,7 @@ const focus = "focus-visible:outline focus-visible:outline-2 focus-visible:outli
 /**
  * Settings, School features (owner, 11 Nov 2026): the Headteacher switches
  * optional parts of the portal on or off for the whole school. Each switch
- * saves straight away (migration 0206, public.school_features). Switching
+ * saves straight away (migration 0210, public.school_features). Switching
  * something off hides it; nothing is deleted.
  */
 export function SchoolFeatures({ canChange }: { canChange: boolean }) {

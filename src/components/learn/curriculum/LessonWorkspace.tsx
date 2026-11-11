@@ -18,7 +18,7 @@ import { ReviewPanel } from "@/components/learn/curriculum/ReviewPanel";
 import { rememberLesson } from "@/components/learn/curriculum/RecentLessons";
 import { useLessonPins } from "@/lib/learn/pins";
 import { loadLessonResources, type CurriculumResource } from "@/lib/learn/resources";
-import { LessonResourceList } from "@/components/learn/curriculum/TermResources";
+import { LessonResourceList, LinkedWording } from "@/components/learn/curriculum/TermResources";
 import { useFeature } from "@/lib/learn/features";
 
 type Sibling = Pick<CurriculumLesson, "id" | "lesson_no" | "title">;
@@ -334,7 +334,9 @@ export function LessonWorkspace({ id, at, area }: { id: string; at?: { subject: 
                 {resources.length > 0 && (
                   <ul className="list-disc space-y-1 pl-5 text-ink/85">
                     {resources.map((r) => (
-                      <li key={r}>{r}</li>
+                      <li key={r}>
+                        <LinkedWording text={r} />
+                      </li>
                     ))}
                   </ul>
                 )}

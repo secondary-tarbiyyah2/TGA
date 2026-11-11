@@ -19,6 +19,8 @@
 //
 // POST { task: "revision_questions", unit_id, count? (3-12, default 8) }
 //   -> { ok, drafted }  questions saved as 'pending' for a teacher to approve
+// POST { task: "quiz_questions", class_id, unit, lesson_nos?, count? (3-15), types?, avoid? }
+//   -> { ok, questions, lessons }  a draft quiz, NOT saved, for the teacher to check in the builder
 // POST { task: "check" }  one tiny call to test key, credit and model
 //   -> { ok, model } or ai_failed with a plain-English detail
 //
@@ -51,6 +53,7 @@ import {
   type TriageResult,
 } from "./prompts.ts";
 import { buildRevisionPrompt, validateRevisionOutput, type DraftQuestion, type LessonForPrompt } from "./revision.ts";
+import { QUIZ_TYPES, buildQuizPrompt, validateQuizOutput, yearKey, type QuizType } from "./quiz.ts";
 
 const supabaseUrl = Deno.env.get("SUPABASE_URL")!;
 const anonKey = Deno.env.get("SUPABASE_ANON_KEY")!;
@@ -218,7 +221,7 @@ Deno.serve(async (req) => {
   const switchedOff = !aiOnErr && aiOn === false;
 
   if (task === "status") {
-    return jsonResponse({ ok: true, switched_off: switchedOff, configured: isClaudeConfigured() && !switchedOff, daily_limit: DAILY_LIMIT, can: { report_comment: isWriter, tarbiyah_note: isWriter, message_triage: true, revision_questions: caller.roles.some((r) => PACK_WRITERS.includes(r)) } });
+    return jsonResponse({ ok: true, switched_off: switchedOff, configured: isClaudeConfigured() && !switchedOff, daily_limit: DAILY_LIMIT, can: { report_comment: isWriter, tarbiyah_note: isWriter, message_triage: true, revision_questions: caller.roles.some((r) => PACK_WRITERS.includes(r)), quiz_questions: isWriter } });
   }
 
   if (switchedOff) return jsonResponse({ ok: false, error: "ai_switched_off", detail: "The Headteacher has switched AI helpers off." }, 403);
@@ -311,6 +314,41 @@ Deno.serve(async (req) => {
       return jsonResponse({ ok: false, error: "ai_failed", detail: "The questions were drafted but couldn't be saved. Try again." }, 500);
     }
     return jsonResponse({ ok: true, drafted: rows.length });
+  }
+
+  // Draft a classwork quiz from a unit (or chosen lessons) of the class's subject and year. Nothing
+  // is saved: the questions go back to the builder, unchecked, for the teacher to review and edit.
+  if (task === "quiz_questions") {
+    if (!isWriter) return jsonResponse({ ok: false, error: "forbidden" }, 403);
+    const classId = typeof body.class_id === "string" && /^[0-9a-f-]{36}$/i.test(body.class_id) ? body.class_id : "";
+    const unitName = typeof body.unit === "string" ? body.unit.trim().slice(0, 200) : "";
+    if (!classId || !unitName) return jsonResponse({ ok: false, error: "invalid_input", detail: "Choose the unit to draft the quiz from." }, 400);
+    const count = Math.max(3, Math.min(15, Number(body.count) || 8));
+    const types = (Array.isArray(body.types) ? body.types : []).filter((t): t is QuizType => (QUIZ_TYPES as readonly string[]).includes(String(t)));
+    const lessonNos = (Array.isArray(body.lesson_nos) ? body.lesson_nos : []).map(Number).filter((n) => Number.isInteger(n)).slice(0, 20);
+    // Read as the caller, so RLS decides which class and lessons they may see.
+    const { data: clsRow } = await caller.client.from("classes").select("id, subject, year_group, subjects(name), year_groups(name)").eq("id", classId).maybeSingle();
+    const cls = clsRow as { subject: string | null; year_group: string | null; subjects?: { name: string } | null; year_groups?: { name: string } | null } | null;
+    if (!cls) return jsonResponse({ ok: false, error: "forbidden" }, 403);
+    const subject = cls.subjects?.name || cls.subject || "";
+    const year = yearKey(cls.year_groups?.name || cls.year_group);
+    if (!subject || !year) return jsonResponse({ ok: false, error: "invalid_input", detail: "This class has no subject or year group set, so there are no lessons to draft from." }, 400);
+    const { data: lessonRows } = await caller.client
+      .from("curriculum_lessons")
+      .select("lesson_no, title, objectives, content, unit")
+      .eq("year", year)
+      .ilike("subject", subject)
+      .order("lesson_no");
+    let lessons = ((lessonRows || []) as (LessonForPrompt & { unit: string | null })[]).filter((l) => (l.unit || "Lessons") === unitName);
+    if (lessonNos.length) lessons = lessons.filter((l) => lessonNos.includes(l.lesson_no));
+    if (!lessons.length) return jsonResponse({ ok: false, error: "invalid_input", detail: "That unit has no lessons in the Lesson library to draft from." }, 400);
+    const avoid = (Array.isArray(body.avoid) ? body.avoid : []).filter((x): x is string => typeof x === "string").map((x) => x.slice(0, 160)).slice(0, 40);
+    if (!(await reserve("quiz_questions"))) return LIMIT_REACHED();
+    const p = buildQuizPrompt({ subject, year: year.replace(/^y/, "Year "), unit: unitName, lessons, count, types, avoid });
+    const res = await callClaudeJson({ system: p.system, user: p.user, maxTokens: p.maxTokens, timeoutMs: 75_000 }, (raw) => validateQuizOutput(raw, types, count));
+    await addTokens("quiz_questions", res.usage);
+    if (!res.ok) return AI_FAILED(res);
+    return jsonResponse({ ok: true, questions: res.data, lessons: lessons.map((l) => ({ lesson_no: l.lesson_no, title: l.title })) });
   }
 
   if (task === "triage_message") {

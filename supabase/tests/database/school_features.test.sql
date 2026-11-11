@@ -1,4 +1,4 @@
--- Run via `supabase test db`. Covers 0206 (School features, owner feedback 11 Nov 2026):
+-- Run via `supabase test db`. Covers 0210 (School features, owner feedback 11 Nov 2026):
 --  * everyone signed in reads the switches; only the Headteacher and Admin change them;
 --  * defaults: revision packs off, everything else on;
 --  * "Only subject teachers can edit lessons": on, a maths teacher cannot edit or save a

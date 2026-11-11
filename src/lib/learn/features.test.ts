@@ -1,5 +1,5 @@
 // Run with: node --test --experimental-strip-types src/lib/learn/features.test.ts
-// (CI runs it in the lint job.) School features (migration 0206): the
+// (CI runs it in the lint job.) School features (migration 0210): the
 // defaults, reading the switches once per session, and the useFeature hook.
 import { test } from "node:test";
 import assert from "node:assert/strict";

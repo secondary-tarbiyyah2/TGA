@@ -162,10 +162,10 @@ function validateStep(step: number, v: Values, cv: File | null, docs: File[]): E
       if (blank && (!needsHistory || i > 0)) return;
       if (j.employer.trim().length < 2) e[`employment.${i}.employer`] = "Please enter the employer.";
       if (j.role.trim().length < 2) e[`employment.${i}.role`] = "Please enter your job title.";
-      if (!MONTH_RE.test(j.from)) e[`employment.${i}.from`] = "Please enter the start month, for example 2021-09.";
+      if (!MONTH_RE.test(j.from)) e[`employment.${i}.from`] = "Please choose the month and year you started.";
       if (!j.current) {
-        if (!MONTH_RE.test(j.to)) e[`employment.${i}.to`] = "Please enter the end month, or tick \"I still work here\".";
-        else if (MONTH_RE.test(j.from) && j.to < j.from) e[`employment.${i}.to`] = "The end month is before the start month.";
+        if (!MONTH_RE.test(j.to)) e[`employment.${i}.to`] = "Please choose the month and year you left, or tick \"I still work here\".";
+        else if (MONTH_RE.test(j.from) && j.to < j.from) e[`employment.${i}.to`] = "The month you left is before the month you started.";
       }
     });
   }
@@ -221,6 +221,7 @@ function sanitiseDraft(d: Partial<Values> | null): Partial<Values> | null {
   }
   if (out.employment) out.employment = out.employment.filter((j) => j && typeof j === "object").map((j) => ({ ...blankJob(), ...j })).slice(0, 12);
   if (!out.employment?.length) delete out.employment;
+  if (out.rightToWork === "uk_sponsorship") out.rightToWork = "";
   if (out.referees) out.referees = out.referees.filter((r) => r && typeof r === "object").map((r) => ({ ...blankReferee(), ...r })).slice(0, 3);
   if (out.referees && out.referees.length < 2) out.referees = [...out.referees, ...Array.from({ length: 2 - out.referees.length }, blankReferee)];
   for (const k of ["subjects", "yearGroups", "availableDays"] as const) if (out[k]) out[k] = out[k]!.filter((x) => typeof x === "string");
@@ -270,6 +271,35 @@ function TextInput({
       )}
       <Err id={id} msg={error} />
     </div>
+  );
+}
+
+const MONTHS = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
+
+/** Month and year as two plain dropdowns ("September" + "2021"), stored as "2021-09". */
+function MonthYear({ id, label, value, onChange, error, required }: { id: string; label: string; value: string; onChange: (v: string) => void; error?: string; required?: boolean }) {
+  // Half-picked (month but no year yet) is kept locally; a full choice lives in `value`.
+  const [part, setPart] = useState({ m: "", y: "" });
+  const full = /^\d{4}-\d{2}$/.test(value);
+  const month = full ? value.slice(5) : part.m;
+  const year = full ? value.slice(0, 4) : part.y;
+  const thisYear = new Date().getFullYear();
+  const years = Array.from({ length: thisYear - 1969 }, (_, n) => String(thisYear - n));
+  const update = (m: string, y: string) => {
+    setPart({ m, y });
+    onChange(m && y ? `${y}-${m}` : "");
+  };
+  return (
+    <fieldset>
+      <legend className="block text-sm font-medium text-ink">
+        {label} {required ? <span className="text-red-700" aria-hidden="true">*</span> : <span className="font-normal text-ink/60">(optional)</span>}
+      </legend>
+      <div className="mt-1 grid grid-cols-[3fr_2fr] gap-2">
+        <Dropdown className={inputBase} id={`f-${id}`} aria-label={`${label}: month`} value={month} onChange={(m) => update(m, year)} options={MONTHS.map((name, n) => ({ value: String(n + 1).padStart(2, "0"), label: name }))} placeholder="Month" invalid={!!error} required={required} />
+        <Dropdown className={inputBase} id={`f-${id}-year`} aria-label={`${label}: year`} value={year} onChange={(y) => update(month, y)} options={years.map((yy) => ({ value: yy, label: yy }))} placeholder="Year" invalid={!!error} required={required} />
+      </div>
+      <Err id={id} msg={error} />
+    </fieldset>
   );
 }
 
@@ -383,7 +413,7 @@ export function CareerApplyForm({ email: schoolEmail }: { email: string }) {
   const [docs, setDocs] = useState<File[]>([]);
   const [phase, setPhase] = useState<Phase>("open");
   const [submitError, setSubmitError] = useState<string | null>(null);
-  const [result, setResult] = useState<{ reference: string; emailSent: boolean } | null>(null);
+  const [result, setResult] = useState<{ reference: string; emailSent: boolean; email: string } | null>(null);
   const [renderedAt] = useState(() => Date.now());
   const [draftRestored, setDraftRestored] = useState(false);
   const honeypot = useRef<HTMLInputElement>(null);
@@ -610,7 +640,7 @@ export function CareerApplyForm({ email: schoolEmail }: { email: string }) {
       } catch {
         /* ignore */
       }
-      setResult({ reference: json.reference || "", emailSent: json.emailSent !== false });
+      setResult({ reference: json.reference || "", emailSent: json.emailSent !== false, email: values.email.trim() });
       setPhase("success");
     } catch {
       setPhase("open");
@@ -642,7 +672,7 @@ export function CareerApplyForm({ email: schoolEmail }: { email: string }) {
         </p>
         <p className="mt-2 text-ink/80">
           {result.emailSent
-            ? "We have emailed you a copy of your reference. Please check your junk folder if you don't see it."
+            ? <>We have sent a confirmation email with a copy of your application to <strong className="text-ink">{result.email}</strong>. It can take a few minutes; please check your junk folder if you don&apos;t see it.</>
             : `We couldn't send your confirmation email, but your application is safely with us. If you have any questions, write to ${schoolEmail}.`}
         </p>
         <h3 className="mt-6 font-semibold text-ink">What happens next</h3>
@@ -713,7 +743,7 @@ export function CareerApplyForm({ email: schoolEmail }: { email: string }) {
                 Which role are you applying for? <span className="text-red-700" aria-hidden="true">*</span>
               </label>
               <div className="mt-1">
-                <Dropdown
+                <Dropdown className={inputBase}
                   id="f-vacancyId"
                   value={v.vacancyId}
                   onChange={(x) => set("vacancyId", x)}
@@ -746,7 +776,7 @@ export function CareerApplyForm({ email: schoolEmail }: { email: string }) {
                   Country you live in <span className="text-red-700" aria-hidden="true">*</span>
                 </label>
                 <div className="mt-1">
-                  <Dropdown id="f-country" value={v.country} onChange={(x) => set("country", x)} options={COUNTRIES.map((c) => ({ value: c, label: c }))} placeholder="Choose a country" searchable invalid={!!errors.country} required />
+                  <Dropdown className={inputBase} id="f-country" value={v.country} onChange={(x) => set("country", x)} options={COUNTRIES.map((c) => ({ value: c, label: c }))} placeholder="Choose a country" searchable invalid={!!errors.country} required />
                 </div>
                 <Err id="country" msg={errors.country} />
               </div>
@@ -778,7 +808,7 @@ export function CareerApplyForm({ email: schoolEmail }: { email: string }) {
                   Teaching experience <span className="text-red-700" aria-hidden="true">*</span>
                 </label>
                 <div className="mt-1">
-                  <Dropdown id="f-yearsExperience" value={v.yearsExperience} onChange={(x) => set("yearsExperience", x)} options={YEARS_EXPERIENCE} placeholder="Choose" invalid={!!errors.yearsExperience} required />
+                  <Dropdown className={inputBase} id="f-yearsExperience" value={v.yearsExperience} onChange={(x) => set("yearsExperience", x)} options={YEARS_EXPERIENCE} placeholder="Choose" invalid={!!errors.yearsExperience} required />
                 </div>
                 <Err id="yearsExperience" msg={errors.yearsExperience} />
               </div>
@@ -804,8 +834,8 @@ export function CareerApplyForm({ email: schoolEmail }: { email: string }) {
                     <div className="grid gap-4 sm:grid-cols-2">
                       <TextInput id={`employment.${i}.employer`} label="Employer" required value={j.employer} onChange={(x) => setJob(i, { employer: x })} error={errors[`employment.${i}.employer`]} maxLength={160} />
                       <TextInput id={`employment.${i}.role`} label="Job title" required value={j.role} onChange={(x) => setJob(i, { role: x })} error={errors[`employment.${i}.role`]} maxLength={160} />
-                      <TextInput id={`employment.${i}.from`} label="From (year and month)" required type="month" value={j.from} onChange={(x) => setJob(i, { from: x })} error={errors[`employment.${i}.from`]} maxLength={7} placeholder="2021-09" />
-                      {!j.current && <TextInput id={`employment.${i}.to`} label="To (year and month)" required type="month" value={j.to} onChange={(x) => setJob(i, { to: x })} error={errors[`employment.${i}.to`]} maxLength={7} placeholder="2024-07" />}
+                      <MonthYear id={`employment.${i}.from`} label="Started" required value={j.from} onChange={(x) => setJob(i, { from: x })} error={errors[`employment.${i}.from`]} />
+                      {!j.current && <MonthYear id={`employment.${i}.to`} label="Left" required value={j.to} onChange={(x) => setJob(i, { to: x })} error={errors[`employment.${i}.to`]} />}
                     </div>
                     <div className="mt-3">
                       <Tick id={`employment.${i}.current`} checked={j.current} onChange={(x) => setJob(i, { current: x, to: x ? "" : j.to })}>
@@ -946,7 +976,7 @@ export function CareerApplyForm({ email: schoolEmail }: { email: string }) {
                 Where did you hear about this role? <span className="font-normal text-ink/60">(optional)</span>
               </label>
               <div className="mt-1 max-w-md">
-                <Dropdown id="f-howHeard" value={v.howHeard} onChange={(x) => set("howHeard", x)} options={HOW_HEARD.map((h) => ({ value: h, label: h }))} placeholder="Choose" />
+                <Dropdown className={inputBase} id="f-howHeard" value={v.howHeard} onChange={(x) => set("howHeard", x)} options={HOW_HEARD.map((h) => ({ value: h, label: h }))} placeholder="Choose" />
               </div>
             </div>
 
