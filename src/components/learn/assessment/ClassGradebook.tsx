@@ -2,7 +2,7 @@
 
 import { useCallback, useEffect, useMemo, useState, type ReactNode } from "react";
 import { getSupabaseClient } from "@/lib/supabase/client";
-import { ui } from "@/components/learn/ui";
+import { Avatar, scoreClass, ui } from "@/components/learn/ui";
 import { accessList, useSupportPlans } from "@/lib/learn/send";
 import { SupportAtAGlance } from "@/components/learn/send/SupportAtAGlance";
 import { Select } from "@/components/learn/Select";
@@ -43,6 +43,18 @@ type Entry = { score: string; status: Status | "" };
  * are never confused with a real score of 0. Averages only use marked scores
  * that have an "out of".
  */
+/** Small bars for a pupil's last few results, oldest first (decorative: the figures are in the row). */
+function Spark({ values }: { values: (number | null)[] }) {
+  if (values.every((v) => v === null)) return <span className="text-ink/35">–</span>;
+  return (
+    <span className="portal-spark" aria-hidden="true">
+      {values.map((v, i) => (
+        <i key={i} style={{ height: v === null ? 3 : 4 + Math.round((Math.max(0, Math.min(100, v)) / 100) * 22), opacity: v === null ? 0.3 : undefined }} />
+      ))}
+    </span>
+  );
+}
+
 export function ClassGradebook({
   classId,
   subjectId,
@@ -230,12 +242,13 @@ export function ClassGradebook({
   const cell = (r: Row | undefined) => {
     if (!r) return <span className="text-ink/35">–</span>;
     if (r.status !== "marked") return <span className="text-xs font-medium text-ink/70">{STATUS_SHORT[r.status]}</span>;
-    if (r.grade_label) return <span className="font-semibold text-ink">{r.grade_label}</span>;
+    const pc = r.percent !== null ? Number(r.percent) : null;
+    if (r.grade_label) return <span className={scoreClass(pc ?? 60)}>{r.grade_label}</span>;
     if (r.raw_score === null) return <span className="text-ink/35">–</span>;
     return (
-      <span className="tabular-nums text-ink">
+      <span className={scoreClass(pc ?? 60)}>
         {Number(r.raw_score)}
-        {r.max_score !== null && <span className="text-ink/65">/{Number(r.max_score)}</span>}
+        {r.max_score !== null && <span className="font-medium opacity-70">/{Number(r.max_score)}</span>}
       </span>
     );
   };
@@ -412,17 +425,17 @@ export function ClassGradebook({
       ) : pupils.length === 0 ? (
         <p className="rounded-lg border border-dashed border-gold-light p-6 text-center text-sm text-ink/70">No pupils are enrolled in this class yet.</p>
       ) : (
-        <div className="overflow-x-auto rounded-xl border border-gold-light/70">
+        <div className="overflow-x-auto rounded-2xl border border-gold-light bg-white">
           <table className="w-full text-sm">
             <caption className="sr-only">Gradebook</caption>
-            <thead className="bg-cream/60">
+            <thead>
               <tr>
-                <th scope="col" className="sticky left-0 z-[1] min-w-[8rem] bg-cream px-3 sm:min-w-[11rem] py-2 text-left text-xs font-semibold uppercase tracking-wide text-ink/65">
+                <th scope="col" className="sticky left-0 z-[1] min-w-[8rem] border-b border-[var(--portal-line)] bg-white px-4 py-3 text-left text-xs font-semibold uppercase tracking-[0.04em] text-ink-500 sm:min-w-[12rem]">
                   Pupil
                 </th>
                 {columns.map((c) => (
-                  <th key={c.key} scope="col" className="min-w-[7.5rem] px-2 py-2 text-left align-bottom">
-                    <button type="button" onClick={() => openColumn(c)} className="block text-left hover:text-teal-800" title="Enter or change results">
+                  <th key={c.key} scope="col" className="min-w-[7.5rem] border-b border-[var(--portal-line)] px-2 py-3 text-left align-bottom">
+                    <button type="button" onClick={() => openColumn(c)} className="block rounded-lg text-left hover:text-forest-700" title="Enter or change results">
                       <span className="block text-sm font-semibold text-ink">{c.title}</span>
                       <span className="block text-xs font-normal text-ink/65">
                         {new Date(c.date).toLocaleDateString("en-GB", { day: "numeric", month: "short" })}
@@ -432,8 +445,11 @@ export function ClassGradebook({
                     </button>
                   </th>
                 ))}
-                <th scope="col" className="px-3 py-2 text-right text-xs font-semibold uppercase tracking-wide text-ink/65">
+                <th scope="col" className="border-b border-[var(--portal-line)] px-3 py-3 text-right text-xs font-semibold uppercase tracking-[0.04em] text-ink-500">
                   Average
+                </th>
+                <th scope="col" className="border-b border-[var(--portal-line)] px-4 py-3 text-left text-xs font-semibold uppercase tracking-[0.04em] text-ink-500">
+                  Trend
                 </th>
               </tr>
             </thead>
@@ -441,9 +457,10 @@ export function ClassGradebook({
               {pupils.map((p) => {
                 const avg = average(p.id);
                 return (
-                  <tr key={p.id} className={`border-t border-gold-light/50 ${selected === p.id ? "bg-teal-100/60" : "hover:bg-cream/50"}`}>
-                    <th scope="row" className={`sticky left-0 z-[1] px-3 py-2 text-left font-medium ${selected === p.id ? "bg-teal-100" : "bg-white"}`}>
-                      <button type="button" onClick={() => onSelect(p.id)} className="text-left text-ink hover:text-teal-800 hover:underline" aria-pressed={selected === p.id}>
+                  <tr key={p.id} data-selected={selected === p.id ? "true" : undefined} className="border-t border-[var(--portal-line-soft)]">
+                    <th scope="row" className={`sticky left-0 z-[1] px-4 py-2 text-left font-semibold ${selected === p.id ? "bg-[var(--portal-selected)]" : "bg-white"}`}>
+                      <button type="button" onClick={() => onSelect(p.id)} className="inline-flex items-center gap-2.5 rounded-lg text-left text-ink hover:text-forest-700 hover:underline" aria-pressed={selected === p.id}>
+                        <Avatar name={p.name} seed={p.id} size={28} />
                         {p.name}
                       </button>
                     </th>
@@ -452,7 +469,13 @@ export function ClassGradebook({
                         {cell(c.rows.get(p.id))}
                       </td>
                     ))}
-                    <td className="px-3 py-2 text-right tabular-nums">{avg === null ? <span className="text-ink/35">–</span> : `${avg}%`}</td>
+                    <td className="px-3 py-2 text-right font-bold tabular-nums">{avg === null ? <span className="font-normal text-ink/35">–</span> : `${avg}%`}</td>
+                    <td className="px-4 py-2">
+                      <Spark values={columns.slice(-6).map((c) => {
+                        const r = c.rows.get(p.id);
+                        return r && r.status === "marked" && r.percent !== null ? Number(r.percent) : null;
+                      })} />
+                    </td>
                   </tr>
                 );
               })}
