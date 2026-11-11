@@ -1,7 +1,10 @@
 "use client";
 
 import Link from "next/link";
-import { useEffect, useState } from "react";
+import { useEffect, useMemo, useState } from "react";
+import { Select } from "@/components/learn/Select";
+import { ui } from "@/components/learn/ui";
+import { saveCsv, toCsv } from "@/lib/learn/csv";
 import { yearLabel } from "@/lib/learn/curriculum";
 import { TONE, band, revisionOverview, type OverviewRow } from "@/lib/learn/revision";
 
@@ -18,6 +21,22 @@ export function RevisionOverview({ area }: { area: "teach" | "admin" }) {
         setRows([]);
       });
   }, []);
+
+  // Filters and a download (owner feedback 11 Nov 2026, item 19).
+  const [year, setYear] = useState("");
+  const [subject, setSubject] = useState("");
+  const [weakOnly, setWeakOnly] = useState(false);
+  const years = useMemo(() => [...new Set((rows || []).map((r) => r.year))].sort((a, b) => a.localeCompare(b, "en-GB", { numeric: true })), [rows]);
+  const subjects = useMemo(() => [...new Set((rows || []).map((r) => r.subject))].sort(), [rows]);
+  const shown = (rows || []).filter((r) => (!year || r.year === year) && (!subject || r.subject === subject) && (!weakOnly || r.under60 > 0));
+  const download = () =>
+    saveCsv(
+      "revision-results.csv",
+      toCsv(
+        ["Unit", "Year", "Subject", "Pupils", "Average %", "Under 60%", "Weakest topic", "Weakest topic %"],
+        shown.map((r) => [r.title, yearLabel(r.year), r.subject, r.takers, r.avg_pct ?? "", r.under60, r.weakest?.topic || "", r.weakest?.pct ?? ""]),
+      ),
+    );
 
   const href = (r: OverviewRow) =>
     `/${area}/curriculum?${new URLSearchParams({ year: r.year, subject: r.subject_slug, unit: r.unit, tab: "results" }).toString()}`;
@@ -40,6 +59,36 @@ export function RevisionOverview({ area }: { area: "teach" | "admin" }) {
             </Link>
             , under the unit&apos;s “Revision pack” tab. Results appear here and on the unit&apos;s “Pupil results” tab.
           </p>
+        </div>
+      )}
+      {rows && rows.length > 0 && (
+        <div className="flex flex-wrap items-center gap-2" data-guide="revision-filters">
+          <Select value={year} onChange={(e) => setYear(e.target.value)} aria-label="Year" className={`${ui.select} w-full sm:w-40`}>
+            <option value="">Every year</option>
+            {years.map((y) => (
+              <option key={y} value={y}>
+                {yearLabel(y)}
+              </option>
+            ))}
+          </Select>
+          <Select value={subject} onChange={(e) => setSubject(e.target.value)} aria-label="Subject" className={`${ui.select} w-full sm:w-48`}>
+            <option value="">Every subject</option>
+            {subjects.map((x) => (
+              <option key={x} value={x}>
+                {x}
+              </option>
+            ))}
+          </Select>
+          <label className="inline-flex items-center gap-2 text-sm text-ink/80">
+            <input type="checkbox" checked={weakOnly} onChange={(e) => setWeakOnly(e.target.checked)} className="h-4 w-4 accent-forest-700" />
+            Only units with pupils under 60%
+          </label>
+          <span className="t-meta">
+            {shown.length} of {rows.length} units
+          </span>
+          <button type="button" onClick={download} disabled={!shown.length} className={`${ui.btnSecondary} ${ui.sm} sm:ml-auto`}>
+            Download CSV
+          </button>
         </div>
       )}
       {rows && rows.length > 0 && (
@@ -66,7 +115,7 @@ export function RevisionOverview({ area }: { area: "teach" | "admin" }) {
               </tr>
             </thead>
             <tbody>
-              {rows.map((r) => {
+              {shown.map((r) => {
                 const b = r.avg_pct === null ? null : band(r.avg_pct);
                 return (
                   <tr key={r.unit_id} className="border-t border-gold-light/70">

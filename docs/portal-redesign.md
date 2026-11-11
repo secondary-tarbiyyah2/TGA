@@ -499,6 +499,10 @@ etc. Needs to be done in a unique way." The short tour above stays as the doorwa
   from the page's code, a menu page is renamed in one place only, or text breaks house style.
 
 ## Log
+- 2026-11-11: Gradebook, term reports and revision results (feedback 2, item 19; feedback 3): the gradebook filters by term
+  and kind of assessment, groups its columns by term, adds Target (GCSE classes) and Progress (Rising, Steady, Falling)
+  and a CSV; term reports' class list filters (still to write, awaiting approval, all issued) with search and a CSV;
+  revision results filter by year and subject, can show only units with pupils under 60%, and download as a CSV.
 - 2026-11-11: A register's page (feedback 3): a footer that stays in view with the counts (marked, present, late,
   authorised, unauthorised, technical) and when it last saved; Change the whole class; each pupil's attendance over the
   last 60 days beside their name; keyboard marking (P, L, A, U, T, arrow keys); Previous and Next lesson of the class.

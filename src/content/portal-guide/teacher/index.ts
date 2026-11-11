@@ -176,6 +176,7 @@ export const TEACHER_GUIDE: GuideEntry[] = [
       "Type each pupil's score, or choose Absent, Exempt or Not handed in.",
       "Press Save results, or Gradebook at the top left to go back. Open a column heading later to change it.",
       "Press a pupil's name to write their Weekly Tarbiyah Note.",
+      "Filter by term or kind of assessment, or search a pupil; columns are grouped by term, with Average, Target (GCSE classes) and Progress at the end. Press Download CSV for a copy.",
     ],
     tips: ["Assessment types are set up by the office in Academic setup.", "Year 10 and 11 classes also show GCSE grades to fill in."],
     privacy: "Pupils and parents see results in the class's Grades tab.",
