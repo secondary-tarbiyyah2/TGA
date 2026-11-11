@@ -322,7 +322,7 @@ button:not(:disabled),
 
   /* Layout */
   --portal-sidebar-w: 272px;
-  --portal-rail-w: 72px;
+  --portal-rail-w: 76px;
   --portal-topbar-h: 72px;
 
   font-size: 15px;
@@ -2606,10 +2606,10 @@ html[data-reduce-motion] .mushaf-word { transition: none; }
     pointer-events: none;
   }
   .portal-hero-eyebrow {
-    color: #e3c98f; /* 8.9:1 on the hero green */
+    color: #e3c98f; /* 6.2:1 on the hero green */
   }
   .portal-hero-muted {
-    color: #c9dcd1; /* 9:1 on the hero green */
+    color: #c9dcd1; /* 7:1 on the hero green */
   }
   .portal-hero .portal-initials {
     box-shadow: 0 0 0 2px #1d4a37;

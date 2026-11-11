@@ -378,7 +378,7 @@ function SidebarBody({
         )}
       </div>
 
-      <nav ref={navRef} aria-label={AREA_SUBTITLE[area]} data-tour="menu" className={`min-h-0 flex-1 overflow-y-auto overscroll-contain pb-4 ${collapsed ? "px-3 pt-1" : "px-3 pt-0.5"}`}>
+      <nav ref={navRef} aria-label={AREA_SUBTITLE[area]} data-tour="menu" className={`min-h-0 flex-1 overflow-y-auto overscroll-contain pb-4 ${collapsed ? "px-2 pt-1" : "px-3 pt-0.5"}`}>
         {collapsed ? (
           <ul className="space-y-1">
             <li>
