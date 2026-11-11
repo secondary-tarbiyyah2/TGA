@@ -5,10 +5,11 @@ import type { IconName } from "@/components/learn/Icon";
 // The rule: the sidebar lists DESTINATIONS, and a destination is either a
 // single page or a HUB. A hub is one sidebar entry that groups closely
 // related pages (Curriculum = Lesson library, Syllabus, Revision results). The sidebar shows only the hub; it stays highlighted on any of
-// its pages, and the shell draws a compact tab strip of the hub's pages at
-// the top of each of them (HubTabs in PageHeader.tsx, rendered by
-// LearnLayoutShell), so no page needs to know it belongs to a hub. Nothing is
-// listed twice: a page is either a sidebar entry or a tab inside one hub.
+// its pages, and the sidebar lists the hub's pages under it (staff: inside the
+// category's dropdown; families and pupils: under the entry while you are in
+// it). There is no strip of tabs across the top of the page (owner, 11 Nov
+// 2026; docs/portal-structure.md). Nothing is listed twice: a page is either a
+// sidebar entry or a tab inside one hub.
 //
 // Teaching work lives in the class (Stream · Classwork · Lessons · People ·
 // Attendance · Grades · Insights), like Google Classroom and Teams for
@@ -100,10 +101,9 @@ export type SidebarItem = {
 export type SidebarGroup = { label: string; icon: SidebarIcon; items: SidebarItem[] };
 
 /** A category of pages. Staff (admin, teach) see each category as a dropdown
- * in the sidebar holding its pages, and the category's pages as a tab strip at
- * the top of each of them; the `home` category's pages are plain links at the
- * top, always open. Families and pupils see each category as one simple link
- * (a hub), with its pages as tabs. */
+ * in the sidebar holding its pages; the `home` category's pages are plain links
+ * at the top, always open. Families and pupils see each category as one simple
+ * link (a hub), with its pages listed under it while they are in it. */
 export type NavCategory = { label: string; icon: SidebarIcon; hint?: string; home?: boolean; pages: (HubTab & { icon: SidebarIcon })[] };
 
 // Portal structure, November 2026 (owner: "better and just easier to
@@ -631,7 +631,7 @@ export function visiblePages(area: PortalArea, roles: string[]): PortalPage[] {
 export const ADMIN_INDEX_HREF = "/admin/site";
 
 /** The hub the current page is in, when it has two or more tabs this user can
- * open: the shell draws these as a tab strip at the top of the page. */
+ * open (the pages the sidebar lists together). */
 export function hubFor(pathname: string, roles: string[]): { item: SidebarItem; tabs: HubTab[]; active: HubTab | null } | null {
   const area = portalAreaFor(pathname);
   if (!area) return null;
