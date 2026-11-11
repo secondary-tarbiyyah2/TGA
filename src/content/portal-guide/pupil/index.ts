@@ -9,9 +9,10 @@ export const PUPIL_GUIDE: GuideEntry[] = [
     purpose: "Your lessons today, your next lesson and the work you need to do.",
     when: "Every time you sign in. Start here.",
     steps: [
-      "Look at the top for your next lesson and how much homework you have.",
+      "Look at My day for your lessons today, in order.",
       "When a live lesson is about to start, press Join lesson. It opens the lesson on Teams.",
-      "Check Waiting for you for anything you still need to do.",
+      "Check Homework due for what you still need to hand in.",
+      "Press Homework, Revise, My progress or My classes to go there.",
       "Scroll down to My timetable to see your whole week.",
     ],
     tips: ["The Join lesson button shows up 10 minutes before the lesson starts, so you do not need to look anywhere else.", "Add to my calendar puts your timetable on your phone or tablet calendar."],
@@ -19,6 +20,7 @@ export const PUPIL_GUIDE: GuideEntry[] = [
     related: ["/student/todo", "/student/classes", "/student/actions"],
     showMe: [
       { target: "join-lesson", label: "Join lesson", say: "When a lesson is starting, the Join lesson button appears here." },
+      { target: "pupil-my-day", label: "My day", say: "Your lessons today, in order." },
       { target: "waiting-widget", label: "Waiting for you", say: "Things you still need to do are listed here." },
       { target: "pupil-timetable", label: "My timetable", say: "This is your week, lesson by lesson." },
     ],

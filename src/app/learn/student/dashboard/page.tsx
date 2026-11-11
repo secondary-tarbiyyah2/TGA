@@ -1,10 +1,11 @@
 "use client";
 
 import { Loading } from "@/components/learn/kit";
+import { ui } from "@/components/learn/ui";
 import { DashboardHero } from "@/components/learn/DashboardHero";
 import { useNavBadges } from "@/lib/learn/navBadges";
 import { ActionCentreWidget } from "@/components/learn/ActionCentreWidget";
-import { useEffect, useMemo, useState } from "react";
+import { useEffect, useState } from "react";
 import Link from "next/link";
 import { LearnGate } from "@/components/learn/LearnGate";
 import { LearnShell } from "@/components/learn/LearnShell";
@@ -14,15 +15,13 @@ import { PrintScope } from "@/components/learn/printScope";
 import { JoinLessonCard } from "@/components/learn/live/JoinLessonCard";
 import { IcsFeedLink } from "@/components/learn/IcsFeedLink";
 import { DashboardWithPanel } from "@/components/learn/DashboardSidePanel";
-import { ClassGrid } from "@/components/learn/class/ClassGrid";
-import { useViewerClasses, type ClassViewer } from "@/lib/learn/classes";
 import { LatestGradesWidget } from "@/components/learn/LatestGradesWidget";
 import { QuranProgressWidget } from "@/components/learn/QuranProgressWidget";
 import { GcseProgressWidget } from "@/components/learn/GcseTracker";
 import { WeeklyTarbiyahNoteWidget } from "@/components/learn/WeeklyTarbiyahNoteWidget";
 import { AnnouncementsFeed } from "@/components/learn/AnnouncementsFeed";
-import { UpNextCard } from "@/components/learn/UpNextCard";
-import { Icon } from "@/components/learn/Icon";
+import { Icon, type IconName } from "@/components/learn/Icon";
+import { HomeworkDueWidget } from "@/components/learn/HomeworkDueWidget";
 import { ReportConcernLink } from "@/components/learn/ReportConcernLink";
 import { getSupabaseClient } from "@/lib/supabase/client";
 import type { TimetableSlot } from "@/lib/learn/timetable";
@@ -86,8 +85,16 @@ function StudentContent() {
 
   const simplified = isYoungerYearGroup(yearGroupName);
   const badges = useNavBadges("student");
-  const viewer = useMemo<ClassViewer | null>(() => (childId ? { kind: "student", childId } : null), [childId]);
-  const myClasses = useViewerClasses(viewer);
+  // Today's lessons, in order (weekday 1 is Monday, as the timetable stores it).
+  const today = ((new Date().getDay() + 6) % 7) + 1;
+  const nowHm = new Date().toTimeString().slice(0, 5);
+  const todays = (slots || []).filter((s) => Number(s.weekday) === today).sort((a, b) => a.start_time.localeCompare(b.start_time));
+  const doors: { href: string; label: string; hint: string; icon: IconName }[] = [
+    { href: "/student/todo", label: "Homework", hint: badges.todo ? `${badges.todo} to do` : "All done", icon: "listChecks" },
+    { href: "/student/revision", label: "Revise", hint: "Quizzes and practice", icon: "bookOpen" },
+    { href: "/student/reports", label: "My progress", hint: "Reports and grades", icon: "chartColumnIncreasing" },
+    { href: "/student/classes", label: "My classes", hint: "Work and lessons", icon: "layoutGrid" },
+  ];
 
   // What a pupil needs now: the next lesson (and its join button), then
   // what is due. Everything else is one tap away in the menu (merits and
@@ -106,26 +113,65 @@ function StudentContent() {
       />
 
       {childId && <JoinLessonCard who={{ kind: "student", childId }} />}
-      {childId && <UpNextCard classIds={slots === null ? null : classIds} childId={childId} lessonHref={(id) => `/student/lessons/view?id=${id}`} homeworkHref="/student/todo" />}
-      <ActionCentreWidget role="student" />
+      {/* Simple and age-appropriate (owner, 11 Nov 2026): my day, homework due, then four big doors. */}
+      <section aria-labelledby="my-day" data-guide="pupil-my-day">
+        <h2 id="my-day" className="t-section mb-2">
+          My day
+        </h2>
+        {slots === null ? (
+          <Loading label="Loading your lessons" bare />
+        ) : todays.length === 0 ? (
+          <p className="rounded-[10px] border border-gold-light bg-white px-4 py-5 text-sm text-ink-500">No lessons today. Enjoy your day, and keep up with your revision.</p>
+        ) : (
+          <ol className="divide-y divide-gold-light overflow-hidden rounded-[10px] border border-gold-light bg-white">
+            {todays.map((l) => {
+              const done = nowHm > l.end_time.slice(0, 5);
+              const on = !done && nowHm >= l.start_time.slice(0, 5);
+              const name = (l as TimetableSlot & { subjects?: { name: string } | null }).subjects?.name || (l as TimetableSlot & { classes?: { name: string } | null }).classes?.name || "Lesson";
+              return (
+                <li key={l.id} className={`flex items-center gap-4 px-4 py-3.5 ${on ? "bg-forest-50/70" : ""} ${done ? "opacity-60" : ""}`}>
+                  <span className="w-14 shrink-0 text-base font-semibold tabular-nums text-ink">{l.start_time.slice(0, 5)}</span>
+                  <span className="min-w-0 flex-1">
+                    <span className="block truncate text-base font-medium text-ink">{name}</span>
+                    <span className="block text-sm text-ink-500">{on ? "On now: use Join lesson above" : done ? "Finished" : `Until ${l.end_time.slice(0, 5)}`}</span>
+                  </span>
+                  <Link href={`/student/class?id=${l.class_id}`} className={`${ui.btnSecondary} shrink-0`}>
+                    Class
+                  </Link>
+                </li>
+              );
+            })}
+          </ol>
+        )}
+      </section>
 
-      {viewer && (
-        <section>
-          <div className="mb-3 flex items-center justify-between">
-            <h2 className="text-sm font-semibold text-ink">My classes</h2>
-            <Link href="/student/classes" className="text-sm font-medium text-teal-700 hover:underline">
-              See all
+      {childId && (
+        <section aria-labelledby="hw-due" className="rounded-[10px] border border-gold-light bg-white p-4 sm:p-5">
+          <div className="mb-2 flex items-baseline justify-between gap-3">
+            <h2 id="hw-due" className="t-section">
+              Homework due
+            </h2>
+            <Link href="/student/todo" className="text-sm font-medium text-forest-700 hover:underline">
+              All homework
             </Link>
           </div>
-          <ClassGrid
-            viewer={viewer}
-            classes={myClasses ? myClasses.slice(0, 4) : null}
-            hrefFor={(c) => `/student/class?id=${c.id}`}
-            emptyLabel="You're not in any classes yet."
-            controls={false}
-          />
+          <HomeworkDueWidget childId={childId} title="Still to hand in" />
         </section>
       )}
+
+      <nav aria-label="Where to go" data-guide="pupil-doors" className="grid grid-cols-2 gap-3 lg:grid-cols-4">
+        {doors.map((d) => (
+          <Link key={d.href} href={d.href} className="flex min-h-24 flex-col justify-between rounded-[10px] border border-gold-light bg-white p-4 transition-colors hover:border-forest-700/40 hover:bg-[var(--portal-hover)]">
+            <Icon name={d.icon} className="h-6 w-6 text-forest-700" />
+            <span>
+              <span className="block text-base font-semibold text-ink">{d.label}</span>
+              <span className="block text-sm text-ink-500">{d.hint}</span>
+            </span>
+          </Link>
+        ))}
+      </nav>
+
+      <ActionCentreWidget role="student" />
 
       {childId && (
         <section className="rounded-2xl border border-gold-light bg-white p-4 sm:p-6">
