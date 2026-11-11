@@ -8,6 +8,7 @@ import { usePathname } from "next/navigation";
 import { useEffect, useMemo } from "react";
 import type { PortalArea } from "@/lib/learn/nav";
 import { markGuideLearned, usePortalPrefs } from "@/lib/learn/portalPrefs";
+import { GuideJourney } from "./GuideJourney";
 import { GuidePanel } from "./GuidePanel";
 import { GuideSpotlight } from "./GuideSpotlight";
 import { closeGuidePanel, endSpot, moveSpot, openGuidePanel, useGuideState } from "./guideStore";
@@ -45,6 +46,7 @@ export function GuideHost({ area, roles, userId }: { area: PortalArea; roles: st
           Loading the guide…
         </div>
       )}
+      {spot?.kind === "journey" && <GuideJourney spot={spot} />}
       {spot?.kind === "show" && (
         <GuideSpotlight
           heading={spot.heading}

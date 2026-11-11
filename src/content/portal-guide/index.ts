@@ -9,9 +9,11 @@ import { SENCO_GUIDE } from "./senco/index.ts";
 import { PARENT_GUIDE } from "./parent/index.ts";
 import { PUPIL_GUIDE } from "./pupil/index.ts";
 import { sharedEntries } from "./shared.ts";
+import { JOURNEYS } from "./journeys.ts";
 
 export type { GuideEntry, GuideRole, GuideTarget, Journey, JourneyStep } from "./types";
 export { GUIDE_ROLE_LABEL } from "./types.ts";
+export { JOURNEYS };
 
 export const GUIDE: Record<GuideRole, GuideEntry[]> = {
   head: [...HEAD_GUIDE, ...sharedEntries("head")],

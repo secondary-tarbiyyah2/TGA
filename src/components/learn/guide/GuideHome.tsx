@@ -17,6 +17,7 @@ import { portalAreaFor, type PortalArea } from "@/lib/learn/nav";
 import { dashboardPathForRole, useLearnSession, type LearnRole } from "@/lib/learn/session";
 import { resetGuideProgress, usePortalPrefs } from "@/lib/learn/portalPrefs";
 import { askConfirm } from "@/components/learn/kit";
+import { GuideJourneys } from "./GuideJourneys";
 import { useGuideContent } from "./useGuideContent";
 
 /** Link to a page that opens its guide panel on arrival. */
@@ -120,7 +121,7 @@ export function GuideHome({ userId, journeys }: { userId: string; journeys?: Rea
         </div>
       </section>
 
-      {journeys}
+      {journeys ?? <GuideJourneys journeys={content.JOURNEYS[role]} progress={prefs.guide.journeys} />}
 
       <Tabs
         variant="switch"

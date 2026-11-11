@@ -7,7 +7,15 @@
 
 import { useSyncExternalStore } from "react";
 
-export type SpotStep = { target?: string; title: string; body: string };
+export type SpotStep = {
+  target?: string;
+  title: string;
+  body: string;
+  /** Journeys: the page this step is on. */
+  href?: string;
+  /** Journeys: follow the first link inside this target to reach the page. */
+  from?: string;
+};
 export type Spot = {
   /** "show" for a page's Show me; "journey" for a Day in the life journey. */
   kind: "show" | "journey";

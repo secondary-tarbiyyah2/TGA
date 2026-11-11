@@ -7,7 +7,7 @@ import assert from "node:assert/strict";
 import fs from "node:fs";
 import path from "node:path";
 import { SUB_PAGES, allPages, visiblePages, type PortalArea } from "./nav.ts";
-import { GUIDE, guideEntryFor, guideRoleFor, type GuideEntry, type GuideRole } from "../../content/portal-guide/index.ts";
+import { GUIDE, JOURNEYS, guideEntryFor, guideRoleFor, type GuideEntry, type GuideRole } from "../../content/portal-guide/index.ts";
 
 const ROOT = process.cwd();
 const ROLES: Record<string, [PortalArea, string[]]> = {
@@ -163,4 +163,24 @@ test("the guide finds the entry for an address", () => {
   assert.equal(guideEntryFor("parent", "/family/todo")?.name, "Homework");
   assert.equal(guideRoleFor("teach", ["senco"]), "senco");
   assert.equal(guideRoleFor("admin", ["admissions"]), "admissions");
+});
+
+test("Day in the life journeys: 6 to 12 steps, on pages the role has, pointing at real things", () => {
+  for (const g of ["head", "teacher", "parent", "pupil"] as GuideRole[]) assert.ok(JOURNEYS[g].length >= 1, `${g} has a journey`);
+  const missing: string[] = [];
+  for (const [g, list] of Object.entries(JOURNEYS) as [GuideRole, (typeof JOURNEYS)[GuideRole]][]) {
+    const hrefs = new Set(GUIDE[g].map((e) => e.href));
+    for (const j of list) {
+      assert.ok(j.steps.length >= 6 && j.steps.length <= 12, `${g} ${j.id}: 6 to 12 steps`);
+      j.steps.forEach((s, i) => {
+        const w = `${g} ${j.id} step ${i + 1}`;
+        assert.ok(hrefs.has(s.href), `${w}: ${s.href} is not a page in the ${g} guide`);
+        if (s.from) assert.ok(i > 0 && hasTarget(pageSource(j.steps[i - 1].href), s.from), `${w}: follows ${s.from}, which is not on the step before`);
+        if (s.target && !hasTarget(pageSource(s.href), s.target) && !hasTarget(shellSource, s.target)) missing.push(`${w}: data-guide="${s.target}" on ${s.href}`);
+        checkText(w, s.body, g === "pupil");
+        assert.ok(s.title.length <= 40, `${w}: short title`);
+      });
+    }
+  }
+  assert.deepEqual(missing, [], "journey targets not found on their pages");
 });
