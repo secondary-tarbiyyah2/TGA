@@ -37,6 +37,7 @@ export function PushOptIn({ variant = "card" }: { variant?: "card" | "setting" }
     setEnv({ dismissed: d, ios: i });
   }, []);
 
+  if (variant === "setting" && state === "not-configured") return <p className="text-sm text-ink/70">Not switched on for the school yet.</p>;
   if (state === null || state === "not-configured") return null;
   if (variant === "card" && (state === "on" || dismissed)) return null;
   if (state === "unsupported" && !ios) return variant === "setting" ? <p className="text-sm text-ink/70">This browser can&apos;t show notifications.</p> : null;

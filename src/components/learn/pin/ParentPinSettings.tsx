@@ -1,5 +1,6 @@
 "use client";
 
+import { ui } from "@/components/learn/ui";
 import { useState } from "react";
 import { getSupabaseClient } from "@/lib/supabase/client";
 import { friendlyPinError, pinProblem } from "@/lib/learn/passwordRules";
@@ -49,9 +50,8 @@ export function ParentPinSettings({ userId }: { userId: string }) {
 
   const field = "mt-1 block w-28 rounded-lg border border-gold-light/60 px-3 py-2 tracking-widest";
   return (
-    <div className="rounded-2xl border border-gold-light/50 bg-white p-6">
-      <h2 className="font-serif text-h3 font-semibold text-ink">Parent PIN</h2>
-      <p className="mt-1 text-sm text-ink/65">
+    <div>
+      <p className="text-sm text-ink/65">
         Optional. Your children have their own logins, so you only need a PIN if they also use a device you are signed in on: it stops them opening your family area.
         {has ? " Your PIN is on." : " It's off."}
         {status === "reset" ? " Your current PIN is an older, shorter one: please change it to 6 digits below." : ""} If you forget it, the Headteacher can reset it.
@@ -72,11 +72,11 @@ export function ParentPinSettings({ userId }: { userId: string }) {
           Confirm
           <input type="password" inputMode="numeric" pattern="[0-9]*" maxLength={6} value={confirm} onChange={(e) => setConfirm(e.target.value.replace(/\D/g, ""))} autoComplete="off" className={field} />
         </label>
-        <button type="submit" disabled={busy || has === null} className="rounded-lg bg-gold-700 px-4 py-2 text-sm font-semibold text-white transition-colors hover:bg-gold-900 disabled:opacity-60">
+        <button type="submit" disabled={busy || has === null} className={ui.btnPrimary}>
           {busy ? "Saving…" : has ? "Change PIN" : "Turn on a PIN"}
         </button>
         {has && (
-          <button type="button" disabled={removing} onClick={turnOff} className="rounded-lg border border-gold-light bg-white px-4 py-2 text-sm font-medium text-ink/80 hover:bg-cream disabled:opacity-60">
+          <button type="button" disabled={removing} onClick={turnOff} className={ui.btnSecondary}>
             {removing ? "Turning off…" : "Turn PIN off"}
           </button>
         )}
