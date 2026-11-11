@@ -68,7 +68,8 @@ export const HEAD_ATTENDANCE: GuideEntry[] = [
     purpose: "Pupil absences to follow up, parent notes, absence emails, reports, and staff cover.",
     when: "Daily, to chase unexplained absences and cover staff who are away.",
     steps: [
-      "On To follow up, record each contact (phone call, email, text) and its outcome, then Save contact.",
+      "On To follow up, choose Due now, Not contacted or Escalated, or search a name, then press a pupil.",
+      "In the case beside the list, ring a contact (tap the number on a phone), then Log a call; or Message family, Set reason, mark it Authorised or Not authorised, set a Reminder or Escalate to head.",
       "On Parent notes, decide on the reasons parents sent.",
       "On Emails, check absence emails read by the portal and press Confirm and record.",
       "On Staff cover, press Record a staff absence, then Assign and notify a colleague for each lesson.",
@@ -76,8 +77,11 @@ export const HEAD_ATTENDANCE: GuideEntry[] = [
     tips: ["Every decision is written to the audit log with who made it.", "Choose 30, 60, 90 days or This term at the top."],
     privacy: "Staff only. The cover log shows whether the covering teacher was emailed.",
     related: ["/admin/attendance", "/admin/lessons/timetable"],
-    showMe: [{ target: "absences-tabs", label: "Absence sections", say: "Overview, To follow up, Parent notes, Emails, Reports and Staff cover." }],
-    tasks: ["chase an absence", "arrange staff cover", "unexplained absence"],
+    showMe: [
+      { target: "absences-tabs", label: "Absence sections", say: "Overview, To follow up, Parent notes, Emails, Reports and Staff cover." },
+      { target: "absences-followup", label: "Follow-up queue", say: "Every absence still to chase; press one to act on it." },
+    ],
+    tasks: ["chase an absence", "arrange staff cover", "unexplained absence", "authorise an absence", "absence reminder"],
   },
   {
     href: "/admin/behaviour",

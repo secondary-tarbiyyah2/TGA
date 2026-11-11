@@ -1,4 +1,4 @@
--- Run via `supabase test db`. Covers 0207: the head teacher records a decision and a portal message on an
+-- Run via `supabase test db`. Covers 0209: the head teacher records a decision and a portal message on an
 -- absence follow-up (stamped with who decided); a teacher still cannot change a follow-up.
 begin;
 select plan(5);
