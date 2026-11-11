@@ -396,6 +396,11 @@ jobs:
           # itself: service-role key for the scheduled run, or a signed-in
           # Headteacher/Admin for the preview/test tools.
           supabase functions deploy weekly-digest --yes --project-ref "${{ steps.project.outputs.ref }}" --no-verify-jwt
+          # message-email (0205): no gateway JWT check because the daily
+          # digest (message-digest.yml) is not a user. The function authorises
+          # itself: the sender's own token for "a message was sent", the
+          # service-role key for the daily digest.
+          supabase functions deploy message-email --yes --project-ref "${{ steps.project.outputs.ref }}" --no-verify-jwt
           # star-certificate: verified; staff only (re-checked in the function).
           supabase functions deploy star-certificate --yes --project-ref "${{ steps.project.outputs.ref }}"
           # absence-escalate: verified; head/admin only (re-checked in the function).
