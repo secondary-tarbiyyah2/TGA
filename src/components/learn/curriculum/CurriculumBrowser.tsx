@@ -269,7 +269,7 @@ export function CurriculumBrowser({ area }: { area: Area }) {
   const fileTitle = (f: FileItem) => (f.type === "lesson" ? `${f.lesson.lesson_no}. ${f.lesson.title}` : f.type === "resource" ? f.resource.title : "Weekly plan");
   const fileIcon = (f: FileItem): IconName => (f.type === "lesson" ? "presentation" : f.type === "resource" ? "fileText" : "scrollText");
   const fileMeta = (f: FileItem) =>
-    f.type === "lesson" ? `Lesson · ${f.lesson.subject}` : f.type === "resource" ? `${typeLabel(f.resource.type)}${f.resource.pdf_path ? "" : f.resource.status === "to make" ? " · still being made" : ` · ${SOURCE_LABEL[f.resource.source] || f.resource.source}`}` : `${f.unit.weeks?.length || 0}-week plan`;
+    f.type === "lesson" ? `Lesson · ${f.lesson.subject}` : f.type === "resource" ? `${typeLabel(f.resource.type)}${f.resource.pdf_path ? "" : f.resource.status === "to make" ? " · still being made" : ` · ${SOURCE_LABEL[f.resource.source] || f.resource.source}`}` : f.unit.weeks?.length ? `${f.unit.weeks.length}-week plan` : "Not planned week by week yet";
   const openFile = (f: FileItem) => {
     if (f.type === "lesson") router.push(lessonHref(f.lesson));
     else if (f.type === "plan") setWeeksFor(f.unit);
@@ -499,7 +499,7 @@ export function CurriculumBrowser({ area }: { area: Area }) {
       </div>
 
       {narrow && sel && (
-        <SidePanel title={"open" in sel ? sel.label : fileTitle(sel)} eyebrow="Details" onClose={() => setSelected(null)}>
+        <SidePanel title="Details" onClose={() => setSelected(null)}>
           {details()}
         </SidePanel>
       )}
