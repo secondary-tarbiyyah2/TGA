@@ -7,6 +7,34 @@
 > **Third pass (11 Nov 2026):** structure, not look. Read `docs/portal-structure.md` (the patterns) and "Third pass"
 > below (status) before changing how a page is put together.
 
+## Owner feedback 2 (11 Nov 2026), items 3 and 4: Messages and Calendar
+
+Brief: `docs/owner-briefs/2026-11-11-feedback-2.md`. Branches `claude/fb2-msg-*`.
+
+**Messages (item 3).**
+1. [x] Database (PR #171, migration 0204): groups (`kind = 'group'`, `message_thread_members`, `create_message_group()`
+   and the `message_group_*` functions; staff only, people added under the 1:1 rules), replies (`reply_to_id`),
+   attachments (bucket `message-attachments`), per-person receipts (`message_receipts()`), inbox
+   (`my_message_threads()`), `thread_members()`, `thread_sender_names()`, `search_messages()`. Safeguarding: in a
+   group, parents and pupils see only the staff's messages and their own; pupils are never in a 1:1 thread.
+2. [x] Email and mute (PR #174, migration 0205): `message_prefs.email_mode` (immediate, daily, off; set in Account),
+   `message_thread_mutes`, "delivered" (`mark_messages_delivered()`, `thread_delivery()`), attachments staff only.
+   Edge Function `message-email`: called by the portal after a send (sender's token; at most one email per
+   conversation every 30 minutes, only while unread, never the message text) and once a day by
+   `.github/workflows/message-digest.yml` (16:05 UTC) for people on "Once a day". push-notify reaches group members
+   and skips muted conversations.
+3. [x] Screens (PR "Messages: groups, replies, files, receipts, search and mute"): `MessagesHub` (search across
+   people, groups and message text; All, Unread, Groups and Urgent; muted marked), `MessageThread` (names in groups,
+   reply quotes, files, ticks for sent, delivered and read, "Seen by 3 of 10" with names, edit or delete within 15
+   minutes), `messages/NewConversation` (one dialog: a person, or a group from a class, a year group (office), a staff
+   team or people you pick), `messages/GroupInfo` (side panel: members, rename, replies on or off, add, remove, make
+   admin, leave). Pupils: `/student/messages` (their groups; they reply only where allowed, to staff only). New
+   messages arrive by polling (8 seconds in an open conversation, 30 in the list); the portal does not use Supabase
+   realtime. Also fixed: stray merge markers in `globals.css` (from #160) that switched off the dialog and menu
+   animations and the floating-shadow rule.
+
+**Calendar (item 4).** Next PR (`claude/fb2-msg-4`).
+
 ## Third pass (owner feedback, 11 Nov 2026): structure
 
 Owner: "I don't like the fact that options are on top and across (Curriculum etc). Also some buttons, when I press,

@@ -64,6 +64,22 @@ export const PUPIL_GUIDE: GuideEntry[] = [
     tasks: ["read school news"],
   },
   {
+    href: "/student/messages",
+    name: "Messages",
+    category: "Today",
+    purpose: "Messages your teachers send to your class or group.",
+    when: "When the number beside Messages in the menu goes up.",
+    steps: ["Press a group on the left to read it.", "If the group lets you reply, write in the box at the bottom and press Send.", "Type in Search to find an old message."],
+    tips: ["Your reply goes to your teachers only, never to other pupils.", "Worried about something? Use Report a concern, or tell a teacher or your parents."],
+    privacy: "Teachers in the group read what you write. The school checks messages to keep everyone safe.",
+    related: ["/student/announcements", "/student/dashboard"],
+    showMe: [
+      { target: "messages-search", label: "Search", say: "Find a group or an old message." },
+      { target: "messages-list", label: "Your groups", say: "Newest first. A number means messages you have not read." },
+    ],
+    tasks: ["read a message from my teacher"],
+  },
+  {
     href: "/student/todo",
     name: "Homework",
     category: "Homework",
