@@ -168,6 +168,7 @@ export const NAV_CATEGORIES: Record<PortalArea, NavCategory[]> = {
         { href: "/admin/reports", label: "Term reports", icon: "fileText", hint: "Write, approve and issue reports", headOnly: true, keywords: "progress reports report cards approve" },
         { href: "/admin/gcse", label: "GCSE grades", icon: "graduationCap", hint: "Predicted and actual grades, Years 10 and 11", headOnly: true, keywords: "predicted grades exams year 10 year 11 interventions" },
         { href: "/admin/revision", label: "Revision results", icon: "target", hint: "How pupils did on each unit's revision", headOnly: true, keywords: "quiz results revision scores" },
+        { href: "/admin/quran", label: "Qur'an", icon: "bookMarked", hint: "Each Qur'an class's recitations, and the marking standard", headOnly: true, keywords: "quran hifdh hifz qaidah recitation mistakes strictness bands marking standard tajweed" },
         { href: "/admin/summary", label: "School at a glance", icon: "chartColumnIncreasing", hint: "Attendance, homework and progress", headOnly: true, keywords: "data analytics summary figures statistics" },
       ],
     },

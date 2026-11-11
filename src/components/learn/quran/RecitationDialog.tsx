@@ -47,22 +47,23 @@ export function RecitationDialog({
   const [to, setTo] = useState<number>(Math.min(from + 9, total));
   const [setting, setSetting] = useState<QuranMark["setting"]>("class");
   const [mistakes, setMistakes] = useState<Mistake[]>([]);
-  const [ayah, setAyah] = useState<number>(from);
+  const [ayahRaw, setAyahRaw] = useState<number>(from);
   const [noRecite, setNoRecite] = useState(false);
   const [delta, setDelta] = useState<-1 | 0 | 1>(0);
   const [reason, setReason] = useState("");
   const [busy, setBusy] = useState(false);
   const [error, setError] = useState<string | null>(null);
 
-  // Keep the range and the current ayah inside the surah.
-  useEffect(() => {
-    const t = surahAyat(surah);
-    setFrom((f) => Math.min(Math.max(1, f), t));
-    setTo((x) => Math.min(Math.max(1, x), t));
-  }, [surah]);
-  useEffect(() => {
-    setAyah((a) => Math.min(Math.max(a, from), Math.max(from, to)));
-  }, [from, to]);
+  // A new surah starts at its first ayah; the ayah being heard always stays inside the range.
+  const chooseSurah = (n: number) => {
+    const t = surahAyat(n);
+    setSurah(n);
+    setFrom(1);
+    setTo(Math.min(10, t));
+    setAyahRaw(1);
+  };
+  const ayah = Math.min(Math.max(ayahRaw, from), Math.max(from, to));
+  const setAyah = (f: (a: number) => number) => setAyahRaw((a) => f(Math.min(Math.max(a, from), Math.max(from, to))));
 
   const pages = portionPages(surah, from, to);
   const result = useMemo(() => markFromMistakes({ mistakes, level, pages, standard, couldNotRecite: noRecite }), [mistakes, level, pages, standard, noRecite]);
@@ -147,10 +148,10 @@ export function RecitationDialog({
       }
     >
       <div className="space-y-4 pb-2">
-        <div className="grid gap-3 sm:grid-cols-[minmax(0,2fr)_repeat(3,minmax(0,1fr))]">
-          <label className="text-sm">
+        <div className="grid grid-cols-2 gap-3 sm:grid-cols-[minmax(0,2fr)_repeat(3,minmax(0,1fr))]">
+          <label className="col-span-2 text-sm sm:col-span-1">
             <span className="t-eyebrow mb-1 block">Surah</span>
-            <Select value={String(surah)} onChange={(e) => setSurah(Number(e.target.value))} className={fieldCls} aria-label="Surah">
+            <Select value={String(surah)} onChange={(e) => chooseSurah(Number(e.target.value))} className={fieldCls} aria-label="Surah">
               {SURAHS.map((s, i) => (
                 <option key={i} value={i + 1}>
                   {`${i + 1}. ${s[0]} ${s[1]}`}
@@ -166,7 +167,7 @@ export function RecitationDialog({
             <span className="t-eyebrow mb-1 block">To ayah</span>
             <input type="number" min={from} max={total} value={to} onChange={(e) => setTo(Math.max(from, Math.min(total, Number(e.target.value) || from)))} className="portal-input w-full rounded-[7px] border border-gold-light px-3 py-2" />
           </label>
-          <label className="text-sm">
+          <label className="col-span-2 text-sm sm:col-span-1">
             <span className="t-eyebrow mb-1 block">Heard</span>
             <Select value={setting} onChange={(e) => setSetting(e.target.value as QuranMark["setting"])} className={fieldCls} aria-label="Where it was heard">
               {SETTINGS.map((s) => (
@@ -193,7 +194,7 @@ export function RecitationDialog({
                   key={a}
                   type="button"
                   aria-pressed={a === ayah}
-                  onClick={() => setAyah(a)}
+                  onClick={() => setAyahRaw(a)}
                   className={`relative h-9 min-w-9 rounded-[7px] border px-2 text-sm tabular-nums ${a === ayah ? "border-forest-700 bg-forest-700 text-white" : n ? "border-amber-400 bg-amber-50 text-amber-900" : "border-gold-light bg-white text-ink/80 hover:bg-cream"}`}
                 >
                   {a}
@@ -233,7 +234,7 @@ export function RecitationDialog({
             </label>
             {mistakes.length > 0 && (
               <span className="t-meta">
-                {mistakes.length} logged: {mistakes.slice(-6).map((m) => `${MISTAKE_KINDS.find((k) => k.value === m.kind)?.label} (${m.ayah})`).join(", ")}
+                {mistakes.length} logged: {mistakes.slice(-6).map((m) => `${MISTAKE_KINDS.find((k) => k.value === m.kind)?.label} on ${m.ayah}`).join(", ")}
                 {mistakes.length > 6 ? "…" : ""}
               </span>
             )}
@@ -241,21 +242,23 @@ export function RecitationDialog({
         </section>
 
         <section aria-labelledby="rd-mark" className="rounded-[10px] border border-gold-light bg-cream/50 px-4 py-3" aria-live="polite">
-          <div className="flex flex-wrap items-center gap-x-4 gap-y-2">
-            <h3 id="rd-mark" className="sr-only">
-              Mark
-            </h3>
-            <p className="text-3xl font-semibold tabular-nums text-ink">
-              {score}
-              <span className="text-base font-normal text-ink/60"> / 10</span>
-            </p>
-            <div className="min-w-0 flex-1">
-              <p className="font-medium text-ink">
-                {band?.label} · {band?.result}
+          <h3 id="rd-mark" className="sr-only">
+            Mark
+          </h3>
+          <div className="flex flex-wrap items-center gap-x-4 gap-y-3">
+            <div className="flex min-w-0 flex-1 basis-64 items-center gap-4">
+              <p className="shrink-0 text-3xl font-semibold tabular-nums text-ink">
+                {score}
+                <span className="text-base font-normal text-ink/60"> / 10</span>
               </p>
-              <p className="t-meta">
-                {result.points} point{result.points === 1 ? "" : "s"}, {result.perPage} a page. {band?.next}
-              </p>
+              <div className="min-w-0">
+                <p className="font-medium text-ink">
+                  {band?.label} · {band?.result}
+                </p>
+                <p className="t-meta">
+                  {result.points} point{result.points === 1 ? "" : "s"}, {result.perPage} a page. {band?.next}
+                </p>
+              </div>
             </div>
             <div className="flex items-center gap-1" role="group" aria-label="Move the mark one step">
               <Button size="sm" icon="minus" aria-label="One step lower" aria-pressed={delta === -1} onClick={() => setDelta(delta === -1 ? 0 : -1)}>

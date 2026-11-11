@@ -205,7 +205,7 @@ export function MarkingStandard({ canEdit }: { canEdit: boolean }) {
               {classes.map((c) => (
                 <li key={c.id} className="flex flex-wrap items-center justify-between gap-2 px-4 py-2 text-sm">
                   <span className="font-medium text-ink">{c.name}</span>
-                  <Select value={levels[c.id] || defaultLevelForYear(c.yearGroup)} onChange={(e) => setLevel(c.id, e.target.value as MarkingLevel)} aria-label={`Level for ${c.name}`}>
+                  <Select value={levels[c.id] || defaultLevelForYear(c.yearGroup)} onChange={(e) => setLevel(c.id, e.target.value as MarkingLevel)} aria-label={`Level for ${c.name}`} className="w-40">
                     {MARKING_LEVELS.map((l) => (
                       <option key={l.value} value={l.value}>
                         {l.label}

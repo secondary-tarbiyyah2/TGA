@@ -257,7 +257,7 @@ function PupilQuranHistory({ pupil, marks, onClose, onHear }: { pupil: Pupil; ma
                 </div>
                 {(ms.length > 0 || m.adjust_reason) && (
                   <p className="t-meta mt-0.5 pl-[4.75rem]">
-                    {ms.length > 0 && ms.map((x) => `${KIND_LABEL[x.kind]}${x.ayah ? ` ${x.ayah}` : ""}`).join(", ")}
+                    {ms.length > 0 && ms.map((x) => `${KIND_LABEL[x.kind]}${x.ayah ? ` on ayah ${x.ayah}` : ""}`).join(", ")}
                     {m.adjust_reason ? `${ms.length ? ". " : ""}Moved from ${m.worked_out_score}: ${m.adjust_reason}` : ""}
                   </p>
                 )}
