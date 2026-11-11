@@ -1,4 +1,4 @@
--- 0210: group conversations, replies, attachments, per-person read receipts
+-- 0204: group conversations, replies, attachments, per-person read receipts
 -- and search for /learn messaging (owner feedback 11 Nov 2026, item 3:
 -- "the messages section needs to allow groups to be made, read receipts, and
 -- fully functional messaging system").

@@ -1,4 +1,4 @@
--- Run via `supabase test db`. Covers 0210_message_groups.sql: group
+-- Run via `supabase test db`. Covers 0204_message_groups.sql: group
 -- conversations, replies, attachments, receipts and search.
 --
 -- The guarantees proven here:
