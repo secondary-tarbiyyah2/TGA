@@ -1,6 +1,6 @@
 "use client";
 
-import { Loading } from "@/components/learn/kit";
+import { Loading, askConfirm } from "@/components/learn/kit";
 import { useCallback, useEffect, useRef, useState } from "react";
 import { getSupabaseClient } from "@/lib/supabase/client";
 import { REASONS, reasonKind, saveReason } from "@/components/learn/absences/data";
@@ -61,6 +61,10 @@ export function Register({ lessonId, classId, onProgress }: { lessonId: string; 
   const [noteOpen, setNoteOpen] = useState<string | null>(null);
   const [noteState, setNoteState] = useState<Record<string, "saving" | "saved" | "error">>({});
   const [saving, setSaving] = useState<Record<string, "saving" | "saved" | "error">>({});
+  const [lastSaved, setLastSaved] = useState<string | null>(null);
+  // Each pupil's attendance over the last 60 days, beside their name (owner feedback 3).
+  const [rates, setRates] = useState<Record<string, number>>({});
+  const [whole, setWhole] = useState("");
   // Who pressed "Join lesson" (lesson_joins): child id -> first join time. Used to pre-fill 'present'.
   const [joined, setJoined] = useState<Record<string, string>>({});
   const [joinsLoaded, setJoinsLoaded] = useState(false);
@@ -167,12 +171,40 @@ export function Register({ lessonId, classId, onProgress }: { lessonId: string; 
       } else {
         const next = { ...marksRef.current, ...Object.fromEntries(entries.map((e) => [e.childId, e.status])) };
         marksRef.current = next;
+        setLastSaved(new Date().toISOString());
         onProgress?.(Object.keys(next).filter((id) => enrolledRef.current.has(id)).length, totalRef.current);
       }
     },
     // eslint-disable-next-line react-hooks/exhaustive-deps
     [lessonId],
   );
+
+  useEffect(() => {
+    const supabase = getSupabaseClient();
+    if (!supabase || !children || children.length === 0) return;
+    let alive = true;
+    const from = new Date(Date.now() - 60 * 86_400_000).toISOString().slice(0, 10);
+    supabase
+      .from("attendance_records")
+      .select("child_id, status, lesson_instances!inner(date)")
+      .in("child_id", children.map((c) => c.id))
+      .gte("lesson_instances.date", from)
+      .limit(5000)
+      .then(({ data }) => {
+        if (!alive) return;
+        const m: Record<string, { seen: number; there: number }> = {};
+        for (const r of (data as { child_id: string; status: string }[] | null) || []) {
+          if (r.status === "technical") continue;
+          const x = (m[r.child_id] ||= { seen: 0, there: 0 });
+          x.seen++;
+          if (r.status === "present" || r.status === "late" || r.status === "not_engaged") x.there++;
+        }
+        setRates(Object.fromEntries(Object.entries(m).map(([k, v]) => [k, Math.round((v.there / v.seen) * 100)])));
+      });
+    return () => {
+      alive = false;
+    };
+  }, [children]);
 
   // Pre-fill 'present' for every child who joined and has no mark yet. The
   // teacher can still change any of them.
@@ -229,12 +261,6 @@ export function Register({ lessonId, classId, onProgress }: { lessonId: string; 
   return (
     <div data-guide="register" >
       <div className="flex flex-wrap items-center justify-between gap-3 border-b border-gold-light/70 px-5 py-3">
-        <p className="text-sm text-ink/70">
-          <span className="font-semibold text-ink">
-            {taken}/{children.length}
-          </span>{" "}
-          marked
-        </p>
         <button type="button" onClick={() => void loadJoins()} className="rounded-lg border border-gold-light bg-white px-3 py-1.5 text-sm font-medium text-ink/80 hover:bg-cream">
           Check who has joined
         </button>
@@ -247,6 +273,24 @@ export function Register({ lessonId, classId, onProgress }: { lessonId: string; 
             Mark {taken === 0 ? "everyone" : "everyone else"} present
           </button>
         )}
+        <Select
+          value={whole}
+          aria-label="Change the whole class"
+          onChange={async (e) => {
+            const v = e.target.value as Status | "";
+            setWhole("");
+            if (!v || !children) return;
+            if (await askConfirm(`Mark all ${children.length} pupils ${STATUS_LABEL[v].toLowerCase()}?`, { confirmLabel: "Change the whole class" })) void save(children.map((c) => ({ childId: c.id, status: v })));
+          }}
+          className="rounded-lg border border-gold-light bg-white px-2 py-1.5 text-sm text-ink/80"
+        >
+          <option value="">Change the whole class to…</option>
+          {STATUSES.map((st) => (
+            <option key={st.value} value={st.value}>
+              {st.full}
+            </option>
+          ))}
+        </Select>
       </div>
       <details className="border-b border-gold-light/70 px-5 py-2 text-sm">
         <summary className="cursor-pointer font-medium text-forest-700">What the codes mean</summary>
@@ -277,11 +321,40 @@ export function Register({ lessonId, classId, onProgress }: { lessonId: string; 
           const didJoin = Boolean(joined[c.id]);
           const shown: Status | null = current || (didJoin || !anyJoins ? "present" : null);
           return (
-            <li key={c.id} className="flex flex-wrap items-center gap-3 px-5 py-2.5">
+            <li
+              key={c.id}
+              tabIndex={0}
+              data-register-row
+              aria-label={`${c.name}: ${current ? STATUS_LABEL[current] : "not marked"}. Keys P, L, A, U and T mark; arrow keys move.`}
+              onKeyDown={(e) => {
+                if (e.target !== e.currentTarget) return;
+                const rows = Array.from(document.querySelectorAll<HTMLElement>("[data-register-row]"));
+                const at = rows.indexOf(e.currentTarget);
+                const key = e.key.toLowerCase();
+                const mark: Record<string, Status> = { p: "present", l: "late", a: "excused", u: "absent", t: "technical" };
+                if (mark[key]) {
+                  e.preventDefault();
+                  void save([{ childId: c.id, status: mark[key] }]);
+                  rows[at + 1]?.focus();
+                } else if (e.key === "ArrowDown") {
+                  e.preventDefault();
+                  rows[at + 1]?.focus();
+                } else if (e.key === "ArrowUp") {
+                  e.preventDefault();
+                  rows[at - 1]?.focus();
+                }
+              }}
+              className="flex flex-wrap items-center gap-3 px-5 py-2.5 focus-visible:bg-cream/70 focus-visible:outline-none"
+            >
               {/* The name keeps at least 12rem; in a narrow panel the mark buttons wrap onto the
                   next line instead of squeezing the name to a few letters (owner, 11 Nov 2026). */}
               <span className="min-w-[12rem] flex-[1_1_12rem] break-words text-sm font-medium text-ink">
                 <PupilLink id={c.id} name={c.name} />
+                {rates[c.id] !== undefined && (
+                  <span className={`ml-2 text-xs font-normal tabular-nums ${rates[c.id] < 90 ? "text-amber-800" : "text-ink/60"}`} title="Attendance over the last 60 days">
+                    {rates[c.id]}%
+                  </span>
+                )}
                 <SupportBadge plan={plans?.[c.id]} />
                 {didJoin ? <span className="ml-2 text-xs font-normal text-green-800">Joined {timeOf(joined[c.id])}</span> : anyJoins ? <span className="ml-2 text-xs font-normal text-amber-800">Has not joined</span> : null}
                 {teams[c.id] && (
@@ -375,6 +448,25 @@ export function Register({ lessonId, classId, onProgress }: { lessonId: string; 
           );
         })}
       </ul>
+      <div className="sticky bottom-0 z-10 flex flex-wrap items-center gap-x-5 gap-y-1 border-t border-gold-light bg-[var(--portal-surface)] px-5 py-3 text-sm" aria-live="polite" data-guide="register-footer">
+        <span>
+          <span className="font-semibold tabular-nums text-ink">
+            {taken} of {children.length}
+          </span>{" "}
+          marked
+        </span>
+        {(["present", "late", "excused", "absent", "technical"] as Status[]).map((k) => {
+          const n = children.filter((c) => marks[c.id] === k || (k === "present" && marks[c.id] === "not_engaged")).length;
+          return (
+            <span key={k} className="text-ink/70">
+              {STATUS_LABEL[k]} <span className="font-semibold tabular-nums text-ink">{n}</span>
+            </span>
+          );
+        })}
+        <span className="t-meta ml-auto">
+          {Object.values(saving).includes("saving") ? "Saving…" : Object.values(saving).includes("error") ? <span className="text-red-700">Some marks were not saved</span> : lastSaved ? `All saved, last at ${ukTimeOf(lastSaved)}` : "Each mark saves as you choose it"}
+        </span>
+      </div>
     </div>
   );
 }
