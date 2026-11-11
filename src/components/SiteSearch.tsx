@@ -46,14 +46,11 @@ export function SiteSearchButton({ compact = false }: { compact?: boolean }) {
       type="button"
       onClick={openSiteSearch}
       aria-label="Search the site"
-      className={`group flex items-center gap-2 rounded-full border border-gold-light/70 bg-white/70 text-sm text-ink/70 transition-colors hover:border-gold-500 hover:text-ink ${compact ? "h-10 w-10 justify-center" : "h-9 px-3"}`}
+      title={mac ? "Search the site (⌘K)" : "Search the site (Ctrl K)"}
+      // Icon only, also in the header: the bar must fit inside the page width, in line with the content below it.
+      className={`group flex items-center gap-2 rounded-full border border-gold-light/70 bg-white/70 text-sm text-ink/70 transition-colors hover:border-gold-500 hover:text-ink ${compact ? "h-10 w-10 justify-center" : "h-9 w-9 justify-center"}`}
     >
       <Icon name="search" size="sm" className="h-4 w-4 text-gold-700" />
-      {/* The word and shortcut only on very wide screens, so the header never runs off the edge at laptop widths. */}
-      {!compact && <span className="hidden 2xl:inline">Search</span>}
-      {!compact && (
-        <kbd aria-hidden="true" className="hidden whitespace-nowrap rounded border border-gold-light/70 bg-cream px-1.5 font-mono text-[0.65rem] text-ink/70 2xl:inline">{mac ? "⌘K" : "Ctrl K"}</kbd>
-      )}
     </button>
   );
 }
