@@ -123,7 +123,7 @@ export function classPageEntry(a: Area): GuideEntry {
       "The class's sections are listed down the left (on a phone, choose one from Section); open Attendance to take this class's register.",
       "Open Settings to paste the class's Teams meeting link once, then Save link.",
     ],
-    tips: ["Work is only set inside a class, or from Set work on Today, where you choose the class.", "Insights lists pupils who may need a word."],
+    tips: ["Work is only set inside a class, or from Set work on Today, where you choose the class.", "Insights shows the class's four figures and the pupils who may need a word: press a name for their record, or a figure for the page behind it."],
     privacy: "Pupils and their parents see the Stream, Classwork, Lessons and their own Grades. Attendance, Insights and Settings are staff only.",
     related: [`/${a}/classes`, `/${a}/homework`, `/${a}/lessons/view`],
     showMe: [

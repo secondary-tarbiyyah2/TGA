@@ -335,7 +335,7 @@ export function ClassPage({ viewer }: { viewer: ClassViewer }) {
           </Panel>
         ))}
 
-      {tab === "insights" && isStaff && <ClassInsightsTab classId={cls.id} classHref={classHref} />}
+      {tab === "insights" && isStaff && <ClassInsightsTab classId={cls.id} classHref={classHref} area={area} />}
 
       {tab === "settings" && isStaff && <ClassSettingsTab classId={cls.id} className={cls.name} subject={cls.subject} canRename={viewer.kind === "staff"} />}
       </div>
