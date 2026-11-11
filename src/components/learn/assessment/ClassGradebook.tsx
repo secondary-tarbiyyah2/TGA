@@ -1,11 +1,13 @@
 "use client";
 
-import { useCallback, useEffect, useMemo, useState } from "react";
+import { useCallback, useEffect, useMemo, useState, type ReactNode } from "react";
 import { getSupabaseClient } from "@/lib/supabase/client";
 import { ui } from "@/components/learn/ui";
 import { accessList, useSupportPlans } from "@/lib/learn/send";
 import { SupportAtAGlance } from "@/components/learn/send/SupportAtAGlance";
 import { Select } from "@/components/learn/Select";
+import { FocusView } from "@/components/learn/FocusView";
+import { askConfirm } from "@/components/learn/kit";
 
 export type GbPupil = { id: string; name: string };
 type Type = { id: string; name: string };
@@ -29,7 +31,6 @@ type Column = { key: string; title: string; date: string; typeId: string; scheme
 const STATUS_SHORT: Record<Exclude<Status, "marked">, string> = { absent: "Absent", exempt: "Exempt", not_submitted: "Not handed in" };
 const colKey = (r: { title: string; date: string; assessment_type_id: string }) => `${r.title}\u0000${r.date}\u0000${r.assessment_type_id}`;
 const input = "rounded-lg border border-gold-light bg-white px-3 py-2 text-sm text-ink focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-teal-700";
-const btn = ui.btnSecondary;
 const btnPrimary = ui.btnPrimary;
 
 type Entry = { score: string; status: Status | "" };
@@ -236,24 +237,54 @@ export function ClassGradebook({
     );
   };
 
+  // Adding an assessment (or changing a column's results) is a big task, so it opens in its own
+  // full-screen view with a Back button over the gradebook, never as a form that pushes the page
+  // (owner, 11 Nov 2026, feedback 2 item 10). Back returns to the gradebook exactly as it was.
+  let editor: ReactNode = null;
   if (editing) {
     const set = (patch: Partial<typeof editing>) => setEditing({ ...editing, ...patch });
     const setEntry = (id: string, patch: Partial<Entry>) => setEditing({ ...editing, entries: { ...editing.entries, [id]: { ...editing.entries[id], ...patch } } });
-    return (
-      <div className="space-y-4 rounded-2xl border border-gold-light bg-white p-5">
-        <div className="flex flex-wrap items-center justify-between gap-2">
-          <h2 className="font-serif text-h3 font-semibold text-ink">{editing.key ? `Results: ${editing.title}` : "Add an assessment"}</h2>
-          <button type="button" className={btn} onClick={() => setEditing(null)}>
-            Cancel
+    const entered = Object.values(editing.entries).filter((v) => v.score.trim() || v.status).length;
+    const dirty = !editing.key ? editing.title.trim() !== "" || entered > 0 : true;
+    editor = (
+      <FocusView
+        title={editing.key ? `Results: ${editing.title}` : "Add an assessment"}
+        eyebrow="Gradebook"
+        backLabel="Gradebook"
+        width="reading"
+        dataGuide="gradebook-assessment"
+        onClose={() => {
+          setEditing(null);
+          setMsg(null);
+        }}
+        beforeClose={() => (dirty && !busy ? askConfirm("Leave without saving these results?", { confirmLabel: "Leave", cancelLabel: "Keep editing" }) : true)}
+        actions={
+          <button type="button" className={btnPrimary} disabled={busy} onClick={save}>
+            {busy ? "Saving…" : "Save results"}
           </button>
-        </div>
+        }
+        footer={
+          <>
+            <span className="text-xs text-ink/65">
+              {entered} of {pupils?.length ?? 0} entered. Leave a pupil blank if their work isn&apos;t marked yet. A real 0 is a score.
+            </span>
+            <span className="flex-1" />
+            {editing.key && (
+              <button type="button" className="text-sm font-medium text-red-700 hover:underline" disabled={busy} onClick={removeColumn}>
+                Delete this assessment
+              </button>
+            )}
+          </>
+        }
+      >
+      <div className="space-y-5">
         {msg && (
           <p role={msg.error ? "alert" : "status"} className={`rounded-lg px-3 py-2 text-sm ${msg.error ? "bg-red-50 text-red-800" : "bg-teal-100 text-teal-900"}`}>
             {msg.text}
           </p>
         )}
-        <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-5">
-          <label className="text-sm font-medium text-ink lg:col-span-2">
+        <section aria-label="About the assessment" className="grid gap-3 rounded-xl border border-gold-light bg-white p-4 sm:grid-cols-3">
+          <label className="text-sm font-medium text-ink sm:col-span-3">
             Title
             <input className={`${input} mt-1 block w-full`} value={editing.title} onChange={(e) => set({ title: e.target.value })} placeholder="e.g. Fractions end-of-unit test" />
           </label>
@@ -277,7 +308,7 @@ export function ClassGradebook({
             <input type="text" min={1} inputMode="decimal" className={`${input} mt-1 block w-full`} value={editing.max} onChange={(e) => set({ max: e.target.value })} placeholder="e.g. 40" />
           </label>
           {schemes.length > 0 && (
-            <label className="text-sm font-medium text-ink lg:col-span-2">
+            <label className="text-sm font-medium text-ink sm:col-span-3">
               Mark scheme (turns scores into grades)
               <Select className={`${input} mt-1 block w-full`} value={editing.schemeId} onChange={(e) => set({ schemeId: e.target.value })}>
                 <option value="">None, just scores</option>
@@ -289,10 +320,13 @@ export function ClassGradebook({
               </Select>
             </label>
           )}
-        </div>
+        </section>
 
         <SupportAtAGlance pupils={pupils || []} plans={plans} mode="assessment" />
 
+        <section aria-label="Results" className="rounded-xl border border-gold-light bg-white">
+        <h3 className="t-section border-b border-gold-light px-4 py-3">Results for each pupil</h3>
+        <div className="overflow-x-auto px-4">
         <table className="w-full text-sm">
           <caption className="sr-only">Results for each pupil</caption>
           <thead>
@@ -346,19 +380,10 @@ export function ClassGradebook({
           </tbody>
         </table>
 
-        <div className="flex flex-wrap items-center gap-2">
-          <button type="button" className={btnPrimary} disabled={busy} onClick={save}>
-            {busy ? "Saving…" : "Save results"}
-          </button>
-          <span className="text-xs text-ink/65">Leave a pupil blank if their work isn&apos;t marked yet. A real 0 is a score.</span>
-          <span className="flex-1" />
-          {editing.key && (
-            <button type="button" className="text-sm font-medium text-red-700 hover:underline" disabled={busy} onClick={removeColumn}>
-              Delete this assessment
-            </button>
-          )}
         </div>
+        </section>
       </div>
+      </FocusView>
     );
   }
 
@@ -370,7 +395,7 @@ export function ClassGradebook({
           <p className="text-sm text-ink/65">Pupils down the side, assessments across. Choose a heading to enter or change its results; choose a pupil for their Qur&apos;an progress and weekly note.</p>
         </div>
         <button type="button" className={btnPrimary} onClick={openNew} disabled={!pupils?.length || !types.length}>
-          + Add assessment
+          Add an assessment
         </button>
       </div>
       {msg && (
@@ -430,9 +455,10 @@ export function ClassGradebook({
               })}
             </tbody>
           </table>
-          {columns.length === 0 && <p className="border-t border-gold-light/50 p-4 text-center text-sm text-ink/65">No assessments yet. Press “Add assessment” to enter the first set of results.</p>}
+          {columns.length === 0 && <p className="border-t border-gold-light/50 p-4 text-center text-sm text-ink/65">No assessments yet. Press “Add an assessment” to enter the first set of results.</p>}
         </div>
       )}
+      {editor}
     </div>
   );
 }
