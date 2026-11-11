@@ -290,7 +290,8 @@ function DashboardContent() {
         <CoverToday />
       </div>
 
-      <ActionCentreWidget role="admin" extra={lessonsToApprove} />
+      {/* Registers are in Today's lessons beside it, so they are not repeated here. */}
+      <ActionCentreWidget role="admin" extra={lessonsToApprove} skipAreas={["Registers"]} />
 
       <CurriculumHealth figures={curriculum} />
 
