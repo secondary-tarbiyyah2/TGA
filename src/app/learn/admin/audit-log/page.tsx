@@ -7,7 +7,7 @@ import { DigitalReviews } from "@/components/learn/compliance/DigitalReviews";
 import { AccessReview, SignInReview } from "@/components/learn/compliance/AccessReview";
 import { ui } from "@/components/learn/ui";
 
-// Headteacher, Admin and the Digital Lead (migration 0218). Everything here is
+// Headteacher, Admin and the Digital Lead (migration 0220). Everything here is
 // read only apart from recording a review; the database checks each call.
 export default function AuditLogPage() {
   return (

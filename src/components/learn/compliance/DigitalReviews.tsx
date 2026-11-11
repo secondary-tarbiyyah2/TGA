@@ -32,7 +32,7 @@ const EMPTY = { review_date: "", kind: "monthly" as ReviewKind, checked: "", fin
 /**
  * The record of reviews that policy 02 asks the Digital Lead to keep: each
  * review's date, kind, what was checked, what was found and what was done.
- * Headteacher, Admin and Digital Lead read and add (migration 0218); nobody
+ * Headteacher, Admin and Digital Lead read and add (migration 0220); nobody
  * edits or deletes one, and adding one is written to the audit log.
  */
 export function DigitalReviews() {

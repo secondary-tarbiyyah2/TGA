@@ -1,4 +1,4 @@
--- Run via `supabase test db`. Covers Tafweed T52 (migration 0218):
+-- Run via `supabase test db`. Covers Tafweed T52 (migration 0220):
 --  * the Headteacher can give a member of staff the Digital Lead role, and take it away;
 --  * a Digital Lead reads the audit log through the masked viewer, its
 --    filters, the accounts and sign-in review, and the record of reviews;

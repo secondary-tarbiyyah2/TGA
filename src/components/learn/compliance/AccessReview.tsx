@@ -33,7 +33,7 @@ const daysSince = (iso: string | null) => (iso ? Math.floor((Date.now() - new Da
 const roleLabel = (r: string) => learnRoleLabel(r as LearnRole) || r;
 
 /**
- * Accounts and access, read only (migration 0218): every staff account with
+ * Accounts and access, read only (migration 0220): every staff account with
  * its roles, extra permissions and last sign-in; family and pupil accounts as
  * totals only; and sign-in attempts per email address. For the Digital Lead's
  * monthly review, and the Headteacher and Admin. Nothing here changes anything:

@@ -1,6 +1,6 @@
 // Portal guide for a Digital Lead-only account (no office role): the Audit
 // log page, which holds the record of reviews, the audit log itself, accounts
-// and access, and sign-in attempts (migration 0218). Policy 02 sets the job:
+// and access, and sign-in attempts (migration 0220). Policy 02 sets the job:
 // review the audit log monthly and on any concern, check accounts and access,
 // check settings each term, and keep a record of each review.
 import type { GuideEntry } from "../types";
