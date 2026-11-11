@@ -7,6 +7,7 @@ import { getSupabaseClient } from "@/lib/supabase/client";
 import { fetchAllClasses, fetchChildClasses, fetchTeacherClasses, readRecentPages, type ClassSummary } from "@/lib/learn/classes";
 import { isGroupedArea, navPageFor, visiblePages, type PortalArea } from "@/lib/learn/nav";
 import { togglePin, usePortalPrefs } from "@/lib/learn/portalPrefs";
+import { useFeatures } from "@/lib/learn/features";
 import { startTour } from "@/lib/learn/tours";
 import { openGuidePanel } from "@/components/learn/guide/guideStore";
 import { Icon, type IconName } from "@/components/learn/Icon";
@@ -247,11 +248,12 @@ export function CommandPalette({ area, roles }: { area: PortalArea; roles: strin
     };
   }, [query, open, canSearchLessons, canSearchPeople]);
 
+  const features = useFeatures();
   const items = useMemo((): Item[] => {
     const q = query.trim().toLowerCase();
     const words = q.split(/\s+/).filter((w) => w && !FILLER.has(w));
     // Every page, hub tabs and their sub-pages included: "Absences" shows with its category.
-    const pageList = visiblePages(area, roles);
+    const pageList = visiblePages(area, roles, features);
     const pages: Item[] = pageList.map((p) => ({ id: `page:${p.href}`, group: "Pages", label: p.label, hint: p.parent, href: p.href, keywords: `${p.hint || ""} ${p.keywords || ""}`, icon: p.icon }));
     const canOpen = (href: string) => !href.startsWith(`/${area}/`) || pageList.some((p) => p.href === href);
     const grouped = isGroupedArea(area);
@@ -296,7 +298,7 @@ export function CommandPalette({ area, roles }: { area: PortalArea; roles: strin
     const named = pages.filter((i) => matches(`${i.label} ${i.hint || ""}`, terms));
     const described = pages.filter((i) => !named.includes(i) && match(i));
     return [...actions.filter(match).slice(0, 4), ...[...named, ...described].slice(0, 8), ...cls.filter(match).slice(0, 6), ...lessonItems, ...pupilItems, ...ppl];
-  }, [query, area, roles, classes, people, recent, lessonHits, pupilHits, pathname, prefs]);
+  }, [query, area, roles, classes, people, recent, lessonHits, pupilHits, pathname, prefs, features]);
 
   useEffect(() => {
     // eslint-disable-next-line react-hooks/set-state-in-effect -- reset the highlighted result when the search text changes
