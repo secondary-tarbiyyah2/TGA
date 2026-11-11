@@ -82,7 +82,7 @@ export async function disablePush(): Promise<PushState> {
 
 /** Asks push-notify to tell the others in a conversation about a message this user just sent. Never throws. */
 export async function notifyMessage(messageId: string): Promise<void> {
-  await callPush({ kind: "message", id: messageId });
+  await Promise.all([callPush({ kind: "message", id: messageId }), callFunction("message-email", { kind: "message", id: messageId })]);
 }
 
 /** Sends a test notification to this user's own devices. */
@@ -92,10 +92,15 @@ export async function sendTestPush(): Promise<boolean> {
 }
 
 async function callPush(body: Record<string, unknown>): Promise<{ ok?: boolean; sent?: number } | null> {
+  if (!VAPID_PUBLIC_KEY) return null;
+  return callFunction("push-notify", body);
+}
+
+/** Calls an Edge Function as the signed-in user (push-notify; message-email, 0205, which emails the others in a conversation by their own settings). */
+async function callFunction(name: string, body: Record<string, unknown>): Promise<{ ok?: boolean; sent?: number } | null> {
   try {
-    if (!VAPID_PUBLIC_KEY) return null;
     const supabase = getSupabaseClient();
-    const url = getEdgeFunctionUrl("push-notify");
+    const url = getEdgeFunctionUrl(name);
     const anonKey = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY;
     if (!supabase || !url || !anonKey) return null;
     const { data } = await supabase.auth.getSession();
