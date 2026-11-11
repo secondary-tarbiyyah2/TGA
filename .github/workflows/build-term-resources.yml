@@ -55,7 +55,7 @@ jobs:
         run: |
           npm ci
           npm install --no-save --no-audit --no-fund docx@9.5.1 playwright@1.63.0 world-atlas@2.0.2 topojson-client@3.1.0
-          npx playwright install --with-deps chromium
+          npx playwright install --with-deps chromium || npx playwright install chromium
 
       - name: Install fonts (Carlito, as on the slides and pupil PDFs)
         run: sudo apt-get install -y --no-install-recommends fonts-crosextra-carlito fonts-noto-core || true

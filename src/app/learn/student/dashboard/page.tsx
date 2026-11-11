@@ -25,6 +25,7 @@ import { HomeworkDueWidget } from "@/components/learn/HomeworkDueWidget";
 import { ReportConcernLink } from "@/components/learn/ReportConcernLink";
 import { getSupabaseClient } from "@/lib/supabase/client";
 import type { TimetableSlot } from "@/lib/learn/timetable";
+import { useFeature } from "@/lib/learn/features";
 
 // Younger year groups (Reception - Year 3) get a bigger, simpler view, 
 // same data and RLS as every other student account (see the Phase A
@@ -85,13 +86,15 @@ function StudentContent() {
 
   const simplified = isYoungerYearGroup(yearGroupName);
   const badges = useNavBadges("student");
+  const revisionOn = useFeature("revision_packs");
   // Today's lessons, in order (weekday 1 is Monday, as the timetable stores it).
   const today = ((new Date().getDay() + 6) % 7) + 1;
   const nowHm = new Date().toTimeString().slice(0, 5);
   const todays = (slots || []).filter((s) => Number(s.weekday) === today).sort((a, b) => a.start_time.localeCompare(b.start_time));
   const doors: { href: string; label: string; hint: string; icon: IconName }[] = [
     { href: "/student/todo", label: "Homework", hint: badges.todo ? `${badges.todo} to do` : "All done", icon: "listChecks" },
-    { href: "/student/revision", label: "Revise", hint: "Quizzes and practice", icon: "bookOpen" },
+    // Revision packs switched off (Settings, School features): the Qur'an door takes its place.
+    revisionOn ? { href: "/student/revision", label: "Revise", hint: "Quizzes and practice", icon: "bookOpen" } : { href: "/student/quran", label: "Qur'an", hint: "Recitation and memorisation", icon: "bookMarked" },
     { href: "/student/reports", label: "My progress", hint: "Reports and grades", icon: "chartColumnIncreasing" },
     { href: "/student/classes", label: "My classes", hint: "Work and lessons", icon: "layoutGrid" },
   ];
