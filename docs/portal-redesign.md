@@ -402,6 +402,8 @@ etc. Needs to be done in a unique way." The short tour above stays as the doorwa
   from the page's code, a menu page is renamed in one place only, or text breaks house style.
 
 ## Log
+- 2026-11-11: Pupil profile with sections down the left for teachers and the head (feedback 2, item 8): classwork
+  and grades, Qur'an and documents added; `SectionNav` (`src/components/learn/SectionNav.tsx`) for any record's sections.
 - 2026-11-11: Registers like SIMS and pupil links (feedback 2, items 8, 9, 13 part): a list of sessions with filters,
   each register on its own page with notes; `PupilLink` opens a pupil's full record; teachers get `/teach/pupils?id=`;
   Qur'an and Qaidah moved under My teaching.
