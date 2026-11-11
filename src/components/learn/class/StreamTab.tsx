@@ -264,7 +264,7 @@ export function StreamTab({ classId, viewer, area, classHref }: { classId: strin
         {items === null && <div className="h-28 motion-safe:animate-pulse rounded-2xl bg-white" />}
         {items !== null && shown.length === 0 && (
           <p className="rounded-2xl border border-gold-light bg-white px-5 py-8 text-center text-sm text-ink/65">
-            {isStaff ? "Nothing here yet. Announce something to your class, or add classwork." : "Nothing has been posted to this class yet."}
+            {isStaff ? "Nothing here yet. Add a post for your class, or set some classwork." : "Nothing has been posted to this class yet."}
           </p>
         )}
         {shown.map((item) => {

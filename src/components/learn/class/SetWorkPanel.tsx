@@ -14,6 +14,9 @@ export function announceClassworkChanged(classId: string | null) {
   if (typeof window !== "undefined") window.dispatchEvent(new CustomEvent(CLASSWORK_CHANGED, { detail: { classId } }));
 }
 
+/** Asks an open Classwork section to show its "Create" cards (the class header's "Set work"). */
+export const CLASSWORK_CREATE = "tga:classwork-create";
+
 /**
  * Set (or edit) an assignment or quiz in a panel over the page you are on, never on a page of
  * its own (owner, 11 Nov 2026; docs/portal-structure.md, pattern 3). It is the class's own
