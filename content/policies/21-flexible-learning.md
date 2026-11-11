@@ -7,7 +7,7 @@ appliesTo: All pupils, parents, staff, trustees and volunteers of Tarbiyyah Glob
 owner: Deputy Headteacher (Curriculum)
 approvedBy: Ustadh Abu Zayn Haneef Sandhar, Headteacher
 agreedWith: The Chair of Trustees, Tarbiyyah Education Trust
-dateOfIssue: 1 September 2026 (version 1.1, updated 28 October 2026 for the January 2027 launch)
+dateOfIssue: 1 September 2026 (version 1.2)
 nextReview: 31 August 2027
 basis: New policy for online provision (planned as "Flexible Timetable Options" during the TGA launch planning)
 readAlongside: Curriculum Policy; Live Lesson Protocols; Attendance, Punctuality and Children Missing Education Policy; Homework and Independent Study Policy; SEND and Inclusion Policy; Fees Policy
@@ -16,7 +16,7 @@ availability: Published on the Academy website and Parent Portal. Available in l
 
 ## 1. Purpose
 
-Our pupils live in many countries. For some families, the standard UK timetable fits well; for others, the time difference or family circumstances make it difficult. This policy explains the learning options available, who is eligible, and how quality and safeguarding are maintained.
+Our pupils live in many countries. For some families, the standard UK timetable fits well; for others, the time difference or family circumstances make it difficult. This policy explains the learning options the Academy may be able to offer, who is eligible, and how quality and safeguarding are maintained.
 
 ## 2. Learning Options
 
@@ -30,13 +30,15 @@ Our pupils live in many countries. For some families, the standard UK timetable 
 
 The standard live timetable remains our expectation wherever it is reasonable, because live teaching gives the strongest learning and the best safeguarding oversight.
 
+**Subject to availability.** Apart from the standard live timetable, every option above is offered subject to availability: it depends on staffing, the number of pupils in the class and time zone, and whether the option will give the pupil a good education. The Academy cannot promise that a particular option will be available for every year group or every term, and will tell families honestly, before they accept a place, what can be offered. A temporary adjusted timetable for a pupil with medical needs, SEND or a disability is different: it is considered as a reasonable adjustment, not as a matter of availability.
+
 ## 3. How to Apply
 
-Families request a Flexible Learning option at admission or at any time through the Parent Portal. The Deputy Headteacher considers the request with the form tutor and, where relevant, the SENCO. A written Flexible Learning Plan sets out: which lessons are live and which are recorded; expected weekly engagement; how work is submitted; live check-in times; and the review date.
+Families ask about a Flexible Learning option at admission, or at any time by contacting the Academy office or through Messages in the Parent Portal. The Deputy Headteacher considers the request with the form tutor and, where relevant, the SENCO. A written Flexible Learning Plan sets out: which lessons are live and which are recorded; expected weekly engagement; how work is submitted; live check-in times; and the review date.
 
 ## 4. Safeguarding and Attendance
 
-Every pupil, whatever their option, has at least one live, camera-on contact with a member of staff every school day, normally form time or a tutor check-in. Engagement with recorded lessons and set work is tracked, and non-engagement is followed up under the Attendance, Punctuality and Children Missing Education Policy in the same way as absence.
+Every pupil, whatever their option, has live, camera-on contact with a member of staff every school day, normally form time, a live lesson or a tutor check-in. Where the Academy cannot staff this at a reasonable time for the pupil's time zone, the option is not offered. Engagement with recorded lessons and set work is tracked, and non-engagement is followed up under the Attendance, Punctuality and Children Missing Education Policy in the same way as absence.
 
 ## 5. Recorded Lessons
 

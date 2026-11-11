@@ -7,9 +7,9 @@ appliesTo: All pupils, parents, staff, trustees and volunteers of Tarbiyyah Glob
 owner: Examinations Officer
 approvedBy: Ustadh Abu Zayn Haneef Sandhar, Headteacher
 agreedWith: The Chair of Trustees, Tarbiyyah Education Trust
-dateOfIssue: 1 September 2026 (version 1.1, updated 28 October 2026 for the January 2027 launch)
+dateOfIssue: 1 September 2026 (version 1.2)
 nextReview: 31 August 2027
-basis: New policy for online provision (draws on the Tarbiyyah Secondary examination practice and the TGA Fees Policy)
+basis: New policy for online provision
 readAlongside: Assessment Policy; Academic Integrity and Secure Assessment Policy; Fees Policy; SEND and Inclusion Policy; Careers Education and Guidance Policy
 availability: Published on the Academy website and Parent Portal. Available in large print or another accessible format on request.
 ---
@@ -56,7 +56,7 @@ Pupils with SEND, medical conditions or temporary injuries may be eligible for a
 
 ## 7. Mock Examinations
 
-Mock examinations are held in Year 11 (and at the end of Year 10) under secure conditions, using Safe Exam Browser and live invigilation, or with paper-based submission under timed, camera-on conditions. Results inform predicted grades and entry decisions.
+Mock examinations are held in Year 11 (and at the end of Year 10) under secure conditions, with live invigilation and cameras on, or with paper-based submission under timed, camera-on conditions. Results inform predicted grades and entry decisions.
 
 ## 8. Examinations in Other Countries
 

@@ -1,6 +1,6 @@
 import { test } from "node:test";
 import assert from "node:assert/strict";
-import { renderSafeMarkdown, safeUrl } from "./safeMarkdown.ts";
+import { markArabic, renderSafeMarkdown, safeUrl } from "./safeMarkdown.ts";
 
 test("ordinary policy markdown renders as before", () => {
   const html = renderSafeMarkdown("## 1. Intent\n\nSee [the FAQ](/faqs/), [section](#scope), [email](mailto:a@b.org) and **bold**.\n\n| a | b |\n|---|---|\n| 1 | 2 |");
@@ -22,4 +22,11 @@ test("unsafe link targets are dropped", () => {
   assert.doesNotMatch(html, /href=|src=/);
   assert.equal(safeUrl("//evil.example"), null);
   assert.equal(safeUrl("https://example.org/x"), "https://example.org/x");
+});
+
+test("Arabic in a sentence is marked as Arabic, right to left", () => {
+  const html = renderSafeMarkdown("The Prophet صلى الله عليه وسلم (peace and blessings be upon him) said: \"Be kind.\"");
+  assert.match(html, /The Prophet <span lang="ar" dir="rtl">صلى الله عليه وسلم<\/span> \(peace/);
+  assert.equal(markArabic('<a title="ﷺ">x</a>'), '<a title="ﷺ">x</a>');
+  assert.equal(markArabic("<p>ﷺ</p>"), '<p><span lang="ar" dir="rtl">ﷺ</span></p>');
 });
