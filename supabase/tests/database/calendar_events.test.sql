@@ -1,4 +1,4 @@
--- Run via `supabase test db`. Covers 0206: calendar events are seen only by
+-- Run via `supabase test db`. Covers 0207: calendar events are seen only by
 -- their audience, and only staff add them (teachers: staff-only entries and
 -- their own classes; the office: anything).
 begin;

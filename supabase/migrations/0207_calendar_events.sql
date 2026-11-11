@@ -1,4 +1,4 @@
--- 0206: calendar events (owner feedback 11 Nov 2026, item 4: "the calendar
+-- 0207: calendar events (owner feedback 11 Nov 2026, item 4: "the calendar
 -- page needs improvement in terms of organisation and also categorisation").
 --
 -- Until now the calendar could only show what other tables held (lessons,

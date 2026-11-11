@@ -24,7 +24,7 @@ export const CATEGORIES: { key: Category; label: string; short: string; colour: 
 ];
 export const CAT: Record<Category, (typeof CATEGORIES)[number]> = Object.fromEntries(CATEGORIES.map((c) => [c.key, c])) as Record<Category, (typeof CATEGORIES)[number]>;
 
-/** calendar_events.category (0206) to the calendar's category. */
+/** calendar_events.category (0207) to the calendar's category. */
 export const EVENT_CATEGORY: Record<string, Category> = {
   school_event: "event",
   meeting: "meeting",

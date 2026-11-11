@@ -12,7 +12,7 @@ import type { EventRow } from "./useCalendarData";
 type Audience = EventRow["audience"];
 
 /**
- * Add or change a calendar entry (0206) in one dialog that fits the screen:
+ * Add or change a calendar entry (0207) in one dialog that fits the screen:
  * what, which category, when (a day or several, all day or a time), who sees
  * it, and an optional place or link and note. The office can show an entry to
  * everyone or families; other staff add staff-only entries and entries for the

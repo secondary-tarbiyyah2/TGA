@@ -34,7 +34,7 @@ Brief: `docs/owner-briefs/2026-11-11-feedback-2.md`. Branches `claude/fb2-msg-*`
    animations and the floating-shadow rule.
 
 **Calendar (item 4).**
-4. [x] PR "Calendar: categories, colours, filters, Month, Week and Agenda, Add to calendar" (migration 0206
+4. [x] PR "Calendar: categories, colours, filters, Month, Week and Agenda, Add to calendar" (migration 0207
    `calendar_events`, RLS by audience: everyone, staff, families, a class; the office adds anything, other staff
    staff-only entries and their own classes; admissions entries staff only). Eight categories, each a `--cal-*` token
    in `globals.css`: lessons, assessments, homework and deadlines, school events, holidays and term dates, Islamic

@@ -13,12 +13,12 @@ import { EVENT_CATEGORY, type Category } from "./calendarUtils";
 //
 // Lesson "room": the school is online, so the room is the virtual session
 // name/link. Entries staff add (school events, meetings, deadlines and so on)
-// come from calendar_events (0206); parents' evenings and open evenings from
+// come from calendar_events (0207); parents' evenings and open evenings from
 // their own tables. Term dates and Islamic dates are added by CalendarView.
 
 export type ItemKind = "lesson" | "homework" | "assessment" | "event" | "term" | "islamic";
 
-/** A calendar_events row (0206). */
+/** A calendar_events row (0207). */
 export type EventRow = {
   id: string;
   title: string;
@@ -181,7 +181,7 @@ export function useCalendarData(scope: CalendarScope | null, from: string, to: s
       const assess = await fetchAll<{ id: string; class_id: string; child_id: string; title: string; date: string; entered_by: string | null }>((a, b) =>
         supabase.from("assessments").select("id, class_id, child_id, title, date, entered_by").gte("date", from).lte("date", to).order("date").range(a, b),
       );
-      // Entries staff added (0206). Before the migration the table is missing: show none.
+      // Entries staff added (0207). Before the migration the table is missing: show none.
       const evRes = await supabase
         .from("calendar_events")
         .select("id, title, category, starts_on, ends_on, start_time, end_time, audience, class_id, location, link_url, notes, created_by")
