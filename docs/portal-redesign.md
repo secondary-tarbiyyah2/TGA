@@ -283,6 +283,9 @@ etc. Needs to be done in a unique way." The short tour above stays as the doorwa
   the card says so and carries on.
 - **Progress** per person in `portal_prefs.guide_progress` (migration 0203): pages learned, Show me finished, the last
   page read and how far each journey got, with a browser copy.
+- **Portal guide home** (`/guide`): progress, Carry on, the journey map (chapters and ticks), the A to Z, and
+  **A day in the life** journeys (`journeys.ts`): each step opens the real page and outlines the real element;
+  skippable, stoppable and resumable.
 - **Guard:** `src/lib/learn/guide.test.ts` fails if a page a role can reach has no entry, a Show me target is missing
   from the page's code, a menu page is renamed in one place only, or text breaks house style.
 
