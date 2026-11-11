@@ -30,7 +30,14 @@ Batches and status:
    assessments: comment bank (search, 8 a page, remove) beside assessment types (duplicates refused). Grading:
    Subject, then Scale, then Grade boundaries in three columns; boundaries as a table (grade, from, up to) with
    checks (label needed, 0 to 100, no duplicate grade or starting mark) and Remove. Same tables and RLS.
-2. [ ] Directories: pupils, staff, classes, people (families). 3. [ ] Records. 4. [ ] Other settings pages
+2. [x] Directories: `PageHeader` gained `figures` (a compact line of numbers, each optionally a link or a
+   filter). Classes (head and teacher) use the compact header, a "More" menu, and open as a sortable table
+   (Class, Subject, Year group, Pupils, Open; `ClassGrid defaultView="list"`; Cards still one click away and
+   the default for families and pupils). Pupils: compact header (the old figures repeated the filter chips, so
+   they went); the selected chip's count is readable again. People: Staff / Families switch beside the search,
+   role chips under it, one bordered list with shared `Pagination` (was a card around everything with Show
+   more). Staff profiles already list and detail; unchanged.
+3. [ ] Records. 4. [ ] Other settings pages
    (School settings, Account, Academic setup, Admissions and Recruitment settings). 5. [ ] Workflows (Reports'
    own sections as stages, Admissions, Entry assessments, Timetable). 6. [ ] Workspaces and Today, Messages,
    Calendar, Qur'an, absences.

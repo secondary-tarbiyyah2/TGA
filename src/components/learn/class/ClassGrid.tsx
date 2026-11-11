@@ -5,6 +5,8 @@ import { useEffect, useMemo, useState } from "react";
 import { getSupabaseClient } from "@/lib/supabase/client";
 import { classBannerStyle, type ClassSummary, type ClassViewer } from "@/lib/learn/classes";
 import { Select } from "@/components/learn/Select";
+import { DataTable, type Column } from "@/components/learn/DataTable";
+import { btn, ui } from "@/components/learn/ui";
 
 type Progress = { label: string; percent: number | null };
 
@@ -80,28 +82,51 @@ export function ClassCard({ cls, href, progress }: { cls: ClassSummary; href: st
   );
 }
 
-/** One class as a compact row: Moodle's "List" view of My courses. */
-function ClassRow({ cls, href, progress }: { cls: ClassSummary; href: string; progress?: Progress }) {
-  const meta = [cls.subject, cls.yearGroup].filter(Boolean).join(" · ");
-  return (
-    <li>
-      <Link href={href} className="group flex items-center gap-4 rounded-2xl border border-gold-light bg-white p-3 hover:bg-cream/60">
-        <span className="h-12 w-16 shrink-0 rounded-lg" style={classBannerStyle(cls.id)} aria-hidden="true" />
-        <span className="min-w-0 flex-1">
-          <span className="block truncate font-semibold text-ink group-hover:text-teal-700">{cls.name}</span>
-          {meta && <span className="block truncate text-xs text-ink/65">{meta}</span>}
-        </span>
-        <span className="hidden w-48 shrink-0 sm:block">
-          {progress?.percent != null && (
-            <span className="mb-1 block h-1.5 overflow-hidden rounded-full bg-cream" role="progressbar" aria-valuenow={progress.percent} aria-valuemin={0} aria-valuemax={100} aria-label={progress.label}>
-              <span className="block h-full rounded-full bg-teal-500" style={{ width: `${progress.percent}%` }} />
-            </span>
-          )}
-          <span className="block text-xs text-ink/65">{progress?.label ?? " "}</span>
-        </span>
-      </Link>
-    </li>
-  );
+/** Every class as one row of a table (the staff default): name, subject, year group, progress. */
+function ClassTable({ classes, hrefFor, progress, summaryHeader }: { classes: ClassSummary[]; hrefFor: (c: ClassSummary) => string; progress: Record<string, Progress>; summaryHeader: string }) {
+  const columns: Column<ClassSummary>[] = [
+    {
+      key: "name",
+      header: "Class",
+      sort: (c) => c.name,
+      cell: (c) => (
+        <Link href={hrefFor(c)} className="font-semibold text-ink hover:text-forest-700 hover:underline">
+          {c.name}
+        </Link>
+      ),
+    },
+    { key: "subject", header: "Subject", sort: (c) => c.subject || "", cell: (c) => c.subject || "–" },
+    { key: "year", header: "Year group", sort: (c) => c.yearGroup || "", cell: (c) => c.yearGroup || "–" },
+    {
+      key: "progress",
+      header: summaryHeader,
+      cell: (c) => {
+        const p = progress[c.id];
+        return (
+          <span className="flex min-w-[10rem] items-center gap-2">
+            {p?.percent != null && (
+              <span className="block h-1.5 w-16 shrink-0 overflow-hidden rounded-full bg-[var(--portal-sunken)]" role="progressbar" aria-valuenow={p.percent} aria-valuemin={0} aria-valuemax={100} aria-label={p.label}>
+                <span className="block h-full rounded-full bg-forest-500" style={{ width: `${p.percent}%` }} />
+              </span>
+            )}
+            <span className="t-meta">{p?.label ?? ""}</span>
+          </span>
+        );
+      },
+    },
+    {
+      key: "open",
+      header: "",
+      align: "right",
+      hideOnPhone: true,
+      cell: (c) => (
+        <Link href={hrefFor(c)} className={btn("secondary", "sm")}>
+          Open
+        </Link>
+      ),
+    },
+  ];
+  return <DataTable rows={classes} columns={columns} rowKey={(c) => c.id} caption="Classes" pageSize={50} />;
 }
 
 const VIEW_KEY = "tga-classes-view";
@@ -117,6 +142,7 @@ export function ClassGrid({
   hrefFor,
   emptyLabel,
   controls = true,
+  defaultView = "cards",
 }: {
   viewer: ClassViewer;
   classes: ClassSummary[] | null;
@@ -124,16 +150,19 @@ export function ClassGrid({
   emptyLabel: string;
   /** Search/sort bar; off for the dashboard strip. */
   controls?: boolean;
+  /** How the list first shows before this browser has chosen: staff lists start as a table. */
+  defaultView?: "cards" | "list";
 }) {
   const [query, setQuery] = useState("");
   const [sort, setSort] = useState<"name" | "subject" | "year">("name");
-  const [view, setView] = useState<"cards" | "list">("cards");
+  const [view, setView] = useState<"cards" | "list">(defaultView);
   const progress = useCardProgress(viewer, classes || []);
 
   useEffect(() => {
     try {
+      const saved = window.localStorage.getItem(VIEW_KEY);
       // eslint-disable-next-line react-hooks/set-state-in-effect -- restore this browser's saved view after mount
-      if (window.localStorage.getItem(VIEW_KEY) === "list") setView("list");
+      if (saved === "list" || saved === "cards") setView(saved);
     } catch {
       /* storage unavailable: cards */
     }
@@ -184,23 +213,23 @@ export function ClassGrid({
             placeholder="Search classes"
             aria-label="Search classes"
             data-guide="class-search"
-            className="w-full max-w-xs border border-gold-light px-3 py-2 text-sm"
+            className={`${ui.input} !w-auto min-w-[12rem] max-w-sm flex-1`}
           />
-          <Select value={sort} onChange={(e) => setSort(e.target.value as "name" | "subject" | "year")} aria-label="Sort classes" className="border border-gold-light px-3 py-2 text-sm">
+          <Select value={sort} onChange={(e) => setSort(e.target.value as "name" | "subject" | "year")} aria-label="Sort classes" className={`${ui.select} !w-auto`}>
             <option value="name">Sort by class name</option>
             <option value="subject">Sort by subject</option>
             <option value="year">Sort by year group</option>
           </Select>
-          <div role="group" aria-label="View" className="ml-auto flex overflow-hidden rounded-lg border border-gold-light">
+          <div role="group" aria-label="View" className="ml-auto flex rounded-lg bg-[var(--portal-sunken)] p-0.5">
             {(["cards", "list"] as const).map((v) => (
               <button
                 key={v}
                 type="button"
                 aria-pressed={view === v}
                 onClick={() => chooseView(v)}
-                className={`px-3 py-2 text-sm font-medium ${view === v ? "bg-teal-700 text-white" : "bg-white text-ink/75 hover:bg-cream"}`}
+                className={`min-h-11 rounded-md px-3 text-sm font-medium sm:min-h-8 ${view === v ? "bg-[var(--portal-surface)] text-ink shadow-[var(--portal-shadow-lift)]" : "text-ink-500 hover:text-ink"}`}
               >
-                {v === "cards" ? "Cards" : "List"}
+                {v === "cards" ? "Cards" : "Table"}
               </button>
             ))}
           </div>
@@ -209,11 +238,9 @@ export function ClassGrid({
       {shown.length === 0 ? (
         <p className="text-sm text-ink/65">No classes match &ldquo;{query}&rdquo;.</p>
       ) : view === "list" && controls ? (
-        <ul data-guide="class-cards" className="space-y-2">
-          {shown.map((c) => (
-            <ClassRow key={c.id} cls={c} href={hrefFor(c)} progress={progress[c.id]} />
-          ))}
-        </ul>
+        <div data-guide="class-cards">
+          <ClassTable classes={shown} hrefFor={hrefFor} progress={progress} summaryHeader={viewer.kind === "teacher" || viewer.kind === "staff" ? "Pupils" : "Homework"} />
+        </div>
       ) : (
         <div data-guide="class-cards" className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
           {shown.map((c) => (
