@@ -89,7 +89,11 @@ PAUSED 11 Nov 2026 08:40 (owner: portal UI first, come back later): term resourc
 and Spring 2 are complete. Summer 1 had started: open PR #157 (claude/resources-summer-1-science) is unfinished; check it,
 finish or close it, then continue per docs/agent-briefs/BRIEF-RESOURCES.md. The previous agent's generator scripts were in
 a session scratchpad and may be gone; the repo's scripts/resources/ has the pipeline.
-NOW: portal structure redesign per docs/owner-briefs/2026-11-10-ui-ux-redesign.md (incl. 11 Nov feedback), docs/portal-structure.md.
+NOW (11 Nov 10:10): owner feedback 2, docs/owner-briefs/2026-11-11-feedback-2.md, in five parallel jobs: branches
+claude/fb2-today-* (items 1, 2, 11, 12), claude/fb2-msg-* (3, 4), claude/fb2-classwork-* (5, 6, 10, 15-17),
+claude/fb2-pupils-* (7-9, 13, 19-21), claude/redesign3-* (Action centre, pupil home, Planner panels, then 14 and 18:
+Curriculum as a Drive-like browser). Ihsan LMS reference (read-only): github.com/Bananamc/madrasa-maina.
+BEFORE THAT: portal structure redesign per docs/owner-briefs/2026-11-10-ui-ux-redesign.md (incl. 11 Nov feedback), docs/portal-structure.md.
 
 Next, in this order (each one agent; briefs in docs/agent-briefs/):
 1. (done) Founding-year lessons.
