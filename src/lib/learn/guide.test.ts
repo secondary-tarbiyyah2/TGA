@@ -189,7 +189,7 @@ test("Day in the life journeys: 6 to 12 steps, on pages the role has, pointing a
 // School features (Settings, migration 0210): a switched-off feature's pages
 // leave the menu, so their guide entries and journey stops are skipped, and
 // every page still in the menu keeps its entry.
-const ALL_OFF: FeatureMap = { revision_packs: false, subject_lesson_editing: false, ai_helpers: false, house_points: false, guide_journeys: false, lesson_feedback: false };
+const ALL_OFF: FeatureMap = { revision_packs: false, subject_lesson_editing: false, ai_helpers: false, house_points: false, guide_journeys: false, lesson_feedback: false, quizzes: false };
 
 test("with School features switched off, their guide entries are skipped and every page left has one", () => {
   for (const features of [ALL_OFF, { ...ALL_OFF, guide_journeys: true }, DEFAULT_FEATURES]) {
@@ -207,6 +207,7 @@ test("with School features switched off, their guide entries are skipped and eve
         assert.ok(reach.has(e.href), `${role}: the guide still describes ${e.href}, which is switched off`);
         for (const r of e.related) assert.ok(have.has(r), `${role} ${e.href}: related page ${r} is switched off`);
         assert.ok(e.steps.length >= 2, `${role} ${e.href}: too few steps left`);
+        if (!features.quizzes) for (const t of [...e.steps, ...e.tips, ...(e.tasks || [])]) assert.ok(!/quiz assignment|class quiz/i.test(t), `${role} ${e.href}: "${t}" is about classwork quizzes`);
         if (!features.revision_packs) for (const t of [...e.steps, ...e.tips, ...(e.tasks || [])]) assert.ok(!/revision pack/i.test(t), `${role} ${e.href}: "${t}" is about revision packs`);
       }
       for (const j of filterJourneys(JOURNEYS[g] || [], f)) for (const s of j.steps) assert.ok(have.has(s.href), `${role} ${j.id}: stop on ${s.href}, which is switched off`);

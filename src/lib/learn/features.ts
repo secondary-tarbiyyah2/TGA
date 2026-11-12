@@ -17,7 +17,7 @@
 
 import { useEffect, useSyncExternalStore } from "react";
 
-export type FeatureKey = "revision_packs" | "subject_lesson_editing" | "ai_helpers" | "house_points" | "guide_journeys" | "lesson_feedback";
+export type FeatureKey = "revision_packs" | "subject_lesson_editing" | "ai_helpers" | "house_points" | "guide_journeys" | "lesson_feedback" | "quizzes";
 export type FeatureMap = Record<FeatureKey, boolean>;
 
 export type FeatureInfo = { key: FeatureKey; label: string; explain: string; on: string; off: string; default: boolean };
@@ -71,6 +71,14 @@ export const FEATURES: FeatureInfo[] = [
     on: "A Feedback button on every lesson, and notes waiting in Waiting for you.",
     off: "No Feedback buttons and no lesson notes in Waiting for you. Notes already sent are kept.",
     default: true,
+  },
+  {
+    key: "quizzes",
+    label: "Quizzes",
+    explain: "Classwork quizzes: the quiz builder, AI-drafted questions from a unit, and pupils sitting quizzes. Off until the feature is fully ready (owner, 11 Nov 2026); nothing is deleted.",
+    on: "Teachers see Quiz under Create in Classwork and pupils see their quizzes.",
+    off: "No Quiz under Create, the quiz builder shows a notice, and pupils and families see no quizzes. Quizzes already made are kept.",
+    default: false,
   },
 ];
 
