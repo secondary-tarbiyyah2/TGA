@@ -4,6 +4,8 @@ import Link from "next/link";
 import { useEffect, useMemo, useState } from "react";
 import { getSupabaseClient } from "@/lib/supabase/client";
 import { EmptyState, StatusChip, ui } from "@/components/learn/ui";
+import { Tabs } from "@/components/learn/Tabs";
+import { saveCsv, toCsv } from "@/lib/learn/csv";
 import { loadEnrolments, loadIssuedChildren, loadTermReports, reportsHref, stateOf, type ClassInfo, type Mode, type PupilState } from "./data";
 import type { TermOption } from "./summary";
 
@@ -52,11 +54,34 @@ export function ReportsOverview({ mode, classes, term, termKey, tick }: { mode: 
     return t;
   }, [counts]);
 
+  // Which classes to show (owner feedback 11 Nov 2026, item 19: clear structure, filters, export).
+  const [show, setShow] = useState<"all" | "todo" | "review" | "done">("all");
+  const [q, setQ] = useState("");
+  const matches = (c: ClassInfo) => {
+    const n = counts?.[c.id];
+    if (q.trim() && !`${c.name} ${c.teacher || ""}`.toLowerCase().includes(q.trim().toLowerCase())) return false;
+    if (!n || show === "all") return true;
+    if (show === "done") return n.total > 0 && n.released === n.total;
+    if (show === "review") return n.pending > 0;
+    return n.not_started + n.draft + n.returned > 0;
+  };
   const groups = useMemo(() => {
     const m = new Map<string, ClassInfo[]>();
-    for (const c of classes) m.set(c.group, [...(m.get(c.group) || []), c]);
+    for (const c of classes) if (matches(c)) m.set(c.group, [...(m.get(c.group) || []), c]);
     return Array.from(m.entries());
-  }, [classes]);
+    // eslint-disable-next-line react-hooks/exhaustive-deps -- matches reads show, q and counts
+  }, [classes, show, q, counts]);
+  const download = () =>
+    saveCsv(
+      `term-reports${term?.name ? `-${term.name.toLowerCase().replace(/\s+/g, "-")}` : ""}.csv`,
+      toCsv(
+        ["Class", "Group", ...(mode === "admin" ? ["Teacher"] : []), "Pupils", "Not started", "Drafts", "Sent back", "Awaiting approval", "Issued"],
+        classes.filter(matches).map((c) => {
+          const n = counts?.[c.id];
+          return [c.name, c.group, ...(mode === "admin" ? [c.teacher || ""] : []), n?.total ?? "", n?.not_started ?? "", n?.draft ?? "", n?.returned ?? "", n?.pending ?? "", n?.released ?? ""];
+        }),
+      ),
+    );
 
   if (classes.length === 0) {
     return (
@@ -75,6 +100,26 @@ export function ReportsOverview({ mode, classes, term, termKey, tick }: { mode: 
         <Tile label="Awaiting approval" value={counts ? totals.pending : "–"} warn={mode === "admin" && totals.pending > 0} />
         <Tile label="Issued" value={counts ? totals.released : "–"} sub={counts && totals.total ? `of ${totals.total} class reports` : undefined} />
       </dl>
+
+      <div className="flex flex-wrap items-center gap-2" data-guide="reports-filters">
+        <Tabs
+          variant="switch"
+          label="Show classes"
+          value={show}
+          onChange={setShow}
+          items={[
+            { key: "all" as const, label: "All classes" },
+            { key: "todo" as const, label: "Still to write" },
+            { key: "review" as const, label: "Awaiting approval" },
+            { key: "done" as const, label: "All issued" },
+          ]}
+        />
+        <input type="search" value={q} onChange={(e) => setQ(e.target.value)} placeholder={mode === "admin" ? "Search a class or teacher" : "Search a class"} aria-label="Search" className={`${ui.input} !w-auto min-w-[10rem] flex-1 sm:flex-none`} />
+        <button type="button" onClick={download} disabled={!counts} className={`${ui.btnSecondary} ${ui.sm} sm:ml-auto`}>
+          Download CSV
+        </button>
+      </div>
+      {counts && groups.length === 0 && <p className="text-sm text-ink/70">No classes match.</p>}
 
       {groups.map(([group, list]) => (
         <section key={group} aria-labelledby={`grp-${group}`} className="rounded-2xl border border-gold-light bg-white">

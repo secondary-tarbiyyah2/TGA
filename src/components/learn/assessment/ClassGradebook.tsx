@@ -8,6 +8,9 @@ import { SupportAtAGlance } from "@/components/learn/send/SupportAtAGlance";
 import { Select } from "@/components/learn/Select";
 import { FocusView } from "@/components/learn/FocusView";
 import { askConfirm } from "@/components/learn/kit";
+import { Icon } from "@/components/learn/Icon";
+import { PupilLink } from "@/components/learn/pupil/PupilLink";
+import { saveCsv, toCsv } from "@/lib/learn/csv";
 
 export type GbPupil = { id: string; name: string };
 type Type = { id: string; name: string };
@@ -66,6 +69,13 @@ export function ClassGradebook({
   const [editing, setEditing] = useState<{ key: string | null; title: string; date: string; typeId: string; schemeId: string; max: string; entries: Record<string, Entry> } | null>(null);
   const [busy, setBusy] = useState(false);
   const [msg, setMsg] = useState<{ text: string; error?: boolean } | null>(null);
+  // Filters (owner feedback 19 and 3: term and type filters, pupils down and assessments across by term).
+  const [termId, setTermId] = useState("");
+  const [typeFilter, setTypeFilter] = useState("");
+  const [q, setQ] = useState("");
+  const [terms, setTerms] = useState<{ id: string; name: string; starts_on: string; ends_on: string }[]>([]);
+  // GCSE target grades (0072), shown as a column when the class has any.
+  const [targets, setTargets] = useState<Record<string, number>>({});
   // Access arrangements from support plans (0169), shown while a test is set up or marked.
   const plans = useSupportPlans(pupils ? pupils.map((p) => p.id) : null);
 
@@ -95,6 +105,33 @@ export function ClassGradebook({
   }, [supabase]);
 
   useEffect(() => {
+    if (!supabase) return;
+    supabase
+      .from("terms")
+      .select("id, name, starts_on, ends_on")
+      .order("starts_on")
+      .then(({ data }) => setTerms((data as { id: string; name: string; starts_on: string; ends_on: string }[]) || []));
+  }, [supabase]);
+
+  const pupilKey = (pupils || []).map((p) => p.id).join(",");
+  useEffect(() => {
+    if (!supabase || !subjectId || !pupilKey) return;
+    let alive = true;
+    supabase
+      .from("gcse_grades")
+      .select("child_id, target_grade")
+      .eq("subject_id", subjectId)
+      .in("child_id", pupilKey.split(","))
+      .then(({ data, error }) => {
+        if (!alive || error) return;
+        setTargets(Object.fromEntries(((data as { child_id: string; target_grade: number | null }[]) || []).filter((r) => r.target_grade !== null).map((r) => [r.child_id, r.target_grade as number])));
+      });
+    return () => {
+      alive = false;
+    };
+  }, [supabase, subjectId, pupilKey]);
+
+  useEffect(() => {
     if (!supabase || !subjectId) return;
     supabase
       .from("mark_schemes")
@@ -115,11 +152,50 @@ export function ClassGradebook({
     return [...m.values()].sort((a, b) => a.date.localeCompare(b.date) || a.title.localeCompare(b.title));
   }, [rows]);
 
+  const termOf = useCallback((date: string) => terms.find((t) => t.starts_on <= date && date <= t.ends_on) || null, [terms]);
+  const shownColumns = useMemo(() => {
+    const t = terms.find((x) => x.id === termId);
+    return columns.filter((c) => (!t || (t.starts_on <= c.date && c.date <= t.ends_on)) && (!typeFilter || c.typeId === typeFilter));
+  }, [columns, terms, termId, typeFilter]);
+  // Consecutive columns in the same term, for the term row above the headings.
+  const termGroups = useMemo(() => {
+    const out: { name: string; span: number }[] = [];
+    for (const c of shownColumns) {
+      const name = termOf(c.date)?.name || "Outside a term";
+      const last = out[out.length - 1];
+      if (last && last.name === name) last.span++;
+      else out.push({ name, span: 1 });
+    }
+    return out;
+  }, [shownColumns, termOf]);
+  const shownPupils = (pupils || []).filter((p) => !q.trim() || p.name.toLowerCase().includes(q.trim().toLowerCase()));
+  const hasTargets = Object.keys(targets).length > 0;
+
   const typeName = (id: string) => types.find((t) => t.id === id)?.name || "";
 
   const average = (childId: string): number | null => {
-    const ps = columns.map((c) => c.rows.get(childId)).filter((r): r is Row => !!r && r.status === "marked" && r.percent !== null).map((r) => Number(r.percent));
+    const ps = shownColumns.map((c) => c.rows.get(childId)).filter((r): r is Row => !!r && r.status === "marked" && r.percent !== null).map((r) => Number(r.percent));
     return ps.length ? Math.round(ps.reduce((a, b) => a + b, 0) / ps.length) : null;
+  };
+
+  /** Progress: the latest marked result against the average of the ones before it (at least three results). */
+  const trend = (childId: string): "up" | "down" | "steady" | null => {
+    const ps = shownColumns.map((c) => c.rows.get(childId)).filter((r): r is Row => !!r && r.status === "marked" && r.percent !== null).map((r) => Number(r.percent));
+    if (ps.length < 3) return null;
+    const last = ps[ps.length - 1];
+    const before = ps.slice(0, -1).reduce((a, b) => a + b, 0) / (ps.length - 1);
+    return last - before >= 5 ? "up" : before - last >= 5 ? "down" : "steady";
+  };
+
+  const exportCsv = () => {
+    const plain = (r: Row | undefined) => (!r ? "" : r.status !== "marked" ? STATUS_SHORT[r.status] : r.grade_label || (r.raw_score === null ? "" : `${Number(r.raw_score)}${r.max_score !== null ? `/${Number(r.max_score)}` : ""}`));
+    saveCsv(
+      "gradebook.csv",
+      toCsv(
+        ["Pupil", ...shownColumns.map((c) => `${c.title} (${c.date})`), "Average %", ...(hasTargets ? ["Target"] : []), "Progress"],
+        shownPupils.map((p) => [p.name, ...shownColumns.map((c) => plain(c.rows.get(p.id))), average(p.id) ?? "", ...(hasTargets ? [targets[p.id] ?? ""] : []), trend(p.id) || ""]),
+      ),
+    );
   };
 
   const openNew = () =>
@@ -406,6 +482,28 @@ export function ClassGradebook({
           {msg.text}
         </p>
       )}
+      <div className="flex flex-wrap items-center gap-2" data-guide="gradebook-filters">
+        <input type="search" value={q} onChange={(e) => setQ(e.target.value)} placeholder="Search a pupil" aria-label="Search a pupil" className={`${input} min-w-[10rem] flex-1 sm:flex-none`} />
+        <Select value={termId} onChange={(e) => setTermId(e.target.value)} aria-label="Term" className={`${ui.select} w-full sm:w-48`}>
+          <option value="">Every term</option>
+          {terms.map((t) => (
+            <option key={t.id} value={t.id}>
+              {t.name}
+            </option>
+          ))}
+        </Select>
+        <Select value={typeFilter} onChange={(e) => setTypeFilter(e.target.value)} aria-label="Kind of assessment" className={`${ui.select} w-full sm:w-60`}>
+          <option value="">Every kind of assessment</option>
+          {types.map((t) => (
+            <option key={t.id} value={t.id}>
+              {t.name}
+            </option>
+          ))}
+        </Select>
+        <button type="button" onClick={exportCsv} disabled={!shownPupils.length} className={`${ui.btnSecondary} ${ui.sm} sm:ml-auto`}>
+          <Icon name="download" size="sm" /> Download CSV
+        </button>
+      </div>
       {!types.length && <p className="text-sm text-ink/70">No assessment types are set up yet. The head or office adds them under Progress reports, Report settings.</p>}
       {pupils === null || rows === null ? (
         <div className="h-32 motion-safe:animate-pulse rounded-lg bg-cream" />
@@ -416,11 +514,24 @@ export function ClassGradebook({
           <table className="w-full text-sm">
             <caption className="sr-only">Gradebook</caption>
             <thead className="bg-cream/60">
+              {termGroups.length > 0 && (
+                <tr className="border-b border-gold-light/50">
+                  <th scope="col" className="sticky left-0 z-[1] bg-cream px-3 pt-2 text-left">
+                    <span className="sr-only">Term</span>
+                  </th>
+                  {termGroups.map((g, i) => (
+                    <th key={`${g.name}-${i}`} scope="colgroup" colSpan={g.span} className="border-l border-gold-light/60 px-2 pt-2 text-left text-xs font-semibold uppercase tracking-wide text-ink/65">
+                      {g.name}
+                    </th>
+                  ))}
+                  <th colSpan={hasTargets ? 3 : 2} />
+                </tr>
+              )}
               <tr>
                 <th scope="col" className="sticky left-0 z-[1] min-w-[8rem] bg-cream px-3 sm:min-w-[11rem] py-2 text-left text-xs font-semibold uppercase tracking-wide text-ink/65">
                   Pupil
                 </th>
-                {columns.map((c) => (
+                {shownColumns.map((c) => (
                   <th key={c.key} scope="col" className="min-w-[7.5rem] px-2 py-2 text-left align-bottom">
                     <button type="button" onClick={() => openColumn(c)} className="block text-left hover:text-teal-800" title="Enter or change results">
                       <span className="block text-sm font-semibold text-ink">{c.title}</span>
@@ -435,29 +546,55 @@ export function ClassGradebook({
                 <th scope="col" className="px-3 py-2 text-right text-xs font-semibold uppercase tracking-wide text-ink/65">
                   Average
                 </th>
+                {hasTargets && (
+                  <th scope="col" className="px-3 py-2 text-right text-xs font-semibold uppercase tracking-wide text-ink/65">
+                    Target
+                  </th>
+                )}
+                <th scope="col" className="px-3 py-2 text-right text-xs font-semibold uppercase tracking-wide text-ink/65">
+                  Progress
+                </th>
               </tr>
             </thead>
             <tbody>
-              {pupils.map((p) => {
+              {shownPupils.map((p) => {
                 const avg = average(p.id);
+                const tr = trend(p.id);
                 return (
                   <tr key={p.id} className={`border-t border-gold-light/50 ${selected === p.id ? "bg-teal-100/60" : "hover:bg-cream/50"}`}>
                     <th scope="row" className={`sticky left-0 z-[1] px-3 py-2 text-left font-medium ${selected === p.id ? "bg-teal-100" : "bg-white"}`}>
-                      <button type="button" onClick={() => onSelect(p.id)} className="text-left text-ink hover:text-teal-800 hover:underline" aria-pressed={selected === p.id}>
-                        {p.name}
-                      </button>
+                      <span className="flex items-center gap-2">
+                        <button type="button" onClick={() => onSelect(p.id)} className="text-left text-ink hover:text-teal-800 hover:underline" aria-pressed={selected === p.id}>
+                          {p.name}
+                        </button>
+                        <PupilLink id={p.id} name={p.name} className="text-ink/50">
+                          <Icon name="externalLink" size="sm" />
+                          <span className="sr-only">Open {p.name}&apos;s profile</span>
+                        </PupilLink>
+                      </span>
                     </th>
-                    {columns.map((c) => (
+                    {shownColumns.map((c) => (
                       <td key={c.key} className="px-2 py-2">
                         {cell(c.rows.get(p.id))}
                       </td>
                     ))}
                     <td className="px-3 py-2 text-right tabular-nums">{avg === null ? <span className="text-ink/35">–</span> : `${avg}%`}</td>
+                    {hasTargets && <td className="px-3 py-2 text-right tabular-nums">{targets[p.id] ?? <span className="text-ink/35">–</span>}</td>}
+                    <td className="px-3 py-2 text-right text-xs">
+                      {tr === null ? (
+                        <span className="text-ink/35" title="Needs three marked results">–</span>
+                      ) : (
+                        <span className={tr === "up" ? "text-forest-700" : tr === "down" ? "text-amber-800" : "text-ink/70"} title="The latest result against the average of the ones before it">
+                          {tr === "up" ? "Rising" : tr === "down" ? "Falling" : "Steady"}
+                        </span>
+                      )}
+                    </td>
                   </tr>
                 );
               })}
             </tbody>
           </table>
+          {columns.length > 0 && shownColumns.length === 0 && <p className="border-t border-gold-light/50 p-4 text-center text-sm text-ink/65">No assessments match these filters.</p>}
           {columns.length === 0 && <p className="border-t border-gold-light/50 p-4 text-center text-sm text-ink/65">No assessments yet. Press “Add an assessment” to enter the first set of results.</p>}
         </div>
       )}

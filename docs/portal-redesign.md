@@ -507,6 +507,10 @@ etc. Needs to be done in a unique way." The short tour above stays as the doorwa
   from the page's code, a menu page is renamed in one place only, or text breaks house style.
 
 ## Log
+- 2026-11-11: Gradebook, term reports and revision results (feedback 2, item 19; feedback 3): the gradebook filters by term
+  and kind of assessment, groups its columns by term, adds Target (GCSE classes) and Progress (Rising, Steady, Falling)
+  and a CSV; term reports' class list filters (still to write, awaiting approval, all issued) with search and a CSV;
+  revision results filter by year and subject, can show only units with pupils under 60%, and download as a CSV.
 - 2026-11-11: Payments (T71, `docs/payments.md`): family Fees page rebuilt (references, Pay now / Pay all due, status
   dots, StatStrip); new School office > Payments page (`/admin/payments`, `components/learn/payments/PaymentsBoard.tsx`:
   header figures, Needs checking list, table that stacks on phones, charge side panel, waive and set-plan dialogs);
