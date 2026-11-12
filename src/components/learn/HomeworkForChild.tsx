@@ -12,6 +12,7 @@ import { FileLinks } from "@/components/learn/homework/FileViewer";
 import { SubmitWork, type ExistingSubmission } from "@/components/learn/homework/SubmitWork";
 import { useNow } from "@/lib/learn/useNow";
 import { QuizCard } from "@/components/learn/quiz/QuizCard";
+import { useFeature } from "@/lib/learn/features";
 
 type HomeworkInfo = Pick<Homework, "title" | "instructions" | "max_points" | "allowed_submission_types" | "allowed_file_types" | "late_policy" | "attachments" | "edited_at"> & { kind?: string | null };
 type Row = {
@@ -225,7 +226,8 @@ export function HomeworkForChild({
   groupByStatus?: boolean;
 }) {
   const supabase = getSupabaseClient();
-  const [rows, setRows] = useState<Row[] | null>(null);
+  const [allRows, setRows] = useState<Row[] | null>(null);
+  const quizzesOn = useFeature("quizzes");
   const [feedbackBySubmission, setFeedbackBySubmission] = useState<Record<string, HomeworkFeedback>>({});
 
   const load = async () => {
@@ -252,7 +254,9 @@ export function HomeworkForChild({
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [supabase, childId, classId]);
 
-  if (rows === null) return <Loading label="Loading homework…" bare />;
+  if (allRows === null) return <Loading label="Loading homework…" bare />;
+  // Quizzes switched off by the Headteacher (School features): pupils and families see no quizzes.
+  const rows = quizzesOn ? allRows : allRows.filter((r) => r.homework?.kind !== "quiz");
   if (rows.length === 0) return <p className="text-sm text-ink/65">No homework set yet.</p>;
 
   const item = (r: Row) => (

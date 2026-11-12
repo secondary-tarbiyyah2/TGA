@@ -112,7 +112,7 @@ export function PupilRecord({
           <div>
             <p className="text-lg font-semibold text-ink">{child.name}</p>
             <p className="text-sm text-ink/65">
-              {[child.yearGroup, child.classes.join(", "), child.dob ? `Born ${formatDob(child.dob)}${age !== null ? ` (${age})` : ""}` : ""].filter(Boolean).join(" · ")}
+              {[child.yearGroup, child.classes.join(", "), child.dob ? `Born ${formatDob(child.dob)}${age !== null ? `, age ${age}` : ""}` : ""].filter(Boolean).join(" · ")}
             </p>
           </div>
           <div className="flex flex-wrap gap-1.5">
@@ -140,7 +140,7 @@ export function PupilRecord({
 
       <Tabs variant="switch" items={tabs} value={tab} onChange={setTab} label="Pupil record sections" className="print:hidden" />
 
-      <RecordSections data={data} teacherView={teacherView} showAcks={showAcks} visible={(k) => vis(k)} />
+      <RecordSections data={data} dob={child.dob} teacherView={teacherView} showAcks={showAcks} visible={(k) => vis(k)} />
     </div>
   );
 }
@@ -152,8 +152,11 @@ export function RecordSections({
   showAcks = false,
   only,
   visible = () => "",
+  dob,
 }: {
   data: RecordData;
+  /** The child's date of birth (children.dob), shown first under Basics. */
+  dob?: string | null;
   teacherView?: boolean;
   showAcks?: boolean;
   /** Render just these sections. */
@@ -166,6 +169,7 @@ export function RecordSections({
     <>
       {!teacherView && (
       <Section title="Basics" className={vis("basics")}>
+        {dob !== undefined && <Row label="Date of birth" value={dob ? `${formatDob(dob)}${ageFromDob(dob) !== null ? ` (age ${ageFromDob(dob)})` : ""}` : ""} />}
         <Row label="Gender" value={details?.gender === "male" ? "Male" : details?.gender === "female" ? "Female" : ""} />
         <Row label="Home address" value={[details?.address_line1, details?.address_line2, details?.town, details?.postcode].filter(Boolean).join(", ")} />
         <Row label="Home language" value={details?.home_language} />

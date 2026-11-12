@@ -22,9 +22,10 @@ function memoryStorage(seed?: Record<string, string>) {
   return { getItem: (k: string) => m.get(k) ?? null, setItem: (k: string, v: string) => void m.set(k, v), removeItem: (k: string) => void m.delete(k), m };
 }
 
-test("revision packs start off and every other switch starts on", () => {
+test("revision packs and quizzes start off and every other switch starts on", () => {
   assert.equal(DEFAULT_FEATURES.revision_packs, false);
-  for (const f of FEATURES) if (f.key !== "revision_packs") assert.equal(DEFAULT_FEATURES[f.key], true, f.key);
+  assert.equal(DEFAULT_FEATURES.quizzes, false);
+  for (const f of FEATURES) if (f.key !== "revision_packs" && f.key !== "quizzes") assert.equal(DEFAULT_FEATURES[f.key], true, f.key);
 });
 
 test("every switch has a label and a one-line explanation in house style", () => {

@@ -517,6 +517,20 @@ etc. Needs to be done in a unique way." The short tour above stays as the doorwa
   from the page's code, a menu page is renamed in one place only, or text breaks house style.
 
 ## Log
+- 2026-11-11: Gradebook, term reports and revision results (feedback 2, item 19; feedback 3): the gradebook filters by term
+  and kind of assessment, groups its columns by term, adds Target (GCSE classes) and Progress (Rising, Steady, Falling)
+  and a CSV; term reports' class list filters (still to write, awaiting approval, all issued) with search and a CSV;
+  revision results filter by year and subject, can show only units with pupils under 60%, and download as a CSV.
+- 2026-11-11: Payments (T71, `docs/payments.md`): family Fees page rebuilt (references, Pay now / Pay all due, status
+  dots, StatStrip); new School office > Payments page (`/admin/payments`, `components/learn/payments/PaymentsBoard.tsx`:
+  header figures, Needs checking list, table that stacks on phones, charge side panel, waive and set-plan dialogs);
+  Admissions > Settings > Payments (`PaymentsSettings.tsx`); Fees category in the Action centre. PR #210 merged; staff
+  page in the follow-up PR. Waiting on the owner's Stripe secrets.
+- 2026-11-11: House points as a proper system (feedback 2, item 21; `rewards/HousePoints.tsx`): one page for teachers and the
+  head teacher with sections down the left (Standings and award, Leaderboard with top pupils, History with filters, CSV
+  and taken-back awards, Star of the week, and for the head Limits and houses); Award points in a side panel; the head
+  teacher's limits (most points in one award, most a pupil a day from one member of staff) enforced by the database
+  (migration 0217, pgTAP `house_point_limits.test.sql`).
 - 2026-11-11: A register's page (feedback 3): a footer that stays in view with the counts (marked, present, late,
   authorised, unauthorised, technical) and when it last saved; Change the whole class; each pupil's attendance over the
   last 60 days beside their name; keyboard marking (P, L, A, U, T, arrow keys); Previous and Next lesson of the class.

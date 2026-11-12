@@ -89,3 +89,17 @@ verify_jwt = false
 # (RESEND_INBOUND_WEBHOOK_SECRET) instead; staff actions re-check the JWT inside.
 [functions.inbound-absence]
 verify_jwt = false
+
+# Online payments (T71, docs/payments.md). payments-checkout and payments-admin
+# keep JWT verification (signed-in parent / head teacher or admin).
+# The family's personal payment link: checked by its own token instead.
+[functions.payments-checkout-public]
+verify_jwt = false
+
+# Stripe webhook: authenticated by its Stripe-Signature (STRIPE_WEBHOOK_SECRET).
+[functions.payments-webhook]
+verify_jwt = false
+
+# Daily job: only the service-role key may call it (checked inside).
+[functions.payments-daily]
+verify_jwt = false

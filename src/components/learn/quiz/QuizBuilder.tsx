@@ -13,6 +13,8 @@ import { QuestionEditor, QuestionTypePicker } from "@/components/learn/quiz/Ques
 import { quizImageUrl } from "@/components/learn/quiz/QuizImage";
 import { QuizAiDraft } from "@/components/learn/quiz/QuizAiDraft";
 import { QuizResults } from "@/components/learn/quiz/QuizResults";
+import { QuizzesOffView } from "@/components/learn/quiz/QuizzesOff";
+import { useFeature } from "@/lib/learn/features";
 import { mimeForName, safeObjectName, uploadWithProgress } from "@/lib/learn/homeworkFiles";
 import { toLocalInput } from "@/lib/learn/homework";
 import { DEFAULT_SETTINGS, QTYPES, blankQuestion, fromRow, questionProblem, toRow, totalMarks, type DraftQuestion, type QType, type QuizSettings } from "@/lib/learn/quiz";
@@ -32,7 +34,14 @@ type Loaded = { title: string; instructions: string; dueAt: string; audience: st
  * images and the questions (migration 0206). AI-drafted questions must each be ticked as checked
  * before the quiz can be set. "Results" lists pupils' attempts and opens one to mark.
  */
-export function QuizBuilder({
+/** The quiz builder, or a calm notice while the Headteacher has Quizzes switched off (School features). */
+export function QuizBuilder(props: Parameters<typeof QuizBuilderOpen>[0]) {
+  const on = useFeature("quizzes");
+  if (!on) return <QuizzesOffView onClose={props.onClose} />;
+  return <QuizBuilderOpen {...props} />;
+}
+
+function QuizBuilderOpen({
   classId,
   className,
   homeworkId,
