@@ -14,6 +14,7 @@
  *   Stepper        a workflow's stages: done, current, to come, or a problem
  *   toast          a short message in the corner that goes by itself ("Saved")
  */
+import Link from "next/link";
 import { useId, type ReactNode } from "react";
 import { Icon } from "@/components/learn/Icon";
 import { Select } from "@/components/learn/Select";
@@ -260,9 +261,9 @@ export function Stepper({ steps, label = "Stages", guide }: { steps: Step[]; lab
           return (
             <li key={s.key} aria-current={s.state === "current" ? "step" : undefined} className="flex min-w-0 flex-1 items-center">
               {s.href ? (
-                <a href={s.href} className={`${cls} hover:bg-[var(--portal-hover)]`}>
+                <Link href={s.href} className={`${cls} hover:bg-[var(--portal-hover)]`}>
                   {body}
-                </a>
+                </Link>
               ) : s.onClick ? (
                 <button type="button" onClick={s.onClick} className={`${cls} hover:bg-[var(--portal-hover)]`}>
                   {body}
