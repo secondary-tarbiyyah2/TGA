@@ -260,14 +260,13 @@ export function buildTemplateContext(
   // The shared Payment Link from 0214 is only a fallback until then.
   const personal = Boolean(opts.personalPayLink && app.reference);
   const payOnline = personal ? PAYMENT_LINK_PLACEHOLDER : onlinePaymentLink(settings?.online_payment_url, app.reference);
-  const bankRaw = (settings?.payment_instructions || "").trim();
+  // Stripe is the only way to pay (owner, 11 Nov 2026): the old payment
+  // instructions (bank details) are never pasted into an email any more.
   const bank = personal
     ? "Pay online on your own secure payment page. You choose your payment plan there, then pay straight from your bank app (Pay by Bank) or by debit or credit card. Your personal link is below; please do not share it."
     : payOnline
     ? `Pay online, by debit or credit card or straight from your bank app, on our secure payment page:\n${payOnline}`
-    : bankRaw && !/^(bank transfer|online payment) details to follow\.?$/i.test(bankRaw)
-      ? bankRaw
-      : "Please reply to this email and we will send you a secure link to pay online.";
+    : "Please reply to this email and we will send you a secure link to pay online.";
 
   const deadline = fmtDayLong(app.offer_deadline) || fmtDayLong(londonWorkingDaysPlus(5, now));
 

@@ -26,6 +26,7 @@ export type ActionArea =
   | "Safeguarding"
   | "Admissions"
   | "Recruitment"
+  | "Fees"
   | "Revision"
   | "Curriculum";
 export type ActionItem = { id: string; area: ActionArea; urgency: Urgency; title: string; detail: string; href: string; cta: string; who?: string; people?: { id: string; name: string }[] };
@@ -33,8 +34,8 @@ export type Role = "teach" | "admin" | "student" | "family";
 
 /** The Action centre's categories, in the order they are listed. Each item's
  * `area` puts it in exactly one category. */
-export type CategoryKey = "safeguarding" | "attendance" | "classwork" | "curriculum" | "pupils" | "quran" | "admissions" | "recruitment" | "documents";
-export type CategoryIcon = "shieldAlert" | "userCheck" | "notebookPen" | "backpack" | "bookMarked" | "userRoundPlus" | "briefcase" | "fileCheck" | "bookOpen";
+export type CategoryKey = "safeguarding" | "attendance" | "classwork" | "curriculum" | "pupils" | "quran" | "admissions" | "fees" | "recruitment" | "documents";
+export type CategoryIcon = "shieldAlert" | "userCheck" | "notebookPen" | "backpack" | "bookMarked" | "userRoundPlus" | "wallet" | "briefcase" | "fileCheck" | "bookOpen";
 export const CATEGORIES: { key: CategoryKey; label: string; icon: CategoryIcon; areas: ActionArea[] }[] = [
   { key: "safeguarding", label: "Safeguarding", icon: "shieldAlert", areas: ["Safeguarding"] },
   { key: "attendance", label: "Attendance", icon: "userCheck", areas: ["Registers", "Absence"] },
@@ -43,6 +44,7 @@ export const CATEGORIES: { key: CategoryKey; label: string; icon: CategoryIcon; 
   { key: "pupils", label: "Pupils and SEND", icon: "backpack", areas: ["SEND", "Child details", "Pupils"] },
   { key: "quran", label: "Qur'an", icon: "bookMarked", areas: ["Qur'an"] },
   { key: "admissions", label: "Admissions", icon: "userRoundPlus", areas: ["Admissions"] },
+  { key: "fees", label: "Fees", icon: "wallet", areas: ["Fees"] },
   { key: "recruitment", label: "Recruitment", icon: "briefcase", areas: ["Recruitment"] },
   { key: "documents", label: "Documents", icon: "fileCheck", areas: ["Signatures"] },
 ];
@@ -294,7 +296,7 @@ async function loadAdminItems(): Promise<ActionItem[]> {
   const count = (r: Counted) => (r.error ? 0 : r.count || 0);
   const none: Counted = { count: 0, error: null };
 
-  const [lessons, marking, sigs, flagged, reviews, apps, proofs, jobs, enrol] = await Promise.all([
+  const [lessons, marking, sigs, flagged, reviews, apps, proofs, jobs, enrol, payAlerts, overdueFees] = await Promise.all([
     supabase.from("lesson_instances").select("id, timetable_slots(start_time, class_id, classes(name), timetable_runs(status))").eq("date", today),
     supabase.from("homework_submissions").select("id, homework_marks(marked_at)").not("submitted_at", "is", null).lt("submitted_at", weekAgo).order("submitted_at", { ascending: false }).limit(1000),
     supabase.from("outstanding_signatures").select("user_id", { count: "exact", head: true }),
@@ -304,6 +306,9 @@ async function loadAdminItems(): Promise<ActionItem[]> {
     supabase.from("admissions_payment_proofs").select("id", { count: "exact", head: true }).eq("status", "pending"),
     supabase.from("job_applications").select("id", { count: "exact", head: true }).eq("status", "new"),
     supabase.from("enrolments").select("child_id").gte("created_at", weekAgo).limit(5000),
+    // Payments (T71): RLS shows these to head teachers and admins only; everyone else gets nothing.
+    supabase.from("payment_alerts").select("id, urgency, title").is("resolved_at", null).order("created_at", { ascending: false }).limit(200),
+    supabase.from("fee_charges").select("amount_pence, paid_pence").in("status", ["due", "overdue", "part_paid", "failed"]).lt("due_date", today).is("voided_at", null).limit(5000),
   ]);
 
   // Registers: published-timetable lessons that have started with no register yet.
@@ -359,6 +364,19 @@ async function loadAdminItems(): Promise<ActionItem[]> {
   if (appsN) out.push({ id: "adm-apps", area: "Admissions", urgency: "soon", title: `${plural(appsN, "new application")} to review`, detail: "Read each one and move it to the next stage.", href: "/admin/admissions", cta: "Open applications" });
   const proofsN = count(proofs);
   if (proofsN) out.push({ id: "adm-proofs", area: "Admissions", urgency: "soon", title: `${plural(proofsN, "payment proof")} to check`, detail: "Uploaded by families. Check the amount and mark it verified.", href: "/admin/admissions", cta: "Check payments" });
+  if (!payAlerts.error) {
+    const list = (payAlerts.data as { id: string; urgency: Urgency; title: string }[]) || [];
+    const urgent = list.filter((a) => a.urgency === "now");
+    if (urgent.length === 1) out.push({ id: `fee-alert-${urgent[0].id}`, area: "Fees", urgency: "now", title: urgent[0].title, detail: "From Stripe or the daily check. Open it on the Payments page.", href: "/admin/payments", cta: "Open" });
+    else if (urgent.length > 1) out.push({ id: "fee-alerts-now", area: "Fees", urgency: "now", title: `${plural(urgent.length, "payment")} to check now`, detail: "Disputes, amounts that do not match, or payments in Stripe not in our records.", href: "/admin/payments", cta: "Open" });
+    const rest = list.length - urgent.length;
+    if (rest) out.push({ id: "fee-alerts", area: "Fees", urgency: "soon", title: `${plural(rest, "payment item")} to look at`, detail: "Failed payments, refunds and Direct Debit changes.", href: "/admin/payments", cta: "Open" });
+  }
+  if (!overdueFees.error) {
+    const rows = (overdueFees.data as { amount_pence: number; paid_pence: number }[]) || [];
+    const owed = rows.reduce((s, r) => s + Math.max(0, r.amount_pence - r.paid_pence), 0);
+    if (rows.length) out.push({ id: "fee-overdue", area: "Fees", urgency: "soon", title: `${plural(rows.length, "fee payment")} overdue (£${(owed / 100).toLocaleString("en-GB", { minimumFractionDigits: 2, maximumFractionDigits: 2 })})`, detail: "Families have been reminded by email. Contact any still overdue after a week.", href: "/admin/payments", cta: "See who" });
+  }
   const jobsN = count(jobs);
   if (jobsN) out.push({ id: "adm-jobs", area: "Recruitment", urgency: "soon", title: plural(jobsN, "new job application"), detail: "Read and shortlist, or reply to the applicant.", href: "/admin/recruitment", cta: "Open applications" });
 

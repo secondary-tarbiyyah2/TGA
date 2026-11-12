@@ -328,14 +328,14 @@ function FamilyFeesContent() {
                       key={r.id}
                       className="flex flex-wrap items-center justify-between gap-x-4 gap-y-2 py-3"
                     >
-                      <div className="min-w-0 flex-1">
+                      <div className="min-w-0 basis-full sm:basis-0 sm:flex-1">
                         <p className="font-medium text-ink">{r.description}</p>
                         <p className="t-meta">
                           {childLine(r)} · {r.invoice_number}
                         </p>
                       </div>
-                      <div className="flex items-center gap-4">
-                        <div className="text-right">
+                      <div className="flex w-full items-center justify-between gap-4 sm:w-auto sm:justify-end">
+                        <div className="sm:text-right">
                           <p className="font-semibold tabular-nums text-ink">
                             {formatPence(r.balance)}
                           </p>
@@ -362,6 +362,7 @@ function FamilyFeesContent() {
                               {busy === r.id ? "Opening…" : "Pay now"}
                             </Button>
                           )}
+                        {!STORE_APP && !PAYABLE_STATES.includes(r.state as ChargeState) && <span aria-hidden="true" className="hidden w-[5.25rem] sm:block" />}
                       </div>
                     </li>
                   ))}
@@ -410,7 +411,7 @@ function FamilyFeesContent() {
                     return (
                       <li key={r.id} className="py-3">
                         <div className="flex flex-wrap items-center justify-between gap-x-4 gap-y-1">
-                          <div className="min-w-0 flex-1">
+                          <div className="min-w-0 basis-full sm:basis-0 sm:flex-1">
                             <p className="font-medium text-ink">
                               {r.description}
                             </p>
