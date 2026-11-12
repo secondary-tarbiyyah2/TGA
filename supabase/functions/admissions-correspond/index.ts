@@ -15,6 +15,7 @@ import { createClient } from "jsr:@supabase/supabase-js@2";
 import { corsHeaders, jsonResponse } from "../_shared/cors.ts";
 import { sendEmail, emailShell } from "../_shared/resend.ts";
 import { generateToken, hashToken } from "../_shared/manageToken.ts";
+import { stripeSecretKey } from "../_shared/stripe.ts";
 import {
   DEFAULT_TEMPLATES,
   LEGACY_KEYS,
@@ -36,6 +37,7 @@ const TEMPLATES: string[] = [...TEMPLATE_KEYS, ...LEGACY_KEYS];
 const SITE_URL = (Deno.env.get("SITE_URL") || "https://globalacademy.tarbiyyah.co.uk").replace(/\/$/, "");
 // Replaced with the family's personal proof-of-payment upload link when sent.
 const PAYMENT_LINK_TOKEN = "{{PAYMENT_LINK}}";
+const SERVER_ONLY_VARS = ["payment_link", "pay_online_link", "bank_details"];
 const ALLOWED = ["head_teacher", "admin", "admissions"];
 
 function escapeHtml(s: string): string {
@@ -124,9 +126,10 @@ Deno.serve(async (req) => {
       serviceClient.from("site_settings").select("online_payment_url, payment_instructions, assessment_join_url, interview_join_url, assessment_duration_text, admissions_email, contact_phone").eq("id", true).maybeSingle(),
       serviceClient.from("admissions_stage_details").select("assessment_platform, assessment_link, assessment_duration_text, interview_interviewer, interview_link, offer_start_date").eq("application_id", applicationId).maybeSingle(),
     ]);
-    const ctx = buildTemplateContext(app as never, (settings as never) || null, (stage as never) || null);
+    const ctx = buildTemplateContext(app as never, (settings as never) || null, (stage as never) || null, { personalPayLink: Boolean(stripeSecretKey()) });
     // Values the portal computed (fees, overridden dates/links) win, but only when non-empty.
-    for (const [k, v] of Object.entries(clientVars)) if (v.trim() !== "" && k !== "payment_link") ctx[k] = v;
+    // How to pay is always the server's: the personal link is made here.
+    for (const [k, v] of Object.entries(clientVars)) if (v.trim() !== "" && !SERVER_ONLY_VARS.includes(k)) ctx[k] = v;
     const out = renderTemplate(tpl, ctx);
     if (out.unresolved.length) return jsonResponse({ ok: false, error: "unresolved_tokens", unresolved: out.unresolved }, 400);
     subject = out.subject;
@@ -148,7 +151,7 @@ Deno.serve(async (req) => {
     token = generateToken();
     const link = `${SITE_URL}/admissions/payment?ref=${encodeURIComponent(app.reference as string)}&token=${token}`;
     sendText = text.split(PAYMENT_LINK_TOKEN).join(link);
-    loggedText = text.split(PAYMENT_LINK_TOKEN).join("(personal secure upload link sent by email)");
+    loggedText = text.split(PAYMENT_LINK_TOKEN).join("(personal secure payment link sent by email)");
   }
 
   let emailSent = false;

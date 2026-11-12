@@ -138,7 +138,7 @@ export function PupilRecord({
         {!details && <p className="mt-2 text-sm text-amber-800">The family hasn&apos;t started this record yet.</p>}
       </div>
 
-      <Tabs items={tabs} value={tab} onChange={setTab} label="Pupil record sections" className="print:hidden" />
+      <Tabs variant="switch" items={tabs} value={tab} onChange={setTab} label="Pupil record sections" className="print:hidden" />
 
       <RecordSections data={data} dob={child.dob} teacherView={teacherView} showAcks={showAcks} visible={(k) => vis(k)} />
     </div>

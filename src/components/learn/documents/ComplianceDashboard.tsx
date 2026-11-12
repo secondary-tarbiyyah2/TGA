@@ -1,10 +1,10 @@
 "use client";
 
+import { SectionLayout, SectionNav } from "@/components/learn/SectionNav";
 import { useCallback, useEffect, useMemo, useState, type ReactNode } from "react";
 import { requestSignatures } from "@/components/learn/documents/audience";
 import { getSupabaseClient } from "@/lib/supabase/client";
 import Link from "next/link";
-import { Tabs } from "@/components/learn/Tabs";
 import { btn, ui } from "@/components/learn/ui";
 import { Select } from "@/components/learn/Select";
 
@@ -276,19 +276,23 @@ export function ComplianceDashboard({ isHeadTeacher, alertsExtra, topExtra, reco
         {tile("Staff without DBS on file", staffNoDbs === null ? "…" : staffNoDbs.length, staffNoDbs && staffNoDbs.length === 0 ? "ok" : "warn", () => setTab("records"), `${dbsDue.length} renewal${dbsDue.length === 1 ? "" : "s"} due within 60 days. Training isn't tracked yet.`)}
       </div>
 
-      <Tabs
-        items={[
+      <SectionLayout
+        nav={
+          <SectionNav
+            items={[
           { key: "alerts", label: "Alerts", count: activeCount || undefined, countAlert: true },
           { key: "signatures", label: "Signatures", count: people.length || undefined },
           { key: "records", label: "Records and settings" },
         ]}
-        value={tab}
-        onChange={setTab}
-        label="Safeguarding sections"
-        guide="safeguarding-sections"
-      />
-
-      {message && <p role="status" className="rounded-lg bg-cream px-4 py-2 text-sm text-ink/80">{message}</p>}
+            value={tab}
+            onChange={setTab}
+            label="Safeguarding sections"
+            guide="safeguarding-sections"
+          />
+        }
+      >
+        <div className="min-w-0 space-y-5">
+        {message && <p role="status" className="rounded-lg bg-cream px-4 py-2 text-sm text-ink/80">{message}</p>}
 
       {tab === "alerts" && (
         <div className="space-y-4">
@@ -443,6 +447,8 @@ export function ComplianceDashboard({ isHeadTeacher, alertsExtra, topExtra, reco
       )}
 
       {tab === "records" && <div className="space-y-6">{recordsTab}</div>}
+        </div>
+      </SectionLayout>
     </div>
   );
 }

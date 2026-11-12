@@ -67,7 +67,7 @@ export function FamilySupportPlan() {
         </EmptyState>
       ) : (
         <div className="space-y-4">
-          {withPlan.length > 1 && <Tabs label="Child" value={current.id} onChange={setChildId} items={withPlan.map((k) => ({ key: k.id, label: k.name.split(" ")[0] }))} />}
+          {withPlan.length > 1 && <Tabs variant="switch" label="Child" value={current.id} onChange={setChildId} items={withPlan.map((k) => ({ key: k.id, label: k.name.split(" ")[0] }))} />}
           <PlanView key={plan.id} plan={plan} childName={current.name} />
         </div>
       )}

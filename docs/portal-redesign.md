@@ -57,7 +57,15 @@ Batches and status:
    many are waiting, Issued), each pressable, instead of a switch strip; Report settings left the stages and
    opens from the header's menu with "Back to reports". The overview's figures use `.portal-figures`. The
    `Stepper` keeps one row on phones (no notes or joining lines there). Still to do: Admissions, Entry
-   assessments, Timetable. 6a. [x] Gradebook (workspace): the class picker, pupil count and Add an assessment sit on one line above the
+   assessments, Timetable. 5b. [x] No strips along the top: every page-level `Tabs` strip (Admissions, Recruitment, Attendance, Behaviour,
+   GCSE, Entry assessments, Website content, Policies and signatures, Safeguarding, Absences and cover, Qur'an for
+   families and pupils) is now `SectionLayout` + `SectionNav`: sections down the left from tablet width, a board of
+   section buttons on phones. Filters and in-panel views that were underlined strips (Feedback status, Homework
+   status, Syllabus views, revision steps, the application drawer, a child picker, legacy unit tools) became the
+   compact `variant="switch"` control. No line-variant `Tabs` is left in the portal (check with
+   `grep -rn "<Tabs" src | grep -v switch`). Admissions' board has a stage strip (`Stepper`) with counts per stage.
+   Converter scripts used: `scratchpad/tpl/conv.py`, `parentend.py`, `toswitch.py`, `cleanup.py`.
+6a. [x] Gradebook (workspace): the class picker, pupil count and Add an assessment sit on one line above the
    grid (`ClassGradebook toolbar`); the card with a second "Gradebook" heading is gone, here and in a class's
    Grades. "No assessment types" now points to Report settings, where they live.
 6. [ ] Workspaces and Today, Messages,
@@ -503,6 +511,11 @@ etc. Needs to be done in a unique way." The short tour above stays as the doorwa
   and kind of assessment, groups its columns by term, adds Target (GCSE classes) and Progress (Rising, Steady, Falling)
   and a CSV; term reports' class list filters (still to write, awaiting approval, all issued) with search and a CSV;
   revision results filter by year and subject, can show only units with pupils under 60%, and download as a CSV.
+- 2026-11-11: Payments (T71, `docs/payments.md`): family Fees page rebuilt (references, Pay now / Pay all due, status
+  dots, StatStrip); new School office > Payments page (`/admin/payments`, `components/learn/payments/PaymentsBoard.tsx`:
+  header figures, Needs checking list, table that stacks on phones, charge side panel, waive and set-plan dialogs);
+  Admissions > Settings > Payments (`PaymentsSettings.tsx`); Fees category in the Action centre. PR #210 merged; staff
+  page in the follow-up PR. Waiting on the owner's Stripe secrets.
 - 2026-11-11: House points as a proper system (feedback 2, item 21; `rewards/HousePoints.tsx`): one page for teachers and the
   head teacher with sections down the left (Standings and award, Leaderboard with top pupils, History with filters, CSV
   and taken-back awards, Star of the week, and for the head Limits and houses); Award points in a side panel; the head

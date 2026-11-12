@@ -1,5 +1,6 @@
 "use client";
 
+import { SectionLayout, SectionNav } from "@/components/learn/SectionNav";
 import { Loading } from "@/components/learn/kit";
 import { useEffect, useMemo, useState } from "react";
 import { LearnGate } from "@/components/learn/LearnGate";
@@ -10,7 +11,6 @@ import { useLearnPermission } from "@/lib/learn/session";
 import { getSupabaseClient } from "@/lib/supabase/client";
 import { formatDateKey, ukDaysAgo } from "@/lib/learn/ukTime";
 import { saveCsv, toCsv as buildCsv } from "@/lib/learn/csv";
-import { Tabs, tabPanelProps } from "@/components/learn/Tabs";
 import { Button, ui } from "@/components/learn/ui";
 import { Select } from "@/components/learn/Select";
 import { ATTENDANCE_CODES, TECHNICAL_REPEAT, attendanceLabel, technicalRepeats, type AttendanceStatus } from "@/lib/learn/attendanceCodes";
@@ -541,8 +541,19 @@ function AttendanceContent() {
   return (
     <>
       <PageHeader crumbs={[{ label: "Today", href: "/admin/dashboard" }, { label: "Attendance" }]} title="Attendance" subtitle="Every lesson's register, filtered by date, class and state; open one to take or correct it. Reports cover any date range." />
-      <Tabs items={tabs} value={tab} onChange={setTab} label="Attendance sections" guide="attendance-sections" idBase="attendance" className="mb-5" />
-      <div {...tabPanelProps("attendance", tab)}>{tab === "register" ? <RegisterList scope="all" base="/admin" /> : <ReportsContent />}</div>
+      <SectionLayout
+        nav={
+          <SectionNav
+            items={tabs}
+            value={tab}
+            onChange={setTab}
+            label="Attendance sections"
+            guide="attendance-sections"
+          />
+        }
+      >
+        <div>{tab === "register" ? <RegisterList scope="all" base="/admin" /> : <ReportsContent />}</div>
+      </SectionLayout>
     </>
   );
 }

@@ -6,7 +6,7 @@ import { AdminShell } from "@/components/learn/AdminShell";
 import { ApplicationsTab } from "@/components/learn/admissions/ApplicationsTab";
 import { AdmissionsSettingsPanel } from "@/components/learn/admissions/AdmissionsSettingsPanel";
 import { CallsAndBookings } from "@/components/learn/admissions/CallsAndBookings";
-import { Tabs, tabPanelProps } from "@/components/learn/Tabs";
+import { SectionLayout, SectionNav } from "@/components/learn/SectionNav";
 import { PageHeader } from "@/components/learn/PageHeader";
 
 type Tab = "applications" | "calls" | "settings";
@@ -17,20 +17,23 @@ function AdmissionsContent() {
     <div className="space-y-5">
       <PageHeader title="Admissions" subtitle="Online applications, plus admissions calls and bookings." />
 
-      <Tabs
-        items={[
-          { key: "applications", label: "Applications" },
-          { key: "calls", label: "Calls and bookings" },
-          { key: "settings", label: "Email settings" },
-        ]}
-        value={tab}
-        onChange={setTab}
-        label="Admissions sections"
-        guide="admissions-tabs"
-        idBase="admissions"
-      />
-
-      <div {...tabPanelProps("admissions", tab)}>{tab === "applications" ? <ApplicationsTab /> : tab === "calls" ? <CallsAndBookings /> : <AdmissionsSettingsPanel />}</div>
+      <SectionLayout
+        nav={
+          <SectionNav
+            items={[
+              { key: "applications" as Tab, label: "Applications" },
+              { key: "calls" as Tab, label: "Calls and bookings" },
+              { key: "settings" as Tab, label: "Email settings" },
+            ]}
+            value={tab}
+            onChange={setTab}
+            label="Admissions sections"
+            guide="admissions-tabs"
+          />
+        }
+      >
+        {tab === "applications" ? <ApplicationsTab /> : tab === "calls" ? <CallsAndBookings /> : <AdmissionsSettingsPanel />}
+      </SectionLayout>
     </div>
   );
 }

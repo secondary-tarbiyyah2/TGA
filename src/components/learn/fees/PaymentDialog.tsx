@@ -1,11 +1,20 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import { getSupabaseClient } from "@/lib/supabase/client";
 import { formatGBP } from "@/lib/format";
-import { METHOD_LABEL, RECORDABLE_METHODS, parsePounds, round2, todayIso, type PaymentMethod } from "./shared";
-import { btn, ui } from "@/components/learn/ui";
+import { parsePounds, round2, todayIso } from "./shared";
+import { Button, Field, Notice, ui } from "@/components/learn/ui";
+import { Dialog } from "@/components/learn/kit";
 
+/**
+ * Record a payment by hand: for exceptional cases only (owner, 11 Nov 2026:
+ * payments are made online through Stripe and nowhere else). Stripe payments
+ * made in the portal or from an email link are recorded automatically. This is
+ * for a Stripe payment the system could not match, for example one made with
+ * the old shared payment link. It needs the Stripe reference and a reason, and
+ * goes through fee_record_manual_payment (head teacher or admin, audited).
+ */
 export function PaymentDialog({
   chargeId,
   title,
@@ -23,98 +32,71 @@ export function PaymentDialog({
 }) {
   const supabase = getSupabaseClient();
   const [amount, setAmount] = useState(fullPayment ? balance.toFixed(2) : "");
-  const [method, setMethod] = useState<PaymentMethod>("online");
   const [paidOn, setPaidOn] = useState(todayIso());
   const [reference, setReference] = useState("");
+  const [reason, setReason] = useState("");
   const [busy, setBusy] = useState(false);
   const [error, setError] = useState<string | null>(null);
 
   const today = todayIso();
   const value = round2(parsePounds(amount));
   const future = !!paidOn && paidOn > today;
-  const valid = value > 0 && value <= balance && !!paidOn && !future;
-
-  useEffect(() => {
-    const onKey = (e: KeyboardEvent) => {
-      if (e.key === "Escape" && !busy) onClose();
-    };
-    window.addEventListener("keydown", onKey);
-    return () => window.removeEventListener("keydown", onKey);
-  }, [busy, onClose]);
+  const refOk = /^(pi|ch|py|cs)_[A-Za-z0-9_]+$/.test(reference.trim());
+  const valid = value > 0 && value <= balance && !!paidOn && !future && refOk && reason.trim().length >= 5;
 
   const save = async () => {
     if (!supabase || !valid) return;
     setBusy(true);
     setError(null);
-    const {
-      data: { user },
-    } = await supabase.auth.getUser();
-    const { error: err } = await supabase.from("fee_payments").insert({
-      charge_id: chargeId,
-      amount: value,
-      method,
-      paid_on: paidOn,
-      reference: reference.trim() || null,
-      recorded_by: user?.id ?? null,
+    const { error: err } = await supabase.rpc("fee_record_manual_payment", {
+      p_charge: chargeId,
+      p_amount_pence: Math.round(value * 100),
+      p_stripe_reference: reference.trim(),
+      p_reason: reason.trim(),
+      p_paid_on: paidOn,
     });
     setBusy(false);
     if (err) {
-      setError("Could not record the payment, please try again.");
+      setError(err.message || "Could not record the payment, please try again.");
       return;
     }
     onDone();
   };
 
   return (
-    <div className="fixed inset-0 z-50 flex items-end justify-center bg-black/40 p-0 sm:items-center sm:p-4" role="dialog" aria-modal="true" aria-labelledby="payment-dialog-title">
-      <div className="max-h-[92vh] w-full max-w-md overflow-y-auto rounded-t-2xl border border-gold-light bg-white p-5 sm:rounded-2xl">
-        <h2 id="payment-dialog-title" className="text-lg font-semibold text-ink">{fullPayment ? "Mark as paid" : "Record payment"}</h2>
-        <p className="mt-0.5 text-sm text-ink/65">
-          {title} · balance {formatGBP(balance)}
-        </p>
-        <div className="mt-4 space-y-3 text-sm">
-          <label className="block">
-            <span className="text-ink/70">Amount (£)</span>
-            <input type="text" inputMode="decimal" autoFocus={!fullPayment} value={amount} onChange={(e) => setAmount(e.target.value)} className={`${ui.input} mt-1`} placeholder="e.g. 304.29" />
-            {value > balance && <span className="mt-1 block text-xs text-red-700">More than the {formatGBP(balance)} outstanding.</span>}
-            {amount.trim() !== "" && !(value > 0) && <span className="mt-1 block text-xs text-red-700">Enter an amount in pounds, for example 304.29.</span>}
-          </label>
-          <div>
-            <span className="text-ink/70">Method</span>
-            <div className="mt-1 flex flex-wrap gap-2">
-              {RECORDABLE_METHODS.map((m) => (
-                <button
-                  key={m}
-                  type="button"
-                  aria-pressed={method === m}
-                  onClick={() => setMethod(m)}
-                  className={`rounded-full border px-3 py-1.5 font-medium ${method === m ? "border-teal-700 bg-teal-700 text-white" : "border-gold-light bg-white text-ink/70 hover:bg-cream"}`}
-                >
-                  {METHOD_LABEL[m]}
-                </button>
-              ))}
-            </div>
-          </div>
-          <label className="block">
-            <span className="text-ink/70">Date received</span>
-            <input type="date" value={paidOn} max={today} onChange={(e) => setPaidOn(e.target.value)} className={`${ui.input} mt-1`} />
-            {future && <span className="mt-1 block text-xs text-red-700">The date received can&apos;t be in the future.</span>}
-          </label>
-          <label className="block">
-            <span className="text-ink/70">Reference (optional)</span>
-            <input type="text" value={reference} onChange={(e) => setReference(e.target.value)} className={`${ui.input} mt-1`} placeholder="Payment or receipt reference" />
-          </label>
-          {error && <p className="text-red-700">{error}</p>}
-        </div>
-        <div className="mt-5 flex justify-end gap-2">
-          <button type="button" onClick={onClose} className={btn("secondary")}>
+    <Dialog
+      title={fullPayment ? "Record a Stripe payment" : "Record part of a Stripe payment"}
+      onClose={() => !busy && onClose()}
+      footer={
+        <>
+          <Button variant="ghost" onClick={onClose} disabled={busy}>
             Cancel
-          </button>
-          <button type="button" disabled={!valid || busy} onClick={save} className={btn("primary")}>
-            {busy ? "Saving…" : "Save payment"}
-          </button>
-        </div>
+          </Button>
+          <Button variant="primary" onClick={save} disabled={!valid || busy}>
+            {busy ? "Saving…" : "Record payment"}
+          </Button>
+        </>
+      }
+    >
+      <p className="t-meta">
+        {title} · balance {formatGBP(balance)}
+      </p>
+      <div className="mt-4 space-y-3">
+        <Notice tone="warn">Only for a Stripe payment that was not matched automatically. Payments made in the portal or from an email link are recorded on their own.</Notice>
+        <Field label="Amount (£)" htmlFor="pay-amount" error={value > balance ? `More than the ${formatGBP(balance)} outstanding.` : amount.trim() !== "" && !(value > 0) ? "Enter an amount in pounds, for example 304.29." : undefined}>
+          <input id="pay-amount" type="text" inputMode="decimal" value={amount} onChange={(e) => setAmount(e.target.value)} className={ui.input} placeholder="e.g. 304.29" />
+        </Field>
+        <Field label="Stripe payment reference" htmlFor="pay-ref" hint="From the payment in the Stripe dashboard: starts pi_, py_, ch_ or cs_." error={reference.trim() && !refOk ? "That does not look like a Stripe reference." : undefined}>
+          <input id="pay-ref" type="text" value={reference} onChange={(e) => setReference(e.target.value)} className={ui.input} placeholder="pi_..." />
+        </Field>
+        <Field label="Date received" htmlFor="pay-date" error={future ? "The date received cannot be in the future." : undefined}>
+          <input id="pay-date" type="date" value={paidOn} max={today} onChange={(e) => setPaidOn(e.target.value)} className={ui.input} />
+        </Field>
+        <Field label="Reason" htmlFor="pay-reason" hint="Why this is being recorded by hand. Kept in the audit log.">
+          <textarea id="pay-reason" value={reason} onChange={(e) => setReason(e.target.value)} className={ui.textarea} />
+        </Field>
+        {error && <Notice tone="bad">{error}</Notice>}
       </div>
-    </div>
+    </Dialog>
   );
 }

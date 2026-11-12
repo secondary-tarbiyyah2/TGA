@@ -8,6 +8,7 @@ import { Dialog } from "@/components/learn/kit";
 import { Icon, type IconName } from "@/components/learn/Icon";
 import { Select } from "@/components/learn/Select";
 import { Button, Switch, ui } from "@/components/learn/ui";
+import { useFeature } from "@/lib/learn/features";
 
 export type ClassworkType = "assignment" | "quiz" | "question" | "material";
 export type CreatePick = ClassworkType | "post" | "topic";
@@ -44,15 +45,22 @@ export const CLASSWORK_TYPES: { kind: ClassworkType; icon: IconName; title: stri
   },
 ];
 
+/** The kinds of classwork offered now: Quiz only while the Headteacher has Quizzes switched on (School features). */
+export function useClassworkTypes() {
+  const quizzesOn = useFeature("quizzes");
+  return quizzesOn ? CLASSWORK_TYPES : CLASSWORK_TYPES.filter((t) => t.kind !== "quiz");
+}
+
 /**
  * "Create": the kinds of classwork as large cards, not a dropdown (owner, 11 Nov 2026), each
  * saying what it is for. Picking one opens its own form; a post and a topic sit underneath.
  */
 export function CreatePicker({ onPick, onClose }: { onPick: (k: CreatePick) => void; onClose: () => void }) {
+  const kinds = useClassworkTypes();
   return (
     <Dialog title="Add to classwork" description="Choose what you are setting. Each has its own form." size="lg" onClose={onClose} footer={<Button variant="ghost" onClick={onClose}>Cancel</Button>}>
       <ul className="grid gap-3 sm:grid-cols-2" aria-label="Kinds of classwork">
-        {CLASSWORK_TYPES.map((t, i) => (
+        {kinds.map((t, i) => (
           <li key={t.kind}>
             <button
               type="button"

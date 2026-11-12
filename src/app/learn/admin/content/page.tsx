@@ -1,5 +1,6 @@
 "use client";
 
+import { SectionLayout, SectionNav } from "@/components/learn/SectionNav";
 import { useEffect, useState } from "react";
 import Link from "next/link";
 import { LearnGate } from "@/components/learn/LearnGate";
@@ -204,14 +205,19 @@ function ContentAdmin() {
         title="Website content"
         subtitle="Everything published on the public website. Most changes go live a few minutes after you save."
       />
-      <Tabs
-        items={GROUPS.map((g) => ({ key: g.key, label: g.label }))}
-        value={group.key}
-        onChange={(k) => setTab(GROUPS.find((g) => g.key === k)!.tabs[0])}
-        label="Website content sections"
-        guide="content-sections"
-      />
-      {group.tabs.length > 1 && <Tabs variant="switch" items={group.tabs.map((t) => ({ key: t, label: t }))} value={tab} onChange={setTab} label={`${group.label} editors`} />}
+      <SectionLayout
+        nav={
+          <SectionNav
+            items={GROUPS.map((g) => ({ key: g.key, label: g.label }))}
+            value={group.key}
+            onChange={(k) => setTab(GROUPS.find((g) => g.key === k)!.tabs[0])}
+            label="Website content sections"
+            guide="content-sections"
+          />
+        }
+      >
+        <div className="min-w-0 space-y-5">
+        {group.tabs.length > 1 && <Tabs variant="switch" items={group.tabs.map((t) => ({ key: t, label: t }))} value={tab} onChange={setTab} label={`${group.label} editors`} />}
       {tab === "Policies" && (
         <p className="text-sm text-ink/65">
           To choose who has to sign a policy, use <Link href="/admin/documents" className="font-medium text-teal-700 underline">Policies and signatures</Link>.
@@ -222,6 +228,8 @@ function ContentAdmin() {
           <TabContent tab={t} />
         </div>
       ))}
+        </div>
+      </SectionLayout>
     </div>
   );
 }

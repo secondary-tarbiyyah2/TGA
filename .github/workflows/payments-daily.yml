@@ -1,0 +1,71 @@
+name: Payments daily check
+
+# Once a day (T71, docs/payments.md): due charges become overdue, families get
+# their reminders (7 days before a due date, and the day after it is missed),
+# Direct Debit instalments are collected when that switch is on, and the last
+# four days of Stripe payments and payouts are checked against our records.
+# Anything that does not match goes to the Action centre. All the logic is in
+# the payments-daily Edge Function; this only calls it with the service-role
+# key, same as open-evening-reminders.yml.
+
+on:
+  schedule:
+    - cron: "23 6 * * *" # 06:23 UTC every day (07:23 in summer)
+  workflow_dispatch:
+    inputs:
+      days:
+        description: "How many days back to check in Stripe (1 to 14)"
+        required: false
+        default: "4"
+
+concurrency:
+  group: payments-daily
+  cancel-in-progress: false
+
+permissions:
+  contents: read
+
+jobs:
+  run:
+    runs-on: ubuntu-latest
+    env:
+      SUPABASE_ACCESS_TOKEN: ${{ secrets.SUPABASE_ACCESS_TOKEN }}
+    steps:
+      - uses: supabase/setup-cli@1dedf2c611547ede7232d26866dd3c56ab903bbb # v1.7.3
+        with:
+          version: 2.122.1
+
+      - name: Find the project ref and service-role key
+        id: keys
+        run: |
+          set -euo pipefail
+          PROJECTS=$(supabase projects list -o json)
+          REF=$(echo "$PROJECTS" | jq -r ".[] | select(.name==\"secondary-tarbiyyah2's Project\") | .id" | head -n1)
+          if [ -z "$REF" ] || [ "$REF" = "null" ]; then
+            COUNT=$(echo "$PROJECTS" | jq 'length')
+            if [ "$COUNT" = "1" ]; then REF=$(echo "$PROJECTS" | jq -r '.[0].id'); fi
+          fi
+          if [ -z "$REF" ] || [ "$REF" = "null" ]; then
+            echo "::error::Could not find the Supabase project."
+            exit 1
+          fi
+          SERVICE_ROLE=$(supabase projects api-keys --project-ref "$REF" -o json | jq -r '.[] | select(.name=="service_role" or .name=="secret") | .api_key' | head -n1)
+          if [ -z "$SERVICE_ROLE" ] || [ "$SERVICE_ROLE" = "null" ]; then
+            echo "::error::Could not find a service_role/secret key."
+            exit 1
+          fi
+          echo "::add-mask::$SERVICE_ROLE"
+          echo "ref=$REF" >> "$GITHUB_OUTPUT"
+          echo "service_role_key=$SERVICE_ROLE" >> "$GITHUB_OUTPUT"
+
+      - name: Call payments-daily
+        env:
+          DAYS: ${{ github.event.inputs.days || '4' }}
+        run: |
+          set -euo pipefail
+          case "$DAYS" in ''|*[!0-9]*) DAYS=4 ;; esac
+          curl -sS --fail-with-body -X POST "https://${{ steps.keys.outputs.ref }}.supabase.co/functions/v1/payments-daily" \
+            -H "apikey: ${{ steps.keys.outputs.service_role_key }}" \
+            -H "Authorization: Bearer ${{ steps.keys.outputs.service_role_key }}" \
+            -H "Content-Type: application/json" \
+            -d "{\"days\": $DAYS}"

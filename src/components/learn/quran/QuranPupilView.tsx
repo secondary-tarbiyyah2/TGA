@@ -1,8 +1,8 @@
 "use client";
 
+import { SectionLayout, SectionNav } from "@/components/learn/SectionNav";
 import { useEffect, useState } from "react";
 import { getSupabaseClient } from "@/lib/supabase/client";
-import { Tabs } from "@/components/learn/Tabs";
 import { EmptyState, Notice, StatusChip, ui } from "@/components/learn/ui";
 import { focusLabel, JUZ_AMMA_COUNT, surahAr, surahName } from "@/lib/learn/surahs";
 import { pupilOverview, recitationsOf } from "@/lib/learn/quranOverview";
@@ -79,20 +79,24 @@ export function QuranPupilView({ childId, name }: { childId: string; name?: stri
           ))}
         </div>
       )}
-      <Tabs
-        label="Qur'an sections"
-        guide="quran-sections"
-        value={tab}
-        onChange={setTab}
-        items={[
+      <SectionLayout
+        nav={
+          <SectionNav
+            items={[
           { key: "progress", label: "Progress" },
           { key: "revision", label: "Revision", count: due.length, countAlert: due.length > 0 },
           { key: "homework", label: "Homework", count: hw.filter((h) => h.due_date >= todayISO()).length },
           { key: "sessions", label: "One to one" },
         ]}
-      />
-
-      {tab === "progress" &&
+            value={tab}
+            onChange={setTab}
+            label="Qur'an sections"
+            guide="quran-sections"
+          />
+        }
+      >
+        <div className="min-w-0 space-y-5">
+        {tab === "progress" &&
         (stats.count === 0 ? (
           <EmptyState title="No marks yet.">When a teacher hears a recitation, the mark out of 10 and the surah appear here.</EmptyState>
         ) : (
@@ -239,6 +243,8 @@ export function QuranPupilView({ childId, name }: { childId: string; name?: stri
           )}
         </div>
       )}
+        </div>
+      </SectionLayout>
     </div>
   );
 }
