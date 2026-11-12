@@ -109,7 +109,7 @@ function TodoBody({ childId, hwHref, heading, subtitle, childPicker }: { childId
       />
       {childPicker}
       <div className="rounded-2xl border border-gold-light bg-white">
-      <Tabs items={TABS.map((t) => ({ ...t, count: counts[t.key], countAlert: t.key === "missing" }))} value={tab} onChange={setTab} label="Homework status" className="px-3" guide="homework-status" />
+      <Tabs variant="switch" items={TABS.map((t) => ({ ...t, count: counts[t.key], countAlert: t.key === "missing" }))} value={tab} onChange={setTab} label="Homework status" className="px-3" guide="homework-status" />
       {items === null ? (
         <div className="m-5 h-24 motion-safe:animate-pulse rounded-lg bg-cream" />
       ) : list.length === 0 ? (

@@ -902,7 +902,7 @@ export function CurriculumLibrary({ area }: { area: "teach" | "admin" }) {
                       />
                     );
                   })()}
-                  <Tabs
+                  <Tabs variant="switch"
                     items={[
                       { key: "lessons" as UnitTab, label: "Lessons", count: current.lessons.length },
                       { key: "spec" as UnitTab, label: "Spec points" },
