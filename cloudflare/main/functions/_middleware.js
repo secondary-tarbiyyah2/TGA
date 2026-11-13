@@ -91,7 +91,11 @@ async function policyFile(context, slug, ext) {
 export async function onRequest(context) {
   const { request, env } = context;
   const url = new URL(request.url);
-  const host = url.hostname.toLowerCase();
+  // globalacademy.tarbiyyah.co.uk also has email (MX) records, so it cannot be a
+  // CNAME to Pages: a small Worker on that address (cloudflare/router-worker.js)
+  // forwards here and says which address the visitor used.
+  const forwarded = (request.headers.get("x-tga-host") || "").toLowerCase();
+  const host = url.hostname.endsWith(".pages.dev") && /^(globalacademy|preview)\.tarbiyyah\.co\.uk$/.test(forwarded) ? forwarded : url.hostname.toLowerCase();
   const path = url.pathname;
   const isPreview = host.startsWith("preview.");
   const key = (env.PREVIEW_KEY || "").trim();
