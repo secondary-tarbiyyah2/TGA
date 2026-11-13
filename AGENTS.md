@@ -1,5 +1,11 @@
 # Working on this repo (for any AI or developer)
 
+> **Deploys moved off GitHub Actions on 13 Nov 2026** (the GitHub account is
+> locked over billing, so no workflow starts). The website and portal now
+> deploy to Cloudflare Pages and Supabase is deployed directly with tokens;
+> scheduled jobs run in Supabase pg_cron. Read `docs/cloudflare-hosting.md`
+> before deploying anything.
+
 1. **Read `DESIGN.md` first.** It is the standing brief: architecture (static
    Next.js export + Supabase), brand, accessibility (WCAG 2.2 AA), RLS on every
    table, safeguarding and "never invent" rules. It overrides anything else.

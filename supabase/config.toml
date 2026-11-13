@@ -79,6 +79,10 @@ verify_jwt = false
 [functions.careers-apply]
 verify_jwt = false
 
+# Website enquiry form (/register.php on Cloudflare Pages forwards here): parents are not signed in.
+[functions.website-enquiry]
+verify_jwt = false
+
 [functions.open-evening-reminders]
 verify_jwt = false
 
